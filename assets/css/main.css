@@ -1,0 +1,58 @@
+body {
+    font-family: 'Kanit';
+    background-color: #ffffff;
+}
+
+
+    
+/* Mobile */
+  @media screen and (max-width: 600px) {
+    
+    .row.adsweb{
+      display: none;
+    }
+    .row.categoryweb{
+      display: none;
+    }
+
+    .row.relatedweb{
+      display: none;
+    }
+   
+  }
+
+  /* Tablet */
+  @media (min-width: 768px) {
+    .row.adsmobile{
+      display: none;
+    }
+    .row.categorymobile{
+      display: none;
+    }
+
+    .row.relatedmobile{
+      display: none;
+    }
+
+  }
+
+
+
+/* Desktop */
+  @media (min-width:960px) {
+
+    .row.adsmobile{
+      display: none;
+    }
+
+    .row.categorymobile{
+      display: none;
+    }
+
+    .row.relatedmobile{
+      display: none;
+    }
+
+
+
+}

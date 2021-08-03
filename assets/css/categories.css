@@ -1,0 +1,16 @@
+.hrsection{
+    border: 1px solid rgb(226, 226, 226);
+    border-radius: 30px;
+    width: auto;
+}
+
+.row.categoryweb{
+    justify-content: center;
+}
+
+.row.categorymobile{
+    justify-content: center;
+}
+
+
+
