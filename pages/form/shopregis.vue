@@ -52,7 +52,7 @@
 
 
                                                  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                                <label for="vehicle1">Domain</label>  <input type="text" placeholder="Domain n"> .com<br><br>
+                                                <label for="vehicle1">Domain</label>  <input type="text" placeholder="Domain name..."> .com<br><br>
 
                                                 <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
                                                 <label for="vehicle2">Market Place</label><br><br>
@@ -126,7 +126,7 @@
 
 
                                                  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-                                                <label for="vehicle1">Domain</label>  <input type="text" placeholder="Domain n"> .com<br><br>
+                                                <label for="vehicle1">Domain</label>  <input type="text" placeholder="Domain name..."> .com<br><br>
 
                                                 <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
                                                 <label for="vehicle2">Market Place</label><br><br>
