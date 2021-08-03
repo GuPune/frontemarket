@@ -43,30 +43,20 @@
     <div class="row adsmobile">
         <div class="col-12">
 
-                <div class="col-sm">
+                
                    <img src="https://www.kubota.com/products/tractor/images/img_hero.jpg" class="imgads">
                    
    
                         
 
 
-                </div>
+             
 
                
 
 
 
-                <div class="col-sm">
-                    <img src="https://www.kubota.com/products/tractor/images/img_hero.jpg" class="imgads"> 
-                   
-   
-            
-                         
-
-
-
-
-                </div>
+                
         </div>
 
     </div>

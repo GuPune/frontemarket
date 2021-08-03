@@ -7,15 +7,16 @@
           <div class="row">
                 <div class="col-sm">
                   <a href="" class="main-nav__logo">
-                    <h1>Logo</h1>
+                    <h1 @click="redirectTo('/')">Logo</h1>
                   </a>
                 </div>
 
 
-                <div class="col-sm">
-                  <!-- <input class="form-control inputsearch" type="text" placeholder="Search" > -->
+                  <input class="form-control inputsearchweb" type="text" placeholder="เมล็ดแตงโม..." >
+                  <input class="form-control inputsearchmobile" type="text" placeholder="เมล็ดแตงโม..." >
+               
 
-                </div>
+            
 
           
             </div>
@@ -29,10 +30,10 @@
                     </label>
 
                     <ul class="main-nav__menu">
-                      <li><a href="">เข้าสู่ระบบ</a></li>
-                      <li><a href="">สมัครสมาชิก</a></li>
-                      <li><a href="">Services</a></li>
-                      <li><a href="">Contact</a></li>
+                      <nuxt-link to="form/login"><li><a href="">เข้าสู่ระบบ</a></li></nuxt-link>
+                      <nuxt-link to="form/shopregis"><li><a href="">ขายสินค้ากับเรา</a></li></nuxt-link>
+                      <!-- <li><a href="">Services</a></li>
+                      <li><a href="">Contact</a></li> -->
                     </ul>
             
 

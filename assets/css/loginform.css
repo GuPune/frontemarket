@@ -1,0 +1,26 @@
+.container.loginformweb{
+    width: 30%;
+    height: auto;
+    background-color: rgb(228, 228, 228);
+    margin-top: 120px;
+    padding: 20px;
+    border-radius: 20px;
+    justify-content: center;
+}
+.btn{
+    background-color:#EF7318;
+    color: whitesmoke;
+    border-radius: 20px;
+  
+}
+
+
+.container.loginformmobile{
+    width:95%;
+    height: auto;
+    background-color: rgb(228, 228, 228);
+    margin-top: 120px;
+    padding: 20px;
+    border-radius: 20px;
+    justify-content: center;
+}

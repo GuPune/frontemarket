@@ -66,7 +66,7 @@
     </div>
 
 
-
+                        <!-- -------------------------Mobile------------------------------ -->
 
             <div class="row relatedmobile">
                 <div class="col-12">

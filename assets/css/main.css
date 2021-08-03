@@ -18,6 +18,31 @@ body {
     .row.relatedweb{
       display: none;
     }
+
+    .row.loginformweb{
+      display: none;
+    }
+
+    
+    .container.loginformweb{
+      display: none;
+    }
+
+    .container.userregisweb{
+      display: none;
+    }
+
+    .container.shopregisweb{
+      display: none;
+    }
+
+    .row.productdetailweb{
+      display: none;
+    }
+
+    .inputsearchweb{
+      display: none;
+    }
    
   }
 
@@ -33,6 +58,33 @@ body {
     .row.relatedmobile{
       display: none;
     }
+
+    .row.loginformmobile{
+      display: none;
+    }
+
+    
+  .container.loginformmobile{
+    display: none;
+  }
+
+  .container.userregismobile{
+    display: none;
+  }
+
+  .container.shopregismobile{
+    display: none;
+  }
+
+  .row.productdetailmobile{
+    display: none;
+  }
+
+  .inputsearchmobile{
+    display: none;
+  }
+
+
 
   }
 
@@ -52,6 +104,32 @@ body {
     .row.relatedmobile{
       display: none;
     }
+
+    
+    .row.loginformmobile{
+      display: none;
+    }
+
+    
+  .container.loginformmobile{
+    display: none;
+  }
+
+  .container.userregismobile{
+    display: none;
+  }
+
+  .container.shopregismobile{
+    display: none;
+  }
+
+  .row.productdetailmobile{
+    display: none;
+  }
+  .inputsearchmobile{
+    display: none;
+  }
+
 
 
 

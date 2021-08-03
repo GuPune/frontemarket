@@ -24,6 +24,10 @@ export default {
     '@/assets/css/categories.css',
     '@/assets/css/related.css',
     '@/assets/css/footer.css',
+    '@/assets/css/loginform.css',
+    '@/assets/css/regis.css',
+    '@/assets/css/shopregis.css',
+    '@/assets/css/productdetail.css',
     
   ],
 

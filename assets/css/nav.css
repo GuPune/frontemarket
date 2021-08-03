@@ -1,8 +1,14 @@
-  .inputsearch{
+  .inputsearchweb{
+    width: 500px;
+    margin-top: 5px;
+ 
+  }
+  .inputsearchmobile{
     width: 340px;
     margin-top: 5px;
  
   }
+
 
   
   .main-nav {

@@ -9,7 +9,7 @@
 
                                     <div class="col-sm-6">
                                         <img src="img/logo.png" class="logofoot">
-                                        <h5>ID E-Commerce.</h5>
+                                        <h5>ID E-Market Place.</h5>
                                         <p>Blackpink (Korean: 블랙핑크; commonly stylized as BLACKPINK or BLΛƆKPIИK) is a South Korean girl group formed by YG 
                                             Entertainment, consisting of members Jisoo, Jennie, Rosé, and Lisa. The group debuted in August 2016 with their single 
                                             album Square One, which featured "Whistle" and "Boombayah"</p>
