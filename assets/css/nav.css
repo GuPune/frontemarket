@@ -1,5 +1,5 @@
   .inputsearchweb{
-    width: 500px;
+    width: 450px;
     margin-top: 5px;
  
   }
@@ -7,6 +7,14 @@
     width: 340px;
     margin-top: 5px;
  
+  }
+
+  .icon{
+    width: 30px;
+    position: absolute;
+    top: 18px;
+    margin-left: 20px;
+  
   }
 
 
@@ -36,6 +44,7 @@
     text-align: center;
   }
   .main-nav__mobile-toggle, .main-nav__mobile-checkbox {
+    margin-top: 70px;
     display: none;
   }
   .main-nav__menu {

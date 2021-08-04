@@ -14,12 +14,18 @@
 
                   <input class="form-control inputsearchweb" type="text" placeholder="เมล็ดแตงโม..." >
                   <input class="form-control inputsearchmobile" type="text" placeholder="เมล็ดแตงโม..." >
+
+                  <a href=""><img class="icon" src="https://image.flaticon.com/icons/png/512/891/891407.png"></a>
+                  
+                  
                
 
             
 
           
             </div>
+
+            
 
                 <input class="main-nav__mobile-checkbox" id="mobile-checkbox" type="checkbox">
 
@@ -29,16 +35,27 @@
                       <span></span>
                     </label>
 
+                    
+                  
                     <ul class="main-nav__menu">
+
+                      
+                      
                       <nuxt-link to="form/login"><li><a href="">เข้าสู่ระบบ</a></li></nuxt-link>
                       <nuxt-link to="form/shopregis"><li><a href="">ขายสินค้ากับเรา</a></li></nuxt-link>
-                      <!-- <li><a href="">Services</a></li>
-                      <li><a href="">Contact</a></li> -->
+                      <!-- <li><a href=""></a></li> -->
+                      <!-- <li><a href="">Contact</a></li> -->
                     </ul>
+
+                    
             
 
 
           </div>
+
+          
+
+          
         </nav><br>
 
         

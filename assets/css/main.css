@@ -43,6 +43,15 @@ body {
     .inputsearchweb{
       display: none;
     }
+
+    .linevertical{
+      display: none;
+    }
+
+    .container.profileweb{
+      display: none;
+    }
+  
    
   }
 
@@ -84,9 +93,12 @@ body {
     display: none;
   }
 
-
+  .container.profilemobile{
+    display: none;
 
   }
+
+}
 
 
 
@@ -129,6 +141,12 @@ body {
   .inputsearchmobile{
     display: none;
   }
+
+  .container.profilemobile{
+    display: none;
+
+  }
+
 
 
 

@@ -8,7 +8,7 @@
      
          
 		<div class="cardproductdetail">
-             <a href="" class="product-title">ชื่อร้านค้า</a>
+             <nuxt-link to="/product/store"><a href="" class="product-title">ชื่อร้านค้า</a></nuxt-link>
 				<div class="wrapper row">
 					<div class="preview col-md-6">
                       
@@ -78,7 +78,7 @@
      
          
 		<div class="cardproductdetail">
-             <a href=""  class="product-title">ชื่อร้านค้า</a>
+             <nuxt-link to="/product/store"><a href="" class="product-title">ชื่อร้านค้า</a></nuxt-link>
 				<div class="wrapper row">
 					<div class="preview col-md-6">
                       

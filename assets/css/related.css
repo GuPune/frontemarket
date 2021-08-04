@@ -27,7 +27,7 @@
   }
 
  @media (min-width: 900px) {
-    .cards { grid-template-columns: repeat(4, 1fr); }
+    .cards { grid-template-columns: repeat(5, 1fr); }
   }
 
 

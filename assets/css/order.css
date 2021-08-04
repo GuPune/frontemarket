@@ -1,0 +1,46 @@
+.container.orderweb{
+    width: 100%;
+    height: auto;
+    background-color: rgb(228, 228, 228);
+    margin-top: 100px;
+    padding: 50px;
+    border-radius: 20px;
+    justify-content: center;
+}
+
+.container.allorderweb{
+    
+    height: auto;
+    background-color: rgb(228, 228, 228);
+    margin-top: 30px;
+    padding: 50px;
+    border-radius: 20px;
+    justify-content: center;
+
+}
+
+
+
+
+#customers {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #customers td, #customers th {
+    
+ 
+    padding: 8px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+  
+  
+  }

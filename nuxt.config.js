@@ -28,6 +28,9 @@ export default {
     '@/assets/css/regis.css',
     '@/assets/css/shopregis.css',
     '@/assets/css/productdetail.css',
+    '@/assets/css/store.css',
+    '@/assets/css/order.css',
+    '@/assets/css/confirmorder.css',
     
   ],
 

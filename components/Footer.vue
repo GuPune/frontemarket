@@ -4,15 +4,15 @@
          
 
                     <div class="row footer">
-                    <div class="col-10">
+                    <div class="col-11">
                         <div class="row">
 
                                     <div class="col-sm-6">
                                         <img src="img/logo.png" class="logofoot">
                                         <h5>ID E-Market Place.</h5>
-                                        <p>Blackpink (Korean: 블랙핑크; commonly stylized as BLACKPINK or BLΛƆKPIИK) is a South Korean girl group formed by YG 
-                                            Entertainment, consisting of members Jisoo, Jennie, Rosé, and Lisa. The group debuted in August 2016 with their single 
-                                            album Square One, which featured "Whistle" and "Boombayah"</p>
+                                        <p>ตลาดสินค้าเกษตรเป็นวิธีการแก้ปัญหาจากทางภาครัฐ เพื่อช่วยให้เกษตรกรสามารถลืมตาอ้าปากได้ โดยไม่จำเป็นต้องขายสินค้าทางการเกษตรที่ตนผลิตได้ไปยังพ่อค้าคนกลางอีกต่อไป
+                                            แต่เกษตรกรสามารถนำสินค้ามาวางจำหน่ายได้โดยตรงในตลาดสินค้าเกษตร เป็นการนำสินค้าส่งไปยังมือลูกค้าโดยตรง ทำให้คนในต่างจังหวัดในยุคนี้สามารถมีรายได้มากขึ้นเป็นอีกเท่าตัว
+                                             เพราะนอกจากจะทำการเกษตรเป็นหลักแล้ว ยังสามารถขายสินค้าด้วยตัวเองได้อีกด้วย</p>
 
                                     </div>
 

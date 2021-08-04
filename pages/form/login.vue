@@ -20,7 +20,7 @@
                                             <p>รหัสผ่าน :</p>
                                             <input class="form-control" type="password"><br>
 
-                                            <center><button class="btn" type="submit">เข้าสู่ระบบ</button><br><br>
+                                            <center><button class="btnn" type="submit">เข้าสู่ระบบ</button><br><br>
                                             <p>คุณยังไม่มีบัญชีใช่หรือไม่ ? <nuxt-link to="userregis"><a href="">สมัครสมาชิก</a></nuxt-link></p>
                                             
                                             </center>
@@ -64,7 +64,7 @@
 
                                             
 
-                                            <center><button class="btn" type="submit">เข้าสู่ระบบ</button><br><br>
+                                            <center><button class="btnn" type="submit">เข้าสู่ระบบ</button><br><br>
                                             <p>คุณยังไม่มีบัญชีใช่หรือไม่ ? <nuxt-link to="userregis"><a href="">สมัครสมาชิก</a></nuxt-link></p>
                                             
                                             </center>
