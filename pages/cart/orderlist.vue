@@ -92,7 +92,7 @@
                                                     <tr>
                                                         <td></td>
                                                         <td>- ฿</td>
-                                                        <td><button type="button" class="btn btn-success">สั่งซื้อ</button></td>
+                                                        <td><nuxt-link to="comfirmorder"><button type="button" class="btn btn-success">สั่งซื้อ</button></nuxt-link></td>
                                                     </tr>
                                                   
                                             </table>

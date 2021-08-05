@@ -109,7 +109,7 @@
 
                                                         
 
-                                                    <center><button class="btnn" type="submit">สมัครสมาชิก</button><br><br>
+                                                    <center><button class="btn btn-success" type="submit">สมัครสมาชิก</button><br><br>
                                                     <p>คุณมีบัญชีแล้วใช่หรือไม่ ? <nuxt-link to="login"><a href="">เข้าสู่ระบบ</a></nuxt-link></p>
                                                     
                                                     </center>

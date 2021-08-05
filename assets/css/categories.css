@@ -14,3 +14,43 @@
 
 
 
+.slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-points-x: repeat(300px);
+    scroll-snap-type: mandatory;
+    
+}
+
+
+.slider .img-slider {
+    flex-shrink: 0;
+    width: 110px;
+    margin-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    display: block;
+    border-radius: 100%;
+}
+.img-slider:hover{
+    transform: translateY(-10px) scale(1.0);
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slider::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+.slider::-webkit-scrollbar-thumb {
+    background: #808080;
+    border-radius: 10px;
+    visibility: hidden;
+}
+.slider::-webkit-scrollbar-track {
+    background: transparent;
+}
+.section-slider:hover .slider::-webkit-scrollbar-thumb {
+    visibility: visible;
+}

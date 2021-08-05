@@ -53,7 +53,7 @@
 					
 
 						<div class="action">
-							<button class="btn" type="button">add to cart</button>
+							<button class="btn btn-success" type="submit">เพิ่มในตะกร้า</button>
 						</div>
 					</div>
 				</div>
@@ -123,7 +123,7 @@
 					
 
 						<div class="action">
-							<button class="btn" type="button">add to cart</button>
+							<button class="btn btn-success" type="submit">เพิ่มในตะกร้า</button>
 						</div>
 					</div>
 				</div>
