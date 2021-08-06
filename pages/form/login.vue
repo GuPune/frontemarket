@@ -18,9 +18,10 @@
                                             <input class="form-control" type="text"><br>
 
                                             <p>รหัสผ่าน :</p>
-                                            <input class="form-control" type="password"><br>
+                                            <input class="form-control" type="password">
+                                            <label><a href="">ลืมรหัสผ่าน?</a></label><br>
 
-                                            <center><button class="btnn" type="submit">เข้าสู่ระบบ</button><br><br>
+                                            <center><button class="btn btn-success" type="submit">เข้าสู่ระบบ</button><br><br>
                                             <p>คุณยังไม่มีบัญชีใช่หรือไม่ ? <nuxt-link to="userregis"><a href="">สมัครสมาชิก</a></nuxt-link></p>
                                             
                                             </center>
@@ -60,7 +61,9 @@
                                             <input class="form-control" type="text"><br>
 
                                             <p>รหัสผ่าน :</p>
-                                            <input class="form-control" type="password"><br>
+                                            <input class="form-control" type="password">
+                                            <label><a href="">ลืมรหัสผ่าน?</a></label><br>
+
 
                                             
 
