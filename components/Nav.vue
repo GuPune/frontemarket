@@ -49,7 +49,7 @@
                       
                       <nuxt-link to="form/login"><li><a href="">เข้าสู่ระบบ</a></li></nuxt-link>
                       <nuxt-link to="form/shopregis"><li><a href="">ขายสินค้ากับเรา</a></li></nuxt-link>
-                      <nuxt-link to="form/shopregis"><li><a href="">บัญชี</a></li></nuxt-link>
+                      <nuxt-link to="profile/userprofile"><li><a href="">บัญชี</a></li></nuxt-link>
                       
                       
                       <!-- <li><a href=""></a></li> -->

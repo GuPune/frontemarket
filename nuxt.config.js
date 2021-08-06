@@ -31,6 +31,7 @@ export default {
     '@/assets/css/store.css',
     '@/assets/css/order.css',
     '@/assets/css/confirmorder.css',
+    '@/assets/css/userprofile.css',
     
   ],
 

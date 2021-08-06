@@ -1,0 +1,23 @@
+.container.profieweb{
+    margin-top: 100px;
+
+}
+
+.profile{
+    width: 120px;
+    border: 2px solid whitesmoke;
+    border-radius: 100px;
+}
+
+.profiletitle{
+    padding: 30px;
+    border-radius: 20px;
+    justify-content: center;
+    height: auto;
+    background-color: rgb(228, 228, 228);
+    width: 100%;
+}
+
+
+
+
