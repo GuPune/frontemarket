@@ -1,8 +1,11 @@
 <template>
 
 <section id="Ads">
+    
     <center>
+
     <div class="row adsweb col-8">
+       
 
                 <div class="col-sm">
                    <img src="https://www.kubota.com/products/tractor/images/img_hero.jpg" class="imgads">

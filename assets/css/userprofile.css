@@ -4,7 +4,7 @@
 }
 
 .profile{
-    width: 120px;
+    width: 150px;
     border: 2px solid whitesmoke;
     border-radius: 100px;
 }
@@ -21,3 +21,393 @@
 
 
 
+
+.tabs-container{
+    position: relative;
+    background: #EF7318;
+    width: 120px;
+    height: 100vh;
+    float: left;
+    z-index: 20;
+    margin-top: 10px;
+    border-radius: 0px;
+ 
+ }
+ /* tabs names */
+ .tabs-container label{
+    position: relative;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    display: block;
+    font-size: 13px;
+    color: #fff;
+    cursor: pointer;
+    user-select: none;
+ }
+ 
+ /* Hover effect on tabs names */
+ .tabs-container label:hover{
+   background: rgba(0, 0, 0, 0.2);
+ 
+ }
+ /* Content area for tabs */
+ .tab-content{
+    position: relative;
+    background: rgb(228, 228, 228);
+    width: calc(100% - 120px);
+    min-height: 100vh;
+    padding: 15px;
+    float: left;
+    box-sizing: border-box;
+    z-index: 19;
+    display: none;
+    margin-top: 10px;
+ }
+ 
+ .tab-content:after{
+    content: "";
+    clear: both;
+ 
+ }
+  /* Hide input radio from users */
+ input[name="tab"]{
+   display: none;
+ }
+  /* Show tab when input checked */
+ input[name="tab"]:checked + .tab-content{
+     display: block;
+   animation: slide 0.5s forwards;
+ 
+ }
+ 
+ /* Slide animation for tab contents */
+ @keyframes slide{
+     from{
+         left: -100%;
+         opacity: 0;
+     }
+     to{
+         left: 0;
+         opacity: 1;
+     }
+ 
+ }
+
+
+
+ #bug:target {
+  outline: 4px solid #ccc;
+}
+
+/**
+ * tab panel widget
+ */
+.tabPanel-widget {
+  position: relative;  /* containing block for headings (top:0) */
+  background: #999;
+}
+
+/**
+ * because labels come first in source order - we use z-index to move them in front of the headings
+ */
+.tabPanel-widget > label {
+  position: absolute;
+  z-index: 1;
+}
+
+/**
+ * labels and headings must share same values so grouping declarations in this rule prevents async edits (risk of breakage)
+ * line-height == height -> vertical centering
+ * the width dictates the offset for all headings but the first one: left offset = width * number of previous heading(s)
+ * note that width and offset of label/heading pair can be customized if necessary
+ */
+
+.tabPanel-widget > label,
+.tabPanel-widget > h2 {
+  font-size: 1.1em;
+  width: 9em;
+  height: 2em;
+  line-height: 2em;
+}
+
+/**
+ * position:relative is for the markers (the down arrow in tabs)
+ */
+.tabPanel-widget > h2 {
+  position: relative;
+  margin: 0;
+  text-align: center;
+  background: #999;
+  color: #fff;
+}
+
+.tabPanel-widget > label {
+  border-right: 1px solid #fff;  
+}
+
+/**
+ * all first level labels and headings after the very first ones 
+ */
+.tabPanel-widget > label ~ label,
+.tabPanel-widget > h2 ~ h2 {
+  position: absolute;
+  top: 0;
+}
+
+
+/**
+ * We target all the label/heading pairs
+ * we increment the :nth-child() params by 4 as well as the left value (according to "tab" width)
+ */
+
+.tabPanel-widget label:nth-child(1),
+.tabPanel-widget h2:nth-child(3) {
+  left: 0em;
+}
+
+.tabPanel-widget label:nth-child(5),
+.tabPanel-widget h2:nth-child(7) {
+  left: 9em;
+}
+
+.tabPanel-widget label:nth-child(9),
+.tabPanel-widget h2:nth-child(11) {
+  left: 18em;
+}
+
+/**
+ * we visually hide all the panels
+ * https://developer.yahoo.com/blogs/ydn/clip-hidden-content-better-accessibility-53456.html
+ */
+.tabPanel-widget input + h2 + div {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding:0 !important;
+  border:0 !important;
+  height: 1px !important; 
+  width: 1px !important; 
+  overflow: hidden;
+}
+/**
+ * we reveal a panel depending on which control is selected 
+ */
+.tabPanel-widget input:checked + h2 + div {
+  position: static !important;
+  padding: 1em !important;
+  height: auto !important; 
+  width: auto !important; 
+}
+
+/**
+ * shows a hand cursor only to pointing device users
+ */
+.tabPanel-widget label:hover {
+  cursor: pointer;
+}
+
+.tabPanel-widget > div {
+  background: #f0f0f0;
+  padding: 1em;
+}
+
+/**
+ * we hide radio buttons and also remove them from the flow
+ */
+.tabPanel-widget input[name="tabs"] {
+  opacity: 0;
+  position: absolute;
+}
+
+
+/** 
+ * this is to style the tabs when they get focus (visual cue)
+ */
+
+.tabPanel-widget input[name="tabs"]:focus + h2 {
+  outline: 1px dotted #000;
+  outline-offset: 10px;
+}
+
+
+/**
+ * reset of the above within the tab panel (for pointing-device users)
+ */
+.tabPanel-widget:hover h2 {
+  outline: none !important;
+}
+
+/**
+ * visual cue of the selection
+ */
+.tabPanel-widget input[name="tabs"]:checked + h2 {
+  background: #333;
+}
+
+/**
+ * the marker for tabs (down arrow)
+ */
+.tabPanel-widget input[name="tabs"]:checked + h2:after {
+  content: '';
+  margin: auto;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #333;
+}
+
+/**
+ * Make it plain/simple below 45em (stack everything)
+ */
+@media screen and (max-width: 45em) {
+  
+  /* hide unecessary label/control pairs */
+  .tabPanel-widget label,
+  .tabPanel-widget input[name="tabs"] {
+    display: none;
+  }
+  
+  /* reveal all panels */
+  .tabPanel-widget > input + h2 + div {
+    display: block !important;
+    position: static !important;
+    padding: 1em !important;
+    height: auto !important; 
+    width: auto !important; 
+  }
+  
+  /* "unstyle" the heading */
+  .tabPanel-widget h2 {
+    width: auto;
+    position: static !important;
+    background: #999 !important;
+  }
+  
+  /* "kill" the marker */
+  .tabPanel-widget h2:after {
+    display: none !important;
+  }
+
+}
+
+
+
+.active {
+    display: block;
+  }
+  
+  .tap input {
+    display: none;
+  }
+  .tap .content {
+    display: none;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 10px;
+  }
+  .tap label {
+    padding: 2px;
+    background: white;
+    border: 1px solid rgba(255, 255, 255, 0);
+    border-radius: 20px;
+    padding: 8px;
+  }
+  .tap #block-1:checked ~ #content-1 {
+    display: block;
+  }
+  .tap #block-1:checked + label {
+    background: rgb(255, 215, 184);
+  }
+  .tap #block-2:checked ~ #content-2 {
+    display: block;
+  }
+  .tap #block-2:checked + label {
+    background: rgb(255, 215, 184);
+  }
+
+  .tap #block-3:checked ~ #content-3 {
+    display: block;
+  }
+  .tap #block-3:checked + label {
+    background: rgb(255, 215, 184);
+  }
+
+
+
+  .row.paycheck{
+      background-color: rgb(255, 215, 184);
+      margin-top: 15px;
+      border-radius: 20px;
+      padding: 10px;
+  }
+
+
+
+
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 100;
+  }
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+
+  .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 30%;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+  
+  .popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+  }
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  .popup .close:hover {
+    color: #06D85F;
+  }
+  .popup .content {
+    max-height: 30%;
+
+  }
+  
+  @media screen and (max-width: 700px){
+    .box{
+      width: 70%;
+    }
+    .popup{
+      width: 90%;
+    }
+  }
+  
+ 
