@@ -65,7 +65,7 @@
 
                                                 <input name="tab" id="tab2" type="radio" />
                                                 <section class="tab-content">
-                                                        <h6>ที่อยู่ของฉัน</h6>   <button type="submit" class="btn btn-info">เพิ่มที่อยู่</button>
+                                                        <h6>ที่อยู่ของฉัน</h6>   <a href="#address">เพิ่มที่อยู่</a>
 
                                                         <hr>
 
@@ -287,7 +287,7 @@
                                                                     </div>
 
                                                                     <div class="col-sm">
-                                                                          <a class="button" href="#popup1">ความคิดเห็น</a>
+                                                                          <a href="#popup1">ความคิดเห็น</a>
                                                                     </div>
                                                                        <hr>
                                                                 </div>
@@ -314,13 +314,41 @@
 
         </div> <br>
 
-  <div id="popup1" class="overlay">
+        <div id="popup1" class="overlay">
             <div class="popup">
                 <h6>ความคิดเห็น</h6>
                 <a class="close" href="#">&times;</a><br>
                 <div class="content">
                     <textarea type="text" class="form-control"></textarea><br>
                     <button type="submit" class="btn btn-info">ส่ง</button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="address" class="overlay">
+            <div class="popup">
+                <center><h6>เพิ่มที่อยู่</h6></center>
+                <a class="close" href="#">&times;</a><br>
+                <div class="content">
+                    <label>ชื่อ-นามสกุล :</label>
+                    <input type="text" class="form-control"><br>
+
+                    <label>เบอร์โทร :</label>
+                    <input type="text" class="form-control"><br>
+
+
+                    <label>ที่อยู่ :</label>
+                    <textarea type="text" class="form-control"></textarea><br>
+
+                    <label>รายละเอียด/จุดสังเกตุ :</label>
+                    <textarea type="text" class="form-control"></textarea><br>
+
+
+                    <center><button type="submit" class="btn btn-info">บันทึก</button></center>
+
+
                 </div>
             </div>
         </div>

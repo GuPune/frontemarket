@@ -118,7 +118,7 @@
 .profile-header .profile-header-content,
 .profile-header .profile-header-tab,
 .profile-header-img,
-body .fc-icon {
+ .fc-icon {
     position: relative;
 }
 .profile-header .profile-header-tab {
@@ -157,9 +157,9 @@ body .fc-icon {
     color: #fff;
     padding: 2.25rem;
 }
-body .fc th a,
-body .fc-ltr .fc-basic-view .fc-day-top .fc-day-number,
-body .fc-widget-header a {
+ .fc th a,
+ .fc-ltr .fc-basic-view .fc-day-top .fc-day-number,
+ .fc-widget-header a {
     color: #000;
 }
 .profile-header-img {
