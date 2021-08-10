@@ -5,11 +5,11 @@
           <div class="main-nav__inner">
           
           <div class="row">
-                <div class="col-sm">
+              
                   <a href="" class="main-nav__logo">
-                    <h1 @click="redirectTo('/')">Logo</h1>
-                  </a>
-                </div>
+                    <img @click="redirectTo('/')"  class="logo" src="../assets/logohori2.png">
+                  </a>   &nbsp;&nbsp;
+               
 
 
                   <input class="form-control inputsearchweb" type="text" placeholder="เมล็ดแตงโม..." >

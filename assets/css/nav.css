@@ -1,6 +1,6 @@
   .inputsearchweb{
     width: 420px;
-    margin-top: 5px;
+    margin-top: 10px;
  
   }
   .inputsearchmobile{
@@ -13,8 +13,12 @@
     width: 30px;
     position: absolute;
     top: 18px;
-    margin-left: 10px;
+   
   
+  }
+
+  .logo{
+    width: 100px;
   }
 
 
@@ -38,7 +42,7 @@
   .main-nav__logo {
     /* font-family: sans-serif; */
     text-decoration: none;
-    color: rgb(255, 255, 255);
+   
     display: block;
     justify-content: center;
     text-align: center;
