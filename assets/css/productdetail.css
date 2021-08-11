@@ -1,12 +1,20 @@
 .row.productdetailweb {
     justify-content: center;
+    
  
 
 }
 
+
+
 .row.productdetailmobile{
     justify-content: center;
     margin-top: 50px;
+}
+
+.productpreview{
+
+  width: 100%;
 }
 
 
