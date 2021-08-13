@@ -6,7 +6,7 @@
                     <div class="container confirmorderweb">
 
                             <div class="address">
-                                <h5>ที่อยู่</h5>
+                                <h5> <i class="fa fa-map-marker" aria-hidden="true"></i> ที่อยู่</h5>
 
                                         <table id="customers">
                                                     <tr>
@@ -22,7 +22,7 @@
 
 
                               <div class="order">
-                                            <h4><input type="checkbox" id="vehicle2" name="vehicle2" value="market"> ร้านค้าที่ 1</h4>
+                                            <h5><input type="checkbox" id="vehicle2" name="vehicle2" value="market"> <i class="fa fa-shopping-basket" aria-hidden="true"></i> ร้านค้าที่ 1</h5>
 
                                         <table id="customers">
                                                     <tr>
@@ -57,7 +57,7 @@
 
 
 
-                                            <h4><input type="checkbox" id="vehicle2" name="vehicle2" value="market"> ร้านค้าที่ 2</h4>
+                                            <h5><input type="checkbox" id="vehicle2" name="vehicle2" value="market"> <i class="fa fa-shopping-basket" aria-hidden="true"></i> ร้านค้าที่ 2</h5>
 
                                             <table id="customers">
                                                     <tr>
@@ -92,7 +92,7 @@
 
 
                              <div class="pay">
-                                <h5>เลือกวิธีชำระเงิน</h5>
+                                <h5> <i class="fa fa-money" aria-hidden="true"></i> เลือกวิธีชำระเงิน</h5>
                                             <button type="button" class="btn btn-primary">เก็บเงินปลายทาง</button>
                                             <button type="button" class="btn btn-primary">โอนเงินผ่านธนาคาร</button>
                                             <hr>

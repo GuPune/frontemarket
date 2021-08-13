@@ -19,7 +19,7 @@
 
                                             <p>รหัสผ่าน :</p>
                                             <input class="form-control" type="password">
-                                            <label><a href="">ลืมรหัสผ่าน?</a></label><br>
+                                            <label><a href="#forgotpass">ลืมรหัสผ่าน?</a></label><br>
 
                                             <center><button class="btn btn-success" type="submit">เข้าสู่ระบบ</button><br><br>
                                             <p>คุณยังไม่มีบัญชีใช่หรือไม่ ? <nuxt-link to="userregis"><a href="">สมัครสมาชิก</a></nuxt-link></p>
@@ -62,7 +62,7 @@
 
                                             <p>รหัสผ่าน :</p>
                                             <input class="form-control" type="password">
-                                            <label><a href="">ลืมรหัสผ่าน?</a></label><br>
+                                            <label><a href="#forgotpass">ลืมรหัสผ่าน?</a></label><br>
 
 
                                             
@@ -99,6 +99,20 @@
 
 
               </div>
+
+
+              
+        <div id="forgotpass" class="overlay">
+            <div class="popup">
+                <h6>ลืมรหัสผ่านใช่หรือไม่?</h6><br>
+                <small>กรุณายืนยันอีเมลล์</small>
+                <a class="close" href="#">&times;</a><br>
+                <div class="content">
+                    <input type="email" class="form-control" placeholder="example@mail.com" required><br>
+                    <button type="submit" class="btn btn-info">ส่งไปที่อีเมลล์</button>
+                </div>
+            </div>
+        </div>
 
     
 

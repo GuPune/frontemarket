@@ -14,7 +14,7 @@
                                     <img class="profilepic" src="https://cache-igetweb-v2.mt108.info/uploads/2862/filemanager/b38c97ac92ed3ed7d3e53647f266608d.jpg" alt="" /> 
                                 </div>
                                 <div class="profile-header-info">
-                                    <h4 class="m-t-sm">ชื่อร้านค้า</h4>
+                                   <h4 class="m-t-sm">ชื่อร้านค้า</h4>
                                     <!-- <p class="m-b-sm">UXUI + Frontend Developer</p> -->
                                     <!-- <a href="#" class="btn btn-xs btn-primary mb-4">Edit Profile</a> -->
                                 </div>

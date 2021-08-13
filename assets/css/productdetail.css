@@ -1,15 +1,12 @@
 .row.productdetailweb {
     justify-content: center;
-    
- 
-
 }
 
 
 
 .row.productdetailmobile{
     justify-content: center;
-    margin-top: 50px;
+    /* margin-top: 50px; */
 }
 
 .productpreview{
@@ -48,7 +45,8 @@
   
   .preview-thumbnail.nav-tabs {
     border: none;
-    margin-top: 15px; }
+    margin-top: 15px; 
+  }
     .preview-thumbnail.nav-tabs li {
       width: 18%;
       margin-right: 2.5%; }
@@ -71,10 +69,11 @@
               animation-duration: .3s; }
   
   .cardproductdetail {
-    margin-top: 50px;
-    background: rgb(245, 245, 245);
+    /* margin-top: 50px; */
+    background: rgb(227, 236, 255);
     padding: 2em;
     line-height: 1.5em;
+    border-radius: 10px;
     }
     
   

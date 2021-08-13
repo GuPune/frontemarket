@@ -3,7 +3,7 @@
     <Nav />
 
   <div class="row productdetailweb">
-      <div class="col-8">
+      <div class="col-9">
      
      
          
@@ -12,7 +12,7 @@
 				<div class="wrapper row">
 					<div class="preview col-md-6">
 
-						  <div class="tab-pane active" id="pic-1"><img class="productpreview" src="https://dy.lnwfile.com/0tii3i.jpg" /></div>
+						  <div class="tab-pane active" id="pic-1"><img class="productpreview" src="https://image.makewebeasy.net/makeweb/0/f5weapUYE/PRODUCTS/%E0%B9%80%E0%B8%A1%E0%B8%A5%E0%B9%87%E0%B8%94%E0%B8%9F%E0%B8%B1%E0%B8%81%E0%B8%97%E0%B8%AD%E0%B8%87%E0%B8%AD%E0%B8%9A%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%9C%E0%B8%B6%E0%B9%89%E0%B8%87_25g_pack.jpg" /></div>
 						  
 			
 						<ul class="preview-thumbnail nav nav-tabs">
@@ -70,7 +70,7 @@
 
 
         <div class="row productdetailmobile">
-      <div class="col-12">
+     
      
      
          
@@ -127,18 +127,18 @@
 		</div>
 
 
-      </div>
+   
 
 
 
-  </div> <br><br>
+  </div>
 
    
 
   <!-- ----------------------------related web----------------------- -->
   <div class="row relatedweb">
     
-                <div class="col-8">
+                <div class="col-9">
                       <hr class="hrsection"><br>
                         <h3>สินค้าแนะนำ</h3>
                         

@@ -1,11 +1,11 @@
 .container.profieweb{
-    margin-top: 100px;
+    margin-top: 10px;
 
 }
 
 .profile{
     width: 150px;
-    border: 2px solid whitesmoke;
+    border: 2px solid rgb(227, 236, 255);
     border-radius: 100px;
 }
 
@@ -14,7 +14,7 @@
     border-radius: 20px;
     justify-content: center;
     height: auto;
-    background-color: rgb(228, 228, 228);
+    background-color: rgb(227, 236, 255);
     width: 100%;
 }
 
@@ -53,7 +53,7 @@
  /* Content area for tabs */
  .tab-content{
     position: relative;
-    background: rgb(228, 228, 228);
+    background: rgb(227, 236, 255);
     width: calc(100% - 120px);
     min-height: 100vh;
     padding: 15px;
