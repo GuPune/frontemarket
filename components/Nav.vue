@@ -15,7 +15,7 @@
                 </div>
                 <div class="col-lg-5 col-xl-4 col-sm-8 col-md-4 col-7">
                     <div class="d-flex justify-content-end"> 
-                      <nuxt-link to="cart/orderlist"><a target="_blank" href="#" data-abc="true" class="nav-link widget-header"> <i class="fas fa fa-shopping-cart" aria-hidden="true"></i></a></nuxt-link> <span class="vl"></span>
+                      <nuxt-link to="cart/orderlist"><a target="_blank" href="#" data-abc="true" class="nav-link widget-header"> <i class="fas fa fa-cart-plus" aria-hidden="true"></i></a></nuxt-link> <span class="vl"></span>
                         <div class="dropdown btn-group">
                             <ul class="dropdown-menu dropdown-menu-right notification-dropdown">
                                 <li>
@@ -63,7 +63,7 @@
                     
                     <nuxt-link to="form/shopregis"><li class="nav-item"> <a class="nav-link" href="" data-abc="true">ขายสินค้ากับเรา</a></li></nuxt-link>
                     <nuxt-link to="profile/userprofile"><li class="nav-item"> <a class="nav-link" href="" data-abc="true">จัดการบัญชี</a> </li></nuxt-link>
-                    <li class="nav-item"> <a class="nav-link" href="" data-abc="true">ITEM</a> </li>
+                    <li class="nav-item"> <a class="nav-link" href="" data-abc="true">ออกจากระบบ</a> </li>
                     <li class="nav-item"> <a class="nav-link" href="" data-abc="true">ITEM</a> </li>
                 </ul>
             </div>

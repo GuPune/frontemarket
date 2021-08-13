@@ -150,7 +150,7 @@
 
                                                     <tr>
                                                         <td>1500 ฿</td>
-                                                        <td><button type="button" class="btn btn-success">สั่งซื้อสินค้า</button></td>
+                                                        <td><button type="button" class="btn btn-success">ยืนยันการสั่งซื้อ</button></td>
                                                         <!-- <td><button type="button" class="btn btn-danger">ลบสินค้า</button></td> -->
                                                     </tr>
                                                    
