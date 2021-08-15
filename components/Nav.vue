@@ -45,7 +45,22 @@
                                     </div>
                                 </li>
                             </ul>
-                        </div> <span class="vl"></span> <nuxt-link to="form/login"><a class="nav-link nav-user-img" href="#" data-toggle="modal" data-target="#login-modal" data-abc="true"><span class="login">LOGIN</span></a></nuxt-link>
+                        </div> 
+
+                        <template v-if="!IsLogin">
+ <nuxt-link to="form/login"><a class="nav-link nav-user-img" href="#" data-toggle="modal" data-target="#login-modal" data-abc="true">
+                        <span class="login">LOGIN</span></a>
+                        </nuxt-link>
+</template>
+
+                        <template v-if="IsLogin">
+ <nuxt-link to="form/login"><a class="nav-link nav-user-img" href="#" data-toggle="modal" data-target="#login-modal" data-abc="true">
+                        <span class="login">PROFILE</span></a>
+                        </nuxt-link>
+                        </template>
+                        
+                       
+                       
                     </div>
                 </div>
             </div>
@@ -79,31 +94,38 @@
 
 
 <script>
+import { mapGetters,mapState } from "vuex";
+import { CHECK_LOGIN } from "../store/actions.type.js";
   export default {
+    data() {
+    return {
+      IsLogin: false,
+
+    };
+  },
+
 
      computed: {
            
-   
 
         },
+        created(){
+           
+        },
+        
+
+    
         
         mounted() {
-        //  this.$store.dispatch(ToogleAction);
-        
+          let checker = localStorage.getItem("user");
+          if(checker){
+            this.IsLogin = true;
+          }else{
+            this.IsLogin = false;
+          }
          },
         
-  
-        methods: {
 
-      redirectTo(name) {
-                    this.$router.push(name)
-                  }
-
-        },
-
-        components: {
-
-        },
 
     }
 </script>

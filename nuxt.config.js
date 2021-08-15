@@ -11,11 +11,30 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
+    script: [
+      { src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js' },
+      { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js' },
+    ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }  
+    ],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'
+      }
+    ],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        type: 'text/css',
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
+      }
     ]
   },
-
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '@/assets/css/main.css',
@@ -37,6 +56,10 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~plugins/local-storage.js',
+    { src: '~/plugins/vuelidate', ssr: true },
+  
+    
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

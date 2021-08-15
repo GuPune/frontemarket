@@ -1,7 +1,7 @@
 <template>
 
 <section id="Ads">
-    
+
     <center><div class="row adsweb col-8">
       
      
@@ -69,33 +69,3 @@
 </section>
     
 </template>
-
-<script>
-  export default {
-
-     computed: {
-           
-   
-
-        },
-        
-        mounted() {
-        //  this.$store.dispatch(ToogleAction);
-        
-         },
-        
-  
-        methods: {
-
-      redirectTo(name) {
-                    this.$router.push(name)
-                  }
-
-        },
-
-        components: {
-
-        },
-
-    }
-</script>
