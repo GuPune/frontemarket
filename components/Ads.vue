@@ -2,7 +2,10 @@
 
 <section id="Ads">
 
-    <center><div class="row adsweb">
+    <center><div class="row adsweb col-9">
+
+
+
       
      
             <div class="carousel">

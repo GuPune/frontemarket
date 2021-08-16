@@ -19,9 +19,8 @@
                                     <div class="col-sm-3 item">
                                         <h5>ข่าวสาร</h5>
                                         <!-- <img class="imgproduct" src="https://f.ptcdn.info/827/073/000/qupxhz11a8I27CRh7gqE-o.jpg"> -->
-                                        <a href="https://www.prachachat.net/finance/news-685086" target="_blank">ธ.ก.ส. อนุมัติ “สินเชื่อสู้ภัยโควิด” แล้ว 8.9 พันล้านบาท ช่วยเหลือเกษตรกรเกือบ 9 แสนราย</a> <br><br>
-                                        <a href="https://www.prachachat.net/finance/news-685086" target="_blank">ธ.ก.ส. อนุมัติ “สินเชื่อสู้ภัยโควิด” แล้ว 8.9 พันล้านบาท ช่วยเหลือเกษตรกรเกือบ 9 แสนราย</a><br><br>
-                                        <a href="https://www.prachachat.net/finance/news-685086" target="_blank">ธ.ก.ส. อนุมัติ “สินเชื่อสู้ภัยโควิด” แล้ว 8.9 พันล้านบาท ช่วยเหลือเกษตรกรเกือบ 9 แสนราย</a><br><br>
+                                        <a href="https://www.prachachat.net/finance/news-685086" target="_blank">ธ.ก.ส. อนุมัติ “สินเชื่อสู้ภัยโควิด” แล้ว 8.9 พันล้านบาท ช่วยเหลือเกษตรกรเกือบ 9 แสนราย</a> <br>
+                                
                                         <!-- <hr class="solidfooter"> 
                                         <img class="newrelese" src="img/killthislove.png">
                                         <p>Kill This Love</p> -->
