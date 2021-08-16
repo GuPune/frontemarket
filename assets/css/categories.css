@@ -1,4 +1,29 @@
-.hrsection{
+
+.row.categoryweb{
+    justify-content: center;
+    top: 10px;
+}
+
+.row.categorymobile{
+    justify-content: center;
+    margin-top: 10px;
+
+}
+
+.cateimg{
+    width: 100%;
+    border-radius: 20px;
+
+}
+
+
+.cateimg:hover{
+    transform: scale(1.1);
+    transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* .hrsection{
     border: 1px solid rgb(226, 226, 226);
     border-radius: 30px;
     width: auto;
@@ -65,3 +90,8 @@
 
 
 
+
+
+
+
+  */
