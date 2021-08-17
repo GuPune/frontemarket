@@ -5,8 +5,6 @@
     <center><div class="row adsweb col-9">
 
 
-
-      
      
             <div class="carousel">
               <ul class="slides">

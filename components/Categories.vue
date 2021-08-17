@@ -30,12 +30,6 @@
 
             </div>
 
-
-            <div class="col-sm">
-              <img class="cateimg" src="../assets/cate2.png">
-
-            </div>
-
        
 
             

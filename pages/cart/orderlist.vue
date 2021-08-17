@@ -10,9 +10,11 @@
             <div class="card shopping-cart">
                 
                         <div class="card-header text-dark">
-                            <input type="checkbox" id="vehicle2" name="vehicle2" value="market">
-                            <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-                            <strong>ร้านที่ 1</strong>
+                            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                            <label for="vehicle1">  <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                            <strong>ร้านที่ 1</strong></label>
+
+                          
                         </div>
                         <div class="card-body">
                                 <!-- PRODUCT -->
@@ -92,10 +94,12 @@
                      <div class="card shopping-cart">
                 
                         <div class="card-header text-dark">
-                            <input type="checkbox" id="vehicle2" name="vehicle2" value="market">
-                            <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-                            <strong>ร้านที่ 2</strong>
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="two">
+                            <label for="vehicle2">  <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                            <strong>ร้านที่ 2</strong></label>
                         </div>
+
+
                         <div class="card-body">
                                 <!-- PRODUCT -->
                                 <div class="row">

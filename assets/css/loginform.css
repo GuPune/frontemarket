@@ -1,4 +1,4 @@
-.container.loginformweb{
+/* .container.loginformweb{
     width: 30%;
     height: auto;
     background-color: rgb(227, 236, 255);
@@ -6,7 +6,7 @@
     padding: 20px;
     border-radius: 20px;
     justify-content: center;
-}
+} */
 .btnn{
     background-color:#EF7318;
     color: whitesmoke;
@@ -14,7 +14,7 @@
   
 }
 
-
+/* 
 .container.loginformmobile{
     width:95%;
     height: auto;
@@ -23,4 +23,9 @@
     padding: 20px;
     border-radius: 20px;
     justify-content: center;
+} */
+
+
+.container.loginform{
+    margin-top: 10px;
 }

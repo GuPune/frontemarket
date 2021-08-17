@@ -8,8 +8,60 @@
 <section id="Loginform">
 
     <Nav />
+
+
+      <div class="container forms">
+  <form>
+       <div class="alert alert-danger" role="alert" v-if="alert.message">
+                        ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง !
+                        </div>
+
+    <div class="row">
+      <h5 style="color: #171c24;">เข้าสู่ระบบ</h5>
+      <div class="input-group input-group-icon">
+        <input 
+        placeholder="ชื่อผู้ใช้งาน" type="text" v-model="form.email"
+            :error-messages="EmailErrors"
+             required
+              :class="{ 'is-invalid': $v.form.email.$error}"
+               @input="$v.form.email.$touch()"
+             @blur="$v.form.email.$touch()"/>
+        <div class="input-icon"><i style="color: #005dc0;" class="fa fa-user"></i></div>
+      </div>
+
+        
+      
+      <div class="input-group input-group-icon">
+        <input type="password" placeholder="รหัสผ่าน"
+        v-model="form.password"
+         :error-messages="PassErrors"
+         required
+          :class="{ 'is-invalid': $v.form.password.$error}"
+        @input="$v.form.password.$touch()"
+        @blur="$v.form.password.$touch()" >
+        <div class="input-icon"><i style="color: #005dc0;" class="fa fa-key"></i></div>
+
+
+         <label @click="showmodal()"><a href="#forgotpass">ลืมรหัสผ่าน?</a></label><br>
+      </div>
+      
+
+    </div>
     
-            <div class="row loginformweb">
+
+
+    <center>
+    <button class="btn btn-primary" @click="login()"><span>เข้าสู่ระบบ</span></button>
+    <p>คุณมีบัญชีแล้วใช่หรือไม่ ?  <nuxt-link to="userregis"><a href="">สมัครสมาชิก</a></nuxt-link></p></center>
+
+  
+  </form>
+</div>
+
+
+
+    
+            <!-- <div class="row loginformweb">
                         <div class="container loginformweb">
                          <div class="alert alert-danger" role="alert" v-if="alert.message">
                         ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง !
@@ -60,13 +112,13 @@
                 
                
 
-              </div>
+              </div> -->
 
 
                 <!-- ----------------------------------------Mobile-------------------------------------------------------- -->
 
 
-              <div class="row loginformmobile">
+              <!-- <div class="row loginformmobile">
 
                        <div class="container loginformmobile">
                             <div class="col-sm">
@@ -101,7 +153,7 @@
                         </div>
                         </div>
 
-              </div>
+              </div> -->
 
 
               
