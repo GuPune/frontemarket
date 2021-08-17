@@ -2,102 +2,198 @@
 <section id="Confirmorder">
      <Nav />
 
-            <div class="row confirmorderweb">
-                    <div class="container confirmorderweb">
+           <!-- --------------------------------store 1--------------------------------- -->
+    <div class="container shopcartsweb">
 
-                            <div class="address">
-                                <h5> <i class="fa fa-map-marker" aria-hidden="true"></i> ที่อยู่</h5>
+             <div class="card shopping-cart">
 
-                                        <table id="customers">
-                                                    <tr>
-                                                        <th>200/217 ถนน ชัยพฤกษ์ ตำบลในเมือง อำเภอเมืองขอนแก่น ขอนแก่น 40000</th>
-                                                        <th><button type="button" class="btn btn-warning">เปลี่ยน</button></th>
-                                                        
-                                                    </tr>
-                                                   
-                                    
-                                        </table>
+                                    <div class="card-footer">
+                                            <div class="coupon col-md-12 col-sm-12 no-padding-left pull-left">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <h5> <i class="fa fa-map-marker" aria-hidden="true"></i> ที่อยู่</h5>
+                                                        <p>200/217 ถนน ชัยพฤกษ์ ตำบลในเมือง อำเภอเมืองขอนแก่น ขอนแก่น 40000</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="pull-right" style="margin: 10px">
+                                                <a href="" class="btn btn-warning pull-right">เปลี่ยนที่อยู่</a>
+                                            </div>
+                                        </div>
+             </div>
+    
+            <div class="card shopping-cart">
+                
+                        <div class="card-header text-dark">
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="market">
+                            <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                            <strong>ร้านที่ 1</strong>
+                        </div>
+                        <div class="card-body">
+                                <!-- PRODUCT -->
+                                <div class="row">
+                                    <div class="col-12 col-sm-12 col-md-2 text-center">
+                                            <img class="img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHYB4yOhfM-93z9SCPAv3CZIdJCQDNOcPg1w&usqp=CAU" alt="prewiew" width="120" height="80">
+                                    </div>
+                                    <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
+                                        <h5 class="product-name"><strong>ชื่อสินค้า</strong></h5>
+                                        <h6>
+                                            <small>รายละเอียดสินค้า</small>
+                                        </h6>
+                                    </div>
+                                    <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
+                                        <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
+                                            <h6><strong>25.00 <span class="text-muted">x</span></strong></h6>
+                                        </div>
+                                        <div class="col-4 col-sm-4 col-md-4">
+                                            <div class="quantity">
+                                                <input type="button" value="+" class="plus">
+                                                <input type="number" step="1" max="99" min="1" value="1" title="Qty" class="qty"
+                                                    size="4">
+                                                <input type="button" value="-" class="minus">
+                                            </div>
+                                        </div>
+                                        <div class="col-2 col-sm-2 col-md-2 text-right">
+                                            <button type="button" class="btn btn-outline-danger btn-xs">
+                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <!-- END PRODUCT -->
+                                <!-- PRODUCT -->
+                                <div class="row">
+                                    <div class="col-12 col-sm-12 col-md-2 text-center">
+                                            <img class="img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKwQ_-l2AuQpoBqeJdoVe2E9CZjFog3k5umw&usqp=CAU" alt="prewiew" width="120" height="80">
+                                    </div>
+                                    <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
+                                        <h5 class="product-name"><strong>ชื่อสินค้า</strong></h5>
+                                        <h6>
+                                            <small>รายละเอียดสินค้า</small>
+                                        </h6>
+                                    </div>
+                                    <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
+                                        <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
+                                            <h6><strong>25.00 <span class="text-muted">x</span></strong></h6>
+                                        </div>
+                                        <div class="col-4 col-sm-4 col-md-4">
+                                            <div class="quantity">
+                                                <input type="button" value="+" class="plus">
+                                                <input type="number" step="1" max="99" min="1" value="1" title="Qty" class="qty"
+                                                    size="4">
+                                                <input type="button" value="-" class="minus">
+                                            </div>
+                                        </div>
+                                        <div class="col-2 col-sm-2 col-md-2 text-right">
+                                            <button type="button" class="btn btn-outline-danger btn-xs">
+                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
 
-                            </div>
+                                <hr>
+                        </div>
 
-
-                              <div class="order">
-                                            <h5><input type="checkbox" id="vehicle2" name="vehicle2" value="market"> <i class="fa fa-shopping-basket" aria-hidden="true"></i> ร้านค้าที่ 1</h5>
-
-                                        <table id="customers">
-                                                    <tr>
-                                                        <th>ชื่อสินค้า</th>
-                                                        <th>ราคา</th>
-                                                        <th>จำนวน</th>
-                                                        
-                                                    </tr>
-                                                    <tr>
-                                                        <td><input type="checkbox" id="vehicle2" name="vehicle2" value="market"> ชื่อสินค้า...</td>
-                                                        <td>80 ฿</td>
-                                                        <td>2</td>
-                                                        <!-- <td><button type="button" class="btn btn-danger">ลบสินค้า</button></td> -->
-                                                    </tr>
-                                                    <tr>
-                                                        <td><input type="checkbox" id="vehicle2" name="vehicle2" value="market"> ชื่อสินค้า...</td>
-                                                        <td>80 ฿</td>
-                                                        <td>2</td>
-                                                        <!-- <td><button type="button" class="btn btn-danger">ลบสินค้า</button></td> -->
-                                                    </tr>
-                                                    <tr>
-                                                        <td><input type="checkbox" id="vehicle2" name="vehicle2" value="market"> ชื่อสินค้า...</td>
-                                                        <td>80 ฿</td>
-                                                        <td>2</td>
-                                                        <!-- <td><button type="button" class="btn btn-danger">ลบสินค้า</button></td> -->
-                                                    </tr>
-                                    
-                                                </table> <br>
-
-
-                                            <hr> <br>
+                     
+                </div>
 
 
 
-                                            <h5><input type="checkbox" id="vehicle2" name="vehicle2" value="market"> <i class="fa fa-shopping-basket" aria-hidden="true"></i> ร้านค้าที่ 2</h5>
-
-                                            <table id="customers">
-                                                    <tr>
-                                                        <th>ชื่อสินค้า</th>
-                                                        <th>ราคา</th>
-                                                        <th>จำนวน</th>
-                                                        
-                                                    </tr>
-                                                    <tr>
-                                                        <td><input type="checkbox" id="vehicle2" name="vehicle2" value="market"> ชื่อสินค้า...</td>
-                                                        <td>80 ฿</td>
-                                                        <td>2</td>
-                                                        <!-- <td><button type="button" class="btn btn-danger">ลบสินค้า</button></td> -->
-                                                    </tr>
-                                                    <tr>
-                                                        <td><input type="checkbox" id="vehicle2" name="vehicle2" value="market"> ชื่อสินค้า...</td>
-                                                        <td>80 ฿</td>
-                                                        <td>2</td>
-                                                        <!-- <td><button type="button" class="btn btn-danger">ลบสินค้า</button></td> -->
-                                                    </tr>
-                                                    <tr>
-                                                        <td><input type="checkbox" id="vehicle2" name="vehicle2" value="market"> ชื่อสินค้า...</td>
-                                                        <td>80 ฿</td>
-                                                        <td>2</td>
-                                                        <!-- <td><button type="button" class="btn btn-danger">ลบสินค้า</button></td> -->
-                                                    </tr>
-                                    
-                                                </table>
-
-                            </div>
 
 
+                <!-- --------------------------------store 2--------------------------------- -->
+                     <div class="card shopping-cart">
+                
+                        <div class="card-header text-dark">
+                            <input type="checkbox" id="vehicle2" name="vehicle2" value="market">
+                            <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                            <strong>ร้านที่ 2</strong>
+                        </div>
+                        <div class="card-body">
+                                <!-- PRODUCT -->
+                                <div class="row">
+                                    <div class="col-12 col-sm-12 col-md-2 text-center">
+                                            <img class="img-responsive" src="https://www.vkkarnkaset.com/uploads/4596/images/2325.jpg" alt="prewiew" width="120" height="80">
+                                    </div>
+                                    <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
+                                        <h5 class="product-name"><strong>ชื่อสินค้า</strong></h5>
+                                        <h6>
+                                            <small>รายละเอียดสินค้า</small>
+                                        </h6>
+                                    </div>
+                                    <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
+                                        <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
+                                            <h6><strong>25.00 <span class="text-muted">x</span></strong></h6>
+                                        </div>
+                                        <div class="col-4 col-sm-4 col-md-4">
+                                            <div class="quantity">
+                                                <input type="button" value="+" class="plus">
+                                                <input type="number" step="1" max="99" min="1" value="1" title="Qty" class="qty"
+                                                    size="4">
+                                                <input type="button" value="-" class="minus">
+                                            </div>
+                                        </div>
+                                        <div class="col-2 col-sm-2 col-md-2 text-right">
+                                            <button type="button" class="btn btn-outline-danger btn-xs">
+                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <!-- END PRODUCT -->
+                                <!-- PRODUCT -->
+                                <div class="row">
+                                    <div class="col-12 col-sm-12 col-md-2 text-center">
+                                            <img class="img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFZc1mNJh9yRFfEanTveuI3oy5Cp0sVBYU2w&usqp=CAU" alt="prewiew" width="120" height="80">
+                                    </div>
+                                    <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
+                                        <h5 class="product-name"><strong>ชื่อสินค้า</strong></h5>
+                                        <h6>
+                                            <small>รายละเอียดสินค้า</small>
+                                        </h6>
+                                    </div>
+                                    <div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
+                                        <div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
+                                            <h6><strong>25.00 <span class="text-muted">x</span></strong></h6>
+                                        </div>
+                                        <div class="col-4 col-sm-4 col-md-4">
+                                            <div class="quantity">
+                                                <input type="button" value="+" class="plus">
+                                                <input type="number" step="1" max="99" min="1" value="1" title="Qty" class="qty"
+                                                    size="4">
+                                                <input type="button" value="-" class="minus">
+                                            </div>
+                                        </div>
+                                        <div class="col-2 col-sm-2 col-md-2 text-right">
+                                            <button type="button" class="btn btn-outline-danger btn-xs">
+                                                <i class="fa fa-trash" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
 
-                             <div class="pay">
-                                <h5> <i class="fa fa-money" aria-hidden="true"></i> เลือกวิธีชำระเงิน</h5>
-                                            <button type="button" class="btn btn-primary">เก็บเงินปลายทาง</button>
-                                            <button type="button" class="btn btn-primary">โอนเงินผ่านธนาคาร</button>
-                                            <hr>
+                                <hr>
+                        </div>
 
-                                        <table id="customers">
+                     
+                </div>
+
+
+                     <div class="card shopping-cart">
+
+                                    <div class="card-footer">
+                                        
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <h5> <i class="fa fa-money" aria-hidden="true"></i> เลือกวิธีชำระเงิน</h5>
+                                                            <button type="button" class="btn btn-primary">เก็บเงินปลายทาง</button>
+                                                            <button type="button" class="btn btn-primary">โอนเงินผ่านธนาคาร</button>
+
+
+                                                <table id="customers">
                                                     <tr>
                                                         <th>เลือกธนาคาร</th>
                                                     </tr>
@@ -132,40 +228,37 @@
                                                     </tr>
                                     
                                                 </table>
-                                                        
-                                                
-                                                   
-                                    
-
-                            </div>
-
-
-                             <div class="confirm">
-                                        <table id="customers">
-                                                    <tr>
-                                                        <th>ยอดรวม</th>
-                                                        <th></th>
-                                                        
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td>1500 ฿</td>
-                                                        <td><button type="button" class="btn btn-success">ยืนยันการสั่งซื้อ</button></td>
-                                                        <!-- <td><button type="button" class="btn btn-danger">ลบสินค้า</button></td> -->
-                                                    </tr>
-                                                   
-                                    
-                                        </table>
-                                        
-
-                            </div>
-
-                            
-
-
+                                                          
+                                                    </div>
+                                                </div>
+                                            </div>
+                                       
                     </div>
 
-              </div> <br>
+
+                <!-- <--------------------------footer------------------------------> 
+                <div class="card shopping-cart">
+                     <div class="card-footer">
+                         
+                            <div class="pull-right" style="margin: 10px">
+                                <nuxt-link to="comfirmorder" href="" class="btn btn-success pull-right">ยืนยันการสั่งซื้อ</nuxt-link>
+                                <div class="pull-right" style="margin: 5px">
+                                    <b>ที่ต้องชำระ :</b> 50.00฿
+                                </div>
+                            </div>
+                        </div>
+                
+                        
+
+                     
+                </div>
+
+
+
+
+
+
+    </div>
 
 
         <Footer />

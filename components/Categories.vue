@@ -19,6 +19,27 @@
 
             </div>
 
+
+            <div class="col-sm">
+              <img class="cateimg" src="../assets/cate1.png">
+
+            </div>
+
+            <div class="col-sm">
+              <img class="cateimg" src="../assets/cate2.png">
+
+            </div>
+
+
+            <div class="col-sm">
+              <img class="cateimg" src="../assets/cate2.png">
+
+            </div>
+
+       
+
+            
+
       
 
       
@@ -29,20 +50,47 @@
 
    <center> <div class="row categorymobile">
 
-            <div class="col">
-              <img class="cateimg" src="../assets/cate1.png">
+          <div class="row">
+            
+              <div class="col">
+                <img class="cateimg" src="../assets/cate1.png">
 
-            </div>
+              </div>
 
-            <div class="col">
-              <img class="cateimg" src="../assets/cate2.png">
+              <div class="col">
+                <img class="cateimg" src="../assets/cate2.png">
 
-            </div>
+              </div>
 
-            <div class="col">
-              <img class="cateimg" src="../assets/cate3.png">
+              <div class="col">
+                <img class="cateimg" src="../assets/cate3.png">
 
-            </div>
+              </div>
+
+          </div>
+
+
+          <div class="row">
+            
+              <div class="col">
+                <img class="cateimg" src="../assets/cate1.png">
+
+              </div>
+
+              <div class="col">
+                <img class="cateimg" src="../assets/cate2.png">
+
+              </div>
+
+              <div class="col">
+                <img class="cateimg" src="../assets/cate3.png">
+
+              </div>
+
+          </div>
+
+
+            
 
     
 

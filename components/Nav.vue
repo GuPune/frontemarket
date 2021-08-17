@@ -4,8 +4,16 @@
     <section class="header-main border-bottom">
         <div class="container-fluid">
             <div class="row align-items-center">
-                <div class="col-sm-4"> <a href="#" class="brand-wrap" data-abc="true">
-                        <!-- <img class="logo" src="http://ampexamples.com/data/upload/2017/08/bootstrap2_logo.png"> --> <span class="logo"><img class="imglogo" src="../assets/logohori2.png"></span> </a> </div>
+                <div class="col-sm-4"> 
+                  <a href="#" class="brand-wrap" data-abc="true">
+                        <!-- <img class="logo" src="http://ampexamples.com/data/upload/2017/08/bootstrap2_logo.png"> --> 
+                        <span class="logo">
+                          E-MARKET PLACE
+                          <!-- <img class="imglogo" src="../assets/logohori2.png"> -->
+                          </span> 
+                  </a> 
+                </div>
+
                 <div class="col-sm-4">
 
                     <form action="#" class="search-wrap">
@@ -30,13 +38,13 @@
 
 
                             <span class="vl"></span> 
-                            <a class="nav-link nav-user-img" href="#" data-toggle="modal" data-target="#login-modal" data-abc="true">
+                            <nuxt-link to="form/shopregis" class="nav-link nav-user-img" href="#" data-toggle="modal" data-target="#login-modal" data-abc="true">
                               <span class="login">ขายสินค้ากับเรา</span>
-                            </a>
+                            </nuxt-link>
 
-                            <a target="_blank" href="#" data-abc="true" class="nav-link widget-header"> 
+                            <nuxt-link to="cart/orderlist"  class="nav-link widget-header"> 
                               <i class="fas fa fa-cart-plus" aria-hidden="true"></i>
-                            </a><span class="vl"></span>
+                            </nuxt-link><span class="vl"></span>
 
 
 
@@ -45,9 +53,9 @@
                               <span class="login">
                                 <div class="dropdown"><i class="fas fa fa-user-circle-o" aria-hidden="true"></i>
                                   <div class="dropdown-content">
-                                  <a href="#">เข้าสู่ระบบ</a>
-                                  <a href="#">สมัครสมาชิก</a>
-                                  <a href="#">จัดการบัญชี</a>
+                                  <nuxt-link to="form/login">เข้าสู่ระบบ</nuxt-link>
+                                  <nuxt-link to="form/userregis">สมัครสมาชิก</nuxt-link>
+                                  <nuxt-link to="profile/userprofile">จัดการบัญชี</nuxt-link>
                                   <a href="#">ออกจากระบบ</a>
                                   </div>
                                 </div>
