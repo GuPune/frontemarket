@@ -52,19 +52,6 @@
   right: -10px
 }
 
-.notify {
-  position: absolute;
-  top: -4px;
-  right: -10px;
-  display: inline-block;
-  padding: .25em .6em;
-  font-size: 12px;
-  line-height: 1;
-  text-align: center;
-  border-radius: 3rem;
-  color: #fff;
-  background-color: #fa3434
-}
 
 .mr-3,
 .mx-3 {
