@@ -16,7 +16,7 @@
                                                             <h6 style="margin-top:10px;">เมล็ดพันธุ์ผักบุ้งแก้ว</h6>
                                                             <p class="price">10 ฿</p>
                                                             <p>รายละเอียดสินค้า</p>
-                                                            <p><button class="addcart">เพิ่มลงตะกร้า</button></p>
+                                                            <p><nuxt-link to="product/productdetail"><button class="addcart">เพิ่มลงตะกร้า</button></nuxt-link></p>
                                                                                                                 
                                                    
                                                         
