@@ -71,11 +71,6 @@ const ApiService = {
         });
     },
 
-
-
-
-
-
     delete(resource, params) {
 
         return axios.delete('http://127.0.0.1:8000/api/'+resource + `/${params}`, { headers: authHeader() }).catch(function(error) {
@@ -83,23 +78,12 @@ const ApiService = {
         });
     },
 
-
     forgot(resource, params) {
-
-    
       return Vue.axios.post('http://127.0.0.1:8000/api/'+resource, params,{ headers:authHeader() });
-       // return Vue.axios.post(`http://3.131.97.206/api/${resource}`, params);
-
-    //    return axios
-    //    .post("http://127.0.0.1:8000/api/"+resource, params)
-    //    .then((response) => {
-    //        console.log(response.data);
-        
-    //    })
-    //    .catch((err) => {
-    //      console.log(err.response)
-    //    });
       },
+    register(resource, params) {
+        return Vue.axios.post('http://127.0.0.1:8000/api/'+resource, params,{ headers:authHeader() });
+    },
   
 
     mutations: {

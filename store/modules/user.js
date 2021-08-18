@@ -1,7 +1,7 @@
 
 import { UserService }  from "../../services/user.service";
 import {
-    CHECK_LOGIN,FORGOTEMAIL,CLEARALRET
+    CHECK_LOGIN,FORGOTEMAIL,CLEARALRET,REGISSHOP
 
 } from "../actions.type.js";
 import {
@@ -36,6 +36,10 @@ const actions = {
     },
     async [CLEARALRET](context,payload) {
         context.commit(SET_CLEARALERT);
+     },
+     async [REGISSHOP](context,payload) {
+      const { data } = await UserService.register(payload);
+      return data;
      },
 
 };
