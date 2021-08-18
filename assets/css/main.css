@@ -74,6 +74,13 @@ body {
     .section-slider.web{
       display: none;
     }
+
+
+    
+  .webnav{
+    display: none;
+  }
+
   
    
   }
@@ -124,6 +131,13 @@ body {
   .section-slider.mobile{
     display: none;
   }
+
+
+  
+  .mobilenav{
+    display: none;
+  }
+
 
 
 
@@ -177,6 +191,11 @@ body {
   }
 
   .section-slider.mobile{
+    display: none;
+  }
+
+
+  .mobilenav{
     display: none;
   }
 

@@ -5,61 +5,69 @@
   <div class="row productdetailweb">
       <div class="col-9">
      
-     
-         
-		<div class="cardproductdetail">
-             <nuxt-link to="/product/store"><a href="" class="product-title">ชื่อร้านค้า</a></nuxt-link>
-				<div class="wrapper row">
-					<div class="preview col-md-6">
 
-						  <div class="tab-pane active" id="pic-1"><img class="productpreview" src="https://image.makewebeasy.net/makeweb/0/f5weapUYE/PRODUCTS/%E0%B9%80%E0%B8%A1%E0%B8%A5%E0%B9%87%E0%B8%94%E0%B8%9F%E0%B8%B1%E0%B8%81%E0%B8%97%E0%B8%AD%E0%B8%87%E0%B8%AD%E0%B8%9A%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%9C%E0%B8%B6%E0%B9%89%E0%B8%87_25g_pack.jpg" /></div>
-						  
-			
-						<ul class="preview-thumbnail nav nav-tabs">
-						  <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="https://dy.lnwfile.com/0tii3i.jpg" /></a></li>
-						  <li><a data-target="#pic-2" data-toggle="tab"><img src="https://dy.lnwfile.com/0tii3i.jpg" /></a></li>
-						  <li><a data-target="#pic-3" data-toggle="tab"><img src="https://dy.lnwfile.com/0tii3i.jpg" /></a></li>
-						 
-						</ul>
-						
-					</div>
-					<div class="details col-md-6">
-						<h5 class="product-title">ชื่อสินค้า</h5>
-                        <h5 class="price">ราคา: <span>฿180</span></h5>
+          <div class="card productdetail">
+              <div class="row">
+            
+                <div class="col-sm border-right">
+                    <article class="gallery-wrap"> 
+                    <div class="img-big-wrap">
+                      <div> <a href="#"><center><img src="https://dy.lnwfile.com/0tii3i.jpg"></center></a></div>
+                    </div> <!-- slider-product.// -->
+                    <div class="img-small-wrap">
+                      <div class="item-gallery"> <img src="https://dy.lnwfile.com/0tii3i.jpg"> </div>
+                      <div class="item-gallery"> <img src="https://dy.lnwfile.com/0tii3i.jpg"> </div>
+                      <div class="item-gallery"> <img src="https://dy.lnwfile.com/0tii3i.jpg"> </div>
+                      <div class="item-gallery"> <img src="https://dy.lnwfile.com/0tii3i.jpg"> </div>
+                    </div> <!-- slider-nav.// -->
+                    </article> <!-- gallery-wrap .end// -->
+                </div>
 
-						<div class="rating">
-							<div class="stars">
-								<span class="fa fa-star checked"></span>
-								<span class="fa fa-star checked"></span>
-								<span class="fa fa-star checked"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-							</div>
+                <div class="col-sm">
+                  <article class="card-body p-5">
+                    <h3 class="title mb-3">ชื่อสินค้า</h3>
+                     <nuxt-link to="/product/store"><small><strong>ไปยังร้านค้า</strong></small></nuxt-link>
 
-							<!-- <span class="review-no">ราคาสินค้า</span> -->
-						</div>
+                  <p class="price-detail-wrap"> 
+                    <span class="price h3 text-warning"> 
+                      <span class="currency">ราคา ฿</span><span class="num">25</span>
+                    </span> 
+                    <span>/20 กรัม</span> 
+                  </p> <!-- price-detail-wrap .// -->
+                  <dl class="item-property">
+                    <h5>รายละเอียดสินค้า</h5>
+                    <p>ครื่องมือสำหรับขุดดิน พรวนดิน หรือถากหญ้า เป็นต้น ทำด้วยเหล็กหน้าแบนกว้างมีด้ามยาว.</p>
+                  </dl>
+       
+                  <dl class="param param-feature">
+                    <h5>สินค้าในคลัง</h5>
+                    <p>30</p>
+                  </dl>  <!-- item-property-hor .// -->
+                  <dl class="param param-feature">
+                    <h5>จัดส่งจาก</h5>
+                    <p>ยางตลาด กาฬสินธุ์</p>
+                  </dl>  <!-- item-property-hor .// -->
 
-                        <h5 class="product-title">รายละเอียดสินค้า</h5>
+                   <hr>
 
-						<p class="product-description">ครื่องมือสำหรับขุดดิน พรวนดิน หรือถากหญ้า เป็นต้น ทำด้วยเหล็กหน้าแบนกว้างมีด้ามยาว.</p>
-						
-						  <h6 class="price">สินค้าในคลัง : <span>50</span></h6><br><br><br>
-					
+                  <dl class="param param-feature">
+                     <h5>จำนวน : </h5>
+                      <input type="number" id="quantity" class="form-control form-control-sm" style="width:70px;" name="quantity" min="1" max="500">
+                  </dl>  <!-- item-property-hor .// -->
 
-					
+            
+              <a href="#" class="btn btn-lg btn-primary text-uppercase"><i class="fa fa-cart-arrow-down" ></i> Add to cart</a>
+            </article> <!-- card-body.// -->
+                </div> <!-- col.// -->
+              </div> <!-- row.// -->
+            </div> <!-- card.// -->
 
-						<div class="action">
-                            <input type="number" id="tentacles" name="tentacles" min="10" max="100">&nbsp;
-							<button class="btn btn-success" type="submit">เพิ่มในตะกร้า</button>
-						</div>
-					</div>
-				</div>
-		
-		</div>
+
+
+
 
 
       </div>
-
 
 
   </div>
@@ -69,62 +77,75 @@
 
 
 
-        <div class="row productdetailmobile">
+      <div class="row productdetailmobile">
      
-     
-     
-         
-		<div class="cardproductdetail">
-             <nuxt-link to="/product/store"><a href="" class="product-title">ชื่อร้านค้า</a></nuxt-link>
-				<div class="wrapper row">
-					<div class="preview col-md-6">
-                      
-						
-						 <div class="tab-pane active" id="pic-1"><img class="productpreview" src="https://dy.lnwfile.com/0tii3i.jpg" /></div>
-						  
-			
-						<ul class="preview-thumbnail nav nav-tabs">
-						  <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="https://dy.lnwfile.com/0tii3i.jpg" /></a></li>
-						  <li><a data-target="#pic-2" data-toggle="tab"><img src="https://dy.lnwfile.com/0tii3i.jpg" /></a></li>
-						  <li><a data-target="#pic-3" data-toggle="tab"><img src="https://dy.lnwfile.com/0tii3i.jpg" /></a></li>
-                       
-						 
-						</ul>
-						
-					</div>
-					<div class="details col-md-6">
-						<h5 class="product-title">ชื่อสินค้า</h5>
-                        <h5 class="price">ราคา: <span>฿180</span></h5>
+          <div class="col-12">
 
-						<div class="rating">
-							<div class="stars">
-								<span class="fa fa-star checked"></span>
-								<span class="fa fa-star checked"></span>
-								<span class="fa fa-star checked"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-							</div>
+            
+         <div class="card productdetail">
+              <div class="row">
 
-							<!-- <span class="review-no">ราคาสินค้า</span> -->
-						</div>
+                <div class="col-sm-4 border-right">
+                    <article class="gallery-wrap"> 
+                    <div class="img-big-wrap">
+                      <div> <a href="#"><center><img src="https://dy.lnwfile.com/0tii3i.jpg"></center></a></div>
+                    </div> <!-- slider-product.// -->
+                    <div class="img-small-wrap">
+                      <div class="item-gallery"> <img src="https://dy.lnwfile.com/0tii3i.jpg"> </div>
+                      <div class="item-gallery"> <img src="https://dy.lnwfile.com/0tii3i.jpg"> </div>
+                      <div class="item-gallery"> <img src="https://dy.lnwfile.com/0tii3i.jpg"> </div>
+                      <div class="item-gallery"> <img src="https://dy.lnwfile.com/0tii3i.jpg"> </div>
+                    </div> <!-- slider-nav.// -->
+                    </article> <!-- gallery-wrap .end// -->
+                </div>
 
-                        <h5 class="product-title">รายละเอียดสินค้า</h5>
+                <div class="col-sm-8">
+                  <article class="card-body p-5">
+                    <h3 class="title mb-3">ชื่อสินค้า</h3>
 
-						<p class="product-description">ครื่องมือสำหรับขุดดิน พรวนดิน หรือถากหญ้า เป็นต้น ทำด้วยเหล็กหน้าแบนกว้างมีด้ามยาว.</p>
-						
-						  <h6 class="price">สินค้าในคลัง : <span>50</span></h6><br><br><br>
-					
+                  <p class="price-detail-wrap"> 
+                    <span class="price h3 text-warning"> 
+                      <span class="currency">ราคา ฿</span><span class="num">25</span>
+                    </span> 
+                    <span>/20 กรัม</span> 
+                  </p> <!-- price-detail-wrap .// -->
+                  <dl class="item-property">
+                    <h5>รายละเอียดสินค้า</h5>
+                    <p>ครื่องมือสำหรับขุดดิน พรวนดิน หรือถากหญ้า เป็นต้น ทำด้วยเหล็กหน้าแบนกว้างมีด้ามยาว.</p>
+                  </dl>
+       
+                  <dl class="param param-feature">
+                    <h5>สินค้าในคลัง</h5>
+                    <p>30</p>
+                  </dl>  <!-- item-property-hor .// -->
+                  <dl class="param param-feature">
+                    <h5>จัดส่งจาก</h5>
+                    <p>ยางตลาด กาฬสินธุ์</p>
+                  </dl>  <!-- item-property-hor .// -->
 
-					
+                   <hr>
 
-						<div class="action">
-                            <input type="number" id="tentacles" name="tentacles" min="10" max="100">&nbsp;
-							<button class="btn btn-success" type="submit">เพิ่มในตะกร้า</button>
-						</div>
-					</div>
-				</div>
-		
-		</div>
+                  <dl class="param param-feature">
+                     <h5>จำนวน : </h5>
+                      <input type="number" id="quantity" class="form-control form-control-sm" style="width:70px;" name="quantity" min="1" max="500">
+                  </dl>  <!-- item-property-hor .// -->
+
+            
+              <a href="#" class="btn btn-lg btn-primary text-uppercase"><i class="fa fa-cart-arrow-down" ></i> Add to cart</a>
+            </article> <!-- card-body.// -->
+                </div> <!-- col.// -->
+              </div> <!-- row.// -->
+            </div> <!-- card.// -->
+
+
+
+                
+
+
+
+
+
+      </div>
 
 
    
