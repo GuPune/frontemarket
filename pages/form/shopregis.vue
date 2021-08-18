@@ -20,7 +20,7 @@
 
 
     <div class="input-group input-group-icon">
-        <input type="text" placeholder="นามสกุล" v-model="form.last_name" 
+        <input type="text" class="form-control" placeholder="นามสกุล" v-model="form.last_name" 
                                                                          :error-messages="lastNameErrors" required
                                                                          :class="{ 'is-invalid': $v.form.last_name.$error}"
                                                                          @input="$v.form.last_name.$touch()"
@@ -39,7 +39,7 @@
     <div class="row">
       
       <div class="input-group input-group-icon">
-        <input type="text" placeholder="ชื่อร้านค้า" v-model="form.shop_name" 
+        <input type="text" class="form-control" placeholder="ชื่อร้านค้า" v-model="form.shop_name" 
                                                                          :error-messages="ShopnameErrors" required
                                                                          :class="{ 'is-invalid': $v.form.shop_name.$error}"
                                                                          @input="$v.form.shop_name.$touch()"
@@ -48,7 +48,7 @@
       </div>
 
        <div class="input-group input-group-icon">
-        <input type="text" placeholder="เบอร์ติดต่อ" v-model="form.tel" 
+        <input type="text" class="form-control" placeholder="เบอร์ติดต่อ" v-model="form.tel" 
                                                                          :error-messages="telErrors" required
                                                                          :class="{ 'is-invalid': $v.form.tel.$error}"
                                                                          @input="$v.form.tel.$touch()"
@@ -57,7 +57,7 @@
       </div>
 
       <div class="input-group input-group-icon">
-        <input type="text" placeholder="ที่อยู่"/>
+        <input type="text" class="form-control" placeholder="ที่อยู่"/>
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-map-marker"></i></div>
       </div>
 
@@ -70,7 +70,7 @@
     <div class="row">
 
     <div class="input-group input-group-icon">
-        <input type="text" placeholder="อีเมล์"  v-model="form.email" 
+        <input type="text" class="form-control" placeholder="อีเมล์"  v-model="form.email" 
                                                                          :error-messages="EmailErrors" required
                                                                          :class="{ 'is-invalid': $v.form.email.$error}"
                                                                          @input="$v.form.email.$touch()"
@@ -80,7 +80,7 @@
 
 
       <div class="input-group input-group-icon">
-        <input type="password" placeholder="รหัสผ่าน"  v-model="form.password" 
+        <input type="password" class="form-control" placeholder="รหัสผ่าน"  v-model="form.password" 
                                                                          :error-messages="PassErrors" required
                                                                          :class="{ 'is-invalid': $v.form.first_name.$error}"
                                                                          @input="$v.form.first_name.$touch()"

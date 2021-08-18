@@ -19,7 +19,7 @@
     <div class="row">
       <h5 style="color: #171c24;">เข้าสู่ระบบ</h5>
       <div class="input-group input-group-icon">
-        <input 
+        <input class="form-control"
         placeholder="ชื่อผู้ใช้งาน" type="text" v-model="form.email"
             :error-messages="EmailErrors"
              required
@@ -32,7 +32,7 @@
         
       
       <div class="input-group input-group-icon">
-        <input type="password" placeholder="รหัสผ่าน"
+        <input type="password" class="form-control" placeholder="รหัสผ่าน"
         v-model="form.password"
          :error-messages="PassErrors"
          required
@@ -42,8 +42,9 @@
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-key"></i></div>
 
 
-         <label @click="showmodal()"><a href="#forgotpass">ลืมรหัสผ่าน?</a></label><br>
+    
       </div>
+           <label @click="showmodal()"><a href="#forgotpass">ลืมรหัสผ่าน?</a></label><br>
       
 
     </div>

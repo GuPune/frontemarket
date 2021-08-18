@@ -9,12 +9,12 @@
     <div class="row">
       <h5 style="color: #171c24;">สมัครสมาชิก</h5>
       <div class="input-group input-group-icon">
-        <input type="text" placeholder="ชื่อ"/>
+        <input type="text" class="form-control" placeholder="ชื่อ"/>
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-user"></i></div>
       </div>
 
        <div class="input-group input-group-icon">
-        <input type="text" placeholder="นามสกุล"/>
+        <input type="text" class="form-control" placeholder="นามสกุล"/>
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-user"></i></div>
       </div>
 
@@ -25,22 +25,22 @@
         <h6 style="color: #171c24;">วันเกิด</h6>
         <div class="input-group">
           <div class="col-third">
-            <input type="text" placeholder="วัน"/>
+            <input type="text"  class="form-control" placeholder="วัน"/>
           </div>
           <div class="col-third">
-            <input type="text" placeholder="เดือน"/>
+            <input type="text" class="form-control" placeholder="เดือน"/>
           </div>
           <div class="col-third">
-            <input type="text" placeholder="ปี"/>
+            <input type="text" class="form-control" placeholder="ปี"/>
           </div>
         </div>
       </div>
       <div class="col-half">
         <h6 style="color: #171c24;">เพศ</h6>
         <div class="input-group">
-          <input id="gender-male" type="radio" name="gender" value="male"/>
+          <input class="form-control" id="gender-male" type="radio" name="gender" value="male"/>
           <label for="gender-male">ชาย</label>
-          <input id="gender-female" type="radio" name="gender" value="female"/>
+          <input class="form-control" id="gender-female" type="radio" name="gender" value="female"/>
           <label for="gender-female">หญิง</label>
         </div>
       </div>
@@ -50,20 +50,20 @@
     <div class="row">
 
     <div class="input-group input-group-icon">
-        <input type="text" placeholder="เบอร์ติดต่อ"/>
+        <input type="text" class="form-control" placeholder="เบอร์ติดต่อ"/>
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-phone"></i></div>
       </div>
 
 
     <div class="input-group input-group-icon">
-        <input type="text" placeholder="ชื่อผู้ใช้งาน"/>
+        <input type="text" class="form-control" placeholder="ชื่อผู้ใช้งาน"/>
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-user"></i></div>
       </div>
 
         
       
       <div class="input-group input-group-icon">
-        <input type="password" placeholder="รหัสผ่าน"/>
+        <input type="password" class="form-control" placeholder="รหัสผ่าน"/>
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-key"></i></div>
       </div>
 
