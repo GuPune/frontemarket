@@ -3,7 +3,7 @@
 <header class="section-header">
     <section class="header-main border-bottom">
         <div class="container-fluid">
-            <div class="row align-items-center">
+            <div class="row mx-auto">
                 <div class="col-sm-4"> 
                   <a href="#" class="brand-wrap" data-abc="true">
                         <!-- <img class="logo" src="http://ampexamples.com/data/upload/2017/08/bootstrap2_logo.png"> --> 

@@ -4,7 +4,7 @@
          
 
                     <div class="row footer">
-                    <div class="col-11">
+                    <div class="mx-auto col-9">
                         <div class="row">
 
                                     <div class="col-sm-6">

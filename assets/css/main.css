@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Kanit';
-    background-color: #ffe8f3;
+    background-color: #dcd9ed;
     
     /* background-image: url('assets/bg.png');
     background-repeat: no-repeat;
@@ -69,6 +69,11 @@ body {
     .container.profileweb{
       display: none;
     }
+
+
+    .section-slider.web{
+      display: none;
+    }
   
    
   }
@@ -115,6 +120,12 @@ body {
     display: none;
 
   }
+
+  .section-slider.mobile{
+    display: none;
+  }
+
+
 
 }
 
@@ -164,6 +175,11 @@ body {
     display: none;
 
   }
+
+  .section-slider.mobile{
+    display: none;
+  }
+
 
 
 

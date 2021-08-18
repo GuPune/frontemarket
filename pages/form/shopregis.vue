@@ -75,7 +75,7 @@
                                                                          :class="{ 'is-invalid': $v.form.email.$error}"
                                                                          @input="$v.form.email.$touch()"
                                                                          @blur="$v.form.email.$touch()"/>
-        <div class="input-icon"><i style="color: #005dc0;" class="fa fa-phone"></i></div>
+        <div class="input-icon"><i style="color: #005dc0;" class="fa fa-envelope"></i></div>
       </div>
 
 

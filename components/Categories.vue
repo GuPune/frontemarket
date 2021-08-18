@@ -1,78 +1,43 @@
 <template>
   <section id="categories">
     
-    <center><div class="row categoryweb col-9">
-
-   
-    
-        
-            <div class="col-sm-4">
-              <img class="cateimg" src="../assets/cate1.png">
-
+ 
+    <center>       
+      <section class="section-slider web">
+            <div class="slider col-9">
+                <img class="img-slider" src="../assets/cate1.png">
+                <img class="img-slider" src="../assets/cate2.png">
+                <img class="img-slider" src="../assets/cate3.png">
+                <img class="img-slider" src="../assets/cate1.png">
+                <img class="img-slider" src="../assets/cate2.png">
+                <img class="img-slider" src="../assets/cate3.png">
+                <img class="img-slider" src="../assets/cate2.png">
+                <img class="img-slider" src="../assets/cate3.png">
+                <img class="img-slider" src="../assets/cate1.png">
             </div>
+          </section>
+    </center>
 
-            <div class="col-sm-4">
-              <img class="cateimg" src="../assets/cate2.png">
 
+
+    <center>       
+      <section class="section-slider mobile">
+            <div class="slider col-12">
+                <img class="img-slider" src="../assets/cate1.png">
+                <img class="img-slider" src="../assets/cate2.png">
+                <img class="img-slider" src="../assets/cate3.png">
+                <img class="img-slider" src="../assets/cate1.png">
+                <img class="img-slider" src="../assets/cate2.png">
+                <img class="img-slider" src="../assets/cate3.png">
+                <img class="img-slider" src="../assets/cate2.png">
+                <img class="img-slider" src="../assets/cate3.png">
+                <img class="img-slider" src="../assets/cate1.png">
             </div>
-
-            <div class="col-sm-4">
-              <img class="cateimg" src="../assets/cate3.png">
-
-            </div>
-
-<!-- 
-            <div class="col-sm">
-              <img class="cateimg" src="../assets/cate1.png">
-
-            </div>
-
-            <div class="col-sm">
-              <img class="cateimg" src="../assets/cate2.png">
-
-            </div> -->
-
-     
-
-       
-
-            
-
-      
-
-      
-  </div></center>
-
-
-<!-- <------------Mobile---------------------------->
-
-   <center> <div class="row categorymobile">
-
-         
-            <div class="col-sm-4">
-              <img class="cateimg" src="../assets/cate1.png">
-
-            </div>
-
-            <div class="col-sm-4">
-              <img class="cateimg" src="../assets/cate2.png">
-
-            </div>
-
-            <div class="col-sm-4">
-              <img class="cateimg" src="../assets/cate3.png">
-
-            </div>
+          </section>
+    </center>
 
 
 
-            
-
-    
-
-
-
-    </div></center>
 
 
 
