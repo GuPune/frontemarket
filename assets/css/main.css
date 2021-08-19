@@ -1,21 +1,21 @@
 
+body , i{
+  font-family: 'Kanit';
 
-
-
+}
 
 
 body {
-    font-family: 'Kanit';
+  
     background-color: #dcd9ed;
     
     /* background-image: url('assets/bg.png');
     background-repeat: no-repeat;
     background-size: cover; */
 
-  
-    
-
 }
+
+
 
 
 
@@ -87,6 +87,10 @@ body {
     display: none;
   }
 
+  .userprofileweb{
+    display: none;
+  }
+
   
    
   }
@@ -147,6 +151,11 @@ body {
 
   
   .shopcartsmobile{
+    display: none;
+  }
+
+
+  .userprofilemobile{
     display: none;
   }
 
@@ -213,6 +222,11 @@ body {
 
 
   .shopcartsmobile{
+    display: none;
+  }
+
+
+  .userprofilemobile{
     display: none;
   }
 
