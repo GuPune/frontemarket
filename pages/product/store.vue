@@ -2,7 +2,7 @@
         <section class="Store">
             <Nav />
 
-                <div id="content" class="container profileweb col-11">
+                <div id="content" class="container profileweb col-9">
                         <div class="profile-header">
 
                             <div class="profile-header-cover">
@@ -59,10 +59,10 @@
                                             </li>
                                             
                                         </ul>
-                                </div>
+                                </div> 
 
 
-                                    <div class="linevertical"></div>
+                                    <div class="linevertical"></div> <br>
 
 
                                         <div class="col-sm-9">
@@ -252,7 +252,7 @@
                                 </div>
 
 
-                                    <div class="linevertical"></div>
+                                    <div class="linevertical"></div> <br>
 
 
                                         <div class="col-sm-9">

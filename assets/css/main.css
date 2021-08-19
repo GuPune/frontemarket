@@ -81,6 +81,12 @@ body {
     display: none;
   }
 
+
+  
+  .shopcartsweb{
+    display: none;
+  }
+
   
    
   }
@@ -135,6 +141,12 @@ body {
 
   
   .mobilenav{
+    display: none;
+  }
+
+
+  
+  .shopcartsmobile{
     display: none;
   }
 
@@ -196,6 +208,11 @@ body {
 
 
   .mobilenav{
+    display: none;
+  }
+
+
+  .shopcartsmobile{
     display: none;
   }
 

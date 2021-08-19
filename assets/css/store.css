@@ -1,6 +1,7 @@
-/* .container.profileweb{
-    margin-top: 53px;
-} */
+.container.profileweb{
+    background-color: whitesmoke;
+   
+}
 
 .profilepic{
     width: 100%;
@@ -14,9 +15,10 @@
 
 }
 
-/* .container.profilemobile{
-    margin-top: 95px;
-} */
+.container.profilemobile{
+    background-color: whitesmoke;
+   
+}
 
 .linevertical {
     border-left: 2px solid rgb(226, 226, 226);
