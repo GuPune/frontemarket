@@ -1,7 +1,7 @@
 
 import { UserService }  from "../../services/user.service";
 import {
-    CHECK_LOGIN,FORGOTEMAIL,CLEARALRET,REGISSHOP
+    CHECK_LOGIN,FORGOTEMAIL,CLEARALRET,REGISSHOP,REGISTER
 
 } from "../actions.type.js";
 import {
@@ -41,6 +41,12 @@ const actions = {
       const { data } = await UserService.register(payload);
       return data;
      },
+
+     async [REGISTER](context,payload) {
+         alert('REGISTER');
+        const { data } = await UserService.registerbyshop(payload);
+        return data;
+       },
 
 };
 

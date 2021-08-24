@@ -84,7 +84,10 @@ const ApiService = {
     register(resource, params) {
         return Vue.axios.post('http://127.0.0.1:8000/api/'+resource, params,{ headers:authHeader() });
     },
-  
+    registerbyshop(resource, params) {
+      return Vue.axios.post('http://127.0.0.1:8000/api/'+resource, params,{ headers:authHeader() });
+  },
+
 
     mutations: {
         logout(state) {

@@ -57,8 +57,14 @@
       </div>
 
       <div class="input-group input-group-icon">
-        <input type="text" class="form-control" placeholder="ที่อยู่"/>
-        <div class="input-icon"><i style="color: #005dc0;" class="fa fa-map-marker"></i></div>
+             <b-form-textarea  v-model="form.address" placeholder="ที่อยู่" 
+                                                                 rows="3" max-rows="6"
+                                                                       :error-messages="AddressErrors" required
+                                                                         :class="{ 'is-invalid': $v.form.address.$error}"
+                                                                         @input="$v.form.address.$touch()"
+                                                                         @blur="$v.form.address.$touch()"
+                                                                 ></b-form-textarea>
+       
       </div>
 
     </div>
@@ -92,14 +98,11 @@
 
     </div>
 
-     <h6 style="color: #171c24;">ช่องทางการขาย</h6>
+     <h6 style="color: #171c24;">ช่องทางการขายเพิ่มเคิม</h6>
        
-       <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
-        <label for="vehicle1">Domain Name</label>
-     
-     
-        <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-        <label for="vehicle2">Market Place</label><br>
+    
+        <input type="checkbox" id="vehicle2" name="vehicle2"  v-model="form.status" v-on:click="checkdomain()">
+        <label for="vehicle2">ซื้อ Domain</label><br>
      
 
     <center>
@@ -134,7 +137,7 @@ import 'sweetalert2/dist/sweetalert2.min.css';
               },
        validations: {
         form: {
-            email : { required },
+            email: { required, email },
             password: { required },
             first_name: { required },
             last_name: { required },
@@ -229,7 +232,7 @@ import 'sweetalert2/dist/sweetalert2.min.css';
                 this.$store.dispatch(REGISSHOP,this.form).then((response) => response.code_return == "200" ? this.success() : this.error()).catch((error) => this.error(error.response))
             },
             success() {
-               
+                  
                 setTimeout(() =>
                     this.$swal.fire({
                         type: "success",

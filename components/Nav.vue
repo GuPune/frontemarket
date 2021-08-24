@@ -1,6 +1,7 @@
 <template>
 
 <header class="section-header">
+
     <section class="header-main border-bottom webnav">
         <div class="container-fluid">
             <div class="row mx-auto col-sm-9">
@@ -15,9 +16,7 @@
                 </div>
 
                 <div class="col-sm-4">
-
                     <form action="#" class="search-wrap">
-          
                         <div class="input-group w-100"> 
                           <input type="text" class="form-control search-form" style="width:55%;" placeholder="Search">
                             <div class="input-group-append"> 
@@ -33,7 +32,7 @@
 
                             <span class="vl"></span> 
                             <a class="nav-link nav-user-img" href="#" data-toggle="modal" data-target="#login-modal" data-abc="true">
-                              <span class="login" style="font-size:14px;">หน้าหลัก</span>
+                              <span class="login" style="font-size:14px;">{{authenticated}}</span>
                             </a>
 
 
@@ -53,10 +52,16 @@
                               <span class="login">
                                 <div class="dropdown"><i class="fas fa fa-user-circle-o" aria-hidden="true"></i>
                                   <div class="dropdown-content">
+                                  <div v-if="isLogins">
+                                  <nuxt-link to="profile/userprofile">จัดการบัญชี</nuxt-link>
+                                 <a href="#"  @click.prevent="logout">ออกจากระบบ</a>
+                                  </div>
+
+                                  <div v-else="!isLogins">
                                   <nuxt-link to="form/login">เข้าสู่ระบบ</nuxt-link>
                                   <nuxt-link to="form/userregis">สมัครสมาชิก</nuxt-link>
                                   <nuxt-link to="profile/userprofile">จัดการบัญชี</nuxt-link>
-                                  <a href="#">ออกจากระบบ</a>
+                                  </div>
                                   </div>
                                 </div>
 
@@ -214,7 +219,7 @@
 
 
 <script>
-import { mapGetters,mapState } from "vuex";
+import { mapGetters } from "vuex";
 import { CHECK_LOGIN } from "../store/actions.type.js";
   export default {
     data() {
@@ -226,6 +231,11 @@ import { CHECK_LOGIN } from "../store/actions.type.js";
 
 
      computed: {
+         ...mapGetters(["authenticated"]),
+			
+           isLogins () {
+                return this.$store.state.auth.loggedIn;
+        }
            
 
         },
@@ -236,16 +246,29 @@ import { CHECK_LOGIN } from "../store/actions.type.js";
 
     
         
-        mounted() {
+      mounted() {
           let checker = localStorage.getItem("user");
+  
+
           if(checker){
             this.IsLogin = true;
+               this.$store.dispatch('auth/userstorage');
           }else{
             this.IsLogin = false;
           }
          },
-        
+
+      methods: {
 
 
-    }
+          logout() {
+    this.$auth.logout()
+     }
+        }
+
+
+           
+        }
+
+
 </script>

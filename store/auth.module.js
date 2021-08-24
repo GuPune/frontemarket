@@ -34,7 +34,12 @@ export const auth = {
        
         },
         async logout({ dispatch,commit }) {
- 
+            localStorage.removeItem('user');
+ commit('logout')
+        },
+
+        async userstorage({ dispatch,commit }) {
+ commit('login')
         },
 
     },
@@ -49,6 +54,12 @@ export const auth = {
             console.log('เข้า loginFailure');
             state.status.loggedIn = false;
             state.user = null;
+        },
+        login(state) {
+            localStorage.getItem('user');
+            state.status.loggedIn = true;
+            state.user = user;
+            console.log('state',state)
         },
         logout(state) {
             state.status.loggedIn = false;

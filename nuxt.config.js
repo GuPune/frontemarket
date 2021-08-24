@@ -1,4 +1,5 @@
 export default {
+  mode: "universal",
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'frontemarket',
@@ -57,6 +58,9 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~plugins/local-storage.js',
+   // "./plugins/mixins/user.js",
+   // "~/plugins/axios.js",
+   // "~/plugins/mixins/validation.js",
     { src: '~/plugins/vuelidate', ssr: true },
   
     
@@ -75,15 +79,43 @@ export default {
     'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    'vue-sweetalert2/nuxt'
+    "@nuxtjs/auth"
+    
   ],
-  sweetalert: {
-    confirmButtonColor: '#41b882',
-    cancelButtonColor: '#ff7674'
+
+  router: {
+    middleware: ["clearValidationErrors"]
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: {
+    // See https://github.com/nuxt-community/axios-module#options
+    baseURL: "http://127.0.0.1:8000/api"
+    
+  },
+
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: "login",
+            method: "post",
+            propertyName: "meta.token"
+          },
+          user: {
+            url: "user",
+            method: "get",
+            propertyName: "meta"
+          },
+          logout: {
+            url: "logout",
+            method: "post"
+          }
+        }
+      }
+    }
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

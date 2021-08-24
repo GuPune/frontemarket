@@ -11,7 +11,7 @@
 
 
       <div class="container forms">
-  <form>
+
        <div class="alert alert-danger" role="alert" v-if="alert.message">
                         ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง !
                         </div>
@@ -22,7 +22,7 @@
         <input class="form-control"
         placeholder="ชื่อผู้ใช้งาน" type="text" v-model="form.email"
             :error-messages="EmailErrors"
-             required
+             
               :class="{ 'is-invalid': $v.form.email.$error}"
                @input="$v.form.email.$touch()"
              @blur="$v.form.email.$touch()"/>
@@ -35,7 +35,7 @@
         <input type="password" class="form-control" placeholder="รหัสผ่าน"
         v-model="form.password"
          :error-messages="PassErrors"
-         required
+         
           :class="{ 'is-invalid': $v.form.password.$error}"
         @input="$v.form.password.$touch()"
         @blur="$v.form.password.$touch()" >
@@ -56,7 +56,7 @@
     <p>คุณมีบัญชีแล้วใช่หรือไม่ ?  <nuxt-link to="userregis"><a href="">สมัครสมาชิก</a></nuxt-link></p></center>
 
   
-  </form>
+
 </div>
 
 
@@ -195,12 +195,15 @@
 <script>
 import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
 import { mapGetters } from "vuex";
+import Vue from 'vue';
+import Vuex from "vuex";
 import Nav from "@/components/Nav";
 import { FORGOTEMAIL,CLEARALRET } from "../../store/actions.type.js";
     
 
 
     export default {
+      middleware: 'guest',
       components: {
           Nav,
            
@@ -225,6 +228,7 @@ import { FORGOTEMAIL,CLEARALRET } from "../../store/actions.type.js";
       }),
 
     computed: {
+      
         EmailErrors () {
                 const errors = []
                 if (!this.$v.form.email.$dirty) return errors
@@ -251,7 +255,14 @@ import { FORGOTEMAIL,CLEARALRET } from "../../store/actions.type.js";
         }
 
     },
+    created() {
+     
+        console.log(this.$store.state.auth.status);
+        
+    },
     mounted() {
+    
+     
        // let clearalert = this.$store.dispatch(CLEARALRET);
     },
     methods: {
@@ -260,9 +271,32 @@ import { FORGOTEMAIL,CLEARALRET } from "../../store/actions.type.js";
             this.form.url = window.location.origin
            
                 if (this.$v.form.$pending || this.$v.form.$error) return;
-                   await this.$store.dispatch('auth/login', this.form);
-                 
+            //    await this.$store.dispatch('auth/login', this.form);
+
+        //        await this.$auth.loginWith("local", {
+        //     data: this.form
+        //   })
+
+          try {
+        await this.$auth.loginWith('local', {
+          data: this.form
+        }).then(data => {
+			
+				
+				})
+				.catch(err => {
+				       this.$router.push('/form/login');   
+        this.alert.message = 1;
+				});
+      } catch (e) {
+//  this.$store.dispatch('alert/error', null, { root: true });
+ 
+
+
+      }                         
         },
+
+        
 
         async forgot(){
 
