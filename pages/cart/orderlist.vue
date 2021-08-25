@@ -216,6 +216,7 @@
                         <div class="card-body">
                                 <!-- PRODUCT -->
                                 <div class="row">
+                                    
                                     <div class="col-12 col-sm-12 col-md-2 text-center">
                                             <img class="img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHYB4yOhfM-93z9SCPAv3CZIdJCQDNOcPg1w&usqp=CAU" alt="prewiew" width="120" height="80">
                                     </div>
