@@ -104,128 +104,161 @@ input[name="tab"]:checked + .tab-content{
 
 
 
-.overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  transition: opacity 500ms;
-  visibility: hidden;
-  opacity: 0;
-  z-index: 100;
-}
-.overlay:target {
-  visibility: visible;
-  opacity: 1;
+
+
+
+
+
+.row.userprofile{
+  justify-content: center;
 }
 
 
-.popup {
-  margin: 70px auto;
-  padding: 20px;
-  background: #fff;
-  border-radius: 5px;
-  width: 30%;
-  position: relative;
-  transition: all 5s ease-in-out;
-}
 
-.popup h2 {
-  margin-top: 0;
-  color: #333;
-  font-family: Tahoma, Arial, sans-serif;
+/* Android 2.3 :checked fix */
+@-webkit-keyframes fake {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
 }
-.popup .close {
+@keyframes fake {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.worko-tabs {
+  margin: 20px;
+  width: 90%;
+}
+.worko-tabs .state {
   position: absolute;
-  top: 20px;
-  right: 30px;
-  transition: all 200ms;
-  font-size: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #333;
+  left: -10000px;
 }
-.popup .close:hover {
-  color: #06D85F;
+.worko-tabs .flex-tabs {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-.popup .content {
-  max-height: 30%;
-
+.worko-tabs .flex-tabs .tab {
+  flex-grow: 1;
+  max-height: 40px;
 }
-
-@media screen and (max-width: 700px){
-  .box{
-    width: 70%;
-  }
-  .popup{
-    width: 90%;
-  }
-}
-
-
-
-
-
-
-
-.overlay {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.7);
-  transition: opacity 500ms;
-  visibility: hidden;
-  opacity: 0;
-  z-index: 100;
-}
-.overlay:target {
-  visibility: visible;
-  opacity: 1;
-}
-
-
-.popup {
-  margin: 70px auto;
+.worko-tabs .flex-tabs .panel {
+  background-color: #fff;
   padding: 20px;
-  background: #fff;
-  border-radius: 5px;
-  width: 30%;
-  position: relative;
-  transition: all 5s ease-in-out;
+  min-height: 300px;
+  display: none;
+  width: 100%;
+  flex-basis: auto;
+}
+.worko-tabs .tab {
+  display: inline-block;
+  padding: 10px;
+  vertical-align: top;
+  background-color: #eee;
+  cursor: hand;
+  cursor: pointer;
+  border-left: 10px solid #ccc;
+}
+.worko-tabs .tab:hover {
+  background-color: rgb(230, 246, 255);
 }
 
-.popup h2 {
-  margin-top: 0;
-  color: #333;
-  font-family: Tahoma, Arial, sans-serif;
-}
-.popup .close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  transition: all 200ms;
-  font-size: 30px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #333;
-}
-.popup .close:hover {
-  color: #06D85F;
-}
-.popup .content {
-  max-height: 30%;
-
+#tab-one:checked ~ .tabs #tab-one-label,
+#tab-two:checked ~ .tabs #tab-two-label,
+#tab-three:checked ~ .tabs #tab-three-label,
+#tab-four:checked ~ .tabs #tab-four-label {
+  background-color: rgb(230, 246, 255);
+  cursor: default;
+  border-left-color: #0076c4;
 }
 
-@media screen and (max-width: 700px){
-  .box{
-    width: 70%;
+#tab-one:checked ~ .tabs #tab-one-panel,
+#tab-two:checked ~ .tabs #tab-two-panel,
+#tab-three:checked ~ .tabs #tab-three-panel,
+#tab-four:checked ~ .tabs #tab-four-panel {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .flex-tabs {
+    flex-direction: column;
   }
-  .popup{
-    width: 90%;
+  .flex-tabs .tab {
+    background: #eee;
+    border-bottom: 1px solid #ccc;
   }
+  .flex-tabs .tab:last-of-type {
+    border-bottom: none;
+  }
+  .flex-tabs #tab-one-label {
+    order: 1;
+  }
+  .flex-tabs #tab-two-label {
+    order: 3;
+  }
+  .flex-tabs #tab-three-label {
+    order: 5;
+  }
+  .flex-tabs #tab-four-label {
+    order: 7;
+  }
+  .flex-tabs #tab-one-panel {
+    order: 2;
+  }
+  .flex-tabs #tab-two-panel {
+    order: 4;
+  }
+  .flex-tabs #tab-three-panel {
+    order: 6;
+  }
+  .flex-tabs #tab-four-panel {
+    order: 8;
+  }
+
+  #tab-one:checked ~ .tabs #tab-one-label,
+#tab-two:checked ~ .tabs #tab-two-label,
+#tab-three:checked ~ .tabs #tab-three-label,
+#tab-four:checked ~ .tabs #tab-four-label {
+    border-bottom: none;
+  }
+
+  #tab-one:checked ~ .tabs #tab-one-panel,
+#tab-two:checked ~ .tabs #tab-two-panel,
+#tab-three:checked ~ .tabs #tab-three-panel,
+#tab-four:checked ~ .tabs #tab-four-panel {
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+
+
+
+
+#tables {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#tables td, #tables th {
+  
+  padding: 8px;
+}
+
+#tables tr:nth-child(even){background-color: #f2f2f2;}
+
+#tables tr:hover {background-color: #ddd;}
+
+#tables th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
 }

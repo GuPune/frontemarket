@@ -2,97 +2,219 @@
     <section id="Userprofile">
         <Nav />
 
-        <div class="container userprofileweb col-9">
 
-          
-                <div class="bg-white">
-                        <div class="container py-5">
-                            <div class="media col-md-10 col-lg-8 col-xl-7 p-0 my-4 mx-auto">
-                            <img src="https://www.arianagrande.com/sites/g/files/aaj12746/f/styles/suzuki_breakpoints_image_tablet/public/positions-final_0.jpg" alt class="d-block ui-w-100 rounded-circle profile">
-                            <div class="media-body ml-5">
-                                <h4 class="font-weight-bold mb-4">Ariana Grande</h4>
-                                <div class="text-muted mb-4">
-                                ถนน ชัยพฤกษ์ ตำบลในเมือง อำเภอเมืองขอนแก่น ขอนแก่น 40000
-                                </div>
+        <div class="container">
+            <div class="main-body">
+            
 
-                                <div class="text-muted mb-4">
-                                <i class="fa fa-phone" aria-hidden="true"> :</i> 085-4476635<br>
-                                <i class="fa fa-envelope" aria-hidden="true"> :</i> ariana@mail.com
-                                </div>
-
-                                
-                                <div class="text-muted mb-4">
-                                <small class="btn btn-primary">อัปโหลดรูปภาพ</small>
-                                </div>
-                                <a class="d-inline-block text-dark">
+                <!-- /Breadcrumb -->
+            
+                <div class="row gutters-sm">
+                    <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                        <div class="d-flex flex-column align-items-center text-center">
+                            <img src="https://www.arianagrande.com/sites/g/files/aaj12746/f/styles/suzuki_breakpoints_image_tablet/public/positions-final_0.jpg" alt="Admin" class="rounded-circle profile" width="150">
+                            <div class="mt-3">
+                            <h4>Ariana Grande</h4>
+                            <p class="text-secondary mb-1">
                                 <strong>ประเภท</strong>
-                                <small class="text-muted">โปรไฟล์ผู้ซื้อ</small>
-                                </a>
-                            </div>
+                                <small class="text-muted">โปรไฟล์ผู้ซื้อ</small></p>
+                            <button class="btn btn-primary">อัปโหลดรูปภาพ</button>
+                            <a href="#changepassword" class="btn btn-outline-primary">เปลี่ยนรหัสผ่าน</a>
                             </div>
                         </div>
-
-                </div>
-                   
-        </div>
-
-
-
-       
-
-
-
-
-        <!------------------------------------------------------------------------ MOBILE ---------------------------------------------------------------------->
-         <div class="userprofilemobile">
-
-                <div class="bg-white">
-                        <div class="container py-5">
-                            <div class="media col-md-10 col-lg-8 col-xl-7 p-0 my-4 mx-auto">
-                            <img src="https://www.arianagrande.com/sites/g/files/aaj12746/f/styles/suzuki_breakpoints_image_tablet/public/positions-final_0.jpg" alt class="d-block ui-w-100 rounded-circle profile">
-                             <div class="media-body ml-5">
-                                <h4 class="font-weight-bold mb-4">Ariana Grande</h4>
-                                <div class="text-muted mb-4">
-                                ถนน ชัยพฤกษ์ ตำบลในเมือง อำเภอเมืองขอนแก่น ขอนแก่น 40000
-                                </div>
-
-                                <div class="text-muted mb-4">
-                                <i class="fa fa-phone" aria-hidden="true"> :</i> 085-4476635<br>
-                                <i class="fa fa-envelope" aria-hidden="true"> :</i> ariana@mail.com
-                                </div>
-
-                                
-                                <div class="text-muted mb-4">
-                                <small class="btn btn-primary">อัปโหลดรูปภาพ</small>
-                                </div>
-                                <a class="d-inline-block text-dark">
-                                <strong>ประเภท</strong>
-                                <small class="text-muted">โปรไฟล์ผู้ซื้อ</small>
-                                </a>
+                        </div>
+                    </div>
+                    <div class="card mt-3">
+                        <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6 class="mb-0"><i class="fa fa-map-marker" aria-hidden="true"> :</i> ที่อยู่</h6>
+                            <span class="text-secondary">ถนน ชัยพฤกษ์ ตำบลในเมือง อำเภอเมืองขอนแก่น ขอนแก่น 40000</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6 class="mb-0"><i class="fa fa-phone" aria-hidden="true"> :</i> เบอร์โทร</h6>
+                            <span class="text-secondary">0854476635</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                            <h6 class="mb-0"><i class="fa fa-envelope" aria-hidden="true"> :</i> อีเมลล์</h6>
+                            <span class="text-secondary">ariana@mail.com</span>
+                        </li>
+                       
+                        </ul>
+                    </div>
+                    </div>
+                    <div class="col-md-8">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-3">
+                            <h6 class="mb-0">ชื่อ</h6>
                             </div>
+                            <div class="col-sm-9 text-secondary">
+                            <input type="text" class="form-control" id="inputFirstName" placeholder="Ariana">
                             </div>
                         </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                            <h6 class="mb-0">นามสกุล</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                            <input type="text" class="form-control" id="inputLastName" placeholder="Grande">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                            <h6 class="mb-0">วันเกิด</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                        <div class="input-group">
+                                                                <div class="col-third">
+                                                                    <small>วัน</small>
+                                                                    <input type="text"  class="form-control" placeholder="26"/>
+                                                                </div>
+                                                                <div class="col-third">
+                                                                    <small>เดือน</small>
+                                                                    <input type="text" class="form-control" placeholder="6"/>
+                                                                </div>
+                                                                <div class="col-third">
+                                                                    <small>ปี</small>
+                                                                    <input type="text" class="form-control" placeholder="2536"/>
+                                                                </div>
+                                        </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                            <h6 class="mb-0">เบอร์ติดต่อ</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                            <input type="text" class="form-control" id="inputAddress"  placeholder="0854476635">
+                            </div>
+                        </div>
+                        <hr>
+                    
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-12">
+                            <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">บันทึกการเปลี่ยนแปลง</a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
 
-                </div>
+                 
+                         <div class="card">
+                 
+                       
+               
+                             <div class="worko-tabs">
 
-      
+                             
 
-        </div>
+  
+                                <input class="state" type="radio" title="tab-one" name="tabs-state" id="tab-one" checked />
+                                <input class="state" type="radio" title="tab-two" name="tabs-state" id="tab-two" />
+                                <input class="state" type="radio" title="tab-three" name="tabs-state" id="tab-three" />
+                                <input class="state" type="radio" title="tab-four" name="tabs-state" id="tab-four" />
+
+                                <div class="tabs flex-tabs">
+                                    <label for="tab-one" id="tab-one-label" class="tab">ที่อยู่</label>
+                                    <label for="tab-two" id="tab-two-label" class="tab">การชำระเงิน</label>
+                                    <label for="tab-three" id="tab-three-label" class="tab">สถานะพัสดุ</label>
+                                    <label for="tab-four" id="tab-four-label" class="tab">ให้คะแนน</label>
 
 
-    
+                                    <div id="tab-one-panel" class="panel active">
+                                         <a href="#addlocation"><i class="fa fa-plus" aria-hidden="true"></i> เพิ่มที่อยู่</a><br>
+
+                                                <table id="tables">
+                                                    
+                                                    <tr>
+                                                        <td>ถนน ชัยพฤกษ์ ตำบลในเมือง อำเภอเมืองขอนแก่น ขอนแก่น 40000</td>
+                                                        <td><a class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                                        <a class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ถนน ชัยพฤกษ์ ตำบลในเมือง อำเภอเมืองขอนแก่น ขอนแก่น 40000</td>
+                                                        <td><a class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                                        <a class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                                                  
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ถนน ชัยพฤกษ์ ตำบลในเมือง อำเภอเมืองขอนแก่น ขอนแก่น 40000</td>
+                                                        <td><a class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+                                                        <a class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                                                    </tr>
+                                                 
+                                                </table>
+
+                                    </div>
+
+                                    <div id="tab-two-panel" class="panel">
+                                        Tab two content
+                                    </div>
+                                    <div id="tab-three-panel" class="panel">
+                                        Tab three content
+                                    </div>
+                                    <div id="tab-four-panel" class="panel">
+                                        Tab four content
+                                    </div>
+                                </div>
+                             </div>
+
+                         </div>
 
                      
-
-
-      
-       
-
-   
+                       
                 
 
 
+
+                    </div>
+                </div>
+
+                </div>
+    </div>
+
+
+
+        <div id="changepassword" class="overlay">
+            <div class="popup">
+                <h6>เปลี่ยนรหัสผ่าน</h6><br>
+                <a class="close" href="#">&times;</a>
+                <div class="content">
+
+                    <label for="inputPasswordCurrent">รหัสผ่านเดิม</label>
+                    <input type="password" class="form-control" placeholder="รหัสผ่านเดิม" ><br>
+                    <label for="inputPasswordCurrent">รหัสผ่านใหม่</label>
+                    <input type="password" class="form-control" placeholder="รหัสผ่านใหม่" ><br>
+                    <input type="password" class="form-control" placeholder="ยืนยันรหัสผ่าน" ><br>
+                    <button type="submit" class="btn btn-info">บันทึกการเปลี่ยนแปลง</button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="addlocation" class="overlay">
+            <div class="popup">
+                <h6>เพิ่มที่อยู่</h6><br>
+                <a class="close" href="#">&times;</a>
+                <div class="content">
+
+                    <textarea class="form-control"></textarea><br>
+                    <button type="submit" class="btn btn-info">บันทึก</button>
+                </div>
+            </div>
+        </div>
        
+   
+                
+ 
 
 
 
