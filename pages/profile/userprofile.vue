@@ -122,10 +122,10 @@
                                 <input class="state" type="radio" title="tab-four" name="tabs-state" id="tab-four" />
 
                                 <div class="tabs flex-tabs">
-                                    <label for="tab-one" id="tab-one-label" class="tab">ที่อยู่</label>
-                                    <label for="tab-two" id="tab-two-label" class="tab">การชำระเงิน</label>
-                                    <label for="tab-three" id="tab-three-label" class="tab">สถานะพัสดุ</label>
-                                    <label for="tab-four" id="tab-four-label" class="tab">ให้คะแนน</label>
+                                    <label for="tab-one" id="tab-one-label" class="tab"><i class="fa fa-map-marker" aria-hidden="true"></i> ที่อยู่</label>
+                                    <label for="tab-two" id="tab-two-label" class="tab"><i class="fa fa-money" aria-hidden="true"></i> สถานะการชำระเงิน</label>
+                                    <label for="tab-three" id="tab-three-label" class="tab"><i class="fa fa-plane" aria-hidden="true"></i> สถานะพัสดุ</label>
+                                    <label for="tab-four" id="tab-four-label" class="tab"><i class="fa fa-comment" aria-hidden="true"></i> ให้คะแนนสินค้า/บริการ</label>
 
                                     <!-- ---------------------tab 1------------------- -->
                                     <div id="tab-one-panel" class="panel active">
