@@ -127,7 +127,7 @@
                                     <label for="tab-three" id="tab-three-label" class="tab">สถานะพัสดุ</label>
                                     <label for="tab-four" id="tab-four-label" class="tab">ให้คะแนน</label>
 
-
+                                    <!-- ---------------------tab 1------------------- -->
                                     <div id="tab-one-panel" class="panel active">
                                          <a href="#addlocation"><i class="fa fa-plus" aria-hidden="true"></i> เพิ่มที่อยู่</a><br>
 
@@ -154,15 +154,139 @@
 
                                     </div>
 
+                                    <!-- ---------------------tab 2------------------- -->
+
                                     <div id="tab-two-panel" class="panel">
-                                        Tab two content
+
+                                         
+                                                        
+                                                            <div class="row p-2 bg-white border rounded">
+                                                                <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="https://luna360.com/wp-content/uploads/2020/02/1080.png"></div>
+                                                                <div class="col-md-6 mt-1">
+                                                                    <h6>product</h6>
+                                                                 
+                                                                    <div class="mt-1 mb-1 spec-1"><span>500฿</span></div>
+                                                                    <p class="text-justify text-truncate para mb-0">รายละเอียดสินค้า</p>
+                                                                </div>
+                                                                <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                                                                    <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button">ชำระเงินแล้ว</button></div>
+                                                                </div>
+                                                            </div>
+
+                                                             <div class="row p-2 bg-white border rounded">
+                                                                <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="https://luna360.com/wp-content/uploads/2020/02/1080.png"></div>
+                                                                <div class="col-md-6 mt-1">
+                                                                    <h6>product</h6>
+                                                                 
+                                                                    <div class="mt-1 mb-1 spec-1"><span>500฿</span></div>
+                                                                    <p class="text-justify text-truncate para mb-0">รายละเอียดสินค้า</p>
+                                                                </div>
+                                                                <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                                                                    <div class="d-flex flex-column mt-4"><button class="btn btn-outline-primary btn-sm mt-2" type="button">ยังไม่ชำระเงิน</button></div>
+                                                                </div>
+                                                            </div>
+
+  
+                                                         
+                                                          
+                                                          
+                                                           
                                     </div>
+                                                   
+                        
+                                    <!-- ---------------------tab 3------------------- -->
+
+
                                     <div id="tab-three-panel" class="panel">
-                                        Tab three content
+
+                                                             <div class="row p-2 bg-white border rounded">
+                                                                <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="https://luna360.com/wp-content/uploads/2020/02/1080.png"></div>
+                                                                <div class="col-md-6 mt-1">
+                                                                    <h6>product</h6>
+                                                                 
+                                                                    <div class="mt-1 mb-1 spec-1"><span>500฿</span></div>
+                                                                    <p class="text-justify text-truncate para mb-0">รายละเอียดสินค้า</p>
+                                                                </div>
+                                                                <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                                                                    <div class="d-flex flex-column mt-4"><button class="btn btn-info btn-sm" type="button">เช็คสถานะพัสดุ</button></div>
+                                                                </div>
+                                                            </div>
+
+                                                             <div class="row p-2 bg-white border rounded">
+                                                                <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="https://luna360.com/wp-content/uploads/2020/02/1080.png"></div>
+                                                                <div class="col-md-6 mt-1">
+                                                                    <h6>product</h6>
+                                                                 
+                                                                    <div class="mt-1 mb-1 spec-1"><span>500฿</span></div>
+                                                                    <p class="text-justify text-truncate para mb-0">รายละเอียดสินค้า</p>
+                                                                </div>
+                                                                <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                                                                    <div class="d-flex flex-column mt-4"><button class="btn btn-info btn-sm" type="button">เช็คสถานะพัสดุ</button></div>
+                                                                </div>
+                                                            </div>
+
+
+                                       
                                     </div>
+
+
+                                    <!-- ---------------------tab 4------------------- -->
+
+
                                     <div id="tab-four-panel" class="panel">
-                                        Tab four content
+                                       
+                                       
+                                                        <div class="row p-2 bg-white border rounded">
+                                                                <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="https://luna360.com/wp-content/uploads/2020/02/1080.png"></div>
+                                                                <div class="col-md-6 mt-1">
+                                                                    <h6>product</h6>
+                                                                 
+                                                                    <div class="mt-1 mb-1 spec-1"><span>500฿</span></div>
+                                                                    <p class="text-justify text-truncate para mb-0">รายละเอียดสินค้า</p>
+                                                                </div>
+                                                                <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                                                                    <div class="star-wrapper">
+                                                                        <i href="#" class="fa fa-star" aria-hidden="true"></i>
+                                                                        <i href="#" class="fa fa-star" aria-hidden="true"></i>
+                                                                        <i href="#" class="fa fa-star" aria-hidden="true"></i>
+                                                                        <i href="#" class="fa fa-star" aria-hidden="true"></i>
+                                                                        <i href="#" class="fa fa-star" aria-hidden="true"></i>
+                                                                    </div><br>
+
+                                                                    <a href="#comment" class="btn btn-info btn-sm" type="button">ความคิดเห็น</a>
+
+                                                
+                                                                </div>
+                                                            </div>
+
+
+                                                             <div class="row p-2 bg-white border rounded">
+                                                                <div class="col-md-3 mt-1"><img class="img-fluid img-responsive rounded product-image" src="https://luna360.com/wp-content/uploads/2020/02/1080.png"></div>
+                                                                <div class="col-md-6 mt-1">
+                                                                    <h6>product</h6>
+                                                                 
+                                                                    <div class="mt-1 mb-1 spec-1"><span>500฿</span></div>
+                                                                    <p class="text-justify text-truncate para mb-0">รายละเอียดสินค้า</p>
+                                                                </div>
+                                                                <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                                                                       <div class="star-wrapper">
+                                                                        <i href="#" class="fa fa-star" aria-hidden="true"></i>
+                                                                        <i href="#" class="fa fa-star" aria-hidden="true"></i>
+                                                                        <i href="#" class="fa fa-star" aria-hidden="true"></i>
+                                                                        <i href="#" class="fa fa-star" aria-hidden="true"></i>
+                                                                        <i href="#" class="fa fa-star" aria-hidden="true"></i>
+                                                                    </div><br>
+
+                                                                    <a href="#comment" class="btn btn-info btn-sm" type="button">ความคิดเห็น</a>
+
+                                                                </div>
+                                                        </div>
+
+
+
                                     </div>
+
+
                                 </div>
                              </div>
 
@@ -215,7 +339,17 @@
    
                 
  
+           <div id="comment" class="overlay">
+            <div class="popup">
+                <h6>ความคิดเห็น/แนะนำ</h6><br>
+                <a class="close" href="#">&times;</a>
+                <div class="content">
 
+                    <textarea class="form-control"></textarea><br>
+                    <button type="submit" class="btn btn-info">ส่ง</button>
+                </div>
+            </div>
+        </div>
 
 
 
