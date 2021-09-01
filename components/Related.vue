@@ -11,7 +11,7 @@
                                         <div class="row product">
                                             <div class="cards">
                                                     <div class="cardproduct" v-for="(item, index) in product_shell" :key="product_shell.id">
-                                                        <img class="imgproduct"  :src="Checkimage(item.img_product)">
+                                                        <img class="imgproduct" height="200px" :src="Checkimage(item.img_product)">
                                                             <h6 style="margin-top:10px;">{{item.name_th}}</h6>
                                                             <p class="price">{{item.price}} ฿</p>
                                                             <p>รายละเอียดสินค้า</p>
@@ -48,7 +48,7 @@
                                         <div class="row product">
                                             <div class="cards">
                                               <div class="cardproduct" >
-                                                        <img class="imgproduct" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHYB4yOhfM-93z9SCPAv3CZIdJCQDNOcPg1w&usqp=CAU">
+                                                        <img class="imgproduct"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHYB4yOhfM-93z9SCPAv3CZIdJCQDNOcPg1w&usqp=CAU">
                                                             <h6 style="margin-top:10px;">เมล็ดพันธุ์ผักบุ้งแก้ว</h6>
                                                             <p class="price">10 ฿</p>
                                                             <p>รายละเอียดสินค้า</p>
