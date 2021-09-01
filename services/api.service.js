@@ -37,7 +37,7 @@ const ApiService = {
         // console.log('เข้า getxxxxxxxxxx','http://127.0.0.1:8000/api/admin/auth/'+resource)
        return axios.get('http://127.0.0.1:8000/api/'+resource , { headers: authHeader()}).catch(function(error) {
                AuthService.logout();
-               location.reload(true);
+              // location.reload(true);
 
           });
     },
