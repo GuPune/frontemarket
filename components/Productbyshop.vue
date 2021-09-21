@@ -1,0 +1,155 @@
+<template>
+<div>
+  <div class="heading-title" v-if="cate_sel.length == 0 ">
+            <h2><span>PRODUCT  AGRICULTURAL</span>
+	<em class="">สินค้าเกษตรกร</em>
+			</h2>
+        </div>
+          <div class="heading-title" v-else v-for="item in cate_sel" :value="item.id">
+            <h2><span>{{item.title}}</span>
+	<em class="">{{item.subtitle}}</em>
+			</h2>
+        </div>
+        <div class="product" id="product">
+            <div class="row product">
+                 <div class="cards">
+                    <div class="cardproduct"  v-for="item in lists" :value="item.id">
+                        <img class="imgproduct" height="200px"   :src="Checkimage(item.img_product)">
+                                                            <div class="product-name">{{item.name_en}}</div>
+                                                            <p class="price">฿{{item.price}}.00</p>
+                                      <div class="product-footer">
+                                          <div class="addtocart">
+                                                   <button type="button" title="Add To Cart" data-placement="top" class="button btn-cart" @click="addToCart(item)">
+                                                   <span>
+                                                   <span>Add To Cart</span></span>
+                                                   </button>
+                                            </div>
+                                          </div>
+                                      </div>
+                      </div>
+              </div>
+      <b-row>
+      <b-col>
+        <b-pagination
+          @change="onPageChanged"
+          :total-rows="numberOfPages"
+          :per-page="perPage"
+          v-model="currentPage"
+         
+          align="center"
+        />
+      </b-col>
+    </b-row>
+        </div>
+        </div>
+    </div>
+</template>
+
+
+<script>
+const items = [
+ 
+];
+import { mapGetters } from "vuex";
+import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART } from "@/store/actions.type.js";
+
+  export default {
+    data() {
+    return {
+      paginatedItems: [],
+      currentPage: 1,
+      perPage: 8,
+      totalRows:null,
+    };
+  },
+
+
+     computed: {
+    ...mapGetters(["cate_sel","product_by_shop"]),
+     
+      numberOfPages() {
+        return this.product_by_shop.length
+      },
+
+        lists () {
+      const items = this.$store.getters.product_by_shop
+      // Return just page of items needed
+      return items.slice(
+        (this.currentPage - 1) * this.perPage,
+        this.currentPage * this.perPage
+      )
+    },
+
+    
+
+        },
+      
+           
+
+   
+        created(){
+           
+        },
+        
+
+    
+        
+      async mounted() {
+        let product_by_shop = await this.$store.dispatch(FETCH_PRODUCT_BY_SHOP,this.$route.params).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
+        this.paginatedItems = this.product_by_shop
+        console.log('paginatedItems',this.paginatedItems);
+        this.totalRows = this.product_by_shop.length
+         await this.paginate(this.perPage, 0);
+         },
+
+      methods: {
+
+          paginate(page_size, page_number) {
+      let itemsToParse = this.product_by_shop;
+      console.log('itemsToParse',itemsToParse);
+      this.paginatedItems = itemsToParse.slice(
+        page_number * page_size,
+        (page_number + 1) * page_size
+      );
+
+      console.log('this.paginatedItems',this.paginatedItems)
+    },
+    onPageChanged(page) {
+      this.paginate(this.perPage, page - 1);
+    },
+     
+            success() {
+          
+            },
+            error($text) {
+
+           this.$router.push('/error')
+
+          
+            },
+
+           async addToCart(item){
+
+
+
+
+   this.$swal("Add Product!", "Product To Cart!", "success")
+  let add_producttocart = await this.$store.dispatch(ADD_CART,item);
+            },
+                Checkimage(image){
+        
+                let a = 'http://127.0.0.1:8000/public/product/'+image;
+                return a;
+        }
+
+    
+    
+  
+        }
+
+
+           
+        }
+
+
+</script>

@@ -1,7 +1,5 @@
 <template>
 <section id="Productdetail">
-    <Nav />
-
   <div class="row productdetailweb">
       <div class="col-9">
      

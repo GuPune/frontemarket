@@ -2,7 +2,7 @@
 
 <template>
     <div>
-
+{{'test'}}
 
     </div>    
 </template>
@@ -13,7 +13,7 @@
 <script>
    
  
-    import Categories from '@/components/Categories.vue';
+ 
 
 
 
@@ -21,7 +21,7 @@
       components: {
            
        
-            Categories,
+       
           
          
       

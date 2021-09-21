@@ -1,4 +1,5 @@
 import ApiService from "./api.service";
+import Apiall from "./api.serviceall";
 
 export const UserService = {
     forgot(params) {
@@ -11,6 +12,29 @@ export const UserService = {
       return ApiService.registerbyshop("registerbyshop",params);
     },
 
-    
+    getprofile() {
+      return Apiall.get("profile");
+    },
+    saveprofile(param) {
+      return Apiall.post("saveprofile",param);
+    },
+    address(param){
+      return Apiall.post("address",param);
+    },
+    address_by_id(param){
+      return Apiall.post("address_byid",param);
+    },
+    save_by_id(param){
+      return Apiall.post("save_address_byid",param);
+    },
+    del_by_id(param){
+      return Apiall.post("del_address_byid",param);
+    },
+    update_by_id(param){
+      console.log('update');
+      return Apiall.post("update_byid",param);
+    }
+      
+
 
 };

@@ -1,9 +1,7 @@
 
 body , i{
-  font-family: 'Kanit';
-
+  font-family: Prompt, arial, serif;
 }
-
 
 body {
   
@@ -85,11 +83,10 @@ body {
   
   .shopcartsweb{
     display: none;
+    
   }
 
 
-  
-   
   }
 
   /* Tablet */

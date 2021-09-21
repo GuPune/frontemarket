@@ -3,60 +3,29 @@
 <section id="Ads">
 
     <center><div class="row adsweb col-9">
-
-
-     
             <div class="carousel">
-              <ul class="slides">
-                <input type="radio" name="radio-buttons" id="img-1" checked />
-                <li class="slide-container">
-                  <div class="slide-image">
-                    <img  src="../assets/banner1.png">
-                  </div>
-                  <div class="carousel-controls">
-                    <label for="img-3" class="prev-slide">
-                      <span>&lsaquo;</span>
-                    </label>
-                    <label for="img-2" class="next-slide">
-                      <span>&rsaquo;</span>
-                    </label>
-                  </div>
-                </li>
-                <input type="radio" name="radio-buttons" id="img-2" />
-                <li class="slide-container">
-                  <div class="slide-image">
-                    <img src="../assets/banner1.png">
-                  </div>
-                  <div class="carousel-controls">
-                    <label for="img-1" class="prev-slide">
-                      <span>&lsaquo;</span>
-                    </label>
-                    <label for="img-3" class="next-slide">
-                      <span>&rsaquo;</span>
-                    </label>
-                  </div>
-                </li>
-                <input type="radio" name="radio-buttons" id="img-3" />
-                <li class="slide-container">
-                  <div class="slide-image">
-                    <img src="../assets/banner1.png">
-                  </div>
-                  <div class="carousel-controls">
-                    <label for="img-2" class="prev-slide">
-                      <span>&lsaquo;</span>
-                    </label>
-                    <label for="img-1" class="next-slide">
-                      <span>&rsaquo;</span>
-                    </label>
-                  </div>
-                </li>
-                <div class="carousel-dots">
-                  <label for="img-1" class="carousel-dot" id="img-dot-1"></label>
-                  <label for="img-2" class="carousel-dot" id="img-dot-2"></label>
-                  <label for="img-3" class="carousel-dot" id="img-dot-3"></label>
-                </div>
-              </ul>
-            </div>
+                <div>
+    <b-carousel
+      id="carousel-1"
+      v-model="slide"
+      :interval="4000"
+      controls
+      indicators
+      background="#ababab"
+      img-width="1024"
+      img-height="400"
+      style="text-shadow: 1px 1px 2px #333;"
+      @sliding-start="onSlideStart"
+      @sliding-end="onSlideEnd"
+    >
+    
+     
+
+      <b-carousel-slide  v-for="(item, index) in ads" :key="ads.id"  :img-src="Checkimage(item.images)">
+      </b-carousel-slide>
+    </b-carousel>
+  </div>
+  </div>
 
 
 
@@ -74,29 +43,84 @@
 
     <!-- <-----------------------------------------------------Mobile-------------------------------------------------->
 
-    <div class="row adsmobile">
-            <div id="slider">
-          <figure>
-                <div class="image"><img class="imgads" src="../assets/banner1.png" alt="Slider 1"></div>
-                <div class="image"><img class="imgads" src="../assets/banner1.png" alt="Slider 2"></div>
-                <div class="image"><img class="imgads" src="../assets/banner1.png" alt="Slider 3"></div>
-                <div class="image"><img class="imgads" src="../assets/banner1.png" alt="Slider 4"></div>
-                <div class="image"><img class="imgads" src="../assets/banner1.png" alt="Slider 1"></div>
-            </figure>         
-            </div>
-
-
-        
+      <center><div class="row adsmobile col-12">
+            <div class="carousel">
+                <div>
+    <b-carousel
+      id="carousel-1"
+      v-model="slide"
+      :interval="4000"
+      controls
+      indicators
+      background="#ababab"
+      img-width="1024"
+      img-height="400"
+      style="text-shadow: 1px 1px 2px #333;"
+      @sliding-start="onSlideStart"
+      @sliding-end="onSlideEnd"
+    >
      
-         
-
-
-    </div>
-
-
-
-    
-    
+      <!-- Slide with blank fluid image to maintain slide aspect ratio -->
+      <b-carousel-slide  v-for="(item, index) in ads" :key="ads.id"  :img-src="Checkimage(item.images)">
+      </b-carousel-slide>
+    </b-carousel>
+  </div>
+  </div>          
+    </div></center>   
 </section>
     
 </template>
+
+
+<script>
+import { mapGetters } from "vuex";
+import { CHECK_LOGIN } from "../store/actions.type.js";
+import { FETCH_ADS } from "../store/actions.type.js";
+  export default {
+    data() {
+    return {
+      IsLogin: false,
+      slide: 0,
+        sliding: null
+    };
+  },
+
+
+     computed: {
+      ...mapGetters(["ads"]),
+        },
+           
+
+   
+        created(){
+           
+        },
+        
+
+    
+        
+      mounted() {
+       this.$store.dispatch(FETCH_ADS);
+         },
+
+      methods: {
+      onSlideStart(slide) {
+        this.sliding = true
+      },
+      onSlideEnd(slide) {
+        this.sliding = false
+      },
+      Checkimage(image){
+        
+                let a = 'http://127.0.0.1:8000/public/product/'+image;
+                return a;
+        }
+
+        }
+
+
+           
+        }
+
+
+</script>

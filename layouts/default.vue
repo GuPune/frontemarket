@@ -1,13 +1,38 @@
 <template>
-  <Nuxt />
+
+
+
+
+<div>
+
+ 
+{{currentRouteName}}
+    <Nav />
+
+<nuxt-child></nuxt-child>
+
+
+      <Ads   v-if="currentRouteName == 'index'"/>
+                <Categories  v-if="currentRouteName == 'index'" />
+
+                    <Related v-if="currentRouteName == 'index'"/>
+
+                    <Footer  v-if="currentRouteName == 'index'" />
+</div>
+
 </template>
 
-<script>
 
+<script>
+import Nav from "@/components/Nav"
+import Ads from "@/components/Ads"
+import Categories from "@/components/Categories"
+import Related from "@/components/Ads"
+import Footer from "@/components/Footer"
     
     export default {
       components: {
-          
+          Nav
           },
 
     data: () => ({
@@ -15,6 +40,10 @@
     }),
 
     computed: {
+        currentRouteName() {
+       console.log('this.$route.name',this.$route.name);
+        return this.$route.name;
+    },
   
      
 

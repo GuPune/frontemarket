@@ -33,6 +33,10 @@ export default {
         rel: 'stylesheet',
         type: 'text/css',
         href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
+      },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Lato:400,700'
       }
     ]
   },
@@ -79,6 +83,7 @@ export default {
     'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    'vue-sweetalert2/nuxt',
     "@nuxtjs/auth"
     
   ],
@@ -90,8 +95,9 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    baseURL: "http://127.0.0.1:8000/api"
-    
+    baseURL: "http://127.0.0.1:8000/api",
+    ImageURL: "http://127.0.0.1:8000/public/product/",
+  
   },
 
   auth: {
@@ -101,7 +107,7 @@ export default {
           login: {
             url: "login",
             method: "post",
-            propertyName: "meta.token"
+            propertyName: "data.token"
           },
           user: {
             url: "user",
@@ -114,6 +120,9 @@ export default {
           }
         }
       }
+    },
+    redirect: {
+      logout: '/form/login'
     }
   },
 

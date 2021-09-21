@@ -14,6 +14,7 @@ export const alert = {
             commit('error');
         },
         clear({ commit }) {
+          
             commit('clear');
         },
         successforgot({ commit }, messageforgot) {

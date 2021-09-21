@@ -44,11 +44,9 @@ const ApiService = {
     post(resource, params) {
         return axios.post(API_URLs+resource,params, { headers: authHeader() }).catch(function(error) {
             AuthService.logout();
-            location.reload(true);
+         //   location.reload(true);
 
         });
-
-
 
     },
 
@@ -78,6 +76,11 @@ const ApiService = {
         });
     },
 
+    
+    find(resource, params) {
+        return Vue.axios.post('http://127.0.0.1:8000/api/'+resource, params,{ headers:authHeader() });
+        },
+
     forgot(resource, params) {
       return Vue.axios.post('http://127.0.0.1:8000/api/'+resource, params,{ headers:authHeader() });
       },
@@ -85,7 +88,12 @@ const ApiService = {
         return Vue.axios.post('http://127.0.0.1:8000/api/'+resource, params,{ headers:authHeader() });
     },
     registerbyshop(resource, params) {
-      return Vue.axios.post('http://127.0.0.1:8000/api/'+resource, params,{ headers:authHeader() });
+      return Vue.axios.post('http://127.0.0.1:8000/api/'+resource, params,{ headers:authHeader() 
+    });
+
+      
+
+      
   },
 
 

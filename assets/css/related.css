@@ -1,5 +1,10 @@
+@import 'https://fonts.googleapis.com/css?family=Kanit|Prompt';
+
+
+
 .row.relatedweb{
     justify-content: center;
+    background-color: white;
     
 }
 
@@ -15,6 +20,115 @@
   border: 1px solid rgb(226, 226, 226);
   border-radius: 30px;
   width: auto;
+}
+
+.button.button, a.button {
+  color: #4c791b;
+  background-color: #ffffff;
+  border-color: #4c791b;
+}
+.button.btn-cart span span {
+  font-size: 12px;
+  padding-left: 35px;
+  background-size: 20px auto;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-image: url("https://www.svgroup.co.th/skin/frontend/typologancee/default/images/Vector-Smart-Object-green.png");
+}
+.item .addtocart {
+  display: inline-block;
+  margin: 0 4px 10px;
+  vertical-align: top;
+  font-size: 13px;
+}
+
+.product-shop .add-to-cart button.btn-cart, .category-products .products-grid .item .addtocart button.btn-cart {
+  background-color: rgba(0,0,0,0);
+}
+
+button.button, a.button {
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 0;
+  position: relative;
+  background: transparent;
+  height: 40px;
+  line-height: 38px;
+  padding: 0 15px;
+  border: 1px solid #e5e5e5;
+  white-space: normal;
+  display: inline-block;
+  vertical-align: top;
+  text-transform: uppercase;
+}
+
+.product-footer {
+  padding: 0.75rem 1.25rem;
+  /* background-color: rgba(0, 0, 0, 0.03); */
+  /* border-top: 1px solid rgba(0, 0, 0, 0.125); */
+}
+
+.rating-box {
+  background: url("https://www.svgroup.co.th/skin/frontend/typologancee/default/images/bg-rating.png") repeat-x scroll 0 0 transparent;
+  display: inline-block;
+  height: 14px;
+  position: relative;
+  vertical-align: top;
+  width: 50px;
+  margin: 0;
+  background-size: 10px auto;
+}
+
+.products-grid .item .product-name a {
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 22px;
+  color: #303030;
+}
+
+
+
+.product-name {
+  margin: 20px 0 0;
+  height: 33px;
+  line-height: 33px;
+  overflow: hidden;
+  text-align: center;
+  color: #303030;
+  
+}
+
+.heading-title h2 {
+  font-size: 28px;
+  text-transform: uppercase;
+  font-weight: normal;
+  text-align: center;
+  color: #446027;
+}
+
+.main-heading {
+  padding: 30px 0;
+}
+
+.heading-title h2 em {
+  color: #4c4c4c;
+  font-weight: normal;
+  font-style: normal;
+  display: block;
+  font-size: 22px;
+}
+
+.heading-title h2 span {
+  display: inline-block;
+  border-bottom: 2px solid #446027;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  
 }
 
 
@@ -54,7 +168,7 @@
   }
 
  @media (min-width: 900px) {
-    .cards { grid-template-columns: repeat(6, 1fr); }
+    .cards { grid-template-columns: repeat(4, 1fr); }
   }
 
 
@@ -72,7 +186,7 @@
   }
   
   /* Remove extra left and right margins, due to padding */
-  .row {margin: 0 -5px;}
+  /* .row {margin: 0 -5px;} */
   
   /* Clear floats after the columns */
   .row:after {
@@ -118,8 +232,8 @@
     height: auto;
     /* border:1px solid rgba(255, 0, 0, 0);
     background-color: rgb(235, 235, 235);
-    border-radius: 5px; */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px; 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);*/
     max-width: 300px;
     margin: auto;
     text-align: center;
@@ -164,7 +278,10 @@
   
 .price {
   color: grey;
-  font-size: 22px;
+  font-size: 16px;
+  font-family: Lato, arial, serif;
+  font-weight: bold;
+  color: #4c791b;
 }
 
 .cardproduct .addcart {

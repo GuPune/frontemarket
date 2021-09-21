@@ -1,7 +1,7 @@
 <template>
 <section class="Userregis">
 
-          <Nav />
+
 
           
 <div class="container forms">
@@ -210,7 +210,6 @@ import 'sweetalert2/dist/sweetalert2.min.css';
                 this.$store.dispatch(REGISTER,this.form).then((response) => response.code_return == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
             },
             success() {
-               
                 setTimeout(() =>
                     this.$swal.fire({
                         type: "success",

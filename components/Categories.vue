@@ -1,7 +1,16 @@
 <template>
   <section id="categories">
-    
+
+ <div class="product-categories">  
+ <div class="main-heading"> 
+ <div class="heading-title ">
  
+            <h2><span>PRODUCT CATEGORIES</span>
+	<em class="">หมวดหมู่สินค้า</em>
+			</h2>
+        </div>
+        </div>
+        </div>
     <center>       
       <section class="section-slider web">
             <div class="slider col-9">
@@ -47,12 +56,23 @@
 <script>
 import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
 import { mapGetters,mapState } from "vuex";
-import { FETCH_CATEGORY_SHELL } from "../store/actions.type.js";
+import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.js";
   export default {
 
      computed: {
           ...mapGetters(["category_shell"]),
         },
+
+        data() {
+            return {
+                form: {
+                    catagory_id: "",
+                },
+              
+            }
+
+        },
+
         
  
 
@@ -60,7 +80,7 @@ import { FETCH_CATEGORY_SHELL } from "../store/actions.type.js";
 
 
      //     let a = this.$store.dispatch(FETCH_CATEGORY_SHELL);
-     this.loadcategory()
+     this.Loadcategory()
           },
         
   
@@ -70,7 +90,7 @@ import { FETCH_CATEGORY_SHELL } from "../store/actions.type.js";
                     this.$router.push(name)
                   },
 
-        loadcategory() {
+        Loadcategory() {
                    let a = this.$store.dispatch(FETCH_CATEGORY_SHELL);  
           },
         Checkimage(image){
@@ -80,7 +100,10 @@ return a;
           
         },
         ChangeProduct(id){
-        alert(id);
+
+        this.form.catagory_id = id;
+        let find_product = this.$store.dispatch(FETCH_PRODUCT_FIND,this.form);  
+    
         }
 
         },

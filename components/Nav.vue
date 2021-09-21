@@ -1,73 +1,70 @@
 <template>
-
+<!--
 <header class="section-header">
-
     <section class="header-main border-bottom webnav">
         <div class="container-fluid">
             <div class="row mx-auto col-sm-9">
                 <div class="col-sm-4"> 
                   <a href="#" class="brand-wrap" data-abc="true">
-                        <!-- <img class="logo" src="http://ampexamples.com/data/upload/2017/08/bootstrap2_logo.png"> --> 
+                       
                         <span class="logo">
-                          E-MARKET PLACE
-                          <!-- <img class="imglogo" src="../assets/logohori2.png"> -->
+                          E-MARKET PLACE {{authenticated}}
+                          
                           </span> 
                   </a> 
                 </div>
 
-                <div class="col-sm-4">
-                    <form action="#" class="search-wrap">
-                        <div class="input-group w-100"> 
-                          <input type="text" class="form-control search-form" style="width:55%;" placeholder="Search">
-                            <div class="input-group-append"> 
-                              <button class="btn btn-primary search-button" type="submit"> <i class="fa fa-search"></i> </button> 
-                            </div>
-                        </div>
-                        
-                    </form>
+                <div class="col-sm-3">
+                  
 
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-5">
                     <div class="d-flex justify-content-end"> 
 
-                            <span class="vl"></span> 
-                            <a class="nav-link nav-user-img" href="#" data-toggle="modal" data-target="#login-modal" data-abc="true">
-                              <span class="login" style="font-size:14px;">{{authenticated}}</span>
-                            </a>
+                            <div class="nav-link nav-user-img">
+                               <img src="http://www.dgtfarm.com/images/thai-flag.png" alt="" height="20px" width="20px">ไทย
+                            </div>
 
+                                 
+                            <div class="nav-link nav-user-img">
+                               <img src="http://www.dgtfarm.com/images/eng-flag.png" alt="" height="20px" width="20px">อังกฤษ
+                            </div>
 
                             <span class="vl"></span> 
-                            <nuxt-link to="form/shopregis" class="nav-link nav-user-img" href="#" data-toggle="modal" data-target="#login-modal" data-abc="true">
+                            <div  @click="redirectTo('/form/shopregis')" class="nav-link nav-user-img">
                               <span class="login" style="font-size:14px;" >ขายสินค้ากับเรา</span>
-                            </nuxt-link>
+                            </div>
 
                             <nuxt-link to="cart/orderlist"  class="nav-link widget-header"> 
                               <i class="fas fa fa-cart-plus" aria-hidden="true"></i>
+                              <span> ({{ cartTotal }}) </span>
                             </nuxt-link><span class="vl"></span>
 
-
-
                             <span class="vl"></span> 
-                            <a class="nav-link nav-user-img" href="#" data-toggle="modal" data-target="#login-modal" data-abc="true">
+                           
+                            <div class="nav-link nav-user-img">
                               <span class="login">
                                 <div class="dropdown"><i class="fas fa fa-user-circle-o" aria-hidden="true"></i>
                                   <div class="dropdown-content">
                                   <div v-if="isLogins">
-                                  <nuxt-link to="profile/userprofile">จัดการบัญชี</nuxt-link>
+                                   <div  @click="redirectTo('/profile/userprofile')" class="nav-link nav-user-img text-login">
+                                         <span>จัดการบัญชี</span>
+                                       </div>
                                  <a href="#"  @click.prevent="logout">ออกจากระบบ</a>
                                   </div>
 
                                   <div v-else="!isLogins">
-                                  <nuxt-link to="form/login">เข้าสู่ระบบ</nuxt-link>
-                                  <nuxt-link to="form/userregis">สมัครสมาชิก</nuxt-link>
-                                  <nuxt-link to="profile/userprofile">จัดการบัญชี</nuxt-link>
+                                        <div  @click="redirectTo('/form/login')" class="nav-link nav-user-img text-login">
+                                         <span>เข้าสู่ระบบ</span>
+                                       </div>
+                                        <div  @click="redirectTo('/form/userregis')" class="nav-link nav-user-img text-login">
+                                         <span>สมัครสมาชิก</span>
+                                       </div>
                                   </div>
                                   </div>
                                 </div>
-
-
                               </span>
-                            </a>
+                            </div>
 
 
 
@@ -81,8 +78,6 @@
                                   <a href="#">ENGLISH</a>
                                   </div>
                                 </div>
-
-
                               </span>
                             </a>
 
@@ -107,11 +102,11 @@
 
 
 
-<!--------------------------------------------------- MOBILE ------------------------------------------------------------------>
+-->
 
 
 
-
+<!--------------------------------------------------- MOBILE ----------------------------------------------------------------
 
 
     <section class="header-main border-bottom mobilenav">
@@ -119,26 +114,15 @@
             <div class="row mx-auto">
                 <div class="col-sm-4"> 
                   <a href="#" class="brand-wrap" data-abc="true">
-                        <!-- <img class="logo" src="http://ampexamples.com/data/upload/2017/08/bootstrap2_logo.png"> --> 
+                       
                         <span class="logo">
                           E-MARKET PLACE
-                          <!-- <img class="imglogo" src="../assets/logohori2.png"> -->
+                       
                           </span> 
                   </a> 
                 </div>
 
                 <div class="col-sm-4">
-
-                    <form action="#" class="search-wrap">
-          
-                        <div class="input-group w-100"> 
-                          <input type="text" class="form-control search-form" style="width:55%;" placeholder="Search">
-                            <div class="input-group-append"> 
-                              <button class="btn btn-primary search-button" type="submit"> <i class="fa fa-search"></i> </button> 
-                            </div>
-                        </div>
-                        
-                    </form>
 
                 </div>
                 <div class="col-sm-4">
@@ -157,6 +141,7 @@
 
                             <nuxt-link to="cart/orderlist"  class="nav-link widget-header"> 
                               <i class="fas fa fa-cart-plus" aria-hidden="true"></i>
+                                <span> (5) </span>
                             </nuxt-link><span class="vl"></span>
 
 
@@ -209,8 +194,38 @@
     </section>
    
 </header>
+-->
 
-     
+<div>
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top navbar-dark bg-alpha">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/image/logo.png" width="35" height="35" class="d-inline-block align-top" alt="">
+                Emarket Place
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarKey" aria-controls="navbarKey" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarKey">
+                <ul class="navbar-nav ml-auto text-center">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
 
 
 </template>
@@ -221,6 +236,7 @@
 <script>
 import { mapGetters } from "vuex";
 import { CHECK_LOGIN } from "../store/actions.type.js";
+import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART } from "@/store/actions.type.js";
   export default {
     data() {
     return {
@@ -233,8 +249,11 @@ import { CHECK_LOGIN } from "../store/actions.type.js";
      computed: {
          ...mapGetters(["authenticated"]),
 			
-           isLogins () {
+        isLogins () {
                 return this.$store.state.auth.loggedIn;
+        },
+        cartTotal () {
+        return this.$store.state.Cart.cartTotal
         }
            
 
@@ -246,9 +265,9 @@ import { CHECK_LOGIN } from "../store/actions.type.js";
 
     
         
-      mounted() {
-          let checker = localStorage.getItem("user");
-  
+      async mounted() {
+          let checker = await localStorage.getItem("user");
+          let cart = await this.$store.dispatch(GET_CART);
 
           if(checker){
             this.IsLogin = true;
@@ -259,10 +278,20 @@ import { CHECK_LOGIN } from "../store/actions.type.js";
          },
 
       methods: {
+            redirectTo(name) {
+  
+                let path = this.$route.path
+                if (path !== name) {
+            
+                    this.$router.push(name)
+                }
+            },
 
 
           logout() {
     this.$auth.logout()
+
+    
      }
         }
 

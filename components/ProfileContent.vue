@@ -1,0 +1,155 @@
+<template>
+<div>
+      <div class="card mb-3">
+                        <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-3">
+                            <h6 class="mb-0">ชื่อ</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                            <input type="text" class="form-control" id="inputFirstName" v-model="profile.fname">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                            <h6 class="mb-0">นามสกุล</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                            <input type="text" class="form-control" id="inputLastName"  v-model="profile.lname">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                            <h6 class="mb-0">วันเกิด</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                        <div class="input-group"><div><b-form-datepicker id="example-datepicker" v-model="profile.birthday" class="mb-2"></b-form-datepicker></div>
+                                        </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                            <h6 class="mb-0">เบอร์ติดต่อ</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                            <input type="text" class="form-control" id="inputAddress"  placeholder=""  v-model="profile.tel" v-on:keyup="addbtel" maxLength="10">
+                            </div>
+                        </div>
+                        <hr>
+                
+                     
+                        <div class="row">
+                            <div class="col-sm-12">
+                            <b-button variant="outline-primary"   @click="saveprofile()">บันทึกการเปลี่ยนแปลง</b-button>
+                         
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+</div>
+
+</template>
+
+
+<script>
+import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
+import { mapGetters,mapState } from "vuex";
+import { FETCH_GET_PROFILE,SAVE_PROFILE } from "../store/actions.type.js";
+import Loading from 'vue-loading-overlay';
+import 'vue-loading-overlay/dist/vue-loading.css';
+import 'sweetalert2/dist/sweetalert2.min.css';
+  export default {
+   props: ['profile'],
+     computed: {
+           
+   
+
+            ...mapState({
+                objects: state => state.user.profile,
+             }),
+        },
+        
+         data: () => ({
+        value: '',
+        form: {
+            fname: "",
+            lname: "",
+            email: "",
+            password: "",
+            tel:"",
+            email:"",
+            address:""
+            
+        },
+      }),
+
+        mounted() {
+        this.setData()
+
+        
+         },
+        
+  
+        methods: {
+        setData(){
+
+    
+        },
+
+        async saveprofile(){
+        let save = this.$store.dispatch(SAVE_PROFILE,this.profile);
+
+        await this.success()
+    
+        },
+         send() {
+         let save = this.$store.dispatch(SAVE_PROFILE,this.profile).then((response) => response.code_return == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
+
+            },
+            success() {
+
+                    setTimeout(() =>
+                    this.$swal.fire({
+                        type: "success",
+                        title: "บันทึกข้อมูลเรียบร้อยแล้ว",
+                        showConfirmButton: false,
+                        timer: 3000
+                    }),
+                    1000
+                );
+            
+            },
+            
+        
+        addbtel(){
+             this.$set(this.profile, 'tel',this.profile.tel)
+  
+        },
+        addfname(){
+             this.$set(this.profile, 'fname',this.profile.fname)
+  
+        },
+        addlname(){
+             this.$set(this.profile, 'lname',this.profile.lname)
+
+        },
+        addlbirthday(){
+             this.$set(this.profile, 'birthday',this.profile.birthday)
+
+        }
+
+   
+     
+     
+        },
+  
+
+        components: {
+
+        },
+
+    }
+</script>

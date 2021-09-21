@@ -1,8 +1,5 @@
 <template>
-<section class="Shopregis">
-       <Nav />
-
-                
+<section class="Shopregis">           
 <div class="container forms">
 
       <h5 style="color: #171c24;">สมัครสมาชิกร้านค้า</h5>
