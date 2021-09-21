@@ -3,12 +3,11 @@
    
    <div class="container col-12" style="padding-top: 40px;">
 
-   {{cart}}
 <!-- --------------------------------store 1--------------------------------- -->
  <div class="row">
     <div class="col-md-9 col-sm-12">
       <div class="card shopping-cart">
-                  <h2 class="title-shoping-cart bg-order"><span>รถเข็นสินค้าของคุณ</span></h2>
+                  <h2 class="title-shoping-cart bg-order"><span>สินค้าในตะกร้า</span></h2>
                
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="cart-row cart-row-top hidden-xs cart-row-order-mobile">
@@ -77,11 +76,7 @@
                     <div class="visible-xs-block clearfix"></div>
                     <div class="col-xs col-sm-3 col-md-4 col-lg-4">
                                                 <div class="total-tax-excl">
-                                                            <span class="cart-price">
-                                    
-                                                                    <span class="visible-xs-inline-block">ทั้งหมด </span>
-                                                                            <span class="price">฿{{item.totalPrice}}</span>                                                                            
-                            </span>
+                                                            <span class="cart-price"><span class="price">฿{{item.totalPrice}}</span></span>
                                                     </div>
                                                                     </div>
                         <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 text-mobile">
@@ -90,7 +85,7 @@
                         </div>
                     </div>
                 </div>
-          <div class="row">
+            <div class="row">
                 <div class="col-12 shop-name-order">
                         <h5>ชื่อร้าน : xxxxxx</h5>
                  </div>
@@ -148,7 +143,7 @@
     <div class="col-md-3">
      <div class="col-md-12 sm-12 order-mod">
         <div class="card shopping-cart">
-                  <h2 class="title-shoping-cart bg-order"><span>ข้อมูลสั่งซื้อ</span></h2>
+                  <h2 class="title-shoping-cart bg-order"><span>ยอดรวมตะกร้าสินค้า</span></h2>
                         <div class="card-body">
                         <div class="table table-responsive">
                         <table width="100%" cellspacing="0" cellpadding="3" border="0" class="table table-responsive table-hover">
@@ -178,7 +173,7 @@
 <br>
             <div class="col-md-12">
         <div class="card shopping-cart">
-                  <h2 class="title-shoping-cart bg-order"><span>ข้อมูลสั่งซื้อ</span></h2>
+                  <h2 class="title-shoping-cart bg-order"><span>คูปองส่วนลด</span></h2>
                         <div class="card-body">
                         <div class="table table-responsive">
                           <table width="100%" cellspacing="0" cellpadding="3" border="0" class="table table-responsive table-hover">

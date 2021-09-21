@@ -31,6 +31,12 @@
 }
 
 
+.navbar.navbar-dark.bg-sat{
+  background-color: #EF7318!important;
+}
+
+
+
 .brand-wrap {
   text-decoration: none !important
 }
@@ -154,5 +160,39 @@
   background-color: #3e8e41;
 } */
 
+.cart-mobile{
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+    
+  .cart-mobile{
+
+    padding-left: 15%;
+  }
+}
+ 
+
+@media (min-width: 992px) { 
+  .banav {
+
+    /* height: 60px; */
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+  
+
+ }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .banav {
+
+    /* height: 60px; */
+    padding-left: 15%;
+    padding-right: 15%;
+  }
 
 
+
+}
