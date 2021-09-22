@@ -16,8 +16,7 @@
                 <Categories  v-if="currentRouteName == 'index'" />
 
                     <Related v-if="currentRouteName == 'index'"/>
-
-                    <Footer  v-if="currentRouteName == 'index'" />
+                   
 </div>
 
 </template>
@@ -28,6 +27,7 @@ import Nav from "@/components/Nav"
 import Ads from "@/components/Ads"
 import Categories from "@/components/Categories"
 import Related from "@/components/Ads"
+import LongFooter from "@/components/LongFooter"
 import Footer from "@/components/Footer"
     
     export default {

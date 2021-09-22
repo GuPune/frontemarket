@@ -21,6 +21,7 @@ export const SET_TOTAL     = "set_total";
 export const SET_ADDUP     = "set_add_up";
 export const SET_ADDDOWN     = "set_add_down";
 export const SET_ADD_INPUT     = "set_add_input";
+export const SET_REMOVE_ALL     = "set_remove_all";
 
 
 

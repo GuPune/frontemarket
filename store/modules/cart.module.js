@@ -1,10 +1,10 @@
 
 import { AdsService }  from "../../services/ads";
 import {
-    ADD_CART,REMOVE_CART,GET_CART,ADD_UP,ADD_DOWN,ADD_INPUT
+    ADD_CART,REMOVE_CART,GET_CART,ADD_UP,ADD_DOWN,ADD_INPUT,REMOVIE_ALL
 } from "../actions.type.js";
 import {
-    SET_CART,SET_REMOVECART,SET_GET_CART,SET_TOTAL,SET_ADDUP,SET_ADDDOWN,SET_ADD_INPUT
+    SET_CART,SET_REMOVECART,SET_GET_CART,SET_TOTAL,SET_ADDUP,SET_ADDDOWN,SET_ADD_INPUT,SET_REMOVE_ALL
 } from "../mutations.type";
 import Vuex from 'vuex'
 import Vue from 'vue'
@@ -60,6 +60,14 @@ const actions = {
       await context.commit(SET_ADD_INPUT,payload);  
       await context.commit(SET_TOTAL);   
     },
+
+    async [REMOVIE_ALL](context,payload) {
+   
+        await context.commit(SET_REMOVE_ALL);   
+      //  await context.commit(SET_TOTAL);   
+      },
+
+    
 };
 
 const mutations = {
@@ -83,8 +91,7 @@ const mutations = {
             })
             state.PriceToTal = sum
         }else {
-            state.PriceToTal = 0
-
+            state.PriceToTal = 0        
         }
 
       },
@@ -99,9 +106,6 @@ const mutations = {
         console.log('cart',this.cart.length);
         state.cartTotal = this.cart.length
         state.cart = this.cart
-
-
- 
       },
       [SET_CART](state,item) {
 
@@ -202,8 +206,19 @@ let a = localStorage.setItem("cart", JSON.stringify(state.cart));
             // state.cartTotal++;
         }
     let a = localStorage.setItem("cart", JSON.stringify(state.cart));
-        
-    }
+
+    },
+
+    [SET_REMOVE_ALL](state) {
+
+
+        state.cart = [];
+        let a = localStorage.setItem("cart", JSON.stringify(state.cart));
+
+        state.PriceToTal = 0  
+  
+ 
+    },
     
 };
 

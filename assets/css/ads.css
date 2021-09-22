@@ -181,6 +181,19 @@ input:checked + .slide-container .nav label { display: block; }
   height: 100px;
 }
 
+
+@media screen and (max-width: 600px) {
+    
+  .adsmobile {
+
+    padding-left: 0px;
+    padding-right:0px ;
+  }
+
+}
+
+
+
 @media screen and (min-width: 400px) {
   #slider {
     width: 400px;

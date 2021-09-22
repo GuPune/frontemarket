@@ -5,6 +5,8 @@
 .row.relatedweb{
     justify-content: center;
     background-color: white;
+    margin-left: 0px;
+    margin-right: 0px;
     
 }
 
@@ -101,6 +103,38 @@ button.button, a.button {
   
 }
 
+.heading-title-relat h2 {
+  font-size: 28px;
+  text-transform: uppercase;
+  font-weight: normal;
+  text-align: center;
+  color: #446027;
+}
+
+.main-heading {
+  padding: 30px 0;
+}
+
+.heading-title-relat h2 em {
+  color: #4c4c4c;
+  font-weight: normal;
+  font-style: normal;
+  display: block;
+  font-size: 22px;
+}
+
+.heading-title-relat h2 span {
+  display: inline-block;
+  border-bottom: 2px solid #446027;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  letter-spacing: 2px;
+  font-weight: bold;
+  
+}
+
+
+
 .heading-title h2 {
   font-size: 28px;
   text-transform: uppercase;
@@ -130,6 +164,7 @@ button.button, a.button {
   font-weight: bold;
   
 }
+
 
 
 
@@ -202,7 +237,29 @@ button.button, a.button {
       display: block;
       margin-bottom: 20px;
     }
+
+    .heading-title-relat h2 {
+      font-size: 20px;
+      text-transform: uppercase;
+      font-weight: normal;
+      text-align: center;
+      color: #446027;
+    }
+
+    .buttton-relat {
+      color: #4c791b;
+      background-color: #ffffff;
+      border-color: #4c791b;
+      font-size: 9px;
+    }
+
+
+
   }
+
+
+
+  
 
   
   /* Style the counter cards */
@@ -299,3 +356,18 @@ button.button, a.button {
 button.addcart:hover {
   opacity: 0.7;
 }
+
+
+
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+
+
+ }
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+
+ }

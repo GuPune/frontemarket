@@ -162,14 +162,16 @@
 
 .cart-mobile{
   display: none;
-}
+     
+    }
 
 @media screen and (max-width: 600px) {
     
   .cart-mobile{
-
-    padding-left: 15%;
+display: block;
+    padding-left: 10%;
   }
+
 }
  
 

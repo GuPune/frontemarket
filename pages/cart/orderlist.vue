@@ -57,7 +57,7 @@
             <div class="col-xs-12 col-sm-7 col-md-6 col-lg-6">
                 <div class="row shop-name-order-pc">
                     <div class="col-xs col-sm-3 col-md-3 col-lg-3">
-                                 <div class="tax-excl text-mobile"><span class="cart-price"><span class="price">฿{{item.price}}
+                                 <div class="tax-excl text-mobile "><span class="cart-price"><span class="price">฿{{item.price}}
                                  </span></span></div></div>
                     <div class="col-md-3 col-lg-3">
                                   <b-input-group>
@@ -74,7 +74,7 @@
                     </div>
                     <div class="visible-xs-block clearfix"></div>
                     <div class="col-xs col-sm-3 col-md-4 col-lg-4">
-                                                <div class="total-tax-excl">
+                                                <div class="total-tax-excl text-desktop">
                                                             <span class="cart-price"><span class="price">฿{{item.totalPrice}}</span></span>
                                                     </div>
                                                                     </div>
@@ -133,20 +133,38 @@
             </div>
         </div>
         </div>
+        
+        
     </div>
-</div>
-
-
-
-
-  
+     <div class="row">
+     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 button-order-spac">
+     <div  class="float-right">
+     
+    <b-button variant="outline-danger" class="button-order"  @click="RemoveToCartAll()"><i class="fa fa-trash"></i> ลบสินค้าในตะกร้าทั้งหมด</b-button>
     
     </div>
     </div>
     </div>
+</div>
+
     </div>
+    </div>
+    
+    </div>
+     <div class="row">
+         <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+         <div  class="float-right button-order boxSubmitCart" >
+            <b-button squared  variant="outline-primary" size="lg" class="btn btn-lg-auto btn-style-o buttonShopping">ซื้อสินค้าต่อ</b-button>
+            <b-button squared  variant="outline-primary" size="lg" class="btn btn-lg-auto btn-style buttonCheckout">สั่งซื้อสินค้า</b-button>
+            </div>
+         </div>
+         </div>
+    </div>
+
+
+   
     <div class="col-md-3">
-     <div class="col-md-12 sm-12 order-mod">
+     <div class="order-mod">
         <div class="card shopping-cart">
                   <h2 class="title-shoping-cart bg-order"><span>ยอดรวมตะกร้าสินค้า</span></h2>
                         <div class="card-body">
@@ -176,7 +194,7 @@
             </div>
             </div>
 <br>
-            <div class="col-md-12">
+            
         <div class="card shopping-cart">
                   <h2 class="title-shoping-cart bg-order"><span>คูปองส่วนลด</span></h2>
                         <div class="card-body">
@@ -191,7 +209,7 @@
                         </div>
                         </div>    
             </div>
-            </div>
+         
             
     </div>
    
@@ -212,7 +230,7 @@
   
   import Nav from "@/components/Nav";
   import Footer from "@/components/Footer";
-import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,ADD_DOWN,ADD_INPUT } from "@/store/actions.type.js";
+import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,ADD_DOWN,ADD_INPUT,REMOVIE_ALL } from "@/store/actions.type.js";
 
 
     export default {
@@ -275,6 +293,10 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
                 let keytext = 'ลดสินค้าเรียบร้อย!'
                 await this.success(keytext);
             }
+        },
+        async RemoveToCartAll(){
+
+        let Remove = await this.$store.dispatch(REMOVIE_ALL);
         },
       
         error() {

@@ -3,9 +3,9 @@
 
     <section id="Related">
         <div class="row relatedweb">
-                <div class="col-9">
+                <div class="col-12 col-md-9 col-lg-9">
                    <div class="main-heading">
-        <div class="heading-title">
+        <div class="heading-title-relat">
             <h2><span>PRODUCT  AGRICULTURAL</span>
 	<em class="">สินค้าเกษตรกร</em>
 			</h2>
@@ -14,7 +14,7 @@
             <div class="row product">
                  <div class="cards">
                     <div class="cardproduct" v-for="(item, index) in product_shell" :key="product_shell.id">
-                                                        <img class="imgproduct" height="200px" src="https://www.svgroup.co.th/media/catalog/product/cache/5/small_image/500x500/9df78eab33525d08d6e5fb8d27136e95/d/o/download_3.jpg">
+                                                        <img class="imgproduct" height="200px" :src="Checkimage(item.img_product)">
                                                             <div class="product-name">{{item.name_th}}</div>
                                                             <p class="price">฿{{item.price}}.00</p>
                                                    <div class="product-footer">
@@ -33,18 +33,7 @@
         </div>
         </div>
 
-        <div class="item-inner">
-                <div class="product-item">
-                     <div class="content products-list">
-                        <div class="product-show">
-                     
-                        </div>
-                     </div>
-
-                     
-                </div>
-        </div>
-
+  
                                 
 
                         
@@ -56,128 +45,6 @@
 
                         <!-- -------------------------Mobile------------------------------ -->
 
-            <div class="row relatedmobile">
-                <div class="col-12">
-                        <h4>สินค้าแนะนำ</h4>
-                        
-
-                              <div class="product" id="product">
-                                        <div class="row product">
-                                            <div class="cards">
-                                              <div class="cardproduct" >
-                                                        <img class="imgproduct"  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHYB4yOhfM-93z9SCPAv3CZIdJCQDNOcPg1w&usqp=CAU">
-                                                            <h6 style="margin-top:10px;">เมล็ดพันธุ์ผักบุ้งแก้ว</h6>
-                                                            <p class="price">10 ฿</p>
-                                                            <p>รายละเอียดสินค้า</p>
-                                                            <p><button class="addcart">เพิ่มลงตะกร้า</button></p>    
-                                                    </div> 
-                                              
-
-
-                                            
-                                                    <div class="cardproduct">
-                                                        <img class="imgproduct" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKwQ_-l2AuQpoBqeJdoVe2E9CZjFog3k5umw&usqp=CAU">
-                                                            <h6 style="margin-top:10px;">เมล็ดพันธุ์ผักบุ้งแก้ว</h6>
-                                                            <p class="price">10 ฿</p>
-                                                            <p>รายละเอียดสินค้า</p>
-                                                            <p><button class="addcart">เพิ่มลงตะกร้า</button></p>
-                                                    </div> 
-                                            
-
-                                          
-                                                    <div class="cardproduct">
-                                                          <img class="imgproduct" src="https://www.vkkarnkaset.com/uploads/4596/images/2325.jpg">
-                                                            <h6 style="margin-top:10px;">เมล็ดพันธุ์ผักบุ้งแก้ว</h6>
-                                                            <p class="price">10 ฿</p>
-                                                            <p>รายละเอียดสินค้า</p>
-                                                            <p><button class="addcart">เพิ่มลงตะกร้า</button></p>
-                                                      
-                                                    </div> 
-                                            
-
-                                                
-                                                    <div class="cardproduct">
-                                                           <img class="imgproduct" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFZc1mNJh9yRFfEanTveuI3oy5Cp0sVBYU2w&usqp=CAU">
-                                                            <h6 style="margin-top:10px;">เมล็ดพันธุ์ผักบุ้งแก้ว</h6>
-                                                            <p class="price">10 ฿</p>
-                                                            <p>รายละเอียดสินค้า</p>
-                                                            <p><button class="addcart">เพิ่มลงตะกร้า</button></p>
-                                                    </div> 
-                                             
-
-                                            
-                                                    <div class="cardproduct">
-                                                          <img class="imgproduct" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfbk8qJmYEzplxjedVKMqt6WYGTVD6zXNMxw&usqp=CAU">
-                                                            <h6 style="margin-top:10px;">เมล็ดพันธุ์ผักบุ้งแก้ว</h6>
-                                                            <p class="price">10 ฿</p>
-                                                            <p>รายละเอียดสินค้า</p>
-                                                            <p><button class="addcart">เพิ่มลงตะกร้า</button></p>
-
-                                                        
-                                                        
-                                                    </div> 
-                                              
-
-
-
-                                              
-                                                    <div class="cardproduct">
-                                                            <img class="imgproduct" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFZc1mNJh9yRFfEanTveuI3oy5Cp0sVBYU2w&usqp=CAU">
-                                                            <h6 style="margin-top:10px;">เมล็ดพันธุ์ผักบุ้งแก้ว</h6>
-                                                            <p class="price">10 ฿</p>
-                                                            <p>รายละเอียดสินค้า</p>
-                                                            <p><button class="addcart">เพิ่มลงตะกร้า</button></p>
-
-                                                    </div> 
-                                              
-
-
-                                                    <div class="cardproduct">
-                                                          <img class="imgproduct" src="https://www.vkkarnkaset.com/uploads/4596/images/2325.jpg">
-                                                            <h6 style="margin-top:10px;">เมล็ดพันธุ์ผักบุ้งแก้ว</h6>
-                                                            <p class="price">10 ฿</p>
-                                                            <p>รายละเอียดสินค้า</p>
-                                                            <p><button class="addcart">เพิ่มลงตะกร้า</button></p>
-
-                                                        
-                                                    </div> 
-                                             
-
-
-                                                
-                                                    <div class="cardproduct">
-                                                         <img class="imgproduct" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKwQ_-l2AuQpoBqeJdoVe2E9CZjFog3k5umw&usqp=CAU">
-                                                            <h6 style="margin-top:10px;">เมล็ดพันธุ์ผักบุ้งแก้ว</h6>
-                                                            <p class="price">10 ฿</p>
-                                                            <p>รายละเอียดสินค้า</p>
-                                                            <p><button class="addcart">เพิ่มลงตะกร้า</button></p>
-
-                                                    </div> 
-                                              
-
-                                       
-                                                    <div class="cardproduct">
-                                                            <img class="imgproduct" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHYB4yOhfM-93z9SCPAv3CZIdJCQDNOcPg1w&usqp=CAU">
-                                                            <h6 style="margin-top:10px;">เมล็ดพันธุ์ผักบุ้งแก้ว</h6>
-                                                            <p class="price">10 ฿</p>
-                                                            <p>รายละเอียดสินค้า</p>
-                                                            <p><button class="addcart">เพิ่มลงตะกร้า</button></p>
-
-                                                    </div> 
-                                          
-
-
-                                            </div>
-                                            
-
-
-                                        </div>
-
-            
-
-                        
-                    </div> 
-      </div>
 
     </div>
 
@@ -220,7 +87,7 @@
         },
         Checkimage(image){
         
-                let a = ImageURL+image;
+                let a = 'http://127.0.0.1:8000/public/product/'+image;
                 return a;
         },
         async addToCart(item){

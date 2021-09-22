@@ -2,11 +2,11 @@
   <section id="categories">
 
  <div class="product-categories">  
- <div class="main-heading"> 
- <div class="heading-title ">
+ <div class="main-heading-cate"> 
+ <div class="heading-title-cate-mobile">
  
             <h2><span>PRODUCT CATEGORIES</span>
-	<em class="">หมวดหมู่สินค้า</em>
+	<em class="">ประเภทสินค้า</em>
 			</h2>
         </div>
         </div>
@@ -27,15 +27,7 @@
     <center>       
       <section class="section-slider mobile">
             <div class="slider col-12">
-                <img class="img-slider" src="../assets/cate1.png">
-                <img class="img-slider" src="../assets/cate2.png">
-                <img class="img-slider" src="../assets/cate3.png">
-                <img class="img-slider" src="../assets/cate1.png">
-                <img class="img-slider" src="../assets/cate2.png">
-                <img class="img-slider" src="../assets/cate3.png">
-                <img class="img-slider" src="../assets/cate2.png">
-                <img class="img-slider" src="../assets/cate3.png">
-                <img class="img-slider" src="../assets/cate1.png">
+         <img class="img-slider" v-for="(item, index) in category_shell" :key="category_shell.id" :src="Checkimage(item.image)" @click="ChangeProduct(item.id)">
             </div>
           </section>
     </center>
