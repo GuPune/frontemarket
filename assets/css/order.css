@@ -227,6 +227,22 @@
 
       text-align: center;
     }
+
+    
+    .shop-name-order-mobile{
+      padding-top: 15px;
+      
+     }
+
+     .bg-order-mobile{
+
+      text-align: left;
+      padding-left:15px;
+      padding-bottom: 10px;
+     }
+     .trash-mobile{
+       text-align: right;
+     }
   
 
   }
