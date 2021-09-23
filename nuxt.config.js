@@ -27,6 +27,7 @@ export default {
         href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'
       }
     ],
+    
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
@@ -56,6 +57,7 @@ export default {
     '@/assets/css/order.css',
     '@/assets/css/confirmorder.css',
     '@/assets/css/userprofile.css',
+    '@/assets/css/adsshop.css',
     
   ],
 

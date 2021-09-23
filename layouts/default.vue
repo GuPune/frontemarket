@@ -26,7 +26,7 @@
 import Nav from "@/components/Nav"
 import Ads from "@/components/Ads"
 import Categories from "@/components/Categories"
-import Related from "@/components/Ads"
+import Related from "@/components/Related"
 import LongFooter from "@/components/LongFooter"
 import Footer from "@/components/Footer"
     

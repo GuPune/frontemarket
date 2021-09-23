@@ -316,3 +316,32 @@
     left: 0;
     max-width: 100%;
 }
+
+
+@media screen and (max-width: 600px) {
+
+.shop-user-proudct-mobile{
+
+margin-right: 0px !important;
+margin-left: 0px !important;
+}
+
+.heading-title-shop h2 {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: normal;
+    text-align: center;
+    color: #446027;
+  }
+
+  .buttton-shop {
+    color: #4c791b;
+    background-color: #ffffff;
+    border-color: #4c791b;
+    font-size: 9px;
+  }
+
+
+
+  }
+

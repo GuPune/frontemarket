@@ -154,8 +154,8 @@
      <div class="row">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
          <div  class="float-right button-order boxSubmitCart" >
-            <b-button squared  variant="outline-primary" size="lg" class="btn btn-lg-auto btn-style-o buttonShopping">ซื้อสินค้าต่อ</b-button>
-            <b-button squared  variant="outline-primary" size="lg" class="btn btn-lg-auto btn-style buttonCheckout">สั่งซื้อสินค้า</b-button>
+            <b-button squared  variant="outline-primary" size="lg" class="btn btn-lg-auto btn-style-o buttonShopping" @click="redirectTo('')">ซื้อสินค้าต่อ</b-button>
+            <b-button squared  variant="outline-primary" size="lg" class="btn btn-lg-auto btn-style buttonCheckout" @click="redirectTo()">สั่งซื้อสินค้า</b-button>
             </div>
          </div>
          </div>
@@ -255,6 +255,11 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
         mounted() {},
 
        methods: {
+
+        redirectTo(name) {
+  
+              this.$router.push(name)
+        },
         Checkimage(image){
         
                 let a = 'http://127.0.0.1:8000/public/product/'+image;

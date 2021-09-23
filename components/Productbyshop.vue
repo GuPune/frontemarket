@@ -1,11 +1,11 @@
 <template>
 <div>
-  <div class="heading-title" v-if="cate_sel.length == 0 ">
+  <div class="heading-title-relat" v-if="cate_sel.length == 0 ">
             <h2><span>PRODUCT  AGRICULTURAL</span>
 	<em class="">สินค้าเกษตรกร</em>
 			</h2>
         </div>
-          <div class="heading-title" v-else v-for="item in cate_sel" :value="item.id">
+          <div class="heading-title-relat" v-else v-for="item in cate_sel" :value="item.id">
             <h2><span>{{item.title}}</span>
 	<em class="">{{item.subtitle}}</em>
 			</h2>
@@ -13,6 +13,7 @@
         <div class="product" id="product">
             <div class="row product">
                  <div class="cards">
+                 
                     <div class="cardproduct"  v-for="item in lists" :value="item.id">
                         <img class="imgproduct" height="200px"   :src="Checkimage(item.img_product)">
                                                             <div class="product-name">{{item.name_en}}</div>

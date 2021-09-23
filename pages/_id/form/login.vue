@@ -1,6 +1,6 @@
 <template>
 <div>
-<section id="Loginform">
+<section id="Loginform" class="form-login-desktop">
       <div class="container forms">
 
        <div class="alert alert-danger" role="alert" v-if="alert.message">
