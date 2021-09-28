@@ -22,6 +22,9 @@ export const SET_ADDUP     = "set_add_up";
 export const SET_ADDDOWN     = "set_add_down";
 export const SET_ADD_INPUT     = "set_add_input";
 export const SET_REMOVE_ALL     = "set_remove_all";
+export const SET_ADS_SHOP     = "set_ads_shop";
+export const SET_ADS_SHOP_SEMI     = "set_ads_shop_semi";
+
 
 
 

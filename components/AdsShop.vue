@@ -1,7 +1,7 @@
 <template>
 <div class="asd-shop" style="padding-top:32px">
-<div>
-  <img loading="lazy" src="https://demo.bagisto.com/marketplace-184-82-60-131/themes/velocity/assets/images/banner.png" class="col-12 no-padding banner-icon" style="display: block;padding: 0;">
+<div v-if="ads_shop">
+  <img loading="lazy" :src="Checkimage(ads_shop.images)" class="col-12 no-padding banner-icon" style="display: block;padding: 0;">
 </div>
 </div>
 </template>
@@ -10,10 +10,13 @@
 <script>
 import { mapGetters } from "vuex";
 import { CHECK_LOGIN } from "../store/actions.type.js";
-import { FETCH_ADS } from "../store/actions.type.js";
+import { FETCH_ADS_SHOP } from "../store/actions.type.js";
   export default {
     data() {
     return {
+      form:{
+
+      },
       IsLogin: false,
       slide: 0,
         sliding: null
@@ -22,7 +25,7 @@ import { FETCH_ADS } from "../store/actions.type.js";
 
 
      computed: {
-      ...mapGetters(["ads"]),
+      ...mapGetters(["ads_shop"]),
         },
            
 
@@ -34,8 +37,12 @@ import { FETCH_ADS } from "../store/actions.type.js";
 
     
         
-      mounted() {
-       this.$store.dispatch(FETCH_ADS);
+     async mounted() {
+       let a = window.location.origin
+       this.form.url = a;
+       this.form.layout = 'First';
+
+       this.$store.dispatch(FETCH_ADS_SHOP,this.form);
          },
 
       methods: {
@@ -45,9 +52,9 @@ import { FETCH_ADS } from "../store/actions.type.js";
       onSlideEnd(slide) {
         this.sliding = false
       },
-      Checkimage(image){
+       Checkimage(image){
         
-                let a = 'https://demo.bagisto.com/marketplace-184-82-60-131/themes/velocity/assets/images/banner.png';
+                let a = 'http://127.0.0.1:8000/public/product/' + image;
                 return a;
         }
 

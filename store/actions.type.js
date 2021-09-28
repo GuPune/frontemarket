@@ -28,6 +28,9 @@ export const ADD_UP = "add_up";
 export const ADD_DOWN = "add_down";
 export const ADD_INPUT = "add_input";
 export const REMOVIE_ALL = "remove_all";
+export const FETCH_ADS_SHOP = "fetch_ads_shop";
+export const FETCH_ADS_SHOP_SEMI = "fetch_ads_shop_semi";
+
 
 
 
