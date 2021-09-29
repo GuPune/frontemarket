@@ -267,12 +267,10 @@
               },
              
        async mounted() {
-this.form.product_id = this.$route.params.id;
+this.form.product_id = this.$route.params.slug;
 this.form.url = window.location.origin
-
 let productshop_item= this.$store.dispatch(FETCH_BY_PRODUCT_SHOP_ONE_ITEM,this.form);
     
-        
         },
 
 
