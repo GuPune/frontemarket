@@ -16,5 +16,8 @@ export const ProductService = {
     },
     findcatebyshop(param){
       return ApiService.post("searchproduct",param);
+    },
+    getproductbyitem(param){
+      return ApiService.post("productbyitem",param);
     }
 };

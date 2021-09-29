@@ -31,6 +31,8 @@ export const REMOVIE_ALL = "remove_all";
 export const FETCH_ADS_SHOP = "fetch_ads_shop";
 export const FETCH_ADS_SHOP_SEMI = "fetch_ads_shop_semi";
 
+export const FETCH_BY_PRODUCT_SHOP_ONE_ITEM = "fetch_product_by_shop";
+
 
 
 

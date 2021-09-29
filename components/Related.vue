@@ -14,7 +14,8 @@
             <div class="row product">
                  <div class="cards">
                     <div class="cardproduct" v-for="(item, index) in product_shell" :key="product_shell.id">
-                                                        <img class="imgproduct" height="200px" :src="Checkimage(item.img_product)">
+                    {{item}}
+                                                        <img class="imgproduct" height="200px" :src="Checkimage(item.img_product)" @click="Shop(item)">
                                                             <div class="product-name">{{item.name_th}}</div>
                                                             <p class="price">฿{{item.price}}.00</p>
                                                    <div class="product-footer">
@@ -79,7 +80,7 @@
   
         methods: {
 
-      redirectTo(name) {
+        redirectTo(name) {
                     this.$router.push(name)
                   },
         loadcategory(){
@@ -99,6 +100,12 @@
        }else{
         this.addToCart(item);
        }
+        },
+       async Shop(item){
+         console.log('item',item.shop_id);
+         let name = item.shop_id+'/product/productdetail/'+item.product_id;
+
+    this.$router.push(name)
         },
 
         },

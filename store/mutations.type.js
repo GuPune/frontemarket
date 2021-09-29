@@ -24,6 +24,9 @@ export const SET_ADD_INPUT     = "set_add_input";
 export const SET_REMOVE_ALL     = "set_remove_all";
 export const SET_ADS_SHOP     = "set_ads_shop";
 export const SET_ADS_SHOP_SEMI     = "set_ads_shop_semi";
+export const SET_BY_PRODUCT_SHOP_ONE_ITEM  = "set_by_product_one_item";
+
+
 
 
 

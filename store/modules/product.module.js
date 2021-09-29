@@ -1,10 +1,10 @@
 
 import { ProductService }  from "../../services/product";
 import {
-    FETCH_PRODUCT_SHELL,FETCH_PRODUCT_FIND,FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,FETCH_FIND_PRODUCT
+    FETCH_PRODUCT_SHELL,FETCH_PRODUCT_FIND,FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,FETCH_FIND_PRODUCT,FETCH_BY_PRODUCT_SHOP_ONE_ITEM
 } from "../actions.type.js";
 import {
-    SET_PRODUCT_SHELL,SET_PRODUCT_BY_SHOP,SET_CATE_BY_SHOP,SET_CATE_SEC
+    SET_PRODUCT_SHELL,SET_PRODUCT_BY_SHOP,SET_CATE_BY_SHOP,SET_CATE_SEC,SET_BY_PRODUCT_SHOP_ONE_ITEM
 } from "../mutations.type";
 import Vuex from 'vuex'
 
@@ -12,7 +12,8 @@ const state = {
     product_shell:[],
     product_by_shop:[],
     cate_by_shop:[],
-    cate_sel:[]
+    cate_sel:[],
+    product_by_item:[]
 }
 
 const getters = {
@@ -28,6 +29,11 @@ const getters = {
     cate_sel: state => {
         return state.cate_sel
     },
+    product_by_item: state => {
+        return state.product_by_item
+    },
+
+    
 };
 
 
@@ -63,6 +69,13 @@ const actions = {
         context.commit(SET_PRODUCT_BY_SHOP,data);
            return data;
        },
+
+    async [FETCH_BY_PRODUCT_SHOP_ONE_ITEM](context,payload) {
+           const { data } = await ProductService.getproductbyitem(payload);
+       // const { data } = await ProductService.getcatebyshop(payload);
+        //   context.commit(SET_BY_PRODUCT_SHOP_ONE_ITEM,data);
+         //  return data;
+    },   
 };
 
 const mutations = {
@@ -88,7 +101,13 @@ const mutations = {
             }
           }
         //https://medium.com/nectec/vue-js-2-and-vuex-3-with-typescript-6f047f17ff32 find state
-}
+},
+    [SET_BY_PRODUCT_SHOP_ONE_ITEM](state,data) {
+        
+        state.product_by_item = data.data;
+    },
+
+
   
 };
 

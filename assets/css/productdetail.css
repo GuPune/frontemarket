@@ -59,3 +59,62 @@
     cursor: zoom-in;
     text-align: center;
 }
+
+.product-details{
+padding-top:50px;
+
+}
+
+.no-margin {
+    margin: 0!important;
+}
+
+.productItemDetail .starRating > .fa-star {
+    color: #EDA100;
+    font-size: 14px;
+    font-family: tahoma;
+}
+
+.rating-box-detail {
+    background: url(https://www.svgroup.co.th/skin/frontend/typologancee/default/images/bg-rating.png) repeat-x scroll 0 0 transparent;
+    display: inline-block;
+    height: 14px;
+    position: relative;
+    vertical-align: top;
+    width: 87px;
+    margin: 0;
+    /* background-size: 10px auto; */
+}
+
+.productName-detail{
+
+    font-size: 25px;
+}
+
+.product-details-bor{
+    border-bottom: solid;
+    border-width: 1px;
+}
+
+.rati-bottom{
+    border-bottom: solid;
+
+}
+
+.dividerFix {
+    border-top: 1px solid #CCC;
+}
+
+.btnMainCart {
+    width: 100%;
+    min-height: 44px;
+}
+
+.productItemDetail .button-wrapper {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.productde-text-ce{
+    text-align: center
+}

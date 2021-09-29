@@ -56,7 +56,7 @@ import { FETCH_ADS_SHOP } from "../store/actions.type.js";
         
                 let a = 'http://127.0.0.1:8000/public/product/' + image;
                 return a;
-        }
+      }
 
         }
 

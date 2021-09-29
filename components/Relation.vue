@@ -2,48 +2,26 @@
 
  <section id="Related">
         <div class="row relatedweb">
-                <div class="col-12 col-md-9 col-lg-9">
-                   <div class="main-heading">
-
-
-         <div class="container-fluid advertisement-three-container">
-        <div class="row relatedweb" v-if="ads_semi">
-            <div class="col-12 col-lg-6 col-md-12 no-padding">
-            <a><img src="https://demo.bagisto.com/marketplace-184-82-60-131/themes/velocity/assets/images/headphones.png" :src="Checkimage(ads_semi.Content.images)" class="full-width" /></a>
-            </div>
-
-            <div class="col-lg-6 col-md-12 second-panel">
-                <a  class="row top-container"><img src="https://demo.bagisto.com/marketplace-184-82-60-131/themes/velocity/assets/images/watch.png" :src="Checkimage(ads_semi.Top.images)"  class="col-12 pr0" /></a>
-                <a  class="row bottom-container"><img src="https://demo.bagisto.com/marketplace-184-82-60-131/themes/velocity/assets/images/kids-2.png" :src="Checkimage(ads_semi.Bottom.images)" class="col-12 pr0" /></a>
-            </div>
     
-    </div>
-    
+
+        </div>
+
+        <div class="row ltr">
+        <div class="col-md-12 no-padding carousel-products without-recent-viewed col-lg-12">
         </div>
         </div>
 
-  
-                                
-
-                        
-                    </div> 
-      </div>
-
-    </div>
-
-
-                        <!-- -------------------------Mobile------------------------------ -->
-
-
-    </div>
 
     </section>
+
+    
 
  
 </template>
 
 
 <script>
+
   import { mapGetters,mapState } from "vuex";
   import { FETCH_PRODUCT_SHELL } from "../store/actions.type.js";
   import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CAR,FETCH_ADS_SHOP_SEMI } from "@/store/actions.type.js";
