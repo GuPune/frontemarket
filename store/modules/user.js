@@ -1,11 +1,11 @@
 
 import { UserService }  from "../../services/user.service";
 import {
-    CHECK_LOGIN,FORGOTEMAIL,CLEARALRET,REGISSHOP,REGISTER,FETCH_GET_PROFILE,SAVE_PROFILE,FETCH_ADDRESS,FETCH_ADDRESS_BY_ID,SAVE_ADDRESS_BY_ID,DEL_ADDRESS_BY_ID,UPDATE_ADDRESS_BY_ID,LOGOUT
+    CHECK_LOGIN,FORGOTEMAIL,CLEARALRET,REGISSHOP,REGISTER,FETCH_GET_PROFILE,SAVE_PROFILE,FETCH_ADDRESS,FETCH_ADDRESS_BY_ID,SAVE_ADDRESS_BY_ID,DEL_ADDRESS_BY_ID,UPDATE_ADDRESS_BY_ID,LOGOUT,FETCH_ID_URL
 
 } from "../actions.type.js";
 import {
-    SET_CHECK_LOGIN,SET_ALERT,SET_CLEARALERT,SET_PROFILE,SET_ADDRESS
+    SET_CHECK_LOGIN,SET_ALERT,SET_CLEARALERT,SET_PROFILE,SET_ADDRESS,SET_URL
 
 } from "../mutations.type";
 import Vuex from 'vuex'
@@ -18,7 +18,8 @@ const state = {
         name: "1",
     },
     profile:[],
-    address:[]
+    address:[],
+    url_id:null
 };
 
 const getters = {
@@ -28,11 +29,17 @@ const getters = {
     address: state => {
         return state.address
     },
-
+    url_id: state => {
+        return state.url_id
+    },
 
 };
 
 const actions = {
+    async [FETCH_ID_URL](context,payload) {
+         const { data } = await UserService.geturl(payload);
+        context.commit(SET_URL,data);
+    },
     async [CHECK_LOGIN](context) {
 
         context.commit(SET_CHECK_LOGIN);
@@ -120,6 +127,9 @@ const actions = {
 };
 
 const mutations = {
+    [SET_URL](state,data) {
+        state.url_id = data.data;
+    },
     [SET_CHECK_LOGIN](state) {
         
     },

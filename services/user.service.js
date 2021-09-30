@@ -11,7 +11,9 @@ export const UserService = {
     registerbyshop(params) {
       return ApiService.registerbyshop("registerbyshop",params);
     },
-
+    geturl(params){
+      return ApiService.post("geturl",params);
+    },
     getprofile() {
       return Apiall.get("profile");
     },

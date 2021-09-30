@@ -223,8 +223,8 @@
           <b-dropdown-item href="#"  @click.prevent="logout">Sign Out</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item-dropdown text="Login" v-else="!isLogins" right>
-          <b-dropdown-item href="#" @click="redirectTo('/form/login')">เข้าสู่ระบบ</b-dropdown-item>
-          <b-dropdown-item href="#" @click="redirectTo('/form/userregis')" >สมัครสมาชิก</b-dropdown-item>
+          <b-dropdown-item href="#" @click="redirectTo('id-form-login')">เข้าสู่ระบบ</b-dropdown-item>
+          <b-dropdown-item href="#" @click="redirectTo('id-form-userregis')" >สมัครสมาชิก</b-dropdown-item>
         </b-nav-item-dropdown>
 
     
@@ -256,6 +256,12 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART 
         isLogins () {
                 return this.$store.state.auth.loggedIn;
         },
+
+        isUrl () {
+                return this.$store.state.user.url_id;
+        },  
+  
+
         cartTotal () {
         return this.$store.state.Cart.cartTotal
         }
@@ -282,12 +288,16 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART 
          },
 
       methods: {
-            redirectTo(name) {
+            redirectTo(names) {
   
                 let path = this.$route.path
-                if (path !== name) {
-            
-                    this.$router.push(name)
+                if (path !== names) {
+
+ const Shopid = 1;
+
+            //  this.$router.push({ path: `/1/${name}` }) // -> /user/123
+                //   this.$router.push({ params: { id: '1' } ,name: name})
+                   this.$router.push({ name: names, params: { id: Shopid }})
                 }
             },
 

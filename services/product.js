@@ -18,6 +18,7 @@ export const ProductService = {
       return ApiService.post("searchproduct",param);
     },
     getproductbyitem(param){
+      console.log('param',param);
       return ApiService.post("productbyitem",param);
     }
 };

@@ -96,6 +96,7 @@ shop_name:null
         },
              
        async mounted() {
+           console.log('this.$route.params',this.$route.params)
           let cate_by_shop = await this.$store.dispatch(FETCH_CATE_BY_SHOP,this.$route.params).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
           let product = await this.$store.dispatch(FETCH_PRODUCT_BY_SHOP,this.$route.params).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
         },

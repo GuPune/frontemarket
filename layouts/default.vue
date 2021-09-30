@@ -6,7 +6,7 @@
 <div>
 
  
-{{currentRouteName}}
+
     <Nav />
 
 <nuxt-child></nuxt-child>
@@ -16,7 +16,7 @@
                 <Categories  v-if="currentRouteName == 'index'" />
 
                     <Related v-if="currentRouteName == 'index'"/>
-                   
+        
 </div>
 
 </template>
@@ -29,6 +29,7 @@ import Categories from "@/components/Categories"
 import Related from "@/components/Related"
 import LongFooter from "@/components/LongFooter"
 import Footer from "@/components/Footer"
+import { FETCH_ID_URL } from "@/store/actions.type.js";
     
     export default {
       components: {
@@ -36,22 +37,31 @@ import Footer from "@/components/Footer"
           },
 
     data: () => ({
-    
+    form:{
+        url:null
+    }
     }),
 
     computed: {
         currentRouteName() {
-       console.log('this.$route.name',this.$route.name);
+
         return this.$route.name;
     },
+    isUrl () {
+                return this.$store.state.user.url_id;
+    },
+
   
      
 
     },
-    created() {
+     created() {
 
+        
     },
     mounted() {
+        this.form.url = window.location.origin
+         let get_url = this.$store.dispatch(FETCH_ID_URL,this.form);
        // let clearalert = this.$store.dispatch(CLEARALRET);
       
     },

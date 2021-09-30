@@ -90,24 +90,14 @@
                                                                          @blur="$v.form.first_name.$touch()"/>
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-key"></i></div>
       </div>
-
-
-
     </div>
 
-     <h6 style="color: #171c24;">ช่องทางการขายเพิ่มเคิม</h6>
-       
-    
+     <h6 style="color: #171c24;">ช่องทางการขายเพิ่มเติม</h6>
         <input type="checkbox" id="vehicle2" name="vehicle2"  v-model="form.status" v-on:click="checkdomain()">
         <label for="vehicle2">ซื้อ Domain</label><br>
-     
-
     <center>
     <button class="btn btn-primary" @click="registershop()"><span>สร้างร้านค้า</span></button>
     </center>
-
-  
-
 </div>
 </section>
     
@@ -121,7 +111,7 @@
 import Nav from "@/components/Nav";
 import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
 import { mapGetters } from "vuex";
-import { REGISSHOP } from "../../store/actions.type.js";
+import { REGISSHOP } from "../../../store/actions.type.js";
 import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/vue-loading.css';
 import 'sweetalert2/dist/sweetalert2.min.css';
