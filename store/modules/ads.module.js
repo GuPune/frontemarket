@@ -42,8 +42,10 @@ const actions = {
     },
 
     async [FETCH_ADS_SHOP_SEMI](context,payload) {
+       
         const { data } = await AdsService.semi(payload);
-   
+    
+        console.log('dataxxxxxxxxxxxxxxxxx',data);
         context.commit(SET_ADS_SHOP_SEMI,data);
         return data;
     },

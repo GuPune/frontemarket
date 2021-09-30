@@ -1,7 +1,7 @@
 <template>
 
    
-   <div class="container col-12" style="padding-top: 40px;">
+   <div class="container col-12" style="padding-top: 90px;">
 
 <!-- --------------------------------store 1--------------------------------- -->
  <div class="row">

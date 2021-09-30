@@ -14,7 +14,7 @@
             <div class="row product">
                  <div class="cards">
                     <div class="cardproduct" v-for="(item, index) in product_shell" :key="product_shell.id">
-                    {{item}}
+                
                                                         <img class="imgproduct" height="200px" :src="Checkimage(item.img_product)" @click="Shop(item)">
                                                             <div class="product-name">{{item.name_th}}</div>
                                                             <p class="price">฿{{item.price}}.00</p>
