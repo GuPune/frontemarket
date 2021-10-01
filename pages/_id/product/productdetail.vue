@@ -1,8 +1,6 @@
 <template>
 <section id="Productdetail" class="product-details">
 <div class="container product-details productItemDetail" style="background-color: white;">
-
- {{product_by_item}}
        <div class="row">
             <div class="col-sm-12">
                 <nav aria-label="breadcrumb">
@@ -17,22 +15,10 @@
                                                     <li class="breadcrumb-item "  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                                                                     <a itemscope itemtype="https://schema.org/Thing" itemprop="item" href="/category"
                                        alt="คลิกไปที่ สินค้าทั้งหมด" title="คลิกไปที่ สินค้าทั้งหมด" id="2">
-                                        <span itemprop="name">สินค้าทั้งหมด</span>
+                                        <span itemprop="name">ร้านค้า</span>
                                     </a>
-                                    <meta itemprop="position" content="2">
-                                                            </li>
-                                                    <li class="breadcrumb-item "  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                                                                    <a itemscope itemtype="https://schema.org/Thing" itemprop="item" href="/category/3382/gemstones"
-                                       alt="คลิกไปที่ Gemstones" title="คลิกไปที่ Gemstones" id="3">
-                                        <span itemprop="name">Gemstones</span>
-                                    </a>
-                                    <meta itemprop="position" content="3">
-                                                            </li>
-                                                    <li class="breadcrumb-item active" aria-current="page" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                                                                    <a itemscope itemtype="https://schema.org/Thing" itemprop="item" href="/product/28463-28068/แหวนไพลิน-a4989"
-                                       alt="คลิกไปที่ แหวนไพลิน A4989" title="คลิกไปที่ แหวนไพลิน A4989" id="4">
-                                        <span itemprop="name">แหวนไพลิน A4989</span>
-                                    </a>
+                                   
+                                 
                                     <meta itemprop="position" content="4">
                                                             </li>
                                             </ol>
