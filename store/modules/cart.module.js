@@ -73,6 +73,7 @@ const actions = {
 const mutations = {
    
     addToCart (state, item) {
+        console.log('addcart',item);
         state.cartTotal++
         if (item.slug in state.cart) {
           state.cart[item.slug].count++

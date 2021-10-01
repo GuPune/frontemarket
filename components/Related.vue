@@ -20,7 +20,7 @@
                                                             <p class="price">฿{{item.price}}.00</p>
                                                    <div class="product-footer">
                                                    <div class="addtocart">
-                                                   <button type="button" title="Add To Cart" data-placement="top" class="button btn-cart" @click="CheckLogin(item)">
+                                                   <button type="button" title="Add To Cart" data-placement="top" class="button btn-cart" @click="addToCart(item)">
                                                    <span>
                                                    <span>Add To Cart</span></span>
                                                    </button></div></div>
@@ -65,6 +65,12 @@
            
      ...mapGetters(["product_shell","authenticated"]),
 
+
+         isUrl () {
+                return this.$store.state.user.url_id;
+        },  
+  
+
         },
         
         mounted() {
@@ -97,7 +103,18 @@
         },
         async CheckLogin(item){
        if(!this.authenticated){
-               this.$router.push('/form/login')
+
+                         let path = this.$route.path
+            
+const names = 'id-form-login'
+ const Shopid = this.isUrl.id;
+
+
+            //  this.$router.push({ path: `/1/${name}` }) // -> /user/123
+                //   this.$router.push({ params: { id: '1' } ,name: name})
+                   this.$router.push({ name: names, params: { id: Shopid }})
+               
+              //  this.$router.push('/form/login')
        }else{
         this.addToCart(item);
        }

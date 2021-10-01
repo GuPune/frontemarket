@@ -113,6 +113,9 @@ input[name="tab"]:checked + .tab-content{
   justify-content: center;
 }
 
+.profile-desktop{
+  padding-top: 70px;
+}
 
 
 /* Android 2.3 :checked fix */

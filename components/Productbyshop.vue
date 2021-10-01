@@ -66,11 +66,16 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART } from "@
 
 
      computed: {
-    ...mapGetters(["cate_sel","product_by_shop"]),
+    ...mapGetters(["cate_sel","product_by_shop","authenticated"]),
      
       numberOfPages() {
         return this.product_by_shop.length
       },
+
+      
+         isUrl () {
+                return this.$store.state.user.url_id;
+        },  
 
         lists () {
       const items = this.$store.getters.product_by_shop
@@ -105,6 +110,25 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART } from "@
 
       methods: {
 
+               async CheckLogin(item){
+                 console.log('item',item);
+              if(!this.authenticated){
+                         let path = this.$route.path
+
+const names = 'id-form-login'
+ const Shopid = this.isUrl.id;
+
+
+            //  this.$router.push({ path: `/1/${name}` }) // -> /user/123
+                //   this.$router.push({ params: { id: '1' } ,name: name})
+                   this.$router.push({ name: names, params: { id: Shopid }})
+               
+              //  this.$router.push('/form/login')
+       }else{
+        this.addToCart(item);
+       }
+        },
+
           paginate(page_size, page_number) {
       let itemsToParse = this.product_by_shop;
       console.log('itemsToParse',itemsToParse);
@@ -118,6 +142,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART } from "@
     onPageChanged(page) {
       this.paginate(this.perPage, page - 1);
     },
+    
      
             success() {
           

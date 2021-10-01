@@ -164,53 +164,12 @@
 
    
     <div class="col-md-3">
-     <div class="order-mod">
-        <div class="card shopping-cart">
-                  <h2 class="title-shoping-cart bg-order"><span>ยอดรวมตะกร้าสินค้า</span></h2>
-                        <div class="card-body">
-                        <div class="table table-responsive">
-                        <table width="100%" cellspacing="0" cellpadding="3" border="0" class="table table-responsive table-hover">
-                        <tr>
-                        <td class="text-left"  width="100%">รวมทั้งหมด (บาท)</td>
-                        <td class='text-right'>{{PriceToTal}}.00</td></tr>
-                        <tr>
-                        <td class="text-left">ส่วนลด (บาท)</td>
-                        <td class='text-right'>0.00</td>
-                        </tr>
-                        <tr>
-                        <td class="text-left" style="color:red;">ราคาสุทธิที่ต้องชำระ (บาท)</td>
-                        <td class="text-right">
-                        <span style="  border-bottom: 1px solid #cdcdcd;">
-                        <span style="  border-bottom: 1px solid #cdcdcd;padding-bottom:2px;">
-                        <span style="color:red">
-                        0.00 </span>
-                        </span>
-                        </span>
-                        </td>
-                        </tr>
-                        </table>
-                        </div>
-                        </div>    
-            </div>
-            </div>
+            <Sum/>
 <br>
-            
-        <div class="card shopping-cart">
-                  <h2 class="title-shoping-cart bg-order"><span>คูปองส่วนลด</span></h2>
-                        <div class="card-body">
-                        <div class="table table-responsive">
-                          <table width="100%" cellspacing="0" cellpadding="3" border="0" class="table table-responsive table-hover">
-                        <tr>
-                        <td class="text-left"  width="100%"><input type="text" name="coupon_discount" id="coupon_discount" class="form-control required" placeholder="กรอกรหัสเพื่อรับส่วนลด" title="กรอกรหัสเพื่อรับส่วนลด" value="" /></td>
-                        <td class='text-right'><button type="button" class="btn btn-primary">ยืนยัน</button></td></tr>
-                      
-                    
-                        </table>
-                        </div>
-                        </div>    
-            </div>
+            <Coupon/>
+
          
-            
+    
     </div>
    
   </div>
@@ -230,13 +189,16 @@
   
   import Nav from "@/components/Nav";
   import Footer from "@/components/Footer";
+  import Coupon from "@/components/Coupon";
+  import Sum from "@/components/Sum";
 import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,ADD_DOWN,ADD_INPUT,REMOVIE_ALL } from "@/store/actions.type.js";
 
 
     export default {
       components: {
           Nav,
-          Footer
+          Footer,
+          Coupon
            
               },
 

@@ -267,6 +267,9 @@ let productshop_item = this.$store.dispatch(FETCH_BY_PRODUCT_SHOP_ONE_ITEM,this.
 
 
           methods: {
+
+
+              
               
         Checkimage(image){
         
