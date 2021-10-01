@@ -92,6 +92,7 @@
                 return a;
         },
         async addToCart(item){
+           let add_producttocart = await this.$store.dispatch(ADD_CART,item);
                  await this.$swal("Add Product!", "Product To Cart!", "success")
         },
         async CheckLogin(item){
@@ -102,7 +103,6 @@
        }
         },
        async Shop(item){
-         console.log('item',item.shop_id);
          let name = item.shop_id+'/product/productdetail/'+item.product_id;
 
     this.$router.push(name)
