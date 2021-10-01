@@ -2,7 +2,7 @@
 <section id="Productdetail" class="product-details">
 <div class="container product-details productItemDetail" style="background-color: white;">
 
-
+ {{product_by_item}}
        <div class="row">
             <div class="col-sm-12">
                 <nav aria-label="breadcrumb">
@@ -39,11 +39,11 @@
                 </nav>
             </div>
         </div>
-<div class="row no-margin">
+<div class="row no-margin"  v-for="(item, index) in product_by_item" :key="item.id">
    <div class="left col-lg-5 col-md-6">
              <article class="gallery-wrap"> 
                     <div class="img-big-wrap">
-                      <div> <a href="#"><center><img src="https://dy.lnwfile.com/0tii3i.jpg"></center></a></div>
+                      <div> <a href="#"><center><img :src="Checkimage(item.img_product)"></center></a></div>
                     </div> <!-- slider-product.// -->
                     <div class="img-small-wrap">
                       <div class="item-gallery"> <img src="https://dy.lnwfile.com/0tii3i.jpg"> </div>
@@ -53,11 +53,11 @@
                     </div> <!-- slider-nav.// -->
                     </article> <!-- gallery-wrap .end// -->
    </div>
-                
+               
 
 <div class="col-12 col-md-7">
             <div class="marginInner">
-            <h1 class="productName-detail">แหวนไพลิน A4989</h1>
+            <h1 class="productName-detail">{{item.name_en}}</h1>
             </div>
             <div class="row">
                 <div class="col-md-12">
@@ -90,7 +90,7 @@
                 <div class="col-md-12">
                     <div class="form-group h5">
                         <div class="marginInner mb-4 mb-md-4">
-                            <p class="productStock"> ฿ 48,6001 </p>
+                            <p class="productStock"> ฿ {{item.price}} </p>
                             
                         </div>
                     </div>
@@ -99,18 +99,18 @@
 
               <div class="row">
 
-             <div class="col-md-2 attrHeader form-group">จำนวน </div>
+             <div class="col-md-2 attrHeader form-group">จำนวน  {{item.stock}} </div>
 
 
                 <div class="col-md-3 col-sm-3">
                     <div class="group-product-number">
                            <b-input-group size="sm">
                                         <b-input-group-prepend>
-                                        <b-btn variant="outline-info" v-on:click='Adddown()'>-</b-btn>
+                                        <b-btn variant="outline-info" v-on:click='Adddown(item.stock)'>-</b-btn>
                                         </b-input-group-prepend>
                                         <b-form-input type="text" min="0" class="text-number-order productde-text-ce"  v-model="quantity"  maxlength=2></b-form-input>
                                         <b-input-group-append>
-                                        <b-btn variant="outline-secondary"  v-on:click='Addup()'>+</b-btn>
+                                        <b-btn variant="outline-secondary"  v-on:click='Addup(item.stock)'>+</b-btn>
                                         </b-input-group-append>
                                         </b-input-group>   
                     </div>
@@ -236,7 +236,7 @@
 
                         
 </div>
- </div>
+ 
 </section>
 
     
@@ -265,35 +265,53 @@
           Footer
            
               },
+
+                 computed: {
+           
+        ...mapGetters(["product_by_item"]),
+
+        },
              
        async mounted() {
 this.form.product_id = this.$route.params.slug;
 this.form.url = window.location.origin
-let productshop_item= this.$store.dispatch(FETCH_BY_PRODUCT_SHOP_ONE_ITEM,this.form);
+let productshop_item = this.$store.dispatch(FETCH_BY_PRODUCT_SHOP_ONE_ITEM,this.form);
     
         },
 
 
           methods: {
-        async Addup(){
+              
+        Checkimage(image){
+        
+                let a = 'http://127.0.0.1:8000/public/product/' + image;
+                return a;
+        },
+        async Addup(stock){
             //// logic // จำนวนสินค้าที่มี
           //  let Add_up = await this.$store.dispatch(ADD_UP,item);
+          if(this.quantity == stock){   
+        let keytext = 'สินค้ามีไม่เพียงพอ!'
+            return await this.error(keytext);
+          }
             this.quantity += 1;
-            let keytext = 'เพิ่มสินค้าเรียร้อย!'
-            await this.success(keytext);
-
         },
         async Adddown(){
+            if(this.quantity == 0){
+
+            let keytext = 'สินค้าจำกัดจำนวนไว้ที่ 0!'
+            
+                return await this.error(keytext);
+            }
           this.quantity -= 1;
-            let keytext = 'ลดสินค้าเรียบร้อย!'
-                await this.success(keytext);
+          
         },
    
-        error() {
+        error(keytext) {
                 this.$swal({
                     icon: 'error',
                     title: 'สินค้า',
-                    text: 'สินค้าไม่สามารถลดได้แล้ว!',
+                    text: keytext,
                     showConfirmButton: true,
                     reverseButtons: true
                 });

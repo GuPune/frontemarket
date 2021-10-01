@@ -72,9 +72,9 @@ const actions = {
 
     async [FETCH_BY_PRODUCT_SHOP_ONE_ITEM](context,payload) {
            const { data } = await ProductService.getproductbyitem(payload);
-           console.log('FETCH_BY_PRODUCT_SHOP_ONE_ITEM',data)
+         
        // const { data } = await ProductService.getcatebyshop(payload);
-        //   context.commit(SET_BY_PRODUCT_SHOP_ONE_ITEM,data);
+         context.commit(SET_BY_PRODUCT_SHOP_ONE_ITEM,data);
           return data;
     },   
 };

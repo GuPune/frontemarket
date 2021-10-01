@@ -61,7 +61,7 @@
 
         Checkimage(image){
         
-                let a = 'http://127.0.0.1:8000/public/product/' + image;
+                let a = 'http://cmsecom.idtest.work/public/product/' + image;
                 return a;
         },
 
@@ -73,7 +73,7 @@
         },
         Checkimage(image){
         
-                let a = 'http://127.0.0.1:8000/public/product/' + image;
+                let a = 'http://cmsecom.idtest.work/public/product/' + image;
                 return a;
         },
         async addToCart(item){
