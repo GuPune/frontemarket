@@ -60,7 +60,7 @@
 
 }
 /* Content area for tabs */
-.tab-content{
+/* .tab-content{
   position: relative;
   background: #eee;
   width: calc(100% - 120px);
@@ -70,13 +70,13 @@
   box-sizing: border-box;
   z-index: 19;
   display: none;
-}
+} */
 
-.tab-content:after{
+/* .tab-content:after{
   content: "";
   clear: both;
 
-}
+} */
 /* Hide input radio from users */
 input[name="tab"]{
  display: none;

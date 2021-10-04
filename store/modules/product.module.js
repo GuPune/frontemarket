@@ -13,7 +13,31 @@ const state = {
     product_by_shop:[],
     cate_by_shop:[],
     cate_sel:[],
-    product_by_item:[]
+    product_by_item:[],
+    images: {
+        thumbs: [
+          {
+            id: 1,
+            url:
+              "https://yoohooworld.com/assets/images/vue_product_zoomer/thumbs/1.jpeg"
+          }
+        ],
+        normal_size: [
+          {
+            id: 1,
+            url:
+              "https://yoohooworld.com/assets/images/vue_product_zoomer/normal_size/1.jpeg"
+          }
+        ],
+        large_size: [
+          {
+            id: 1,
+            url:
+              "https://yoohooworld.com/assets/images/vue_product_zoomer/large_size/1.jpeg"
+          }
+        
+        ]
+      },
 }
 
 const getters = {
@@ -32,8 +56,10 @@ const getters = {
     product_by_item: state => {
         return state.product_by_item
     },
-
-    
+    images: state => {
+        return state.images
+    },
+   
 };
 
 
@@ -106,6 +132,7 @@ const mutations = {
     [SET_BY_PRODUCT_SHOP_ONE_ITEM](state,data) {
         
         state.product_by_item = data.data;
+        console.log('state.product_by_item',state.product_by_item);
     },
 
 

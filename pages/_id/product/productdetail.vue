@@ -1,6 +1,7 @@
 <template>
-<section id="Productdetail" class="product-details">
-<div class="container product-details productItemDetail" style="background-color: white;">
+<section id="Productdetail" class="product-details" >
+<div class="container product-details productItemDetail" style="background-color: white;"   v-for="(item, index) in product_by_item" :key="item.id">
+ 
        <div class="row">
             <div class="col-sm-12">
                 <nav aria-label="breadcrumb">
@@ -13,51 +14,41 @@
                                     <meta itemprop="position" content="1">
                                                             </li>
                                                     <li class="breadcrumb-item "  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-                                                                    <a itemscope itemtype="https://schema.org/Thing" itemprop="item" href="/category"
+                                                                    <a itemscope itemtype="https://schema.org/Thing" itemprop="item"
                                        alt="คลิกไปที่ สินค้าทั้งหมด" title="คลิกไปที่ สินค้าทั้งหมด" id="2">
-                                        <span itemprop="name">ร้านค้า</span>
+                                        <span itemprop="name"  @click="redirectTo(item.user_id)">{{item.shop_name}}</span>
                                     </a>
                                    
                                  
                                     <meta itemprop="position" content="4">
-                                                            </li>
+                                                            </li >
                                             </ol>
                 </nav>
             </div>
         </div>
-<div class="row no-margin"  v-for="(item, index) in product_by_item" :key="item.id">
-   <div class="left col-lg-5 col-md-6">
-             <article class="gallery-wrap"> 
-                    <div class="img-big-wrap">
-                      <div> <a href="#"><center><img :src="Checkimage(item.img_product)"></center></a></div>
-                    </div> <!-- slider-product.// -->
-                    <div class="img-small-wrap">
-                      <div class="item-gallery"> <img src="https://dy.lnwfile.com/0tii3i.jpg"> </div>
-                      <div class="item-gallery"> <img src="https://dy.lnwfile.com/0tii3i.jpg"> </div>
-                      <div class="item-gallery"> <img src="https://dy.lnwfile.com/0tii3i.jpg"> </div>
-                      <div class="item-gallery"> <img src="https://dy.lnwfile.com/0tii3i.jpg"> </div>
-                    </div> <!-- slider-nav.// -->
-                    </article> <!-- gallery-wrap .end// -->
+<div class="row no-margin">
+   <div class="left col-lg-5 col-md-6 col-sm-6">
+           <ProductZoomer :base-images="images" :base-zoomer-options="zoomerOptions"></ProductZoomer>
    </div>
                
 
-<div class="col-12 col-md-7">
+<div class="col-12 col-md-7 col-sm-12 product-detail-ipad">
             <div class="marginInner">
             <h1 class="productName-detail">{{item.name_en}}</h1>
             </div>
             <div class="row">
                 <div class="col-md-12">
-                                            <div class="form-group">
-                            <div class="marginInner">
-                                       <div class="ratings">
-                                                   <div class="rating-box-detail">
-                                                   <div class="rating" style="width:%"></div>
+                <div class="form-group">
+                <div class="marginInner">
+                <div class="ratings">
+                <div class="rating-box-detail">
+                <div class="rating" style="width:%"></div>
                                                    </div>
-						</div>
-                            </div>
-                        </div>
-                                    </div>
-            </div>
+                                                   </div>
+                                                   </div>
+                                                   </div>
+                                                   </div>
+                                                   </div>
                                     <div class="marginInner mb-4 mb-md-4"><div class="dividerFix"></div></div>
                                     <div class="row ">
                 <div class="col-12">
@@ -118,10 +109,7 @@
                             <i class="fa fa-shopping-cart fa-1x">&nbsp;</i>
                             สั่งซื้อสินค้า                       
                         </button>
-                        <input type="hidden" class="hiddenAttributeGroupID" value="" />
-                        <input type="hidden" class="hiddenCheckAddToCart" value="0" />
-                        <input type="hidden" id="hiddenCartImageDefault" value="Gemstones/แหวนไพลิน_A4989.png" />
-                        <input type="hidden" id="hiddenCartImageDefaultFull" value="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/Gemstones/แหวนไพลิน_A4989.png" />
+                  
                     </div>
                     
                     </div>
@@ -133,96 +121,52 @@
                                         <p class="m-0 d-none d-md-inline">Share</p>
                                         <div class="divSocilaGroupNew d-none d-md-inline-block">
                                             <div class="btn-group social-widget">
-                                                                                                    <a class="faco-top fa-layers fa-fw facebookSocialPD" target="_blank" href="https://www.facebook.com/sharer.php?u=https://www.pattanagems.com/product/28463-28068/">
-                                                        <i class="fas fa-square colorFacebookBGPD"></i>
-                                                        <i class="fa-inverse fab fa-facebook-f colorFacebookPD" data-fa-transform="shrink-7"></i>
-                                                    </a>
-                                                                                                                                                                                                        <a class="faco-top fa-layers fa-fw twitterSocialPD" target="_blank" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.pattanagems.com%2Fproduct%2F28463-28068%2F%25E0%25B9%2581%25E0%25B8%25AB%25E0%25B8%25A7%25E0%25B8%2599%25E0%25B9%2584%25E0%25B8%259E%25E0%25B8%25A5%25E0%25B8%25B4%25E0%25B8%2599-a4989&text=%E0%B9%81%E0%B8%AB%E0%B8%A7%E0%B8%99%E0%B9%84%E0%B8%9E%E0%B8%A5%E0%B8%B4%E0%B8%99+A4989">
-                                                        <i class="fas fa-square colorTwitterBGPD"></i>
-                                                        <i class="fa-inverse fab fa-twitter colorTwitterPD" data-fa-transform="shrink-7"></i>
-                                                    </a>
-                                                                                                                                                    <a class="faco-top fa-layers fa-fw pinterestSocialPD" target="_blank" href="https://pinterest.com/pin/create/button/?url=https://www.pattanagems.com/product/28463-28068/&media=https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/Gemstones/แหวนไพลิน_A4989.png&description=แหวนไพลิน A4989">
+                                            <img src="../../../assets/line.png" style="width:40px;">
+                                            <a class="faco-top fa-layers fa-fw twitterSocialPD" target="_blank" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.pattanagems.com%2Fproduct%2F28463-28068%2F%25E0%25B9%2581%25E0%25B8%25AB%25E0%25B8%25A7%25E0%25B8%2599%25E0%25B9%2584%25E0%25B8%259E%25E0%25B8%25A5%25E0%25B8%25B4%25E0%25B8%2599-a4989&text=%E0%B9%81%E0%B8%AB%E0%B8%A7%E0%B8%99%E0%B9%84%E0%B8%9E%E0%B8%A5%E0%B8%B4%E0%B8%99+A4989"><i class="fas fa-square colorTwitterBGPD"></i>
+                                                        <i class="fa-inverse fab fa-twitter colorTwitterPD" data-fa-transform="shrink-7"></i></a>
+                                                        <img src="../../../assets/facebook.png" style="width:40px;">
+                                             <a class="faco-top fa-layers fa-fw pinterestSocialPD" target="_blank" href="https://pinterest.com/pin/create/button/?url=https://www.pattanagems.com/product/28463-28068/&media=https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/Gemstones/แหวนไพลิน_A4989.png&description=แหวนไพลิน A4989">
                                                         <i class="fas fa-square colorPinterestBGPD"></i>
                                                         <i class="fa-inverse fab fa-pinterest-p colorPinterestPD" data-fa-transform="shrink-7"></i>
                                                     </a>
-                                                                                                                                                     <a class="faco-top fa-layers fa-fw LineSocialPD" target="_blank" href="javascript:void(0);" onclick="window.open('https://social-plugins.line.me/lineit/share?url=https://www.pattanagems.com/product/28463-28068/แหวนไพลิน-a4989?v=1632896765','popup','width=600,height=600,scrollbars=no,resizable=no,status=no,toolbar=no'); return false;">
+                                                    <img src="../../../assets/line.png" style="width:40px;">
+                                                    <a class="faco-top fa-layers fa-fw LineSocialPD" target="_blank" href="javascript:void(0);" onclick="window.open('https://social-plugins.line.me/lineit/share?url=https://www.pattanagems.com/product/28463-28068/แหวนไพลิน-a4989?v=1632896765','popup','width=600,height=600,scrollbars=no,resizable=no,status=no,toolbar=no'); return false;">
                                                          <i class="fas fa-square colorLineBGPD"></i>
                                                          <i class="fa-inverse fab fa-line colorLinePD" data-fa-transform="grow-2.2" data-fa-mask="fas fa-circle"></i>
                                                      </a>
-                                                                                            </div> 
+                                                     </div> 
                                         </div> 
                                   
                                      
                             </div>
                         </div>
                     </div>
-                    <div class="col-6 d-none d-md-none">
-                        <button class="btn btn-style btn-block addWishlist d-md-none" type="button">
-                            <i class="fa fa-heart fa-1x">&nbsp;</i> เพิ่มรายการโปรด                        </button>
-                    </div>
-                    <div class="col-6 d-none d-md-none">
-                        <button class="btn btn-style btn-block  d-md-none" type="button">
-                            <i class="fa fa-exchange fa-1x">&nbsp;</i> เปรียบเทียบ                        </button>
-                    </div>
                 </div>
-            
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-group">
-                        <div class="marginInner mb-4 mb-md-4">
-                     
-                                                                                                                                                                                                                            </p>
-                        </div>
+              </div> 
                     </div>
-                </div>
-            </div>
-            <!-- Brand Name -->
-                        <!-- Brand Name -->
-                            <div class="row d-md-none">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <div class="marginInner mb-4 mb-md-4">
-                                <div class="labelShare"><p>Share</p></div>
-                                <div class="divSocilaGroup">
-                                    <div class="btn-group social-widget">
-                                                                                    <a class="faco-top fa-layers fa-fw facebookSocialPD" target="_blank" href="https://www.facebook.com/sharer.php?u=https://www.pattanagems.com/product/28463-28068/">
-                                                <i class="fas fa-square colorFacebookBGPD"></i>
-                                                <i class="fa-inverse fab fa-facebook-f colorFacebookPD" data-fa-transform="shrink-7"></i>
-                                            </a>
-                                                                                                                                                                        <a class="faco-top fa-layers fa-fw twitterSocialPD" target="_blank" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.pattanagems.com%2Fproduct%2F28463-28068%2F%25E0%25B9%2581%25E0%25B8%25AB%25E0%25B8%25A7%25E0%25B8%2599%25E0%25B9%2584%25E0%25B8%259E%25E0%25B8%25A5%25E0%25B8%25B4%25E0%25B8%2599-a4989&text=%E0%B9%81%E0%B8%AB%E0%B8%A7%E0%B8%99%E0%B9%84%E0%B8%9E%E0%B8%A5%E0%B8%B4%E0%B8%99+A4989">
-                                                <i class="fas fa-square colorTwitterBGPD"></i>
-                                                <i class="fa-inverse fab fa-twitter colorTwitterPD" data-fa-transform="shrink-7"></i>
-                                            </a>
-                                                                                                                            <a class="faco-top fa-layers fa-fw pinterestSocialPD" target="_blank" href="https://pinterest.com/pin/create/button/?url=https://www.pattanagems.com/product/28463-28068/&media=https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/Gemstones/แหวนไพลิน_A4989.png&description=แหวนไพลิน A4989">
-                                                <i class="fas fa-square colorPinterestBGPD"></i>
-                                                <i class="fa-inverse fab fa-pinterest-p colorPinterestPD" data-fa-transform="shrink-7"></i>
-                                            </a>
-                                                                                                                            <a class="faco-top fa-layers fa-fw LineSocialPD" target="_blank" href="javascript:void(0);" onclick="window.open('https://social-plugins.line.me/lineit/share?url=https://www.pattanagems.com/product/28463-28068/แหวนไพลิน-a4989?v=1632896765','popup','width=600,height=600,scrollbars=no,resizable=no,status=no,toolbar=no'); return false;">
-                                                <i class="fas fa-square colorLineBGPD"></i>
-                                                <i class="fa-inverse fab fa-line colorLinePD" data-fa-transform="grow-2.2" data-fa-mask="fas fa-circle"></i>
-                                            </a>
-                                                                            </div> <!-- Socila btn -->
-                                </div> <!-- divSocilaGroup-->
-                            </div> <!-- marginInner -->
-                        </div>
+
+                    <div class="row">
                     </div>
-                </div> <!-- row --> 
-                    </div>
-        <!-- End Product information -->
+                    <div class ="row"> 
+                    <b-tabs class="product-detail-tab"><b-tab active>
+                    <template #title><b-spinner type="grow" small></b-spinner> 
+                    คุณสมบัติ
+                    </template><p class="p-3" >
+                    <p><span v-html="item.details"></span></p></p>
+                    </b-tab></b-tabs></div>
+ 
+
+                  
+
+  
     </div>
 
+
+
   </div>   
- <div class="row">
+  
 
- 
-            
-         
 
-              
-
-                        
-</div>
- 
 </section>
 
     
@@ -240,6 +184,20 @@
     export default {
       data() {
         return {
+    
+      zoomerOptions: {
+      zoomFactor: 3,
+      pane: "pane",
+      hoverDelay: 300,
+      namespace: "zoomer-bottom",
+      move_by_click: false,
+      scroll_items: 4,
+      choosed_thumb_border_color: "#dd2c00",
+      scroller_position: "bottom",
+      zoomer_pane_position: "right"
+
+      },
+    
             form:{
 
             },
@@ -254,19 +212,27 @@
 
                  computed: {
            
-        ...mapGetters(["product_by_item"]),
+        ...mapGetters(["product_by_item","images"]),
 
         },
              
        async mounted() {
+
 this.form.product_id = this.$route.params.slug;
 this.form.url = window.location.origin
+console.log('this.form',this.form)
 let productshop_item = this.$store.dispatch(FETCH_BY_PRODUCT_SHOP_ONE_ITEM,this.form);
     
         },
 
 
-          methods: {
+        methods: {
+
+              
+        redirectTo(user_id) {
+          
+                this.$router.push('/'+user_id)
+                  },
 
 
               

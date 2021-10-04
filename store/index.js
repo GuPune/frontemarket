@@ -11,6 +11,7 @@ import Ads from './modules/ads.module'
 import { alert } from '../store/modules/alert.module';
 import validations from '../store/modules/validation';
 
+
 Vue.use(Vuex)
 
 const store = () => new Vuex.Store({

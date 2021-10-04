@@ -110,6 +110,8 @@ const names = 'id-form-login'
  const Shopid = this.isUrl.id;
 
 
+
+
             //  this.$router.push({ path: `/1/${name}` }) // -> /user/123
                 //   this.$router.push({ params: { id: '1' } ,name: name})
                    this.$router.push({ name: names, params: { id: Shopid }})
@@ -120,7 +122,7 @@ const names = 'id-form-login'
        }
         },
        async Shop(item){
-         let name = item.shop_id+'/product/productdetail/'+item.product_id;
+       let name = item.shop_id+'/product/productdetail/'+item.id;
 
     this.$router.push(name)
         },

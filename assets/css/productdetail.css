@@ -118,3 +118,52 @@ padding-top:70px;
 .productde-text-ce{
     text-align: center
 }
+
+.product-detail-tab{
+
+    padding: 20px;
+}
+
+.zoomer-control{
+
+    height: auto;
+    width: auto;
+}
+
+.thumb-list{
+    visibility: visible;
+
+}
+
+
+
+.scroller-at-top .thumb-list .responsive-image[data-v-033bd07e], .scroller-at-bottom .thumb-list .responsive-image[data-v-033bd07e] {
+    height: 40px!important;
+    width: 40px!important;
+}
+
+
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+
+    .product-detail-ipad{
+padding-left:30px ;
+
+    }
+
+
+
+  /* Styles */
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+    .product-detail-ipad{
+        padding-left:50px ;
+        
+            }
+        
+
+ }
