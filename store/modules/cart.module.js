@@ -13,7 +13,10 @@ const state = {
     cartTotal: 0,
     cart: [],
     Price:0,
-    PriceToTal:0
+    PriceToTal:{
+        quantitys:0,
+        PriceToTals:0
+    }
 }
 
 const getters = {
@@ -87,12 +90,19 @@ const mutations = {
         let cart = localStorage.setItem("cart", JSON.stringify(state.cart));
         if(this.cart.length){
             let sum = 0;
+            let total = 0;
             Object.keys(this.cart).forEach(key => {
                 sum += parseInt(this.cart[key].totalPrice)
+                total += this.cart[key].quantity;
+           
+         
             })
-            state.PriceToTal = sum
+            state.PriceToTal.PriceToTals = sum
+            state.PriceToTal.quantitys = total
+       
+           
         }else {
-            state.PriceToTal = 0        
+            state.PriceToTal.PriceToTals = 0        
         }
 
       },

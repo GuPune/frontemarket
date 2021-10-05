@@ -176,3 +176,15 @@ padding: 0px;
 font-size: 12px;
 
 }
+
+.sh-top{
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .sh-top-at{
+
+    margin-top: 10px;
+  }
+}

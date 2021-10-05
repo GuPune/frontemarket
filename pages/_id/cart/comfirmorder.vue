@@ -6,12 +6,26 @@
     <div class="row">
     <div class="col-12 col-md-8">
     <div class="col-12 col-md-12 shiipping-add">
+        <div class="col-12 col-md-12 shiipping-add">
     <AddressShipping/>
+        </div>
+          <div class="col-12 col-md-12 shiipping-add sh-top">
     <ShippingInfo/>
+          </div>
     </div>
     </div>
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-md-4 sh-top-at">
     <Summary/>
+
+          <div class="row">
+         <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+         <div  class="button-order boxSubmitCart">
+        
+            <b-button block variant="primary" size="lg" class="btn btn-lg-auto btn-style buttonCheckout" @click="redirectTo('id-cart-comfirmorder')">ถัดไป</b-button>
+            </div>
+         </div>
+         
+    </div>
     </div>
     </div>
     </div>

@@ -1,27 +1,27 @@
 <template>
         <div class="card shopping-cart">
                   <h2 class="shoping-cart-title bg-order"><span>สรุปรายการสั่งซื้อ</span></h2>
-                   <div class="card-body pt-3 pb-0 pb-lg-3 p-lg-3">
-            <div class="cart-item mb-3 " id="cartList0">
-            <div class="row">
+         <div class="card-body pt-3 pb-0 pb-lg-3 p-lg-3"  v-for="(item, index) in cart" :key="cart.id">
+            <div class="cart-item mb-3 " id="cartList0" >
+            <div class="row" >
                 <div class="col-3 text-center p-0">
-                                            <img class="img-product" src="https://image.makewebeasy.net/makeweb/r_60x60/pYN8s1ZiT/Women_Ring/แหวนเพชรหญิง_A8334.jpg?v=202012190947" alt="แหวนเพชรผู้หญิง A8334"/>
+                                            <img class="img-product"  :src="Checkimage(item.img_product)" width="50" height="50" alt="แหวนเพชรผู้หญิง A8334"/>
                                     </div>
                 <div class="col-9 px-0">
                     <div class="row mr-0">
                         <div class="col-12 text-left">
                             <span class="product-name">
-                                แหวนเพชรผู้หญิง A8334<br>
+                                {{item.name_en}}<br>
                             </span>
                                                     </div>
                     </div>
                     <div class="row mr-0">
                         <div class="col-4 text-muted text-left pr-1">
-                           ฿ 59,500                        </div>
+                           ฿{{item.price}}                      </div>
                         <div class="col-3 text-muted text-center px-0">
-                            x1                        </div>
+                            x{{item.quantity}}                     </div>
                         <div class="col-5 text-right pl-0">
-                            <span>฿ 59,500</span>
+                            <span>฿{{item.totalPrice}}</span>
                         </div>
                     </div>
                 </div>
@@ -41,10 +41,10 @@
     <div class="row pb-2 pt-3">
         <div class="col-auto">
             <span>ยอดรวมสินค้า</span>
-            <span class="text-muted" id="showAmount">(1)</span>
+            <span class="text-muted" id="showAmount">{{PriceToTal.quantitys}}</span>
         </div>  
         <div class="col text-right">
-            <span>฿ 59,500.00</span>
+            <span>฿ {{PriceToTal.PriceToTals}} </span>
         </div> 
     </div>
         <div id="showShipping">
@@ -63,20 +63,12 @@
             <p class="font-weight-bold mb-2">ยอดรวมสุทธิ</p>
         </div>  
         <div class="col pr-0 text-right" id="divOrderTotalPrice">
-            <p class="font-weight-bold txtTotalPrice mb-2">฿ 59,500.00</p>
+            <p class="font-weight-bold txtTotalPrice mb-2">฿ {{PriceToTal.PriceToTals}} </p>
         </div>
     </div>
     </div> 
     </div>  
-
-
-
-
     </div> 
-
-    
-
-    
             </div>
 </template>
 
@@ -90,11 +82,35 @@ export default {
       
            
               },
+
+
+        computed: {
+        cart () {
+        return this.$store.state.Cart.cart
+        },
+        PriceToTal () {
+        return this.$store.state.Cart.PriceToTal
+        },
+        Summary () {
+        return this.$store.state.Cart.PriceToTal
+        }
+           
+
+        },
              
         mounted() {
+            console.log('คำนวนใหม่',this.cart);
 
           
         },
+
+        methods: {
+        Checkimage(image){
+        
+                let a = 'http://127.0.0.1:8000/public/product/'+image;
+                return a;
+        },
+              }
        
            
 
