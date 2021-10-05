@@ -96,19 +96,24 @@
 
  
 
-  
+
+    
             <div class="marginInner d-md-none mb-4 mb-md-0">
                                     <div class="dividerFix">
                                   
                                     </div>
                             </div>
                         <div class="button-wrapper">
-                                    <div class="my-col-12 col-md-7 col-lg-6 pl-0">
+                                    <div class="my-col-12 col-md-7 col-lg-6 pl-0 boxSubmitCart">
 
-                        <button class="btn btn-style btnMainCart btnProductCart btnAddToCartpdetail" type="button">
+                        <button class="btn btn-style btnMainCart btnProductCart buttonCheckout" type="button">
                             <i class="fa fa-shopping-cart fa-1x">&nbsp;</i>
                             สั่งซื้อสินค้า                       
                         </button>
+
+              
+
+                        
                   
                     </div>
                     
@@ -117,9 +122,9 @@
                     <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <div class="marginInner mb-4 mb-md-4">            
-                                        <p class="m-0 d-none d-md-inline">Share</p>
-                                        <div class="divSocilaGroupNew d-none d-md-inline-block">
+                            <div class="mb-4 mb-md-4">            
+                                        <p class="d-md-inline">Share</p>
+                                        <div class="divSocilaGroupNew">
                                             <div class="btn-group social-widget">
                                             <img src="../../../assets/line.png" style="width:40px;">
                                             <a class="faco-top fa-layers fa-fw twitterSocialPD" target="_blank" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.pattanagems.com%2Fproduct%2F28463-28068%2F%25E0%25B9%2581%25E0%25B8%25AB%25E0%25B8%25A7%25E0%25B8%2599%25E0%25B9%2584%25E0%25B8%259E%25E0%25B8%25A5%25E0%25B8%25B4%25E0%25B8%2599-a4989&text=%E0%B9%81%E0%B8%AB%E0%B8%A7%E0%B8%99%E0%B9%84%E0%B8%9E%E0%B8%A5%E0%B8%B4%E0%B8%99+A4989"><i class="fas fa-square colorTwitterBGPD"></i>
@@ -129,11 +134,6 @@
                                                         <i class="fas fa-square colorPinterestBGPD"></i>
                                                         <i class="fa-inverse fab fa-pinterest-p colorPinterestPD" data-fa-transform="shrink-7"></i>
                                                     </a>
-                                                    <img src="../../../assets/line.png" style="width:40px;">
-                                                    <a class="faco-top fa-layers fa-fw LineSocialPD" target="_blank" href="javascript:void(0);" onclick="window.open('https://social-plugins.line.me/lineit/share?url=https://www.pattanagems.com/product/28463-28068/แหวนไพลิน-a4989?v=1632896765','popup','width=600,height=600,scrollbars=no,resizable=no,status=no,toolbar=no'); return false;">
-                                                         <i class="fas fa-square colorLineBGPD"></i>
-                                                         <i class="fa-inverse fab fa-line colorLinePD" data-fa-transform="grow-2.2" data-fa-mask="fas fa-circle"></i>
-                                                     </a>
                                                      </div> 
                                         </div> 
                                   
@@ -254,7 +254,7 @@ let productshop_item = this.$store.dispatch(FETCH_BY_PRODUCT_SHOP_ONE_ITEM,this.
         async Adddown(){
             if(this.quantity == 0){
 
-            let keytext = 'สินค้าจำกัดจำนวนไว้ที่ 0!'
+            let keytext = 'สินค้าจำกัดจำนวนไม่ต่ำกว่า 0!'
             
                 return await this.error(keytext);
             }

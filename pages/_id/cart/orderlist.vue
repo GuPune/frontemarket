@@ -155,7 +155,7 @@
          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
          <div  class="float-right button-order boxSubmitCart" >
             <b-button squared  variant="outline-primary" size="lg" class="btn btn-lg-auto btn-style-o buttonShopping" @click="redirectTo('')">ซื้อสินค้าต่อ</b-button>
-            <b-button squared  variant="outline-primary" size="lg" class="btn btn-lg-auto btn-style buttonCheckout" @click="redirectTo()">สั่งซื้อสินค้า</b-button>
+            <b-button squared  variant="outline-primary" size="lg" class="btn btn-lg-auto btn-style buttonCheckout" @click="redirectTo('id-cart-comfirmorder')">สั่งซื้อสินค้า</b-button>
             </div>
          </div>
          </div>
@@ -203,6 +203,10 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
               },
 
                computed: {
+
+        isUrl () {
+                return this.$store.state.user.url_id;
+        },  
     
         cart () {
         return this.$store.state.Cart.cart
@@ -218,9 +222,11 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
 
        methods: {
 
-        redirectTo(name) {
-  
-              this.$router.push(name)
+        redirectTo(names) {
+
+         const Shopid = this.isUrl.id;
+
+        this.$router.push({ name: names, params: { id: Shopid }})
         },
         Checkimage(image){
         

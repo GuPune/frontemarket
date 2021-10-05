@@ -1,8 +1,28 @@
 <template>
-<section id="Confirmorder">
-     <Nav />
 
-           <!-- --------------------------------store 1--------------------------------- -->
+<div class="container col-12 col-md-8" style="padding-top: 90px;">
+<StatusShipping/>
+    <div style="padding-top: 20px;">
+    <div class="row">
+    <div class="col-12 col-md-8">
+    <div class="col-12 col-md-12 shiipping-add">
+    <AddressShipping/>
+    <ShippingInfo/>
+    </div>
+    </div>
+    <div class="col-12 col-md-4">
+    <Summary/>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+
+ <!-- 
+<section id="Confirmorder">
+
+           
     <div class="container shopcartsweb col-9">
 
              <div class="card shopping-cart">
@@ -30,7 +50,7 @@
                             <strong>ร้านที่ 1</strong></label>
                         </div>
                         <div class="card-body">
-                                <!-- PRODUCT -->
+                         
                                 <div class="row">
                                     <div class="col-12 col-sm-12 col-md-2 text-center">
                                             <img class="img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHYB4yOhfM-93z9SCPAv3CZIdJCQDNOcPg1w&usqp=CAU" alt="prewiew" width="120" height="80">
@@ -61,8 +81,7 @@
                                     </div>
                                 </div>
                                 <hr>
-                                <!-- END PRODUCT -->
-                                <!-- PRODUCT -->
+                        
                                 <div class="row">
                                     <div class="col-12 col-sm-12 col-md-2 text-center">
                                             <img class="img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKwQ_-l2AuQpoBqeJdoVe2E9CZjFog3k5umw&usqp=CAU" alt="prewiew" width="120" height="80">
@@ -103,7 +122,7 @@
 
 
 
-                <!-- --------------------------------store 2--------------------------------- -->
+           
                      <div class="card shopping-cart">
                 
                         <div class="card-header text-dark">
@@ -112,7 +131,7 @@
                             <strong>ร้านที่ 1</strong></label>
                         </div>
                         <div class="card-body">
-                                <!-- PRODUCT -->
+                         
                                 <div class="row">
                                     <div class="col-12 col-sm-12 col-md-2 text-center">
                                             <img class="img-responsive" src="https://www.vkkarnkaset.com/uploads/4596/images/2325.jpg" alt="prewiew" width="120" height="80">
@@ -143,8 +162,7 @@
                                     </div>
                                 </div>
                                 <hr>
-                                <!-- END PRODUCT -->
-                                <!-- PRODUCT -->
+                         
                                 <div class="row">
                                     <div class="col-12 col-sm-12 col-md-2 text-center">
                                             <img class="img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFZc1mNJh9yRFfEanTveuI3oy5Cp0sVBYU2w&usqp=CAU" alt="prewiew" width="120" height="80">
@@ -240,7 +258,7 @@
                     </div>
 
 
-                <!-- <--------------------------footer------------------------------> 
+          
                 <div class="card shopping-cart">
                      <div class="card-footer">
                          
@@ -268,7 +286,6 @@
 
 
 
-    <!-- -------------------------------------------------MOBILE---------------------------------- -->
 
      <div class="shopcartsmobile">
 
@@ -297,7 +314,7 @@
                             <strong>ร้านที่ 1</strong></label>
                         </div>
                         <div class="card-body">
-                                <!-- PRODUCT -->
+                               
                                 <div class="row">
                                     <div class="col-12 col-sm-12 col-md-2 text-center">
                                             <img class="img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHYB4yOhfM-93z9SCPAv3CZIdJCQDNOcPg1w&usqp=CAU" alt="prewiew" width="120" height="80">
@@ -328,8 +345,7 @@
                                     </div>
                                 </div>
                                 <hr>
-                                <!-- END PRODUCT -->
-                                <!-- PRODUCT -->
+                          
                                 <div class="row">
                                     <div class="col-12 col-sm-12 col-md-2 text-center">
                                             <img class="img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKwQ_-l2AuQpoBqeJdoVe2E9CZjFog3k5umw&usqp=CAU" alt="prewiew" width="120" height="80">
@@ -370,7 +386,6 @@
 
 
 
-                <!-- --------------------------------store 2--------------------------------- -->
                      <div class="card shopping-cart">
                 
                         <div class="card-header text-dark">
@@ -379,7 +394,7 @@
                             <strong>ร้านที่ 1</strong></label>
                         </div>
                         <div class="card-body">
-                                <!-- PRODUCT -->
+                            
                                 <div class="row">
                                     <div class="col-12 col-sm-12 col-md-2 text-center">
                                             <img class="img-responsive" src="https://www.vkkarnkaset.com/uploads/4596/images/2325.jpg" alt="prewiew" width="120" height="80">
@@ -410,8 +425,7 @@
                                     </div>
                                 </div>
                                 <hr>
-                                <!-- END PRODUCT -->
-                                <!-- PRODUCT -->
+                           
                                 <div class="row">
                                     <div class="col-12 col-sm-12 col-md-2 text-center">
                                             <img class="img-responsive" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFZc1mNJh9yRFfEanTveuI3oy5Cp0sVBYU2w&usqp=CAU" alt="prewiew" width="120" height="80">
@@ -507,7 +521,7 @@
                     </div>
 
 
-                <!-- <--------------------------footer------------------------------> 
+            
                 <div class="card shopping-cart">
                      <div class="card-footer">
                          
@@ -547,14 +561,12 @@
 
 
 
-        <Footer />
-
-
+     
 
 
 
 </section>
-    
+    -->
 </template>
 
 
@@ -562,20 +574,22 @@
 
 
 <script>
-  
-  import Nav from "@/components/Nav";
-  import Footer from "@/components/Footer";
-    
-
-
+    import StatusShipping from "@/components/StatusShipping";
+    import ShippingInfo from "@/components/ShippingInfo";
+    import Summary from "@/components/Summary";
+    import AddressShipping from "@/components/AddressShipping";
     export default {
       components: {
-          Nav,
-          Footer
-           
+        StatusShipping,
+        ShippingInfo,
+        Summary,
+        AddressShipping
               },
              
-        mounted() {},
+        mounted() {
+
+          
+        },
        
            
 

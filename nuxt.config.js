@@ -58,6 +58,7 @@ export default {
     '@/assets/css/confirmorder.css',
     '@/assets/css/userprofile.css',
     '@/assets/css/adsshop.css',
+    '@/assets/css/shipping.css',
     
   ],
 
