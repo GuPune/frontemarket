@@ -19,7 +19,8 @@ const state = {
     },
     profile:[],
     address:[],
-    url_id:null
+    url_id:null,
+    selectedad:[]
 };
 
 const getters = {
@@ -31,6 +32,9 @@ const getters = {
     },
     url_id: state => {
         return state.url_id
+    },
+    selectedad: state => {
+        return state.selectedad
     },
 
 };
@@ -151,7 +155,18 @@ const mutations = {
       
      },
      [SET_ADDRESS](state,data) {
+    
+        console.log(data);
         state.address = data;
+
+
+        let address = state.address
+        for (let i = 0; i < address.length; i++) {
+        if(address[i].status == 'D'){
+            state.selectedad = address[i];
+        }
+          }
+ 
       
      }
 };

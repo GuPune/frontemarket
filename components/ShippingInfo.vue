@@ -6,8 +6,7 @@
                         <div class="row boxPaymentList pb-3 mb-3">
                 <div class="col-9 col-md-7">
                     <label>
-
-                         <b-form-checkbox
+<b-form-checkbox
       id="checkbox-1"
       v-model="status"
       name="checkbox-1"

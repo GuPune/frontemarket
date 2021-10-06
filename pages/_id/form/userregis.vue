@@ -46,9 +46,9 @@
       <div class="col-half">
         <h6 style="color: #171c24;">เพศ</h6>
         <div class="input-group">
-          <input class="form-control" id="gender-male" type="radio" name="gender" value="male"/>
+          <input class="form-control regis-dis" id="gender-male" type="radio" name="gender" value="male"/>
           <label for="gender-male">ชาย</label>
-          <input class="form-control" id="gender-female" type="radio" name="gender" value="female"/>
+          <input class="form-control regis-dis" id="gender-female" type="radio" name="gender" value="female"/>
           <label for="gender-female">หญิง</label>
         </div>
       </div>

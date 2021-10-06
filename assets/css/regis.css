@@ -29,7 +29,7 @@
 
 
 
-input,
+/* input,
 input[type="radio"] + label,
 input[type="checkbox"] + label:before,
 select option,
@@ -45,7 +45,7 @@ select {
   -o-transition: 0.35s ease-in-out;
   transition: 0.35s ease-in-out;
   transition: all 0.35s ease-in-out;
-}
+} */
 input:focus {
   outline: 0;
   border-color: #005dc0;
@@ -56,10 +56,14 @@ input:focus + .input-icon i {
 input:focus + .input-icon:after {
   border-right-color: #005dc0;
 }
-input[type="radio"] {
+.regis-dis{
   display: none;
+  
 }
-input[type="radio"] + label,
+/* input[type="radio"] {
+  display: none;
+} */
+.regis-dis + label,
 select {
   display: inline-block;
   width: 50%;
@@ -67,7 +71,7 @@ select {
   float: left;
   border-radius: 0;
 }
-input[type="radio"] + label:first-of-type {
+/* input[type="radio"] + label:first-of-type {
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
 }
@@ -77,7 +81,7 @@ input[type="radio"] + label:last-of-type {
 }
 input[type="radio"] + label i {
   padding-right: 0.4em;
-}
+} */
 input[type="radio"]:checked + label,
 input:checked + label:before,
 select:focus,

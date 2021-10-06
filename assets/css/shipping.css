@@ -181,6 +181,23 @@ font-size: 12px;
   margin-top: 10px;
 }
 
+.span-td-col2 {
+  word-break: break-all;
+  width: 20%;
+}
+.span-td-col3 {
+  word-break: break-all;
+  width: 43%;
+}
+
+.span-td-col7 {
+  word-break: break-all;
+}
+
+.custom-control-label{
+  display: none;
+}
+
 @media only screen and (max-width: 600px) {
 
   .sh-top-at{

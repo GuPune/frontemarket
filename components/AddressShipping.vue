@@ -21,42 +21,26 @@
 
       <b-modal id="modal-1"  title="เลือกที่อยู่ในการจัดส่ง" size="lg">
         <div>
-
-    <b-table
-      :items="items"
-      :fields="fields"
-      :select-mode="selectMode"
-      responsive="sm"
-      ref="selectableTable"
-      selectable
-      @row-selected="onRowSelected"
-    >
-
-
-      <!-- Example scoped slot for select state illustrative purposes -->
-      <template #cell(selected)="{ rowSelected }">
-        <template v-if="rowSelected">
-          <span aria-hidden="true">&check;</span>
-          <span class="sr-only">Selected</span>
-        </template>
-        <template v-else>
-          <span aria-hidden="true">&nbsp;</span>
-          <span class="sr-only">Not selected</span>
-        </template>
-      </template>
-    </b-table>
-    <p>
-      <b-button size="sm" @click="selectAllRows">Select all</b-button>
-      <b-button size="sm" @click="clearSelected">Clear selected</b-button>
-      <b-button size="sm" @click="selectThirdRow">Select 3rd row</b-button>
-      <b-button size="sm" @click="unselectThirdRow">Unselect 3rd row</b-button>
-    </p>
-    <p>
-      Selected Rows:<br>
-      {{ selected[0].id }}
- {{ items[0].id }}
-    
-    </p>
+  
+        <div class="col-12 divMemberAddress">
+            <ul class="ulDataBody ul-body-form-panel">
+                <li>
+                    <span class="text-left">ที่อยู่ที่จัดส่ง</span>
+          
+                </li>
+                <li v-for="(item, index) in items" :key="item.id">
+                  <span class="span-td-col1 text-center"><div class="custom-control custom-radio">
+                  <input type="radio" :value="item.id" v-model="selectedAdd"  @change="changeAdd($event)">
+                  
+                  <label class="custom-control-label" for="customRadio1">
+                  </label>
+                  </div>
+                  </span>
+             
+                  <span class="span-td-col7 text-left"> 2e3r4t5yui, นาเพียง, ชุมแพ, ขอนแก่น 40000 </span>
+                  </li> 
+                  </ul>
+        </div>
   </div>
      
       </b-modal>
@@ -71,21 +55,25 @@
 
 
 <script>
+import { mapGetters } from "vuex";
+import { FETCH_GET_PROFILE,FETCH_ADDRESS_BY_ID,FETCH_ADDRESS} from "../store/actions.type.js";
 export default {
+      computed: {
+     
+            ...mapGetters(["address","selectedad"]),
+
+        },
           data() {
       return {
- 
-          modes: ['multi', 'single', 'range'],
-        fields: ['selected','id', 'isActive', 'age', 'first_name', 'last_name'],
-        items: [
-          { id:1, isActive: true, age: 40, first_name: 'Dickerson', last_name: 'Macdonald' },
-          { id:2, isActive: false, age: 21, first_name: 'Larsen', last_name: 'Shaw' },
-          { id:3,isActive: false, age: 89, first_name: 'Geneva', last_name: 'Wilson' },
-          { id:4,isActive: true, age: 38, first_name: 'Jami', last_name: 'Carney' }
-        ],
+        forms:{
+          id:null
+        },
+        modes: ['multi', 'single', 'range'],
+        fields: ['index','selected', 'isActive', 'age', 'first_name', 'last_name'],
+        items: [],
         selectMode: 'single',
-        selected: [{ id:4,isActive: true, age: 38, first_name: 'Jami', last_name: 'Carney' }],
-  
+        selected: '',
+        selectedAdd: ''
       }
     },
       
@@ -94,12 +82,38 @@ export default {
            
               },
              
-        mounted() {
+      async mounted() {
+ await this.fetchaddress(); 
+      
 
          
         },
 
       methods: {
+        changeAdd(event){
+           var data = event.target.value;
+              console.log(data);
+        },
+
+        
+
+   rowClass(item, type) {
+        if (!item || type !== 'row') return
+        if (item.status === 'D') return 'table-active'
+      },
+       async fetchaddress(){
+        let a = await this.$store.dispatch(FETCH_GET_PROFILE);
+        this.forms.id = a.id;
+        let getaddress = await this.$store.dispatch(FETCH_ADDRESS,this.forms);
+        this.items = getaddress;
+        this.selectedAdd = this.selectedad.id;
+//console.log('this.selected',this.selected);
+
+
+      
+
+    
+      },
   	showModal() {
      
        
@@ -107,7 +121,12 @@ export default {
 
 
      onRowSelected(items) {
-        this.selected = items
+       this.selected = items
+
+               let selectableTable = this.$refs.selectableTable
+   selectableTable.selectRow(0)
+     
+        
       },
       selectAllRows() {
         this.$refs.selectableTable.selectAllRows()
@@ -120,7 +139,7 @@ export default {
          
         // Rows are indexed from 0, so the third row is index 2
         this.$refs.selectableTable.selectRow(1)
-           console.log('selectThirdRow',this.$refs.selectableTable);
+          
       },
       unselectThirdRow() {
         // Rows are indexed from 0, so the third row is index 2
