@@ -34,6 +34,11 @@ export const FETCH_ADS_SHOP_SEMI = "fetch_ads_shop_semi";
 export const FETCH_BY_PRODUCT_SHOP_ONE_ITEM = "fetch_product_by_shop_item";
 export const FETCH_ID_URL = "fetch_id_url";
 
+export const CHOOSE_DELIVERY = "fetch_delivery";
+
+export const SAVE_DELIVERY = "save_delivery";
+export const CHECK_DELIVERY = "check_delivery";
+
 
 
 

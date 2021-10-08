@@ -21,7 +21,7 @@
          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
          <div  class="button-order boxSubmitCart">
         
-            <b-button block variant="primary" size="lg" class="btn btn-lg-auto btn-style buttonCheckout" @click="redirectTo('id-cart-comfirmorder')">ถัดไป</b-button>
+            <b-button block variant="primary" size="lg" class="btn btn-lg-auto btn-style buttonCheckout" @click="deliverys('id-cart-comfirmorder')">ถัดไป {{delivery}}</b-button>
             </div>
          </div>
          
@@ -588,10 +588,12 @@
 
 
 <script>
+    import { mapGetters } from "vuex";
     import StatusShipping from "@/components/StatusShipping";
     import ShippingInfo from "@/components/ShippingInfo";
     import Summary from "@/components/Summary";
     import AddressShipping from "@/components/AddressShipping";
+    import { SAVE_DELIVERY,CHECK_DELIVERY } from "../../../store/actions.type.js";
     export default {
       components: {
         StatusShipping,
@@ -599,15 +601,31 @@
         Summary,
         AddressShipping
               },
+
+                data() {
+      return {
+ 
+      }
+    },
+
+        computed: {
+            ...mapGetters(["delivery"]),
+
+        
+        },
              
         mounted() {
 
           
         },
-       
-           
+        methods: {
 
-     
+        deliverys(){
+  let savedelivery =  this.$store.dispatch(SAVE_DELIVERY,this.delivery);
+        }
+        }
+      
+       
     
     };
 </script>

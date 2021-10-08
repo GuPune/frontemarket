@@ -26,6 +26,12 @@ export const SET_ADS_SHOP     = "set_ads_shop";
 export const SET_ADS_SHOP_SEMI     = "set_ads_shop_semi";
 export const SET_BY_PRODUCT_SHOP_ONE_ITEM  = "set_by_product_one_item";
 export const SET_URL = "set_url";
+export const SET_DELIVERY = "set_delivery";
+export const SET_SAVEDELIVERY = "set_savedelivery";
+export const SET_CHECKDELIVERY = "set_checkdelivery";
+
+
+
 
 
 

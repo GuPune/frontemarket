@@ -25,19 +25,22 @@
         <div class="col-12 divMemberAddress">
             <ul class="ulDataBody ul-body-form-panel">
                 <li>
-                    <span class="text-left">ที่อยู่ที่จัดส่ง</span>
+                    <span class="text-left">ที่อยู่ที่จัดส่ง </span>
           
                 </li>
                 <li v-for="(item, index) in items" :key="item.id">
+               
                   <span class="span-td-col1 text-center"><div class="custom-control custom-radio">
                   <input type="radio" :value="item.id" v-model="selectedAdd"  @change="changeAdd($event)">
                   
                   <label class="custom-control-label" for="customRadio1">
+                  
                   </label>
+                  
                   </div>
                   </span>
-             
-                  <span class="span-td-col7 text-left"> 2e3r4t5yui, นาเพียง, ชุมแพ, ขอนแก่น 40000 </span>
+                   <span class="span-td-col1 text-center"> {{item.address}}
+                  </span>
                   </li> 
                   </ul>
         </div>

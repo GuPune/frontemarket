@@ -6,17 +6,9 @@
                         <div class="row boxPaymentList pb-3 mb-3">
                 <div class="col-9 col-md-7">
                     <label>
-<b-form-checkbox
-      id="checkbox-1"
-      v-model="status"
-      name="checkbox-1"
-      value="accepted"
-      unchecked-value="not_accepted"  :disabled="true"
-    >
-       <span class="font-weight-bold">EMS</span>
-    </b-form-checkbox>
+   <input type="radio"    @change="changeAdd($event)" value='ems' v-model="statusdelivery">&nbsp; EMS
                   
-                        <div class="pl-3 text-muted offset-lg-0 d-none d-lg-block">
+                        <div class="pl-3 text-muted offset-lg-0 d-none d-lg-block">delivery
                         ระยะเวลาขนส่ง&nbsp;1-5&nbsp; 
                         </div>
                     </label>
@@ -54,11 +46,40 @@
 
 
 <script>
+import { mapGetters } from "vuex";
+import { CHOOSE_DELIVERY,CHECK_DELIVERY } from "../store/actions.type.js";
   export default {
     data() {
+      
       return {
-        status: 'accepted'
+        status: 'not_accepted',
+        selectedAdd: null,
+        statusdelivery:null
       }
-    }
+    },
+
+            computed: {
+            ...mapGetters(["delivery"]),
+
+        
+        },
+
+     async mounted() {
+   let check = localStorage.getItem('delivery');
+
+       //    let checkdelivery = await this.$store.dispatch(CHECK_DELIVERY);
+      //    console.log(this.delivery);
+          this.statusdelivery = check;
+        },
+
+      methods: {
+  
+              changeAdd(event){
+           var data = event.target.value;
+         
+            let delivery =  this.$store.dispatch(CHOOSE_DELIVERY,data);
+    
+        },
+      }
   }
 </script>
