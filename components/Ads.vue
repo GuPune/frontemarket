@@ -18,9 +18,6 @@
       @sliding-start="onSlideStart"
       @sliding-end="onSlideEnd"
     >
-    
-     
-
       <b-carousel-slide  v-for="(item, index) in ads" :key="ads.id"  :img-src="Checkimage(item.images)">
       </b-carousel-slide>
     </b-carousel>
