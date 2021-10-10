@@ -76,6 +76,10 @@ const ApiService = {
         });
     },
 
+    loginsocial(resource, params) {
+      return Vue.axios.post('http://127.0.0.1:8000/api/'+resource, params,{ headers:authHeader() });
+    },
+
     
     find(resource, params) {
         return Vue.axios.post('http://127.0.0.1:8000/api/'+resource, params,{ headers:authHeader() });

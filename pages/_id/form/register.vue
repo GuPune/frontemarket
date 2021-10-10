@@ -110,7 +110,7 @@
 <script>
   
 import Nav from "@/components/Nav";
-import { REGISTER,SAVE_SETLINE } from "../../../store/actions.type.js";
+import { REGISTER,SAVE_SETLINE,CORE_USER } from "../../../store/actions.type.js";
 import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
 import { mapGetters } from "vuex";
 import Loading from 'vue-loading-overlay';
@@ -144,10 +144,18 @@ import 'sweetalert2/dist/sweetalert2.min.css';
             tel:"",
             status: false
         },
+        forms:{
+
+        }
       }),
 
 
-                   computed: {
+        computed: {
+        getLine(){
+      return this.$store.getters.getLine;      
+        },
+                 
+
         firstNameErrors () {
             const errors = []
             if (!this.$v.form.first_name.$dirty) return errors
@@ -187,21 +195,32 @@ import 'sweetalert2/dist/sweetalert2.min.css';
     },
              
         mounted(){
-    // liff.init({
-    //   liffId: '1655623618-XrxrgnDw'
-    // }).then(() => {
-    //   if(liff.isLoggedIn()){
-    //     liff.getProfile().then(profile => {                    
-    //      this.$store.dispatch(SAVE_SETLINE, profile);
-    //     })
-    //   }else{
-    //       liff.login();
-    //   }
-    // })
+    liff.init({
+      liffId: '1656516351-3K67gZ9V'
+    }).then(() => {
+      if(liff.isLoggedIn()){
+        liff.getProfile().then(profile => {                    
+         this.$store.dispatch(SAVE_SETLINE, profile);
+         this.isDone();
+        })
+      }else{
+          liff.login();
+      }
+    })
   }, 
 
             
         methods: {
+             async isDone(){
+             this.forms = await this.$store.getters.getLine;
+           let userline = await this.$store.dispatch(CORE_USER,this.forms);
+            if(userline != null){
+            console.log('login');
+            }else{
+             console.log('สมัครซะ');
+            }
+
+    },
         async register(){
           this.form.url = window.location.origin
             this.$v.$touch()

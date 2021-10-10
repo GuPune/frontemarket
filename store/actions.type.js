@@ -39,6 +39,10 @@ export const CHOOSE_DELIVERY = "fetch_delivery";
 export const SAVE_DELIVERY = "save_delivery";
 export const CHECK_DELIVERY = "check_delivery";
 
+export const SAVE_SETLINE = "fetch_line";
+export const CORE_USER = "core_user";
+
+
 
 
 

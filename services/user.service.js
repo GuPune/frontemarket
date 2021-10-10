@@ -2,6 +2,9 @@ import ApiService from "./api.service";
 import Apiall from "./api.serviceall";
 
 export const UserService = {
+    linelogin(params) {
+    return ApiService.loginsocial("loginsocial",params);
+    },
     forgot(params) {
       return ApiService.forgot("forgot",params);
     },

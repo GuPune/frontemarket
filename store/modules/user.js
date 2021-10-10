@@ -1,11 +1,11 @@
 
 import { UserService }  from "../../services/user.service";
 import {
-    CHECK_LOGIN,FORGOTEMAIL,CLEARALRET,REGISSHOP,REGISTER,FETCH_GET_PROFILE,SAVE_PROFILE,FETCH_ADDRESS,FETCH_ADDRESS_BY_ID,SAVE_ADDRESS_BY_ID,DEL_ADDRESS_BY_ID,UPDATE_ADDRESS_BY_ID,LOGOUT,FETCH_ID_URL
+    CORE_USER,CHECK_LOGIN,FORGOTEMAIL,CLEARALRET,REGISSHOP,REGISTER,FETCH_GET_PROFILE,SAVE_PROFILE,FETCH_ADDRESS,FETCH_ADDRESS_BY_ID,SAVE_ADDRESS_BY_ID,DEL_ADDRESS_BY_ID,UPDATE_ADDRESS_BY_ID,LOGOUT,FETCH_ID_URL,SAVE_SETLINE
 
 } from "../actions.type.js";
 import {
-    SET_CHECK_LOGIN,SET_ALERT,SET_CLEARALERT,SET_PROFILE,SET_ADDRESS,SET_URL
+    SET_CHECK_LOGIN,SET_ALERT,SET_CLEARALERT,SET_PROFILE,SET_ADDRESS,SET_URL,SET_LINE
 
 } from "../mutations.type";
 import Vuex from 'vuex'
@@ -20,7 +20,8 @@ const state = {
     profile:[],
     address:[],
     url_id:null,
-    selectedad:[]
+    selectedad:[],
+    getLine:null,
 };
 
 const getters = {
@@ -36,6 +37,9 @@ const getters = {
     selectedad: state => {
         return state.selectedad
     },
+    getLine(state){
+        return state.line
+      }
 
 };
 
@@ -43,6 +47,10 @@ const actions = {
     async [FETCH_ID_URL](context,payload) {
          const { data } = await UserService.geturl(payload);
         context.commit(SET_URL,data);
+    },
+
+    async [SAVE_SETLINE](context,payload) {
+      context.commit(SET_LINE,payload);
     },
     async [CHECK_LOGIN](context) {
 
@@ -115,9 +123,14 @@ const actions = {
 
       async [UPDATE_ADDRESS_BY_ID](context,payload) {
      const { data } = await UserService.update_by_id(payload);
-     //   context.commit(SET_ADDRESS,data);
+   
         return data;
       },
+
+    async [CORE_USER](context,payload) {
+        const { data } = await UserService.linelogin(payload);
+        return data
+    },
 
       async [LOGOUT](context,payload) {
 
@@ -125,6 +138,8 @@ const actions = {
     
 
          },
+         
+
 
       
 
@@ -133,6 +148,15 @@ const actions = {
 const mutations = {
     [SET_URL](state,data) {
         state.url_id = data.data;
+    },
+    [SET_LINE](state,data) {
+
+        state.line = {
+            ...state.line,
+            ...data
+          }
+          console.log('state.line',state.line);
+    
     },
     [SET_CHECK_LOGIN](state) {
         

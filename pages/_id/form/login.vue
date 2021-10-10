@@ -47,6 +47,17 @@
     <p>คุณมีบัญชีแล้วใช่หรือไม่ ?  <nuxt-link to="userregis"><a href="">สมัครสมาชิก</a></nuxt-link></p></center>
 
   
+<div class="row">
+    
+   
+       <button class="btn btn-success" @click="loginline()"><span><i class="lab la-line"></i> Login with Line</span></button>
+      
+    
+  
+      
+
+    </div>
+    
 
 </div>
 
@@ -257,6 +268,9 @@ import { FORGOTEMAIL,CLEARALRET } from "../../../store/actions.type.js";
        // let clearalert = this.$store.dispatch(CLEARALRET);
     },
     methods: {
+        async loginline(){
+   this.$router.push('/1/form/register');   
+        },
         async login(){
         this.$v.$touch()
             this.form.url = window.location.origin
