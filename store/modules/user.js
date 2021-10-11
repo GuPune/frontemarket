@@ -5,8 +5,7 @@ import {
 
 } from "../actions.type.js";
 import {
-    SET_CHECK_LOGIN,SET_ALERT,SET_CLEARALERT,SET_PROFILE,SET_ADDRESS,SET_URL,SET_LINE
-
+    SET_CHECK_LOGIN,SET_ALERT,SET_CLEARALERT,SET_PROFILE,SET_ADDRESS,SET_URL,SET_LINE,SET_FORM_USER
 } from "../mutations.type";
 import Vuex from 'vuex'
 
@@ -22,6 +21,7 @@ const state = {
     url_id:null,
     selectedad:[],
     getLine:null,
+    formlogin:[]
 };
 
 const getters = {
@@ -39,7 +39,10 @@ const getters = {
     },
     getLine(state){
         return state.line
-      }
+    },
+    formlogin(state){
+        return state.formlogin
+    },
 
 };
 
@@ -129,6 +132,7 @@ const actions = {
 
     async [CORE_USER](context,payload) {
         const { data } = await UserService.linelogin(payload);
+        context.commit(SET_FORM_USER,data);
         return data
     },
 
@@ -175,6 +179,10 @@ const mutations = {
         state.messageforgot = null;
      },
      [SET_PROFILE](state,data) {
+        state.profile = data;
+      
+     },
+     [SET_FORM_USER](state,data) {
         state.profile = data;
       
      },

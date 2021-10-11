@@ -27,7 +27,6 @@
       </div>
 
     </div>
-    
     <div class="row">
       <div class="col-half">
         <h6 style="color: #171c24;">วันเกิด</h6>
@@ -208,14 +207,35 @@ import 'sweetalert2/dist/sweetalert2.min.css';
       }
     })
   }, 
-
-            
-        methods: {
+     methods: {
              async isDone(){
              this.forms = await this.$store.getters.getLine;
            let userline = await this.$store.dispatch(CORE_USER,this.forms);
+        
+    
+        this.form
             if(userline != null){
-            console.log('login');
+              this.form.email = userline.data.email;
+              this.form.password = 'r066315265';
+              this.form.url = 'http://localhost:3000';
+
+                 await this.$auth.loginWith('local', {
+          data: this.form
+        }).then(data => {
+
+
+     //   let token = this.$auth.getToken('local')   //get token
+         
+				})
+				.catch(err => {
+				  
+				});
+
+
+            
+
+
+            
             }else{
              console.log('สมัครซะ');
             }

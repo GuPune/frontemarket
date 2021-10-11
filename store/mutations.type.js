@@ -30,6 +30,7 @@ export const SET_DELIVERY = "set_delivery";
 export const SET_SAVEDELIVERY = "set_savedelivery";
 export const SET_CHECKDELIVERY = "set_checkdelivery";
 export const SET_LINE = "set_line";
+export const SET_FORM_USER = "set_form_user";
 
 
 
