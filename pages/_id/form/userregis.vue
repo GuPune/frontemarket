@@ -93,8 +93,6 @@
     <center>
     <button class="btn btn-primary"  @click="register()"><span>สมัครสมาชิก</span></button>
     </center>
-
-  
   </form>
 </div>
 
