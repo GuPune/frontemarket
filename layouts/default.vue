@@ -60,6 +60,7 @@ import { FETCH_ID_URL } from "@/store/actions.type.js";
         
     },
     mounted() {
+        alert('test');
         this.form.url = window.location.origin
          let get_url = this.$store.dispatch(FETCH_ID_URL,this.form);
        // let clearalert = this.$store.dispatch(CLEARALRET);
