@@ -85,11 +85,9 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
         Loadcategory() {
                    let a = this.$store.dispatch(FETCH_CATEGORY_SHELL);  
           },
-        Checkimage(image){
-
-        let a = 'http://127.0.0.1:8000/public/product/'+image;
-return a;
-          
+         Checkimage(image){
+                let public_images = process.env.ImageURL+image;
+                return public_images;
         },
         ChangeProduct(id){
 

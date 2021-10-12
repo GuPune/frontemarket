@@ -52,13 +52,12 @@ import { FETCH_ADS_SHOP } from "../store/actions.type.js";
       onSlideEnd(slide) {
         this.sliding = false
       },
-       Checkimage(image){
-        
-                let a = 'http://127.0.0.1:8000/public/product/' + image;
-                return a;
-      }
+      Checkimage(image){
+                let public_images = process.env.ImageURL+image;
+                return public_images;
+        },
 
-        }
+      }
 
 
            

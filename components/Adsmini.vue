@@ -82,10 +82,9 @@
   
         methods: {
 
-        Checkimage(image){
-        
-                let a = 'http://127.0.0.1:8000/public/product/' + image;
-                return a;
+          Checkimage(image){
+                let public_images = process.env.ImageURL+image;
+                return public_images;
         },
 
         redirectTo(name) {
@@ -94,11 +93,7 @@
         loadcategory(){
           let productinshell = this.$store.dispatch(FETCH_PRODUCT_SHELL);
         },
-        Checkimage(image){
-        
-                let a = 'http://127.0.0.1:8000/public/product/' + image;
-                return a;
-        },
+ 
         async addToCart(item){
                  await this.$swal("Add Product!", "Product To Cart!", "success")
         },

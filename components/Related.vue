@@ -60,6 +60,7 @@
   import { FETCH_PRODUCT_SHELL } from "../store/actions.type.js";
   import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART } from "@/store/actions.type.js";
   import { APP_URL } from "../environment/environment.js";
+  
   export default {
      computed: {
            
@@ -93,9 +94,8 @@
           let productinshell = this.$store.dispatch(FETCH_PRODUCT_SHELL);
         },
         Checkimage(image){
-        
-                let a = 'http://127.0.0.1:8000/public/product/'+image;
-                return a;
+                let public_images = process.env.ImageURL+image;
+                return public_images;
         },
         async addToCart(item){
            let add_producttocart = await this.$store.dispatch(ADD_CART,item);

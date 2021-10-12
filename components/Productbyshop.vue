@@ -162,11 +162,12 @@ const names = 'id-form-login'
    this.$swal("Add Product!", "Product To Cart!", "success")
   let add_producttocart = await this.$store.dispatch(ADD_CART,item);
             },
-                Checkimage(image){
-        
-                let a = 'http://127.0.0.1:8000/public/product/'+image;
-                return a;
-        }
+        Checkimage(image){
+                let public_images = process.env.ImageURL+image;
+                return public_images;
+        },
+
+      
 
     
     

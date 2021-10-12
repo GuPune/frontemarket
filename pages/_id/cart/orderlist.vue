@@ -229,9 +229,8 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
         this.$router.push({ name: names, params: { id: Shopid }})
         },
         Checkimage(image){
-        
-                let a = 'http://127.0.0.1:8000/public/product/'+image;
-                return a;
+                let public_images = process.env.ImageURL+image;
+                return public_images;
         },
         RemoveToCart(item){
     this.$swal("Remove Product!", "Remove Product From Cart!", "success")

@@ -44,10 +44,9 @@ import { FETCH_ADS } from "../store/actions.type.js";
         this.sliding = false
       },
       Checkimage(image){
-        
-                let a = 'http://127.0.0.1:8000/public/product/'+image;
-                return a;
-        }
+                let public_images = process.env.ImageURL+image;
+                return public_images;
+        },
 
         }
 

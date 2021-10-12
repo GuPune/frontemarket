@@ -105,6 +105,10 @@ export default {
   
   },
 
+  env: {
+    ImageURL: "http://cmsecom.idtest.work/public/product/",
+},
+
   auth: {
     strategies: {
       local: {

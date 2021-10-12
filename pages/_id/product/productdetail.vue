@@ -238,9 +238,8 @@ let productshop_item = this.$store.dispatch(FETCH_BY_PRODUCT_SHOP_ONE_ITEM,this.
               
               
         Checkimage(image){
-        
-                let a = 'http://127.0.0.1:8000/public/product/' + image;
-                return a;
+                let public_images = process.env.ImageURL+image;
+                return public_images;
         },
         async Addup(stock){
             //// logic // จำนวนสินค้าที่มี
