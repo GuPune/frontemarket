@@ -41,6 +41,7 @@ import { FETCH_ADS_SHOP } from "../store/actions.type.js";
        let a = window.location.origin
        this.form.url = a;
        this.form.layout = 'First';
+       
 
        this.$store.dispatch(FETCH_ADS_SHOP,this.form);
          },

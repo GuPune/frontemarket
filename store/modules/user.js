@@ -93,13 +93,12 @@ const actions = {
     async [FETCH_ADDRESS](context,payload) {
      
       const { data } = await UserService.address(payload);
-
     if(data.status){
             this.$auth.logout();
     }
 
    
-      
+   
 
       context.commit(SET_ADDRESS,data);
       return data;

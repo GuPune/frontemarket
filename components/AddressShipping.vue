@@ -13,10 +13,8 @@
                     <label class="font-weight-bold"> xxxxx xxxxx</label>
                     <label class="pl-2">0843745454</label>
                     -->
-                    <div class="text-muted" v-for="(item, index) in items" :key="item.id">
-                       {{item.status}}      
-                       <div v-if="item.status = 'D'">
-                       </div>          
+                    <div class="text-muted" >
+                     {{detailAddress.address}}           
                     </div>
                 </div>
             </div>
@@ -34,7 +32,6 @@
           
                 </li>
                 <li v-for="(item, index) in items" :key="item.id">
-               
                   <span class="span-td-col1 text-center"><div class="custom-control custom-radio">
                   <input type="radio" :value="item.id" v-model="selectedAdd"  @change="changeAdd($event)">
                   
@@ -81,7 +78,8 @@ export default {
         items: [],
         selectMode: 'single',
         selected: '',
-        selectedAdd: ''
+        selectedAdd: '',
+        detailAddress:''
       }
     },
       
@@ -99,8 +97,18 @@ export default {
 
       methods: {
         changeAdd(event){
+          
            var data = event.target.value;
-              console.log(data);
+              
+           let selectdata = this.items
+        if(selectdata.length > 0){
+        const arr3 = selectdata.filter(d => d.id == data);
+        this.detailAddress = arr3[0]
+           
+        }
+
+              
+              
         },
 
         
@@ -114,17 +122,23 @@ export default {
         this.forms.id = a.id;
         let getaddress = await this.$store.dispatch(FETCH_ADDRESS,this.forms);
         this.items = getaddress;
-        this.selectedAdd = this.selectedad.id;
-//console.log('this.selected',this.selected);
 
+       await this.checkedaddress(this.items); 
+       
 
-      
-
-    
       },
   	showModal() {
      
        
+    },
+
+    checkedaddress(checkb) {
+     if(checkb.length > 0){
+        const arr2 = checkb.filter(d => d.flag_address === 'F');
+        this.selectedAdd = arr2[0].id
+        this.detailAddress = arr2[0]
+     }
+ 
     },
 
 

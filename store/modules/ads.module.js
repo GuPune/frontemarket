@@ -36,6 +36,7 @@ const actions = {
     },
 
     async [FETCH_ADS_SHOP](context,payload) {
+        console.log('FETCH_ADS_SHOP',payload)
         const { data } = await AdsService.post(payload);
         context.commit(SET_ADS_SHOP,data);
         return data;
@@ -43,9 +44,9 @@ const actions = {
 
     async [FETCH_ADS_SHOP_SEMI](context,payload) {
        
+        console.log('FETCH_ADS_SHOP_SEMI',payload);
         const { data } = await AdsService.semi(payload);
     
-        console.log('dataxxxxxxxxxxxxxxxxx',data);
         context.commit(SET_ADS_SHOP_SEMI,data);
         return data;
     },

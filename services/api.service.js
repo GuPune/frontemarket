@@ -42,7 +42,7 @@ const ApiService = {
           });
     },
     post(resource, params) {
-        return axios.post(`${API_URL}/${resource}`, { headers: authHeader() }).catch(function(error) {
+        return axios.post(`${API_URL}/${resource}`,params, { headers: authHeader() }).catch(function(error) {
             AuthService.logout();
          //   location.reload(true);
 
