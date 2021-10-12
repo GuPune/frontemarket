@@ -68,7 +68,7 @@
 
            //     let a = this.$store.dispatch(FETCH_PRODUCT_SHELL);
 
-           console.log(process.env.TEST_VARIABLE);
+        
         this.loadcategory()
 
 

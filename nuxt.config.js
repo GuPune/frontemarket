@@ -126,9 +126,12 @@ export default {
         }
       }
     },
+    // redirect: {
+    //   logout: '/1/form/login'
+    // }
     redirect: {
-      logout: '/form/login'
-    }
+      logout: '/',
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

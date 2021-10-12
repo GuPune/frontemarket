@@ -230,7 +230,10 @@ import { FORGOTEMAIL,CLEARALRET } from "../../../store/actions.type.js";
       }),
 
     computed: {
-      
+
+        isUrl () {
+                return this.$store.state.user.url_id;
+        },  
         EmailErrors () {
                 const errors = []
                 if (!this.$v.form.email.$dirty) return errors
@@ -289,11 +292,15 @@ import { FORGOTEMAIL,CLEARALRET } from "../../../store/actions.type.js";
 
 
      //   let token = this.$auth.getToken('local')   //get token
+     //  this.$router.push("/")
          
 				})
 				.catch(err => {
-				       this.$router.push('/form/login');   
         this.alert.message = 1;
+        let path = this.$route.path
+        const names = 'id-form-login'
+        const Shopid = this.isUrl.id;
+        this.$router.push({ name: names, params: { id: Shopid }})
 				});
       } catch (e) {
 //  this.$store.dispatch('alert/error', null, { root: true });
