@@ -93,6 +93,7 @@ const actions = {
     async [FETCH_ADDRESS](context,payload) {
      
       const { data } = await UserService.address(payload);
+
     if(data.status){
             this.$auth.logout();
     }
@@ -188,7 +189,7 @@ const mutations = {
      },
      [SET_ADDRESS](state,data) {
     
-        console.log(data);
+        console.log('wwwwwwwwwwwwwwwww',data);
         state.address = data;
 
 

@@ -9,10 +9,15 @@
         <div class="col-12">
             <div class="row form-group">
                 <div class="col-12 divMemberAddressChoose">
-                    <label class="font-weight-bold"> xxxxx xxxxx                   </label>
+                <!--
+                    <label class="font-weight-bold"> xxxxx xxxxx</label>
                     <label class="pl-2">0843745454</label>
-                    <div class="text-muted">
-                        2e3r4t5yui, xxxx, xxxxx, ขอนแก่น 40000                    </div>
+                    -->
+                    <div class="text-muted" v-for="(item, index) in items" :key="item.id">
+                       {{item.status}}      
+                       <div v-if="item.status = 'D'">
+                       </div>          
+                    </div>
                 </div>
             </div>
         </div>
