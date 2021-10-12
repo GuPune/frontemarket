@@ -12,8 +12,8 @@
         </div>
         </div>
     <center>       
-      <section class="section-slider web">
-            <div class="slider col-9">
+      <section class="section-slider">
+            <div class="slider col-12 col-md-9 col-lg-9">
                 <img class="img-slider" v-for="(item, index) in category_shell" :key="category_shell.id" :src="Checkimage(item.image)" @click="ChangeProduct(item.id)">
 
            
@@ -24,13 +24,7 @@
 
 
 
-    <center>       
-      <section class="section-slider mobile">
-            <div class="slider col-12">
-         <img class="img-slider" v-for="(item, index) in category_shell" :key="category_shell.id" :src="Checkimage(item.image)" @click="ChangeProduct(item.id)">
-            </div>
-          </section>
-    </center>
+    
 
 
 

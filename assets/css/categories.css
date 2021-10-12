@@ -192,11 +192,7 @@
 
 
 @media screen and (max-width: 600px) {
-    
-    .cate-name-mobile {
 
-        display: none;
-    }
     .cate-name-mobile-fonts {
         font-size: 0.83em!important;
     

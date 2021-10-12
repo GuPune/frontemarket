@@ -307,8 +307,8 @@ button.button, a.button {
 
 
   .imgproduct{
-    width:200px;
-    height:200px;
+    width:150x;
+    height:150px;
 
   }
 
@@ -362,12 +362,30 @@ button.addcart:hover {
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
+  .imgproduct{
+    width:200px;
+    height:200px;
+
+  }
+
+  
 
 
  }
 
 /* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+  .imgproduct{
+    width:200px;
+    height:200px;
+  }
 
 
  }
+
+ @media (min-width: 602px) and (max-width: 900px) { 
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  }
