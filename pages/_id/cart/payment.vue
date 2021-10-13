@@ -7,22 +7,27 @@
     <div class="col-12 col-md-8">
     <div class="col-12 col-md-12 shiipping-add">
         <div class="col-12 col-md-12 shiipping-add">
-    <AddressShipping/>
+    <Pay/>
         </div>
           <div class="col-12 col-md-12 shiipping-add sh-top">
-    <ShippingInfo/>
+ 
           </div>
     </div>
     </div>
     <div class="col-12 col-md-4 sh-top-at">
    
-    <Summary/>
-
+   
+   <AddressShippingConfirm/>
+     <div class="row">
+         <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+   <Summary/>
+         </div>
+    </div>
           <div class="row">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
          <div  class="button-order boxSubmitCart">
         
-            <b-button block variant="primary" size="lg" class="btn btn-lg-auto btn-style buttonCheckout" @click="deliverys('id-cart-payment')">ถัดไป {{delivery}}</b-button>
+            <b-button block variant="primary" size="lg" class="btn btn-lg-auto btn-style buttonCheckout" @click="deliverys('id-cart-comfirmorder')">ยืนยันการสั่งซื้อ {{delivery}}</b-button>
             </div>
          </div>
          
@@ -593,14 +598,16 @@
     import StatusShipping from "@/components/StatusShipping";
     import ShippingInfo from "@/components/ShippingInfo";
     import Summary from "@/components/Summary";
-    import AddressShipping from "@/components/AddressShipping";
+    import Pay from "@/components/Pay";
+    import AddressShippingConfirm from "@/components/AddressShippingConfirm";
     import { SAVE_DELIVERY,CHECK_DELIVERY } from "../../../store/actions.type.js";
     export default {
       components: {
         StatusShipping,
         ShippingInfo,
         Summary,
-        AddressShipping
+        Pay,
+        AddressShippingConfirm
               },
 
                 data() {
@@ -613,10 +620,6 @@
         computed: {
             ...mapGetters(["delivery"]),
 
-        isUrl () {
-                return this.$store.state.user.url_id;
-        },
-
         
         },
              
@@ -626,13 +629,8 @@
         },
         methods: {
 
-        deliverys(names){
+        deliverys(){
   let savedelivery =  this.$store.dispatch(SAVE_DELIVERY,this.delivery);
-
-              
-           
-            const Shopid = this.isUrl.id;
-            this.$router.push({ name: names, params: { id: Shopid }})
         }
         }
       

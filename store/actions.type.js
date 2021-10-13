@@ -41,6 +41,7 @@ export const CHECK_DELIVERY = "check_delivery";
 
 export const SAVE_SETLINE = "fetch_line";
 export const CORE_USER = "core_user";
+export const FETCH_LOADER = "fetch_loader";
 
 
 

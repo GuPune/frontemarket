@@ -152,6 +152,7 @@ const actions = {
 const mutations = {
     [SET_URL](state,data) {
         state.url_id = data.data;
+        console.log('state',state)
     },
     [SET_LINE](state,data) {
 

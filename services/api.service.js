@@ -93,11 +93,7 @@ const ApiService = {
     },
     registerbyshop(resource, params) {
       return Vue.axios.post(`${API_URL}/${resource}`, params,{ headers:authHeader() 
-    });
-
-      
-
-      
+    });  
   },
 
 

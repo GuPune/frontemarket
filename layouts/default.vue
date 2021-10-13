@@ -4,11 +4,8 @@
 
 
 <div>
-
- 
-
-    <Nav />
-
+<Loader v-if="product.loading"/>
+    <Nav/>
 <nuxt-child></nuxt-child>
 
 
@@ -29,26 +26,36 @@ import Categories from "@/components/Categories"
 import Related from "@/components/Related"
 import LongFooter from "@/components/LongFooter"
 import Footer from "@/components/Footer"
+import Loader from '@/components/Loader'
+import { mapState } from 'vuex'
 import { FETCH_ID_URL } from "@/store/actions.type.js";
     
     export default {
       components: {
-          Nav
+          Nav,Loader
           },
 
     data: () => ({
+    
     form:{
         url:null
     }
     }),
 
     computed: {
+             ...mapState({
+                product: state => state.ProductShell
+            }),
         currentRouteName() {
 
         return this.$route.name;
     },
     isUrl () {
                 return this.$store.state.user.url_id;
+    },
+
+    loading () {
+                return true;
     },
 
   

@@ -3,17 +3,13 @@
         <div class="card shopping-cart">
 
         <h2 class="shoping-cart-title bg-order"><span>ที่อยู่ในการจัดส่ง </span>
-            <span id="showLinkChangeAddress"><a class="linkChangeAddress">  <b-button v-b-modal.modal-1 class="bt-ship"  @click="showModal()">เปลี่ยนที่อยู่</b-button></a></span>
+          
         </h2>
-                        <div class="card-body">
-                       <div class="row" id="scrollMemberList">
+        <div class="card-body">
+        <div class="row" id="scrollMemberList">
         <div class="col-12">
             <div class="row form-group">
                 <div class="col-12 divMemberAddressChoose">
-                <!--
-                    <label class="font-weight-bold"> xxxxx xxxxx</label>
-                    <label class="pl-2">0843745454</label>
-                    -->
                     <div class="text-muted" >
                      {{detailAddress.address}}           
                     </div>
@@ -22,38 +18,7 @@
         </div>
     </div>
     </div>    
-
-      <b-modal id="modal-1"  title="เลือกที่อยู่ในการจัดส่ง" size="lg">
-        <div>
-  
-        <div class="col-12 divMemberAddress">
-            <ul class="ulDataBody ul-body-form-panel">
-                <li>
-                    <span class="text-left">ที่อยู่ที่จัดส่ง </span>
-          
-                </li>
-                <li v-for="(item, index) in items" :key="item.id">
-                  <span class="span-td-col1 text-center"><div class="custom-control custom-radio">
-                  <input type="radio" :value="item.id" v-model="selectedAdd"  @change="changeAdd($event)">
-                  
-                  <label class="custom-control-label" for="customRadio1">
-                  
-                  </label>
-                  
-                  </div>
-                  </span>
-                   <span class="span-td-col1 text-center"> {{item.address}}
-                  </span>
-                  </li> 
-                  </ul>
-        </div>
-  </div>
-     
-      </b-modal>
-            </div>
-
-
-            
+    </div>           
 </template>
 
 
@@ -68,9 +33,7 @@ import RingLoader from 'vue-spinner/src/RingLoader.vue'
 import BounceLoader from 'vue-spinner/src/BounceLoader.vue'
 export default {
       computed: {
-  
             ...mapGetters(["address","selectedad"]),
-
         },
           data() {
       return {
