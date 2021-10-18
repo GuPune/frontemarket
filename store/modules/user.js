@@ -5,7 +5,7 @@ import {
 
 } from "../actions.type.js";
 import {
-    SET_CHECK_LOGIN,SET_ALERT,SET_CLEARALERT,SET_PROFILE,SET_ADDRESS,SET_URL,SET_LINE,SET_FORM_USER
+    SET_CHECK_LOGIN,SET_ALERT,SET_CLEARALERT,SET_PROFILE,SET_ADDRESS,SET_URL,SET_LINE,SET_FORM_USER,SET_LOGOUT
 } from "../mutations.type";
 import Vuex from 'vuex'
 
@@ -80,6 +80,7 @@ const actions = {
 
        async [FETCH_GET_PROFILE](context) {
         const { data } = await UserService.getprofile();
+     
         context.commit(SET_PROFILE,data);
        
         return data;
@@ -152,7 +153,10 @@ const actions = {
 const mutations = {
     [SET_URL](state,data) {
         state.url_id = data.data;
-        console.log('state',state)
+    },
+    [SET_LOGOUT](state) {
+alert('okkkk');
+        this.$auth.logout();
     },
     [SET_LINE](state,data) {
 
@@ -188,11 +192,7 @@ const mutations = {
       
      },
      [SET_ADDRESS](state,data) {
-    
-        console.log('wwwwwwwwwwwwwwwww',data);
         state.address = data;
-
-
         let address = state.address
         for (let i = 0; i < address.length; i++) {
         if(address[i].status == 'D'){

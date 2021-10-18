@@ -32,7 +32,7 @@ export const SET_CHECKDELIVERY = "set_checkdelivery";
 export const SET_LINE = "set_line";
 export const SET_FORM_USER = "set_form_user";
 export const SET_LOADER = "set_loader";
-
+export const SET_LOGOUT = "set_logout";
 
 
 

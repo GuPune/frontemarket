@@ -1,7 +1,7 @@
 
-import { AdsService }  from "../../services/ads";
+import { ShippingService }  from "../../services/shipping";
 import {
-    CHOOSE_DELIVERY,SAVE_DELIVERY,CHECK_DELIVERY
+    CHOOSE_DELIVERY,SAVE_DELIVERY,CHECK_DELIVERY,DELIVERY_DATA
 } from "../actions.type.js";
 import {
     SET_DELIVERY,SET_SAVEDELIVERY,SET_CHECKDELIVERY
@@ -10,20 +10,25 @@ import Vuex from 'vuex'
 
 
 const state = {
-    delivery:null
+    delivery:null,
+    delivery_shipping:null
 }
 
 const getters = {
     delivery: state => {
         return state.delivery
     },
+    delivery_shipping: state => {
+        return state.delivery_shipping
+    },
+
 
 };
 
 
 const actions = {
     async [CHOOSE_DELIVERY](context,payload) { 
-        context.commit(SET_DELIVERY,payload);
+      //  context.commit(SET_DELIVERY,payload);
     },
     async [SAVE_DELIVERY](context,payload) { 
         context.commit(SET_SAVEDELIVERY,payload);
@@ -31,19 +36,33 @@ const actions = {
     async [CHECK_DELIVERY](context,payload) { 
         context.commit(SET_CHECKDELIVERY,payload);
     },
+    async [DELIVERY_DATA](context,payload) { 
+        const { data } = await ShippingService.getdatashipping(payload);
+       
+        context.commit(SET_DELIVERY,data);
+        return data.data;
+    },
+
+
+   
 };
 
 const mutations = {
     [SET_DELIVERY](state,data) {
-state.delivery = data
+        state.delivery = data.data
+        console.log('check',state.delivery);
     },
     [SET_SAVEDELIVERY](state,data) {
        localStorage.setItem('delivery','ems');
     },
     [SET_CHECKDELIVERY](state,data) {
-       let check = localStorage.getItem('delivery');
-       console.log('check',check);
+    //   let check = localStorage.getItem('delivery');
+   //    console.log('check',check);
        },
+    [SET_CHECKDELIVERY](state,data) {
+        let check = localStorage.getItem('delivery');
+      
+        },  
         
 
   

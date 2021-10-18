@@ -35,6 +35,7 @@ export const FETCH_BY_PRODUCT_SHOP_ONE_ITEM = "fetch_product_by_shop_item";
 export const FETCH_ID_URL = "fetch_id_url";
 
 export const CHOOSE_DELIVERY = "fetch_delivery";
+export const DELIVERY_DATA = "dat_delivery";
 
 export const SAVE_DELIVERY = "save_delivery";
 export const CHECK_DELIVERY = "check_delivery";
@@ -42,6 +43,7 @@ export const CHECK_DELIVERY = "check_delivery";
 export const SAVE_SETLINE = "fetch_line";
 export const CORE_USER = "core_user";
 export const FETCH_LOADER = "fetch_loader";
+export const LOG_OUT = "log_out";
 
 
 
