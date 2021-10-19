@@ -2,19 +2,20 @@
         <div class="card shopping-cart">
                   <h2 class="shoping-cart-title bg-order"><span>วิธีการจัดส่ง</span></h2>
                         <div class="card-body"  v-for="(data, index) in shipping" :key="data.id">
-                <div class="form-group mb-0" id="boxCardShipping"><div class="row boxPaymentList pb-3 mb-3"> <div class="col-9 col-md-7" >
+                <div class="form-group mb-0" id="boxCardShipping">
+                <div class="row boxPaymentList pb-3 mb-3"> 
+                <div class="col-12 col-md-4 col-xs-12" >
                     <label>
-                         <input type="radio"    @change="changeAdd($event)" :value="data.id">&nbsp; {{data.name}}
-                  
-                        <div class="pl-3 text-muted offset-lg-0 d-none d-lg-block">{{data.details}}
+                         <input type="radio"   name="profileImg"   @change="changeAdd($event)" :value="data.id" v-model="selectedDel">&nbsp; {{data.name}}
+                        <div class="pl-3 text-muted offset-lg-0">{{data.details}}
                         </div>
                     </label>
                 </div>
-                <div class="col-3 px-0 offset-lg-0 d-none d-lg-block">
-                    <div class="text-center"><img class="shippingImage fill" :src="Checkimage(data.avatar)" />
+                <div class="col-3 col-md-5 col-xs-12">
+                    <div class="text-center"><img class="shippingImage fill" :src="Checkimage(data.avatar)"  width="300" height="100" />
                     </div>
                 </div> 
-                <div class="col-3 col-md-2 pl-0 text-right">
+                <div class="col-12 col-md-3 col-xs-12">
                     <span>ฟรี</span>
                 </div>
           
@@ -43,6 +44,7 @@ import { CHOOSE_DELIVERY,CHECK_DELIVERY,DELIVERY_DATA } from "../store/actions.t
       return {
         status: 'not_accepted',
         selectedAdd: null,
+        selectedDel: null,
         statusdelivery:null,
         shipping:null,
         form:{
@@ -66,8 +68,11 @@ import { CHOOSE_DELIVERY,CHECK_DELIVERY,DELIVERY_DATA } from "../store/actions.t
         let delivery_data = await this.$store.dispatch(DELIVERY_DATA,this.form);
         this.shipping = delivery_data;
        
-  //  let check = await localStorage.getItem('delivery');
-  //         this.statusdelivery = check;
+ let check = await localStorage.getItem('delivery');
+ if(check){
+   console.log([check]);
+ }
+
         },
 
       methods: {
@@ -77,10 +82,9 @@ import { CHOOSE_DELIVERY,CHECK_DELIVERY,DELIVERY_DATA } from "../store/actions.t
         },
 
   
-              changeAdd(event){
-           var data = event.target.value;
-         
-            let delivery =  this.$store.dispatch(CHOOSE_DELIVERY,data);
+        changeAdd(event){
+           this.selectedDel = event.target.value
+           let delivery =  this.$store.dispatch(CHOOSE_DELIVERY,this.selectedDel);
     
         },
       }

@@ -4,7 +4,7 @@ import {
     CHOOSE_DELIVERY,SAVE_DELIVERY,CHECK_DELIVERY,DELIVERY_DATA
 } from "../actions.type.js";
 import {
-    SET_DELIVERY,SET_SAVEDELIVERY,SET_CHECKDELIVERY
+    SET_DELIVERY,SET_SAVEDELIVERY,SET_CHECKDELIVERY,SELECT_DELIVERY
 } from "../mutations.type";
 import Vuex from 'vuex'
 
@@ -28,7 +28,7 @@ const getters = {
 
 const actions = {
     async [CHOOSE_DELIVERY](context,payload) { 
-      //  context.commit(SET_DELIVERY,payload);
+     context.commit(SELECT_DELIVERY,payload);
     },
     async [SAVE_DELIVERY](context,payload) { 
         context.commit(SET_SAVEDELIVERY,payload);
@@ -50,7 +50,6 @@ const actions = {
 const mutations = {
     [SET_DELIVERY](state,data) {
         state.delivery = data.data
-        console.log('check',state.delivery);
     },
     [SET_SAVEDELIVERY](state,data) {
        localStorage.setItem('delivery','ems');
@@ -60,9 +59,18 @@ const mutations = {
    //    console.log('check',check);
        },
     [SET_CHECKDELIVERY](state,data) {
+  
         let check = localStorage.getItem('delivery');
+        console.log('get',check);
       
-        },  
+    },  
+    [SELECT_DELIVERY](state,data) {
+       console.log(data);
+        let setdelivery = localStorage.setItem('delivery',data);
+      
+    }, 
+
+
         
 
   
