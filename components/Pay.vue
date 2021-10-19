@@ -65,6 +65,7 @@ import { FETCH_BANK } from "../store/actions.type.js";
      async mounted() {
        this.form.url = window.location.origin
         let bank_data = await this.$store.dispatch(FETCH_BANK,this.form);
+   
 //         this.shipping = delivery_data;
        
 //  let check = await localStorage.getItem('delivery');

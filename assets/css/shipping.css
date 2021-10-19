@@ -144,7 +144,10 @@ padding: 0px;
 
 }
 
+.bg-status-color{
+background-color: #5FB412;
 
+}
 .bt-ship {
   color: rgb(13, 134, 134); 
   background-color: rgb(0 0 0 / 0%);
@@ -196,6 +199,10 @@ font-size: 12px;
 
 .custom-control-label{
   display: none;
+}
+.id-payment{
+
+  padding-top: 13px;
 }
 
 @media only screen and (max-width: 600px) {
