@@ -39,7 +39,7 @@ export const DELIVERY_DATA = "dat_delivery";
 
 export const SAVE_DELIVERY = "save_delivery";
 export const CHECK_DELIVERY = "check_delivery";
-
+export const FETCH_BANK = "fetch_bank";
 export const SAVE_SETLINE = "fetch_line";
 export const CORE_USER = "core_user";
 export const FETCH_LOADER = "fetch_loader";

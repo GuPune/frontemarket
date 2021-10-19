@@ -56,7 +56,7 @@ import { CHOOSE_DELIVERY,CHECK_DELIVERY,DELIVERY_DATA } from "../store/actions.t
    computed: {
             ...mapGetters(["delivery"]),
 
-              isUrl () {
+          isUrl () {
                 return this.$store.state.user.url_id;
           },
 
@@ -70,7 +70,8 @@ import { CHOOSE_DELIVERY,CHECK_DELIVERY,DELIVERY_DATA } from "../store/actions.t
        
  let check = await localStorage.getItem('delivery');
  if(check){
-   console.log([check]);
+   console.log(check);
+   this.selectedDel = check;
  }
 
         },

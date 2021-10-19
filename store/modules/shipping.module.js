@@ -11,7 +11,10 @@ import Vuex from 'vuex'
 
 const state = {
     delivery:null,
-    delivery_shipping:null
+    delivery_shipping:null,
+    formorder:{
+        selectDel:null
+    }
 }
 
 const getters = {
@@ -20,6 +23,9 @@ const getters = {
     },
     delivery_shipping: state => {
         return state.delivery_shipping
+    },
+    formorder: state => {
+        return state.formorder
     },
 
 
@@ -43,8 +49,6 @@ const actions = {
         return data.data;
     },
 
-
-   
 };
 
 const mutations = {
@@ -52,7 +56,8 @@ const mutations = {
         state.delivery = data.data
     },
     [SET_SAVEDELIVERY](state,data) {
-       localStorage.setItem('delivery','ems');
+     //
+     let setstatus = localStorage.setItem('statusorder','T');
     },
     [SET_CHECKDELIVERY](state,data) {
     //   let check = localStorage.getItem('delivery');
@@ -61,13 +66,10 @@ const mutations = {
     [SET_CHECKDELIVERY](state,data) {
   
         let check = localStorage.getItem('delivery');
-        console.log('get',check);
-      
     },  
     [SELECT_DELIVERY](state,data) {
-       console.log(data);
         let setdelivery = localStorage.setItem('delivery',data);
-      
+    
     }, 
 
 

@@ -22,7 +22,7 @@
          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
          <div  class="button-order boxSubmitCart">
         
-            <b-button block variant="primary" size="lg" class="btn btn-lg-auto btn-style buttonCheckout" @click="deliverys('id-cart-payment')">ถัดไป {{delivery}}</b-button>
+            <b-button block variant="primary" size="lg" class="btn btn-lg-auto btn-style buttonCheckout" @click="deliverys('id-cart-payment')">ถัดไป</b-button>
             </div>
          </div>
          
@@ -626,14 +626,26 @@
         },
         methods: {
 
-        deliverys(names){
-  let savedelivery =  this.$store.dispatch(SAVE_DELIVERY,this.delivery);
-
+      async deliverys(names){
+ // let savedelivery =  this.$store.dispatch(SAVE_DELIVERY,this.delivery);
+ let check = await localStorage.getItem('delivery');
+ if(check == null){
+     this.error('กรุณาเลือกบริการจัดส่งสินค้า');
+     return false;
+ }
               
-           
+         let savedelivery = await this.$store.dispatch(SAVE_DELIVERY,this.delivery);
             const Shopid = this.isUrl.id;
-            this.$router.push({ name: names, params: { id: Shopid }})
-        }
+       this.$router.push({ name: names, params: { id: Shopid }})
+        },
+        error($text) {
+                this.$swal({
+                    icon: 'error',
+                    title: $text,
+                    showConfirmButton: true,
+                    reverseButtons: true
+                });
+            },
         }
       
        
