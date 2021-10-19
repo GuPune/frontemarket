@@ -36,6 +36,8 @@ export const FETCH_ID_URL = "fetch_id_url";
 
 export const CHOOSE_DELIVERY = "fetch_delivery";
 export const DELIVERY_DATA = "dat_delivery";
+export const CHOOSE_BANK = "choose_bank";
+
 
 export const SAVE_DELIVERY = "save_delivery";
 export const CHECK_DELIVERY = "check_delivery";

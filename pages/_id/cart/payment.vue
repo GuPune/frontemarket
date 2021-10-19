@@ -27,7 +27,7 @@
          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
          <div  class="button-order boxSubmitCart">
         
-            <b-button block variant="primary" size="lg" class="btn btn-lg-auto btn-style buttonCheckout" @click="deliverys('id-cart-comfirmorder')">ยืนยันการสั่งซื้อ</b-button>
+            <b-button block variant="primary" size="lg" class="btn btn-lg-auto btn-style buttonCheckout" @click="deliverys('id-cart-success')">ยืนยันการสั่งซื้อ</b-button>
             </div>
          </div>
          
@@ -620,6 +620,10 @@
         computed: {
             ...mapGetters(["delivery"]),
 
+        isUrl () {
+                return this.$store.state.user.url_id;
+        },
+
         
         },
              
@@ -629,10 +633,32 @@
         },
         methods: {
 
-        deliverys(){
-  let savedelivery =  this.$store.dispatch(SAVE_DELIVERY,this.delivery);
-        }
-        }
+       async deliverys(names){
+ let checkbank = await localStorage.getItem('bank');
+ if(checkbank == null){
+     this.error('กรุณาเลือกบริการจ่ายเงิน');
+     return false;
+ }
+        const Shopid = this.isUrl.id;
+       this.$router.push({ name: names, params: { id: Shopid }})
+     
+//  let savedelivery =  this.$store.dispatch(SAVE_DELIVERY,this.delivery);
+        },
+         error($text){
+                    this.$swal({
+                    icon: 'error',
+                    title: $text,
+                    showConfirmButton: true,
+                    reverseButtons: true
+                });
+
+ }
+     
+//  let savedelivery =  this.$store.dispatch(SAVE_DELIVERY,this.delivery);
+        },
+    
+        
+        
       
        
     
