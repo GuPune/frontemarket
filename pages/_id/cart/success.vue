@@ -5,11 +5,8 @@
 <StatusShipping/>
     <div style="padding-top: 20px;">
     <div class="row">
-    <div class="col-12 col-md-8">
-    <div class="col-12 col-md-12 shiipping-add">
-   
-         
-    </div>
+    <div class="col-12 col-md-12">
+    <Successorder/>
     </div>
 
     </div>
@@ -25,7 +22,7 @@
 <script>
     import { mapGetters } from "vuex";
     import StatusShipping from "@/components/StatusShipping";
-    import ShippingInfo from "@/components/ShippingInfo";
+    import Successorder from "@/components/Successorder";
     import Summary from "@/components/Summary";
     import Pay from "@/components/Pay";
     import AddressShippingConfirm from "@/components/AddressShippingConfirm";
@@ -33,10 +30,7 @@
     export default {
       components: {
         StatusShipping,
-        ShippingInfo,
-        Summary,
-        Pay,
-        AddressShippingConfirm
+        Successorder
               },
 
                 data() {

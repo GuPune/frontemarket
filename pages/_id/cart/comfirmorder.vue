@@ -635,7 +635,7 @@
  }
               
          let savedelivery = await this.$store.dispatch(SAVE_DELIVERY,this.delivery);
-            const Shopid = this.isUrl.id;
+        const Shopid = this.isUrl.id;
        this.$router.push({ name: names, params: { id: Shopid }})
         },
         error($text) {

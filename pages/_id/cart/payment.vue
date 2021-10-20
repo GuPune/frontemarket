@@ -600,7 +600,7 @@
     import Summary from "@/components/Summary";
     import Pay from "@/components/Pay";
     import AddressShippingConfirm from "@/components/AddressShippingConfirm";
-    import { SAVE_DELIVERY,CHECK_DELIVERY } from "../../../store/actions.type.js";
+    import { SAVE_DELIVERY,CHECK_DELIVERY,SAVE_ORDER } from "../../../store/actions.type.js";
     export default {
       components: {
         StatusShipping,
@@ -612,6 +612,9 @@
 
                 data() {
       return {
+          formorder:{
+            
+          },
           variants: ['dark'],
  loading:true
       }
@@ -623,6 +626,15 @@
         isUrl () {
                 return this.$store.state.user.url_id;
         },
+        cart () {
+        return this.$store.state.Cart.cart
+        },
+        PriceToTal () {
+        return this.$store.state.Cart.PriceToTal
+        },
+        Summary () {
+        return this.$store.state.Cart.PriceToTal
+        }
 
         
         },
@@ -635,14 +647,18 @@
 
        async deliverys(names){
  let checkbank = await localStorage.getItem('bank');
+
+ 
+ 
  if(checkbank == null){
      this.error('กรุณาเลือกบริการจ่ายเงิน');
      return false;
  }
-        const Shopid = this.isUrl.id;
-       this.$router.push({ name: names, params: { id: Shopid }})
-     
-//  let savedelivery =  this.$store.dispatch(SAVE_DELIVERY,this.delivery);
+   await this.saveorder();
+    //    const Shopid = this.isUrl.id;
+  // await this.$router.push({ name: names, params: { id: Shopid }})
+   
+
         },
          error($text){
                     this.$swal({
@@ -652,9 +668,21 @@
                     reverseButtons: true
                 });
 
- }
+ },
+     async saveorder(){
+    let checkbank = await localStorage.getItem('bank');
+    let delivery = await localStorage.getItem('delivery');
+    let cart = await localStorage.getItem('cart');
+ 
+    let obj = JSON.parse(cart);
+    this.formorder.bank = checkbank;
+    this.formorder.delivery = delivery;
+    this.formorder.cart = obj;
+console.log('this.formorder',this.formorder);
+  let savedelivery =  this.$store.dispatch(SAVE_ORDER,this.formorder);
+    },
      
-//  let savedelivery =  this.$store.dispatch(SAVE_DELIVERY,this.delivery);
+
         },
     
         

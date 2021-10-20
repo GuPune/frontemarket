@@ -32,6 +32,7 @@ export const SET_CHECKDELIVERY = "set_checkdelivery";
 export const SELECT_DELIVERY = "select_delivery";
 export const SELECT_BANK = "select_bank";
 export const SET_BANK = "set_bank";
+export const SET_ORDER = "set_order";
 export const SET_LINE = "set_line";
 export const SET_FORM_USER = "set_form_user";
 export const SET_LOADER = "set_loader";
