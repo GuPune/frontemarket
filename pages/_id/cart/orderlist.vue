@@ -6,12 +6,37 @@
 <!-- --------------------------------store 1--------------------------------- -->
  <div class="row">
     <div class="col-md-9 col-sm-12">
-      <div class="card shopping-cart">
-                  <h2 class="title-shoping-cart bg-order bg-order-mobile"><span>สินค้าในตะกร้า</span></h2>
-               
+      <div class="card shopping-cart" >
+                  <h2 class="title-shoping-cart bg-order bg-order-mobile">
+                  <span>สินค้าในตะกร้า</span>
+                  </h2>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="cart-row cart-row-top hidden-xs cart-row-order-mobile">
-                        <div class="row cart-mobile-dis">
+                        <div class="row cart-mobile-dis"  v-if="cart.length == 0">
+                            <div class="col-xs-12 col-sm-5 col-md-12 col-lg-12">
+                                <div class="row">
+                                       <div class="card-body">
+                            <div id="divCartList">
+                                <div class="divEmptyStatus" id="divEmptyStatus">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="text-center">
+                                                <i class="fa fa-cart-plus fa-3x"></i>
+                                                <p class="text-muted fs-24 mt-3">ไม่มีสินค้าในตะกร้าของคุณ</p>
+                                                <button type="button" class="btn btn-lg-auto btn-style" id="buttonReturnShopping" >
+                                                    กลับไปสั่งซื้อสินค้า                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                </div>
+                            </div>
+                     
+                        </div>
+
+                        <div class="row cart-mobile-dis"  v-if="cart.length > 0">
                             <div class="col-xs-12 col-sm-5 col-md-6 col-lg-6">
                                 <div class="row">
                                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3"><div class="title-top h4">รูปภาพ</div></div>
@@ -138,7 +163,7 @@
     </div>
      <div class="row">
      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 button-order-spac">
-     <div  class="float-right">
+     <div  class="float-right" v-if="cart.length > 0">
      
     <b-button variant="outline-danger" class="button-order"  @click="RemoveToCartAll()"><i class="fa fa-trash"></i> ลบสินค้าในตะกร้าทั้งหมด</b-button>
     
@@ -218,11 +243,26 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
 
         },
              
-        mounted() {},
+        mounted() {
+          
+        },
 
        methods: {
 
         redirectTo(names) {
+
+            if(this.cart.length == 0){
+
+                return   this.$swal({
+                    icon: 'error',
+                    title: 'สินค้า',
+                    text: 'ไม่มีสินค้า!',
+                    showConfirmButton: true,
+                    reverseButtons: true
+                });
+            }
+
+
 
          const Shopid = this.isUrl.id;
 

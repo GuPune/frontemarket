@@ -1,7 +1,10 @@
 <template>
 
-<div class="container col-12 col-md-8" style="padding-top: 90px;">
+<div class="container col-12 col-lg-12 col-xl-8" style="padding-top: 90px;">
 <StatusShipping/>
+<div v-if="loadding">
+<Loader/>
+</div>
     <div style="padding-top: 20px;">
     <div class="row">
     <div class="col-12 col-md-8">
@@ -600,8 +603,9 @@
     import Summary from "@/components/Summary";
     import Pay from "@/components/Pay";
     import AddressShippingConfirm from "@/components/AddressShippingConfirm";
-    import { SAVE_DELIVERY,CHECK_DELIVERY,SAVE_ORDER } from "../../../store/actions.type.js";
+    import { SAVE_DELIVERY,CHECK_DELIVERY,SAVE_ORDER,CART_SUCCESS } from "../../../store/actions.type.js";
     export default {
+    middleware: 'authenticated',
       components: {
         StatusShipping,
         ShippingInfo,
@@ -612,6 +616,7 @@
 
                 data() {
       return {
+          loadding:false,
           formorder:{
             
           },
@@ -621,7 +626,7 @@
     },
 
         computed: {
-            ...mapGetters(["delivery"]),
+            ...mapGetters(["delivery","profile"]),
 
         isUrl () {
                 return this.$store.state.user.url_id;
@@ -655,8 +660,14 @@
      return false;
  }
    await this.saveorder();
-    //    const Shopid = this.isUrl.id;
-  // await this.$router.push({ name: names, params: { id: Shopid }})
+   await this.sleep(2000);
+   this.loadding = false;
+   const Shopid = this.isUrl.id;
+    this.$router.push({ name: names, params: { id: Shopid }})
+    
+
+    
+
    
 
         },
@@ -669,7 +680,14 @@
                 });
 
  },
+        sleep(ms){
+                  return new Promise(
+    resolve => setTimeout(resolve, ms)
+  );
+
+    },
      async saveorder(){
+         this.loadding = true;
     let checkbank = await localStorage.getItem('bank');
     let delivery = await localStorage.getItem('delivery');
     let cart = await localStorage.getItem('cart');
@@ -678,8 +696,12 @@
     this.formorder.bank = checkbank;
     this.formorder.delivery = delivery;
     this.formorder.cart = obj;
-console.log('this.formorder',this.formorder);
+    this.formorder.url = window.location.origin
+    this.formorder.customer_id = this.profile.id
+
   let savedelivery =  this.$store.dispatch(SAVE_ORDER,this.formorder);
+  let cart_success =  this.$store.dispatch(CART_SUCCESS);
+  
     },
      
 

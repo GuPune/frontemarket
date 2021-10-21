@@ -1,6 +1,6 @@
 <template>
 
-<div class="container col-12 col-md-8" style="padding-top: 90px;">
+<div class="container col-12 col-lg-12 col-xl-8" style="padding-top: 90px;">
 <StatusShipping/>
     <div style="padding-top: 20px;">
     <div class="row">
@@ -596,6 +596,7 @@
     import AddressShipping from "@/components/AddressShipping";
     import { SAVE_DELIVERY,CHECK_DELIVERY } from "../../../store/actions.type.js";
     export default {
+         middleware: 'authenticated',
       components: {
         StatusShipping,
         ShippingInfo,

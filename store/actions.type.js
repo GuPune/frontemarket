@@ -22,6 +22,9 @@ export const FETCH_PRODUCT_BY_SHOP = "fetch_product_by_shop";
 export const FETCH_CATE_BY_SHOP = "fetch_cate_by_shop";
 export const FETCH_FIND_PRODUCT = "fetch_find_by_shop";
 export const ADD_CART = "add_cart";
+export const CART_SUCCESS = "cart_success";
+
+
 export const REMOVE_CART = "remove_cart";
 export const GET_CART = "get_cart";
 export const ADD_UP = "add_up";
@@ -45,6 +48,9 @@ export const FETCH_BANK = "fetch_bank";
 
 export const SAVE_ORDER = "save_order";
 export const SAVE_SETLINE = "fetch_line";
+
+export const GET_ORDER_LOCAL = "get_order";
+export const GET_ORDER_DATA = "get_order_data";
 export const CORE_USER = "core_user";
 export const FETCH_LOADER = "fetch_loader";
 export const LOG_OUT = "log_out";

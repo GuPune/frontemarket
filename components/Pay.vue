@@ -71,10 +71,6 @@ import { FETCH_BANK,CHOOSE_BANK } from "../store/actions.type.js";
          this.selectedBank = sel_bank;
       }
  
-   
-   
-
-
         },
 
       methods: {

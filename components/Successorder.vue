@@ -341,7 +341,7 @@
 
 <script>
 import { mapGetters } from "vuex";
-import { FETCH_BANK,CHOOSE_BANK } from "../store/actions.type.js";
+import { FETCH_BANK,CHOOSE_BANK,GET_ORDER_DATA } from "../store/actions.type.js";
   export default {
     data() {
       
@@ -352,37 +352,33 @@ import { FETCH_BANK,CHOOSE_BANK } from "../store/actions.type.js";
         statusdelivery:null,
         bank:null,
         form:{
-        url:null
+        url:null,
+        cartnumber:null
         }
       }
     },
 
    computed: {
-            ...mapGetters(["delivery"]),
+            ...mapGetters(["order"]),
 
-          isUrl () {
+            isUrl () {
                 return this.$store.state.user.url_id;
-          },
+            },
+          
 
         
         },
 
      async mounted() {
-       this.form.url = window.location.origin
-      let bank_data = await this.$store.dispatch(FETCH_BANK,this.form);
-      this.bank = bank_data;
+    let order_id = await localStorage.getItem("listorder");
+    let a = window.location.origin
+    this.form.url = a;
+    this.form.cartnumber = order_id;
 
-       let sel_bank = await localStorage.getItem('bank');
-      if(sel_bank){
-         console.log(sel_bank);
-         this.selectedBank = sel_bank;
-      }
- 
-   
-   
+    let fetch = await this.$store.dispatch(GET_ORDER_DATA,this.form);
 
 
-        },
+    },
 
       methods: {
 

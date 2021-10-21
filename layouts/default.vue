@@ -54,9 +54,7 @@ import { FETCH_ID_URL } from "@/store/actions.type.js";
                 return this.$store.state.user.url_id;
     },
 
-    loading () {
-                return true;
-    },
+ 
 
   
      

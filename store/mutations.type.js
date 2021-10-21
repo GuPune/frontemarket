@@ -22,6 +22,7 @@ export const SET_ADDUP     = "set_add_up";
 export const SET_ADDDOWN     = "set_add_down";
 export const SET_ADD_INPUT     = "set_add_input";
 export const SET_REMOVE_ALL     = "set_remove_all";
+export const SET_CART_SUCCESS     = "set_cart_success";
 export const SET_ADS_SHOP     = "set_ads_shop";
 export const SET_ADS_SHOP_SEMI     = "set_ads_shop_semi";
 export const SET_BY_PRODUCT_SHOP_ONE_ITEM  = "set_by_product_one_item";
@@ -33,11 +34,11 @@ export const SELECT_DELIVERY = "select_delivery";
 export const SELECT_BANK = "select_bank";
 export const SET_BANK = "set_bank";
 export const SET_ORDER = "set_order";
+export const SET_GETORDER = "set_getorder";
 export const SET_LINE = "set_line";
 export const SET_FORM_USER = "set_form_user";
 export const SET_LOADER = "set_loader";
 export const SET_LOGOUT = "set_logout";
-
 
 
 
