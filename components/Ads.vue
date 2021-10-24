@@ -2,7 +2,7 @@
 
 <section id="Ads">
 
-    <center><div class="row adsweb col-9">
+    <center><div class="row ads-emarket col-12">
             <div class="carousel">
                 <div>
     <b-carousel
@@ -40,30 +40,7 @@
 
     <!-- <-----------------------------------------------------Mobile-------------------------------------------------->
 
-      <center><div class="row adsmobile col-12">
-            <div class="carousel">
-                <div>
-    <b-carousel
-      id="carousel-1"
-      v-model="slide"
-      :interval="4000"
-      controls
-      indicators
-      background="#ababab"
-      img-width="1024"
-      img-height="400"
-      style="text-shadow: 1px 1px 2px #333;"
-      @sliding-start="onSlideStart"
-      @sliding-end="onSlideEnd"
-    >
-     
-      <!-- Slide with blank fluid image to maintain slide aspect ratio -->
-      <b-carousel-slide  v-for="(item, index) in ads" :key="ads.id"  :img-src="Checkimage(item.images)">
-      </b-carousel-slide>
-    </b-carousel>
-  </div>
-  </div>          
-    </div></center>   
+
 </section>
     
 </template>

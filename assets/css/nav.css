@@ -124,6 +124,13 @@
   background-color: #EF7318;
 }
 
+.navbar-fixed {
+  top: 0;
+  z-index: 100;
+position: fixed;
+  width: 100%;
+}
+
 
 
 
@@ -165,6 +172,8 @@
      
     }
 
+
+
 @media screen and (max-width: 600px) {
     
   .cart-mobile{
@@ -193,6 +202,10 @@ display: block;
     /* height: 60px; */
     padding-left: 15%;
     padding-right: 15%;
+  }
+
+  .shop-name-nav-mobile{
+    display: none;
   }
 
 

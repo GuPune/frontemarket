@@ -2,7 +2,7 @@
       
 <div style="background: white;">
 
- 
+ <Header/>
  <AdsShop/>
 
  <Adsmini/>
@@ -97,11 +97,11 @@ url:null
         },
              
        async mounted() {
-            this.form.url = window.location.origin;
-           console.log('this.$route.params',this.form)
-
-          let cate_by_shop = await this.$store.dispatch(FETCH_CATE_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
-          let product = await this.$store.dispatch(FETCH_PRODUCT_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
+           this.form.url = window.location.origin;
+        //   console.log('host',host)
+       //   this.$route.params = 1;
+      let cate_by_shop = await this.$store.dispatch(FETCH_CATE_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
+        let product = await this.$store.dispatch(FETCH_PRODUCT_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
         },
 
          methods: {

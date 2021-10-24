@@ -36,7 +36,6 @@ const actions = {
     },
 
     async [FETCH_ADS_SHOP](context,payload) {
-        console.log('FETCH_ADS_SHOP',payload)
         const { data } = await AdsService.post(payload);
         context.commit(SET_ADS_SHOP,data);
         return data;
@@ -44,9 +43,9 @@ const actions = {
 
     async [FETCH_ADS_SHOP_SEMI](context,payload) {
        
-        console.log('FETCH_ADS_SHOP_SEMI',payload);
+
         const { data } = await AdsService.semi(payload);
-    
+        console.log('FETCH_ADS_SHOP_SEMI',data);
         context.commit(SET_ADS_SHOP_SEMI,data);
         return data;
     },
@@ -62,8 +61,7 @@ const mutations = {
     },
     [SET_ADS_SHOP_SEMI](state,data) {
         state.ads_semi = data.data;
-        console.log('xxxx',data.data);
-
+    
     }
   
   

@@ -75,11 +75,21 @@ export default {
     
   ],
 
+
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    // Doc: https://github.com/nuxt-community/eslint-module
+    [
+      '@nuxtjs/router',
+      {
+        path: 'router',
+        fileName: 'index.js',
+        keepDefaultRouter: true,
+      },
+    ],
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

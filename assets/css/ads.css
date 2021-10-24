@@ -17,6 +17,12 @@
   
 }
 
+.ads-emarket{
+
+  padding-left: 0;
+  padding-right: 0;
+}
+
 
 
 
@@ -189,6 +195,9 @@ input:checked + .slide-container .nav label { display: block; }
     padding-left: 0px;
     padding-right:0px ;
   }
+  .ads-emarket{
+    padding-top: 59px;
+  }
 
 }
 
@@ -198,6 +207,9 @@ input:checked + .slide-container .nav label { display: block; }
   #slider {
     width: 400px;
     height: 200px;
+  }
+  .ads-emarket{
+    padding-top: 50px;
   }
 }
 

@@ -85,8 +85,7 @@ import Relation from "@/components/Relation"
                   data() {
     return {
    form:{
-shop_name:null,
-url:null
+shop_name:null
    }
     };
   },
@@ -97,11 +96,9 @@ url:null
         },
              
        async mounted() {
-            this.form.url = window.location.origin;
-           console.log('this.$route.params',this.form)
-
-          let cate_by_shop = await this.$store.dispatch(FETCH_CATE_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
-          let product = await this.$store.dispatch(FETCH_PRODUCT_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
+           console.log('this.$route.params',this.$route.params)
+          let cate_by_shop = await this.$store.dispatch(FETCH_CATE_BY_SHOP,this.$route.params).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
+          let product = await this.$store.dispatch(FETCH_PRODUCT_BY_SHOP,this.$route.params).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
         },
 
          methods: {

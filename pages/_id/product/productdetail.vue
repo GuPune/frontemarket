@@ -1,4 +1,5 @@
 <template>
+
 <section id="Productdetail" class="product-details" >
 <div class="container product-details productItemDetail" style="background-color: white;"   v-for="(item, index) in product_by_item" :key="item.id">
  

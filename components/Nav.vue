@@ -211,7 +211,7 @@
      <b-nav-item href="#"><img src="http://www.dgtfarm.com/images/thai-flag.png" alt="" height="20px" width="20px"></b-nav-item>
      <b-nav-item href="#"><img src="http://www.dgtfarm.com/images/eng-flag.png" alt="" height="20px" width="20px"></b-nav-item>
      <b-nav-item href="#">ขายสินค้ากับเรา</b-nav-item>
-     <b-nav-item href="#" @click="redirectTo('id-cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i>
+     <b-nav-item href="#" @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i>
                     <span> ({{ cartTotal }}) </span></b-nav-item>
 
           <b-nav-item-dropdown right  v-if="isLogins">
@@ -219,18 +219,23 @@
           <template #button-content>
             <em>User</em>
           </template>
-          <b-dropdown-item href="#" @click="redirectTo('id-profile-userprofile')">Profile</b-dropdown-item>
+          <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">Profile</b-dropdown-item>
           <b-dropdown-item href="#"  @click.prevent="logout">Sign Out</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item-dropdown text="Login" v-else="!isLogins" right>
-          <b-dropdown-item href="#" @click="redirectTo('id-form-login')">เข้าสู่ระบบ</b-dropdown-item>
-          <b-dropdown-item href="#" @click="redirectTo('id-form-userregis')" >สมัครสมาชิก</b-dropdown-item>
+          <b-dropdown-item href="#" @click="redirectTo('form-login')">เข้าสู่ระบบ</b-dropdown-item>
+          <b-dropdown-item href="#" @click="redirectTo('form-userregis')" >สมัครสมาชิก</b-dropdown-item>
         </b-nav-item-dropdown>
 
     
       </b-navbar-nav>
+
+      
     </b-collapse>
+    
   </b-navbar>
+  
+  
 </div>
 </template>
 
@@ -297,7 +302,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART 
 
             //  this.$router.push({ path: `/1/${name}` }) // -> /user/123
                 //   this.$router.push({ params: { id: '1' } ,name: name})
-                   this.$router.push({ name: names, params: { id: Shopid }})
+                   this.$router.push({ name: names })
                 }
             },
 

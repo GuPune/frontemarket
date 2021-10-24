@@ -84,14 +84,14 @@ const actions = {
     },
     async [FETCH_PRODUCT_BY_SHOP](context,payload) {
         const { data } = await ProductService.getproductbyshop(payload);
-        console.log('product',data);
+   
         context.commit(SET_PRODUCT_BY_SHOP,data);
         return data;
     },
     async [FETCH_CATE_BY_SHOP](context,payload) {
         //   const { data } = await ProductService.find(payload);
         const { data } = await ProductService.getcatebyshop(payload);
-        console.log('cate',data);
+       
            context.commit(SET_CATE_BY_SHOP,data);
            return data;
        },

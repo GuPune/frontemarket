@@ -25,5 +25,7 @@
     "vuelidate": "^0.7.6",
     "vuex-persistedstate": "^4.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@nuxtjs/router": "^1.6.1"
+  }
 }

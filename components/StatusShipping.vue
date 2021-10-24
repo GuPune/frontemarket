@@ -74,9 +74,9 @@ export default {
 
     computed: {
      a () { 
-         if(this.$route.name === 'id-cart-payment'){
+         if(this.$route.name === 'cart-payment'){
               return 'box-shape-icon box-circle-icon-color visited';
-         }else if(this.$route.name === 'id-cart-success'){
+         }else if(this.$route.name === 'cart-success'){
                 return 'box-shape-icon box-circle-icon-color visited';
          }
          else {
@@ -84,10 +84,10 @@ export default {
          }
       },
       icon(){
-         if(this.$route.name === 'id-cart-payment'){
+         if(this.$route.name === 'cart-payment'){
              //fa fa-hand-o-right id-payment
               return 'fas fa-check fa-lg icon-check-circle fa-lg position-icon position-icon-left-shipping fa';
-         }else if(this.$route.name === 'id-cart-success'){
+         }else if(this.$route.name === 'cart-success'){
                 return 'fas fa-check fa-lg icon-check-circle fa-lg position-icon position-icon-left-shipping fa';
           
          }
@@ -96,7 +96,7 @@ export default {
          }
       },
     iconpay(){
-         if(this.$route.name === 'id-cart-success'){
+         if(this.$route.name === 'cart-success'){
              //fa fa-hand-o-right id-payment
               return 'fas fa-check fa-lg icon-check-circle fa-lg position-icon position-icon-left-shipping fa';
          }
@@ -105,10 +105,10 @@ export default {
          }
       },
     iconsuccess(){
-         if(this.$route.name === 'id-cart-payment'){
+         if(this.$route.name === 'cart-payment'){
              //fa fa-hand-o-right id-payment
               return 'fa fa-car';
-         }else if(this.$route.name === 'id-cart-success'){
+         }else if(this.$route.name === 'cart-success'){
                 return 'fas fa-check fa-lg icon-check-circle fa-lg position-icon position-icon-left-shipping fa';
           
          }
@@ -117,9 +117,9 @@ export default {
          }
       },
     paymentclass(){
-         if(this.$route.name === 'id-cart-payment'){
+         if(this.$route.name === 'cart-payment'){
               return 'box-shape-icon box-circle-icon-color active';
-         }else if(this.$route.name === 'id-cart-success'){
+         }else if(this.$route.name === 'cart-success'){
             return 'box-shape-icon box-circle-icon-color visited';
          }
          else {
@@ -127,9 +127,9 @@ export default {
          }
       },
       success(){
-           if(this.$route.name === 'id-cart-payment'){
+           if(this.$route.name === 'cart-payment'){
               return 'box-shape-icon box-circle-icon-color';
-         }else if(this.$route.name === 'id-cart-success'){
+         }else if(this.$route.name === 'cart-success'){
             return 'box-shape-icon box-circle-icon-color visited';
          }
          else {

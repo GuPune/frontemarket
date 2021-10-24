@@ -4,8 +4,13 @@
 
 
 <div>
+
+
+
 <Loader v-if="product.loading"/>
-    <Nav/>
+  
+
+ <Nav/>
 <nuxt-child></nuxt-child>
 
 
@@ -20,6 +25,7 @@
 
 
 <script>
+import Header from "@/components/Header"
 import Nav from "@/components/Nav"
 import Ads from "@/components/Ads"
 import Categories from "@/components/Categories"
@@ -32,6 +38,7 @@ import { FETCH_ID_URL } from "@/store/actions.type.js";
     
     export default {
       components: {
+          Header,
           Nav,Loader
           },
 
