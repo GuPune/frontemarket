@@ -691,6 +691,7 @@
     let checkbank = await localStorage.getItem('bank');
     let delivery = await localStorage.getItem('delivery');
     let cart = await localStorage.getItem('cart');
+    let shipping = await localStorage.getItem('shipping');
  
     let obj = JSON.parse(cart);
     this.formorder.bank = checkbank;
@@ -698,6 +699,7 @@
     this.formorder.cart = obj;
     this.formorder.url = window.location.origin
     this.formorder.customer_id = this.profile.id
+    this.formorder.shipping = shipping
 
   let savedelivery =  this.$store.dispatch(SAVE_ORDER,this.formorder);
   let cart_success =  this.$store.dispatch(CART_SUCCESS);

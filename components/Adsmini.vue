@@ -80,7 +80,7 @@
   
         methods: {
 
-          Checkimage(image){
+        Checkimage(image){
                 let public_images = process.env.ImageURL+image;
                 return public_images;
         },

@@ -12,9 +12,10 @@
                 </div>
                 <div class="col-12 d-none d-md-block mt-3">
                     <div class="fs-ta-16 text-theme-1 text-center">
-                        หมายเลขคำสั่งซื้อ <span class="text-theme-2">102021000009</span>
+                
+                        หมายเลขคำสั่งซื้อ <span class="text-theme-2">{{this.orderlist.cartnumber}}</span>
                         &nbsp;&nbsp;
-                        วันที่สั่งซื้อ <span class="text-theme-2">2021-10-20 07:56</span>
+                        วันที่สั่งซื้อ <span class="text-theme-2">{{this.orderlist.created_at}}</span>
                     </div>
                                     </div>
             </div>
@@ -44,7 +45,7 @@
                     <span class="fs-ta-16 text-theme-1"><b>หมายเลขคำสั่งซื้อ</b></span>
                 </div>
                 <div class="col text-right">
-                    <span class="fs-ta-14 text-theme-2">102021000009</span>
+                    <span class="fs-ta-14 text-theme-2">{{this.orderlist.cartnumber}}</span>
                 </div>
             </div>    
             <!-- End Order Code -->
@@ -55,7 +56,7 @@
                     <span class="fs-ta-16 text-theme-1"><b>วันที่สั่งซื้อ</b></span>
                 </div>
                 <div class="col text-right">
-                    <span class="fs-ta-14 text-theme-2">2021-10-20 07:56</span>
+                    <span class="fs-ta-14 text-theme-2">{{this.orderlist.created_at}}</span>
                 </div>
             </div>
             <!-- End Order Date -->
@@ -69,7 +70,11 @@
                             <span class="fs-ta-16 text-theme-1"><b>ข้อมูลจัดส่ง</b></span>
                         </div>
                         <div class="col-12 fs-ta-14 fs-md-ta-16 text-theme-1 mt-1">
-                            ชื่อผู้รับ: rkknoob reangjalentham<br>ที่อยู่: 2e3r4t5yui ตำบลนาเพียง อำเภอชุมแพ จังหวัดขอนแก่น 40000<br>เบอร์โทรศัพท์: 0843745454<br>อีเมล: rkknoob@gmail.com                        </div>
+                            ชื่อผู้รับ: {{this.orderlist.fname}} {{this.orderlist.lname}}<br>
+                            ที่อยู่: 2e3r4t5yui ตำบลนาเพียง อำเภอชุมแพ จังหวัดขอนแก่น 40000<br>
+                            เบอร์โทรศัพท์: {{this.orderlist.tel}}<br>
+                            อีเมล: {{this.orderlist.email}}
+                            </div>
                     </div>
                 </div>
                 <!-- End Shipping Address -->
@@ -80,7 +85,10 @@
                                 <span class="fs-ta-16 text-theme-1"><b>ข้อมูลออกใบเสร็จ</b></span>
                             </div>
                             <div class="col-12 fs-ta-14 fs-md-ta-16 text-theme-1 mt-1">
-                                ชื่อผู้รับ: rkknoob reangjalentham<br>ที่อยู่: 2e3r4t5yui ตำบลนาเพียง อำเภอชุมแพ จังหวัดขอนแก่น 40000<br>เบอร์โทรศัพท์: 0843745454<br>อีเมล: rkknoob@gmail.com 
+                                ชื่อผู้รับ: {{this.orderlist.fname}} {{this.orderlist.lname}}<br>
+                                ที่อยู่: 2e3r4t5yui ตำบลนาเพียง อำเภอชุมแพ จังหวัดขอนแก่น 40000<br>
+                                เบอร์โทรศัพท์: {{this.orderlist.tel}}<br>
+                                อีเมล: {{this.orderlist.email}}
                             </div>
                         </div>
                     </div>
@@ -121,47 +129,52 @@
                         </div>
                         <div class="tbody border-bottom-0 border-md-bottom border-theme">
                                                             <div class="tr py-3 border-top border-top-0-first border-theme">
-                                    <div class="row">
+                                    <div class="row"  v-for="(item, index) in this.orderlist.order_item" :key="index">
                                         <div class="col-12 col-md-5">
                                             <div class="row">
                                                 <div class="col-auto pr-0">
-                                                    <img class="img-product" src="https://image.makewebeasy.net/makeweb/r_60x60/pYN8s1ZiT/Women_Ring/แหวนเพชรแถว_A8379.png?v=202012190947" alt="แหวนเพชรแถว A8379"/>
+                                                    <img class="img-product"  :src="Checkimage(item.img_product)"  width="100" height="100"  alt="แหวนเพชรแถว A8379"/>
                                                 </div>
-                                                                                                <div class="col">
+                                               <div class="col">
                                                     <div class="row">
                                                         <div class="col-12">
-                                                            <p class="fs-ta-14 fs-md-ta-16 text-theme-1 mb-0">แหวนเพชรแถว A8379</p>
-                                                                                                                            <p class="fs-ta-14 text-theme-2 mb-0 mt-2">SKU: A8379</p>
-                                                                                                                                                                                </div>
+                                                            <p class="fs-ta-14 fs-md-ta-16 text-theme-1 mb-0">{{item.name_th}}</p>
+                                                             <p class="fs-ta-14 text-theme-2 mb-0 mt-2">{{item.sku}}</p></div>
                                                     </div>
                                                     <div class="row mt-3 d-flex d-md-none">
                                                         <div class="col-4">
-                                                            <p class="fs-ta-14 text-theme-1 mb-0">฿ 18,700.00</p>
+                                                            <p class="fs-ta-14 text-theme-1 mb-0">฿ {{item.price}}</p>
                                                         </div>
                                                         <div class="col-4 pl-4 pr-1 text-center">
-                                                            <p class="fs-ta-14 text-theme-2 mb-0">x1</p>
+                                                            <p class="fs-ta-14 text-theme-2 mb-0">x{{item.qty}}</p>
                                                         </div>
                                                         <div class="col-4 text-right">
-                                                            <p class="fs-ta-14 text-theme-1 mb-0">฿ 18,700.00</p>
-                                                        </div>
+                                                            <p class="fs-ta-14 text-theme-1 mb-0">฿ {{item.sumPrice}}</p>
+                                                        </div v>
                                                     </div>
                                                 </div>
                                             </div>
+
+                                            
                                         </div>
+
+                                        
                                         <div class="col-12 col-md-7 d-none d-md-block">
                                             <div class="row">
                                                 <div class="col-4 pr-1 text-right">
-                                                    <p class="fs-ta-16 text-theme-1 mb-0">฿ 18,700.00</p>
+                                                    <p class="fs-ta-16 text-theme-1 mb-0">฿ {{item.price}}</p>
                                                 </div>
                                                 <div class="col-4 pl-5 pr-1 text-center">
-                                                    <p class="fs-ta-16 text-theme-1 mb-0">1</p>
+                                                    <p class="fs-ta-16 text-theme-1 mb-0">{{item.qty}}</p>
                                                 </div>
                                                 <div class="col-4 pl-1 text-right">
-                                                    <p class="fs-ta-16 text-theme-1 mb-0">฿ 18,700.00</p>
+                                                    <p class="fs-ta-16 text-theme-1 mb-0">฿ {{item.sumPrice}}</p>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+
+                                  
                                 </div>
                                                     </div>
                     </div>
@@ -187,7 +200,7 @@
                             <p class="fs-ta-16 text-theme-1 mb-0 text-left">ยอดรวมสินค้า</p>
                         </div>
                         <div class="col">
-                            <p class="fs-ta-16 text-theme-1 mb-0 text-right">฿ 18,700.00</p>
+                            <p class="fs-ta-16 text-theme-1 mb-0 text-right">฿ {{this.orderlist.sumPrice}}</p>
                         </div>
                     </div>
                     <!-- End Net price --> 
@@ -219,7 +232,7 @@
                                 <p class="fs-ta-16 text-theme-1 mb-0 text-left"><b>ยอดรวมสุทธิ</b></p>
                             </div>
                             <div class="col">
-                                <p class="fs-ta-20 text-theme-1 mb-0 text-right">฿ 18,700.00</p>
+                                <p class="fs-ta-20 text-theme-1 mb-0 text-right">฿ {{this.orderlist.sumPrice}}</p>
                             </div>
                         </div>
                     </div>
@@ -241,7 +254,7 @@
                             <span class="fs-ta-16 text-theme-1"><b>ช่องทางชำระเงิน</b></span>
                         </div>
                         <div class="col col-md-12 text-right text-md-left mt-md-1">
-                            <span class="fs-ta-14 fs-md-ta-16 text-theme-2 text-md-theme-1">โอนเงินผ่านบัญชีธนาคาร</span>
+                            <span class="fs-ta-14 fs-md-ta-16 text-theme-2 text-md-theme-1">{{this.orderlist.bank.name}}</span>
                         </div>
                     </div>
                 </div>      
@@ -254,10 +267,11 @@
                         </div>
                         <div class="col col-md-12 text-right text-md-left mt-md-1">
                             <span class="fs-ta-14 fs-md-ta-16 text-theme-2 text-md-theme-1">
-                                ไปรษณีย์ไทย - EMS                            </span>
+                                      
+                                {{this.orderlist.delivery_name}}               </span>
                             <br class="d-md-none">
                             <span class="fs-ta-14 fs-md-ta-16 text-theme-2">
-                                (ระยะเวลาขนส่ง 1-5 วัน)
+                                 {{this.orderlist.delivery_details}} 
                             </span>
                         </div>
                     </div>      
@@ -271,7 +285,7 @@
                             <span class="fs-ta-16 text-theme-1"><b>ช่องทางชำระเงิน</b></span>
                         </div>
                         <div class="col col-md-12 text-right text-md-left mt-md-1">
-                            <span class="fs-ta-14 fs-md-ta-16 text-theme-2 text-md-theme-1">โอนเงินผ่านบัญชีธนาคาร</span>
+                            <span class="fs-ta-14 fs-md-ta-16 text-theme-2 text-md-theme-1">{{this.orderlist.bank.name}}</span>
                         </div>
                     </div>
                 </div>      
@@ -287,12 +301,11 @@
                                                             <div class="col-12  mb-2">
                                     <div class="row">
                                         <div class="col-auto">
-                                            <img class="img-banklogo" src="https://webbuilder46.makewebeasy.com/images/bank/BankofAyudhaya.jpg?v=202012190947" alt="ธนาคารกรุงศรีอยุธยา">
+                                            <img class="img-banklogo" :src="Checkimage(this.orderlist.bank.images)"   width="100" height="100">
                                         </div>
                                         <div class="col">
-                                            <p class="fs-ta-16 text-theme-1 mb-0">ธนาคารกรุงศรีอยุธยา</p>
-                                            <p class="fs-ta-14 text-theme-2 mb-0 mt-1">ภ.ภัชธนมณี
-003-1-22360-1</p>
+                                            <p class="fs-ta-16 text-theme-1 mb-0">{{this.orderlist.bank.details}}</p>
+                                           
                                         </div>
                                     </div>
                                 </div>
@@ -354,6 +367,9 @@ import { FETCH_BANK,CHOOSE_BANK,GET_ORDER_DATA } from "../store/actions.type.js"
         form:{
         url:null,
         cartnumber:null
+        },
+        orderlist:{
+
         }
       }
     },
@@ -375,7 +391,9 @@ import { FETCH_BANK,CHOOSE_BANK,GET_ORDER_DATA } from "../store/actions.type.js"
     this.form.url = a;
     this.form.cartnumber = order_id;
 
-    let fetch = await this.$store.dispatch(GET_ORDER_DATA,this.form);
+    let order_data = await this.$store.dispatch(GET_ORDER_DATA,this.form);
+    this.orderlist = order_data;
+    console.log('data',this.orderlist);
 
 
     },
@@ -385,6 +403,7 @@ import { FETCH_BANK,CHOOSE_BANK,GET_ORDER_DATA } from "../store/actions.type.js"
         
         Checkimage(image){
                 let public_images = process.env.ImageURL+image;
+                console.log(public_images);
                 return public_images;
         },
 

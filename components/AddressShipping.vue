@@ -105,9 +105,13 @@ export default {
           
            var data = event.target.value;
            let selectdata = this.items
+           let shipping = localStorage.setItem("shipping", data);
         if(selectdata.length > 0){
         const arr3 = selectdata.filter(d => d.id == data);
         this.detailAddress = arr3[0]
+
+  
+        
            
         }
 
@@ -142,6 +146,7 @@ export default {
         this.selectedAdd = arr2[0].id
         this.detailAddress = arr2[0]
      }
+        let shipping = localStorage.setItem("shipping", this.selectedAdd);
  
     },
 

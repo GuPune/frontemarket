@@ -23,8 +23,8 @@
                                             <div class="text-center">
                                                 <i class="fa fa-cart-plus fa-3x"></i>
                                                 <p class="text-muted fs-24 mt-3">ไม่มีสินค้าในตะกร้าของคุณ</p>
-                                                <button type="button" class="btn btn-lg-auto btn-style" id="buttonReturnShopping" >
-                                                    กลับไปสั่งซื้อสินค้า                                                </button>
+                                                       <b-button squared  variant="outline-primary" size="lg" class="btn btn-lg-auto btn-style-o buttonShopping"  @click="redirectToroot('index')">กลับไปสั่งซื้อสินค้า</b-button>
+                      
                                             </div>
                                         </div>
                                     </div>
@@ -267,6 +267,11 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
          const Shopid = this.isUrl.id;
 
         this.$router.push({ name: names, params: { id: Shopid }})
+        },
+        
+        redirectToroot(root) {
+
+         this.$router.push({ name: root})
         },
         Checkimage(image){
                 let public_images = process.env.ImageURL+image;

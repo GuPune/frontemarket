@@ -23,7 +23,7 @@
                                             <div class="text-center">
                                                 <i class="fa fa-cart-plus fa-3x"></i>
                                                 <p class="text-muted fs-24 mt-3">ไม่มีสินค้าในตะกร้าของคุณ</p>
-                                                <button type="button" class="btn btn-lg-auto btn-style" id="buttonReturnShopping" >
+                                                <button type="button" class="btn btn-lg-auto btn-style" id="buttonReturnShopping" @click="redirectToroot('index')" >
                                                     กลับไปสั่งซื้อสินค้า                                                </button>
                                             </div>
                                         </div>
@@ -248,6 +248,11 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
         },
 
        methods: {
+
+        redirectToroot(root) {
+
+         this.$router.push({ name: root})
+        },
 
         redirectTo(names) {
 

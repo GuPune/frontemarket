@@ -630,10 +630,13 @@
       async deliverys(names){
  // let savedelivery =  this.$store.dispatch(SAVE_DELIVERY,this.delivery);
  let check = await localStorage.getItem('delivery');
+
  if(check == null){
      this.error('กรุณาเลือกบริการจัดส่งสินค้า');
      return false;
  }
+
+
               
          let savedelivery = await this.$store.dispatch(SAVE_DELIVERY,this.delivery);
         const Shopid = this.isUrl.id;
