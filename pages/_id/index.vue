@@ -1,13 +1,16 @@
 <template>
       
 <div style="background: white;">
-
- 
+<div v-if="loadding">
+<Loader/>
+</div>
+<Banner/>
  <AdsShop/>
 
  <Adsmini/>
 
  <Relation/>
+
         <div id="content" class="container profileweb col-12 col-md-9">
         
             <div class="row">
@@ -69,6 +72,7 @@ import AdsShop from "../../components/AdsShop"
 import { mapGetters } from "vuex";
 import Adsmini from "@/components/Adsmini"
 import Relation from "@/components/Relation"
+import Banner from "@/components/Banner"
     
 
 
@@ -84,6 +88,7 @@ import Relation from "@/components/Relation"
 
                   data() {
     return {
+         loadding:true,
    form:{
 shop_name:null,
 url:null
@@ -97,16 +102,20 @@ url:null
         },
              
        async mounted() {
-            this.form.url = window.location.origin;
-           console.log('this.$route.params',this.form)
+         this.form.url = window.location.origin;
+         this.form.shop_name = window.location.pathname;
 
           let cate_by_shop = await this.$store.dispatch(FETCH_CATE_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
           let product = await this.$store.dispatch(FETCH_PRODUCT_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
+
+          this.loadding = false
         },
 
          methods: {
      
+            success() {
           
+            },
             success() {
           
             },

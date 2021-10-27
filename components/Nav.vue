@@ -207,7 +207,7 @@
 
 
       <!-- Right aligned nav items -->
-      <b-navbar-nav class="ml-auto">
+     <b-navbar-nav class="ml-auto">
      <b-nav-item href="#"><img src="http://www.dgtfarm.com/images/thai-flag.png" alt="" height="20px" width="20px"></b-nav-item>
      <b-nav-item href="#"><img src="http://www.dgtfarm.com/images/eng-flag.png" alt="" height="20px" width="20px"></b-nav-item>
      <b-nav-item href="#">ขายสินค้ากับเรา</b-nav-item>
