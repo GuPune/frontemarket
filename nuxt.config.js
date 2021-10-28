@@ -97,12 +97,14 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/bootstrap
     'bootstrap-vue/nuxt',
+    "vue2-editor/nuxt",
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     'vue-sweetalert2/nuxt',
     "@nuxtjs/auth"
     
   ],
+  
 
   router: {
     middleware: ["clearValidationErrors"]

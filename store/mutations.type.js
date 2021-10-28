@@ -2,18 +2,14 @@
 export const SET_CHECK_LOGIN         = "setCheckLogin";
 export const SET_ALERT         = "setArlert";
 export const SET_CLEARALERT         = "setclearArlert";
-
 export const SET_CATEGORY_SHELL         = "set_category_shell";
 export const SET_PRODUCT_SHELL         = "set_product_shell";
-
 export const SET_PROFILE         = "set_profile";
 export const SET_ADDRESS         = "set_address";
 export const SET_ADS         = "set_ads";
-
 export const SET_PRODUCT_BY_SHOP         = "set_product_by_shop";
 export const SET_CATE_BY_SHOP         = "set_cate_by_shop";
 export const SET_CATE_SEC         = "set_cate_sec";
-
 export const SET_CART      = "set_cart";
 export const SET_REMOVECART      = "set_cart_remove";
 export const SET_GET_CART      = "set_cart_getcart";
@@ -36,6 +32,8 @@ export const SET_BANK = "set_bank";
 export const SET_ORDER = "set_order";
 export const SET_GETORDER = "set_getorder";
 export const SET_LINE = "set_line";
+export const SET_MENU = "set_menu";
+export const SET_ABOUT = "set_about";
 export const SET_FORM_USER = "set_form_user";
 export const SET_LOADER = "set_loader";
 export const SET_LOGOUT = "set_logout";

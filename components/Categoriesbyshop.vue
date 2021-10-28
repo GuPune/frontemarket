@@ -68,7 +68,8 @@ import { mapGetters } from "vuex";
     
         
       mounted() {
-          this.form.id = this.$route.params.id
+         this.form.url = window.location.origin;
+         this.form.shop_name = window.location.pathname;
          },
 
       methods: {

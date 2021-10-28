@@ -19,10 +19,8 @@
   <b-row>
   <b-col sm="12" md="12">
   <b-nav>
-    <b-nav-item>หน้าหลัก</b-nav-item>
-    <b-nav-item>บทความ</b-nav-item>
-    <b-nav-item>เกี่ยวกับเรา</b-nav-item>
-    <b-nav-item>ติดต่อเรา</b-nav-item>
+  <b-nav-item  v-for="(item, index) in menu" :key="item.id" @click="redirectTo(item.link)">{{item.name}}</b-nav-item>
+ 
   </b-nav>
   </b-col>
   
@@ -41,8 +39,8 @@
 
 <script>
   import { mapGetters,mapState } from "vuex";
-  import { FETCH_PRODUCT_SHELL } from "../store/actions.type.js";
-  import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CAR,FETCH_ADS_SHOP_SEMI } from "@/store/actions.type.js";
+
+  import { GET_MENU } from "@/store/actions.type.js";
   import { APP_URL } from "../environment/environment.js";
   export default {
     data() {
@@ -55,23 +53,15 @@
 
      computed: {
            
-        ...mapGetters(["product_shell","authenticated","ads_semi"]),
+        ...mapGetters(["menu"]),
 
         },
         
         mounted() {
-        //  this.$store.dispatch(ToogleAction);
+          this.form.url = window.location.origin;
+         this.form.shop_name = this.$route.params;
+       this.$store.dispatch(GET_MENU,this.form);
 
-           //     let a = this.$store.dispatch(FETCH_PRODUCT_SHELL);
-
-        
-        this.loadcategory()
-
-
-       let a = window.location.origin
-       this.form.url = a;
-    
-       this.$store.dispatch(FETCH_ADS_SHOP_SEMI,this.form);
         
          },
         
@@ -83,23 +73,15 @@
                 return public_images;
         },
 
-        redirectTo(name) {
-                    this.$router.push(name)
-                  },
-        loadcategory(){
-          let productinshell = this.$store.dispatch(FETCH_PRODUCT_SHELL);
+        redirectTo(names) {
+              let path = this.$route.path
+               if (path !== names) {
+               const Shopid = this.$route.params.id;
+                this.$router.push({ name: names, params: { id: Shopid }})
+                }
         },
+     
  
-        async addToCart(item){
-                 await this.$swal("Add Product!", "Product To Cart!", "success")
-        },
-        async CheckLogin(item){
-       if(!this.authenticated){
-               this.$router.push('/form/login')
-       }else{
-        this.addToCart(item);
-       }
-        },
 
         },
   

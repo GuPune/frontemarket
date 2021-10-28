@@ -9,7 +9,9 @@ import Cart from './modules/cart.module'
 import Profile from './modules/profile.module'
 import Ads from './modules/ads.module'
 import Shipping from './modules/shipping.module'
+import Menu from './modules/menu.module'
 import Bank from './modules/bank.module'
+import Abount from './modules/about.module'
 import Order from './modules/order.module'
 import { alert } from '../store/modules/alert.module';
 import validations from '../store/modules/validation';
@@ -20,7 +22,7 @@ Vue.use(Vuex)
 
 const store = () => new Vuex.Store({
   modules: {
-    user,alert,validations,auth,CategoryShell,ProductShell,Ads,Cart,Shipping,Loader,Bank,Order
+    user,alert,validations,auth,CategoryShell,ProductShell,Ads,Cart,Shipping,Loader,Bank,Order,Menu,Abount
   }
 })
 

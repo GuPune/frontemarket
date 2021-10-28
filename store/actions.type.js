@@ -45,6 +45,9 @@ export const CHOOSE_BANK = "choose_bank";
 export const SAVE_DELIVERY = "save_delivery";
 export const CHECK_DELIVERY = "check_delivery";
 export const FETCH_BANK = "fetch_bank";
+export const GET_MENU = "get_menu_data";
+
+export const GET_ABOUT = "get_about_data";
 
 export const SAVE_ORDER = "save_order";
 export const SAVE_SETLINE = "fetch_line";
