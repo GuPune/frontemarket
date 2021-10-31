@@ -5,19 +5,21 @@
 <Loader/>
 </div>
 <Banner/>
-  
- <div v-html="content">
+<div class="container">
+<div class ="row">
+  <div class="col-12">
+   <div v-html="content" class="responsive">
                   </div>
+                  </div>
+                  </div>
+</div>
+
 
                 
 </div>
 </div>
-
-                    
+ 
                 </div>
-
-
-
         </div>
 
               

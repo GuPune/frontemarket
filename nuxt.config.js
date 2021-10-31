@@ -61,6 +61,7 @@ export default {
     '@/assets/css/adsshop.css',
     '@/assets/css/shipping.css',
     '@/assets/css/banner.css',
+    '@/assets/css/about.css',
     
   ],
 
