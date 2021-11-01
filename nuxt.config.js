@@ -62,6 +62,7 @@ export default {
     '@/assets/css/shipping.css',
     '@/assets/css/banner.css',
     '@/assets/css/about.css',
+    '@/assets/css/blog.css',
     
   ],
 
