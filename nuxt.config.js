@@ -73,6 +73,7 @@ export default {
    // "./plugins/mixins/user.js",
    // "~/plugins/axios.js",
    // "~/plugins/mixins/validation.js",
+    // { src: '~/plugins/vue2-google-map.js'},
     { src: '~/plugins/vuelidate', ssr: true },
   
     
@@ -157,5 +158,7 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+    vendor:["vue2-google-maps"]
+  },
+
 }
