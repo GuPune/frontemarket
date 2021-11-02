@@ -51,6 +51,7 @@ export const GET_ABOUT = "get_about_data";
 
 export const SAVE_ORDER = "save_order";
 export const FETCH_BLOG = "fetch_blog";
+export const FETCH_BLOG_ONLY = "fetch_blog_only";
 export const SAVE_SETLINE = "fetch_line";
 
 export const GET_ORDER_LOCAL = "get_order";

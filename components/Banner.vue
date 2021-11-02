@@ -19,7 +19,7 @@
   <b-row>
   <b-col sm="12" md="12">
   <b-nav>
-  <b-nav-item  v-for="(item, index) in menu" :key="item.id" @click="redirectTo(item.link)">{{item.name}}</b-nav-item>
+  <b-nav-item  v-for="(item, index) in menu" :key="item.id" @click="redirectTo(item.link)"  :class="{'rkknoob': checkPath(item.link)}">{{item.name}}</b-nav-item>
  
   </b-nav>
   </b-col>
@@ -80,6 +80,23 @@
                 this.$router.push({ name: names, params: { id: Shopid }})
                 }
         },
+
+            checkPath(name) {
+                let path = this.$nuxt.$route.name
+
+
+ if (name === path) {
+   console.log('true');
+                        return true
+                    } else {
+                        return false
+                    }
+              //  return (name === path)
+            },
+
+
+
+
      
  
 
@@ -92,3 +109,4 @@
 
     }
 </script>
+

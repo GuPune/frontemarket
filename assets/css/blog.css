@@ -23,3 +23,17 @@ overflow: hidden;
   padding-bottom: 15px
   ;
 }
+
+.contentName{
+  font-size: 30px;
+  color: #9F8672
+}
+.textlastdate{
+  font-size: 16px;
+  color: #9F8672
+}
+
+.blog-margin{
+margin-top: 30px;
+}
+

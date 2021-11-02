@@ -13,10 +13,19 @@ body {
 
 }
 
+.nav-link a {
+color: black !important;
+}
 
 
+.rkknoob a {
+  background-color: #9f8672!important;
+  color: #fff!important;
 
-
+}
+.k a {
+  color:black
+}
 
 #axiosForm {
   /* Components Root Element ID */

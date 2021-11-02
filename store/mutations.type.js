@@ -30,6 +30,7 @@ export const SELECT_DELIVERY = "select_delivery";
 export const SELECT_BANK = "select_bank";
 export const SET_BANK = "set_bank";
 export const SET_BLOG = "set_blog";
+export const SET_BLOG_ONLY = "set_blogonly";
 export const SET_ORDER = "set_order";
 export const SET_GETORDER = "set_getorder";
 export const SET_LINE = "set_line";

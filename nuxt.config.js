@@ -109,7 +109,9 @@ export default {
   
 
   router: {
-    middleware: ["clearValidationErrors"]
+    middleware: ["clearValidationErrors"],
+    linkActiveClass: 'your-custom-active-link',
+    linkExactActiveClass: 'your-custom-exact-active-link',
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
