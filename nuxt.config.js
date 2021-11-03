@@ -63,6 +63,7 @@ export default {
     '@/assets/css/banner.css',
     '@/assets/css/about.css',
     '@/assets/css/blog.css',
+    '@/assets/css/contact.css',
     
   ],
 
@@ -104,11 +105,16 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     'vue-sweetalert2/nuxt',
-    "@nuxtjs/auth"
-    
+    "@nuxtjs/auth",
+    '@nuxtjs/recaptcha',
+    '@nuxtjs/recaptcha'
   ],
-  
-
+  recaptcha: {
+    hideBadge: false, // Hide badge element (v3 & v2 via size=invisible)
+    siteKey: '6Ldh4g0dAAAAAP80q0x4ZGMxJwF1408EghK2P6RR', // Site key for requests
+    version: 2, // Version
+    size: 'invisible' // Size: 'compact', 'normal', 'invisible' (v2)
+  },
   router: {
     middleware: ["clearValidationErrors"],
     linkActiveClass: 'your-custom-active-link',

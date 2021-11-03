@@ -1,14 +1,23 @@
 <template>
-<div>
-
+<div class="c-map">
+<div class="container">
 <GmapMap
-  :center="{lat:10, lng:10}"
-  :zoom="7"
+   v-bind:center="center"
+  :zoom="15"
   map-type-id="terrain"
-  style="width: 500px; height: 300px"
+  style="width: 650; height: 450px"
 >
-
+  <GmapMarker
+    :key="index"
+    v-for="(m, index) in markers"
+    :position="m.position"
+    :clickable="true"
+    :draggable="true"
+    @click="center=m.position"
+  />
 </GmapMap>
+  
+</div>
 </div>
 
     
@@ -26,6 +35,12 @@ import axios from '@nuxtjs/axios'
   export default {
     data() {
     return {
+      center : { lat: 16.4435101, lng:102.8583772},
+      markers: [
+    {
+      position : { lat : 16.4435101, lng: 102.8583772}
+    }
+      ],
       apix:'AIzaSyCmpJGPB1Vy0yZNQi2-hnNIfNI5e1qyA9U',
       IsLogin: false,
       slide: 0,
@@ -41,7 +56,7 @@ import axios from '@nuxtjs/axios'
 
    
         created(){
-             alert('1');
+   
         },
         
 
@@ -74,27 +89,12 @@ import axios from '@nuxtjs/axios'
   let x  = localStorage.getItem("map");
 Vue.use(VueGoogleMaps, {
   load: {
-    key: x ,
-    libraries: 'places', // This is required if you use the Autocomplete plugin
-    // OR: libraries: 'places,drawing'
-    // OR: libraries: 'places,drawing,visualization'
-    // (as you require)
- 
-    //// If you want to set the version, you can do so:
-    // v: '3.26',
+    key: 'AIzaSyCmpJGPB1Vy0yZNQi2-hnNIfNI5e1qyA9U' ,
+    libraries: 'places', 
+
   },
  
-  //// If you intend to programmatically custom event listener code
-  //// (e.g. `this.$refs.gmap.$on('zoom_changed', someFunc)`)
-  //// instead of going through Vue templates (e.g. `<GmapMap @zoom_changed="someFunc">`)
-  //// you might need to turn this on.
-  // autobindAllEvents: false,
- 
-  //// If you want to manually install components, e.g.
-  //// import {GmapMarker} from 'vue2-google-maps/src/components/marker'
-  //// Vue.component('GmapMarker', GmapMarker)
-  //// then disable the following:
-  // installComponents: true,
+
 })
 
 

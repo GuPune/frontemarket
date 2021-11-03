@@ -53,7 +53,8 @@ export const SAVE_ORDER = "save_order";
 export const FETCH_BLOG = "fetch_blog";
 export const FETCH_BLOG_ONLY = "fetch_blog_only";
 export const SAVE_SETLINE = "fetch_line";
-
+export const SAVE_CONTACT = "save_contact";
+export const GET_CAPTCHA = "get_captcha";
 export const GET_ORDER_LOCAL = "get_order";
 export const GET_ORDER_DATA = "get_order_data";
 export const CORE_USER = "core_user";
