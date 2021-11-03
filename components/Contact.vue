@@ -185,6 +185,7 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
                 1500
             );
               this.clear()
+              this.gencapcha()
      
         },
 
@@ -194,12 +195,21 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
            this.form.name = '';
            this.form.details = '';
            this.form.tel = '';
+           this.form.captcha = '';
         },
 
       error() {
             this.$swal({
                 type: "error",
                 title: "บันทึกไม่สำเร็จ กรุณาติดต่อผู้ดูแลระบบ",
+                showConfirmButton: true,
+                reverseButtons: true
+            });
+      },
+    captchaerror() {
+            this.$swal({
+                type: "error",
+                title: "กรอกเลข Captcha ให้ถูกต้อง",
                 showConfirmButton: true,
                 reverseButtons: true
             });
@@ -212,9 +222,12 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
         if(this.captcha.reply == this.form.captcha){
    this.send();
 
+        }else {
+
+            this.captchaerror();
         }
 
-        return false;
+     //   return this.error()
           // this.send();
       }
     }
