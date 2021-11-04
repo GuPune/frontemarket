@@ -21,10 +21,10 @@
                         </thead>
                         <tbody>
                                                                <tr v-for="(item, index) in address" :key="address.id">
-                                        <td class="td-col-1">11<br>
+                                        <td class="td-col-1">{{item.name}}<br>
                                         
                                         </td>
-                                        <td class="td-col-2">{{item.address}} ,{{item.province_id}}
+                                        <td class="td-col-2">{{item.address}} ,{{item.province_id}} ,{{item.districts_id}} ,{{item.sub_districts_id}}
                                         </td>
                                         <td class="td-col-3">{{item.tel}}</td>
                                         <td class="td-col-4">

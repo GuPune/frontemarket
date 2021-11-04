@@ -25,28 +25,29 @@
 
       <b-modal id="modal-1"  title="เลือกที่อยู่ในการจัดส่ง" size="lg">
         <div>
+
+
+         <div class="modal-body">
+          <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ที่อยู่</th>
+        <th></th>
+    
+      </tr>
+    </thead>
+    <tbody>
+      <tr  v-for="(item, index) in items" :key="item.id">
+        <td> <input type="radio" :value="item.id" v-model="selectedAdd"  @change="changeAdd($event)"></td>
+        <td> {{item.address}}, ต.{{item.sub_districts_id}}  อ.{{item.districts_id}}  จังหวัด.{{item.province_id}}</td>
+     
+     </tr>
+     
+    </tbody>
+  </table>
+  </div>
   
-        <div class="col-12 divMemberAddress">
-            <ul class="ulDataBody ul-body-form-panel">
-                <li>
-                    <span class="text-left">ที่อยู่ที่จัดส่ง </span>
-          
-                </li>
-                <li v-for="(item, index) in items" :key="item.id">
-                  <span class="span-td-col1 text-center"><div class="custom-control custom-radio">
-                  <input type="radio" :value="item.id" v-model="selectedAdd"  @change="changeAdd($event)">
-                  
-                  <label class="custom-control-label" for="customRadio1">
-                  
-                  </label>
-                  
-                  </div>
-                  </span>
-                   <span class="span-td-col1 text-center"> {{item.address}}
-                  </span>
-                  </li> 
-                  </ul>
-        </div>
+      
   </div>
      
       </b-modal>

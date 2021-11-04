@@ -20,7 +20,7 @@
                 
                          <div class="card">
                  
-                       <ProfileALL :profile="profile"/>
+                      
                
                            
                          </div>

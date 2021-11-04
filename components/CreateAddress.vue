@@ -239,6 +239,10 @@ console.log(this.profile.id);
        this.subdist_id = event.target.value;
           
           },
+        redirectTo() {
+              this.$router.push({ name: 'profile-userprofileadd' })
+          
+        },
    
       save(){
       this.$v.$touch();
@@ -271,6 +275,8 @@ this.send();
                 showConfirmButton: true,
                 reverseButtons: true
             });
+
+
       },
 
     success() {
@@ -283,6 +289,8 @@ this.send();
                 }),
                 1500
             );
+
+            this.redirectTo();
           
      
         },

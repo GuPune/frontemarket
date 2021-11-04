@@ -43,8 +43,37 @@
                             </div>
                         </div>
                         <hr>
-                
-                     
+                          <div class="row">
+                            <div class="col-sm-3">
+                            <h6 class="mb-0">ที่อยู่</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                       
+                             <textarea class="form-control" rows="5" name="inputContactMessage" id="inputContactMessage" placeholder="เขียนข้อความ"   v-model="profile.address" ></textarea>
+                            </div>
+                        </div>
+                        <hr>
+
+                         <div class="row">
+                            <div class="col-sm-3">
+                            <h6 class="mb-0">โปรไฟล์</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                             <div
+                          class="wrap-input100 validate-input"
+                        >
+                       
+                          <input
+                            class="form-control"
+                            type="file"
+                            name="contact"
+                          @change="onFileChange" />
+                          <span class="focus-input100"></span>
+                        </div>
+                            </div>
+                        </div>
+                        <hr>
+        
                         <div class="row">
                             <div class="col-sm-12">
                             <b-button variant="outline-primary"   @click="saveprofile()">บันทึกการเปลี่ยนแปลง</b-button>
