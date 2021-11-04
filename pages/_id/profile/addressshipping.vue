@@ -9,18 +9,20 @@
 
                 <!-- /Breadcrumb -->
             
-                <div class="row gutters-sm">
+                <div class="row gutters-sm profile-desktop">
                     <div class="col-md-4 mb-3">
                     <ProfileImage :profile="profile"/>
                     <ProfileAddress />
                     </div>
                     <div class="col-md-8">
               
-<ProfileContent :profile="profile"/>
+ <CreateAddress/>
+
+
                 
                          <div class="card">
                  
-                       <ProfileALL :profile="profile"/>
+      
                
                            
                          </div>
@@ -38,6 +40,12 @@
     </div>
 
 
+
+
+
+
+                
+ 
     </section>
     
 </template>
@@ -50,8 +58,9 @@ import ProfileImage from "@/components/ProfileImage";
 import ProfileAddress from "@/components/ProfileAddress";
 import ProfileContent from "@/components/ProfileContent";
 import ProfileALL from "@/components/ProfileALL";
+import CreateAddress from "@/components/CreateAddress";
 import { mapGetters } from "vuex";
-import { FETCH_GET_PROFILE,FETCH_ADDRESS } from "../../store/actions.type.js";
+import { FETCH_GET_PROFILE,FETCH_ADDRESS } from "../../../store/actions.type.js";
     
 
 
@@ -62,7 +71,8 @@ import { FETCH_GET_PROFILE,FETCH_ADDRESS } from "../../store/actions.type.js";
           ProfileAddress,
           ProfileImage,
           ProfileContent,
-          ProfileALL
+          ProfileALL,
+          CreateAddress
            
               },
 

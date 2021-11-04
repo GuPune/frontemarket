@@ -20,9 +20,40 @@
 
 
 
+.memberMenu{
+
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+}
+
+.prof-s{
+  /* background-color: #c9bbaf; */
+  padding: 10px;
+
+}
+
+.profile-menu{
+  background-color: #c9bbaf;
+
+
+}
+
+
+.profile-cart-title {
+  font-size: 16px;
+  padding-top: 20px;
+  padding-left: 20px;
+}
 
 
 
+.profile-bg-order{
+  font-size: 20px;
+  border-bottom: 1px solid rgba(0,0,0,.125);
+  padding-bottom: 20px;
+}
 
 
 

@@ -1,21 +1,43 @@
 <template>
 <div>
-           <div class="card" v-if="profile">
+           <div class="card" v-if="profile" style="margin-top: 80px;">
                         <div class="card-body">
-                        <div class="d-flex flex-column align-items-center text-center">
+                        <div class="d-flex flex-column align-items-center text-center profile-bg-order">
                             <img src="https://www.arianagrande.com/sites/g/files/aaj12746/f/styles/suzuki_breakpoints_image_tablet/public/positions-final_0.jpg" alt="Admin" class="rounded-circle profile" width="150">
                             <div class="mt-3">
                             <h4>
                     {{profile.name}}
                             </h4>
-                            <p class="text-secondary mb-1">
-                                <strong>ประเภท</strong>
-                                <small class="text-muted">โปรไฟล์ผู้ซื้อ</small></p>
-                            <button class="btn btn-primary">อัปโหลดรูปภาพ</button>
-                            <a href="#changepassword" class="btn btn-outline-primary">เปลี่ยนรหัสผ่าน</a>
+                         
+                         
                             </div>
                         </div>
                         </div>
+                         <div class="card-body">
+                                <div class="boxMenu">
+                                    <ul class="nav flex-column nav-pills memberMenu">
+                                        <li class="prof-s" id="member-MyAccount" @click="redirectTo('profile-userprofile')"  :class="{'profile-menu': checkPath('profile-userprofile')}">
+                                            <p>ข้อมูลของฉัน</p>
+                                        </li>
+                                       <!-- <li class="" id="member-editprofile" >
+                                            <p></p>
+                                        </li> -->
+
+                                        <li class="prof-s" id="member-editaddressbook" @click="redirectTo('profile-userprofileadd')"  :class="{'profile-menu': checkPath('profile-userprofileadd')}">
+                                            <p>ที่อยู่</p>
+                                        </li>
+                                        <li class="prof-s" id="member-orderedhistory" @click="redirectTo()"  :class="{'profile-menu': checkPath()}" >
+                                            <p>ประวัติการสั่งซื้อ</p>
+                                        </li>
+                                                                                <li class="prof-s" id="member-changepassword" @click="redirectTo()" >
+                                            <p>ตั้งค่ารหัสผ่าน</p>
+                                        </li>
+                                        <li class="rounded-0 prof-s"  href="javascript:void(0);" id="memberLogout">
+                                            <p>ออกจากระบบ</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                     </div>
 </div>
 
@@ -46,7 +68,23 @@ import 'sweetalert2/dist/sweetalert2.min.css';
         methods: {
 
    
-     
+        redirectTo(names) {
+              this.$router.push({ name: names })
+          
+        },
+        checkPath(name) {
+                let path = this.$nuxt.$route.name
+
+
+ if (name === path) {
+   console.log('true');
+                        return true
+                    } else {
+                        return false
+                    }
+              //  return (name === path)
+            },
+
      
         },
   

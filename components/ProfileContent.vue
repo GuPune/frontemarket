@@ -1,6 +1,10 @@
 <template>
 <div>
-      <div class="card mb-3">
+      <div class="card mb-3" style="margin-top:80px;">
+      <h2 class="profile-cart-title profile-bg-order"><span>ข้อมูลของฉัน </span>
+            <span id="showLinkChangeAddress"><a class="linkChangeAddress"></a></span>
+      </h2>
+      
                         <div class="card-body">
                         <div class="row">
                             <div class="col-sm-3">
@@ -49,7 +53,13 @@
                         </div>
                         </div>
                     </div>
+
+              
+
+
 </div>
+
+
 
 </template>
 
@@ -59,6 +69,8 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
 import { mapGetters,mapState } from "vuex";
 import { FETCH_GET_PROFILE,SAVE_PROFILE } from "../store/actions.type.js";
 import Loading from 'vue-loading-overlay';
+import CreateAddress from "@/components/CreateAddress";
+import Address from "@/components/Address";
 import 'vue-loading-overlay/dist/vue-loading.css';
 import 'sweetalert2/dist/sweetalert2.min.css';
   export default {
@@ -71,6 +83,13 @@ import 'sweetalert2/dist/sweetalert2.min.css';
                 objects: state => state.user.profile,
              }),
         },
+            components: {
+     
+          CreateAddress,
+          Address
+
+           
+              },
         
          data: () => ({
         value: '',

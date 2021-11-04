@@ -16,12 +16,11 @@
                     </div>
                     <div class="col-md-8">
               
-<ProfileContent :profile="profile"/>
+<Address/>
                 
                          <div class="card">
                  
-                       <ProfileALL :profile="profile"/>
-               
+                     
                            
                          </div>
 
@@ -50,8 +49,9 @@ import ProfileImage from "@/components/ProfileImage";
 import ProfileAddress from "@/components/ProfileAddress";
 import ProfileContent from "@/components/ProfileContent";
 import ProfileALL from "@/components/ProfileALL";
+import Address from "@/components/Address";
 import { mapGetters } from "vuex";
-import { FETCH_GET_PROFILE,FETCH_ADDRESS } from "../../store/actions.type.js";
+import { FETCH_GET_PROFILE,FETCH_ADDRESS } from "@/store/actions.type.js";
     
 
 
@@ -62,7 +62,8 @@ import { FETCH_GET_PROFILE,FETCH_ADDRESS } from "../../store/actions.type.js";
           ProfileAddress,
           ProfileImage,
           ProfileContent,
-          ProfileALL
+          ProfileALL,
+          Address
            
               },
 
