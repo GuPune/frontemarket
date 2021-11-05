@@ -1,7 +1,7 @@
 
 import { OrderService }  from "../../services/order";
 import {
-    SAVE_ORDER,GET_ORDER_LOCAL,GET_ORDER_DATA
+    SAVE_ORDER,GET_ORDER_LOCAL,GET_ORDER_DATA,GET_ORDER_ALL
 } from "../actions.type.js";
 import {
     SET_ORDER,SET_GETORDER
@@ -31,6 +31,12 @@ const actions = {
       },  
       async [GET_ORDER_DATA](context,payload) { 
         const { data } = await OrderService.fetchorder(payload);
+        return data.data
+      },
+      async [GET_ORDER_ALL](context,payload) { 
+         
+        const { data } = await OrderService.fetchorderall(payload);
+        console.log('payload',data.data);
         return data.data
       },
 

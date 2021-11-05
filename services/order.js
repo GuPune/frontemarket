@@ -8,4 +8,7 @@ export const OrderService = {
     fetchorder(param) {
       return ApiServiceAll.post("fetchorder",param);
     },
+    fetchorderall(param) {
+      return ApiServiceAll.post("fetchorderall",param);
+    },
 };

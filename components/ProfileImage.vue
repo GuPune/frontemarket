@@ -3,7 +3,9 @@
            <div class="card" v-if="profile" style="margin-top: 80px;">
                         <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center profile-bg-order">
-                            <img src="https://www.arianagrande.com/sites/g/files/aaj12746/f/styles/suzuki_breakpoints_image_tablet/public/positions-final_0.jpg" alt="Admin" class="rounded-circle profile" width="150">
+                
+ <img v-if="profile.profile_images" :src="profile.profile_images"  alt="Admin" class="rounded-circle profile" width="150" />
+                        
                             <div class="mt-3">
                             <h4>
                     {{profile.name}}
@@ -26,7 +28,7 @@
                                         <li class="prof-s" id="member-editaddressbook" @click="redirectTo('profile-userprofileadd')"  :class="{'profile-menu': checkPath('profile-userprofileadd')}">
                                             <p>ที่อยู่</p>
                                         </li>
-                                        <li class="prof-s" id="member-orderedhistory" @click="redirectTo()"  :class="{'profile-menu': checkPath()}" >
+                                        <li class="prof-s" id="member-orderedhistory" @click="redirectTo('profile-historyorder')"  :class="{'profile-menu': checkPath('profile-historyorder')}" >
                                             <p>ประวัติการสั่งซื้อ</p>
                                         </li>
                                                                                 <li class="prof-s" id="member-changepassword" @click="redirectTo()" >
@@ -66,6 +68,12 @@ import 'sweetalert2/dist/sweetalert2.min.css';
         
   
         methods: {
+
+        Checkimage(image){
+            
+                let public_images = process.env.ImageURL+image;
+                return public_images;
+        },
 
    
         redirectTo(names) {

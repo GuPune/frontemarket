@@ -56,7 +56,7 @@
 
                          <div class="row">
                             <div class="col-sm-3">
-                            <h6 class="mb-0">โปรไฟล์</h6>
+                            <h6 class="mb-0">รูปโปรไฟล์</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
                              <div
@@ -69,6 +69,7 @@
                             name="contact"
                           @change="onFileChange" />
                           <span class="focus-input100"></span>
+                          
                         </div>
                             </div>
                         </div>
@@ -121,6 +122,7 @@ import 'sweetalert2/dist/sweetalert2.min.css';
               },
         
          data: () => ({
+              url: null,
         value: '',
         form: {
             fname: "",
@@ -142,6 +144,17 @@ import 'sweetalert2/dist/sweetalert2.min.css';
         
   
         methods: {
+        onFileChange(e) {
+
+
+        this.file = e.target.files[0];
+        this.url = URL.createObjectURL(this.file);
+
+        this.profileimage()
+
+        
+
+        },
         setData(){
 
     
@@ -186,6 +199,12 @@ import 'sweetalert2/dist/sweetalert2.min.css';
         },
         addlbirthday(){
              this.$set(this.profile, 'birthday',this.profile.birthday)
+
+        },
+        profileimage(){
+            
+            console.log(this.url);
+             this.$set(this.profile, 'profile_images',this.url)
 
         }
 
