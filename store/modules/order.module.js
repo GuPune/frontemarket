@@ -4,19 +4,23 @@ import {
     SAVE_ORDER,GET_ORDER_LOCAL,GET_ORDER_DATA,GET_ORDER_ALL
 } from "../actions.type.js";
 import {
-    SET_ORDER,SET_GETORDER
+    SET_ORDER,SET_GETORDER,SET_ORDERALL
 } from "../mutations.type";
 import Vuex from 'vuex'
 
 
 const state = {
-    order:null
+    order:null,
+    orderall:null
  
 }
 
 const getters = {
     order:state => {
         return state.order
+    },
+    orderall:state => {
+        return state.orderall
     },
 };
 
@@ -36,8 +40,9 @@ const actions = {
       async [GET_ORDER_ALL](context,payload) { 
          
         const { data } = await OrderService.fetchorderall(payload);
-        console.log('payload',data.data);
-        return data.data
+   
+        context.commit(SET_ORDERALL,data);
+       return data.data
       },
 
       
@@ -55,8 +60,10 @@ const mutations = {
     [SET_GETORDER](state,data) {
         let getorder = localStorage.getItem('listorder');
         state.order = getorder
+    },
+    [SET_ORDERALL](state,data) {
      
-   
+        state.orderall = data.data
     },
  
 };

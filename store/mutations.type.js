@@ -33,6 +33,7 @@ export const SET_BLOG = "set_blog";
 export const SET_BLOG_ONLY = "set_blogonly";
 export const SET_ORDER = "set_order";
 export const SET_GETORDER = "set_getorder";
+export const SET_ORDERALL = "set_orderall";
 export const SET_CAPTCHA = "set_captcha";
 export const SET_LINE = "set_line";
 export const SET_MENU = "set_menu";

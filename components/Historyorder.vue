@@ -61,6 +61,7 @@
     </b-row>
 
     <!-- Main table element -->
+
     <b-table
       :items="items"
       :fields="fields"
@@ -76,21 +77,44 @@
       small
       @filtered="onFiltered"
     >
-      <template #cell(name)="row">
-        {{ row.value.first }} {{ row.value.last }}
+ 
+         <template #cell(status)="row">
+
+         <div  v-if="row.item.status == 'Y'">
+ 
+       <b-button size="sm" squared variant="primary">ชำระเงิน</b-button>
+</div>
+<div v-else>
+   <b-button size="sm" squared variant="danger">รอการชำระ</b-button>
+</div>
+         
+ 
       </template>
+
+   <template #cell(created_at)="row">
+  
+
+          {{covertdate(row.item.created_at)}}
+      </template>
+      
 
       <template #cell(actions)="row">
 
         <b-button size="sm" @click="row.toggleDetails">
-          {{ row.detailsShowing ? 'Hide' : 'Show' }} Details
+          {{ row.detailsShowing ? 'Hide' : 'Show' }} 
         </b-button>
       </template>
 
       <template #row-details="row">
         <b-card>
-          <ul>
-            <li v-for="(value, key) in row.item" :key="key">{{ key }}: {{ value }}</li>
+          <ul v-for="(value, key) in row.item.order_item" :key="key.id">
+            <li>ชื่อสินค้า: {{ value.product_name }}</li>
+            <li>ราคารวม: {{ value.sumPrice }}</li>
+            <li>จำนวน: {{ value.qty }}</li>
+            <li>เลขพัสดุ: {{ value.trackNumber }}</li>
+            <li>สถานะ: {{ value.delivertStatus }}</li>
+            <li>รูป: {{ value.product_images }}</li>
+
           </ul>
         </b-card>
       </template>
@@ -127,6 +151,7 @@
 
 
 <script>
+import moment from 'moment'
 import { mapGetters } from "vuex";
 import { CHECK_LOGIN } from "../store/actions.type.js";
 import { FETCH_ADS_SHOP,FETCH_GET_PROFILE,FETCH_ADDRESS,DEL_ADDRESS_BY_ID,GET_ORDER_ALL  } from "@/store/actions.type.js";
@@ -136,44 +161,15 @@ import { FETCH_ADS_SHOP,FETCH_GET_PROFILE,FETCH_ADDRESS,DEL_ADDRESS_BY_ID,GET_OR
       
       IsLogin: false,
   items: [
-          { isActive: true, age: 40, name: { first: 'Dickerson', last: 'Macdonald' } },
-          { isActive: false, age: 21, name: { first: 'Larsen', last: 'Shaw' } },
-          {
-            isActive: false,
-            age: 9,
-            name: { first: 'Mini', last: 'Navarro' },
-            _rowVariant: 'success'
-          },
-          { isActive: false, age: 89, name: { first: 'Geneva', last: 'Wilson' } },
-          { isActive: true, age: 38, name: { first: 'Jami', last: 'Carney' } },
-          { isActive: false, age: 27, name: { first: 'Essie', last: 'Dunlap' } },
-          { isActive: true, age: 40, name: { first: 'Thor', last: 'Macdonald' } },
-          {
-            isActive: true,
-            age: 87,
-            name: { first: 'Larsen', last: 'Shaw' },
-            _cellVariants: { age: 'danger', isActive: 'warning' }
-          },
-          { isActive: false, age: 26, name: { first: 'Mitzi', last: 'Navarro' } },
-          { isActive: false, age: 22, name: { first: 'Genevieve', last: 'Wilson' } },
-          { isActive: true, age: 38, name: { first: 'John', last: 'Carney' } },
-          { isActive: false, age: 29, name: { first: 'Dick', last: 'Dunlap' } }
+        
+
         ],
         fields: [
-          { key: 'name', label: 'หมายเลขคำสั่งซื้อ	', sortable: true, sortDirection: 'desc' },
-          { key: 'age', label: 'ราคา(THB)	', sortable: true, class: 'text-center' },
-          { key: 'age', label: 'สถานะการสั่งซื้อ	', sortable: true, class: 'text-center' },
-        { key: 'age', label: 'วันที่สั่งซื้อ	', sortable: true, class: 'text-center' },
-          {
-            key: 'isActive',
-            label: 'Is Active',
-            formatter: (value, key, item) => {
-              return value ? 'Yes' : 'No'
-            },
-            sortable: true,
-            sortByFormatted: true,
-            filterByFormatted: true
-          },
+          { key: 'order_cartnumber', label: 'หมายเลขคำสั่งซื้อ	', sortable: true, sortDirection: 'desc' },
+          { key: 'sumPrice', label: 'ราคา(THB)	', sortable: true, class: 'text-center' },
+          { key: 'status', label: 'สถานะการสั่งซื้อ	', sortable: true, class: 'text-center' },
+        { key: 'created_at', label: 'วันที่สั่งซื้อ	', sortable: true, class: 'text-center' },
+       
           { key: 'actions', label: 'Actions' }
         ],
         totalRows: 1,
@@ -203,7 +199,8 @@ import { FETCH_ADS_SHOP,FETCH_GET_PROFILE,FETCH_ADDRESS,DEL_ADDRESS_BY_ID,GET_OR
 
 
      computed: {
-   ...mapGetters(["address","profile"]),
+   ...mapGetters(["address","profile","orderall"]),
+   
 
     isUrl () {
                 return this.$store.state.user.url_id;
@@ -229,6 +226,7 @@ import { FETCH_ADS_SHOP,FETCH_GET_PROFILE,FETCH_ADDRESS,DEL_ADDRESS_BY_ID,GET_OR
   let a = await this.$store.dispatch(FETCH_GET_PROFILE);
            this.form.customer_id = a.id;
     let order_all = await this.$store.dispatch(GET_ORDER_ALL,this.form);
+    this.items = order_all;
    this.totalRows = this.items.length
       },
 
@@ -242,6 +240,11 @@ import { FETCH_ADS_SHOP,FETCH_GET_PROFILE,FETCH_ADDRESS,DEL_ADDRESS_BY_ID,GET_OR
         redirectTo() {
               this.$router.push({ name: 'profile-addressshipping' })
           
+        },
+
+        covertdate(date){
+            return moment(date, 'YYYY-MM-DD').format('DD/MM/YYYY');
+                
         },
 
        
