@@ -1,5 +1,10 @@
 <template>
+
+
 <div class="card mb-3" style="margin-top:80px;">
+<div v-if="loadding">
+<Loader/>
+</div>
                         <div class="boxEditAddressBook theme-main">
     <div class="card boxCard theme-font mb-4">
         <h2 class="profile-cart-title"><span>ประวัติการสั่งซื้อ </span>
@@ -186,7 +191,7 @@ import { FETCH_ADS_SHOP,FETCH_GET_PROFILE,FETCH_ADDRESS,DEL_ADDRESS_BY_ID,GET_OR
   export default {
     data() {
     return {
-      
+       loadding:true,
       IsLogin: false,
   items: [
         
@@ -256,6 +261,7 @@ import { FETCH_ADS_SHOP,FETCH_GET_PROFILE,FETCH_ADDRESS,DEL_ADDRESS_BY_ID,GET_OR
     let order_all = await this.$store.dispatch(GET_ORDER_ALL,this.form);
     this.items = order_all;
    this.totalRows = this.items.length
+   this.loadding = false
       },
 
       methods: {

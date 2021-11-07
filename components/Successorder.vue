@@ -3,8 +3,7 @@
 <div class="divPageData pageCartSuccess pageConfig">
     
     <div class="card card-theme card-xs-full">
-        <div class="card-body">
-
+        <div class="card-body" style="margin: 20px 80px;">
             <!-- Start Page Title -->
             <div class="row py-3 border-top border-md-top-0 border-theme">
                 <div class="col-12">
@@ -327,17 +326,17 @@
             <!-- Start Button -->
             <div class="row py-4 border-top border-md-top-0 border-theme">
                 <div class="col-12 col-md-6 text-left">
-                    <button type="button" class="btn btn-style fs-16 w-100 w-md-auto mt-3 mt-md-0" id="buttonPrint">
-                        <i class="fas fa-print">&nbsp;</i>
+                    <button type="button" class="btn btn-primary btn-sm" id="buttonPrint">
+                        <i class="fa fa-print"></i>
                         พิมพ์ใบสั่งซื้อ                    </button>
+                        
                 </div>
                 <div class="col-12 col-md-6 text-right">
-                                            <button type="button" class="btn btn-style fs-16 w-100 w-md-auto mt-3 mt-md-0" id="buttonInform">
+                                            <button type="button" class="btn btn-primary btn-sm" id="buttonInform">
                             แจ้งชำระเงิน                        </button>
                     
                      
-                                                    <button type="button" class="btn btn-default fs-16 w-100 w-md-auto mt-3 mt-md-0" id="buttonChangePayment">
-                                เปลี่ยนช่องทางการชำระเงิน                            </button>
+                                    
                                                                 
                 </div>
             </div>
