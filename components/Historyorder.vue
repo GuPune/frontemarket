@@ -2,14 +2,11 @@
 <div class="card mb-3" style="margin-top:80px;">
                         <div class="boxEditAddressBook theme-main">
     <div class="card boxCard theme-font mb-4">
-        <h2 class="profile-cart-title"><span>ที่อยู่ในการจัดส่ง </span>
+        <h2 class="profile-cart-title"><span>ประวัติการสั่งซื้อ </span>
             <span id="showLinkChangeAddress"><a class="linkChangeAddress"></a></span>
         </h2>
-        
-        <div class="card-body pt-0">
- 
 
-     <b-row>
+             <b-row>
       
 
       
@@ -59,6 +56,11 @@
         </b-form-group>
       </b-col>
     </b-row>
+        
+        <div class="card-body pt-0">
+ 
+
+
 
     <!-- Main table element -->
 
@@ -81,11 +83,12 @@
          <template #cell(status)="row">
 
          <div  v-if="row.item.status == 'Y'">
+ <span style="color: #33CC00"> ชำระเงินแล้ว </span>
  
-       <b-button size="sm" squared variant="primary">ชำระเงิน</b-button>
 </div>
 <div v-else>
-   <b-button size="sm" squared variant="danger">รอการชำระ</b-button>
+ <span style="color: #FFB912"> รอการชำระ </span>
+
 </div>
          
  
@@ -107,15 +110,40 @@
 
       <template #row-details="row">
         <b-card>
-          <ul v-for="(value, key) in row.item.order_item" :key="key.id">
-            <li>ชื่อสินค้า: {{ value.product_name }}</li>
-            <li>ราคารวม: {{ value.sumPrice }}</li>
-            <li>จำนวน: {{ value.qty }}</li>
-            <li>เลขพัสดุ: {{ value.trackNumber }}</li>
-            <li>สถานะ: {{ value.delivertStatus }}</li>
-            <li>รูป: {{ value.product_images }}</li>
-
-          </ul>
+          <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ชื่อสินค้า</th>
+      <th scope="col">ราคารวม</th>
+      <th scope="col">จำนวน</th>
+      <th scope="col">เลขพัสดุ</th>
+      <th scope="col">สถานะ</th>
+      <th scope="col">รูป</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr v-for="(value, key) in row.item.order_item" :key="key.id">
+      <th scope="row">{{ value.product_name }}</th>
+      <td>{{ value.sumPrice }}</td>
+      <td>{{ value.qty }}</td>
+      <td>{{ value.trackNumber }}</td>
+      <td>
+       <div  v-if="value.delivertStatus == 'Y'">
+  <span style="color: #33CC00"> จัดส่งเรียบร้อย </span>
+     
+</div>
+<div v-else>
+     <span style="color: #FFB912"> รอการจัดส่ง </span>
+</div>
+         
+      
+    
+      </td>
+      <td> <img loading="lazy" :src="Checkimage(value.product_images)" class="col-12 no-padding banner-icon" style="display: block;padding: 0;" width="75" height="75"></td>
+    </tr>
+  
+  </tbody>
+</table>
         </b-card>
       </template>
     </b-table>
@@ -245,6 +273,10 @@ import { FETCH_ADS_SHOP,FETCH_GET_PROFILE,FETCH_ADDRESS,DEL_ADDRESS_BY_ID,GET_OR
         covertdate(date){
             return moment(date, 'YYYY-MM-DD').format('DD/MM/YYYY');
                 
+        },
+           Checkimage(image){
+                let public_images = process.env.ImageURL+image;
+                return public_images;
         },
 
        
