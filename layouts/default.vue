@@ -10,7 +10,7 @@
 <Loader v-if="product.loading"/>
   
 
- <Nav/>
+ <Nav   v-if="currentRouteName != 'salepage'"/>
 <nuxt-child></nuxt-child>
 
 
