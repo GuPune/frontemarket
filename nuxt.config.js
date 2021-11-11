@@ -64,6 +64,7 @@ export default {
     '@/assets/css/about.css',
     '@/assets/css/blog.css',
     '@/assets/css/contact.css',
+    '@/assets/css/salepage.css',
     
   ],
 

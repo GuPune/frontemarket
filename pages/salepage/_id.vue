@@ -3,12 +3,31 @@
 <template>
 <div style="background: white;">
 <div v-for="(item, index) in items" :key="item.id">
-<b-container fluid>
-  <b-img  :src="Checkimage(item.images)" fluid alt="Responsive image" style="margin-bottom:5px;width: 100%;"></b-img>
+
+<b-container fluid v-if="item.type == 1">
+
+  <b-img  :src="Checkimage(item.images)"  alt="Responsive image" style="margin-bottom:5px;width: 100%;"></b-img>
+</b-container>
+
+<b-container fluid v-if="item.type == 2">
+ <div class="col-12">
+   <div v-html="item.details" class="responsive">
+    </div>
+  </div>
+  
+</b-container>
+
+<b-container v-if="item.type == 3">
+<div class="video-container">
+  <iframe src="https://www.youtube.com/embed/HAnO5Fb1Jh0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+</div>
+
+          
+  
 </b-container>
 </div>
 
-<div style="background: white;">
+<div style="background: white;" v-if="this.sale_type == 'lead'">
 
  <div class="container c-map">
  <div class="row">
@@ -75,6 +94,7 @@
 
 <script>
 //import Pusher from 'pusher-js';
+import VSwitch from 'v-switch-case'
 import { mapGetters } from "vuex";
 import { FETCH_SALEPAGE,SAVE_SALEPAGE } from "@/store/actions.type.js";
 import Contact from "@/components/Contact"
@@ -94,11 +114,12 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
       data: () => ({
         form: {
             url: "",
-            email: '',
+          email: '',
           name: '',
           details: '',
           tel: '',
         },
+        sale_type:'',
         items:[]
       }),
 
@@ -137,9 +158,11 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
       this.form.salepage = this.$route.params.id;
       let salepage = await this.$store.dispatch(FETCH_SALEPAGE,this.form);
 
-      console.log(salepage.data.content);
-
+      console.log(salepage.data);
+      this.sale_type = salepage.data.salepage_type;
       this.items = salepage.data.content;
+      this.form.line = salepage.data.line
+      this.form.face_id = salepage.data.face_id
 
 
 
@@ -152,10 +175,33 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
            this.$v.$touch();
             if (this.$v.form.$pending || this.$v.form.$error) return;
 
-  //let save = await this.$store.dispatch(SAVE_SALEPAGE,this.form);
-            console.log(this.form);
+this.send();
+           
 
               },
+
+          send() {
+            this.$store.dispatch(SAVE_SALEPAGE,this.form)
+            .then((response) => response == "success" ? this.success() : this.error())
+            .catch((error) => console.log(error))
+        },
+        success() {
+           setTimeout(() =>
+                this.$swal.fire({
+                    type: "success",
+                    title: "ส่งข้อมูลเรียบร้อยแล้ว",
+                    showConfirmButton: false,
+                    timer: 1500
+                }),
+                1500
+            );
+         this.form.email = ''
+         this.form.name = ''
+         this.form.tel = ''
+        
+          
+     
+        },
 
         
 

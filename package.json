@@ -19,6 +19,7 @@
     "moment": "^2.29.1",
     "nuxt": "^2.15.7",
     "pusher-js": "^7.0.3",
+    "v-switch-case": "^1.0.3",
     "vue-axios": "^3.2.5",
     "vue-cookie": "^1.1.4",
     "vue-loading-overlay": "^3.4.2",

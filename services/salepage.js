@@ -6,4 +6,9 @@ export const SalePageService = {
       return ApiServiceAll.post("salepage",param);
     },
 
+    savesale(param) {
+  
+      return ApiServiceAll.post("salepagesave",param);
+    },
+
 };
