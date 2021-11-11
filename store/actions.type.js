@@ -49,7 +49,8 @@ export const FETCH_BANK = "fetch_bank";
 export const GET_MENU = "get_menu_data";
 
 export const GET_ABOUT = "get_about_data";
-
+export const FETCH_SALEPAGE = "fetch_salepage";
+export const SAVE_SALEPAGE = "save_salepage";
 export const SAVE_ORDER = "save_order";
 export const FETCH_BLOG = "fetch_blog";
 export const FETCH_BLOG_ONLY = "fetch_blog_only";

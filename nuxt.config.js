@@ -70,14 +70,13 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     { src: '~/plugins/vue-product-zoomer.js', mode: 'client' },
+    // { src: './plugins/echo', mode: 'client' },
     '~plugins/local-storage.js',
    // "./plugins/mixins/user.js",
    // "~/plugins/axios.js",
    // "~/plugins/mixins/validation.js",
     // { src: '~/plugins/vue2-google-map.js'},
     { src: '~/plugins/vuelidate', ssr: true },
-  
-    
   ],
 
 

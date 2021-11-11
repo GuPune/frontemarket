@@ -12,6 +12,7 @@ import Shipping from './modules/shipping.module'
 import Menu from './modules/menu.module'
 import Bank from './modules/bank.module'
 import Abount from './modules/about.module'
+import Salepage from './modules/salepage.module'
 import Order from './modules/order.module'
 import Blog from './modules/blog.module'
 import Contact from './modules/contact.module'
@@ -24,7 +25,7 @@ Vue.use(Vuex)
 
 const store = () => new Vuex.Store({
   modules: {
-    user,alert,validations,auth,CategoryShell,ProductShell,Ads,Cart,Shipping,Loader,Bank,Order,Menu,Abount,Blog,Contact
+    user,alert,validations,auth,CategoryShell,ProductShell,Ads,Cart,Shipping,Loader,Bank,Order,Menu,Abount,Blog,Contact,Salepage
   }
 })
 
