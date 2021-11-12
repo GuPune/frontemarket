@@ -203,10 +203,16 @@ input:checked + .slide-container .nav label { display: block; }
 
 
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 380px) {
   #slider {
     width: 400px;
     height: 200px;
+  }
+  .ads-emarket{
+    padding-top: 59px;
+  }
+  .cart-mobile{
+    padding-left: 10%;
   }
 
 }
