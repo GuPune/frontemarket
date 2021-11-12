@@ -204,7 +204,7 @@ select option {
   transition: all 0.35s ease-in-out;
 }
 .container.forms {
-  max-width: 38em;
+  max-width: 50em;
   padding: 1em 3em 2em 3em;
   margin: 0em auto;
   background-color: #fff;

@@ -293,15 +293,15 @@ import { FORGOTEMAIL,CLEARALRET } from "../../store/actions.type.js";
 
 
      //   let token = this.$auth.getToken('local')   //get token
-     //  this.$router.push("/")
+     this.$router.push("/")
          
 				})
 				.catch(err => {
         this.alert.message = 1;
-        let path = this.$route.path
-        const names = 'id-form-login'
-        const Shopid = this.isUrl.id;
-        this.$router.push({ name: names, params: { id: Shopid }})
+  //      let path = this.$route.path
+  //      const names = 'form-login'
+  //      const Shopid = this.isUrl.id;
+  //      this.$router.push({ name: names})
 				});
       } catch (e) {
 //  this.$store.dispatch('alert/error', null, { root: true });

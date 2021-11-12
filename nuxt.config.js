@@ -150,16 +150,17 @@ export default {
           logout: {
             url: "logout",
             method: "post"
-          }
+          },
+          home: false
         }
       }
     },
-    // redirect: {
-    //   logout: '/1/form/login'
-    // }
     redirect: {
-      logout: '/',
-    },
+      login: '/form/login'
+    }
+    // redirect: {
+    //   logout: '/xxxxxxxx',
+    // },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

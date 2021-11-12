@@ -113,6 +113,7 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
     },
       data: () => ({
         form: {
+          id:"",
             url: "",
           email: '',
           name: '',
@@ -158,11 +159,11 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
       this.form.salepage = this.$route.params.id;
       let salepage = await this.$store.dispatch(FETCH_SALEPAGE,this.form);
 
-      console.log(salepage.data);
       this.sale_type = salepage.data.salepage_type;
       this.items = salepage.data.content;
       this.form.line = salepage.data.line
       this.form.face_id = salepage.data.face_id
+      this.form.id = salepage.data.id
 
 
 
