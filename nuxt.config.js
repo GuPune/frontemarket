@@ -130,7 +130,7 @@ export default {
   },
 
   env: {
-    ImageURL: "https://cmsecom.idtest.work/public/product/",
+    ImageURL: "http://cmsecom.idtest.work/public/product/",
 },
 
   auth: {
