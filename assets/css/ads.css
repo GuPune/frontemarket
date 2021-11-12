@@ -208,9 +208,7 @@ input:checked + .slide-container .nav label { display: block; }
     width: 400px;
     height: 200px;
   }
-  .ads-emarket{
-    padding-top: 50px;
-  }
+
 }
 
 @media screen and (min-width: 600px) {
