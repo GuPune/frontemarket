@@ -68,7 +68,7 @@ import Footer from "@/components/Footer";
 import Categoriesbyshop from "@/components/Categoriesbyshop";
 import Productbyshop from "@/components/Productbyshop";
 import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP } from "@/store/actions.type.js";
-import AdsShop from "../../components/AdsShop"
+import AdsShop from "@/components/AdsShop"
 import { mapGetters } from "vuex";
 import Adsmini from "@/components/Adsmini"
 import Relation from "@/components/Relation"
@@ -106,7 +106,7 @@ url:null
          this.form.shop_name = this.$route.params;
    
           let cate_by_shop = await this.$store.dispatch(FETCH_CATE_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
-          let product = await this.$store.dispatch(FETCH_PRODUCT_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
+        //   let product = await this.$store.dispatch(FETCH_PRODUCT_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
 
           this.loadding = false
         },

@@ -41,7 +41,7 @@
   import { mapGetters,mapState } from "vuex";
 
   import { GET_MENU } from "@/store/actions.type.js";
-  import { APP_URL } from "../environment/environment.js";
+  import { APP_URL } from "@/environment/environment.js";
   export default {
     data() {
     return {

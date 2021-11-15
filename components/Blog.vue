@@ -7,7 +7,7 @@
                 <div class="item col-12 col-md-6 col-lg-3"  v-for="(data, index) in blog" :key="data.id">
                         <div class="thumbnail rounded">
                             <div class="contentImage rounded-top">
-                                <a href="/content/5822/แนะนำทริคเลือก-font-ใช้สลักข้อความลงบนแหวนเพชร">
+                                <a href="#">
                                                <img loading="lazy" :src="Checkimage(1)" class="col-12 no-padding banner-icon" style="display: block;padding: 0;">
                                 </a>
                             </div>
@@ -86,7 +86,8 @@ import moment from 'moment'
         },
 
         redirectTo(names,ids){
-             this.$router.push({ name: names, params: { id: 'Admin',blogid:ids }})
+             this.form.shop_name = this.$route.params.id;
+             this.$router.push({ name: names, params: { id: this.form.shop_name,blogid:ids }})
         } 
 
 

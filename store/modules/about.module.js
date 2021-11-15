@@ -24,6 +24,7 @@ const getters = {
 const actions = {
     async [GET_ABOUT](context,payload) {
         const { data } = await AboutService.getabout(payload);
+     
         context.commit(SET_ABOUT,data);
     },
 
@@ -32,9 +33,8 @@ const actions = {
 
 const mutations = {
     [SET_ABOUT](state,data) {
-     
+      
         state.about = data.data.details;
-     
     }
 };
 

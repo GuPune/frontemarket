@@ -38,9 +38,10 @@ import { FETCH_ADS_SHOP } from "../store/actions.type.js";
     
         
      async mounted() {
-       let a = window.location.origin
-       this.form.url = a;
+
        this.form.layout = 'First';
+        this.form.url = window.location.origin;
+         this.form.shop_name = this.$route.params;
        
 
        this.$store.dispatch(FETCH_ADS_SHOP,this.form);

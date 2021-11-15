@@ -105,8 +105,9 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART } from "@
     
         
       async mounted() {
-             this.form.url = window.location.origin;
-        let product_by_shop = await this.$store.dispatch(FETCH_PRODUCT_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
+          this.form.url = window.location.origin;
+         this.form.shop_name = this.$route.params;
+      let product_by_shop = await this.$store.dispatch(FETCH_PRODUCT_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
         this.paginatedItems = this.product_by_shop
         console.log('paginatedItems',this.paginatedItems);
         this.totalRows = this.product_by_shop.length

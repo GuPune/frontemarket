@@ -111,7 +111,7 @@
 import Nav from "@/components/Nav";
 import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
 import { mapGetters } from "vuex";
-import { REGISSHOP } from "../../../store/actions.type.js";
+import { REGISSHOP } from "@/store/actions.type.js";
 import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/vue-loading.css';
 import 'sweetalert2/dist/sweetalert2.min.css';

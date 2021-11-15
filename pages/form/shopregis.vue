@@ -1,7 +1,7 @@
 <template>
 <section class="Shopregis">           
 <div class="container forms">
-
+<Loader v-if="isLoading"/>
       <h5 style="color: #171c24;">สมัครสมาชิกร้านค้า</h5>
     
     
@@ -53,14 +53,20 @@
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-phone"></i></div>
       </div>
 
-      <div class="input-group input-group-icon">
-             <b-form-textarea  v-model="form.address" placeholder="ที่อยู่" 
+
+         <div class="input-group input-group-icon">
+ <b-form-textarea  v-model="form.address" 
                                                                  rows="3" max-rows="6"
                                                                        :error-messages="AddressErrors" required
                                                                          :class="{ 'is-invalid': $v.form.address.$error}"
                                                                          @input="$v.form.address.$touch()"
                                                                          @blur="$v.form.address.$touch()"
                                                                  ></b-form-textarea>
+        <div class="input-icon"><i style="color: #005dc0;" class="fa fa-address-card"></i></div>
+      </div>
+
+      <div class="input-group input-group-icon">
+            
        
       </div>
 
@@ -91,13 +97,18 @@
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-key"></i></div>
       </div>
     </div>
-
+<!--
      <h6 style="color: #171c24;">ช่องทางการขายเพิ่มเติม</h6>
         <input type="checkbox" id="vehicle2" name="vehicle2"  v-model="form.status" v-on:click="checkdomain()">
         <label for="vehicle2">ซื้อ Domain</label><br>
+        -->
     <center>
+
+
     <button class="btn btn-primary" @click="registershop()"><span>สร้างร้านค้า</span></button>
     </center>
+    <div>
+    </div>
 </div>
 </section>
     
@@ -115,7 +126,8 @@ import { REGISSHOP } from "../../store/actions.type.js";
 import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/vue-loading.css';
 import 'sweetalert2/dist/sweetalert2.min.css';
-    
+import Loader from '@/components/Loader'    
+
 
 
     export default {
@@ -213,14 +225,14 @@ import 'sweetalert2/dist/sweetalert2.min.css';
         },
             loader() {
                 this.isLoading = true;
-                setTimeout(() => (this.isLoading = false), 1500);
+            
             },
             send() {
                 this.$store.dispatch(REGISSHOP,this.form).then((response) => response.code_return == "200" ? this.success() : this.error()).catch((error) => this.error(error.response))
             },
-            success() {
-                  
-                setTimeout(() =>
+           async success() {
+                     this.isLoading = false;
+               await setTimeout(() =>
                     this.$swal.fire({
                         type: "success",
                         title: "ส่งข้อมูลเรียบร้อยแล้ว สามารถติดตามรายละเอียดได้ทางอีเมล",
@@ -228,9 +240,14 @@ import 'sweetalert2/dist/sweetalert2.min.css';
                         timer: 3000
                     }),
                     1000
+                    
                 );
-                this.clear()
-                setTimeout(() => (this.dialog = false), 4000);
+               await this.clear();
+               await setTimeout(() => this.gotoback(), 4000);
+               
+    
+
+           
             },
             error($text) {
                 this.$swal({
@@ -254,6 +271,12 @@ import 'sweetalert2/dist/sweetalert2.min.css';
         },
             async checkdomain(){
                 this.form.status = await this.form.status ? false : true;
+            },
+
+            async gotoback(){
+
+             
+            window.location.href = process.env.backend;
             }
         }
 

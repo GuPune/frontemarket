@@ -269,9 +269,8 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
 
 
 
-         const Shopid = this.isUrl.id;
 
-        this.$router.push({ name: names, params: { id: Shopid }})
+        this.$router.push({ name: names})
         },
         Checkimage(image){
                 let public_images = process.env.ImageURL+image;
