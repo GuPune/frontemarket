@@ -7,4 +7,7 @@ export const ContactService = {
     captcha(param) {
       return ApiServiceAll.post("getchaptcha",param);
     },
+    system(param) {
+      return ApiServiceAll.post("getsystem",param);
+    },
 };

@@ -26,7 +26,7 @@
 import { VueEditor } from "vue2-editor";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
-import { GET_ABOUT } from "@/store/actions.type.js";
+import { GET_ABOUT,GET_SYSTEM } from "@/store/actions.type.js";
 import { mapGetters } from "vuex";
 import Contact from "@/components/Contact"
 import Map from "@/components/Map"
@@ -60,6 +60,10 @@ url:null
              
        async mounted() {
 this.loadding = false;
+
+ this.form.url = window.location.origin;
+   this.form.shop_name = this.$route.params;
+  let a = await this.$store.dispatch(GET_SYSTEM,this.form);
 
         },
 
