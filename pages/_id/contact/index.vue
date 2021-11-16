@@ -59,11 +59,10 @@ url:null
         },
              
        async mounted() {
-this.loadding = false;
 
- this.form.url = window.location.origin;
-   this.form.shop_name = this.$route.params;
-  let a = await this.$store.dispatch(GET_SYSTEM,this.form);
+
+
+  this.loadding = false;
 
         },
 

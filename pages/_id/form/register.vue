@@ -109,7 +109,7 @@
 <script>
   
 import Nav from "@/components/Nav";
-import { REGISTER,SAVE_SETLINE,CORE_USER } from "../../../store/actions.type.js";
+import { REGISTER,SAVE_SETLINE,CORE_USER } from "@/store/actions.type.js";
 import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
 import { mapGetters } from "vuex";
 import Loading from 'vue-loading-overlay';

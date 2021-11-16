@@ -9,7 +9,7 @@
                                 <span class="navbar-brand">
                                     <a href="/" style="text-decoration: none;">
            
-    <img src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/logo_2.png?v=202012190947" alt="logo" title="logo" class="d-inline-block img-logo"/>
+    <img src="https://www.iddriver.com/wp-content/uploads/2021/01/IDdriver_NoBG-150x88.png" alt="logo" title="logo" class="d-inline-block img-logo"/>
                                     </a>
                                 </span>
                             </div>
@@ -70,6 +70,7 @@
 
         Checkimage(image){
                 let public_images = process.env.ImageURL+image;
+                console.log('รูป',public_images)
                 return public_images;
         },
 

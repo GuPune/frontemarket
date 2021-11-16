@@ -146,6 +146,8 @@ const mutations = {
 
 // state.cartCount++;
 
+// if()
+
 let found = state.cart.find(product => product.id == item.id);
 console.log('state.cart',state.cart);
 

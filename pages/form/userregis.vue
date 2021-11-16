@@ -32,15 +32,7 @@
       <div class="col-half">
         <h6 style="color: #171c24;">วันเกิด</h6>
         <div class="input-group">
-          <div class="col-third">
-            <input type="text"  class="form-control" placeholder="วัน"/>
-          </div>
-          <div class="col-third">
-            <input type="text" class="form-control" placeholder="เดือน"/>
-          </div>
-          <div class="col-third">
-            <input type="text" class="form-control" placeholder="ปี"/>
-          </div>
+            <b-form-datepicker id="example-datepicker" v-model="form.birthday" class="mb-2"></b-form-datepicker>
         </div>
       </div>
       <div class="col-half">
@@ -140,6 +132,7 @@ import 'sweetalert2/dist/sweetalert2.min.css';
             first_name:"",
             last_name:"",
             tel:"",
+            birthday:"",
             status: false
         },
       }),

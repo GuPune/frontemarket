@@ -353,7 +353,7 @@
 
 <script>
 import { mapGetters } from "vuex";
-import { FETCH_BANK,CHOOSE_BANK,GET_ORDER_DATA } from "../store/actions.type.js";
+import { FETCH_BANK,CHOOSE_BANK,GET_ORDER_DATA } from "@/store/actions.type.js";
   export default {
     data() {
       

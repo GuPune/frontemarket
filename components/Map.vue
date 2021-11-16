@@ -2,7 +2,7 @@
 <div class="c-map">
 <div class="container">
 <GmapMap
-   v-bind:center="center"
+   :center='center'
   :zoom="15"
   map-type-id="terrain"
   style="width: 650; height: 450px"
@@ -10,7 +10,7 @@
   <GmapMarker
     :key="index"
     v-for="(m, index) in markers"
-    :position="m.position"
+    :position="position"
     :clickable="true"
     :draggable="true"
     @click="center=m.position"
@@ -28,19 +28,23 @@
 import Vue from 'vue'
 import * as VueGoogleMaps from 'vue2-google-maps'
 
-import { mapGetters } from "vuex";
-import { CHECK_LOGIN } from "../store/actions.type.js";
-import { FETCH_ADS } from "../store/actions.type.js";
+import { mapGetters,mapState } from "vuex";
+import { CHECK_LOGIN } from "@/store/actions.type.js";
+import { FETCH_ADS,GET_SYSTEM  } from "@/store/actions.type.js";
 import axios from '@nuxtjs/axios'
   export default {
     data() {
     return {
-      center : { lat: 16.4435101, lng:102.8583772},
-      markers: [
+       form:{
+
+      },
+      center: {},
+            markers: [
     {
-      position : { lat : 16.4435101, lng: 102.8583772}
+      position : {}
     }
       ],
+      position : { },
       apix:'AIzaSyCmpJGPB1Vy0yZNQi2-hnNIfNI5e1qyA9U',
       IsLogin: false,
       slide: 0,
@@ -50,7 +54,14 @@ import axios from '@nuxtjs/axios'
 
 
      computed: {
+ ...mapGetters(["centers"]),
 
+       ...mapState({
+                objects: state => state.Contact,
+
+            }),
+
+ 
         },
            
 
@@ -62,12 +73,26 @@ import axios from '@nuxtjs/axios'
 
     
         
-      mounted() {
-     
-       this.$store.dispatch(FETCH_ADS);
+     async mounted() {
+  this.form.url = window.location.origin;
+   this.form.shop_name = this.$route.params;
+  let a = await this.$store.dispatch(GET_SYSTEM,this.form);
+  await this.googlemap();
          },
 
       methods: {
+         googlemap() {
+     this.center = {
+          lat: parseFloat(this.centers.lat),
+          lng: parseFloat(this.centers.lng),
+        };
+        this.position = {
+          lat: parseFloat(this.centers.lat),
+          lng: parseFloat(this.centers.lng),
+        };
+
+         this.markers= [this.position]
+    },
       onSlideStart(slide) {
         this.sliding = true
       },

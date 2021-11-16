@@ -20,8 +20,8 @@
 
 <script>
 import { mapGetters } from "vuex";
-import { CHECK_LOGIN } from "../store/actions.type.js";
-import { FETCH_ADS_SHOP } from "../store/actions.type.js";
+import { CHECK_LOGIN } from "@/store/actions.type.js";
+import { FETCH_ADS_SHOP } from "@/store/actions.type.js";
   export default {
     data() {
     return {
@@ -36,7 +36,7 @@ import { FETCH_ADS_SHOP } from "../store/actions.type.js";
 
 
      computed: {
-      ...mapGetters(["ads_shop"]),
+  
         },
            
 
@@ -49,11 +49,7 @@ import { FETCH_ADS_SHOP } from "../store/actions.type.js";
     
         
      async mounted() {
-       let a = window.location.origin
-       this.form.url = a;
-       this.form.layout = 'First';
 
-       this.$store.dispatch(FETCH_ADS_SHOP,this.form);
          },
 
       methods: {

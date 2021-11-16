@@ -66,11 +66,18 @@
                     </div>
               
             </div>
+            
             <div class="col-12 col-md-6 col-lg-6">
                 <div class="contactText01 col-12">
-                    <p><img src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/logo.png?v=202012190947" data-mce-src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/logo.png?v=202012190947"></p><span style="color: #9f8672; line-height: 2; font-size: 20px;" data-mce-style="color: #9f8672; line-height: 2; font-size: 20px;"><strong><span style="font-family: kanit_light, Tahoma;" data-mce-style="font-family: kanit_light, Tahoma;">ห้างดิโอลด์สยามพลาซ่า ชั้น 1 ห้อง E112</span></strong></span><br><span style="font-family: PlayfairDisplay_Regular, Tahoma; line-height: 2; color: #9f8672;" data-mce-style="font-family: PlayfairDisplay_Regular, Tahoma; line-height: 2; color: #9f8672;"><img src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/zone9_icon1.png?v=202001101106" width="20" height="20" data-mce-src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/zone9_icon1.png?v=202001101106">&nbsp;<a style="color: #9f8672;" href="tel:0655196249" data-mce-href="tel:0655196249" data-mce-style="color: #9f8672;">065-519-6249</a>, <a style="color: #9f8672;" href="tel:0959639153" data-mce-href="tel:0959639153" data-mce-style="color: #9f8672;">095-963-9153</a></span><br><span style="line-height: 2; color: #9f8672;" data-mce-style="line-height: 2; color: #9f8672;"><a href="https://www.facebook.com/PattanaGems" data-mce-href="https://www.facebook.com/PattanaGems" style="color: #9f8672;" data-mce-style="color: #9f8672;"><span style="font-family: PlayfairDisplay_Regular, Tahoma;" data-mce-style="font-family: PlayfairDisplay_Regular, Tahoma;"><img src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/zone9_icon2.png?v=202001101106" width="20" height="20" data-mce-src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/zone9_icon2.png?v=202001101106">&nbsp;Pattana Gems</span></a></span><br><span style="line-height: 2; color: #9f8672;" data-mce-style="line-height: 2; color: #9f8672;"><a href="https://lin.ee/bD1xgwu" data-mce-href="https://lin.ee/bD1xgwu" style="color: #9f8672;" data-mce-style="color: #9f8672;"><span style="font-family: PlayfairDisplay_Regular, Tahoma;" data-mce-style="font-family: PlayfairDisplay_Regular, Tahoma;"><img src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/zone9_icon3.png?v=202001101106" width="20" height="20" data-mce-src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/zone9_icon3.png?v=202001101106">&nbsp;pattana_gems</span></a></span><br><span style="line-height: 2; color: #9f8672;" data-mce-style="line-height: 2; color: #9f8672;"><a href="https://www.instagram.com/pattana_gems/" data-mce-href="https://www.instagram.com/pattana_gems/" style="color: #9f8672;" data-mce-style="color: #9f8672;"><span style="font-family: PlayfairDisplay_Regular, Tahoma;" data-mce-style="font-family: PlayfairDisplay_Regular, Tahoma;"><img src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/zone9_icon4.png?v=202001101106" width="20" height="20" data-mce-src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/zone9_icon4.png?v=202001101106">&nbsp;Pattana_gems</span></a></span>                </div>
+                    <p><img :src="Checkimage(objects.system.icon)"></p><span style="color: #9f8672; line-height: 2; font-size: 20px;" data-mce-style="color: #9f8672; line-height: 2; font-size: 20px;"><strong><span style="font-family: kanit_light, Tahoma;" data-mce-style="font-family: kanit_light, Tahoma;">
+                     {{objects.system.detail}}</span></strong></span><br><span style="font-family: PlayfairDisplay_Regular, Tahoma; line-height: 2; color: #9f8672;" data-mce-style="font-family: PlayfairDisplay_Regular, Tahoma; line-height: 2; color: #9f8672;"><img src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/zone9_icon1.png?v=202001101106" width="20" height="20" data-mce-src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/zone9_icon1.png?v=202001101106">&nbsp;<a style="color: #9f8672;" href="tel:0655196249" data-mce-href="tel:0655196249" data-mce-style="color: #9f8672;">
+                    </a>
+                     <a style="color: #9f8672;" href="tel:0959639153" data-mce-href="tel:0959639153" data-mce-style="color: #9f8672;">
+                      {{objects.system.contact}}</a></span><br><span style="line-height: 2; color: #9f8672;" data-mce-style="line-height: 2; color: #9f8672;"><a href="https://www.facebook.com/iddrives" data-mce-href="https://www.facebook.com/iddrives" style="color: #9f8672;" data-mce-style="color: #9f8672;"><span style="font-family: PlayfairDisplay_Regular, Tahoma;" data-mce-style="font-family: PlayfairDisplay_Regular, Tahoma;"><img src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/zone9_icon2.png?v=202001101106" width="20" height="20" data-mce-src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/zone9_icon2.png?v=202001101106">&nbsp;
+                     {{objects.system.name}}</span></a></span><br><span style="line-height: 2; color: #9f8672;" data-mce-style="line-height: 2; color: #9f8672;"><a href="https://lin.ee/xxxxx" data-mce-href="https://lin.ee/bD1xgwu" style="color: #9f8672;" data-mce-style="color: #9f8672;"><span style="font-family: PlayfairDisplay_Regular, Tahoma;" data-mce-style="font-family: PlayfairDisplay_Regular, Tahoma;"><img src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/zone9_icon3.png?v=202001101106" width="20" height="20" data-mce-src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/zone9_icon3.png?v=202001101106">&nbsp;{{objects.system.name}}</span></a></span><br><span style="line-height: 2; color: #9f8672;" data-mce-style="line-height: 2; color: #9f8672;"><a href="https://www.instagram.com/iddrives/" data-mce-href="https://www.instagram.com/pattana_gems/" style="color: #9f8672;" data-mce-style="color: #9f8672;"><span style="font-family: PlayfairDisplay_Regular, Tahoma;" data-mce-style="font-family: PlayfairDisplay_Regular, Tahoma;"><img src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/zone9_icon4.png?v=202001101106" width="20" height="20" data-mce-src="https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/DefaultData/zone9_icon4.png?v=202001101106">&nbsp;{{objects.system.name}}</span></a></span>          
+                           </div>
                 <div class="contactText02 col-12">
-                    <br data-mce-bogus="1">                </div>
+                    <br data-mce-bogus="1"></div>
             </div>
         </div>
                 </div>
@@ -80,7 +87,7 @@
 
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters,mapState  } from "vuex";
 import { SAVE_CONTACT,GET_CAPTCHA } from "../store/actions.type.js";
 import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
   export default {
@@ -108,7 +115,11 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
       }
     },
         computed: {
-    ...mapGetters(["captcha"]),
+    ...mapGetters(["captcha","system"]),
+          ...mapState({
+                objects: state => state.Contact,
+
+            }),
             NameErrors() {
             const errors = [];
             if (!this.$v.form.name.$dirty) return errors;
@@ -160,6 +171,11 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
    await this.gencapcha();
          },
     methods: {
+    Checkimage(image){
+                let public_images = process.env.ImageURL+image;
+    
+                return public_images;
+      },
         gencapcha() {
             this.$store.dispatch(GET_CAPTCHA,this.form);
         },

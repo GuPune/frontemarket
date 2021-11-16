@@ -70,8 +70,10 @@
         this.loadcategory()
 
 
-       let a = window.location.origin
-       this.form.url = a;
+   
+      this.form.url = window.location.origin;
+   this.form.shop_name = this.$route.params;
+    
     
        this.$store.dispatch(FETCH_ADS_SHOP_SEMI,this.form);
         

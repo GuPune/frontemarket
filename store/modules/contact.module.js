@@ -11,7 +11,9 @@ import Vuex from 'vuex'
 
 const state = {
     captcha:[],
-    system:[]
+    system:[],
+    centers:{},
+    markers:[],
   
 }
 
@@ -22,7 +24,14 @@ const getters = {
     system: state => {
         return state.system
     },
-  
+    centers: state => {
+        return state.centers
+    },
+    markers: state => {
+        return state.markers
+    },
+
+
 };
 
 
@@ -49,10 +58,10 @@ const mutations = {
     },
     [SET_SYSTEM](state,data) {
         state.system = data.data;
+        state.centers = { lat: state.system.lat, lng:state.system.lng}
+        state.markers =  { position : {lat: state.system.lat, lng:state.system.lng}}
     },
 
-  
-  
 };
 
 export default {
