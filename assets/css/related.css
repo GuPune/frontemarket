@@ -9,12 +9,30 @@
     margin-right: 0px;
     
 }
+
+.relatedweb-test{
+  border: 1px solid rgb(226, 226, 226);
+  justify-content: center;
+
+  background-color: #dcd9ed!important;
+  margin-left: 0px;
+  margin-right: 0px;
+
+}
 .shop-relation{
   width: 80%;
 }
 .c-shopinmy{
   border: 0px;
+ 
+}
+.c-shopinmy-tt{
+  background-color: #dcd9ed!important;
+  border: 0px;
 
+}
+.c-cate{
+  background-color: #dcd9ed!important;
 }
 
 .row.relatedmobile{
@@ -289,7 +307,25 @@ button.button, a.button {
   } */
 
 
+.card-cat{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+ 
+  background-clip: border-box;
 
+}
+
+.card-cat {
+  width: auto;
+  height: auto;
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  /* background-color: white; */
+}
 
 .cardproduct {
     width: auto;

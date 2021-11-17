@@ -1,20 +1,22 @@
 <template>
 
 
-    <section id="Related">
-        <div class="row relatedweb">
+    <section id="categories">
+        <div class="row relatedweb-test">
                 <div class="col-12 col-md-9 col-lg-9">
                    <div class="main-heading">
         <div class="heading-title-relat">
-            <h2><span>Test</span>
+                    <h2><span>PRODUCT CATEGORIES</span>
+	<em class="">ประเภทสินค้า</em>
 			</h2>
         </div>
  <div>
  
+
       <VueSlickCarousel v-bind="slickOptions">
     <div v-for="i in items"  class="img-wrapper">
-             <div class="card c-shopinmy">
-                    <div class="cardproduct">
+              <div class="card c-shopinmy-tt">
+                    <div class="cardproduct c-cate">
                  <img class="imgproduct related-images testimage" :src="i.src" style="border-radius: 50%;">
                                                    <div class="product-footer">
                                                    <div class="addtocart">
@@ -41,7 +43,6 @@
                         <!-- -------------------------Mobile------------------------------ -->
 
 
-    </div>
 
     <br>
     </section>
@@ -137,8 +138,8 @@
     {
       "breakpoint": 1024,
       "settings": {
-        "slidesToShow": 4,
-        "slidesToScroll": 4,
+        "slidesToShow": 6,
+        "slidesToScroll": 6,
         "infinite": true,
         "dots": true
       }
@@ -146,8 +147,8 @@
     {
       "breakpoint": 600,
       "settings": {
-        "slidesToShow": 6,
-        "slidesToScroll": 6,
+        "slidesToShow": 5,
+        "slidesToScroll": 5,
         "initialSlide": 2
       }
     },
