@@ -2,38 +2,33 @@
 
 
     <section id="Related">
-        <div class="row relatedweb" style="margin-bottom: -25px;">
+        <div class="row relatedweb">
                 <div class="col-12 col-md-9 col-lg-9">
                    <div class="main-heading">
         <div class="heading-title-relat">
-            <h2><span>PRODUCT  AGRICULTURAL</span>
-	<em class="">สินค้าเกษตรกร</em>
+            <h2><span>ร้านค้าสุดฮิต</span>
 			</h2>
         </div>
-        <div class="product" id="product">
-            <div class="row product">
-                 <div class="cards">
-                    <div class="cardproduct" v-for="(item, index) in product_shell" :key="product_shell.id">
-                
-                                                        <img class="imgproduct related-images" :src="Checkimage(item.img_product)" @click="Shop(item)">
-                                                            <div class="product-name">{{item.name_th}}</div>
-                                                            <p class="price">฿{{item.price}}.00</p>
+ <div>
+ 
+    <VueSlickCarousel v-bind="slickOptions">
+    <div v-for="i in items"  class="img-wrapper">
+      
+             <div class="card c-shopinmy">
+                    <div class="cardproduct">
+                 <img class="imgproduct related-images" :src="i.src">
                                                    <div class="product-footer">
                                                    <div class="addtocart">
-                                                   <button type="button" title="Add To Cart" data-placement="top" class="button btn-cart" @click="addToCart(item)">
-                                                   <span>
-                                                   <span>Add To Cart</span></span>
-                                                   </button></div></div>
-                                                   <div class="ratings">
-                                                   <div class="rating-box">
-                                                   <div class="rating" style="width:%"></div>
-                                                   </div>
-						</div>
+                                                       <b-button  variant="success shop-relation" size="sm">ช้อปเลย</b-button>
+                                                   </div></div>
+                
                                                 </div>
         </div>
-        </div>
-        </div>
+      </div>
 
+
+    </VueSlickCarousel>
+  </div>
   
                                 
 
@@ -60,8 +55,82 @@
   import { FETCH_PRODUCT_SHELL } from "../store/actions.type.js";
   import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART } from "@/store/actions.type.js";
   import { APP_URL } from "../environment/environment.js";
+  import VueSlickCarousel from 'vue-slick-carousel'
+  import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+  // optional style for arrows & dots
+  import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+
+  
   
   export default {
+        data() {
+      return {
+          items: [
+          {
+            src: 'https://static.bigc.co.th/media/bannerads/images/cocacala-logo.jpg',
+          },
+          {
+            src: 'https://static.bigc.co.th/media/bannerads/images/colgate-logo.jpg',
+          },
+          {
+            src: 'https://static.bigc.co.th/media/bannerads/images/foremost-logo.jpg',
+          },
+          {
+            src: 'https://static.bigc.co.th/media/bannerads/images/entranccdd.png',
+          },
+          {
+            src: 'https://static.bigc.co.th/media/bannerads/images/logo-p-g-196x196px.jpg',
+          },
+          {
+            src: 'https://static.bigc.co.th/media/bannerads/images/pepsi-logo-brand-20210301-1.jpg',
+          },
+          {
+            src: 'https://static.bigc.co.th/media/bannerads/images/unicharmm.png',
+          },
+        ],
+        
+   
+ slickOptions:{
+  "dots": true,
+  "infinite": false,
+  "speed": 500,
+  "slidesToShow": 6,
+  "slidesToScroll": 4,
+  "initialSlide": 0,
+   "autoplay": false,
+  "speed": 500,
+  "autoplaySpeed": 500,
+  "responsive": [
+    {
+      "breakpoint": 1024,
+      "settings": {
+        "slidesToShow": 3,
+        "slidesToScroll": 3,
+        "infinite": true,
+        "dots": true
+      }
+    },
+    {
+      "breakpoint": 600,
+      "settings": {
+        "slidesToShow": 2,
+        "slidesToScroll": 2,
+        "initialSlide": 2
+      }
+    },
+    {
+      "breakpoint": 480,
+      "settings": {
+        "slidesToShow": 1,
+        "slidesToScroll": 1
+      }
+    }
+  ]
+}
+ 
+      }
+    },
+        
      computed: {
            
      ...mapGetters(["product_shell","authenticated"]),
