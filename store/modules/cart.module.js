@@ -92,18 +92,29 @@ const mutations = {
 
 
       [SET_TOTAL](state){
+
+      
         let cart = localStorage.setItem("cart", JSON.stringify(state.cart));
-        if(this.cart.length){
+        this.getcart = JSON.parse(localStorage.getItem("cart"));
+
+
+   
+   
+ 
+        if('cart',this.getcart ){
+    
             let sum = 0;
             let total = 0;
-            Object.keys(this.cart).forEach(key => {
-                sum += parseInt(this.cart[key].totalPrice)
-                total += this.cart[key].quantity;
-           
+            console.log('this.cart.length',this.getcart );
+            Object.keys(this.getcart).forEach(key => {
+                sum += parseInt(this.getcart [key].totalPrice)
+                total += this.getcart[key].quantity;
+              
          
             })
-            state.PriceToTal.PriceToTals = sum
-            state.PriceToTal.quantitys = total
+   
+          state.PriceToTal.PriceToTals = sum
+          state.PriceToTal.quantitys = total
        
            
         }else {
@@ -119,8 +130,14 @@ const mutations = {
       },
       [SET_GET_CART](state) {
         this.cart = JSON.parse(localStorage.getItem("cart"));
-        console.log('cart',this.cart.length);
+        if(!this.cart){
+            this.cart = [];
+         
+        }
+ 
         state.cartTotal = this.cart.length
+      
+      
         state.cart = this.cart
       },
       [SET_CART](state,item) {
@@ -149,22 +166,26 @@ const mutations = {
 // if()
 
 let found = state.cart.find(product => product.id == item.id);
-console.log('state.cart',state.cart);
 
+;
 
 if (found) {
- console.log('if');
 
  found.quantity ++;
  found.totalPrice = found.quantity * found.price;
+ console.log('if',found.totalPrice);
 } else {
+    
     state.cart.push(item);
 
+   
     Vue.set(item, 'quantity', 1);
     Vue.set(item, 'totalPrice', item.price);
+ 
     state.cartTotal++;
 }
 let a = localStorage.setItem("cart", JSON.stringify(state.cart));
+
     },
     [SET_ADDUP](state,item) {
 
@@ -229,12 +250,19 @@ let a = localStorage.setItem("cart", JSON.stringify(state.cart));
 
     [SET_REMOVE_ALL](state) {
 
-
+    
+        
         state.cart = [];
+     
         let a = localStorage.setItem("cart", JSON.stringify(state.cart));
-
+        state.cartTotal = 0  
         state.PriceToTal = 0  
   
+        state.cartTotal = 0,
+        state.cart = [],
+        state.Price = 0,
+        state.PriceToTal = {  quantitys:0, PriceToTals:0 }
+    
  
     },
     [SET_CART_SUCCESS](state) {

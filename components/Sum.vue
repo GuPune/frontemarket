@@ -1,7 +1,7 @@
 <template>
      <div class="order-mod">
         <div class="card shopping-cart">
-                  <h2 class="title-shoping-cart bg-order"><span>ยอดรวมตะกร้าสินค้า</span></h2>
+                  <h2 class="title-shoping-cart bg-order"><span>ยอดรวมตะกร้าสินค้า {{PriceToTal}}</span></h2>
                         <div class="card-body">
                         <div class="table table-responsive">
                         <table width="100%" cellspacing="0" cellpadding="3" border="0" class="table table-responsive table-hover">
@@ -65,7 +65,7 @@ import { FETCH_ADS } from "../store/actions.type.js";
     
         
       mounted() {
-       this.$store.dispatch(FETCH_ADS);
+   
          },
 
       methods: {
