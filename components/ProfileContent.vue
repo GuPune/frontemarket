@@ -131,7 +131,8 @@ import 'sweetalert2/dist/sweetalert2.min.css';
             password: "",
             tel:"",
             email:"",
-            address:""
+            address:"",
+            image:""
             
         },
       }),
@@ -150,6 +151,8 @@ import 'sweetalert2/dist/sweetalert2.min.css';
         this.file = e.target.files[0];
         this.url = URL.createObjectURL(this.file);
 
+      
+
         this.profileimage()
 
         
@@ -161,9 +164,28 @@ import 'sweetalert2/dist/sweetalert2.min.css';
         },
 
         async saveprofile(){
-        let save = this.$store.dispatch(SAVE_PROFILE,this.profile);
+    
 
-        await this.success()
+this.profile.image = this.file;
+          console.log(this.profile);
+
+
+
+     
+
+        var formData = new FormData(); // Currently empty
+
+           formData.append('address', this.profile.address);
+           formData.append('birthday', this.profile.birthday);
+           formData.append('fname', this.profile.fname);
+           formData.append('id', this.profile.id);
+           formData.append('lname', this.profile.lname);
+           formData.append('name', this.profile.name);
+           formData.append('image', this.file);
+   
+
+  let save = this.$store.dispatch(SAVE_PROFILE,formData);
+      await this.success()
     
         },
          send() {
@@ -203,7 +225,7 @@ import 'sweetalert2/dist/sweetalert2.min.css';
         },
         profileimage(){
             
-            console.log(this.url);
+          console.log('this.file',this.url);
              this.$set(this.profile, 'profile_images',this.url)
 
         }

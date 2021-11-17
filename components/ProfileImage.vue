@@ -3,15 +3,11 @@
            <div class="card" v-if="profile" style="margin-top: 80px;">
                         <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center profile-bg-order">
-                
  <img v-if="profile.profile_images" :src="profile.profile_images"  alt="Admin" class="rounded-circle profile" width="150" />
-                        
                             <div class="mt-3">
                             <h4>
                     {{profile.name}}
                             </h4>
-                         
-                         
                             </div>
                         </div>
                         </div>
@@ -34,9 +30,7 @@
                                                                                 <li class="prof-s" id="member-changepassword" @click="redirectTo()" >
                                             <p>ตั้งค่ารหัสผ่าน</p>
                                         </li>
-                                        <li class="rounded-0 prof-s"  href="javascript:void(0);" id="memberLogout">
-                                            <p>ออกจากระบบ</p>
-                                        </li>
+                                      
                                     </ul>
                                 </div>
                             </div>
@@ -50,7 +44,7 @@
 import Nav from "@/components/Nav";
 import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
 import { mapGetters } from "vuex";
-import { FETCH_GET_PROFILE } from "../store/actions.type.js";
+import { FETCH_GET_PROFILE } from "@/store/actions.type.js";
 import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/vue-loading.css';
 import 'sweetalert2/dist/sweetalert2.min.css';
@@ -62,8 +56,8 @@ import 'sweetalert2/dist/sweetalert2.min.css';
         },
         
         mounted() {
-  console.log(this.profile)
-        
+
+
          },
         
   
@@ -71,7 +65,8 @@ import 'sweetalert2/dist/sweetalert2.min.css';
 
         Checkimage(image){
             
-                let public_images = process.env.ImageURL+image;
+                let public_images = process.env.Upload+image;
+            
                 return public_images;
         },
 

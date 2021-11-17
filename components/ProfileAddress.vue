@@ -3,7 +3,7 @@
           <div class="card mt-3">
                         <ul class="list-group list-group-flush">
                         <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
-                            <h6 class="mb-0"><i class="fa fa-map-marker" aria-hidden="true"> :</i> ที่อยู่</h6>
+                            <h6 class="mb-0"><i class="fa fa-map-marker" aria-hidden="true"> :</i> ช่องทางติดต่อ</h6>
                             <span class="text-secondary">{{profile.address}}</span>
                         </li>
                         <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
@@ -24,7 +24,7 @@
 <script>
 import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
 import { mapGetters } from "vuex";
-import { FETCH_GET_PROFILE } from "../store/actions.type.js";
+import { FETCH_GET_PROFILE } from "@/store/actions.type.js";
 import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/vue-loading.css';
 import 'sweetalert2/dist/sweetalert2.min.css';

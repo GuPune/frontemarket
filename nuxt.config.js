@@ -131,8 +131,10 @@ export default {
   },
 
   env: {
-    ImageURL: "http://cmsecom.idtest.work/public/product/",
-    backend:"http://127.0.0.1:8000",
+    
+    Upload: "https://cmsecom.idtest.work/storage/uploads/",
+    ImageURL: "https://cmsecom.idtest.work/public/product/",
+    backend:"https://cmsecom.idtest.work",
 },
 
   auth: {
