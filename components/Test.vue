@@ -17,7 +17,7 @@
     <div v-for="i in items"  class="img-wrapper">
               <div class="card c-shopinmy-tt">
                     <div class="cardproduct c-cate">
-                 <img class="imgproduct related-images testimage" :src="i.src" style="border-radius: 50%;">
+                 <img class="imgproduct related-images testimage imgproductcate" :src="i.src" style="border-radius: 50%;">
                                                    <div class="product-footer">
                                                    <div class="addtocart">
                                               Test

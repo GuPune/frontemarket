@@ -16,7 +16,7 @@
       
              <div class="card c-shopinmy">
                     <div class="cardproduct">
-                 <img class="imgproduct related-images" :src="i.src">
+                 <img class="imgproduct related-images imgproductmyshop" :src="i.src">
                                                    <div class="product-footer">
                                                    <div class="addtocart">
                                                        <b-button  variant="success shop-relation" size="sm">ช้อปเลย</b-button>
