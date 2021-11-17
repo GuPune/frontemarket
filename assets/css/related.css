@@ -318,6 +318,15 @@ button.button, a.button {
     height:150px;
 
   }
+  .imgproduct{
+    border-radius: 50%;
+
+  }
+
+  .testimage{
+    width: 100%;
+    height: 100%;
+  }
 
   /* .buttonn{
     background-color: rgb(212, 0, 81); 

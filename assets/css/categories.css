@@ -107,12 +107,22 @@
 }
 .slider {
     display: flex;
-    overflow-x: auto;
+    /* overflow-x: auto; */
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     scroll-snap-points-x: repeat(300px);
     scroll-snap-type: mandatory;
 }
+
+.slidertest {
+    display: flex;
+   
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-points-x: repeat(300px);
+    scroll-snap-type: mandatory;
+}
+
 .slider .img-slider {
     flex-shrink: 0;
     width: 140px;

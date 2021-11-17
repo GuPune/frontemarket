@@ -16,6 +16,8 @@
 
       <Ads   v-if="currentRouteName == 'index'"/>
                 <Categories  v-if="currentRouteName == 'index'" />
+                <Test  v-if="currentRouteName == 'index'" />
+               
 <Related v-if="currentRouteName == 'index'"/>
 
     <ShopRelation v-if="currentRouteName == 'index'"/>
@@ -32,6 +34,7 @@ import Ads from "@/components/Ads"
 import Categories from "@/components/Categories"
 import Related from "@/components/Related"
 import ShopRelation from "@/components/ShopRelation"
+import Test from "@/components/Test"
 import LongFooter from "@/components/LongFooter"
 import Footer from "@/components/Footer"
 import Loader from '@/components/Loader'
