@@ -151,16 +151,16 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
     {
       "breakpoint": 600,
       "settings": {
-        "slidesToShow": 4,
-        "slidesToScroll": 4,
+        "slidesToShow": 5,
+        "slidesToScroll": 5,
         "initialSlide": 2
       }
     },
     {
       "breakpoint": 480,
       "settings": {
-        "slidesToShow": 5,
-        "slidesToScroll": 5
+        "slidesToShow": 4,
+        "slidesToScroll": 4
       }
     },
         {
