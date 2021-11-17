@@ -17,10 +17,10 @@
     <div v-for="i in items"  class="img-wrapper">
               <div class="card c-shopinmy-tt">
                     <div class="cardproduct c-cate">
-                 <img class="imgproduct related-images testimage imgproductcate" :src="i.src" style="border-radius: 50%;">
+                 <img class="imgproduct related-images testimage imgproductcate"   :src="Checkimage(i.image)"  @click="ChangeProduct(i.id)" style="border-radius: 50%;">
                                                    <div class="product-footer">
                                                    <div class="addtocart">
-                                              Test
+                                              {{i.name_th}}
                                                    </div></div>
                 
                                                 </div>
@@ -51,9 +51,9 @@
 
 
 <script>
-  import { mapGetters,mapState } from "vuex";
-  import { FETCH_PRODUCT_SHELL } from "../store/actions.type.js";
-  import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART } from "@/store/actions.type.js";
+import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
+import { mapGetters,mapState } from "vuex";
+import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.js";
   import { APP_URL } from "../environment/environment.js";
   import VueSlickCarousel from 'vue-slick-carousel'
   import 'vue-slick-carousel/dist/vue-slick-carousel.css'
@@ -63,8 +63,12 @@
   
   
   export default {
+       
         data() {
       return {
+         form: {
+                    catagory_id: "",
+                },
           items: [
           {
             src: 'https://cmsecom.idtest.work/public/product/20210901064507ldvtQEcA3aYbLpoyWxtg.png',
@@ -174,7 +178,7 @@
         
      computed: {
            
-     ...mapGetters(["product_shell","authenticated"]),
+ ...mapGetters(["category_shell"]),
 
 
          isUrl () {
@@ -185,57 +189,35 @@
         },
         
         mounted() {
-        //  this.$store.dispatch(ToogleAction);
 
-           //     let a = this.$store.dispatch(FETCH_PRODUCT_SHELL);
-
-           console.log(process.env.TEST_VARIABLE);
-        this.loadcategory()
+        this.Loadcategory()
         
          },
         
   
-        methods: {
+         methods: {
 
-        redirectTo(name) {
+      redirectTo(name) {
                     this.$router.push(name)
                   },
-        loadcategory(){
-          let productinshell = this.$store.dispatch(FETCH_PRODUCT_SHELL);
-        },
-        Checkimage(image){
+
+       async Loadcategory() {
+            
+                   let a = await this.$store.dispatch(FETCH_CATEGORY_SHELL);  
+                   this.items = a;
+                 
+                   
+            
+          },
+         Checkimage(image){
                 let public_images = process.env.ImageURL+image;
                 return public_images;
         },
-        async addToCart(item){
-           let add_producttocart = await this.$store.dispatch(ADD_CART,item);
-                 await this.$swal("Add Product!", "Product To Cart!", "success")
-        },
-        async CheckLogin(item){
-       if(!this.authenticated){
-
-                         let path = this.$route.path
-            
-const names = 'id-form-login'
- const Shopid = this.isUrl.id;
-
-
-
-
-            //  this.$router.push({ path: `/1/${name}` }) // -> /user/123
-                //   this.$router.push({ params: { id: '1' } ,name: name})
-                   this.$router.push({ name: names, params: { id: Shopid }})
-               
-              //  this.$router.push('/form/login')
-       }else{
-        this.addToCart(item);
-       }
-        },
-       async Shop(item){
-       let name = item.shop_id+'/product/productdetail/'+item.id;
-
-    this.$router.push(name)
-        },
+        ChangeProduct(id){
+        this.form.catagory_id = id;
+        let find_product = this.$store.dispatch(FETCH_PRODUCT_FIND,this.form);  
+    
+        }
 
         },
   
