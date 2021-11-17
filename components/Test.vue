@@ -125,11 +125,20 @@
   "speed": 500,
   "autoplaySpeed": 500,
   "responsive": [
+      {
+      "breakpoint": 1300,
+      "settings": {
+        "slidesToShow": 4,
+        "slidesToScroll": 4,
+        "infinite": true,
+        "dots": true
+      }
+    },
     {
       "breakpoint": 1024,
       "settings": {
-        "slidesToShow": 3,
-        "slidesToScroll": 3,
+        "slidesToShow": 4,
+        "slidesToScroll": 4,
         "infinite": true,
         "dots": true
       }
@@ -137,8 +146,8 @@
     {
       "breakpoint": 600,
       "settings": {
-        "slidesToShow": 7,
-        "slidesToScroll": 7,
+        "slidesToShow": 6,
+        "slidesToScroll": 6,
         "initialSlide": 2
       }
     },
