@@ -15,7 +15,7 @@
                                 <th class="td-col-1">ชื่อ</th>
                                 <th class="td-col-2">ที่อยู่</th>
                                 <th class="td-col-3">หมายเลขโทรศัพท์</th>
-                                <th class="td-col-4">&nbsp;</th>
+                            
                                 <th class="td-col-4">&nbsp;</th>
                             </tr>
                         </thead>
@@ -27,11 +27,7 @@
                                         <td class="td-col-2">{{item.address}} ,{{item.province_id}} ,{{item.districts_id}} ,{{item.sub_districts_id}}
                                         </td>
                                         <td class="td-col-3">{{item.tel}}</td>
-                                        <td class="td-col-4">
-                                            <a href="javascript:void(0)" class="editMemAdrrShipping p" title="edit">
-                                                <i class="fas fa-edit"></i>
-                                            </a>
-                                        </td>
+                                       
                                         <td class="td-col-4">
                                         <div class="remove-item-cart"  @click="deladdress(item.id)">
                             <i class="fa fa-trash"></i>
@@ -47,7 +43,7 @@
             </div>
             <div class="row mt-3">
                 <div class="col-12">
-                                            <button type="button" class="btn btn-style" id="btnPlusMemAdrrShipping"  @click="redirectTo('profile-addressshipping')">
+                                            <button type="button" class="btn btn-style" id="btnPlusMemAdrrShipping" style="background-color: coral;" @click="redirectTo('profile-addressshipping')">
                             <i class="far fa-plus"></i>
                             เพิ่มที่อยู่ใหม่                        </button>    
                                     </div>

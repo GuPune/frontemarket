@@ -18,7 +18,7 @@
                         <span style="  border-bottom: 1px solid #cdcdcd;">
                         <span style="  border-bottom: 1px solid #cdcdcd;padding-bottom:2px;">
                         <span style="color:red">
-                        0.00 </span>
+                        {{PriceToTal.PriceToTals}}.00฿ </span>
                         </span>
                         </span>
                         </td>
