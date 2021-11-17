@@ -145,8 +145,8 @@
     {
       "breakpoint": 480,
       "settings": {
-        "slidesToShow": 7,
-        "slidesToScroll": 7
+        "slidesToShow": 5,
+        "slidesToScroll": 5
       }
     },
         {
