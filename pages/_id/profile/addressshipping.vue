@@ -88,7 +88,7 @@ import { FETCH_GET_PROFILE,FETCH_ADDRESS } from "../../../store/actions.type.js"
         },
              
        async mounted() {
-           let a = await this.$store.dispatch(FETCH_GET_PROFILE);
+           let a = await this.$store.dispatch(FETCH_GET_PROFILE)
            this.form.id = a.id;
            let address = await this.$store.dispatch(FETCH_ADDRESS,this.form);
            

@@ -25,7 +25,7 @@ const getters = {
 const actions = {
        async [FETCH_GET_PROFILE](context) {
         const { data } = await UserService.getprofile();
-alert('okkk');
+
      
         return data;
        },

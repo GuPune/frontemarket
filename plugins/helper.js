@@ -5,7 +5,18 @@ Vue.mixin({
 
   methods:{
     handleCatch(error){
-alert(error);
+
+
+
+if(error.response.status === 401){
+  
+  localStorage.removeItem("shipping");
+  localStorage.removeItem("listorder");
+  localStorage.removeItem("delivery");
+
+
+  this.$auth.logout()
+}
     },
     formatPrice(value) {
       if(value){

@@ -16,7 +16,7 @@
       
              <div class="card c-shopinmy">
                     <div class="cardproduct">
-                 <img class="imgproduct related-images imgproductmyshop" :src="i.src">
+                 <img class="imgproduct related-images imgproductmyshop im-rela-mobile" :src="i.src">
                                                    <div class="product-footer">
                                                    <div class="addtocart">
                                                        <b-button  variant="success shop-relation" size="sm">ช้อปเลย</b-button>
@@ -114,23 +114,23 @@
     {
       "breakpoint": 600,
       "settings": {
-        "slidesToShow": 2,
-        "slidesToScroll": 2,
+        "slidesToShow": 3,
+        "slidesToScroll": 3,
         "initialSlide": 2
       }
     },
     {
       "breakpoint": 480,
       "settings": {
-        "slidesToShow": 2,
-        "slidesToScroll": 2
+        "slidesToShow": 3,
+        "slidesToScroll": 3
       }
     },
         {
       "breakpoint": 375,
       "settings": {
-        "slidesToShow": 2,
-        "slidesToScroll": 2
+        "slidesToShow": 3,
+        "slidesToScroll": 3
       }
     }
   ]
