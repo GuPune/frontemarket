@@ -463,6 +463,17 @@ button.addcart:hover {
         height: 100%;
       }
 
+      .tit-shop-mobile{
+        text-align: left!important;
+        border-bottom: 1px solid #dee2e6!important;
+      }
+
+      .heading-title-relat h2 span {
+        border-bottom: 0px solid #446027;
+
+    }
+
+
 
  }
 
