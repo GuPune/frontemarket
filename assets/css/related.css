@@ -465,13 +465,23 @@ button.addcart:hover {
 
       .tit-shop-mobile{
         text-align: left!important;
-        border-bottom: 1px solid #dee2e6!important;
+           border-bottom: 1px solid #dee2e6!important;
       }
 
-      .heading-title-relat h2 span {
-        border-bottom: 0px solid #446027;
 
+
+      .title-relat-mobile h2 span {
+        font-size: 25px;
+        display: inline-block;
+      
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+        letter-spacing: 2px;
+        font-weight: bold;
     }
+      
+
+ 
 
 
 

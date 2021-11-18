@@ -5,7 +5,7 @@
         <div class="row relatedweb">
                 <div class="col-12 col-md-9 col-lg-9">
                    <div class="main-heading">
-        <div class="heading-title-relat">
+        <div class="title-relat-mobile">
             <h2 class="tit-shop-mobile"><span>ร้านค้าสุดฮิต</span>
 			</h2>
         </div>
