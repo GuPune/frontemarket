@@ -80,6 +80,10 @@ const actions = {
 
        async [FETCH_GET_PROFILE](context) {
         const { data } = await UserService.getprofile();
+
+        if (typeof data === 'undefined') {
+            this.$auth.logout();
+            }
      
         context.commit(SET_PROFILE,data);
        
@@ -94,9 +98,9 @@ const actions = {
     async [FETCH_ADDRESS](context,payload) {
      
       const { data } = await UserService.address(payload);
-    if(data.status){
-            this.$auth.logout();
-    }
+      if (typeof data === 'undefined') {
+        this.$auth.logout();
+        }
 
    
    

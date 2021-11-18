@@ -63,7 +63,7 @@
 
 <script>
 import { mapGetters,mapState } from "vuex";
-import { FETCH_GET_PROFILE,FETCH_ADDRESS_BY_ID,FETCH_ADDRESS,UPDATE_ADDRESS_SHIPPING} from "@/store/actions.type.js";
+import { FETCH_GET_PROFILE,FETCH_ADDRESS_BY_ID,FETCH_ADDRESS,UPDATE_ADDRESS_SHIPPING,SELECT_SHIPPING} from "@/store/actions.type.js";
 import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
 import RingLoader from 'vue-spinner/src/RingLoader.vue'
 import BounceLoader from 'vue-spinner/src/BounceLoader.vue'
@@ -71,6 +71,7 @@ export default {
       computed: {
   
             ...mapGetters(["address","selectedad","profile"]),
+           
 
         
         isUrl () {
@@ -154,10 +155,13 @@ this.form.select_shipping = event.target.value
     },
 
     checkedaddress(checkb) {
+ 
      if(checkb.length > 0){
         const arr2 = checkb.filter(d => d.flag_address === 'F');
         this.selectedAdd = arr2[0].id
         this.detailAddress = arr2[0]
+        console.log('this.selectedAdd',this.selectedAdd);
+             let selectshipping =  this.$store.dispatch(SELECT_SHIPPING,this.selectedAdd);
      }
         let shipping = localStorage.setItem("shipping", this.selectedAdd);
  

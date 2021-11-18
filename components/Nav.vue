@@ -318,8 +318,17 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
 
 
           logout() {
+            localStorage.removeItem("shipping");
+            localStorage.removeItem("listorder");
+            localStorage.removeItem("delivery");
+       
     this.$auth.logout()
+     setTimeout(function () {
+            location.reload();
+            }, 1000);
 
+
+ 
     
      }
         }

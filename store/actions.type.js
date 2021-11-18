@@ -54,6 +54,9 @@ export const SAVE_SALEPAGE = "save_salepage";
 export const GET_SYSTEM = "get_system";
 
 export const UPDATE_ADDRESS_SHIPPING = "update_address_shipping";
+export const SELECT_SHIPPING = "select_shipping";
+
+export const REMOVIE_STATE_SHIPPING = "remove_shipping";
 
 export const SAVE_ORDER = "save_order";
 export const FETCH_BLOG = "fetch_blog";

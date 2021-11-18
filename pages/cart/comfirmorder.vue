@@ -21,11 +21,11 @@
           <div class="row">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
          <div  class="button-order boxSubmitCart">
-        {{objects.Shipping.select_shipping}}
+
             <b-button block variant="primary" size="lg" class="btn btn-lg-auto btn-style buttonCheckout" @click="deliverys('cart-payment')">ถัดไป </b-button>
             </div>
          </div>
-         
+         {{objects}}
     </div>
     </div>
     </div>
@@ -614,7 +614,7 @@
         computed: {
             ...mapGetters(["delivery","select_shipping"]),
              ...mapState({
-                objects: state => state,
+                objects: state => state.Shipping.select_shipping,
               
             }),
 
@@ -635,13 +635,19 @@
         methods: {
 
       async deliverys(names){
-
+console.log('this.objects',this.objects);
  let check = await localStorage.getItem('delivery');
 
  if(check == null){
      this.error('กรุณาเลือกบริการจัดส่งสินค้า');
      return false;
  }
+  if(this.objects == null){
+     this.error('กรุณาเลือกที่อยู่จัดส่ง');
+     return false;
+ }
+
+
 
 
        

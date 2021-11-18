@@ -1,7 +1,7 @@
 
 import { ShippingService }  from "../../services/shipping";
 import {
-    CHOOSE_DELIVERY,SAVE_DELIVERY,CHECK_DELIVERY,DELIVERY_DATA,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,UPDATE_ADDRESS_SHIPPING
+    CHOOSE_DELIVERY,SAVE_DELIVERY,CHECK_DELIVERY,DELIVERY_DATA,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,UPDATE_ADDRESS_SHIPPING,SELECT_SHIPPING 
 } from "../actions.type.js";
 import {
     SET_DELIVERY,SET_SAVEDELIVERY,SET_CHECKDELIVERY,SELECT_DELIVERY,SET_PROVINCES,SET_SELECT_SHIPPING
@@ -34,7 +34,7 @@ const getters = {
         return state.provinces
     },
     select_shipping: state => {
-        return state.provinces
+        return state.select_shipping
     },
     
 
@@ -88,6 +88,13 @@ const actions = {
       //  return data.data;
     },
 
+    async [SELECT_SHIPPING](context,payload) { 
+        console.log('state.select_shipping',payload);
+        context.commit(SET_SELECT_SHIPPING,payload);
+    },
+
+
+
 
 
 
@@ -97,6 +104,7 @@ const mutations = {
 
     [SET_SELECT_SHIPPING](state,data) {
         state.select_shipping = data 
+    
     },
     [SET_PROVINCES](state,data) {
         state.provinces = data.data

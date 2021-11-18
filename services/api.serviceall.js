@@ -33,10 +33,12 @@ const ApiServiceall = {
       },
 
      get(resource, slug = "") {
-      return Vue.axios.get(`${API_URL}/${resource}/${slug}`, { headers: authHeader()}).catch(error => {
-      
+      return Vue.axios.get(`${API_URL}/${resource}/${slug}`, { headers: authHeader()}).catch((error)=>{
+        return new Promise((resolve, reject)=>{
+          reject(error)
     
-    });
+        })
+      })
     },
 
 

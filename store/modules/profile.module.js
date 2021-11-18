@@ -25,9 +25,7 @@ const getters = {
 const actions = {
        async [FETCH_GET_PROFILE](context) {
         const { data } = await UserService.getprofile();
-        if (typeof data === 'undefined') {
-            this.$auth.logout();
-        }
+alert('okkk');
      
         return data;
        },

@@ -26,14 +26,17 @@
 
 
 <script>
-import { mapGetters } from "vuex";
-import { FETCH_GET_PROFILE,FETCH_ADDRESS_BY_ID,FETCH_ADDRESS} from "../store/actions.type.js";
+import { mapGetters,mapState } from "vuex";
+import { FETCH_GET_PROFILE,FETCH_ADDRESS_BY_ID,FETCH_ADDRESS,SELECT_SHIPPING} from "@/store/actions.type.js";
 import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
 import RingLoader from 'vue-spinner/src/RingLoader.vue'
 import BounceLoader from 'vue-spinner/src/BounceLoader.vue'
 export default {
       computed: {
             ...mapGetters(["address","selectedad"]),
+
+            
+
         },
           data() {
       return {
@@ -68,6 +71,7 @@ export default {
           
            var data = event.target.value;
            let selectdata = this.items
+      
         if(selectdata.length > 0){
         const arr3 = selectdata.filter(d => d.id == data);
         this.detailAddress = arr3[0]
@@ -89,10 +93,10 @@ export default {
         this.forms.id = a.id;
         let getaddress = await this.$store.dispatch(FETCH_ADDRESS,this.forms);
         this.items = getaddress;
+     
 
-       await this.checkedaddress(this.items); 
+    await this.checkedaddress(this.items); 
        
-
       },
   	showModal() {
      
@@ -100,11 +104,16 @@ export default {
     },
 
     checkedaddress(checkb) {
+  
      if(checkb.length > 0){
         const arr2 = checkb.filter(d => d.flag_address === 'F');
         this.selectedAdd = arr2[0].id
         this.detailAddress = arr2[0]
+
+        
      }
+
+
  
     },
 
