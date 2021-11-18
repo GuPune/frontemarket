@@ -454,8 +454,13 @@ button.addcart:hover {
 
 @media (max-width: 420px) {
   .im-rela-mobile{
-    width: 80px;
-    height: 80px;
+    width: 117px;
+    height: 100px;
+      }
+
+      .shop-relation{
+        width: 100%;
+        height: 100%;
       }
 
 
