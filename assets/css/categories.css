@@ -202,7 +202,21 @@
   
 
 
+  @media (max-width: 420px) {
+    .im-cate-mobile{
+      width: 50px!important;
+      height: 50px!important;
+        }
 
+        .mobile-cate{
+            padding: 0px!important;
+            padding-top: 2px!important;
+        }
+  
+     
+  
+  
+   }
 
 @media screen and (max-width: 600px) {
 

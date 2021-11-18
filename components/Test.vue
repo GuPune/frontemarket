@@ -6,8 +6,9 @@
                 <div class="col-12 col-md-9 col-lg-9">
                    <div class="main-heading">
         <div class="heading-title-relat">
-                    <h2><span>PRODUCT CATEGORIES</span>
+                            <h2><span>PRODUCT CATEGORIES</span>
 	<em class="">ประเภทสินค้า</em>
+
 			</h2>
         </div>
  <div>
@@ -17,11 +18,10 @@
     <div v-for="i in items"  class="img-wrapper">
               <div class="card c-shopinmy-tt">
                     <div class="cardproduct c-cate">
-                 <img class="imgproduct related-images testimage imgproductcate"   :src="Checkimage(i.image)"  @click="ChangeProduct(i.id)" style="border-radius: 50%;">
-                                                   <div class="product-footer">
-                                                   <div class="addtocart">
-                                              {{i.name_th}}
-                                                   </div></div>
+                 <img class="imgproduct related-images testimage imgproductcate im-cate-mobile"   :src="Checkimage(i.image)"  @click="ChangeProduct(i.id)" style="border-radius: 50%;">
+                                                   <div class="product-footer mobile-cate">
+                                                   {{i.name_th}}
+                                                   </div>
                 
                                                 </div>
         </div>
@@ -159,15 +159,15 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
     {
       "breakpoint": 480,
       "settings": {
-        "slidesToShow": 4,
-        "slidesToScroll": 4
+        "slidesToShow": 5,
+        "slidesToScroll": 5
       }
     },
         {
       "breakpoint": 375,
       "settings": {
-        "slidesToShow": 2,
-        "slidesToScroll": 2
+        "slidesToShow": 5,
+        "slidesToScroll": 5
       }
     }
   ]
