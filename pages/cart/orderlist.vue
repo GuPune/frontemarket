@@ -5,7 +5,7 @@
 
 <!-- --------------------------------store 1--------------------------------- -->
  <div class="row">
-    <div class="col-md-9 col-sm-12">
+    <div class="col-md-9 col-sm-12 ipad-order">
       <div class="card shopping-cart" >
                   <h2 class="title-shoping-cart bg-order bg-order-mobile">
                   <span>สินค้าในตะกร้า</span>
@@ -40,7 +40,7 @@
                             <div class="col-xs-12 col-sm-5 col-md-6 col-lg-6">
                                 <div class="row">
                                     <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3"><div class="title-top h4">รูปภาพ</div></div>
-                                    <div class="col-xs-6 col-sm-12 col-md-7 col-lg-7">
+                                    <div class="col-xs-6 col-sm-12 col-md-5 col-lg-5">
                                         <div class="title-top h4">ชื่อสินค้า</div>
                                     </div>
                                     <div class="col-xs-6 col-sm-12 col-md-2 col-lg-2">
@@ -72,7 +72,7 @@
                     <div class="col-xs-12 col-sm-4 col-md-3 col-lg-3 text-mobile">
                         <a href="https://www.svgroup.co.th/c-dial-pro-4.html" title="C-DIAL PRO 4 ตัวควบคุม 4 สถานี 9 V. รุ่นใช้ในร่ม" class="product-image"><img class="img-responsive lazy order-picture-mobile"  :src="Checkimage(item.img_product)" width="100" height="100" alt="C-DIAL PRO 4 ตัวควบคุม 4 สถานี 9 V. รุ่นใช้ในร่ม" /></a>
                         </div>
-                    <div class="col-xs-6 col-sm-8 col-md-7 col-lg-7 text-mobile">
+                    <div class="col-xs-6 col-sm-8 col-md-5 col-lg-5 text-mobile">
                         <h5 class="order-name">{{item.name_en}}</h5></div>
                         <div class="col-xs-6 col-sm-8 col-md-2 col-lg-2 text-mobile shop-name-order-pc">
                         <h5 class="order-name">{{item.name_en}}</h5></div>
@@ -85,11 +85,11 @@
                                  <div class="tax-excl text-mobile "><span class="cart-price"><span class="price">฿{{item.price}}
                                  </span></span></div></div>
                     <div class="col-md-3 col-lg-3">
-                                  <b-input-group>
+                                  <b-input-group class="ipad-order-input">
                                         <b-input-group-prepend>
                                         <b-btn variant="outline-info" v-on:click='Adddown(item)'>-</b-btn>
                                         </b-input-group-prepend>
-                                        <b-form-input type="text" min="0" class="text-number-order"  :disabled="true" :value="item.quantity" maxlength=2 v-on:keypress="isNumber($event, item)" v-on:input="addEvent($event, item)"></b-form-input>
+                                        <b-form-input type="text" min="0" class="text-number-order ipad-order-input-number"   :disabled="true" :value="item.quantity" maxlength=2 v-on:keypress="isNumber($event, item)" v-on:input="addEvent($event, item)"></b-form-input>
                                         <b-input-group-append>
                                         <b-btn variant="outline-secondary" v-on:click='Addup(item)'>+</b-btn>
                                         </b-input-group-append>
@@ -188,7 +188,7 @@
 
 
    
-    <div class="col-md-3">
+    <div class="col-md-3 ipad-order">
             <Sum/>
 <br>
             <Coupon/>

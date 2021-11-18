@@ -197,6 +197,85 @@
 
    }
 
+
+
+@media (max-width: 1024px) {
+  .ipad-order {
+    /* flex: 0 0 75%; */
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.ipad-order-input{
+  display: block;
+
+}
+.ipad-order-input-number{
+width: 40%!important;
+
+}
+
+.ipad-order {
+  /* flex: 0 0 75%; */
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+
+
+ }
+
+ @media (max-width: 900px) {
+  
+.ipad-order-input-number{
+width: 50%!important;
+
+}
+
+ }
+
+
+ @media (max-width: 1400px) {
+  
+  .ipad-order-input{
+    display: block;
+  
+  }
+
+  .ipad-order-input-number{
+    width: 37%!important;
+    
+    }
+  
+   }
+
+
+   @media (max-width: 1330px) {
+  
+    .ipad-order-input{
+      display: block;
+    
+    }
+  
+    .ipad-order-input-number{
+      width: 50%!important;
+      
+      }
+    
+     }
+
+     @media (max-width: 1300px) {
+  
+  
+      .ipad-order-input-number{
+        width: 50%!important;
+        
+        }
+      
+       }
+  
+
+
  /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .cart-row {
@@ -313,6 +392,8 @@
   border-color: #dc354508;
 
 }
+
+
 
 
 
