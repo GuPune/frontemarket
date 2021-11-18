@@ -1,10 +1,10 @@
 
 import { ShippingService }  from "../../services/shipping";
 import {
-    CHOOSE_DELIVERY,SAVE_DELIVERY,CHECK_DELIVERY,DELIVERY_DATA,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS
+    CHOOSE_DELIVERY,SAVE_DELIVERY,CHECK_DELIVERY,DELIVERY_DATA,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,UPDATE_ADDRESS_SHIPPING
 } from "../actions.type.js";
 import {
-    SET_DELIVERY,SET_SAVEDELIVERY,SET_CHECKDELIVERY,SELECT_DELIVERY,SET_PROVINCES 
+    SET_DELIVERY,SET_SAVEDELIVERY,SET_CHECKDELIVERY,SELECT_DELIVERY,SET_PROVINCES,SET_SELECT_SHIPPING
 } from "../mutations.type";
 import Vuex from 'vuex'
 
@@ -16,6 +16,7 @@ const state = {
     formorder:{
         selectDel:null
     },
+    select_shipping:null,
     provinces:[]
 }
 
@@ -32,8 +33,10 @@ const getters = {
     provinces: state => {
         return state.provinces
     },
+    select_shipping: state => {
+        return state.provinces
+    },
     
-
 
 };
 
@@ -50,6 +53,11 @@ const actions = {
     },
     async [DELIVERY_DATA](context,payload) { 
         const { data } = await ShippingService.getdatashipping(payload);
+        console.log('const ',data);
+
+        if (typeof data === 'undefined') {
+            this.$auth.logout();
+          }
        
         context.commit(SET_DELIVERY,data);
         return data.data;
@@ -71,12 +79,25 @@ const actions = {
         return data.data;
     },
 
+    async [UPDATE_ADDRESS_SHIPPING](context,payload) { 
+      
+        console.log('payload',payload);
+        const { data } = await ShippingService.updatedefault(payload);
+         context.commit(SET_SELECT_SHIPPING,payload);
+       // const { data } = await ShippingService.getsubdistricts(payload);
+      //  return data.data;
+    },
+
+
+
 
 };
 
 const mutations = {
 
- 
+    [SET_SELECT_SHIPPING](state,data) {
+        state.select_shipping = data 
+    },
     [SET_PROVINCES](state,data) {
         state.provinces = data.data
     },

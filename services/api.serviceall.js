@@ -34,13 +34,17 @@ const ApiServiceall = {
 
      get(resource, slug = "") {
       return Vue.axios.get(`${API_URL}/${resource}/${slug}`, { headers: authHeader()}).catch(error => {
-       console.log('xxxx',this.$store.state.auth.user);
+      
+    
     });
     },
 
 
     post(resource, params) {
-      return Vue.axios.post(`${API_URL}/${resource}`, params, { headers: authHeader() });
+      return Vue.axios.post(`${API_URL}/${resource}`, params,  { headers: authHeader()}).catch(error => {
+      
+    return error;
+      });
     },
 
 

@@ -25,13 +25,18 @@ const getters = {
 const actions = {
        async [FETCH_GET_PROFILE](context) {
         const { data } = await UserService.getprofile();
-        console.log('get_profile',data);
+        if (typeof data === 'undefined') {
+            this.$auth.logout();
+        }
      
         return data;
        },
        async [SAVE_PROFILE](contex,payload) {
-           console.log('payload',payload);
          const { data } = await UserService.saveprofile(payload);
+
+         if (typeof data === 'undefined') {
+            this.$auth.logout();
+        }
         // return data;
        },
 };

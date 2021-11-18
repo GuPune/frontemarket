@@ -114,19 +114,26 @@ const actions = {
       async [SAVE_ADDRESS_BY_ID](context,payload) {
 
        const { data } = await UserService.save_by_id(payload);
-     //   context.commit(SET_ADDRESS,data);
+       if (typeof data === 'undefined') {
+        this.$auth.logout();
+    }
      return data;
       },
 
       
       async [DEL_ADDRESS_BY_ID](context,payload) {
         const { data } = await UserService.del_by_id(payload);
-     //   context.commit(SET_ADDRESS,data);
+        if (typeof data === 'undefined') {
+            this.$auth.logout();
+        }
      return data;
       },
 
       async [UPDATE_ADDRESS_BY_ID](context,payload) {
      const { data } = await UserService.update_by_id(payload);
+     if (typeof data === 'undefined') {
+        this.$auth.logout();
+    }
    
         return data;
       },

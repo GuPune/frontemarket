@@ -21,8 +21,8 @@
           <div class="row">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
          <div  class="button-order boxSubmitCart">
-        
-            <b-button block variant="primary" size="lg" class="btn btn-lg-auto btn-style buttonCheckout" @click="deliverys('cart-payment')">ถัดไป</b-button>
+        {{objects.Shipping.select_shipping}}
+            <b-button block variant="primary" size="lg" class="btn btn-lg-auto btn-style buttonCheckout" @click="deliverys('cart-payment')">ถัดไป </b-button>
             </div>
          </div>
          
@@ -589,12 +589,12 @@
 
 
 <script>
-    import { mapGetters } from "vuex";
+    import { mapGetters,mapState } from "vuex";
     import StatusShipping from "@/components/StatusShipping";
     import ShippingInfo from "@/components/ShippingInfo";
     import Summary from "@/components/Summary";
     import AddressShipping from "@/components/AddressShipping";
-    import { SAVE_DELIVERY,CHECK_DELIVERY } from "../../store/actions.type.js";
+    import { SAVE_DELIVERY,CHECK_DELIVERY,UPDATE_ADDRESS_SHIPPING } from "@/store/actions.type.js";
     export default {
          middleware: 'authenticated',
       components: {
@@ -612,10 +612,17 @@
     },
 
         computed: {
-            ...mapGetters(["delivery"]),
+            ...mapGetters(["delivery","select_shipping"]),
+             ...mapState({
+                objects: state => state,
+              
+            }),
 
         isUrl () {
                 return this.$store.state.user.url_id;
+        },
+              selectshipping () {
+                return this.$store.shipping;
         },
 
         
@@ -628,7 +635,7 @@
         methods: {
 
       async deliverys(names){
- // let savedelivery =  this.$store.dispatch(SAVE_DELIVERY,this.delivery);
+
  let check = await localStorage.getItem('delivery');
 
  if(check == null){
@@ -637,7 +644,7 @@
  }
 
 
-              
+       
          let savedelivery = await this.$store.dispatch(SAVE_DELIVERY,this.delivery);
         const Shopid = this.isUrl.id;
        this.$router.push({ name: names, params: { id: Shopid }})

@@ -14,8 +14,8 @@
                     <label class="font-weight-bold"> xxxxx xxxxx</label>
                     <label class="pl-2">0843745454</label>
                     -->
-                    <div class="text-muted" >
-                     {{detailAddress.address}}           
+                    <div class="text-muted" v-if="detailAddress">
+                     {{detailAddress.address}}, ต.{{detailAddress.sub_districts_id}}  อ.{{detailAddress.districts_id}}  จังหวัด.{{detailAddress.province_id}}     
                     </div>
                 </div>
             </div>
@@ -62,21 +62,29 @@
 
 
 <script>
-import { mapGetters } from "vuex";
-import { FETCH_GET_PROFILE,FETCH_ADDRESS_BY_ID,FETCH_ADDRESS} from "../store/actions.type.js";
+import { mapGetters,mapState } from "vuex";
+import { FETCH_GET_PROFILE,FETCH_ADDRESS_BY_ID,FETCH_ADDRESS,UPDATE_ADDRESS_SHIPPING} from "@/store/actions.type.js";
 import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
 import RingLoader from 'vue-spinner/src/RingLoader.vue'
 import BounceLoader from 'vue-spinner/src/BounceLoader.vue'
 export default {
       computed: {
   
-            ...mapGetters(["address","selectedad"]),
+            ...mapGetters(["address","selectedad","profile"]),
 
+        
+        isUrl () {
+                return this.$store.state.user.url_id;
+        },
+      
         },
           data() {
       return {
       loading:true,
         forms:{
+          id:null
+        },
+        form:{
           id:null
         },
         modes: ['multi', 'single', 'range'],
@@ -96,22 +104,26 @@ export default {
              
       async mounted() {
  await this.fetchaddress(); 
-      
+   
+
 
          
         },
 
       methods: {
         changeAdd(event){
-          
+          this.form.url = window.location.origin;
+          this.form.user_id = this.profile.id;
            var data = event.target.value;
            let selectdata = this.items
+this.form.select_shipping = event.target.value
+        
            let shipping = localStorage.setItem("shipping", data);
         if(selectdata.length > 0){
         const arr3 = selectdata.filter(d => d.id == data);
         this.detailAddress = arr3[0]
 
-  
+   let update_add_shipping = this.$store.dispatch(UPDATE_ADDRESS_SHIPPING,this.form);
         
            
         }

@@ -34,7 +34,9 @@ const actions = {
         context.commit(SET_GETORDER);
       },  
       async [GET_ORDER_DATA](context,payload) { 
+        console.log('data',payload);
         const { data } = await OrderService.fetchorder(payload);
+      
         return data.data
       },
       async [GET_ORDER_ALL](context,payload) { 

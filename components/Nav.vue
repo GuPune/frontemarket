@@ -214,18 +214,18 @@
      <b-nav-item href="#" @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i>
                     <span> ({{ cartTotal }}) </span></b-nav-item>
 
+              
+   <b-nav-item  v-if="!isLogins" @click="redirectTo('form-login')">เข้าสู่ระบบ</b-nav-item>
           <b-nav-item-dropdown right  v-if="isLogins">
           <!-- Using 'button-content' slot -->
           <template #button-content>
             <em>{{user.user.name}}</em>
+              
           </template>
           <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">Profile</b-dropdown-item>
           <b-dropdown-item href="#"  @click.prevent="logout">Sign Out</b-dropdown-item>
         </b-nav-item-dropdown>
-        <b-nav-item-dropdown text="Login" v-else="!isLogins" right>
-          <b-dropdown-item href="#" @click="redirectTo('form-login')">เข้าสู่ระบบ</b-dropdown-item>
-          <b-dropdown-item href="#" @click="redirectTo('form-userregis')" >สมัครสมาชิก</b-dropdown-item>
-        </b-nav-item-dropdown>
+    
 
     
       </b-navbar-nav>

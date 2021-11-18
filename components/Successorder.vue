@@ -70,7 +70,7 @@
                         </div>
                         <div class="col-12 fs-ta-14 fs-md-ta-16 text-theme-1 mt-1">
                             ชื่อผู้รับ: {{this.orderlist.fname}} {{this.orderlist.lname}}<br>
-                            ที่อยู่: 2e3r4t5yui ตำบลนาเพียง อำเภอชุมแพ จังหวัดขอนแก่น 40000<br>
+               ที่อยู่:   {{this.orderlist.shipping_address.address}} {{this.orderlist.shipping_address.address}} ต.{{this.orderlist.shipping_address.sub_districts_id}} อ.{{this.orderlist.shipping_address.districts_id}} จ.{{this.orderlist.shipping_address.province_id}}<br>
                             เบอร์โทรศัพท์: {{this.orderlist.tel}}<br>
                             อีเมล: {{this.orderlist.email}}
                             </div>
@@ -85,7 +85,7 @@
                             </div>
                             <div class="col-12 fs-ta-14 fs-md-ta-16 text-theme-1 mt-1">
                                 ชื่อผู้รับ: {{this.orderlist.fname}} {{this.orderlist.lname}}<br>
-                                ที่อยู่: 2e3r4t5yui ตำบลนาเพียง อำเภอชุมแพ จังหวัดขอนแก่น 40000<br>
+               ที่อยู่:   {{this.orderlist.shipping_address.address}} {{this.orderlist.shipping_address.address}} ต.{{this.orderlist.shipping_address.sub_districts_id}} อ.{{this.orderlist.shipping_address.districts_id}} จ.{{this.orderlist.shipping_address.province_id}}<br>
                                 เบอร์โทรศัพท์: {{this.orderlist.tel}}<br>
                                 อีเมล: {{this.orderlist.email}}
                             </div>
@@ -149,7 +149,7 @@
                                                         </div>
                                                         <div class="col-4 text-right">
                                                             <p class="fs-ta-14 text-theme-1 mb-0">฿ {{item.sumPrice}}</p>
-                                                        </div v>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -368,6 +368,9 @@ import { FETCH_BANK,CHOOSE_BANK,GET_ORDER_DATA } from "@/store/actions.type.js";
         cartnumber:null
         },
         orderlist:{
+
+        },
+        shipping_address:{
 
         }
       }

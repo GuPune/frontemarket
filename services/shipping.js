@@ -14,6 +14,9 @@ export const ShippingService = {
     getsubdistricts(param) {
       return ApiServiceAll.post("subdistricts",param);
     },
+    updatedefault(param) {
+      return ApiServiceAll.post("defaultshipping",param);
+    },
 
  
 
