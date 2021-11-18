@@ -225,7 +225,7 @@ width: 40%!important;
 
  }
 
- @media (max-width: 900px) {
+ /* @media (max-width: 900px) {
   
 .ipad-order-input-number{
 width: 50%!important;
@@ -273,7 +273,7 @@ width: 50%!important;
         }
       
        }
-  
+   */
 
 
  /* Extra large devices (large desktops, 1200px and up) */

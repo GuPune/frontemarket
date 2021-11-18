@@ -81,10 +81,10 @@
         
             <div class="col-xs-12 col-sm-7 col-md-6 col-lg-6">
                 <div class="row shop-name-order-pc">
-                    <div class="col-xs col-sm-3 col-md-3 col-lg-3">
+                    <div class="col-xs col-sm-3 col-md-2 col-lg-2">
                                  <div class="tax-excl text-mobile "><span class="cart-price"><span class="price">฿{{item.price}}
                                  </span></span></div></div>
-                    <div class="col-md-3 col-lg-3">
+                    <div class="col-md-4 col-lg-4">
                                   <b-input-group class="ipad-order-input">
                                         <b-input-group-prepend>
                                         <b-btn variant="outline-info" v-on:click='Adddown(item)'>-</b-btn>
