@@ -115,15 +115,20 @@ const actions = {
     },   
     async [GET_PRODUCR_SELLER](context,payload) {
         const { data } = await ProductService.getproductbyseller(payload);
+     
+        return data;
 
     },   
     async [GET_PRODUCR_NEW](context,payload) {
         const { data } = await ProductService.getproductbynew(payload);
+  
+        return data;
  
     },   
     async [GET_PRODUCR_RECOM](context,payload) {
         const { data } = await ProductService.getproductbyrecom(payload);
-
+    
+        return data;
     },   
 
 };

@@ -17,10 +17,10 @@
       
              <div class="card c-shopinmy">
                     <div class="cardproduct">
-                 <img class="imgproduct related-images imgproductmyshop im-rela-mobile" :src="i.src">
+                 <img class="imgproduct related-images imgproductmyshop im-rela-mobile" :src="Checkimage(i.img_product)">
                                                    <div class="product-footer">
                                                    <div class="addtocart">
-                                                       <b-button  variant="success shop-relation" size="sm">ช้อปเลย</b-button>
+                                                       <b-button  variant="success shop-relation" size="sm"  @click="addToCart(i)">เพิ่มสินค้า</b-button>
                                                    </div></div>
                 
                                                 </div>
@@ -66,29 +66,11 @@
   export default {
         data() {
       return {
-          items: [
-          {
-            src: 'https://static.bigc.co.th/media/bannerads/images/cocacala-logo.jpg',
+           form:{
+          shop_name:null,
+            url:null
           },
-          {
-            src: 'https://static.bigc.co.th/media/bannerads/images/colgate-logo.jpg',
-          },
-          {
-            src: 'https://static.bigc.co.th/media/bannerads/images/foremost-logo.jpg',
-          },
-          {
-            src: 'https://static.bigc.co.th/media/bannerads/images/entranccdd.png',
-          },
-          {
-            src: 'https://static.bigc.co.th/media/bannerads/images/logo-p-g-196x196px.jpg',
-          },
-          {
-            src: 'https://static.bigc.co.th/media/bannerads/images/pepsi-logo-brand-20210301-1.jpg',
-          },
-          {
-            src: 'https://static.bigc.co.th/media/bannerads/images/unicharmm.png',
-          },
-        ],
+          items: [],
         
    
  slickOptions:{
@@ -152,16 +134,19 @@
 
         },
         
-        mounted() {
+       async mounted() {
         //  this.$store.dispatch(ToogleAction);
 
            //     let a = this.$store.dispatch(FETCH_PRODUCT_SHELL);
 
          this.form.url = window.location.origin;
          this.form.shop_name = this.$route.params;
-       
 
-       this.$store.dispatch(GET_PRODUCR_RECOM,this.form);
+          let product = await this.$store.dispatch(GET_PRODUCR_RECOM,this.form);
+         
+this.items = product.data;
+
+
         
          },
         

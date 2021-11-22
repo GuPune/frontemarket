@@ -68,6 +68,8 @@ export const FETCH_BLOG = "fetch_blog";
 export const FETCH_BLOG_ONLY = "fetch_blog_only";
 export const SAVE_SETLINE = "fetch_line";
 export const SAVE_CONTACT = "save_contact";
+
+export const GET_SHOP = "get_shop";
 export const GET_CAPTCHA = "get_captcha";
 export const GET_PROVINCES = "get_address_provinces";
 export const GET_DISTRICTS = "get_address_districts";

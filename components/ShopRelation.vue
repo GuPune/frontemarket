@@ -15,13 +15,13 @@
  
     <VueSlickCarousel v-bind="slickOptions">
     <div v-for="i in items"  class="img-wrapper">
-      
+  
              <div class="card c-shopinmy">
                     <div class="cardproduct">
-                 <img class="imgproduct related-images imgproductmyshop im-rela-mobile" :src="i.src">
+                 <img class="imgproduct related-images imgproductmyshop im-rela-mobile" :src="Checkimage(i.icon)">
                                                    <div class="product-footer">
                                                    <div class="addtocart">
-                                                       <b-button  variant="success shop-relation" size="sm">ช้อปเลย</b-button>
+                                                       <b-button  variant="success shop-relation" size="sm" @click="redirectTo(i.shop_name)">ช้อปเลย</b-button>
                                                    </div></div>
                 
                                                 </div>
@@ -55,7 +55,7 @@
 <script>
   import { mapGetters,mapState } from "vuex";
   import { FETCH_PRODUCT_SHELL } from "../store/actions.type.js";
-  import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART } from "@/store/actions.type.js";
+  import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_SHOP } from "@/store/actions.type.js";
   import { APP_URL } from "../environment/environment.js";
   import VueSlickCarousel from 'vue-slick-carousel'
   import 'vue-slick-carousel/dist/vue-slick-carousel.css'
@@ -67,29 +67,34 @@
   export default {
         data() {
       return {
-          items: [
-          {
-            src: 'https://static.bigc.co.th/media/bannerads/images/cocacala-logo.jpg',
+            form:{
+          shop_name:null,
+            url:null
           },
-          {
-            src: 'https://static.bigc.co.th/media/bannerads/images/colgate-logo.jpg',
-          },
-          {
-            src: 'https://static.bigc.co.th/media/bannerads/images/foremost-logo.jpg',
-          },
-          {
-            src: 'https://static.bigc.co.th/media/bannerads/images/entranccdd.png',
-          },
-          {
-            src: 'https://static.bigc.co.th/media/bannerads/images/logo-p-g-196x196px.jpg',
-          },
-          {
-            src: 'https://static.bigc.co.th/media/bannerads/images/pepsi-logo-brand-20210301-1.jpg',
-          },
-          {
-            src: 'https://static.bigc.co.th/media/bannerads/images/unicharmm.png',
-          },
-        ],
+          items: [],
+        //   items: [
+        //   {
+        //     src: 'https://static.bigc.co.th/media/bannerads/images/cocacala-logo.jpg',
+        //   },
+        //   {
+        //     src: 'https://static.bigc.co.th/media/bannerads/images/colgate-logo.jpg',
+        //   },
+        //   {
+        //     src: 'https://static.bigc.co.th/media/bannerads/images/foremost-logo.jpg',
+        //   },
+        //   {
+        //     src: 'https://static.bigc.co.th/media/bannerads/images/entranccdd.png',
+        //   },
+        //   {
+        //     src: 'https://static.bigc.co.th/media/bannerads/images/logo-p-g-196x196px.jpg',
+        //   },
+        //   {
+        //     src: 'https://static.bigc.co.th/media/bannerads/images/pepsi-logo-brand-20210301-1.jpg',
+        //   },
+        //   {
+        //     src: 'https://static.bigc.co.th/media/bannerads/images/unicharmm.png',
+        //   },
+        // ],
         
    
  slickOptions:{
@@ -153,12 +158,16 @@
 
         },
         
-        mounted() {
-        //  this.$store.dispatch(ToogleAction);
+       async mounted() {
+   
 
-           //     let a = this.$store.dispatch(FETCH_PRODUCT_SHELL);
+      let product = await this.$store.dispatch(GET_SHOP);
+     
 
-           console.log(process.env.TEST_VARIABLE);
+      this.items = product;
+
+      console.log('this.items',this.items);
+
         this.loadcategory()
         
          },
@@ -167,6 +176,7 @@
         methods: {
 
         redirectTo(name) {
+       
                     this.$router.push(name)
                   },
         loadcategory(){

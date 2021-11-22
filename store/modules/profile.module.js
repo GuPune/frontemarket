@@ -26,12 +26,10 @@ const actions = {
        async [FETCH_GET_PROFILE](context) {
         const { data } = await UserService.getprofile();
 
-     
         return data;
        },
        async [SAVE_PROFILE](contex,payload) {
          const { data } = await UserService.saveprofile(payload);
-
          if (typeof data === 'undefined') {
             this.$auth.logout();
         }

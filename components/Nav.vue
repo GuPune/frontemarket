@@ -220,7 +220,6 @@
           <!-- Using 'button-content' slot -->
           <template #button-content>
             <em>{{user.user.name}}</em>
-              
           </template>
           <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">Profile</b-dropdown-item>
           <b-dropdown-item href="#"  @click.prevent="logout">Sign Out</b-dropdown-item>
@@ -250,6 +249,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
     data() {
     return {
       IsLogin: false,
+      loggedIn: this.$auth.loggedIn,
       name:{}
 
     };
@@ -294,6 +294,10 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
           // this.name = profile['name']
           // console.log('profile',profile['name']);
 
+      
+          if(this.user.user == null){
+      this.$auth.logout()
+          }
           if(checker){
             this.IsLogin = true;
                this.$store.dispatch('auth/userstorage');
