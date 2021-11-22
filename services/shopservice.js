@@ -6,4 +6,8 @@ export const MyshopService = {
    
       return ApiServiceAll.get("getshop");
     },
+    getshop_by_item(param) {
+   
+      return ApiServiceAll.post("getshopitem",param);
+    },
 };

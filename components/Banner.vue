@@ -40,7 +40,7 @@
 <script>
   import { mapGetters,mapState } from "vuex";
 
-  import { GET_MENU } from "@/store/actions.type.js";
+  import { GET_MENU,GET_SHOP_BY_ITEM } from "@/store/actions.type.js";
   import { APP_URL } from "@/environment/environment.js";
   export default {
     data() {
@@ -57,10 +57,13 @@
 
         },
         
-        mounted() {
+       async mounted() {
           this.form.url = window.location.origin;
          this.form.shop_name = this.$route.params;
-       this.$store.dispatch(GET_MENU,this.form);
+     let menu = await this.$store.dispatch(GET_MENU,this.form);
+
+       let shopitem = await this.$store.dispatch(GET_SHOP_BY_ITEM,this.form);
+     
 
         
          },
