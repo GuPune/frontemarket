@@ -1,12 +1,14 @@
 
 import { ProductService }  from "../../services/product";
 import {
-    FETCH_PRODUCT_SHELL,FETCH_PRODUCT_FIND,FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,FETCH_FIND_PRODUCT,FETCH_BY_PRODUCT_SHOP_ONE_ITEM
+    FETCH_PRODUCT_SHELL,FETCH_PRODUCT_FIND,FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,FETCH_FIND_PRODUCT,FETCH_BY_PRODUCT_SHOP_ONE_ITEM,GET_PRODUCR_SELLER,GET_PRODUCR_NEW,GET_PRODUCR_RECOM
 } from "../actions.type.js";
 import {
     SET_PRODUCT_SHELL,SET_PRODUCT_BY_SHOP,SET_CATE_BY_SHOP,SET_CATE_SEC,SET_BY_PRODUCT_SHOP_ONE_ITEM,SET_LOADER
 } from "../mutations.type";
 import Vuex from 'vuex'
+
+
 
 const state = {
     loading:false,
@@ -71,9 +73,9 @@ const actions = {
     async [FETCH_PRODUCT_SHELL](context) {
         context.commit(SET_LOADER);
         const { data } = await ProductService.get();
+        console.log('xxxxxxxxx',data)
         context.commit(SET_PRODUCT_SHELL,data);
-     
-
+    
         return data;
     },
 
@@ -111,6 +113,19 @@ const actions = {
          context.commit(SET_BY_PRODUCT_SHOP_ONE_ITEM,data);
           return data;
     },   
+    async [GET_PRODUCR_SELLER](context,payload) {
+        const { data } = await ProductService.getproductbyseller(payload);
+
+    },   
+    async [GET_PRODUCR_NEW](context,payload) {
+        const { data } = await ProductService.getproductbynew(payload);
+ 
+    },   
+    async [GET_PRODUCR_RECOM](context,payload) {
+        const { data } = await ProductService.getproductbyrecom(payload);
+
+    },   
+
 };
 
 const mutations = {

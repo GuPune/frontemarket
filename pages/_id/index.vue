@@ -28,28 +28,14 @@
 
 </div>
 </div>
-                       <!--
-                            <div class="row col-12">
-                                <div class="col-sm-12 col-md-3">
-                                       <Categoriesbyshop :cate_by_shop="cate_by_shop"/>
-                                </div> 
-                                    <div class="linevertical"></div> 
-                                        <div class="col-sm-12 col-md-9">
-                                        <Productbyshop  :product_by_shop="product_by_shop"/>
-                                                    
-                                </div>
 
-                            
-                            </div>
-
--->
-                         
-                    
-                </div>
+<ProductBestSeller/>
+<ProductRecom/>
+<ProductNew/>
+ </div>
 
 
-
-        </div>
+</div>
 
               
                
@@ -73,6 +59,9 @@ import { mapGetters } from "vuex";
 import Adsmini from "@/components/Adsmini"
 import Relation from "@/components/Relation"
 import Banner from "@/components/Banner"
+import ProductBestSeller from "@/components/ProductSeller"
+import ProductNew from "@/components/ProductNew"
+import ProductRecom from "@/components/ProductRecommend"
     
 
 
@@ -82,7 +71,10 @@ import Banner from "@/components/Banner"
           Nav,
           Footer,
           Categoriesbyshop,
-          Adsmini
+          Adsmini,
+          ProductBestSeller,
+          ProductRecom,
+          ProductNew
            
               },
 

@@ -53,6 +53,11 @@ export const FETCH_SALEPAGE = "fetch_salepage";
 export const SAVE_SALEPAGE = "save_salepage";
 export const GET_SYSTEM = "get_system";
 
+export const GET_PRODUCR_SELLER = "product_seller";
+export const GET_PRODUCR_NEW = "product_new";
+export const GET_PRODUCR_RECOM = "product_recom";
+
+
 export const UPDATE_ADDRESS_SHIPPING = "update_address_shipping";
 export const SELECT_SHIPPING = "select_shipping";
 

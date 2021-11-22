@@ -99,7 +99,9 @@
   */
 
 
-
+  .asx:hover {
+    color: white;
+   }
   .imgproductcate{
     border-radius: 50%;
 

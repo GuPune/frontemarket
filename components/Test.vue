@@ -19,7 +19,7 @@
               <div class="card c-shopinmy-tt">
                     <div class="cardproduct c-cate">
                  <img class="imgproduct related-images testimage imgproductcate im-cate-mobile"   :src="Checkimage(i.image)"  @click="ChangeProduct(i.id)" style="border-radius: 50%;">
-                                                   <div class="product-footer mobile-cate">
+                                                   <div class="product-footer mobile-cate asx">
                                                    {{i.name_th}}
                                                    </div>
                 

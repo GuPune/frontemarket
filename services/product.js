@@ -18,7 +18,15 @@ export const ProductService = {
       return ApiService.post("searchproduct",param);
     },
     getproductbyitem(param){
-    
       return ApiService.post("productbyitem",param);
+    },
+    getproductbyseller(param){
+      return ApiService.post("productseller",param);
+    },
+    getproductbynew(param){
+      return ApiService.post("productnew",param);
+    },
+    getproductbyrecom(param){
+      return ApiService.post("productrecom",param);
     }
 };

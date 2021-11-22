@@ -13,16 +13,20 @@
         <div class="product" id="product">
             <div class="row product">
                  <div class="cards">
-                    <div class="cardproduct" v-for="(item, index) in product_shell" :key="product_shell.id">
-                
+                    <div class="cardproduct" v-for="(item, index) in product" :key="product.id"
+           >
+
+
+
                                                         <img class="imgproduct related-images" :src="Checkimage(item.img_product)" @click="Shop(item)">
                                                             <div class="product-name">{{item.name_th}}</div>
+                                                            
                                                             <p class="price">฿{{item.price}}.00</p>
                                                    <div class="product-footer">
                                                    <div class="addtocart">
                                                    <button type="button" title="Add To Cart" data-placement="top" class="button btn-cart" @click="addToCart(item)">
                                                    <span>
-                                                   <span>Add To Cart</span></span>
+                                                   <span>Add To Cart </span></span>
                                                    </button></div></div>
                                                    <div class="ratings">
                                                    <div class="rating-box">
@@ -62,6 +66,13 @@
   import { APP_URL } from "../environment/environment.js";
   
   export default {
+    data() {
+      return {
+        isHovered: false,
+         message: 'Hover Me!',
+        product: {},
+      }
+    },
      computed: {
            
      ...mapGetters(["product_shell","authenticated"]),
@@ -86,12 +97,32 @@
         
   
         methods: {
+      mouseover(index){
+console.log('in',index);
+
+ //this.product_shell[index].name_th = 'kuy';
+//console.log('in',this.product_shell[index]);
+       
+      },
+    mouseleave(index){
+console.log('out',index);
+  // this.product_shell[index].active = false;
+      this.product_shell[index].name_th = 'out';
+      },
+      
+
 
         redirectTo(name) {
                     this.$router.push(name)
                   },
-        loadcategory(){
-          let productinshell = this.$store.dispatch(FETCH_PRODUCT_SHELL);
+       async loadcategory(){
+          let productinshell = await this.$store.dispatch(FETCH_PRODUCT_SHELL);
+
+          this.product = productinshell;
+      
+
+               console.log('this.product',this.product);
+
         },
         Checkimage(image){
                 let public_images = process.env.ImageURL+image;

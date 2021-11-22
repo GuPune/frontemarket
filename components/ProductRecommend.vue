@@ -5,10 +5,9 @@
         <div class="row relatedweb">
                 <div class="col-12 col-md-9 col-lg-9">
                    <div class="main-heading">
-   
-          <div class="heading-title-relat">
-            <h2><span>Top Hit Shop</span>
-	<em class="">ร้านค้าสุดฮิต</em>
+         <div class="heading-title-relat">
+            <h2><span>Product Recommend</span>
+	<em class="">สินค้าใหม่</em>
 			</h2>
         </div>
  <div>
@@ -55,7 +54,7 @@
 <script>
   import { mapGetters,mapState } from "vuex";
   import { FETCH_PRODUCT_SHELL } from "../store/actions.type.js";
-  import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART } from "@/store/actions.type.js";
+  import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_PRODUCR_RECOM } from "@/store/actions.type.js";
   import { APP_URL } from "../environment/environment.js";
   import VueSlickCarousel from 'vue-slick-carousel'
   import 'vue-slick-carousel/dist/vue-slick-carousel.css'
@@ -158,8 +157,11 @@
 
            //     let a = this.$store.dispatch(FETCH_PRODUCT_SHELL);
 
-           console.log(process.env.TEST_VARIABLE);
-        this.loadcategory()
+         this.form.url = window.location.origin;
+         this.form.shop_name = this.$route.params;
+       
+
+       this.$store.dispatch(GET_PRODUCR_RECOM,this.form);
         
          },
         
