@@ -27,7 +27,7 @@
                                         <li class="prof-s" id="member-orderedhistory" @click="redirectTo('profile-historyorder')"  :class="{'profile-menu': checkPath('profile-historyorder')}" >
                                             <p>ประวัติการสั่งซื้อ</p>
                                         </li>
-                                                                                <li class="prof-s" id="member-changepassword" @click="redirectTo()" >
+                                                                                <li class="prof-s" id="member-changepassword"  :class="{'profile-menu': checkPath('profile-changepassword')}"  @click="redirectTo('profile-changepassword')">
                                             <p>ตั้งค่ารหัสผ่าน</p>
                                         </li>
                                       

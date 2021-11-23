@@ -13,7 +13,7 @@
         <div class="product" id="product">
             <div class="row product">
                  <div class="cards">
-                    <div class="cardproduct" v-for="(item, index) in product" :key="product.id"
+                    <div class="cardproduct" v-for="(item, index) in product_shell" :key="product.id"
            >
 
 

@@ -69,6 +69,8 @@ export const FETCH_BLOG_ONLY = "fetch_blog_only";
 export const SAVE_SETLINE = "fetch_line";
 export const SAVE_CONTACT = "save_contact";
 
+export const CHANGEPASSWORD = "change_password";
+
 export const GET_SHOP = "get_shop";
 export const GET_SHOP_BY_ITEM = "get_shop_by_item";
 export const GET_CAPTCHA = "get_captcha";

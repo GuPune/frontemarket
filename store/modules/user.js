@@ -1,7 +1,7 @@
 
 import { UserService }  from "../../services/user.service";
 import {
-    CORE_USER,CHECK_LOGIN,FORGOTEMAIL,CLEARALRET,REGISSHOP,REGISTER,FETCH_GET_PROFILE,SAVE_PROFILE,FETCH_ADDRESS,FETCH_ADDRESS_BY_ID,SAVE_ADDRESS_BY_ID,DEL_ADDRESS_BY_ID,UPDATE_ADDRESS_BY_ID,LOGOUT,FETCH_ID_URL,SAVE_SETLINE
+    CORE_USER,CHECK_LOGIN,FORGOTEMAIL,CLEARALRET,REGISSHOP,REGISTER,FETCH_GET_PROFILE,SAVE_PROFILE,FETCH_ADDRESS,FETCH_ADDRESS_BY_ID,SAVE_ADDRESS_BY_ID,DEL_ADDRESS_BY_ID,UPDATE_ADDRESS_BY_ID,LOGOUT,FETCH_ID_URL,SAVE_SETLINE,CHANGEPASSWORD
 
 } from "../actions.type.js";
 import {
@@ -147,6 +147,15 @@ const actions = {
         context.commit(SET_FORM_USER,data);
         return data
     },
+
+    async [CHANGEPASSWORD](context,payload) {
+    
+      const { data } = await UserService.changepassword(payload);
+      return data;
+
+    },
+
+    
 
       async [LOGOUT](context,payload) {
 

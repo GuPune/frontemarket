@@ -38,6 +38,11 @@ export const UserService = {
     update_by_id(param){
       console.log('update');
       return Apiall.post("update_byid",param);
+    },
+
+    changepassword(param){
+
+      return Apiall.post("changepassword",param);
     }
       
 

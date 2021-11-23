@@ -9,7 +9,7 @@
                                 <span class="navbar-brand">
                                     <a href="/" style="text-decoration: none;">
            
-    <img src="https://www.iddriver.com/wp-content/uploads/2021/01/IDdriver_NoBG-150x88.png" alt="logo" title="logo" class="d-inline-block img-logo"/>
+    <img :src="Checkimage(shopitem.icon)" alt="logo" title="logo" class="d-inline-block img-logo" style="width: 150px;"/>
                                     </a>
                                 </span>
                             </div>
@@ -18,7 +18,7 @@
                         <b-container class="bv-example-row">
   <b-row>
   <b-col sm="12" md="12">
-  <b-nav>
+  <b-nav class="banner-web">
   <b-nav-item  v-for="(item, index) in menu" :key="item.id" @click="redirectTo(item.link)"  :class="{'rkknoob': checkPath(item.link)}">{{item.name}}</b-nav-item>
  
   </b-nav>
@@ -45,6 +45,7 @@
   export default {
     data() {
     return {
+      shopitem:null,
       form:{
 
       },
@@ -62,10 +63,10 @@
          this.form.shop_name = this.$route.params;
      let menu = await this.$store.dispatch(GET_MENU,this.form);
 
-       let shopitem = await this.$store.dispatch(GET_SHOP_BY_ITEM,this.form);
-     
+       let shopby = await this.$store.dispatch(GET_SHOP_BY_ITEM,this.form);
+     this.shopitem = shopby;
 
-        
+
          },
         
   

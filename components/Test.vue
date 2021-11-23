@@ -214,6 +214,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
                 return public_images;
         },
         ChangeProduct(id){
+        
         this.form.catagory_id = id;
         let find_product = this.$store.dispatch(FETCH_PRODUCT_FIND,this.form);  
     
