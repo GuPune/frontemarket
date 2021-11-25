@@ -660,7 +660,7 @@
      return false;
  }
    await this.saveorder();
-   await this.sleep(2000);
+   await this.sleep(3000);
    this.loadding = false;
    const Shopid = this.isUrl.id;
     this.$router.push({ name: names, params: { id: Shopid }})
@@ -701,7 +701,7 @@
     this.formorder.customer_id = this.profile.id
     this.formorder.shipping = shipping
 
-  let savedelivery =  this.$store.dispatch(SAVE_ORDER,this.formorder);
+  let savedelivery =  await this.$store.dispatch(SAVE_ORDER,this.formorder);
   let cart_success =  this.$store.dispatch(CART_SUCCESS);
   
     },
