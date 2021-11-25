@@ -199,7 +199,10 @@
 -->
 <div>
  <b-navbar toggleable="sm" type="dark" variant="sat" class="banav navbar-fixed-top" fixed="top">
-    <b-navbar-brand  @click="redirectTo('index')">E-MARKET PLACE</b-navbar-brand>
+    <b-navbar-brand  @click="redirectTo('index')">
+  
+     <img src="../assets/log.jpg" alt="" height="40px" width="200px">
+    </b-navbar-brand>
     <b-navbar-brand href="#" class="cart-mobile"  @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i><span> ({{ cartTotal }}) </span></b-nav-item></b-navbar-brand>
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 

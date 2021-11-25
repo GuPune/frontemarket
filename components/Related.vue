@@ -12,8 +12,8 @@
         </div>
         <div class="product" id="product">
             <div class="row product">
-                 <div class="cards">
-                    <div class="cardproduct" v-for="(item, index) in product_shell" :key="product.id"
+                 <div class="cards cards-mobile">
+                    <div class="cardproduct-rela" v-for="(item, index) in product_shell" :key="product.id"  v-on:mouseover="mouseover(index)" v-on:mouseleave="mouseleave(index)"
            >
 
 
@@ -100,14 +100,15 @@
       mouseover(index){
 console.log('in',index);
 
+
+
  //this.product_shell[index].name_th = 'kuy';
 //console.log('in',this.product_shell[index]);
        
       },
     mouseleave(index){
 console.log('out',index);
-  // this.product_shell[index].active = false;
-      this.product_shell[index].name_th = 'out';
+
       },
       
 
