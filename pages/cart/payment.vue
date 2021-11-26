@@ -700,6 +700,8 @@
     this.formorder.url = window.location.origin
     this.formorder.customer_id = this.profile.id
     this.formorder.shipping = shipping
+    this.formorder.orders_status = 'E'
+
 
   let savedelivery =  await this.$store.dispatch(SAVE_ORDER,this.formorder);
   let cart_success =  this.$store.dispatch(CART_SUCCESS);

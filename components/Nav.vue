@@ -207,7 +207,11 @@
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
+    <b-col sm="6">
+        <b-form-input placeholder="Search"></b-form-input>
 
+      </b-col>
+  
 
       <!-- Right aligned nav items -->
      <b-navbar-nav class="ml-auto">

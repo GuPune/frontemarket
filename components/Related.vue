@@ -15,24 +15,30 @@
                  <div class="cards cards-mobile">
                     <div class="cardproduct-rela" v-for="(item, index) in product_shell" :key="product.id"  v-on:mouseover="mouseover(index)" v-on:mouseleave="mouseleave(index)"
            >
-
-
-
                                                         <img class="imgproduct related-images" :src="Checkimage(item.img_product)" @click="Shop(item)">
                                                             <div class="product-name">{{item.name_th}}</div>
                                                             
-                                                            <p class="price">฿{{item.price}}.00</p>
+                                                            <p class="price rela-left">฿{{item.price}}.00</p>
+
+                                                             <div class="price price-mini">
+                                                             <span class="price-mini-decoration">฿{{item.price}}.00</span>
+                                                             <span>-56%</span>
+                                                             </div>
+                                                              <div class="ratings rating-rela">
+                                                   <div class="rating-box">
+                                                   <div class="rating" style="width:%"></div>
+                                                 
+                                                   </div>
+                                                 
+						</div>
+                                                           
                                                    <div class="product-footer">
                                                    <div class="addtocart">
                                                    <button type="button" title="Add To Cart" data-placement="top" class="button btn-cart" @click="addToCart(item)">
                                                    <span>
                                                    <span>Add To Cart </span></span>
                                                    </button></div></div>
-                                                   <div class="ratings">
-                                                   <div class="rating-box">
-                                                   <div class="rating" style="width:%"></div>
-                                                   </div>
-						</div>
+                                                  
                                                 </div>
         </div>
         </div>
@@ -51,7 +57,7 @@
                         <!-- -------------------------Mobile------------------------------ -->
 
 
-    </div>
+
 
     <br>
     </section>

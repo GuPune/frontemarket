@@ -11,8 +11,8 @@
 			</h2>
         </div>
         <div class="product" id="product">
-            <div class="row product">
-                 <div class="cards">
+            <div class="row product" >
+                 <div class="cards" style="grid-template-columns: repeat(4, 1fr);">
                  
                     <div class="cardproduct"  v-for="item in lists" :value="item.id">
                         <img class="imgproduct" height="200px"   :src="Checkimage(item.img_product)">

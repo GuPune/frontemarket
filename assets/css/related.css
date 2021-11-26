@@ -96,6 +96,7 @@ button.button, a.button {
 }
 
 .product-footer {
+  text-align: center;
   padding: 0.75rem 1.25rem;
   /* background-color: rgba(0, 0, 0, 0.03); */
   /* border-top: 1px solid rgba(0, 0, 0, 0.125); */
@@ -118,6 +119,7 @@ button.button, a.button {
   font-size: 22px;
   color: #303030;
 }
+
 
 
 
@@ -387,15 +389,44 @@ button.button, a.button {
 
 
 
+.rela-left{
 
+  text-align: left;
+  padding-left: 10px;
+}
   
 .price {
   color: grey;
-  font-size: 16px;
+  padding-left: 10px;
+  font-size: 18px;
   font-family: Lato, arial, serif;
   font-weight: bold;
-  color: #4c791b;
+  /* color: #4c791b; */
+  color: #f57224
+  
 }
+
+.price-mini {
+  color: grey;
+  font-size: 12px;
+  font-family: Lato, arial, serif;
+  font-weight: bold;
+  /* color: #4c791b; */
+  color: #9e9e9e;
+  text-align: left;
+}
+
+.price-mini-decoration {
+  text-decoration: line-through;
+
+}
+
+.rating-rela {
+  text-align: left;
+  padding-left: 12px;
+}
+
+
 
 .cardproduct .addcart {
   border: none;
@@ -407,6 +438,10 @@ button.button, a.button {
   cursor: pointer;
   width: 100%;
   font-size: 18px;
+}
+
+.addcart-shell {
+  text-align: center;
 }
 
 button.addcart:hover {
