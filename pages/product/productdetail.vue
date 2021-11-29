@@ -425,12 +425,6 @@
             </div> <br>
 
 
-
-
-
-
-
-
     <Footer/>
 </section>
 

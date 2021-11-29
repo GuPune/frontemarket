@@ -18,7 +18,7 @@
                         <b-container class="bv-example-row">
   <b-row>
   <b-col sm="12" md="12">
-  <b-nav class="banner-web">
+  <b-nav class="banner-web ban-font-mobile">
   <b-nav-item  v-for="(item, index) in menu" :key="item.id" @click="redirectTo(item.link)"  :class="{'rkknoob': checkPath(item.link)}">{{item.name}}</b-nav-item>
  
   </b-nav>

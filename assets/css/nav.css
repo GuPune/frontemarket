@@ -172,7 +172,19 @@ position: fixed;
      
     }
 
+    .icon-mobile{
+      width: 200px;
+          height: 40px;
+   }
+    
+@media screen and (max-width: 400px) {
+  .icon-mobile{
+width: 40px;
+    height: 40px;
+  }
 
+
+}
 
 @media screen and (max-width: 600px) {
     
@@ -188,8 +200,20 @@ display: block;
   .banav {
 
     /* height: 60px; */
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+  
+
+ }
+
+ 
+ @media (min-width: 1100px) { 
+  .banav {
+
+    /* height: 60px; */
+    padding-left: 5%;
+    padding-right: 5%;
   }
   
 
@@ -207,6 +231,8 @@ display: block;
   .shop-name-nav-mobile{
     display: none;
   }
+
+
 
 
 

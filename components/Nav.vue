@@ -201,13 +201,13 @@
  <b-navbar toggleable="sm" type="dark" variant="sat" class="banav navbar-fixed-top" fixed="top">
     <b-navbar-brand  @click="redirectTo('index')">
   
-     <img src="../assets/log.jpg" alt="" height="40px" width="200px">
+     <img src="../assets/log.jpg" alt=""  class="icon-mobile">
     </b-navbar-brand>
     <b-navbar-brand href="#" class="cart-mobile"  @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i><span> ({{ cartTotal }}) </span></b-nav-item></b-navbar-brand>
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
-    <b-col sm="6">
+    <b-col cols="12" md="6"  sm="3">
         <b-form-input placeholder="Search"></b-form-input>
 
       </b-col>
