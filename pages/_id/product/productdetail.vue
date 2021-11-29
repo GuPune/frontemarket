@@ -32,8 +32,7 @@
            <ProductZoomer :base-images="images" :base-zoomer-options="zoomerOptions"></ProductZoomer>
    </div>
 
-   
-               
+
 
 <div class="col-12 col-md-7 col-sm-12 product-detail-ipad">
             <div class="marginInner">
@@ -193,7 +192,7 @@
 
 <script>
   import { mapGetters,mapState } from "vuex";
-  import { FETCH_BY_PRODUCT_SHOP_ONE_ITEM } from "../../../store/actions.type.js";
+  import { FETCH_BY_PRODUCT_SHOP_ONE_ITEM,FETCH_IMAGE_PRODUCT } from "@/store/actions.type.js";
   import Nav from "@/components/Nav";
   import Footer from "@/components/Footer";
     
@@ -241,6 +240,7 @@ this.form.shop_name = this.$route.params.id;
 this.form.url = window.location.origin
 console.log('this.form',this.form)
 let productshop_item = await this.$store.dispatch(FETCH_BY_PRODUCT_SHOP_ONE_ITEM,this.form);
+let images_product = await this.$store.dispatch(FETCH_IMAGE_PRODUCT,this.form);
 console.log('productshop_item',productshop_item)
     
         },

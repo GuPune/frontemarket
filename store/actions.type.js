@@ -56,6 +56,8 @@ export const GET_SYSTEM = "get_system";
 export const GET_PRODUCR_SELLER = "product_seller";
 export const GET_PRODUCR_NEW = "product_new";
 export const GET_PRODUCR_RECOM = "product_recom";
+export const FETCH_IMAGE_PRODUCT = "image_product";
+
 
 
 export const UPDATE_ADDRESS_SHIPPING = "update_address_shipping";

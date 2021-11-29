@@ -36,6 +36,8 @@ export const SET_GETORDER = "set_getorder";
 export const SET_ORDERALL = "set_orderall";
 export const SET_CAPTCHA = "set_captcha";
 export const SET_SELECT_SHIPPING = "set_select_shipping";
+export const SET_IMAGES = "set_images";
+
 
 export const SET_LINE = "set_line";
 export const SET_MENU = "set_menu";

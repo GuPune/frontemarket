@@ -12,11 +12,11 @@
         </div>
         <div class="product" id="product">
             <div class="row product" >
-                 <div class="cards" style="grid-template-columns: repeat(4, 1fr);">
+                 <div class="cards product-byshop">
                  
                     <div class="cardproduct"  v-for="item in lists" :value="item.id">
                         <img class="imgproduct" height="200px"   :src="Checkimage(item.img_product)">
-                                                            <div class="product-name">{{item.name_en}}</div>
+                                                            <div class="product-name product-name-byshop">{{item.name_en}}</div>
                                                             <p class="price">฿{{item.price}}.00</p>
                                       <div class="product-footer">
                                           <div class="addtocart">

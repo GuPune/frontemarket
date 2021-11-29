@@ -223,6 +223,16 @@ button.button, a.button {
     margin-top: 25px;
 }
 
+.product-byshop{
+  grid-template-columns: repeat(4, 1fr);
+
+}
+.product-name-byshop{
+text-align: left;
+padding-left: 15px;
+
+}
+
 
 @media screen and (max-width: 600px) {
    
@@ -232,8 +242,16 @@ button.button, a.button {
   
   }
 
+  @media screen and (max-width: 400px) {
+   
+    .cards { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+  
+  }
+
  @media (min-width: 900px) {
-    .cards-mobile { grid-template-columns: repeat(6, 1fr); }
+    .cards-mobile { grid-template-columns: repeat(4, 1fr); }
   }
 
 

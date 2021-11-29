@@ -1,10 +1,10 @@
 
 import { ProductService }  from "../../services/product";
 import {
-    FETCH_PRODUCT_SHELL,FETCH_PRODUCT_FIND,FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,FETCH_FIND_PRODUCT,FETCH_BY_PRODUCT_SHOP_ONE_ITEM,GET_PRODUCR_SELLER,GET_PRODUCR_NEW,GET_PRODUCR_RECOM
+    FETCH_PRODUCT_SHELL,FETCH_PRODUCT_FIND,FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,FETCH_FIND_PRODUCT,FETCH_BY_PRODUCT_SHOP_ONE_ITEM,GET_PRODUCR_SELLER,GET_PRODUCR_NEW,GET_PRODUCR_RECOM,FETCH_IMAGE_PRODUCT
 } from "../actions.type.js";
 import {
-    SET_PRODUCT_SHELL,SET_PRODUCT_BY_SHOP,SET_CATE_BY_SHOP,SET_CATE_SEC,SET_BY_PRODUCT_SHOP_ONE_ITEM,SET_LOADER
+    SET_PRODUCT_SHELL,SET_PRODUCT_BY_SHOP,SET_CATE_BY_SHOP,SET_CATE_SEC,SET_BY_PRODUCT_SHOP_ONE_ITEM,SET_LOADER,SET_IMAGES
 } from "../mutations.type";
 import Vuex from 'vuex'
 
@@ -17,30 +17,7 @@ const state = {
     cate_by_shop:[],
     cate_sel:[],
     product_by_item:[],
-    images: {
-        thumbs: [
-          {
-            id: 1,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/thumbs/1.jpeg"
-          }
-        ],
-        normal_size: [
-          {
-            id: 1,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/normal_size/1.jpeg"
-          }
-        ],
-        large_size: [
-          {
-            id: 1,
-            url:
-              "https://yoohooworld.com/assets/images/vue_product_zoomer/large_size/1.jpeg"
-          }
-        
-        ]
-      },
+    images: {},
 }
 
 const getters = {
@@ -131,10 +108,19 @@ const actions = {
     
         return data;
     },   
-
+    async [FETCH_IMAGE_PRODUCT](context,payload) {
+        const { data } = await ProductService.getimages(payload);
+        context.commit(SET_IMAGES,data);
+        return data;
+    }, 
 };
 
 const mutations = {
+    [SET_IMAGES](state,data) {
+
+        console.log('this.images',this.images);
+      
+    },
     [SET_LOADER](state,isLoading = true) {
         state.loading = isLoading
     },

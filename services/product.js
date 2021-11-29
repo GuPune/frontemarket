@@ -28,5 +28,10 @@ export const ProductService = {
     },
     getproductbyrecom(param){
       return ApiService.post("productrecom",param);
+    },
+    getimages(param){
+      return ApiService.post("producimages",param);
     }
+
+    
 };
