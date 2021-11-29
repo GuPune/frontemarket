@@ -160,7 +160,9 @@ const names = 'id-form-login'
        }
         },
        async Shop(item){
-       let name = item.shop_id+'/product/productdetail/'+item.id;
+
+    
+  let name = item.shop_name+'/product/productdetail/'+item.id;
 
     this.$router.push(name)
         },

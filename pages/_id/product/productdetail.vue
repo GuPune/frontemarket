@@ -1,7 +1,7 @@
 <template>
 
 <section id="Productdetail" class="product-details" >
-<div class="container product-details productItemDetail" style="background-color: white;"   v-for="(item, index) in product_by_item" :key="item.id">
+<div class="container product-details-in productItemDetail" style="background-color: white;"   v-for="(item, index) in product_by_item" :key="item.id">
  
        <div class="row">
             <div class="col-sm-12">
@@ -31,25 +31,29 @@
    <div class="left col-lg-5 col-md-6 col-sm-6">
            <ProductZoomer :base-images="images" :base-zoomer-options="zoomerOptions"></ProductZoomer>
    </div>
+
+   
                
 
 <div class="col-12 col-md-7 col-sm-12 product-detail-ipad">
             <div class="marginInner">
-            <h1 class="productName-detail">{{item.name_en}}</h1>
+            <h2 class="productName-detail">{{item.name_en}}</h2>
             </div>
             <div class="row">
                 <div class="col-md-12">
                 <div class="form-group">
                 <div class="marginInner">
+                   <h1 class="product-detail-title">{{item.description}}</h1>
                 <div class="ratings">
                 <div class="rating-box-detail">
-                <div class="rating" style="width:%"></div>
-                                                   </div>
-                                                   </div>
-                                                   </div>
-                                                   </div>
-                                                   </div>
-                                                   </div>
+                <div class="rating" style="width:%">
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
                                     <div class="marginInner mb-4 mb-md-4"><div class="dividerFix"></div></div>
                                     <div class="row ">
                 <div class="col-12">
@@ -68,7 +72,7 @@
                 <div class="col-md-12">
                     <div class="form-group h5">
                         <div class="marginInner mb-4 mb-md-4">
-                            <p class="productStock"> ฿ {{item.price}} </p>
+                            <p class="productPrice"> ฿{{item.price}} </p>
                             
                         </div>
                     </div>
@@ -77,10 +81,10 @@
 
               <div class="row">
 
-             <div class="col-md-2 attrHeader form-group">จำนวน  {{item.stock}} </div>
+             <div class="col-md-2 attrHeader form-group">จำนวน </div>
 
 
-                <div class="col-md-3 col-sm-3">
+                <div class="col-md-4 col-sm-4">
                     <div class="group-product-number">
                            <b-input-group size="sm">
                                         <b-input-group-prepend>
@@ -93,11 +97,25 @@
                                         </b-input-group>   
                     </div>
                 </div>
+                  <div class="col-md-4 attrHeader form-group">มีสินค้าจำนวนทั้งหมด  {{item.stock}}  </div>
             </div>
 
+
+
  
-
-
+ 
+ <div class="marginInner mb-4 mb-md-4"><div class="dividerFix"></div></div>
+ <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group h5">
+                        <div class="marginInner mb-4 mb-md-4">
+                            <p >รายละเอียด
+</p>
+                       <h1 class="product-mini">{{item.product_details}}</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
     
             <div class="marginInner d-md-none mb-4 mb-md-0">
                                     <div class="dividerFix">
@@ -105,27 +123,28 @@
                                     </div>
                             </div>
                         <div class="button-wrapper">
-                                    <div class="my-col-12 col-md-7 col-lg-6 pl-0 boxSubmitCart">
-
-                        <button class="btn btn-style btnMainCart btnProductCart buttonCheckout" type="button">
-                            <i class="fa fa-shopping-cart fa-1x">&nbsp;</i>
-                            สั่งซื้อสินค้า                       
-                        </button>
-
-              
-
-                        
-                  
+                                    <div class="my-col-12 col-md-4 col-lg-4 pl-0">
+                    
+                          <b-button size="md" variant="outline-warning" class="pro-des-btt">   <i class="fa fa-shopping-cart fa-1x">&nbsp;</i>เพิ่มลงตะกร้า</b-button>
+                    </div>
+                                        <div class="my-col-12 col-md-4 col-lg-4 pl-0">
+           
+                          <b-button size="md" variant="danger" class="pro-des-btt">ซื้อสินค้า</b-button>
                     </div>
                     
                     </div>
 
-                    <div class="row">
+
+              </div> 
+                    </div>
+
+                            <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
                             <div class="mb-4 mb-md-4">            
-                                        <p class="d-md-inline">Share</p>
-                                        <div class="divSocilaGroupNew">
+                                 
+                                        <div class="divSocilaGroupNew social-pro-des">
+                                             <label class="mr-sm-2" for="inline-form-custom-select-pref">แชร</label>
                                             <div class="btn-group social-widget">
                                             <img src="../../../assets/line.png" style="width:40px;">
                                             <a class="faco-top fa-layers fa-fw twitterSocialPD" target="_blank" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.pattanagems.com%2Fproduct%2F28463-28068%2F%25E0%25B9%2581%25E0%25B8%25AB%25E0%25B8%25A7%25E0%25B8%2599%25E0%25B9%2584%25E0%25B8%259E%25E0%25B8%25A5%25E0%25B8%25B4%25E0%25B8%2599-a4989&text=%E0%B9%81%E0%B8%AB%E0%B8%A7%E0%B8%99%E0%B9%84%E0%B8%9E%E0%B8%A5%E0%B8%B4%E0%B8%99+A4989"><i class="fas fa-square colorTwitterBGPD"></i>
@@ -143,8 +162,6 @@
                         </div>
                     </div>
                 </div>
-              </div> 
-                    </div>
 
                     <div class="row">
                     </div>
@@ -220,9 +237,11 @@
        async mounted() {
 
 this.form.product_id = this.$route.params.slug;
+this.form.shop_name = this.$route.params.id;
 this.form.url = window.location.origin
 console.log('this.form',this.form)
-let productshop_item = this.$store.dispatch(FETCH_BY_PRODUCT_SHOP_ONE_ITEM,this.form);
+let productshop_item = await this.$store.dispatch(FETCH_BY_PRODUCT_SHOP_ONE_ITEM,this.form);
+console.log('productshop_item',productshop_item)
     
         },
 
