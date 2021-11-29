@@ -247,6 +247,14 @@ padding-left: 15px;
     .cards { 
         grid-template-columns: repeat(2, 1fr); 
     }
+
+
+    .product-footer-mobile {
+      text-align: center;
+      padding: 0.0rem 0rem;
+      /* background-color: rgba(0, 0, 0, 0.03); */
+      /* border-top: 1px solid rgba(0, 0, 0, 0.125); */
+    }
   
   }
 
@@ -300,10 +308,8 @@ padding-left: 15px;
       border-color: #4c791b;
       font-size: 9px;
     }
-
-
-
   }
+
 
 
 
@@ -361,6 +367,20 @@ padding-left: 15px;
     margin: auto;
     text-align: center;
    background-color: white;
+}
+
+
+.cardproduct-byshop {
+  width: auto;
+  height: auto;
+  /* border:1px solid rgba(255, 0, 0, 0);
+  background-color: rgb(235, 235, 235);
+  border-radius: 5px; 
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);*/
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+ background-color: white;
 }
 
 

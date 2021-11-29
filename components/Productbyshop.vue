@@ -14,11 +14,11 @@
             <div class="row product" >
                  <div class="cards product-byshop">
                  
-                    <div class="cardproduct"  v-for="item in lists" :value="item.id">
+                    <div class="cardproduct-rela"  v-for="item in lists" :value="item.id">
                         <img class="imgproduct" height="200px"   :src="Checkimage(item.img_product)">
                                                             <div class="product-name product-name-byshop">{{item.name_en}}</div>
-                                                            <p class="price">฿{{item.price}}.00</p>
-                                      <div class="product-footer">
+                                                            <p class="price product-name-byshop">฿{{item.price}}.00</p>
+                                      <div class="product-footer product-footer-mobile">
                                           <div class="addtocart">
                                                    <button type="button" title="Add To Cart" data-placement="top" class="button btn-cart" @click="addToCart(item)">
                                                    <span>
