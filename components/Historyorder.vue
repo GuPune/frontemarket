@@ -83,6 +83,7 @@
       show-empty
       small
       @filtered="onFiltered"
+      @row-clicked="expandAdditionalInfo" 
     >
  
          <template #cell(status)="row">
@@ -107,9 +108,14 @@
       
 
       <template #cell(actions)="row">
-
         <b-button size="sm" @click="row.toggleDetails">
           {{ row.detailsShowing ? 'Hide' : 'Show' }} 
+        </b-button>
+      </template>
+
+            <template #cell(fitter)="row" >
+        <b-button size="sm"  @done="counterDone()">
+       <i class="fa fa-bars" aria-hidden="true"></i>
         </b-button>
       </template>
 
@@ -203,7 +209,8 @@ import { FETCH_ADS_SHOP,FETCH_GET_PROFILE,FETCH_ADDRESS,DEL_ADDRESS_BY_ID,GET_OR
           { key: 'status', label: 'สถานะการสั่งซื้อ	', sortable: true, class: 'text-center' },
         { key: 'created_at', label: 'วันที่สั่งซื้อ	', sortable: true, class: 'text-center' },
        
-          { key: 'actions', label: 'Actions' }
+          { key: 'actions', label: 'Actions' },
+          { key: 'fitter', label: 'C' }
         ],
         totalRows: 1,
         currentPage: 1,
@@ -280,13 +287,27 @@ import { FETCH_ADS_SHOP,FETCH_GET_PROFILE,FETCH_ADDRESS,DEL_ADDRESS_BY_ID,GET_OR
             return moment(date, 'YYYY-MM-DD').format('DD/MM/YYYY');
                 
         },
-           Checkimage(image){
+        Checkimage(image){
                 let public_images = process.env.ImageURL+image;
                 return public_images;
         },
+        expandAdditionalInfo(row) {
+         
+//    this.$router.push({ name: '/profile/orderstatus' })
 
+//    const names = 'id-form-login'
+//  const Shopid = this.isUrl.id;
+
+
+//             //  this.$router.push({ path: `/1/${name}` }) // -> /user/123
+//                 //   this.$router.push({ params: { id: '1' } ,name: name})
+//                    this.$router.push({ name: names, params: { id: Shopid }})
+
+   
        
+        },
 
+      
 
       }
 

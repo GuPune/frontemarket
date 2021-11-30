@@ -12,21 +12,10 @@
                     <ProfileAddress />
                     </div>
                     <div class="col-md-8">
-              
                     <ProfileOrder/>
-                
                          <div class="card">
-                 
-                      
-               
-                           
+            
                          </div>
-
-                     
-                       
-                
-
-
 
                     </div>
                 </div>

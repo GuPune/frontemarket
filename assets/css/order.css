@@ -179,6 +179,13 @@
   .card-header{
     background-color: rgb(205, 228, 255);
   }
+  .order-header{
+    background-color: rgb(255, 255, 255);
+  }
+  .c-order{
+    margin: 5px;
+
+  }
 
   .button-order-spac{
 
