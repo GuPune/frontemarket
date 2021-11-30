@@ -381,7 +381,7 @@
                                         <div class="col-12 text-center d-block d-md-none">
                                           
                                            
-                                        </div><div class="col-12"> <b-button variant="outline-primary" @click="openModel('ต่อภาษีรถยนต์ (ป้ายภาษี)')">แจ้งชำระเงิน</b-button></div>
+                                        </div><div class="col-12"> <b-button variant="outline-primary" @click="myModel = true">แจ้งชำระเงิน</b-button></div>
                                             
                                         
                                         
@@ -400,69 +400,252 @@
 
 
     <div>
-<transition name="modal">
-        <div class="modal-mask">
-          <div class="modal-wrapper">
-            <div class="modal-container">
 
-              <div class="modal-header">
-                <slot name="header">
-                  default header
-                </slot>
-              </div>
+    
 
-              <div class="modal-body">
-                <slot name="body">
-                  default body
-                </slot>
-              </div>
 
-              <div class="modal-footer">
-                <slot name="footer">
-                  default footer
-                  <button class="modal-default-button" @click="$emit('close')">
-                    OK
-                  </button>
-                </slot>
-              </div>
+
+
+
+  </div>
+
+  <div v-if="myModel">
+    <transition name="model modal-open">
+          <div class="modal-mask modal fad xtdas">
+            <div class="modal-wrapper">
+            <div class="modal-dialog modal-login">
+              <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">แจ้งการชำระเงิน</h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-hidden="true"  @click="closeModel()"> &times;
+                    </button>
+                  </div>
+                <div class="modal-body">
+                   <div class="form-group">
+                        <div class="wrap-input100 validate-input">
+                          <p>จำนวนเงินที่ชำระ <span style="color:red;">*</span></p>
+                          <input
+                            class="form-control"
+                            type="text"
+                            name="contact"
+                            placeholder="0"
+                             v-model="form.total"
+                                :error-messages="TotalErrors"
+                                        required
+                                        @input="$v.form.total.$touch()"
+                                        @blur="$v.form.total.$touch()"
+                                        :class="{ 'is-invalid': $v.form.total.$error}"
+                           
+                          />
+                         </div> 
+                      </div> 
+
+                       <div>
+    <label for="timepicker-sm">วันที่ชำระเงิน <span style="color:red;">*</span></label>
+<datepicker :value="form.dateavalue" @input="onDateChange" format="dd/MM/yyyy" 
+ :error-messages="TotalErrors" required 
+  :class="{ 'is-invalid': $v.form.dateavalue.$error}" 
+/>
+  </div>
+  <div v-if="!$v.form.dateavalue.required">
+    last change date is required
+  </div>
+
+    <div>
+    <label for="timepicker-sm">เวลาชำระ <span style="color:red;">*</span></label>
+ <b-input-group class="mb-3">
+      <b-form-input
+        id="example-input"
+        v-model="form.time"
+        type="text"
+        placeholder="HH:mm:ss" 
+        :disabled="true"
+
+          :error-messages="TimeErrors"
+                                        required
+                                        @input="$v.form.time.$touch()"
+                                        @blur="$v.form.time.$touch()"
+                                        :class="{ 'is-invalid': $v.form.time.$error}"
+      ></b-form-input>
+      <b-input-group-append>
+        <b-form-timepicker
+          v-model="form.time"
+          button-only
+          right
+          locale="en"
+          show-seconds
+          aria-controls="example-input"
+        ></b-form-timepicker>
+      </b-input-group-append>
+    </b-input-group>
+
+     <label for="timepicker-sm">หลักฐานการชำระเงิน <span style="color:red;">*</span></label>
+
+        <div class="form-group">
+                        <div class="wrap-input100 validate-input">
+                          <input
+                            class="form-control"
+                            type="file"
+                            name="contact"
+                              @change="onFileChange"
+                        />
+                          <span class="focus-input100"></span>
+                        </div>
+                      </div>
+
+                          <center>
+                        <div id="preview" v-if="isHiddenUpload == true">
+                              <img class="imgtax" v-if="url" :src="url" />
+                            </div>
+                        </center>
+  </div>
+
+
+                      
+
+
+                </div>
+
+                         <div class="modal-footer">
+                    <div class="container-contact100-form-btn">
+                      <button
+                        type="button"
+                        class="myButton"
+                        @click="saveform()"
+                      >
+                        ส่งข้อมูล
+                      </button>
+                    </div>
+       
+          </div>
+           </div>
+           
+            </div>
             </div>
           </div>
-        </div>
       </transition>
   </div>
+
+   
 
 </div>
 
   
 </template>
+<style>
+ 
+  
+   .modal-mask {
+     position: fixed;
+     z-index: 1050;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, .5);
+     display: grid;
+     overflow  : scroll;
+     transition: opacity .3s ease;
+   }
+
+   .modal-open {
+    overflow: hidden;
+}
+
+    .modal-mask .modal-wrapper {
+     display: -ms-flexbox;
+   
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+   }
+
+    .imgtax{
+    width: 70%;
+    height: auto;
+  }
+
+  .xtdas {
+    overflow: auto;
+}
+
+.modal-open {
+   overflow: hidden;
+}
+
+
+.container.set.col-6{
+  border: 5px;
+  border-radius: 20px;
+  background-image: url("https://www.thebangkokinsight.com/wp-content/uploads/2020/11/%E0%B8%A0%E0%B8%B2%E0%B8%A9%E0%B8%B5%E0%B8%A3%E0%B8%96.jpg");
+}
+
+  </style>
 
    <script src="https://unpkg.com/vue"></script>
 <script>
+import Datepicker from 'vuejs-datepicker'
+import { Datetime } from 'vue-datetime';
 import { mapGetters } from "vuex";
+import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
 import { FETCH_BANK,CHOOSE_BANK,GET_ORDER_DATA } from "@/store/actions.type.js";
+import axios from 'axios';
   export default {
+        components: {
+    Datepicker,
+    datetime: Datetime
+  },
+        validations: {
+        form: {
+            total: { numeric,required },
+            dateavalue: { required },
+            time: { required },
+           
+
+        }
+    },
+
     data() {
       
       return {
+        file:null,
+          url: null,
+          isHiddenUpload:false,
+          value: "",
         status: 'not_accepted',
         selectedAdd: null,
         selectedBank: null,
         statusdelivery:null,
         bank:null,
+             myModel:false,
         form:{
         url:null,
         cartnumber:null,
-        myModel:false,
+        total:null,
+        dateavalue:"",
+        time:""
+   
         },
         orderlist:{
 
         },
-        showModal: true,
+          showModal: true,
         shipping_address:{
 
         }
       }
     },
+
+      watch: {
+    value() {
+      this.form.time = this.form.time.split(":").slice(0, 2).join(":");
+    },
+  },
 
    computed: {
             ...mapGetters(["order"]),
@@ -470,12 +653,43 @@ import { FETCH_BANK,CHOOSE_BANK,GET_ORDER_DATA } from "@/store/actions.type.js";
             isUrl () {
                 return this.$store.state.user.url_id;
             },
+
+            isValid() {
+      return new Date(this.dateavalue).getDay() === 1;
+    },
+
+            TotalErrors() {
+            const errors = [];
+            if (!this.$v.form.total.$dirty) return errors;
+            !this.$v.form.total.required && errors.push("โปรดระบุชื่อ");
+            return errors;
+            },
+            DateavalueErrors() {
+            const errors = [];
+            if (!this.$v.form.dateavalue.$dirty) return errors;
+            !this.$v.form.dateavalue.required && errors.push("โปรดระบุชื่อ");
+            return errors;
+            },
+            TimeErrors() {
+            const errors = [];
+            if (!this.$v.form.time.$dirty) return errors;
+            !this.$v.form.time.required && errors.push("โปรดระบุชื่อ");
+            return errors;
+            },
+
+            
           
 
         
         },
 
      async mounted() {
+
+         this.form.dateavalue = '04/11/2021';
+
+         var today = new Date();
+    var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+   this.form.dateavalue = date;
     let order_id = await localStorage.getItem("listorder");
     let a = window.location.origin
     this.form.url = a;
@@ -489,6 +703,10 @@ import { FETCH_BANK,CHOOSE_BANK,GET_ORDER_DATA } from "@/store/actions.type.js";
     },
 
       methods: {
+
+    onDateChange(date) {
+      this.form.dateavalue = date.toISOString();
+    },
 
         
         Checkimage(image){
@@ -505,10 +723,114 @@ import { FETCH_BANK,CHOOSE_BANK,GET_ORDER_DATA } from "@/store/actions.type.js";
         },
 
          openModel:function(name){
-             alert('ok');
+             
          this.myModel = true;
     
             },
+
+        closeModel:function(){
+         this.myModel = false;
+  
+      },
+
+      async saveform() {
+       this.$v.$touch();
+      },
+
+                  getImg(name) {
+      return "https://placeimg.com/400/225/" + name.toLowerCase();
+    },
+    onFileChange(event) {
+      var file = event.target.files[0];
+     this.url = URL.createObjectURL(file);
+    // Ensure it's an image
+
+
+    if(file.type.match(/image.*/)) {
+      
+
+        // Load the image
+        var reader = new FileReader();
+        reader.onload = (readerEvent) =>{
+            var image = new Image();
+          image.onload = (imageEvent) => {
+         var canvas = document.createElement('canvas'),
+                    max_size = 544,// TODO : pull max size from a site config
+                    width = image.width,
+                    height = image.height;
+                if (width > height) {
+                    if (width > max_size) {
+                        height *= max_size / width;
+                        width = max_size;
+                    }
+                } else {
+                    if (height > max_size) {
+                        width *= max_size / height;
+                        height = max_size;
+                    }
+                }
+                canvas.width = width;
+                canvas.height = height;
+                canvas.getContext('2d').drawImage(image, 0, 0, width, height);
+                var dataUrl = canvas.toDataURL('image/jpeg');
+                let resizedImage = this.dataURLToBlob(dataUrl);
+              
+
+                      axios.post('https://back.idtest.work/api/upload', {
+        image: dataUrl
+      }).then(res => {
+      this.file = res.data
+      }).catch(function(){
+         
+              this.$swal({
+                type: "error",
+                title: "Upload รูปภาพไม่ผ่านติดต่อเจ้าหน้าที่",
+                showConfirmButton: true,
+                reverseButtons: true
+            });
+      
+        });
+          
+                
+                 
+            };
+            image.src = readerEvent.target.result;
+
+         
+        }
+        reader.readAsDataURL(file);
+     
+    }
+    
+
+
+     
+    },
+        dataURLToBlob(dataURI) {
+ 
+  // convert base64 to raw binary data held in a string
+  // doesn't handle URLEncoded DataURIs - see SO answer #6850276 for code that does this
+  var byteString = atob(dataURI.split(',')[1]);
+
+  // separate out the mime component
+  var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
+
+  // write the bytes of the string to an ArrayBuffer
+  var ab = new ArrayBuffer(byteString.length);
+
+  // create a view into the buffer
+  var ia = new Uint8Array(ab);
+
+  // set the bytes of the buffer to the correct values
+  for (var i = 0; i < byteString.length; i++) {
+      ia[i] = byteString.charCodeAt(i);
+  }
+
+  // write the ArrayBuffer to a blob, and you're done
+  var blob = new Blob([ab], {type: mimeString});
+  return blob;
+
+},
       }
   }
 </script>
