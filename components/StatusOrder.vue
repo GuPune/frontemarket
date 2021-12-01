@@ -63,6 +63,7 @@
                           <div v-if="objects.status =='Y'" class="box-shape-icon box-circle-icon-color actives">
                         <i :class="iconpay"></i>
                         </div>
+                        
                              <div v-if="objects.status =='S'" class="box-shape-icon box-circle-icon-color actives">
                         <i :class="iconpay"></i>
                         </div>
@@ -146,7 +147,8 @@ export default {
 
                               data() {
       return {
-          loadding:true
+          loadding:true,
+          slip:true
         
       }
     },

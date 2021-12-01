@@ -127,14 +127,14 @@ export default {
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    baseURL: "https://cmsecom.idtest.work/api",
+    baseURL: "http://127.0.0.1:8000/api",
     ImageURL: "https://cmsecom.idtest.work/public/product/",
   
   },
 
   env: {
     ImageURL: "http://cmsecom.idtest.work/public/product/",
-    backend:"https://cmsecom.idtest.work",
+    backend:"http://127.0.0.1:8000",
 },
 
   auth: {

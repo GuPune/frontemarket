@@ -381,7 +381,7 @@
                                         <div class="col-12 text-center d-block d-md-none">
                                           
                                            
-                                        </div><div class="col-12" v-if="objectss.status == 'N'"> <b-button variant="outline-primary" @click="myModel = true">แจ้งชำระเงิน</b-button></div>
+                                        </div><div class="col-12" v-if="objectss.status == 'N'"> <b-button variant="outline-primary" @click="myModel = true" v-if="isHiddenUploadSlip == false">แจ้งชำระเงิน</b-button></div>
                                             
                                         
                                         
@@ -599,7 +599,7 @@ import Datepicker from 'vuejs-datepicker'
 import { Datetime } from 'vue-datetime';
 import { mapGetters,mapState } from "vuex";
 import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
-import { FETCH_BANK,CHOOSE_BANK,GET_ORDER_DATA,UPDATE_SLIP } from "@/store/actions.type.js";
+import { FETCH_BANK,CHOOSE_BANK,GET_ORDER_DATA,UPDATE_SLIP,GET_ORDER_DATA_HISTORY } from "@/store/actions.type.js";
 import axios from 'axios';
   export default {
         components: {
@@ -622,6 +622,7 @@ import axios from 'axios';
         file:null,
           url: null,
           isHiddenUpload:false,
+          isHiddenUploadSlip:false,
           images:false,
           value: "",
         status: 'not_accepted',
@@ -704,18 +705,16 @@ import axios from 'axios';
     var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
    this.form.dateavalue = date;
     let order_id = await localStorage.getItem("listorder");
-    let a = window.location.origin
-    this.form.url = a;
-    this.form.cartnumber = order_id;
-
-    let order_data = await this.$store.dispatch(GET_ORDER_DATA,this.form);
-    this.orderlist = order_data;
-    console.log('data',this.orderlist);
 
 
     },
 
       methods: {
+        Loaddata() {
+            
+     
+        },
+
 
     onDateChange(date) {
       this.form.dateavalue = date.toISOString();
@@ -724,7 +723,6 @@ import axios from 'axios';
         
         Checkimage(image){
                 let public_images = process.env.ImageURL+image;
-                
                 return public_images;
         },
 
@@ -754,7 +752,7 @@ this.isHiddenUpload = true;
 
 
  var formData = new FormData(); // Currently empty
-           formData.append('cartnumber', this.form.cartnumber);
+           formData.append('cartnumber', this.objectss.cartnumber);
            formData.append('total', this.form.total);
            formData.append('dateavalue', this.form.dateavalue);
            formData.append('time', this.form.time);
@@ -764,7 +762,15 @@ this.isHiddenUpload = true;
 
   let update_slip = await this.$store.dispatch(UPDATE_SLIP,formData);
         
- 
+ this.isHiddenUploadSlip = true;
+ this.myModel = false;
+
+
+     let a = window.location.origin
+    this.form.url = a;
+    this.form.cartnumber = this.objectss.cartnumber;
+
+       let order_data = await this.$store.dispatch(GET_ORDER_DATA_HISTORY,this.form);
               
       },
 
@@ -806,7 +812,8 @@ this.isHiddenUpload = true;
                 canvas.getContext('2d').drawImage(image, 0, 0, width, height);
                 var dataUrl = canvas.toDataURL('image/jpeg');
                 let resizedImage = this.dataURLToBlob(dataUrl);
-                      axios.post('https://cmsecom.idtest.work/api/upload', {
+            
+                      axios.post('http://127.0.0.1:8000/api/upload', {
         image: dataUrl
       }).then(res => {
       this.file = res.data
