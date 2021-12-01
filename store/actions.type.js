@@ -58,7 +58,7 @@ export const GET_PRODUCR_NEW = "product_new";
 export const GET_PRODUCR_RECOM = "product_recom";
 export const FETCH_IMAGE_PRODUCT = "image_product";
 
-
+export const CHANGE_TABS = "change_tab";
 
 export const UPDATE_ADDRESS_SHIPPING = "update_address_shipping";
 export const SELECT_SHIPPING = "select_shipping";
@@ -70,7 +70,7 @@ export const FETCH_BLOG = "fetch_blog";
 export const FETCH_BLOG_ONLY = "fetch_blog_only";
 export const SAVE_SETLINE = "fetch_line";
 export const SAVE_CONTACT = "save_contact";
-
+export const UPDATE_SLIP = "update_slip";
 export const CHANGEPASSWORD = "change_password";
 
 export const GET_SHOP = "get_shop";
@@ -81,6 +81,7 @@ export const GET_DISTRICTS = "get_address_districts";
 export const GET_SUBDISTRICTS = "get_address_subdistricts";
 export const GET_ORDER_LOCAL = "get_order";
 export const GET_ORDER_DATA = "get_order_data";
+export const GET_ORDER_DATA_HISTORY = "get_order_data_history";
 export const CORE_USER = "core_user";
 export const FETCH_LOADER = "fetch_loader";
 export const LOG_OUT = "log_out";

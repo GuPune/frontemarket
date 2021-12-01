@@ -3,8 +3,6 @@
 <div class="divPageData pageCartSuccess pageConfig">
     
     <div class="card card-theme card-xs-full">
-
-    
       <div class="row">
                 <div class="col-lg-8">
                     <div id="boxLeft">
@@ -115,7 +113,7 @@
                                                     </div>
                                                     <div class="col-6 col-md-9 text-right text-md-left">
                                                         <span class="fs-ta-16 text-thmLight-1 mr-3 d-none d-md-inline">:</span>
-                                                        <span class="fs-ta-14 fs-md-ta-16 text-thmLight-2 text-md-thmLight-1">112021000004</span>
+                                                        <span class="fs-ta-14 fs-md-ta-16 text-thmLight-2 text-md-thmLight-1">{{objectss.cartnumber}}</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -126,7 +124,7 @@
                                                     </div>
                                                     <div class="col-6 col-md-9 text-right text-md-left">
                                                         <span class="fs-ta-16 text-thmLight-1 mr-3 d-none d-md-inline">:</span>
-                                                        <span class="fs-ta-14 fs-md-ta-16 text-thmLight-2 text-md-thmLight-1">2021-11-30 15:04</span>
+                                                        <span class="fs-ta-14 fs-md-ta-16 text-thmLight-2 text-md-thmLight-1">{{objectss.created_at}}</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -171,8 +169,11 @@
                                                         <span class="fs-ta-16 text-thmLight-1"><b>ที่อยู่ในการจัดส่ง</b></span>
                                                     </div>
                                                     <div class="pl-3 mt-2">
-                                                        <span class="fs-ta-16 text-thmLight-1">rkknoob reangjalentham 0843745454</span><br>
-                                                        <span class="fs-ta-14 text-thmLight-2">2e3r4t5yui ตำบลนาเพียง อำเภอชุมแพ จังหวัดขอนแก่น 40000</span>
+
+                                              
+                                                        <span class="fs-ta-16 text-thmLight-1">{{objectss.shipping_address.name}} {{objectss.shipping_address.tel}}</span><br>
+                                                        <span class="fs-ta-14 text-thmLight-2">{{objectss.shipping_address.address}}</span><br>
+                                                        <span class="fs-ta-14 text-thmLight-2">ตำบล{{objectss.shipping_address.sub_districts_id}} อำเภอ{{objectss.shipping_address.districts_id}} จังหวัด{{objectss.shipping_address.province_id}} {{objectss.shipping_address.zipcode}}</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -205,15 +206,15 @@
                                                     <div class="row">
                                                         <div class="col-12 col-md-6 text-right text-md-left" >
                                                             <span class="fs-ta-14 fs-ta-md-16 text-thmLight-2 text-md-thmLight-1 d-md-block">
-                                                                ไปรษณีย์ไทย - EMS                                                            </span>
-                                                                                                                        <span class="fs-ta-14 text-thmLight-2 mt-md-2 d-none d-md-block">
-                                                                ระยะเวลาขนส่ง 1-5 วัน                                                            </span>
-                                                            <span class="fs-ta-14 text-thmLight-2 d-inline-block d-md-none">
-                                                                (ระยะเวลาขนส่ง 1-5 วัน)
-                                                            </span>
+                                                                {{objectss.delivery_name}}
+                                                                </span>
+                                                                <span class="fs-ta-14 text-thmLight-2 mt-md-2 d-none d-md-block">
+                                                                 {{objectss.delivery_details}}
+                                                                </span>
+                                                          
                                                                                                                     </div>
                                                                                                                     <div class="col-12 col-md-6 d-none d-md-block">
-                                                                <img src="https://webbuilder46.makewebeasy.com/images/orders/shipping/thailandpost.png?v=202012190947" style="height: 40px;">
+                                                                <img :src="Checkimage(objectss.avatar)" style="height: 40px;">
                                                             </div>
                                                                                                             </div>
                                                 </div>
@@ -250,12 +251,11 @@
                                                                                                                     <div class="col-12 pl-0 ">
                                                                 <div class="row">
                                                                     <div class="col-auto">
-                                                                        <img class="img-banklogo img-bank-orderstat" src="https://webbuilder46.makewebeasy.com/images/bank/BankofAyudhaya.jpg?v=202012190947" alt="ธนาคารกรุงศรีอยุธยา">
+                                                                        <img class="img-banklogo img-bank-orderstat" :src="Checkimage(objectss.bank.images)"  style="height: 100px;">
                                                                     </div>
                                                                     <div class="col m-auto">
-                                                                        <p class="fs-ta-16 text-theme-1 mb-0">ธนาคารกรุงศรีอยุธยา</p>
-                                                                        <p class="fs-ta-14 text-thmLight-2 mb-0 mt-1">ภ.ภัชธนมณี
-003-1-22360-1</p>
+                                                                        <p class="fs-ta-16 text-theme-1 mb-0">{{objectss.bank.name}}</p>
+                                                                        <p class="fs-ta-14 text-thmLight-2 mb-0 mt-1">{{objectss.bank.details}}</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -375,13 +375,13 @@
 
                         <!-- Start Button -->
                         <div id="boxButton">
-                            <div class="row py-3 border-top border-md-top-0 border-thmLight" style="background-color: #fff;">
+                            <div class="row py-3 order-status-buy">
                                 <div class="col-12">
                                     <div class="row">
                                         <div class="col-12 text-center d-block d-md-none">
                                           
                                            
-                                        </div><div class="col-12"> <b-button variant="outline-primary" @click="myModel = true">แจ้งชำระเงิน</b-button></div>
+                                        </div><div class="col-12" v-if="objectss.status == 'N'"> <b-button variant="outline-primary" @click="myModel = true">แจ้งชำระเงิน</b-button></div>
                                             
                                         
                                         
@@ -416,7 +416,7 @@
             <div class="modal-dialog modal-login">
               <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title">แจ้งการชำระเงิน</h5>
+                    <h5 class="modal-title">แจ้งการชำระเงิน </h5>
                     <button
                       type="button"
                       class="close"
@@ -497,8 +497,13 @@
                         </div>
                       </div>
 
+                        <div v-if="isHiddenUpload == true">
+    
+    <span style="color: red;">กรุณาอัพโหลดสลิป </span>
+  </div>
+
                           <center>
-                        <div id="preview" v-if="isHiddenUpload == true">
+                        <div id="preview">
                               <img class="imgtax" v-if="url" :src="url" />
                             </div>
                         </center>
@@ -520,6 +525,7 @@
                         ส่งข้อมูล
                       </button>
                     </div>
+
        
           </div>
            </div>
@@ -591,9 +597,9 @@
 <script>
 import Datepicker from 'vuejs-datepicker'
 import { Datetime } from 'vue-datetime';
-import { mapGetters } from "vuex";
+import { mapGetters,mapState } from "vuex";
 import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
-import { FETCH_BANK,CHOOSE_BANK,GET_ORDER_DATA } from "@/store/actions.type.js";
+import { FETCH_BANK,CHOOSE_BANK,GET_ORDER_DATA,UPDATE_SLIP } from "@/store/actions.type.js";
 import axios from 'axios';
   export default {
         components: {
@@ -616,6 +622,7 @@ import axios from 'axios';
         file:null,
           url: null,
           isHiddenUpload:false,
+          images:false,
           value: "",
         status: 'not_accepted',
         selectedAdd: null,
@@ -649,6 +656,12 @@ import axios from 'axios';
 
    computed: {
             ...mapGetters(["order"]),
+
+              ...mapState({
+                objects: state => state.Order,
+                 objectss: state => state.Order.order_history,
+
+            }),
 
             isUrl () {
                 return this.$store.state.user.url_id;
@@ -711,7 +724,7 @@ import axios from 'axios';
         
         Checkimage(image){
                 let public_images = process.env.ImageURL+image;
-                console.log(public_images);
+                
                 return public_images;
         },
 
@@ -734,7 +747,25 @@ import axios from 'axios';
       },
 
       async saveform() {
-       this.$v.$touch();
+   this.$v.$touch();
+if(this.url == null){
+this.isHiddenUpload = true;
+}
+
+
+ var formData = new FormData(); // Currently empty
+           formData.append('cartnumber', this.form.cartnumber);
+           formData.append('total', this.form.total);
+           formData.append('dateavalue', this.form.dateavalue);
+           formData.append('time', this.form.time);
+           formData.append('image', this.file);
+
+    
+
+  let update_slip = await this.$store.dispatch(UPDATE_SLIP,formData);
+        
+ 
+              
       },
 
                   getImg(name) {
@@ -743,6 +774,7 @@ import axios from 'axios';
     onFileChange(event) {
       var file = event.target.files[0];
      this.url = URL.createObjectURL(file);
+     this.isHiddenUpload = false
     // Ensure it's an image
 
 
@@ -774,9 +806,7 @@ import axios from 'axios';
                 canvas.getContext('2d').drawImage(image, 0, 0, width, height);
                 var dataUrl = canvas.toDataURL('image/jpeg');
                 let resizedImage = this.dataURLToBlob(dataUrl);
-              
-
-                      axios.post('https://back.idtest.work/api/upload', {
+                      axios.post('http://cmsecom.idtest.work/api/upload', {
         image: dataUrl
       }).then(res => {
       this.file = res.data

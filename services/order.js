@@ -11,4 +11,9 @@ export const OrderService = {
     fetchorderall(param) {
       return ApiServiceAll.post("fetchorderall",param);
     },
+    updateslip(param) {
+      return ApiServiceAll.post("updateslip",param);
+    },
+
+  
 };

@@ -2,12 +2,13 @@
 
 
 <div class="card mb-3" style="margin-top:80px;">
+
 <div v-if="loadding">
 <Loader/>
 </div>
-                        <div class="boxEditAddressBook theme-main">
+                        <div class="boxEditAddressBook theme-main"  v-if="tab1 == true">
     <div class="card boxCard theme-font mb-4">
-        <h2 class="profile-cart-title"><span>ประวัติการสั่งซื้อ </span>
+        <h2 class="profile-cart-title"><span>ประวัติการสั่งซื้อ t1 </span>
             <span id="showLinkChangeAddress"><a class="linkChangeAddress"></a></span>
         </h2>
 
@@ -181,7 +182,11 @@
 
 
 
+
     </div>
+
+
+    
 
 
 
@@ -193,10 +198,13 @@
 import moment from 'moment'
 import { mapGetters } from "vuex";
 import { CHECK_LOGIN } from "../store/actions.type.js";
-import { FETCH_ADS_SHOP,FETCH_GET_PROFILE,FETCH_ADDRESS,DEL_ADDRESS_BY_ID,GET_ORDER_ALL  } from "@/store/actions.type.js";
+import Order from "@/components/Order";
+import { FETCH_ADS_SHOP,FETCH_GET_PROFILE,FETCH_ADDRESS,DEL_ADDRESS_BY_ID,GET_ORDER_ALL,CHANGE_TABS,GET_ORDER_DATA,GET_ORDER_DATA_HISTORY } from "@/store/actions.type.js";
   export default {
     data() {
     return {
+       tab1:true,
+       tab2:false,
        loadding:true,
       IsLogin: false,
   items: [
@@ -291,8 +299,24 @@ import { FETCH_ADS_SHOP,FETCH_GET_PROFILE,FETCH_ADDRESS,DEL_ADDRESS_BY_ID,GET_OR
                 let public_images = process.env.ImageURL+image;
                 return public_images;
         },
-        expandAdditionalInfo(row) {
-         
+       async expandAdditionalInfo(row) {
+          this.loadding = true;
+         this.tabs = 2;
+
+    let a = window.location.origin
+    this.form.url = a;
+    this.form.cartnumber = row.order_cartnumber;
+
+
+
+
+           setTimeout(() => (this.loadding = false), 3000);
+                 let order_data = await this.$store.dispatch(GET_ORDER_DATA_HISTORY,this.form);
+             let changetabs = await this.$store.dispatch(CHANGE_TABS,this.tabs);
+           //  let getorder = await this.$store.dispatch(CHANGE_TABS,this.tabs);
+       
+
+              this.loadding = false;
 //    this.$router.push({ name: '/profile/orderstatus' })
 
 //    const names = 'id-form-login'
@@ -303,8 +327,8 @@ import { FETCH_ADS_SHOP,FETCH_GET_PROFILE,FETCH_ADDRESS,DEL_ADDRESS_BY_ID,GET_OR
 //                 //   this.$router.push({ params: { id: '1' } ,name: name})
 //                    this.$router.push({ name: names, params: { id: Shopid }})
 
-   
-       
+  
+        
         },
 
       

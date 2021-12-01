@@ -147,7 +147,15 @@
     display:none;
 
   }
+  .ic-order{
+    padding-top: 10px;
+  }
 
+
+  .box-circle-icon-color.actives {
+    color: #FFFFFF;
+    background-color: #19c919;
+  }
 
   .btn-style-o {
     color: #c9bbaf;
@@ -185,6 +193,9 @@
   .c-order{
     margin: 5px;
 
+  }
+  .order-status-buy{
+    padding-left: 8px;
   }
 
   .button-order-spac{

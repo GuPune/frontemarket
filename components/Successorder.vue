@@ -392,7 +392,6 @@ import { FETCH_BANK,CHOOSE_BANK,GET_ORDER_DATA } from "@/store/actions.type.js";
     let a = window.location.origin
     this.form.url = a;
     this.form.cartnumber = order_id;
-
     let order_data = await this.$store.dispatch(GET_ORDER_DATA,this.form);
     this.orderlist = order_data;
     console.log('data',this.orderlist);
