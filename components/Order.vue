@@ -806,7 +806,7 @@ this.isHiddenUpload = true;
                 canvas.getContext('2d').drawImage(image, 0, 0, width, height);
                 var dataUrl = canvas.toDataURL('image/jpeg');
                 let resizedImage = this.dataURLToBlob(dataUrl);
-                      axios.post('http://cmsecom.idtest.work/api/upload', {
+                      axios.post('https://cmsecom.idtest.work/api/upload', {
         image: dataUrl
       }).then(res => {
       this.file = res.data
