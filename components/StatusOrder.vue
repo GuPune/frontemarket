@@ -70,6 +70,9 @@
                            <div v-if="objects.status =='N'" class="box-shape-icon box-circle-icon-color">
                         <i :class="iconpay"></i>
                         </div>
+                             <div v-if="objects.status =='C'" class="box-shape-icon box-circle-icon-color">
+                        <i :class="iconpay"></i>
+                        </div>
                     </div>            
                 </div>
                 <div class="boxText fs-ta-14 fs-md-ta-16 pt-1 ">
@@ -95,6 +98,9 @@
                        <i class="fa fal fa-check ic-order"></i>
                         </div>
                     </div>            
+                      <div  v-if="objects.status =='C'"  class="box-shape-icon box-circle-icon-color">
+                       <i class="fa fal fa-check ic-order"></i>
+                        </div>
                 </div>
                 <div class="boxText fs-ta-14 fs-md-ta-16 pt-1 ">
                     <!-- <i class="far fa-check-circle"></i> -->

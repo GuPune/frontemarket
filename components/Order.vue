@@ -42,29 +42,30 @@
                                                         </div>
                                                     </div>
                                                     <div class="tbody">
-                                                                                                                    <div class="tr py-3 px-md-3 border-top border-top-0-first border-thmLight">
-                                                                <div class="row">
+                                                 
+                                                              <div class="tr py-3 px-md-3 border-top border-top-0-first border-thmLight" v-for="(item, index) in objectss.order_item" :key="item.id">
+                                                                <div class="row" >
                                                                     <div class="col-12 col-md-5">
                                                                         <div class="row">
                                                                             <div class="col-auto pr-0">
-                                                                                <img class="img-product" src="https://image.makewebeasy.net/makeweb/r_60x60/pYN8s1ZiT/Women_Ring/แหวนเพชรหญิง_A8334.jpg" alt="แหวนเพชรผู้หญิง A8334"/>
+                                                                                <img class="img-product" :src="Checkimage(item.img_product)" width="100" height="100"/>
                                                                             </div>
                                                                                                                                                         <div class="col">
                                                                                 <div class="row">
                                                                                     <div class="col-12">
-                                                                                        <p class="fs-ta-14 text-thmLight-1 mb-0">แหวนเพชรผู้หญิง A8334</p>
-                                                                                                                                                                                    <p class="fs-ta-14 text-thmLight-2 mb-0 mt-2">SKU: A8334</p>
+                                                                                        <p class="fs-ta-14 text-thmLight-1 mb-0">{{item.name_th}}</p>
+                                                                                                                                                                                   
                                                                                                                                                                                                                                                                     </div>
                                                                                 </div>
                                                                                 <div class="row mt-3 d-flex d-md-none">
                                                                                     <div class="col-4 pr-1">
-                                                                                        <p class="fs-ta-14 text-thmLight-1 mb-0">฿ 59,500.00</p>
+                                                                                        <p class="fs-ta-14 text-thmLight-1 mb-0">฿ {{ formatPrice(item.price) }}</p>
                                                                                     </div>
                                                                                     <div class="col-4 pl-4 pr-1 text-center">
-                                                                                        <p class="fs-ta-14 text-thmLight-2 mb-0">x1</p>
+                                                                                        <p class="fs-ta-14 text-thmLight-2 mb-0">x{{item.qty}}</p>
                                                                                     </div>
                                                                                     <div class="col-4 pl-1 text-right">
-                                                                                        <p class="fs-ta-14 text-thmLight-1 mb-0">฿ 59,500.00</p>
+                                                                                        <p class="fs-ta-14 text-thmLight-1 mb-0">฿ {{item.sumPrice}}</p>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -73,13 +74,13 @@
                                                                     <div class="col-12 col-md-7 d-none d-md-block">
                                                                         <div class="row">
                                                                             <div class="col-4 pr-1 text-right">
-                                                                                <p class="fs-ta-14 text-thmLight-1 mb-0">฿ 59,500.00</p>
+                                                                                <p class="fs-ta-14 text-thmLight-1 mb-0">฿ {{item.price}}</p>
                                                                             </div>
                                                                             <div class="col-4 pl-5 pr-1 text-center">
-                                                                                <p class="fs-ta-14 text-thmLight-1 mb-0">1</p>
+                                                                                <p class="fs-ta-14 text-thmLight-1 mb-0">x{{item.qty}}</p>
                                                                             </div>
                                                                             <div class="col-4 pl-1 text-right">
-                                                                                <p class="fs-ta-14 text-thmLight-1 mb-0">฿ 59,500.00</p>
+                                                                                <p class="fs-ta-14 text-thmLight-1 mb-0">฿ {{item.sumPrice}}</p>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -295,7 +296,7 @@
                                                             </span>
                                                         </div>
                                                         <div class="col text-right">
-                                                            <span class="fs-ta-16 text-thmLight-1">฿ 59,500.00</span>
+                                                            <span class="fs-ta-16 text-thmLight-1">฿ {{formatPrice(objectss.sumPrice)}}</span>
                                                         </div>
                                                     </div>
                                                     <!-- End Net price --> 
@@ -335,7 +336,7 @@
                                                                         <span class="fs-ta-16 text-thmLight-1"><b>ยอดรวมสุทธิ</b></span>
                                                                     </div>
                                                                     <div class="col text-right">
-                                                                        <span class="fs-ta-20 text-thmLight-1">฿ 59,500.00</span>
+                                                                        <span class="fs-ta-20 text-thmLight-1">฿ {{formatPrice(objectss.sumPrice)}}</span>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -714,6 +715,12 @@ import axios from 'axios';
             
      
         },
+     formatPrice(value) {
+        let val = (value/1).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")
+     
+ console.log('kkkk',val);
+        return val;
+    },
 
 
     onDateChange(date) {

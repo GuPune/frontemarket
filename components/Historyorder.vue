@@ -8,7 +8,7 @@
 </div>
                         <div class="boxEditAddressBook theme-main"  v-if="tab1 == true">
     <div class="card boxCard theme-font mb-4">
-        <h2 class="profile-cart-title"><span>ประวัติการสั่งซื้อ t1 </span>
+        <h2 class="profile-cart-title"><span>ประวัติการสั่งซื้อ  </span>
             <span id="showLinkChangeAddress"><a class="linkChangeAddress"></a></span>
         </h2>
 
@@ -89,14 +89,28 @@
  
          <template #cell(status)="row">
 
-         <div  v-if="row.item.status == 'Y'">
- <span style="color: #33CC00"> ชำระเงินแล้ว </span>
+  <div  v-if="row.item.status == 'C'">
+ <span style="color: #FF0000"> ยกเลิก </span>
  
 </div>
-<div v-else>
- <span style="color: #FFB912"> รอการชำระ </span>
-
+         <div  v-if="row.item.status == 'Y'">
+ <span style="color: #33CC00"> ยืนยันการชำระ </span>
+ 
 </div>
+  <div  v-if="row.item.status == 'O'">
+ <span style="color: #FFB912"> รอตรวจสอบ </span>
+ 
+</div>
+  <div  v-if="row.item.status == 'N'">
+ <span style="color: #FF6347"> สั่งซื้อสินค้า
+ </span>
+ 
+</div>
+  <div  v-if="row.item.status == 'S'">
+ <span style="color: #2E8B57"> จัดส่งสินค้า </span>
+ 
+</div>
+
          
  
       </template>
@@ -114,11 +128,7 @@
         </b-button>
       </template>
 
-            <template #cell(fitter)="row" >
-        <b-button size="sm"  @done="counterDone()">
-       <i class="fa fa-bars" aria-hidden="true"></i>
-        </b-button>
-      </template>
+  
 
       <template #row-details="row">
         <b-card>
@@ -218,7 +228,7 @@ import { FETCH_ADS_SHOP,FETCH_GET_PROFILE,FETCH_ADDRESS,DEL_ADDRESS_BY_ID,GET_OR
         { key: 'created_at', label: 'วันที่สั่งซื้อ	', sortable: true, class: 'text-center' },
        
           { key: 'actions', label: 'Actions' },
-          { key: 'fitter', label: 'C' }
+    
         ],
         totalRows: 1,
         currentPage: 1,
