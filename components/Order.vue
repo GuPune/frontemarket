@@ -452,9 +452,7 @@
   :class="{ 'is-invalid': $v.form.dateavalue.$error}" 
 />
   </div>
-  <div v-if="!$v.form.dateavalue.required">
-    last change date is required
-  </div>
+
 
     <div>
     <label for="timepicker-sm">เวลาชำระ <span style="color:red;">*</span></label>
@@ -483,6 +481,10 @@
         ></b-form-timepicker>
       </b-input-group-append>
     </b-input-group>
+
+      <div v-if="!$v.form.time.required">
+    last change date is required
+  </div>
 
      <label for="timepicker-sm">หลักฐานการชำระเงิน <span style="color:red;">*</span></label>
 
@@ -691,9 +693,6 @@ import axios from 'axios';
             !this.$v.form.time.required && errors.push("โปรดระบุชื่อ");
             return errors;
             },
-
-            
-          
 
         
         },
