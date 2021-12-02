@@ -11,7 +11,8 @@
             <div class="row form-group">
                 <div class="col-12 divMemberAddressChoose">
                     <div class="text-muted" >
-                     {{detailAddress.address}}           
+                     {{detailAddress.address}}       ต.{{detailAddress.sub_districts_id}}   อ.{{detailAddress.districts_id}}  จ.{{detailAddress.province_id}} 
+
                     </div>
                 </div>
             </div>

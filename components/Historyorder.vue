@@ -146,7 +146,7 @@
   <tbody>
     <tr v-for="(value, key) in row.item.order_item" :key="key.id">
       <th scope="row">{{ value.product_name }}</th>
-      <td>{{ value.sumPrice }}</td>
+      <td>{{formatPrice(value.sumPrice)}}</td>
       <td>{{ value.qty }}</td>
       <td>{{ value.trackNumber }}</td>
       <td>
@@ -290,6 +290,11 @@ import { FETCH_ADS_SHOP,FETCH_GET_PROFILE,FETCH_ADDRESS,DEL_ADDRESS_BY_ID,GET_OR
       },
 
       methods: {
+                formatPrice(value) {
+        let val = (value/1).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")
+        console.log('val',val);
+        return val;
+        },
             onFiltered(filteredItems) {
         // Trigger pagination to update the number of buttons/pages due to filtering
         this.totalRows = filteredItems.length

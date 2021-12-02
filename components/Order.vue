@@ -74,13 +74,13 @@
                                                                     <div class="col-12 col-md-7 d-none d-md-block">
                                                                         <div class="row">
                                                                             <div class="col-4 pr-1 text-right">
-                                                                                <p class="fs-ta-14 text-thmLight-1 mb-0">฿ {{item.price}}</p>
+                                                                                <p class="fs-ta-14 text-thmLight-1 mb-0">฿ {{ formatPrice(item.price) }}</p>
                                                                             </div>
                                                                             <div class="col-4 pl-5 pr-1 text-center">
                                                                                 <p class="fs-ta-14 text-thmLight-1 mb-0">x{{item.qty}}</p>
                                                                             </div>
                                                                             <div class="col-4 pl-1 text-right">
-                                                                                <p class="fs-ta-14 text-thmLight-1 mb-0">฿ {{item.sumPrice}}</p>
+                                                                                <p class="fs-ta-14 text-thmLight-1 mb-0">฿ {{ formatPrice(item.sumPrice) }} </p>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -717,8 +717,6 @@ import axios from 'axios';
         },
      formatPrice(value) {
         let val = (value/1).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")
-     
- console.log('kkkk',val);
         return val;
     },
 
