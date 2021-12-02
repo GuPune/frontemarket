@@ -133,7 +133,7 @@ export default {
   },
 
   env: {
-    ImageURL: "http://cmsecom.idtest.work/public/product/",
+    ImageURL: "https://cmsecom.idtest.work/public/product/",
     backend:"https://cmsecom.idtest.work",
 },
 
