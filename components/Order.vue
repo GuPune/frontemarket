@@ -382,7 +382,10 @@
                                         <div class="col-12 text-center d-block d-md-none">
                                           
                                            
-                                        </div><div class="col-12" v-if="objectss.status == 'N'"> <b-button variant="outline-primary" @click="myModel = true" v-if="isHiddenUploadSlip == false">แจ้งชำระเงิน</b-button></div>
+                                        </div>
+                                        <div class="col-6" size="sm" v-if="objectss.status == 'N'"> <b-button variant="outline-primary"  lg="4" size="sm" @click="myModel = true" v-if="isHiddenUploadSlip == false">แจ้งชำระเงิน</b-button></div>
+                                                                                <div class="col-6" size="sm"> <b-button variant="outline-primary"  lg="4" size="sm" @click="downloadpdf()" ><i class="fa fa-print"></i>พิมพ์ใบสั่งซื้อ</b-button></div>
+
                                             
                                         
                                         
@@ -518,7 +521,7 @@
 
                 </div>
 
-                         <div class="modal-footer">
+                <div class="modal-footer">
                     <div class="container-contact100-form-btn">
                       <button
                         type="button"
@@ -746,6 +749,25 @@ import axios from 'axios';
         closeModel:function(){
          this.myModel = false;
   
+      },
+      downloadpdf(){
+
+              axios({
+                    url: 'http://127.0.0.1:8000/api/get-file/'+this.objectss.cartnumber,
+                    method: 'GET',
+                    responseType: 'blob',
+                }).then((response) => {
+                     var fileURL = window.URL.createObjectURL(new Blob([response.data]));
+                     var fileLink = document.createElement('a');
+   
+                     fileLink.href = fileURL;
+                     fileLink.setAttribute('download', 'file.pdf');
+                     document.body.appendChild(fileLink);
+   
+                     fileLink.click();
+                });
+          
+
       },
 
       async saveform() {
