@@ -22,7 +22,7 @@
                                         </li> -->
 
                                         <li class="prof-s" id="member-editaddressbook" @click="redirectTo('profile-userprofileadd')"  :class="{'profile-menu': checkPath('profile-userprofileadd')}">
-                                            <p>ที่อยู่</p>
+                                            <p>ที่อยู่จัดส่ง</p>
                                         </li>
                                         <li class="prof-s" id="member-orderedhistory" @click="redirectTo('profile-historyorder')"  :class="{'profile-menu': checkPath('profile-historyorder')}" >
                                             <p>ประวัติการสั่งซื้อ</p>
