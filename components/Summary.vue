@@ -17,11 +17,11 @@
                     </div>
                     <div class="row mr-0">
                         <div class="col-4 text-muted text-left pr-1">
-                           ฿{{item.price}}                      </div>
+                           ฿  {{formatPrice(item.price)}}                </div>
                         <div class="col-3 text-muted text-center px-0">
                             x{{item.quantity}}                     </div>
                         <div class="col-5 text-right pl-0">
-                            <span>฿{{item.totalPrice}}</span>
+                            <span>฿ {{formatPrice(item.totalPrice)}}</span>
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
             <span class="text-muted" id="showAmount">{{PriceToTal.quantitys}}</span>
         </div>  
         <div class="col text-right">
-            <span>฿ {{PriceToTal.PriceToTals}} </span>
+            <span>฿ {{formatPrice(PriceToTal.PriceToTals)}} </span>
         </div> 
     </div>
         <div id="showShipping">
@@ -63,7 +63,7 @@
             <p class="font-weight-bold mb-2">ยอดรวมสุทธิ</p>
         </div>  
         <div class="col pr-0 text-right" id="divOrderTotalPrice">
-            <p class="font-weight-bold txtTotalPrice mb-2">฿ {{PriceToTal.PriceToTals}} </p>
+            <p class="font-weight-bold txtTotalPrice mb-2">฿ {{formatPrice(PriceToTal.PriceToTals)}} </p>
         </div>
     </div>
     </div> 
@@ -109,6 +109,10 @@ export default {
                 let public_images = process.env.ImageURL+image;
                 return public_images;
         },
+     formatPrice(value) {
+        let val = (value/1).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")
+        return val;
+    },
               }
        
            
