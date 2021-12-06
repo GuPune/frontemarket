@@ -81,6 +81,10 @@
         </div>
 
 </div>
+
+<div class="footer">
+  <p>Footer</p>
+</div>
   
 </div>
 
@@ -89,7 +93,17 @@
    
 </template>
 
-
+<style>
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
+}
+</style>
 
 
 <script>
@@ -165,7 +179,7 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
       this.form.face_id = salepage.data.face_id
       this.form.id = salepage.data.id
 
-
+console.log('salepage',salepage)
 
  
       
