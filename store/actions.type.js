@@ -27,6 +27,7 @@ export const CART_SUCCESS = "cart_success";
 
 export const REMOVE_CART = "remove_cart";
 export const GET_CART = "get_cart";
+export const ADD_PRODETAIL = "add_prodetail";
 export const ADD_UP = "add_up";
 export const ADD_DOWN = "add_down";
 export const ADD_INPUT = "add_input";

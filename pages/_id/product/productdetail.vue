@@ -1,8 +1,11 @@
 <template>
 
-<section id="Productdetail" class="product-details" >
-<div class="container product-details-in productItemDetail" style="background-color: white;"   v-for="(item, index) in product_by_item" :key="item.id">
- 
+<section id="Productdetail" class="product-details">
+<div class="container product-details-in productItemDetail" style="background-color: white;">
+<div v-if="loadding">
+
+<Loader/>
+</div>
        <div class="row">
             <div class="col-sm-12">
                 <nav aria-label="breadcrumb">
@@ -17,7 +20,7 @@
                                                     <li class="breadcrumb-item "  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                                                                     <a itemscope itemtype="https://schema.org/Thing" itemprop="item"
                                        alt="คลิกไปที่ สินค้าทั้งหมด" title="คลิกไปที่ สินค้าทั้งหมด" id="2">
-                                        <span itemprop="name"  @click="redirectTo(item.user_id)">{{item.shop_name}}</span>
+                                        <span itemprop="name"  @click="redirectTo(product_by_item.user_id)">{{product_by_item.shop_name}}</span>
                                     </a>
                                    
                                  
@@ -27,22 +30,25 @@
                 </nav>
             </div>
         </div>
-<div class="row no-margin">
+<div class="row no-margin" v-if="isHidden">
    <div class="left col-lg-5 col-md-6 col-sm-6">
-           <ProductZoomer :base-images="images" :base-zoomer-options="zoomerOptions"></ProductZoomer>
+
+    <client-only>
+   <ProductZoomer :base-images="images" :base-zoomer-options="zoomerOptions" :key=""key/>
+</client-only>
    </div>
 
 
 
 <div class="col-12 col-md-7 col-sm-12 product-detail-ipad">
             <div class="marginInner">
-            <h2 class="productName-detail">{{item.name_en}}</h2>
+            <h2 class="productName-detail">{{product_by_item.name_en}}</h2>
             </div>
             <div class="row">
                 <div class="col-md-12">
                 <div class="form-group">
                 <div class="marginInner">
-                   <h1 class="product-detail-title">{{item.description}}</h1>
+                   <h1 class="product-detail-title">{{product_by_item.description}}</h1>
                 <div class="ratings">
                 <div class="rating-box-detail">
                 <div class="rating" style="width:%">
@@ -71,7 +77,7 @@
                 <div class="col-md-12">
                     <div class="form-group h5">
                         <div class="marginInner mb-4 mb-md-4">
-                            <p class="productPrice"> ฿{{item.price}} </p>
+                            <p class="productPrice"> ฿{{formatPrice(product_by_item.price)}}</p>
                             
                         </div>
                     </div>
@@ -87,16 +93,16 @@
                     <div class="group-product-number">
                            <b-input-group size="sm">
                                         <b-input-group-prepend>
-                                        <b-btn variant="outline-info" v-on:click='Adddown(item.stock)'>-</b-btn>
+                                        <b-btn variant="outline-info" v-on:click='Adddown(product_by_item.stock)'>-</b-btn>
                                         </b-input-group-prepend>
-                                        <b-form-input type="text" min="0" class="text-number-order productde-text-ce"  v-model="quantity"  maxlength=2></b-form-input>
+                                        <b-form-input type="text" min="0" class="text-number-order productde-text-ce"  v-model="add"   @keypress="validateNumber"  :disabled="selected === 0"></b-form-input>
                                         <b-input-group-append>
-                                        <b-btn variant="outline-secondary"  v-on:click='Addup(item.stock)'>+</b-btn>
+                                        <b-btn variant="outline-secondary"  v-on:click='Addup(product_by_item.stock)'>+</b-btn>
                                         </b-input-group-append>
                                         </b-input-group>   
                     </div>
                 </div>
-                  <div class="col-md-4 attrHeader form-group">มีสินค้าจำนวนทั้งหมด  {{item.stock}}  </div>
+                  <div class="col-md-4 attrHeader form-group">มีสินค้าจำนวนทั้งหมด  {{product_by_item.stock}}  </div>
             </div>
 
 
@@ -110,7 +116,7 @@
                         <div class="marginInner mb-4 mb-md-4">
                             <p >รายละเอียด
 </p>
-                       <h1 class="product-mini">{{item.product_details}}</h1>
+                       <h1 class="product-mini">{{product_by_item.product_details}}</h1>
                         </div>
                     </div>
                 </div>
@@ -124,7 +130,7 @@
                         <div class="button-wrapper">
                                     <div class="my-col-12 col-md-4 col-lg-4 pl-0">
                     
-                          <b-button size="md" variant="outline-warning" class="pro-des-btt">   <i class="fa fa-shopping-cart fa-1x">&nbsp;</i>เพิ่มลงตะกร้า</b-button>
+                          <b-button size="md" variant="outline-warning" class="pro-des-btt" @click="addToCart(product_by_item)"><i class="fa fa-shopping-cart fa-1x">&nbsp;</i>เพิ่มลงตะกร้า</b-button>
                     </div>
                                         <div class="my-col-12 col-md-4 col-lg-4 pl-0">
            
@@ -169,7 +175,8 @@
                     <template #title><b-spinner type="grow" small></b-spinner> 
                     คุณสมบัติ
                     </template><p class="p-3" >
-                    <p><span v-html="item.details"></span></p></p>
+                 
+                    <p><span v-html="product_by_item.details"></span></p></p>
                     </b-tab></b-tabs></div>
  
 
@@ -192,7 +199,7 @@
 
 <script>
   import { mapGetters,mapState } from "vuex";
-  import { FETCH_BY_PRODUCT_SHOP_ONE_ITEM,FETCH_IMAGE_PRODUCT } from "@/store/actions.type.js";
+  import { FETCH_BY_PRODUCT_SHOP_ONE_ITEM,FETCH_IMAGE_PRODUCT,ADD_CART,ADD_PRODETAIL } from "@/store/actions.type.js";
   import Nav from "@/components/Nav";
   import Footer from "@/components/Footer";
     
@@ -201,7 +208,10 @@
     export default {
       data() {
         return {
-    
+  key:0,
+   
+        isHidden:false,
+    loadding:true,
       zoomerOptions: {
       zoomFactor: 3,
       pane: "pane",
@@ -214,11 +224,13 @@
       zoomer_pane_position: "right"
 
       },
+      selected: 0,
+
     
             form:{
 
             },
-  quantity:0
+  add:0
     };
   },
       components: {
@@ -229,25 +241,67 @@
 
                  computed: {
            
-        ...mapGetters(["product_by_item","images"]),
+        ...mapGetters(["product_by_item","images","cart"]),
+
+        },
+
+        async created(){
+  
+            
+
+ 
+           
+        
+
 
         },
              
        async mounted() {
-
 this.form.product_id = this.$route.params.slug;
 this.form.shop_name = this.$route.params.id;
 this.form.url = window.location.origin
 console.log('this.form',this.form)
 let productshop_item = await this.$store.dispatch(FETCH_BY_PRODUCT_SHOP_ONE_ITEM,this.form);
 let images_product = await this.$store.dispatch(FETCH_IMAGE_PRODUCT,this.form);
-console.log('productshop_item',productshop_item)
+console.log('productshop_item',productshop_item.data)
+
+        
+    this.key++
+    console.log(this.key);
+     
+        // this.loadding = false;
+
     
+     this.zoom(productshop_item);
         },
 
 
         methods: {
+        async addToCart(item){
 
+
+
+item.add = this.add
+console.log('item.quantity',item.quantity);
+console.log('item.quantity',this.quantity);
+console.log('item',item);
+let add_producttocart = await this.$store.dispatch(ADD_PRODETAIL,item);
+   this.$swal("Add Product!", "Product To Cart!", "success")
+ 
+            },
+     validateNumber: (event) => {
+      let keyCode = event.keyCode;
+      console.log('keyCode',event.target.value);
+      if (keyCode < 48 || keyCode > 57) {
+        event.preventDefault();
+      }
+    
+    },
+       formatPrice(value) {
+        let val = (value/1).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")
+
+        return val;
+        },
               
         redirectTo(user_id) {
           
@@ -264,20 +318,20 @@ console.log('productshop_item',productshop_item)
         async Addup(stock){
             //// logic // จำนวนสินค้าที่มี
           //  let Add_up = await this.$store.dispatch(ADD_UP,item);
-          if(this.quantity == stock){   
+          if(this.add == stock){   
         let keytext = 'สินค้ามีไม่เพียงพอ!'
             return await this.error(keytext);
           }
-            this.quantity += 1;
+            this.add += 1;
         },
         async Adddown(){
-            if(this.quantity == 0){
+            if(this.add == 0){
 
             let keytext = 'สินค้าจำกัดจำนวนไม่ต่ำกว่า 0!'
             
                 return await this.error(keytext);
             }
-          this.quantity -= 1;
+          this.add -= 1;
           
         },
    
@@ -301,10 +355,86 @@ console.log('productshop_item',productshop_item)
                 });
               
         },
+         sleep(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+},
+        zoom(productshop_item) {
+      //      console.log('productshop_itemxxxxxxxxxxxxx',productshop_item.data.thumbs)
+// large_size
+// normal_size
+// thumbs
+
+    
+     this.images.thumbs = productshop_item.data.thumbs,
+     this.images.large_size = productshop_item.data.large_size,
+     this.images.normal_size = productshop_item.data.normal_size,
+         
+        //       this.images.thumbs = [
+        // {
+        //     id: 0,
+        //     url:
+        //       "http://127.0.0.1:8000/images/100.jpeg"
+        //   },
+        //   {
+        //     id: 1,
+        //     url:
+        //       "http://127.0.0.1:8000/images/100.jpeg"
+        //   },
+        //     {
+        //     id: 2,
+        //     url:
+        //       "http://127.0.0.1:8000/images/100.jpeg"
+        //   }
+        //   ],
+        //      this.images.normal_size = [
+        //   {
+        //     id: 0,
+        //     url:
+        //       "https://yoohooworld.com/assets/images/vue_product_zoomer/normal_size/4.jpeg"
+        //   },
+        //   {
+        //     id: 1,
+        //     url:
+        //       "https://yoohooworld.com/assets/images/vue_product_zoomer/normal_size/4.jpeg"
+        //   },
+        //    {
+        //     id: 2,
+        //     url:
+        //       "https://yoohooworld.com/assets/images/vue_product_zoomer/normal_size/4.jpeg"
+        //   },
+        //   ],
+         
+        //  this.images.large_size = [
+        //     {
+        //     id: 0,
+        //     url:
+        //       "http://127.0.0.1:8000/images/800.jpeg"
+        //   },
+        //   {
+        //     id: 1,
+        //     url:
+        //     "http://127.0.0.1:8000/images/800.jpeg"
+        //   },
+        //    {
+        //     id: 2,
+        //     url:
+        //     "http://127.0.0.1:8000/images/800.jpeg"
+        //   }
+        //   ]
+
+                  
+             
+                   this.loadding = false;
+                    this.isHidden = true;
+                   
+        },
+        
         
        }
        
-           
+       
 
      
     

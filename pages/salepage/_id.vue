@@ -19,7 +19,7 @@
 
 <b-container v-if="item.type == 3">
 <div class="video-container">
-  <iframe src="https://www.youtube.com/embed/HAnO5Fb1Jh0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
+  <iframe :src="item.link" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" ></iframe>
 </div>
 
           
@@ -82,8 +82,8 @@
 
 </div>
 
-<div class="footer">
-  <p>Footer</p>
+<div col='12'>
+  <b-button variant="danger"><i class="icon-camera-retro"></i> สั่งซื้อสินค้า</b-button>
 </div>
   
 </div>
@@ -222,6 +222,7 @@ this.send();
 
                 Checkimage(image){
                 let public_images = process.env.ImageURL+image;
+                console.log('public_images',public_images)
                 return public_images;
 
                   // return "http://demo.takraonline.com/Images/SalePage/Image/2Salepage-banner-1-TripleJay.jpg";

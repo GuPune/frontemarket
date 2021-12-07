@@ -290,7 +290,7 @@ import { FETCH_ADS_SHOP,FETCH_GET_PROFILE,FETCH_ADDRESS,DEL_ADDRESS_BY_ID,GET_OR
       },
 
       methods: {
-                formatPrice(value) {
+          formatPrice(value) {
         let val = (value/1).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")
         console.log('val',val);
         return val;
