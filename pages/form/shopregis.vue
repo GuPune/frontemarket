@@ -36,7 +36,7 @@
     <div class="row">
       
       <div class="input-group input-group-icon">
-        <input type="text" class="form-control" placeholder="ชื่อร้านค้า" v-model="form.shop_name" 
+        <input type="text" class="form-control" placeholder="ชื่อร้านค้า" v-model="form.shop_name"  v-on:keypress="english($event)" 
                                                                          :error-messages="ShopnameErrors" required
                                                                          :class="{ 'is-invalid': $v.form.shop_name.$error}"
                                                                          @input="$v.form.shop_name.$touch()"
@@ -44,12 +44,16 @@
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-shopping-bag"></i></div>
       </div>
 
+    <label for="vehicle2" style="color:red">ชื่อร้านใช้เป็นภาษาอังกฤษ</label><br>
+
        <div class="input-group input-group-icon">
         <input type="text" class="form-control" placeholder="เบอร์ติดต่อ" v-model="form.tel" 
                                                                          :error-messages="telErrors" required
                                                                          :class="{ 'is-invalid': $v.form.tel.$error}"
                                                                          @input="$v.form.tel.$touch()"
-                                                                         @blur="$v.form.tel.$touch()"/>
+                                                                         @blur="$v.form.tel.$touch()"
+                                                                         v-on:keypress="isNumber($event)"   :maxlength="max"
+                                                                         />
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-phone"></i></div>
       </div>
 
@@ -91,9 +95,9 @@
       <div class="input-group input-group-icon">
         <input type="password" class="form-control" placeholder="รหัสผ่าน"  v-model="form.password" 
                                                                          :error-messages="PassErrors" required
-                                                                         :class="{ 'is-invalid': $v.form.first_name.$error}"
-                                                                         @input="$v.form.first_name.$touch()"
-                                                                         @blur="$v.form.first_name.$touch()"/>
+                                                                         :class="{ 'is-invalid': $v.form.password.$error}"
+                                                                         @input="$v.form.password.$touch()"
+                                                                         @blur="$v.form.password.$touch()"/>
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-key"></i></div>
       </div>
     </div>
@@ -149,6 +153,7 @@ import Loader from '@/components/Loader'
 
      data: () => ({
         isLoading: false,
+        max:10,
         form: {
             email: "",
             password: "",
@@ -216,6 +221,28 @@ import Loader from '@/components/Loader'
         mounted() {},
        
         methods: {
+        
+        async isNumber(event, message) {
+           
+                if (!/\d/.test(event.key) &&  
+                    (event.key !== "." || /\./.test(message))  
+                    )  
+                return event.preventDefault();  
+
+                
+        },
+
+        async english(event) {
+        
+             let keyCode = event.keyCode;
+   
+      if (keyCode < 97  || keyCode > 122) {
+       event.preventDefault();
+      }
+
+
+                            
+        },
         async registershop(){
              this.$v.$touch()
             if (this.$v.form.$pending || this.$v.form.$error) return;
