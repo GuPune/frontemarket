@@ -25,7 +25,7 @@
             <b-button block variant="primary" size="lg" class="btn btn-lg-auto btn-style buttonCheckout" @click="deliverys('cart-payment')">ถัดไป </b-button>
             </div>
          </div>
-         {{objects}}
+       
     </div>
     </div>
     </div>
