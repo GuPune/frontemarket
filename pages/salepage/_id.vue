@@ -82,10 +82,15 @@
 
 </div>
 
-<div col='12'>
-  <b-button variant="danger"><i class="icon-camera-retro"></i> สั่งซื้อสินค้า</b-button>
+
+  <div class="p-2 shadow fixed-bottom" style="background-color:#ec7d23;" @click="buy()">
+  <div class="row" style="font-family:Mitr;">
+    <div class="col-12 text-center text-white" style="padding-top:1%;">
+      <a><i class="fa fa-th fa-2x" aria-hidden="true"></i><i class="bi bi-shop-window"></i><br>สั่งซื้อสินค้า</a>
+    </div>
+
+  </div>
 </div>
-  
 </div>
 
 
@@ -227,7 +232,9 @@ this.send();
 
                   // return "http://demo.takraonline.com/Images/SalePage/Image/2Salepage-banner-1-TripleJay.jpg";
         },
-
+        buy(){
+          alert('ok');
+        }
   
     
       }
