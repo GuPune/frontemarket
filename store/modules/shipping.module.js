@@ -1,13 +1,12 @@
 
 import { ShippingService }  from "../../services/shipping";
 import {
-    CHOOSE_DELIVERY,SAVE_DELIVERY,CHECK_DELIVERY,DELIVERY_DATA,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,UPDATE_ADDRESS_SHIPPING,SELECT_SHIPPING 
+    CHOOSE_DELIVERY,SAVE_DELIVERY,CHECK_DELIVERY,DELIVERY_DATA,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,UPDATE_ADDRESS_SHIPPING,SELECT_SHIPPING,GET_PROVINCESSALEPAGE,GET_DISTRICTSSALEPAGE,GET_SUBDISTRICTSSALEPAGE
 } from "../actions.type.js";
 import {
     SET_DELIVERY,SET_SAVEDELIVERY,SET_CHECKDELIVERY,SELECT_DELIVERY,SET_PROVINCES,SET_SELECT_SHIPPING
 } from "../mutations.type";
 import Vuex from 'vuex'
-
 
 
 const state = {
@@ -67,12 +66,36 @@ const actions = {
         context.commit(SET_PROVINCES,data);
         return data.data;
     },
+
+    async [GET_PROVINCESSALEPAGE](context,payload) { 
+        const { data } = await ShippingService.getprovincesalgepage();
+        context.commit(SET_PROVINCES,data);
+        return data.data;
+    },
+
     async [GET_DISTRICTS](context,payload) { 
     
         const { data } = await ShippingService.getdistricts(payload);
      //   context.commit(SET_PROVINCES,data);
         return data.data;
     },
+
+    async [GET_DISTRICTSSALEPAGE](context,payload) { 
+    
+        console.log('payload',payload)
+        const { data } = await ShippingService.getdistrictsalgepag(payload);
+     //   context.commit(SET_PROVINCES,data);
+        return data.data;
+    },
+
+    
+    async [GET_SUBDISTRICTSSALEPAGE](context,payload) { 
+    
+        const { data } = await ShippingService.getsubdistrictssalepage(payload);
+     //   context.commit(SET_PROVINCES,data);
+        return data.data;
+    },
+
     async [GET_SUBDISTRICTS](context,payload) { 
         console.log(payload);
         const { data } = await ShippingService.getsubdistricts(payload);

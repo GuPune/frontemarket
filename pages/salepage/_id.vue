@@ -183,6 +183,7 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
       this.form.line = salepage.data.line
       this.form.face_id = salepage.data.face_id
       this.form.id = salepage.data.id
+      this.form.product_id = salepage.data.product_id
 
 console.log('salepage',salepage)
 
@@ -233,10 +234,19 @@ this.send();
                   // return "http://demo.takraonline.com/Images/SalePage/Image/2Salepage-banner-1-TripleJay.jpg";
         },
         buy(){
-          alert('ok');
+
+          
+
+  this.product_id = this.form.id
+
+ 
+        localStorage.setItem("salepageitem",this.product_id);
+         this.$router.push({ name: 'buy-slug'});
+//this.$router.push({ path: `/buy/${this.product_id}` }) // -> /user/123
+            
         }
-  
-    
+
+
       }
        
            

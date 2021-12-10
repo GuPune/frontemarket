@@ -110,9 +110,7 @@
                     </div>
                 </div>
          <div class="row shop-name-order-mobile">
-    
             <div class="row">
-               
                 <div class="col-10 shop-name-order">
                         <h5>ชื่อร้าน : xxxxxx</h5>
                  </div>

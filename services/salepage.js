@@ -10,5 +10,10 @@ export const SalePageService = {
   
       return ApiServiceAll.post("salepagesave",param);
     },
+    getproduct(param){
+
+      return ApiServiceAll.post("saleproduct",param);
+
+    }
 
 };

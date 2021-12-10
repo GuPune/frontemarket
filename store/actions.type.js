@@ -75,9 +75,14 @@ export const UPDATE_SLIP = "update_slip";
 export const CHANGEPASSWORD = "change_password";
 
 export const GET_SHOP = "get_shop";
+export const GET_PRODUCT_SALEPAGE = "get_salepage";
 export const GET_SHOP_BY_ITEM = "get_shop_by_item";
 export const GET_CAPTCHA = "get_captcha";
 export const GET_PROVINCES = "get_address_provinces";
+export const GET_PROVINCESSALEPAGE = "get_address_provincessalepage";
+export const GET_DISTRICTSSALEPAGE = "get_address_districtssalepage";
+export const GET_SUBDISTRICTSSALEPAGE = "get_address_subdistrictsalepage";
+
 export const GET_DISTRICTS = "get_address_districts";
 export const GET_SUBDISTRICTS = "get_address_subdistricts";
 export const GET_ORDER_LOCAL = "get_order";

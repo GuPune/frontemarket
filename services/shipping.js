@@ -8,6 +8,16 @@ export const ShippingService = {
     getprovinces() {
       return ApiServiceAll.get("provinces");
     },
+    getprovincesalgepage() {
+      return ApiServiceAll.get("provincesalepage");
+    },
+    getsubdistrictssalepage(param) {
+      return ApiServiceAll.post("subdistrictssalepage",param);
+    },
+    getdistrictsalgepag(param) {
+      return ApiServiceAll.post("districtssalepage",param);
+    },
+  
     getdistricts(param) {
       return ApiServiceAll.post("districts",param);
     },
