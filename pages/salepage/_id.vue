@@ -184,6 +184,7 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
       this.form.face_id = salepage.data.face_id
       this.form.id = salepage.data.id
       this.form.product_id = salepage.data.product_id
+    
 
 console.log('salepage',salepage)
 
@@ -237,7 +238,7 @@ this.send();
 
           
 
-  this.product_id = this.form.id
+  this.product_id = this.form.product_id
 
  
         localStorage.setItem("salepageitem",this.product_id);

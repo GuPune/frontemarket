@@ -42,6 +42,9 @@ export const SET_ORDER_HIS = "set_orderhisto";
 export const SET_SELECT_SHIPPING = "set_select_shipping";
 export const SET_IMAGES = "set_images";
 
+export const SET_SALEPAGESUMMARY = "set_salepagesummary";
+
+
 
 export const SET_LINE = "set_line";
 export const SET_MENU = "set_menu";

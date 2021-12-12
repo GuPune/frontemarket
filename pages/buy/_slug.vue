@@ -12,14 +12,14 @@
         <h2 class="shoping-cart-title bg-order"><h1>สั่งซื้อสินค้า</h1>
           
         </h2>
-        <div class="card-body">
+        <div class="card-body"  v-for="(item, index) in product" :key="item.id" >
         <div class="row" id="scrollMemberList">
         <div class="col-4">
             <div class="row form-group">
                 <div class="col-12 divMemberAddressChoose">
                     <div class="text-muted" >
               
-                    <a href="https://www.svgroup.co.th/c-dial-pro-4.html" title="C-DIAL PRO 4 ตัวควบคุม 4 สถานี 9 V. รุ่นใช้ในร่ม" class="product-image"><img class="img-responsive lazy"  :src="Checkimage()" width="125" height="125" alt="C-DIAL PRO 4 ตัวควบคุม 4 สถานี 9 V. รุ่นใช้ในร่ม" /></a>
+                    <a href="#" title="C-DIAL PRO 4 ตัวควบคุม 4 สถานี 9 V. รุ่นใช้ในร่ม" class="product-image"><img class="img-responsive lazy"  :src="Checkimage(item.product_img_thumbs)" width="125" height="125" alt="C-DIAL PRO 4 ตัวควบคุม 4 สถานี 9 V. รุ่นใช้ในร่ม" /></a>
 
                     </div>
                 </div>
@@ -30,7 +30,7 @@
         <div class="col-8">
   <div class="col-12 col-md-12 col-sm-12 product-detail-ipad">
             <div class="marginInner">
-            <h2 class="productName-detail">Battery Charger</h2>
+            <h2 class="productName-detail">{{item.name_th}}</h2>
             </div>
             <div class="row">
            
@@ -53,7 +53,7 @@
                 <div class="col-md-12">
                     <div class="form-group h5">
                         <div class="marginInner mb-4 mb-md-4">
-                            <p class="productPrice"> ฿ 50</p>
+                            <p class="productPrice"> ฿  {{ formatPrice(item.price) }}</p>
                             
                         </div>
                     </div>
@@ -139,6 +139,18 @@
                                       >
                     </div>
 
+
+
+                          <div class="form-group">
+                        <label for="inputContactPhone" class="font-weight-bold">รหัสไปรษณีย์<span class="text-danger"> * </span></label>
+                    <input class="form-control" type="text" id="customerPostal" name="customerPostal[thai]" :class="{ 'is-invalid': $v.form.zipcode.$error}"
+                                  :error-messages="ZipcodeErrors"
+                                            required
+                                            @input="$v.form.zipcode.$touch()"
+                                            @blur="$v.form.zipcode.$touch()"
+                             v-model="form.zipcode" />
+                    </div>
+
                     
 
                 
@@ -147,6 +159,7 @@
 
                    
             </div>
+            
 
              <div class="col-12 col-md-6 col-lg-6 alotcolerror">
                         <div class="form-group">
@@ -185,7 +198,8 @@
 
     
         </div>
-  
+<br>
+          <SalePageSummary/>
 <div style = "display: flex; justify-content:flex-end;padding-top: 15px">
 <button type="button" class="btn btn-light">ยกเลิก</button>
 <button type="button" class="btn btn-primary" @click="buy()">ยืนยันการสั่งซื้อ</button>
@@ -221,9 +235,10 @@
 import VSwitch from 'v-switch-case'
 import { GET_PRODUCT_SALEPAGE,SAVE_SALEPAGE } from "@/store/actions.type.js";
 import Contact from "@/components/Contact"
-import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
+import SalePageSummary from "@/components/SalePageSummary"
+import { required, email, numeric, maxLength,minLength  } from "vuelidate/lib/validators";
 import { mapGetters,mapState  } from "vuex";
-import { SAVE_CONTACT,GET_CAPTCHA,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,SAVE_ADDRESS_BY_ID,GET_PROVINCESSALEPAGE,GET_DISTRICTSSALEPAGE,GET_SUBDISTRICTSSALEPAGE  } from "@/store/actions.type.js";
+import { SAVE_CONTACT,GET_CAPTCHA,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,SAVE_ADDRESS_BY_ID,GET_PROVINCESSALEPAGE,GET_DISTRICTSSALEPAGE,GET_SUBDISTRICTSSALEPAGE,GET_SALEPAGESUMMARY  } from "@/store/actions.type.js";
 
 
     export default {
@@ -234,13 +249,16 @@ import { SAVE_CONTACT,GET_CAPTCHA,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,S
             details: { required },
             tel: { required },
             captcha: { required },
+            zipcode: { required,numeric,minLength: minLength(5),maxLength: maxLength(5) },
 
         }
     },
       components: {
-        Contact
+        Contact,
+        SalePageSummary
               },
       data: () => ({
+          product:[],
         add:1,
         selected: 0,
          provin:"",
@@ -249,12 +267,19 @@ import { SAVE_CONTACT,GET_CAPTCHA,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,S
       subdist_id:"",
       distri:"",
       subdis:"",
+      zipcode:"",
         form: {
           email: '',
           name: '',
           details: '',
           tel: '',
-          captcha:''
+          captcha:'',
+          zipcode:''
+        },
+        summary: {
+          total:'',
+          item:'',
+          price:'',
         },
         sale_type:'',
         items:[]
@@ -277,6 +302,13 @@ import { SAVE_CONTACT,GET_CAPTCHA,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,S
             !this.$v.form.email.required && errors.push('โปรดระบุอีเมล์')
             !this.$v.form.email.email    && errors.push('โปรดระบุข้อมูลรูปแบบอีเมล์')
             return errors
+        },
+
+              ZipcodeErrors() {
+            const errors = [];
+            if (!this.$v.form.zipcode.$dirty) return errors;
+            !this.$v.form.zipcode.required  && errors.push("โปรดระบุรายละเอียดที่ติดต่อ");
+            return errors;
         },
 
             
@@ -319,13 +351,24 @@ import { SAVE_CONTACT,GET_CAPTCHA,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,S
             async mounted() {
 
               
-      var x = localStorage.getItem('salepageitem');
+      var product_sale = localStorage.getItem('salepageitem');
  
 
-    this.form.product_id = this.$route.params.slug;
+    this.form.product_id = product_sale;
+    this.form.url = window.location.origin
 
  
-    this.$store.dispatch(GET_PRODUCT_SALEPAGE,this.form)
+   var product =  await this.$store.dispatch(GET_PRODUCT_SALEPAGE,this.form)
+this.product = product
+
+this.summary.add = this.add
+this.summary.price = product[0].price
+
+
+
+var sum =  await this.$store.dispatch(GET_SALEPAGESUMMARY,this.summary)
+
+ //var product =  await this.$store.dispatch(GET_PRODUCT_SALEPAGE,this.form)
 
 
   
@@ -345,6 +388,12 @@ import { SAVE_CONTACT,GET_CAPTCHA,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,S
 
         async Addup(){
              this.add += 1;
+
+             this.summary.add = this.add
+
+
+
+var sum =  await this.$store.dispatch(GET_SALEPAGESUMMARY,this.summary)
 
         },
         async Adddown(){
@@ -424,19 +473,27 @@ this.send();
 
         
 
-                Checkimage(){
-              //  let public_images = process.env.ImageURL+image;
+                Checkimage(image){
+                let public_images = process.env.ImageURL+image;
                // console.log('public_images',public_images)
-               // return public_images;
+               return public_images;
 
-                  return "http://demo.takraonline.com/Images/SalePage/Image/2Salepage-banner-1-TripleJay.jpg";
+                 // return "http://demo.takraonline.com/Images/SalePage/Image/2Salepage-banner-1-TripleJay.jpg";
         },
        async buy(){
           this.$v.$touch();
 
 
-          this.success()
-        }
+        //  this.success()
+        },
+
+        formatPrice(value) {
+        let val = (value/1).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")
+ 
+        return val;
+        },
+
+
   
     
       }

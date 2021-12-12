@@ -1,10 +1,10 @@
 
 import { ShippingService }  from "../../services/shipping";
 import {
-    CHOOSE_DELIVERY,SAVE_DELIVERY,CHECK_DELIVERY,DELIVERY_DATA,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,UPDATE_ADDRESS_SHIPPING,SELECT_SHIPPING,GET_PROVINCESSALEPAGE,GET_DISTRICTSSALEPAGE,GET_SUBDISTRICTSSALEPAGE
+    CHOOSE_DELIVERY,SAVE_DELIVERY,CHECK_DELIVERY,DELIVERY_DATA,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,UPDATE_ADDRESS_SHIPPING,SELECT_SHIPPING,GET_PROVINCESSALEPAGE,GET_DISTRICTSSALEPAGE,GET_SUBDISTRICTSSALEPAGE,GET_SALEPAGESUMMARY
 } from "../actions.type.js";
 import {
-    SET_DELIVERY,SET_SAVEDELIVERY,SET_CHECKDELIVERY,SELECT_DELIVERY,SET_PROVINCES,SET_SELECT_SHIPPING
+    SET_DELIVERY,SET_SAVEDELIVERY,SET_CHECKDELIVERY,SELECT_DELIVERY,SET_PROVINCES,SET_SELECT_SHIPPING,SET_SALEPAGESUMMARY
 } from "../mutations.type";
 import Vuex from 'vuex'
 
@@ -16,7 +16,12 @@ const state = {
         selectDel:null
     },
     select_shipping:null,
-    provinces:[]
+    provinces:[],
+    summary:{
+        add:1,
+        price:0,
+        total:0,
+    },
 }
 
 const getters = {
@@ -113,8 +118,17 @@ const actions = {
 
     async [SELECT_SHIPPING](context,payload) { 
         console.log('state.select_shipping',payload);
-        context.commit(SET_SELECT_SHIPPING,payload);
+        context.commit(SET_SALEPAGESUMMARY,payload);
     },
+    async [GET_SALEPAGESUMMARY](context,payload) { 
+    
+        context.commit(SET_SALEPAGESUMMARY,payload);
+ 
+    },
+
+
+
+    
 
 
 
@@ -151,6 +165,14 @@ const mutations = {
         let setdelivery = localStorage.setItem('delivery',data);
     
     }, 
+
+    [SET_SALEPAGESUMMARY](state,data) {
+       state.summary.add = data.add
+       state.summary.price = parseInt(data.price)
+       state.summary.total = (data.add) * (data.price)
+       console.log('summary',state.summary);
+    }, 
+    
 
 
         
