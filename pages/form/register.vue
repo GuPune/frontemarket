@@ -224,7 +224,7 @@ import 'sweetalert2/dist/sweetalert2.min.css';
                  await this.$auth.loginWith('local', {
           data: this.form
         }).then(data => {
-
+ alert('iffffffffffff');
 
      //   let token = this.$auth.getToken('local')   //get token
          
