@@ -197,7 +197,14 @@ import 'sweetalert2/dist/sweetalert2.min.css';
     liff.init({
       liffId: '1656516351-3K67gZ9V'
     }).then(() => {
-       liff.login();
+      if(liff.isLoggedIn()){
+        liff.getProfile().then(profile => {                    
+         this.$store.dispatch(SAVE_SETLINE, profile);
+         this.isDone();
+        })
+      }else{
+          liff.login();
+      }
     })
   }, 
      methods: {
@@ -208,7 +215,6 @@ import 'sweetalert2/dist/sweetalert2.min.css';
   
         this.form
             if(userline != null){
-              alert(userline.data.email);
               this.form.email = userline.data.email;
               this.form.password = 'r066315265';
               this.form.url = 'http://localhost:3000';
