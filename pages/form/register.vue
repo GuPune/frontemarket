@@ -246,7 +246,7 @@ import 'sweetalert2/dist/sweetalert2.min.css';
     },
         async register(){
              this.forms = await this.$store.getters.getLine;
-             alert(JSON.stringify(this.forms));
+             alert(JSON.stringify(this.forms.userId));
          
           this.form.url = window.location.origin
             this.$v.$touch()
