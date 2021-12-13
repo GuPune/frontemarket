@@ -212,9 +212,10 @@ import 'sweetalert2/dist/sweetalert2.min.css';
              this.forms = await this.$store.getters.getLine;
            let userline = await this.$store.dispatch(CORE_USER,this.forms);
         
-    
+  
         this.form
             if(userline != null){
+              alert(userline.data.email);
               this.form.email = userline.data.email;
               this.form.password = 'r066315265';
               this.form.url = 'http://localhost:3000';
