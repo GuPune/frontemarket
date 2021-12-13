@@ -214,7 +214,7 @@ import 'sweetalert2/dist/sweetalert2.min.css';
          
            let userline = await this.$store.dispatch(CORE_USER,this.forms);
         
-  alert('userline');
+
         this.form
             if(userline != null){
               this.form.email = userline.data.email;
@@ -224,7 +224,7 @@ import 'sweetalert2/dist/sweetalert2.min.css';
                  await this.$auth.loginWith('local', {
           data: this.form
         }).then(data => {
- alert('iffffffffffff');
+
 
      //   let token = this.$auth.getToken('local')   //get token
          
@@ -240,11 +240,13 @@ import 'sweetalert2/dist/sweetalert2.min.css';
             
             }else{
              console.log('สมัครซะ');
-             alert('สมัครซะ');
+        
             }
 
     },
         async register(){
+             this.forms = await this.$store.getters.getLine;
+             alert(this.forms);
           this.form.url = window.location.origin
             this.$v.$touch()
             if (this.$v.form.$pending || this.$v.form.$error) return;
