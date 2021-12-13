@@ -145,6 +145,7 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
 
           computed: {
 
+          
             NameErrors() {
             const errors = [];
             if (!this.$v.form.name.$dirty) return errors;
@@ -168,9 +169,6 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
             !this.$v.form.tel.required && errors.push("โปรดระบุชื่อ");
             return errors;
             },
-
-
-
     },
              
             async mounted() {
@@ -184,10 +182,8 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
       this.form.face_id = salepage.data.face_id
       this.form.id = salepage.data.id
       this.form.product_id = salepage.data.product_id
+ 
     
-
-console.log('salepage',salepage)
-
  
       
       },
@@ -242,6 +238,8 @@ this.send();
 
  
         localStorage.setItem("salepageitem",this.product_id);
+  localStorage.setItem("salepage_id",this.form.id);
+          
          this.$router.push({ name: 'buy-slug'});
 //this.$router.push({ path: `/buy/${this.product_id}` }) // -> /user/123
             

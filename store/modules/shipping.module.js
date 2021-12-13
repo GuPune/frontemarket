@@ -1,7 +1,7 @@
 
 import { ShippingService }  from "../../services/shipping";
 import {
-    CHOOSE_DELIVERY,SAVE_DELIVERY,CHECK_DELIVERY,DELIVERY_DATA,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,UPDATE_ADDRESS_SHIPPING,SELECT_SHIPPING,GET_PROVINCESSALEPAGE,GET_DISTRICTSSALEPAGE,GET_SUBDISTRICTSSALEPAGE,GET_SALEPAGESUMMARY
+    CHOOSE_DELIVERY,SAVE_DELIVERY,CHECK_DELIVERY,DELIVERY_DATA,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,UPDATE_ADDRESS_SHIPPING,SELECT_SHIPPING,GET_PROVINCESSALEPAGE,GET_DISTRICTSSALEPAGE,GET_SUBDISTRICTSSALEPAGE,GET_SALEPAGESUMMARY,SAVE_ORDER_SALEPAGE
 } from "../actions.type.js";
 import {
     SET_DELIVERY,SET_SAVEDELIVERY,SET_CHECKDELIVERY,SELECT_DELIVERY,SET_PROVINCES,SET_SELECT_SHIPPING,SET_SALEPAGESUMMARY
@@ -109,7 +109,7 @@ const actions = {
 
     async [UPDATE_ADDRESS_SHIPPING](context,payload) { 
       
-        console.log('payload',payload);
+   
         const { data } = await ShippingService.updatedefault(payload);
          context.commit(SET_SELECT_SHIPPING,payload);
        // const { data } = await ShippingService.getsubdistricts(payload);
@@ -117,7 +117,7 @@ const actions = {
     },
 
     async [SELECT_SHIPPING](context,payload) { 
-        console.log('state.select_shipping',payload);
+ 
         context.commit(SET_SALEPAGESUMMARY,payload);
     },
     async [GET_SALEPAGESUMMARY](context,payload) { 
@@ -125,6 +125,13 @@ const actions = {
         context.commit(SET_SALEPAGESUMMARY,payload);
  
     },
+    async [SAVE_ORDER_SALEPAGE](context,payload) { 
+        const { data } = await ShippingService.saveordersalepage(payload);
+        return data;
+    },
+
+
+    
 
 
 

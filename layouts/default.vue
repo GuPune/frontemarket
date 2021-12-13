@@ -8,7 +8,7 @@
 
 
 <Loader v-if="product.loading"/>
- <Nav  v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug')"/>
+ <Nav  v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou')"/>
 <nuxt-child></nuxt-child>
 
 

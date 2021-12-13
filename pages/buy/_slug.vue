@@ -98,7 +98,7 @@
             <div class="col-12 col-md-12 col-lg-12">
                     <div class="form-group">
                         <label for="inputContactName" class="font-weight-bold">ชื่อ - นามสกุล<span class="text-danger"> * </span></label>
-                        <input type="text" class="form-control" name="inputContactName" id="inputContactName" :class="{ 'is-invalid': $v.form.tel.$error}" v-model="form.name"
+                        <input type="text" class="form-control" name="inputContactName" id="inputContactName" :class="{ 'is-invalid': $v.form.name.$error}" v-model="form.name"
                          :error-messages="NameErrors"
                                             required
                                             @input="$v.form.name.$touch()"
@@ -110,7 +110,7 @@
                                  <div class="form-group">
                         <label for="inputContactMessage" class="font-weight-bold">ที่อยู่ * (เลขที่ , ซอย , ตึก , ถนน)<span class="text-danger"> * </span></label>
                         <textarea class="form-control" rows="5" name="inputContactMessage" id="inputContactMessage" placeholder="เขียนข้อความ"  v-model="form.details"
-        
+        :class="{ 'is-invalid': $v.form.details.$error}"
                                     :error-messages="detailErrors"
                                     label="รายละเอียดที่ติดต่อ"
                                     required
@@ -165,7 +165,7 @@
                         <div class="form-group">
                             <label class="label-bold font-weight-bold">
                                 จังหวัด                            </label>
-                            <select class="form-control" name="customerRegionsID" id="customerRegionsID" @change="ChangeProvinces($event)" >
+                            <select class="form-control" name="customerRegionsID" id="customerRegionsID" @change="ChangeProvinces($event)"   :class="{ 'is-invalid': $v.form.pros_id.$error}">
                                 <option value="">- เลือก-</option>
                                   <option :value="province.id"  v-for="(province, index) in provin" :key="province.id" >{{province.name_en}}</option>
                                                              
@@ -177,7 +177,7 @@
                         <div class="form-group">
                             <label class="label-bold font-weight-bold">
                                 เขต/อำเภอ                            </label>
-                            <select class="form-control" name="customerDistrictID" id="customerDistrictID"  @change="ChangeDistris($event)">
+                            <select class="form-control" name="customerDistrictID" id="customerDistrictID"  @change="ChangeDistris($event)"  :class="{ 'is-invalid': $v.form.dist_id.$error}">
                                 <option value="">- เลือก - </option>
                                 <option :value="distris.id"  v-for="(distris, index) in distri" :key="distris.id" >{{distris.name_en}} </option>
                                                             </select>
@@ -188,7 +188,7 @@
                         <div class="form-group">
                             <label class="label-bold font-weight-bold">
                                 แขวง/ตำบล                            </label>
-                            <select class="form-control" name="x" id="x"  @change="ChangeSubDistris($event)">
+                            <select class="form-control" name="x" id="x"  @change="ChangeSubDistris($event)" :class="{ 'is-invalid': $v.form.subdist_id.$error}">
                                 <option value="">- เลือก - </option>
                                   <option :value="subdi.id"  v-for="(subdi, index) in subdis" :key="subdi.id" >{{subdi.name_en}}</option>
                                                             </select>
@@ -238,19 +238,20 @@ import Contact from "@/components/Contact"
 import SalePageSummary from "@/components/SalePageSummary"
 import { required, email, numeric, maxLength,minLength  } from "vuelidate/lib/validators";
 import { mapGetters,mapState  } from "vuex";
-import { SAVE_CONTACT,GET_CAPTCHA,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,SAVE_ADDRESS_BY_ID,GET_PROVINCESSALEPAGE,GET_DISTRICTSSALEPAGE,GET_SUBDISTRICTSSALEPAGE,GET_SALEPAGESUMMARY  } from "@/store/actions.type.js";
+import { SAVE_CONTACT,GET_CAPTCHA,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,SAVE_ADDRESS_BY_ID,GET_PROVINCESSALEPAGE,GET_DISTRICTSSALEPAGE,GET_SUBDISTRICTSSALEPAGE,GET_SALEPAGESUMMARY,SAVE_ORDER_SALEPAGE  } from "@/store/actions.type.js";
 
 
     export default {
              validations: {
         form: {
-            email      : { required, email   },
+            email : { required, email   },
             name: { required },
             details: { required },
             tel: { required },
-            captcha: { required },
+            pros_id:{ required },
+            dist_id:{ required },
+            subdist_id:{ required },
             zipcode: { required,numeric,minLength: minLength(5),maxLength: maxLength(5) },
-
         }
     },
       components: {
@@ -274,7 +275,11 @@ import { SAVE_CONTACT,GET_CAPTCHA,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,S
           details: '',
           tel: '',
           captcha:'',
-          zipcode:''
+          zipcode:'',
+          pros_id:'',
+          dist_id:"",
+          subdist_id:"",
+      
         },
         summary: {
           total:'',
@@ -286,6 +291,11 @@ import { SAVE_CONTACT,GET_CAPTCHA,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,S
       }),
 
           computed: {
+              
+                             ...mapState({
+                objects: state => state.Shipping.summary,
+              
+            }),
 
      NameErrors() {
             const errors = [];
@@ -406,10 +416,17 @@ var sum =  await this.$store.dispatch(GET_SALEPAGESUMMARY,this.summary)
             }
    
      this.add -= 1;
+    this.summary.add = this.add
+
+
+
+var sum =  await this.$store.dispatch(GET_SALEPAGESUMMARY,this.summary)
+
           
         },
                    async ChangeProvinces(event){
              this.pros_id = event.target.value;
+              this.form.pros_id = event.target.value
         let districts = await this.$store.dispatch(GET_DISTRICTSSALEPAGE,this.pros_id);
            this.distri = districts;
            this.subdis = '';
@@ -417,6 +434,7 @@ var sum =  await this.$store.dispatch(GET_SALEPAGESUMMARY,this.summary)
 
          async ChangeDistris(event){
              this.dist_id = event.target.value;
+             this.form.dist_id = event.target.value
 
        let subdistrct = await this.$store.dispatch(GET_SUBDISTRICTSSALEPAGE,this.dist_id);
    
@@ -425,6 +443,7 @@ var sum =  await this.$store.dispatch(GET_SALEPAGESUMMARY,this.summary)
           async ChangeSubDistris(event){
 
        this.subdist_id = event.target.value;
+       this.form.subdist_id = event.target.value
           
           },
 
@@ -457,7 +476,7 @@ this.send();
                 1500
             );
 
-      
+      //     this.$router.push({ name: 'buy-thankyou' })
      
         },
 
@@ -481,10 +500,21 @@ this.send();
                  // return "http://demo.takraonline.com/Images/SalePage/Image/2Salepage-banner-1-TripleJay.jpg";
         },
        async buy(){
+        var product_id = localStorage.getItem('salepageitem');
+        var salepage_id = localStorage.getItem('salepage_id');
+        this.form.add = this.objects.add
+        this.form.total = this.objects.total
+        this.form.order_status = 'S'
+        this.form.salepage_id = salepage_id
+
+
+    
           this.$v.$touch();
+            if (this.$v.form.$pending || this.$v.form.$error) return;
+                this.$store.dispatch(SAVE_ORDER_SALEPAGE, this.form)
+            .then((response) => response ==  "success" ? this.success() : this.error())
+            .catch((error) => console.log(error))
 
-
-        //  this.success()
         },
 
         formatPrice(value) {

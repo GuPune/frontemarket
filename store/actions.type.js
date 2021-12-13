@@ -82,11 +82,8 @@ export const GET_PROVINCES = "get_address_provinces";
 export const GET_PROVINCESSALEPAGE = "get_address_provincessalepage";
 export const GET_DISTRICTSSALEPAGE = "get_address_districtssalepage";
 export const GET_SUBDISTRICTSSALEPAGE = "get_address_subdistrictsalepage";
-
-
 export const GET_SALEPAGESUMMARY = "get_salepagesummary";
-
-
+export const SAVE_ORDER_SALEPAGE = "save_order_salepage";
 export const GET_DISTRICTS = "get_address_districts";
 export const GET_SUBDISTRICTS = "get_address_subdistricts";
 export const GET_ORDER_LOCAL = "get_order";

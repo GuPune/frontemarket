@@ -1,14 +1,14 @@
 <template>
         <div class="card shopping-cart">
-                  <h2 class="shoping-cart-title"><span>สรุปรายการสั่งซื้อ {{objects}}</span></h2>
+                  <h2 class="shoping-cart-title"><span>สรุปรายการสั่งซื้อ</span></h2>
 <div class="card-footer px-lg-3 cardnoborder">
     <div class="row pb-2 pt-3">
         <div class="col-auto">
             <span>ยอดรวมสินค้า</span>
-            <span class="text-muted" id="showAmount">xxxx</span>
+            <span class="text-muted" id="showAmount">{{objects.add}}</span>
         </div>  
         <div class="col text-right">
-            <span>฿ 00000000.00  </span>
+            <span>฿  {{ formatPrice(objects.total) }}  </span>
         </div> 
     </div>
         <div id="showShipping">
@@ -18,7 +18,7 @@
             </div>  
             <div class="col text-right">
                 <span id="divShippingPrice">
-                ฿ 00000000.00                </span>
+                ฿ 0.00                </span>
             </div> 
       </div>
           <div id="showInsureShipping">
@@ -27,7 +27,7 @@
             <p class="font-weight-bold mb-2">ยอดรวมสุทธิ</p>
         </div>  
         <div class="col pr-0 text-right" id="divOrderTotalPrice">
-            <p class="font-weight-bold txtTotalPrice mb-2">฿ 00000000.00  </p>
+            <p class="font-weight-bold txtTotalPrice mb-2">฿   {{ formatPrice(objects.total) }} </p>
         </div>
     </div>
     </div> 
@@ -59,12 +59,17 @@ export default {
         },
              
         mounted() {
-            console.log('คำนวนใหม่',this.cart);
+   
 
           
         },
 
         methods: {
+        formatPrice(value) {
+        let val = (value/1).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")
+ 
+        return val;
+        },
     
  
         }
