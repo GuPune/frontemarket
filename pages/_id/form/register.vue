@@ -201,8 +201,10 @@ import 'sweetalert2/dist/sweetalert2.min.css';
         liff.getProfile().then(profile => {                    
          this.$store.dispatch(SAVE_SETLINE, profile);
          this.isDone();
+          alert('if');
         })
       }else{
+        alert('else');
           liff.login();
       }
     })
@@ -210,6 +212,7 @@ import 'sweetalert2/dist/sweetalert2.min.css';
      methods: {
              async isDone(){
              this.forms = await this.$store.getters.getLine;
+            
            let userline = await this.$store.dispatch(CORE_USER,this.forms);
         
     
