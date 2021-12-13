@@ -209,7 +209,9 @@ import 'sweetalert2/dist/sweetalert2.min.css';
   }, 
      methods: {
              async isDone(){
+               
              this.forms = await this.$store.getters.getLine;
+             console.log('this.forms-line',this.forms);
            let userline = await this.$store.dispatch(CORE_USER,this.forms);
         
   
