@@ -214,7 +214,7 @@ import 'sweetalert2/dist/sweetalert2.min.css';
          
            let userline = await this.$store.dispatch(CORE_USER,this.forms);
         
-  
+  alert('userline');
         this.form
             if(userline != null){
               this.form.email = userline.data.email;
