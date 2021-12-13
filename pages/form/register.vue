@@ -197,14 +197,7 @@ import 'sweetalert2/dist/sweetalert2.min.css';
     liff.init({
       liffId: '1656516351-3K67gZ9V'
     }).then(() => {
-      if(liff.isLoggedIn()){
-        liff.getProfile().then(profile => {                    
-         this.$store.dispatch(SAVE_SETLINE, profile);
-         this.isDone();
-        })
-      }else{
-          liff.login();
-      }
+       liff.login();
     })
   }, 
      methods: {
