@@ -6,6 +6,10 @@ export const MyshopService = {
    
       return ApiServiceAll.get("getshop");
     },
+    getshopline() {
+   
+      return ApiServiceAll.get("getshopline");
+    },
     getshop_by_item(param) {
    
       return ApiServiceAll.post("getshopitem",param);

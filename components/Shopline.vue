@@ -21,7 +21,7 @@
 <script>
   import { mapGetters,mapState } from "vuex";
   import { FETCH_PRODUCT_SHELL } from "../store/actions.type.js";
-  import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_SHOP } from "@/store/actions.type.js";
+  import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_SHOP_LINE } from "@/store/actions.type.js";
   import { APP_URL } from "../environment/environment.js";
   import VueSlickCarousel from 'vue-slick-carousel'
   import 'vue-slick-carousel/dist/vue-slick-carousel.css'
@@ -90,12 +90,12 @@
        async mounted() {
    
 
-      let product = await this.$store.dispatch(GET_SHOP);
+      let product = await this.$store.dispatch(GET_SHOP_LINE);
      
 
       this.items = product;
 
-      console.log('this.items',this.items);
+
 
         this.loadcategory()
         
