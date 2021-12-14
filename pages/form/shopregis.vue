@@ -295,7 +295,7 @@ this.typeshop = typeshop;
             
             },
             send() {
-                this.$store.dispatch(REGISSHOP,this.form).then((response) => response.code_return == "200" ? this.success() : this.error()).catch((error) => this.error(error.response))
+                this.$store.dispatch(REGISSHOP,this.form).then((response) => response.code_return == "200" ? this.success() : this.error(response)).catch((error) => this.error(error.response))
             },
            async success() {
                      this.isLoading = false;
@@ -316,11 +316,13 @@ this.typeshop = typeshop;
 
            
             },
-            error() {
+            error(response) {
+                console.log(response.data.errors.ShopName);
+                this.isLoading = false;
                 this.$swal({
                     icon: 'error',
-                    title: 'อีเมล์',
-                    text: 'อีเมล์ของคุณถูกใช้งานไปแล้ว!',
+                    title: response.data.errors.Shop,
+                    text: response.data.errors.ShopName,
                     showConfirmButton: true,
                     reverseButtons: true
                 });
