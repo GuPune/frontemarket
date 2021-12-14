@@ -4,11 +4,8 @@
 
 
 <div>
-
-
-
 <Loader v-if="product.loading"/>
- <Nav  v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou')"/>
+ <Nav  v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou')  && (currentRouteName != 'line')"/>
 <nuxt-child></nuxt-child>
 
 

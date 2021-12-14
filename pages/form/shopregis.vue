@@ -101,6 +101,25 @@
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-key"></i></div>
       </div>
     </div>
+
+
+
+
+    <div class="row">
+
+    
+    <div class="input-group input-group-icon">
+               <select class="form-control" name="x" id="x" @change="ChooseType($event)">
+                                <option value="">- เลือก - </option>
+                                  <option :value="typeshops.id"  v-for="(typeshops, index) in typeshop" :key="typeshops.id" >{{typeshops.type_name}}</option>
+                                                            </select>
+        <div class="input-icon"><i style="color: #005dc0;" class="fa fa-plus"></i></div>
+      </div>
+    </div>
+
+    
+
+
 <!--
      <h6 style="color: #171c24;">ช่องทางการขายเพิ่มเติม</h6>
         <input type="checkbox" id="vehicle2" name="vehicle2"  v-model="form.status" v-on:click="checkdomain()">
@@ -126,7 +145,7 @@
 import Nav from "@/components/Nav";
 import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
 import { mapGetters } from "vuex";
-import { REGISSHOP } from "../../store/actions.type.js";
+import { REGISSHOP,GET_TYPE_SHOP } from "@/store/actions.type.js";
 import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/vue-loading.css';
 import 'sweetalert2/dist/sweetalert2.min.css';
@@ -154,6 +173,8 @@ import Loader from '@/components/Loader'
      data: () => ({
         isLoading: false,
         max:10,
+        typeshop:"",
+        type_id:"",
         form: {
             email: "",
             password: "",
@@ -162,7 +183,8 @@ import Loader from '@/components/Loader'
             shop_name:"",
             tel:"",
             address:"",
-            status: false
+            type_id:"",
+            status: false,
         },
       }),
      computed: {
@@ -218,7 +240,10 @@ import Loader from '@/components/Loader'
         }
     },
              
-        mounted() {},
+       async mounted() {
+     let typeshop = await this.$store.dispatch(GET_TYPE_SHOP);
+this.typeshop = typeshop;
+        },
        
         methods: {
         
@@ -243,11 +268,26 @@ import Loader from '@/components/Loader'
 
                             
         },
+        async ChooseType(event){
+
+               this.form.type_id = event.target.value;
+               console.log(this.type_id);
+
+
+        },
         async registershop(){
+              
              this.$v.$touch()
             if (this.$v.form.$pending || this.$v.form.$error) return;
-               await this.loader()
-               await this.send()
+
+            
+            if(this.form.type_id == ''){
+     
+                 this.errortype()
+                return false;
+            }
+             await this.loader()
+              await this.send()
                 
         },
             loader() {
@@ -276,11 +316,20 @@ import Loader from '@/components/Loader'
 
            
             },
-            error($text) {
+            error() {
                 this.$swal({
                     icon: 'error',
                     title: 'อีเมล์',
                     text: 'อีเมล์ของคุณถูกใช้งานไปแล้ว!',
+                    showConfirmButton: true,
+                    reverseButtons: true
+                });
+            },
+            errortype() {
+                this.$swal({
+                    icon: 'error',
+                    title: 'Type Shop',
+                    text: 'กรุณาเลือกประเภทสินค้า!',
                     showConfirmButton: true,
                     reverseButtons: true
                 });
