@@ -1,19 +1,44 @@
 <template>
 
 <div>
-   <hr class="style-three">
-      <h5><i class="fa fa-cube" aria-hidden="true"></i> ร้านสินค้าการเกษตร</h5>
+
+   <hr class="style-one">
+      <h5><i class="fa fa-cube" aria-hidden="true"> {{items[0].shop_name}}</i>
+
+       </h5>
 
       <div class="row mb-3">
 
-        <div class="col-4 pl-2 pr-2" v-for="i in items"> <a href="#" onclick="return confirm('เมนูนี้ยังไม่เปิดให้บริการ')">
+        <div class="col-4 pl-2 pr-2" v-for="(itemss, index) in items[0].shop" :key="itemss.id"> <a href="#" onclick="return confirm('เมนูนี้ยังไม่เปิดให้บริการ')">
+     
           <div class="card shadow">
-            <div class="card-body text-center"> <img  :src="Checkimage(i.icon)" width="100%"/> </div>
+            <div class="card-body text-center"> <img :src="Checkimage(itemss.icon)" width="100%"/> </div>
           </div>
           </a> 
         </div>
     
       </div>
+
+
+    <hr class="style-two">
+      <h5><i class="fa fa-cube" aria-hidden="true"> {{items[1].shop_name}}</i>
+
+       </h5>
+
+      <div class="row mb-3">
+
+        <div class="col-4 pl-2 pr-2"  v-for="(item, index) in items[1].shop" :key="item.id"> <a href="#" onclick="return confirm('เมนูนี้ยังไม่เปิดให้บริการ')">
+        
+          <div class="card shadow">
+            <div class="card-body text-center"> <img :src="Checkimage(item.icon)" width="100%"/> </div>
+          </div>
+          </a> 
+        </div>
+    
+      </div>
+
+
+      
 </div>    
 </template>
 
@@ -37,6 +62,7 @@
           shop_name:null,
             url:null
           },
+          item:null,
           items: [],
         //   items: [
         //   {
@@ -97,9 +123,7 @@
 
 
 
-
- console.log('product',product);
-        
+    
          },
         
   

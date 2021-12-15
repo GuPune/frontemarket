@@ -14,24 +14,30 @@
        <Adsline/>
       </div>
    
-			<hr class="style-two">
-<h5><i class="fa fa-shopping-cart" aria-hidden="true"></i> ร้านสะดวกซื้อ</h5>
+		
+	
+
+<Shopline/>
+
+
+	<hr class="style-two">
+<h5><i class="fa fa-shopping-cart" aria-hidden="true"></i> ตัวอย่างร้านค้า</h5>
 			<div class="row mb-3">
 
-				<div class="col-4 pl-2 pr-2"> <a href="https://dinovery.app/app/index.php/Home/restaurant_detail/2553">
+				<div class="col-4 pl-2 pr-2"> <a href="#" onclick="return confirm('เมนูนี้ยังไม่เปิดให้บริการ')">
 					<div class="card shadow">
 						<div class="card-body text-center"> <img src="https://dinovery.app/app/assets/img/sentosa.jpg" width="100%"/> </div>
 					</div>
 					</a> </div>
 
-				<div class="col-4 pl-2 pr-2"> <a href="https://dinovery.app/app/index.php/Home/restaurant_detail/330">
+				<div class="col-4 pl-2 pr-2"> <a href="#" onclick="return confirm('เมนูนี้ยังไม่เปิดให้บริการ')">
 					<div class="card shadow">
 						<div class="card-body text-center"> <img src="https://dinovery.app/app/assets/img/7-11.png" width="100%"/> </div>
 					</div>
 					</a> </div>
 
 
-				<div class="col-4 pl-2 pr-2"> <a href="https://dinovery.app/app/index.php/Home/restaurant_detail/1094">
+				<div class="col-4 pl-2 pr-2"> <a href="#" onclick="return confirm('เมนูนี้ยังไม่เปิดให้บริการ')">
           <div class="card shadow">
             <div class="card-body text-center"> <img src="https://dinovery.app/app/assets/img/tops.png" width="100%"/> </div>
           </div>
@@ -44,83 +50,12 @@
 
 
       </div>
-<div class="row mb-3">
 
-	<div class="col-4 pl-2 pr-2"> <a href="https://dinovery.app/app/index.php/Home/restaurant_detail/2487">
-		<div class="card shadow">
-			<div class="card-body text-center"> <img src="https://dinovery.app/app/assets/img/makro.png" width="100%"/> </div>
-		</div>
-		</a> </div>
-
-	<div class="col-4 pl-2 pr-2"> <a href="https://dinovery.app/app/index.php/Home/restaurant_detail/508">
-		<div class="card shadow">
-			<div class="card-body text-center"> <img src="https://dinovery.app/app/assets/img/tesco.png" width="100%"/> </div>
-		</div>
-		</a> </div>
-
-				<div class="col-4 pl-2 pr-2"> <a href="https://dinovery.app/app/index.php/Home/restaurant_detail/947">
-					<div class="card shadow">
-						<div class="card-body text-center"> <img src="https://dinovery.app/app/assets/img/bigc.png" width="100%"/> </div>
-					</div>
-					</a> </div>
-
-				<!-- <div class="col-4 pl-2 pr-2"> <a href="https://dinovery.app/app/index.php/Home/restaurant_detail/2487">
-          <div class="card shadow">
-            <div class="card-body text-center"> <img src="https://dinovery.app/app/assets/img/makro.png" width="100%"/> </div>
-          </div>
-          </a> </div> -->
-
-			</div>
-			<hr class="style-two">
-			<h5><i class="fa fa-qrcode" aria-hidden="true"></i> อุปกรณ์ไอที</h5>
-      <div class="row mb-3">
-				<div class="col-4 pl-2 pr-2"> <a href="https://dinovery.app/app/index.php/Home/restaurant_detail/2932" >
-          <div class="card shadow">
-            <div class="card-body text-center"> <img src="https://dinovery.app/app/assets/img/remax.jpg" width="100%"/> </div>
-          </div>
-          </a> </div>
-      </div>
-      <hr class="style-two">
-      <h5><i class="fa fa-cube" aria-hidden="true"></i> รับส่งพัสดุ</h5>
-      <div class="row mb-3">
-        <div class="col-4 pl-2 pr-2"> <a href="#" onclick="return confirm('เมนูนี้ยังไม่เปิดให้บริการ')">
-          <div class="card shadow">
-            <div class="card-body text-center"> <img src="https://dinovery.app/app/assets/img/kerryexpress.png" width="100%"/> </div>
-          </div>
-          </a> </div>
-        <div class="col-4 pl-2 pr-2"> <a href="#" onclick="return confirm('เมนูนี้ยังไม่เปิดให้บริการ')">
-          <div class="card shadow">
-            <div class="card-body text-center"> <img src="https://dinovery.app/app/assets/img/post.png" width="100%"/> </div>
-          </div>
-          </a> </div>
-        <div class="col-4 pl-2 pr-2"> <a href="#" onclick="return confirm('เมนูนี้ยังไม่เปิดให้บริการ')">
-          <div class="card shadow">
-            <div class="card-body text-center"> <img src="https://dinovery.app/app/assets/img/bestexpress.png" width="100%"/> </div>
-          </div>
-          </a> </div>
-      </div>
-
-<Shopline/>
     
 
     </div>
-		<div style="height:90px;"></div>
-		<div class="p-2 shadow fixed-bottom" style="background-color:#ec7d23;">
-  <div class="row" style="margin-bottom:2%; font-family:Mitr;">
-    <div class="col-3 text-center text-white" style="padding-top:1%;">
-      <a href="#"><i class="fa fa-th fa-2x" aria-hidden="true"></i><br>หน้าแรก</a>
-    </div>
-    <div class="col-3 text-center text-white" style="padding-top:1%;">
-      <a href="#"><i class="fa fa-history fa-2x" aria-hidden="true"></i><br>ออเดอร์</a>
-    </div>
-    <div class="col-3 text-center text-white" style="padding-top:1%;">
-      <a href="#"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i><br>ข้อความ</a>
-    </div>
-    <div class="col-3 text-center text-white" style="padding-top:1%;">
-      <a href="#"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i><br>โปรไฟล์</a>
-    </div>
-  </div>
-</div>
+
+
   </div>
 
 </div>

@@ -36,8 +36,8 @@ const actions = {
     async [GET_SHOP_LINE](context) {
 
         const { data } = await MyshopService.getshopline();
-        console.log('data',data.data);
-        return data.data;
+   
+        return data;
     },
 
 
