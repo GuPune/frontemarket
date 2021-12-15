@@ -7,7 +7,7 @@
                 <div>
     <b-carousel
       id="carousel-1"
-      v-model="slide"
+
    
       controls
       indicators
