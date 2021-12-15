@@ -85,12 +85,12 @@
 
                   <div class="tab-content">
                         <div class="tab-pane active" id="category0">
-          <!-- อาหาร -->
-                    <div class="bg-white p-3 mb-1"  data-toggle="modal"  data-target="#exampleModal12389">
+  
+  <div class="bg-white p-3 mb-1" data-toggle="modal" data-target="#exampleModal12389">
             <div class="row" style="">
               <div class="col-3">
                                   <!-- <img src="https://image.makewebeasy.net/noimage.png" width="100%"/> -->
-                  <img src="https://gg.dinovery.app/myadmin/images/menu/menu_20200505154848.jpg" width="100%"  />
+                  <img src="https://gg.dinovery.app/myadmin/images/menu/menu_20200505154848.jpg" width="100%">
 
                               </div>
               <div class="col-6">
@@ -117,77 +117,7 @@
               </div>
             </div>
           </div>
-          <!-- Modal -->
-          <form action="https://dinovery.app/app/index.php/Order/order_add" method="post" accept-charset="utf-8">
-          <div class="modal" id="exampleModal12389" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header" style="font-size:1.3em;">
-                  <div class="modal-title">Cable Type-C 1M (RC-103a,Silver) - สายชาร์จ REMAX  สินค้าประกัน1ปีพร้อมกล่อง</div>
-                  <div class="modal-title"> 199.00</div>
-                </div>
-                <div class="modal-body">
-                  <div class="">
-                    รายละเอียดเกี่ยวกับสินค้า 
-สายชาร์จ Remax สายชาร์จแบบ usb to Type-C ออกแบบดีไซน์สวยงามจากผู้ผลิตอุปกรณ์ Smart Phone ชั้นนำของโลก Remax สินค้าจากฮ่องกง มาตรฐานส่งออกทั่วโลกสินค้ารับประกันพร้อมกล่องโดย รีแมค(ไทยแลนด์) Remax Thailand สายชาร์จ คุณภาพดีเพื่อเพิ่มความคงทน ทนทาน สายทองแดงภายในคุณภาพสูง เพื่อเพิ่มประสิทธิภาพในการชาร์จและ ส่งข้อมูล 
-คุณสมบัติพิเศษ
- -สายชาร์จ usb to Type-C
-- Smart Chip รองรับการปล่อยกระแสไฟได้ดีขึ้น 
--สายชาร์จแบบสายซิลิโคนหุ้มด้วยผ้าแบบถักอีกชั้น เพิ่มความแข็งแรงให้กับสาย 
--หัวชาร์จ Type-C แบบแนวนอน 
--รองรับกระแสไฟสำหรับชาร์จโทรศัพท์ สูงสุด 2.4A(MAX) 
--มีไฟแสดงสถานะการทำงาน 
--สายยาว 100 cm. 
--สายทองแดงภายใน ใหญ่และ หนากว่าสายปกติ เพื่อช่วยเพิ่มความเร็วในการชาร์จ และรับส่งข้อมูล 
-วิธีใช้งาน
- เสียบชาร์จหรือใช้สำหรับเชื่อมต่อรับ/ส่งข้อมูลกับอุปกรณ์ที่รองรับ Type-C                                          <!-- <center><img src="https://gg.dinovery.app/myadmin/images/menu/menu_20200505154848.jpg" width="80%"/></center> -->
-                      <br>
-                                        <div class="form-group">
-                                            <label>ตัวเลือก </label>
-                                          <hr>
-                    
-                      <label>หมายเหตุ</label>
-                      <small>(ไม่ระบุก็ได้)</small>
-                      <textarea name="partner_menu_detail" autofocus="autofocus" class="form-control form-control-sm input-border-bottom" placeholder="รายละเอียด และข้อมูลเพิ่มเติมของรายการนี้!"></textarea>
-                    </div>
-                  </div>
-                  <script>
-				   function incrementValue12389()
-					{
-						var value = parseInt(document.getElementById('number12389').value, 10);
-						value = isNaN(value) ? 0 : value;
-						value++;
-						document.getElementById('number12389').value = value;
-					}
-				  </script>
-                  <script>
-				   function decreaseValue12389()
-					{
-						var value = parseInt(document.getElementById('number12389').value, 10);
-						value = isNaN(value) ? 0 : value;
-						value--;
-						if(value<1){
-							document.getElementById('number12389').value = 1;
-						}else{
-							document.getElementById('number12389').value = value;
-						}
-					}
-				  </script>
-                  <div class="text-center mb-3" style="font-size:2em;"> <i class="far fa-minus-square text-muted mr-2" onclick="decreaseValue12389()"></i>
-                    <input type="text" name="partner_menu_amount" id="number12389" min="1" value="1" style=" width:15%; text-align:center; "/>
-                    <i class="far fa-plus-square text-muted ml-2" onclick="incrementValue12389()"></i> </div>
-                  <div class="text-center">
-                    <input name="partner_id" type="hidden" value="2932" />
-                    <input name="partner_menu_cost" type="hidden" value="199" />
-                    <input name="partner_menu_id" type="hidden" value="12389" />
-                    <input name="partner_menu_name" type="hidden" value="Cable Type-C 1M (RC-103a,Silver) - สายชาร์จ REMAX  สินค้าประกัน1ปีพร้อมกล่อง" />
-                    <input class="btn btn-warning btn-block btn-lg" name="button" type="submit" value="เพิ่มไปยังตะกร้า" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          </form>   
+        
 		</div>
         </div>
         </div>
