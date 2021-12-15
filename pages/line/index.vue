@@ -55,10 +55,32 @@
 
     </div>
 
+    
+
 
   </div>
 
+  		<div style="height:90px;"></div>
+		<div class="p-2 shadow fixed-bottom" style="background-color:#ec7d23;">
+  <div class="row" style="margin-bottom:2%; font-family:Mitr;">
+    <div class="col-3 text-center text-white" style="padding-top:1%;">
+      <a href="#" onclick="return confirm('เมนูนี้ยังไม่เปิดให้บริการ')"><i class="fa fa-th fa-2x" aria-hidden="true"></i><br>หน้าแรก</a>
+    </div>
+    <div class="col-3 text-center text-white" style="padding-top:1%;">
+      <a href="#" onclick="return confirm('เมนูนี้ยังไม่เปิดให้บริการ')"><i class="fa fa-history fa-2x" aria-hidden="true"></i><br>ออเดอร์</a>
+    </div>
+    <div class="col-3 text-center text-white" style="padding-top:1%;">
+      <a href="#" onclick="return confirm('เมนูนี้ยังไม่เปิดให้บริการ')"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i><br>ข้อความ</a>
+    </div>
+    <div class="col-3 text-center text-white" style="padding-top:1%;">
+      <a href="#" onclick="return confirm('เมนูนี้ยังไม่เปิดให้บริการ')"><i class="fa fa-user-circle fa-2x" aria-hidden="true"></i><br>โปรไฟล์</a>
+    </div>
+  </div>
 </div>
+
+</div>
+
+
 <div class="overlay"></div>
 
 
