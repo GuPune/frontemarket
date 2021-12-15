@@ -5,27 +5,22 @@
     <center><div class="row col-12">
             <div class="carousel">
                 <div>
-  <b-carousel
-    id="carousel-fade"
-    style="text-shadow: 0px 0px 2px #000"
-    fade
-    indicators
-    img-width="1024"
-    img-height="480"
-  >
-    <b-carousel-slide
-      caption="First slide"
-      img-src="https://picsum.photos/1024/480/?image=10"
-    ></b-carousel-slide>
-    <b-carousel-slide
-      caption="Second Slide"
-      img-src="https://picsum.photos/1024/480/?image=12"
-    ></b-carousel-slide>
-    <b-carousel-slide
-      caption="Third Slide"
-      img-src="https://picsum.photos/1024/480/?image=22"
-    ></b-carousel-slide>
-  </b-carousel>
+    <b-carousel
+      id="carousel-1"
+      v-model="slide"
+   
+      controls
+      indicators
+      background="#ababab"
+      img-width="1024"
+      img-height="400"
+      style="text-shadow: 1px 1px 2px #333;"
+      @sliding-start="onSlideStart"
+      @sliding-end="onSlideEnd"
+    >
+      <b-carousel-slide  v-for="(item, index) in ads" :key="ads.id"  :img-src="Checkimage(item.images)">
+      </b-carousel-slide>
+    </b-carousel>
   </div>
   </div>
 

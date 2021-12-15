@@ -9,9 +9,15 @@
 <div class="wrapper w3-animate-top">
   <!-- Page Content  -->
   <div id="content">
-    <div class="px-3" style="margin-top:1rem;">
+     <div class="px-3" style="margin-top:1rem;">
       <div class="row mb-3">
-       <Adsline/>
+        <div class="col-12 px-3"> <a href="#">           <div class="card shadow" >
+            <div class="card-body text-center" style="background-image:url(https://cmsecom.idtest.work/public/product/20211024041627yrgTLendY6b1xqgwcBbf.png); background-repeat: no-repeat;  background-position: center; background-size: cover;">
+              <!--<h1><i class="fas fa-utensils text-dino"></i> <i class="fas fa-wine-glass-alt text-dino"></i></h1>-->
+              <h5 style="font-size:6vw; color:#FFF; padding:35px;"></h5>
+            </div>
+          </div>
+          </a> </div>
       </div>
    
 		
