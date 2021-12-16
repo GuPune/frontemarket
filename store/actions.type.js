@@ -91,6 +91,7 @@ export const GET_SUBDISTRICTS = "get_address_subdistricts";
 export const GET_ORDER_LOCAL = "get_order";
 export const GET_ORDER_DATA = "get_order_data";
 export const GET_ORDER_DATA_HISTORY = "get_order_data_history";
+export const GET_CATEGORY_SHELL = "get_category_shell";
 export const CORE_USER = "core_user";
 export const FETCH_LOADER = "fetch_loader";
 export const LOG_OUT = "log_out";
