@@ -11,6 +11,9 @@ export const ProductService = {
     getproductbyshop(param) {
       return ApiService.post("productbyshop",param);
     },
+    getproductshellfind(param) {
+      return ApiService.post("productshellfind",param);
+    },
     getcatebyshop(param){
       return ApiService.post("catebyshop",param);
     },

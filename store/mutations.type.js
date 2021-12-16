@@ -41,11 +41,8 @@ export const SET_TABS = "set_tabs";
 export const SET_ORDER_HIS = "set_orderhisto";
 export const SET_SELECT_SHIPPING = "set_select_shipping";
 export const SET_IMAGES = "set_images";
-
+export const SET_PRODUCTSHELL_FIND = "set_proshell_find";
 export const SET_SALEPAGESUMMARY = "set_salepagesummary";
-
-
-
 export const SET_LINE = "set_line";
 export const SET_MENU = "set_menu";
 export const SET_ABOUT = "set_about";

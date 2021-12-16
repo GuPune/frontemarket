@@ -52,7 +52,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Categoriesbyshop from "@/components/Categoriesbyshop";
 import Productbyshop from "@/components/Productbyshop";
-import { FETCH_FIND_PRODUCT,GET_CATEGORY_SHELL } from "@/store/actions.type.js";
+import { FETCH_FIND_PRODUCT,GET_CATEGORY_SHELL,GET_PRODUCT_SHELL_FIND } from "@/store/actions.type.js";
 import { mapGetters } from "vuex";
 
   export default {
@@ -87,8 +87,11 @@ import { mapGetters } from "vuex";
         
      async mounted() {
         let cateshell = await this.$store.dispatch(GET_CATEGORY_SHELL)
+          this.form.selected = this.selected
 this.options = cateshell;
-console.log(this.cate_by_shop);
+console.log('this.cate_by_shop',this.form);
+  let productfind = await this.$store.dispatch(GET_PRODUCT_SHELL_FIND,this.form);
+
          },
 
       methods: {
@@ -96,8 +99,9 @@ console.log(this.cate_by_shop);
       
         },
        async choosecate(){
-this.form.selected = this.selected
-console.log('selected',this.form);
+  this.form.selected = this.selected
+  let productfind = await this.$store.dispatch(GET_PRODUCT_SHELL_FIND,this.form);
+
         },
         async all_price(){
        
