@@ -6,6 +6,6 @@ export const CategoryService = {
       return ApiService.get("categoryshell");
     },
     getcateshell() {
-      return ApiService.get("shellcate");
+      return ApiService.get("shellcategory");
     },
 };
