@@ -9,12 +9,12 @@
 
       <div class="row mb-3">
 
-        <div class="col-4 pl-2 pr-2" v-for="(itemss, index) in items[0].shop" :key="itemss.id"> <a href="#" onclick="return confirm('เมนูนี้ยังไม่เปิดให้บริการ')">
+        <div class="col-4 pl-2 pr-2" v-for="(itemss, index) in items[0].shop" :key="itemss.id"> 
      
-          <div class="card shadow">
+          <div class="card shadow"  @click="redirectTo('line-id')">
             <div class="card-body text-center"> <img :src="Checkimage(itemss.icon)" width="100%"/> </div>
           </div>
-          </a> 
+  
         </div>
     
       </div>
@@ -129,10 +129,13 @@
   
         methods: {
 
-        redirectTo(name) {
+                 redirectTo(names){
        
-                    this.$router.push(name)
-                  },
+             this.$router.push({ name: names, params: { id:'Admin' }})
+        } ,
+
+
+ 
         loadcategory(){
           let productinshell = this.$store.dispatch(FETCH_PRODUCT_SHELL);
         },
