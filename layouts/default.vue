@@ -16,6 +16,18 @@
 <Related v-if="currentRouteName == 'index'"/>
 
     <ShopRelation v-if="currentRouteName == 'index'"/>
+
+
+   <LongFooter/>
+
+
+            <div class="footer ema-footer">
+                      <div class="col-sm">
+                            <small>Copyright © 2022 ID ID-Market Place. All rights reserved Beta 17/12/2564</small>
+                        </div>
+                </div>
+
+
         
 </div>
 

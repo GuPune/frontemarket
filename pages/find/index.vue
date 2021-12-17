@@ -20,8 +20,10 @@
                 </div>
                 </div>
 
-                <div class="row relatedweb">
-  <div class="col-sm-12 col-md-2"> <CategoriesShell/></div>
+                <div class="row relatedweb" style="padding-top: 30px;">
+  <div class="col-sm-12 col-md-2" style="border-top: 1px solid #d8d8d8;
+    padding: 0.5em;
+    margin-bottom: 0;"> <CategoriesShell/></div>
   <div class="col-sm-12 col-md-10"> <ProductShell/></div>
 
 </div>

@@ -1,6 +1,19 @@
 <template>
 <div>
  <ul class="profile-info-list">
+   <li>
+                                                <div class="field">ราคา: {{ form.price }}</div>
+                                            
+    <b-form-input id="range-1" v-model="form.price" type="range" min="0" max="50000" v-on:change="all_price"></b-form-input>
+ 
+                                            </li>
+
+                                                                                        <li>
+                                                <div class="field">ค้นหา:</div>
+                                            
+          <b-form-input v-model="form.search" placeholder="Enter your name"></b-form-input>
+ 
+                                            </li>
                                             <li>
                                                 <div class="field">ประเภทสินค้า:</div>
                                                 <div class="value" v-if="options">
@@ -27,19 +40,7 @@
         {{ selected }}
                                             </li> <br>
 
-                                            <li>
-                                                <div class="field">ราคา: {{ form.price }}</div>
-                                            
-    <b-form-input id="range-1" v-model="form.price" type="range" min="0" max="50000" v-on:change="all_price"></b-form-input>
- 
-                                            </li>
-
-                                                                                        <li>
-                                                <div class="field">ค้นหา:</div>
-                                            
-          <b-form-input v-model="form.search" placeholder="Enter your name"></b-form-input>
- 
-                                            </li>
+                                          
                                             
                                         </ul>
 
