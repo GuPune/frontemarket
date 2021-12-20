@@ -260,14 +260,14 @@
 this.form.product_id = this.$route.params.slug;
 this.form.shop_name = this.$route.params.id;
 this.form.url = window.location.origin
-console.log('this.form',this.form)
+
 let productshop_item = await this.$store.dispatch(FETCH_BY_PRODUCT_SHOP_ONE_ITEM,this.form);
 let images_product = await this.$store.dispatch(FETCH_IMAGE_PRODUCT,this.form);
-console.log('productshop_item',productshop_item.data)
+
 
         
     this.key++
-    console.log(this.key);
+
      
         // this.loadding = false;
 
@@ -282,9 +282,7 @@ console.log('productshop_item',productshop_item.data)
 
 
 item.add = this.add
-console.log('item.quantity',item.quantity);
-console.log('item.quantity',this.quantity);
-console.log('item',item);
+
 let add_producttocart = await this.$store.dispatch(ADD_PRODETAIL,item);
    this.$swal("Add Product!", "Product To Cart!", "success")
  
@@ -312,7 +310,9 @@ let add_producttocart = await this.$store.dispatch(ADD_PRODETAIL,item);
               
               
         Checkimage(image){
+         
                 let public_images = process.env.ImageURL+image;
+                console.log('testtttttttttttttt');
                 return public_images;
         },
         async Addup(stock){
@@ -370,6 +370,7 @@ let add_producttocart = await this.$store.dispatch(ADD_PRODETAIL,item);
      this.images.thumbs = productshop_item.data.thumbs,
      this.images.large_size = productshop_item.data.large_size,
      this.images.normal_size = productshop_item.data.normal_size,
+  this.loadding = false;
          
         //       this.images.thumbs = [
         // {
