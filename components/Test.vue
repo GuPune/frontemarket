@@ -18,7 +18,7 @@
     <div v-for="i in items"  class="img-wrapper">
               <div class="card c-shopinmy-tt">
                     <div class="cardproduct c-cate">
-                 <img class="imgproduct related-images testimage imgproductcate im-cate-mobile"   :src="Checkimage(i.image)"  @click="ChangeProduct(i.id)" style="border-radius: 50%;">
+                 <img class="imgproduct related-images testimage imgproductcate im-cate-mobile"   :src="Checkimage(i.image)"  @click="ChangeProduct(i)" style="border-radius: 50%;">
                                                    <div class="product-footer mobile-cate asx">
                                                    {{i.name_th}}
                                                    </div>
@@ -213,9 +213,12 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
                 let public_images = process.env.ImageURL+image;
                 return public_images;
         },
-        ChangeProduct(id){
+        ChangeProduct(i){
         
-        this.form.catagory_id = id;
+
+        this.form.catagory_id = i.id;
+        this.form.cat = i;
+    
         let find_product = this.$store.dispatch(FETCH_PRODUCT_FIND,this.form);  
     
         }

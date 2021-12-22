@@ -6,7 +6,7 @@ export const ProductService = {
       return ApiService.get("productshell");
     },
     find(param) {
-      return ApiService.find("productshellfind",param);
+      return ApiService.find("productshellcategory",param);
     },
     getproductbyshop(param) {
       return ApiService.post("productbyshop",param);

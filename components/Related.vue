@@ -6,8 +6,15 @@
                 <div class="col-12 col-md-9 col-lg-9">
                    <div class="main-heading">
         <div class="heading-title-relat">
-            <h2><span>PRODUCT  AGRICULTURAL</span>
-	<em class="">สินค้าเกษตรกร</em>
+    
+        <div>
+        </div>
+            <h2 v-if="shell_cate"><span>PRODUCT  {{shell_cate.name_th}}</span>
+	<em class="">สินค้าทั้งหมด</em>
+			</h2>
+
+       <h2 v-else><span>PRODUCT  TOTAL</span>
+	<em class="">สินค้าทั้งหมด</em>
 			</h2>
         </div>
         <div class="product" id="product">
@@ -81,7 +88,7 @@
     },
      computed: {
            
-     ...mapGetters(["product_shell","authenticated"]),
+     ...mapGetters(["product_shell","authenticated","shell_cate"]),
 
 
          isUrl () {
@@ -104,7 +111,7 @@
   
         methods: {
       mouseover(index){
-console.log('in',index);
+
 
 
 
