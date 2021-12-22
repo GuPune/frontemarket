@@ -9,6 +9,8 @@
     
         <div>
         </div>
+    
+        {{product_shell}}
             <h2 v-if="shell_cate"><span>PRODUCT  {{shell_cate.name_th}}</span>
 	<em class="">สินค้าทั้งหมด</em>
 			</h2>
@@ -84,11 +86,18 @@
         isHovered: false,
          message: 'Hover Me!',
         product: {},
+        form:{
+          cate:null
+        }
       }
     },
      computed: {
            
      ...mapGetters(["product_shell","authenticated","shell_cate"]),
+
+          ...mapState({
+                objects: state => state.ProductShell.shell_cate,
+            }),
 
 
          isUrl () {
@@ -103,7 +112,7 @@
 
            //     let a = this.$store.dispatch(FETCH_PRODUCT_SHELL);
 
-           console.log(process.env.TEST_VARIABLE);
+          
         this.loadcategory()
         
          },
@@ -120,7 +129,7 @@
        
       },
     mouseleave(index){
-console.log('out',index);
+
 
       },
       
@@ -130,12 +139,21 @@ console.log('out',index);
                     this.$router.push(name)
                   },
        async loadcategory(){
-          let productinshell = await this.$store.dispatch(FETCH_PRODUCT_SHELL);
 
-          this.product = productinshell;
+ 
+         if(this.objects == null){
+        this.form.cate = "";
+         }else {
+                
+                  this.form.cate = this.objects.id;
+         }
+          let productinshell = await this.$store.dispatch(FETCH_PRODUCT_SHELL,this.form);
+
+        
       
 
-               console.log('this.product',this.product);
+               console.log('this.produc22222222222222222t',productinshell);
+                 this.product = productinshell;
 
         },
         Checkimage(image){
@@ -156,7 +174,7 @@ const names = 'id-form-login'
 
 
 
-
+return false;
             //  this.$router.push({ path: `/1/${name}` }) // -> /user/123
                 //   this.$router.push({ params: { id: '1' } ,name: name})
                    this.$router.push({ name: names, params: { id: Shopid }})

@@ -12,7 +12,6 @@
 			</h2>
         </div>
  <div>
- 
 
       <VueSlickCarousel v-bind="slickOptions">
     <div v-for="i in items"  class="img-wrapper">
@@ -178,8 +177,12 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
         
      computed: {
            
- ...mapGetters(["category_shell"]),
+ ...mapGetters(["category_shell","shell_cate"]),
 
+
+      ...mapState({
+                objects: state => state,
+            }),
 
          isUrl () {
                 return this.$store.state.user.url_id;
@@ -203,6 +206,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
 
        async Loadcategory() {
             
+    
                    let a = await this.$store.dispatch(FETCH_CATEGORY_SHELL);  
                    this.items = a;
                  

@@ -58,9 +58,9 @@ const getters = {
 
 
 const actions = {
-    async [FETCH_PRODUCT_SHELL](context) {
+    async [FETCH_PRODUCT_SHELL](context,payload) {
         context.commit(SET_LOADER);
-        const { data } = await ProductService.get();
+        const { data } = await ProductService.getshell(payload);
         context.commit(SET_PRODUCT_SHELL,data);
     
         return data;
@@ -68,8 +68,6 @@ const actions = {
 
     async [FETCH_PRODUCT_FIND](context,payload) {
         const { data } = await ProductService.find(payload);
-
-        
         context.commit(SET_PRODUCT_SHELL,data);
         context.commit(SET_SHELL_CATE,payload);
         return data;
@@ -150,6 +148,7 @@ const mutations = {
         state.loading = isLoading
     },
     [SET_PRODUCT_SHELL](state,data) {
+        console.log('xxxxxwdawfaf',data);
         state.product_shell = data;
         state.loading = false
    
