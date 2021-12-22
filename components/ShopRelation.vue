@@ -180,7 +180,7 @@
                     this.$router.push(name)
                   },
         loadcategory(){
-          let productinshell = this.$store.dispatch(FETCH_PRODUCT_SHELL);
+        //  let productinshell = this.$store.dispatch(FETCH_PRODUCT_SHELL);
         },
         Checkimage(image){
                 let public_images = process.env.ImageURL+image;

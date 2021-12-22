@@ -184,6 +184,10 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
                 objects: state => state,
             }),
 
+               ...mapState({
+                objects: state => state.ProductShell.shell_cate,
+            }),
+
          isUrl () {
                 return this.$store.state.user.url_id;
         },  
@@ -194,6 +198,15 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
         mounted() {
 
         this.Loadcategory()
+
+           if(this.objects == null){
+        this.form.cate = "";
+         }else {
+                
+                  this.form.cate = this.objects.id;
+         }
+console.log('this.form',this.form);
+           let find_product = this.$store.dispatch(FETCH_PRODUCT_FIND,this.form);  
         
          },
         

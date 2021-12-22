@@ -10,7 +10,7 @@
         <div>
         </div>
     
-        {{product_shell}}
+   
             <h2 v-if="shell_cate"><span>PRODUCT  {{shell_cate.name_th}}</span>
 	<em class="">สินค้าทั้งหมด</em>
 			</h2>
@@ -141,19 +141,6 @@
        async loadcategory(){
 
  
-         if(this.objects == null){
-        this.form.cate = "";
-         }else {
-                
-                  this.form.cate = this.objects.id;
-         }
-          let productinshell = await this.$store.dispatch(FETCH_PRODUCT_SHELL,this.form);
-
-        
-      
-
-               console.log('this.produc22222222222222222t',productinshell);
-                 this.product = productinshell;
 
         },
         Checkimage(image){
