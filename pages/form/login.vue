@@ -293,7 +293,7 @@ import { FORGOTEMAIL,CLEARALRET } from "../../store/actions.type.js";
 
 
      //   let token = this.$auth.getToken('local')   //get token
-   //  this.$router.push("/")
+   this.$router.push("/")
          
 				})
 				.catch(err => {

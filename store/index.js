@@ -26,7 +26,7 @@ Vue.use(Vuex)
 
 const store = () => new Vuex.Store({
   modules: {
-    user,alert,validations,auth,CategoryShell,ProductShell,Ads,Cart,Shipping,Loader,Bank,Order,Menu,Abount,Blog,Contact,Salepage,Shopping
+    user,alert,validations,CategoryShell,ProductShell,Ads,Cart,Shipping,Loader,Bank,Order,Menu,Abount,Blog,Contact,Salepage,Shopping
   }
 })
 
