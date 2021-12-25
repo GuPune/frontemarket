@@ -19,25 +19,40 @@
 	<em class="">สินค้าทั้งหมด</em>
 			</h2>
         </div>
+         <div class="row">
+    <div class="col">
+    </div>
+    <div class="col">
+    </div>
+    <div class="col relation-all" >
+      ดูสินค้าทั้งหมด 
+    </div>
+  </div>
         <div class="product" id="product">
             <div class="row product">
                  <div class="cards cards-mobile">
-                    <div class="cardproduct" v-for="(item, index) in product_shell" :key="product.id"  v-on:mouseover="mouseover(index)" v-on:mouseleave="mouseleave(index)"
+                    <div class="cardproduct-first" v-for="(item, index) in product_shell" :key="product.id"  v-on:mouseover="mouseover(index)" v-on:mouseleave="mouseleave(index)"
            >
-                                                        <img class="imgproduct related-images" :src="Checkimage(item.img_product)" @click="Shop(item)">
-                                                            <div class="product-name">{{item.name_th}}</div>
+                                                        <img class="imgproduct-product related-images" :src="Checkimage(item.img_product)" @click="Shop(item)">
+                                                            <div class="product-name-first">{{item.name_th}}</div>
                                                             
-                                                            <p class="price rela-left">฿{{item.price}}.00</p>
+                                                      
+                                                        
+                                                      
 
-                                                             <div class="price price-mini">
+                                                              <div class="row">
+                                                              <div class="col"> <div class="price rela-left">฿{{formatPrice(item.price)}}</div></div>
+                                                              <div class="col">
+                                                               <div class="price price-mini">
                                                              <span class="price-mini-decoration">฿{{item.price}}.00</span>
                                                              <span>-56%</span>
                                                              </div>
+                                                              </div>
+                                                              </div>
+
+                                             
                                                               <div class="ratings rating-rela">
-                                                   <div class="rating-box">
-                                                   <div class="rating" style="width:%"></div>
-                                                 
-                                                   </div>
+                                      
                                                  
 						</div>
                                                            
@@ -178,6 +193,10 @@ return false;
   let name = item.shop_name+'/product/productdetail/'+item.id;
 
     this.$router.push(name)
+        },
+        formatPrice(value) {
+        let val = (value/1).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")
+        return val;
         },
 
         },
