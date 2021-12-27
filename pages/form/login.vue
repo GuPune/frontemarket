@@ -37,8 +37,7 @@
     
       </div>
            <label @click="showmodal()"><a href="#forgotpass">ลืมรหัสผ่าน?</a></label><br>
-      
-
+    
     </div>
     
 
@@ -51,13 +50,26 @@
 <div class="row">
     
    
-       <button class="btn btn-success" @click="loginline()"><span><i class="lab la-line"></i> Login with Line</span></button>
+       <!-- <button class="btn btn-success" @click="loginline()"><span><i class="lab la-line"></i> Login with Line</span></button> -->
       
     
   
       
 
     </div>
+
+
+    <div class="form-group pt-3">
+    <button type="submit" class="btn btn-lg btn-block btnFacebook btn-facebook" id="btnLogin"> เข้าสู่ระบบด้วย Facebook </button> 
+     </div>
+    <div class="form-group pt-3"> 
+    <button type="submit" class="btn btn-lg btn-block btnGoogle" id="btnLogin">เข้าสู่ระบบด้วย Google </button> </div>
+
+
+
+                             
+
+
     
 
 </div>
