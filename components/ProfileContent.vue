@@ -196,6 +196,8 @@ this.profile.image = this.file;
 
   let save = this.$store.dispatch(SAVE_PROFILE,formData);
       await this.success()
+
+          let a = await this.$store.dispatch(FETCH_GET_PROFILE)
     
         },
          send() {

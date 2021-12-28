@@ -305,7 +305,11 @@ import { FORGOTEMAIL,CLEARALRET } from "../../store/actions.type.js";
 
 
      //   let token = this.$auth.getToken('local')   //get token
+          let a = this.$store.dispatch(FETCH_GET_PROFILE)
    this.$router.push("/")
+
+
+  
          
 				})
 				.catch(err => {

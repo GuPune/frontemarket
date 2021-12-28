@@ -226,7 +226,7 @@
           <b-nav-item-dropdown right  v-if="isLogins">
           <!-- Using 'button-content' slot -->
           <template #button-content>
-            <em>{{user.user.name}}</em>
+            <em>{{objects.name}} </em>
           </template>
           <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">Profile</b-dropdown-item>
           <b-dropdown-item href="#"  @click.prevent="logout">Sign Out</b-dropdown-item>
@@ -249,7 +249,7 @@
 
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters,mapState } from "vuex";
 import { CHECK_LOGIN } from "../store/actions.type.js";
 import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,FETCH_GET_PROFILE } from "@/store/actions.type.js";
   export default {
@@ -265,6 +265,10 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
 
      computed: {
          ...mapGetters(["authenticated"]),
+
+          ...mapState({
+                objects: state => state.user.profile,
+             }),
 			
         isLogins () {
                 return this.$store.state.auth.loggedIn;
@@ -295,7 +299,9 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
         
       async mounted() {
           let checker = await localStorage.getItem("user");
-       
+              //    let a = await this.$store.dispatch(FETCH_GET_PROFILE)
+
+
           let cart = await this.$store.dispatch(GET_CART);
           // let profile = await this.$store.dispatch(FETCH_GET_PROFILE);
           // this.name = profile['name']
@@ -307,6 +313,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
           }
           if(checker){
             this.IsLogin = true;
+           
                this.$store.dispatch('auth/userstorage');
           }else{
             this.IsLogin = false;
@@ -332,7 +339,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
             localStorage.removeItem("shipping");
             localStorage.removeItem("listorder");
             localStorage.removeItem("delivery");
-            localStorage.removeItem("cart");
+          localStorage.removeItem("cart");
         
        
     this.$auth.logout()
