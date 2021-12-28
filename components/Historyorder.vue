@@ -315,6 +315,7 @@ import { FETCH_ADS_SHOP,FETCH_GET_PROFILE,FETCH_ADDRESS,DEL_ADDRESS_BY_ID,GET_OR
                 return public_images;
         },
        async expandAdditionalInfo(row) {
+       
           this.loadding = true;
          this.tabs = 2;
 
