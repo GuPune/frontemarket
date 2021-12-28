@@ -39,7 +39,7 @@
                             <h6 class="mb-0">เบอร์ติดต่อ</h6>
                             </div>
                             <div class="col-sm-9 text-secondary">
-                            <input type="text" class="form-control" id="inputAddress"  placeholder=""  v-model="profile.tel" v-on:keyup="addbtel" maxLength="10">
+                            <input type="text" class="form-control" id="inputAddress"  placeholder=""  v-model="profile.tel"  v-on:keypress="isNumber($event)"   maxLength="10">
                             </div>
                         </div>
                         <hr>
@@ -145,6 +145,15 @@ import 'sweetalert2/dist/sweetalert2.min.css';
         
   
         methods: {
+
+        async isNumber(event, message) {
+           
+                if (!/\d/.test(event.key) &&  (event.key !== "." || /\./.test(message))   )  
+                    
+                return event.preventDefault();  
+
+                
+        },
         onFileChange(e) {
 
 
@@ -167,8 +176,7 @@ import 'sweetalert2/dist/sweetalert2.min.css';
     
 
 this.profile.image = this.file;
-          console.log(this.profile);
-
+   
 
 
      
@@ -182,6 +190,8 @@ this.profile.image = this.file;
            formData.append('lname', this.profile.lname);
            formData.append('name', this.profile.name);
            formData.append('image', this.file);
+            formData.append('tel', this.profile.tel);
+       
    
 
   let save = this.$store.dispatch(SAVE_PROFILE,formData);
