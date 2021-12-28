@@ -102,15 +102,16 @@ const actions = {
     },
 
     async [GET_SUBDISTRICTS](context,payload) { 
-        console.log(payload);
+   
         const { data } = await ShippingService.getsubdistricts(payload);
         return data.data;
     },
 
     async [UPDATE_ADDRESS_SHIPPING](context,payload) { 
       
-   
+
         const { data } = await ShippingService.updatedefault(payload);
+        console.log('payload',payload);
          context.commit(SET_SELECT_SHIPPING,payload);
        // const { data } = await ShippingService.getsubdistricts(payload);
       //  return data.data;
@@ -118,7 +119,7 @@ const actions = {
 
     async [SELECT_SHIPPING](context,payload) { 
  
-        context.commit(SET_SALEPAGESUMMARY,payload);
+ context.commit(SET_SELECT_SHIPPING,payload);
     },
     async [GET_SALEPAGESUMMARY](context,payload) { 
     
@@ -147,6 +148,7 @@ const actions = {
 const mutations = {
 
     [SET_SELECT_SHIPPING](state,data) {
+
         state.select_shipping = data 
     
     },

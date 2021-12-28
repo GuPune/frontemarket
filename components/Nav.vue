@@ -303,7 +303,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
 
       
           if(this.user.user == null){
-      this.$auth.logout()
+      this.$auth.logout();
           }
           if(checker){
             this.IsLogin = true;
@@ -332,6 +332,8 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
             localStorage.removeItem("shipping");
             localStorage.removeItem("listorder");
             localStorage.removeItem("delivery");
+            localStorage.removeItem("cart");
+        
        
     this.$auth.logout()
      setTimeout(function () {

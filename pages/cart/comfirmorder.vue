@@ -635,7 +635,7 @@
         methods: {
 
       async deliverys(names){
-console.log('this.objects',this.objects);
+
  let check = await localStorage.getItem('delivery');
 
  if(check == null){
