@@ -60,10 +60,10 @@
 
 
     <div class="form-group pt-3">
-    <button type="submit" class="btn btn-lg btn-block btnFacebook btn-facebook" id="btnLogin"> เข้าสู่ระบบด้วย Facebook </button> 
+    <button type="submit" class="btn btn-lg btn-block btnFacebook btn-facebook" id="btnLogin"  @click="socialLogin('facebook')"> เข้าสู่ระบบด้วย Facebook </button> 
      </div>
     <div class="form-group pt-3"> 
-    <button type="submit" class="btn btn-lg btn-block btnGoogle" id="btnLogin">เข้าสู่ระบบด้วย Google </button> </div>
+    <button type="submit" class="btn btn-lg btn-block btnGoogle" id="btnLogin"  @click="socialLogin('google')">เข้าสู่ระบบด้วย Google </button> </div>
 
 
 
@@ -284,6 +284,10 @@ import { FORGOTEMAIL,CLEARALRET } from "../../store/actions.type.js";
        // let clearalert = this.$store.dispatch(CLEARALRET);
     },
     methods: {
+        socialLogin(service) {
+
+         window.location.href = `${process.env.baseUrl}auth/login/${service}`;
+        },
         async loginline(){
    this.$router.push('/1/form/register');   
         },
