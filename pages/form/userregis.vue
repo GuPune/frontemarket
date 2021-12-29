@@ -265,11 +265,11 @@ import Datepicker from "@/components/TouchDatePicker";
 
                 setTimeout(() => (this.dialog = false), 4000);
                //  this.$store.dispatch('auth/login', this.form);
-    //            this.$auth.loginWith('local', {
-    //       data: this.form
-    //     });
+               this.$auth.loginWith('local', {
+          data: this.form
+        });
 
-    //  this.$router.push('/');
+     this.$router.push('/');
     
             },
             error($text) {
