@@ -3,7 +3,7 @@
 <div class="divPageData pageCartSuccess pageConfig">
     
     <div class="card card-theme card-xs-full">
-        <div class="card-body" style="margin: 20px 80px;">
+        <div class="card-body after-sus">
             <!-- Start Page Title -->
             <div class="row py-3 border-top border-md-top-0 border-theme">
                 <div class="col-12">
@@ -141,15 +141,20 @@
                                                              <p class="fs-ta-14 text-theme-2 mb-0 mt-2">{{item.sku}}</p></div>
                                                     </div>
                                                     <div class="row mt-3 d-flex d-md-none">
-                                                        <div class="col-4">
+                                                        <div class="col-8">
                                                             <p class="fs-ta-14 text-theme-1 mb-0">฿ {{formatPrice(item.price)}}</p>
                                                         </div>
-                                                        <div class="col-4 pl-4 pr-1 text-center">
-                                                            <p class="fs-ta-14 text-theme-2 mb-0">x{{item.qty}}</p>
+                                                        <div class="col-4 pr-1">
+                                                            <p class="fs-ta-14 text-theme-2 mb-0">x {{item.qty}} ชิ้น</p>
                                                         </div>
-                                                        <div class="col-4 text-right">
-                                                            <p class="fs-ta-14 text-theme-1 mb-0">฿ {{formatPrice(item.sumPrice)}}</p>
+                                                  
+                                                    </div>
+                                                      <div class="row">
+                                                      <!--
+                                                        <div class="col-12">
+                                                            <p class="fs-ta-14 text-theme-1 mb-0">รวม ฿ {{formatPrice(item.sumPrice)}}</p>
                                                         </div>
+                                                        -->
                                                     </div>
                                                 </div>
                                             </div>
@@ -325,13 +330,13 @@
 
             <!-- Start Button -->
             <div class="row py-4 border-top border-md-top-0 border-theme">
-                <div class="col-12 col-md-6 text-left">
+                <div class="col-6 col-md-6 text-left">
                     <button type="button" class="btn btn-primary btn-sm" id="buttonPrint">
                         <i class="fa fa-print"></i>
                         พิมพ์ใบสั่งซื้อ                    </button>
                         
                 </div>
-                <div class="col-12 col-md-6 text-right">
+                <div class="col-6 col-md-6 text-right">
                                             <button type="button" class="btn btn-primary btn-sm" id="buttonInform">
                             แจ้งชำระเงิน                        </button>
                     
