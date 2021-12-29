@@ -132,8 +132,8 @@ import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
                 EmailErrors () {
             const errors = []
             if (!this.$v.form.email.$dirty) return errors
-            !this.$v.form.email.required && errors.push('โปรดระบุอีเมล์')
-            !this.$v.form.email.email    && errors.push('โปรดระบุข้อมูลรูปแบบอีเมล์')
+            !this.$v.form.email.required && errors.push('โปรดระบุอีเมล')
+            !this.$v.form.email.email    && errors.push('โปรดระบุข้อมูลรูปแบบอีเมล')
             return errors
         },
 

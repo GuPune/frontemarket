@@ -68,7 +68,7 @@
 
 
     <div class="input-group input-group-icon">
-         <input type="text" class="form-control" placeholder="อีเมล์"  v-model="form.email" 
+         <input type="text" class="form-control" placeholder=""  v-model="form.email" 
                                                                          :error-messages="EmailErrors" required
                                                                          :class="{ 'is-invalid': $v.form.email.$error}"
                                                                          @input="$v.form.email.$touch()"
@@ -161,15 +161,15 @@ import 'sweetalert2/dist/sweetalert2.min.css';
         EmailErrors () {
                 const errors = []
                 if (!this.$v.form.email.$dirty) return errors
-                !this.$v.form.email.required && errors.push('โปรดระบุอีเมล์')
-                !this.$v.form.email.email    && errors.push('โปรดระบุข้อมูลรูปแบบอีเมล์')
+                !this.$v.form.email.required && errors.push('โปรดระบุ')
+                !this.$v.form.email.email    && errors.push('โปรดระบุข้อมูลรูปแบบ')
                 return errors
             },
         PassErrors(){
               const errors = []
                 if (!this.$v.form.password.$dirty) return errors
-                !this.$v.form.password.required && errors.push('โปรดระบุอีเมล์')
-                !this.$v.form.password.password    && errors.push('โปรดระบุข้อมูลรูปแบบอีเมล์')
+                !this.$v.form.password.required && errors.push('โปรดระบุ')
+                !this.$v.form.password.password    && errors.push('โปรดระบุข้อมูลรูปแบบ')
                 return errors
 
         },
@@ -240,8 +240,8 @@ import 'sweetalert2/dist/sweetalert2.min.css';
             error($text) {
                 this.$swal({
                     icon: 'error',
-                    title: 'อีเมล์',
-                    text: 'อีเมล์ของคุณถูกใช้งานไปแล้ว!',
+                    title: '',
+                    text: 'ของคุณถูกใช้งานไปแล้ว!',
                     showConfirmButton: true,
                     reverseButtons: true
                 });

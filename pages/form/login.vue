@@ -250,16 +250,16 @@ import { FORGOTEMAIL,CLEARALRET } from "../../store/actions.type.js";
         EmailErrors () {
                 const errors = []
                 if (!this.$v.form.email.$dirty) return errors
-                !this.$v.form.email.required && errors.push('โปรดระบุอีเมล์')
-                !this.$v.form.email.email    && errors.push('โปรดระบุข้อมูลรูปแบบอีเมล์')
+                !this.$v.form.email.required && errors.push('โปรดระบุ')
+                !this.$v.form.email.email    && errors.push('โปรดระบุข้อมูลรูปแบบ')
                 return errors
             },
         PassErrors(){
 
               const errors = []
                 if (!this.$v.form.password.$dirty) return errors
-                !this.$v.form.password.required && errors.push('โปรดระบุอีเมล์')
-                !this.$v.form.password.password    && errors.push('โปรดระบุข้อมูลรูปแบบอีเมล์')
+                !this.$v.form.password.required && errors.push('โปรดระบุ')
+                !this.$v.form.password.password    && errors.push('โปรดระบุข้อมูลรูปแบบ')
                 return errors
 
         },

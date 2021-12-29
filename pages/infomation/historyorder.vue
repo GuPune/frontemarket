@@ -277,8 +277,8 @@ import axios from 'axios';
             EmailErrors () {
                 const errors = []
                 if (!this.$v.form.email.$dirty) return errors
-                !this.$v.form.email.required && errors.push('โปรดระบุอีเมล์')
-                !this.$v.form.email.email    && errors.push('โปรดระบุข้อมูลรูปแบบอีเมล์')
+                !this.$v.form.email.required && errors.push('โปรดระบุ')
+                !this.$v.form.email.email    && errors.push('โปรดระบุข้อมูลรูปแบบ')
                 return errors
             },
             
@@ -471,8 +471,8 @@ this.isCartnumber = true
             error($text) {
                 this.$swal({
                     icon: 'error',
-                    title: 'อีเมล์',
-                    text: 'อีเมล์ของคุณถูกใช้งานไปแล้ว!',
+                    title: '',
+                    text: 'ของคุณถูกใช้งานไปแล้ว!',
                     showConfirmButton: true,
                     reverseButtons: true
                 });

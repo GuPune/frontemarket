@@ -25,7 +25,14 @@
     justify-content: center;
 }
 
+#undefined-output{
 
+  border: aliceblue;
+}
+
+#datepicker-buttons__dialog_{
+  margin-top: 100px;
+}
 
 
 

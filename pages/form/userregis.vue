@@ -28,12 +28,39 @@
 
     </div>
     
-    <div class="row">
+    <div class="row" hidden>
       <div class="col-half">
         <h6 style="color: #171c24;">วันเกิด</h6>
+          
+                 <b-form-datepicker  v-model="form.birthday"
+      id="datepicker-buttons"
+      today-button
+      reset-button
+      close-button
+      locale="en"
+    ></b-form-datepicker>
+                <!--
         <div class="input-group">
-            <b-form-datepicker id="example-datepicker" v-model="form.birthday" class="mb-2"></b-form-datepicker>
+
+      
+            <b-form-datepicker id="example-datepicker" v-model="form.birthday" class="mb-2 register-cus"></b-form-datepicker>
+          
+            
+
+    
+             <div class="input-group input-group-icon">
+             <datepicker  class="form-control" v-model="form.birthday" name="uniquename"></datepicker>
+
+             
+        <div class="input-icon"><i style="color: #005dc0;" class="fa fa-birthday-cake"></i></div>
+      </div>
+
+      
+       
+               
         </div>
+        -->
+        
       </div>
       <div class="col-half">
         <h6 style="color: #171c24;">เพศ</h6>
@@ -54,13 +81,15 @@
                                                                          :error-messages="telErrors" required
                                                                          :class="{ 'is-invalid': $v.form.tel.$error}"
                                                                          @input="$v.form.tel.$touch()"
-                                                                         @blur="$v.form.tel.$touch()"/>
+                                                                         @blur="$v.form.tel.$touch()"
+                                                                         v-on:keypress="isNumber($event)" maxLength="10"
+                                                                         />
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-phone"></i></div>
       </div>
 
 
     <div class="input-group input-group-icon">
-         <input type="text" class="form-control" placeholder="อีเมล์"  v-model="form.email" 
+         <input type="text" class="form-control" placeholder="อีเมล"  v-model="form.email" 
                                                                          :error-messages="EmailErrors" required
                                                                          :class="{ 'is-invalid': $v.form.email.$error}"
                                                                          @input="$v.form.email.$touch()"
@@ -78,6 +107,8 @@
                                                                          @blur="$v.form.first_name.$touch()"/>
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-key"></i></div>
       </div>
+
+   
 
 
     </div>
@@ -106,12 +137,14 @@ import { mapGetters } from "vuex";
 import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/vue-loading.css';
 import 'sweetalert2/dist/sweetalert2.min.css';
+import Datepicker from "@/components/TouchDatePicker";
     
 
 
     export default {
       components: {
           Nav,
+          Datepicker
            
               },
           validations: {
@@ -154,15 +187,15 @@ import 'sweetalert2/dist/sweetalert2.min.css';
         EmailErrors () {
                 const errors = []
                 if (!this.$v.form.email.$dirty) return errors
-                !this.$v.form.email.required && errors.push('โปรดระบุอีเมล์')
-                !this.$v.form.email.email    && errors.push('โปรดระบุข้อมูลรูปแบบอีเมล์')
+                !this.$v.form.email.required && errors.push('โปรดระบุ')
+                !this.$v.form.email.email    && errors.push('โปรดระบุข้อมูลรูปแบบ')
                 return errors
             },
         PassErrors(){
               const errors = []
                 if (!this.$v.form.password.$dirty) return errors
-                !this.$v.form.password.required && errors.push('โปรดระบุอีเมล์')
-                !this.$v.form.password.password    && errors.push('โปรดระบุข้อมูลรูปแบบอีเมล์')
+                !this.$v.form.password.required && errors.push('โปรดระบุ')
+                !this.$v.form.password.password    && errors.push('โปรดระบุข้อมูลรูปแบบ')
                 return errors
 
         },
@@ -202,6 +235,15 @@ import 'sweetalert2/dist/sweetalert2.min.css';
                await this.send()
         },
 
+        async isNumber(event, message) {
+           
+                if (!/\d/.test(event.key) &&  (event.key !== "." || /\./.test(message))   )  
+                    
+                return event.preventDefault();  
+
+                
+        },
+
          loader() {
                 this.isLoading = true;
                 setTimeout(() => (this.isLoading = false), 1500);
@@ -233,8 +275,8 @@ import 'sweetalert2/dist/sweetalert2.min.css';
             error($text) {
                 this.$swal({
                     icon: 'error',
-                    title: 'อีเมล์',
-                    text: 'อีเมล์ของคุณถูกใช้งานไปแล้ว!',
+                    title: 'อีเมล',
+                    text: 'อีเมลของคุณถูกใช้งานไปแล้ว!',
                     showConfirmButton: true,
                     reverseButtons: true
                 });

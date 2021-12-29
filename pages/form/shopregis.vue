@@ -83,7 +83,7 @@
     <div class="row">
 
     <div class="input-group input-group-icon">
-        <input type="text" class="form-control" placeholder="อีเมล์"  v-model="form.email" 
+        <input type="text" class="form-control" placeholder=""  v-model="form.email" 
                                                                          :error-messages="EmailErrors" required
                                                                          :class="{ 'is-invalid': $v.form.email.$error}"
                                                                          @input="$v.form.email.$touch()"
@@ -203,15 +203,15 @@ import Loader from '@/components/Loader'
         EmailErrors () {
                 const errors = []
                 if (!this.$v.form.email.$dirty) return errors
-                !this.$v.form.email.required && errors.push('โปรดระบุอีเมล์')
-                !this.$v.form.email.email    && errors.push('โปรดระบุข้อมูลรูปแบบอีเมล์')
+                !this.$v.form.email.required && errors.push('โปรดระบุ')
+                !this.$v.form.email.email    && errors.push('โปรดระบุข้อมูลรูปแบบ')
                 return errors
             },
         PassErrors(){
               const errors = []
                 if (!this.$v.form.password.$dirty) return errors
-                !this.$v.form.password.required && errors.push('โปรดระบุอีเมล์')
-                !this.$v.form.password.password    && errors.push('โปรดระบุข้อมูลรูปแบบอีเมล์')
+                !this.$v.form.password.required && errors.push('โปรดระบุ')
+                !this.$v.form.password.password    && errors.push('โปรดระบุข้อมูลรูปแบบ')
                 return errors
 
         },
@@ -226,15 +226,15 @@ import Loader from '@/components/Loader'
          ShopnameErrors () {
                 const errors = []
                 if (!this.$v.form.shop_name.$dirty) return errors
-                !this.$v.form.shop_name.required && errors.push('โปรดระบุอีเมล์')
-                !this.$v.form.shop_name.shop_name    && errors.push('โปรดระบุข้อมูลรูปแบบอีเมล์')
+                !this.$v.form.shop_name.required && errors.push('โปรดระบุ')
+                !this.$v.form.shop_name.shop_name    && errors.push('โปรดระบุข้อมูลรูปแบบ')
                 return errors
             },
         AddressErrors(){
                 const errors = []
                 if (!this.$v.form.address.$dirty) return errors
-                !this.$v.form.address.required && errors.push('โปรดระบุอีเมล์')
-                !this.$v.form.address.address    && errors.push('โปรดระบุข้อมูลรูปแบบอีเมล์')
+                !this.$v.form.address.required && errors.push('โปรดระบุ')
+                !this.$v.form.address.address    && errors.push('โปรดระบุข้อมูลรูปแบบ')
                 return errors
 
         }

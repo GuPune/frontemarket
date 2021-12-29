@@ -179,7 +179,7 @@ import { FETCH_ADS_SHOP,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,SAVE_ADDRES
                 AddressErrors () {
             const errors = []
             if (!this.$v.form.address.$dirty) return errors
-            !this.$v.form.address.required && errors.push('โปรดระบุอีเมล์')
+            !this.$v.form.address.required && errors.push('โปรดระบุอีเมล')
       
             return errors
         },
