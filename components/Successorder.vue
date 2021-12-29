@@ -138,7 +138,7 @@
                                                     <div class="row">
                                                         <div class="col-12">
                                                             <p class="fs-ta-14 fs-md-ta-16 text-theme-1 mb-0">{{item.name_th}}</p>
-                                                             <p class="fs-ta-14 text-theme-2 mb-0 mt-2" style="font-size:12px;">{{item.sku}}</p></div>
+                                                             <p class="fs-ta-14 text-theme-2 mb-0 mt-2" style="font-size:10px;">{{item.sku}}</p></div>
                                                     </div>
                                                     <div class="row mt-3 d-flex d-md-none">
                                                         <div class="col-8">
