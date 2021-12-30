@@ -14,7 +14,9 @@ export default {
         }
     },
     mounted() {
+        console.log('this.token',this.token);
         this.$auth.setToken('local', 'Bearer ' + this.token);
+
         this.$auth.setStrategy('local');
         this.$auth.fetchUser().then( () => {
             return this.$router.push('/');
