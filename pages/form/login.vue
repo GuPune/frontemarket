@@ -285,7 +285,9 @@ import { FORGOTEMAIL,CLEARALRET } from "../../store/actions.type.js";
     },
     methods: {
         socialLogin(service) {
-this.form.url = window.location.origin
+this.form.url = window.location.hostname;
+
+
          window.location.href = `https://cmsecom.idtest.work/api/auth/login/${service}/${this.form.url}`;
         },
         async loginline(){
