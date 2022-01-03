@@ -70,7 +70,7 @@
 
 import { mapGetters,mapState } from "vuex";
 import { CHECK_LOGIN } from "../store/actions.type.js";
-import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,GET_MENU,GET_SHOP_BY_ITEM } from "@/store/actions.type.js";
+import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,GET_MENU,GET_SHOP_BY_ITEM,FETCH_GET_PROFILE } from "@/store/actions.type.js";
   export default {
     data() {
     return {
@@ -91,6 +91,8 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
              ...mapState({
                 objects: state => state.user.profile,
              }),
+
+             
 			
         isLogins () {
                 return this.$store.state.auth.loggedIn;
@@ -118,7 +120,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
     
         
       async mounted() {
-
+    let a = this.$store.dispatch(FETCH_GET_PROFILE)
           let checker = await localStorage.getItem("user");
           let cart = await this.$store.dispatch(GET_CART);
 
