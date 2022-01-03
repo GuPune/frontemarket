@@ -4,7 +4,7 @@
 <div v-if="loadding">
 <Loader/>
 </div>
-<Banner/>
+<Banner2/>
 <Blog/>
 
         
@@ -34,7 +34,7 @@ import AdsShop from "@/components/AdsShop"
 import { mapGetters } from "vuex";
 import Adsmini from "@/components/Adsmini"
 import Relation from "@/components/Relation"
-import Banner from "@/components/Banner"
+import Banner2 from "@/components/Banner2"
 import Blog from "@/components/Blog"
     
     export default {

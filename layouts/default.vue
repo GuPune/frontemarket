@@ -5,8 +5,8 @@
 
 <div>
 <Loader v-if="product.loading"/>
- <Nav  v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou')  && (currentRouteName != 'line')  && (currentRouteName != 'line-id') && (currentRouteName == 'index') && (currentRouteName != 'cart-orderlist') " />
- <NavShop  v-if="(currentRouteName != 'index')  && (currentRouteName != 'id-about')  && (currentRouteName != 'id-contact')  && (currentRouteName != 'id-new')" />
+ <Nav  v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou')  && (currentRouteName != 'line')  && (currentRouteName != 'line-id') && (currentRouteName == 'index') || (currentRouteName == 'cart-orderlist') || (currentRouteName == 'cart-comfirmorder') || (currentRouteName == 'cart-payment') || (currentRouteName == 'cart-success')" />
+ <NavShop  v-if="(currentRouteName == 'id')  || (currentRouteName == 'id-about') || (currentRouteName == 'id-new') || (currentRouteName == 'id-contact')" />
 <nuxt-child></nuxt-child>
 
 

@@ -4,7 +4,7 @@
 <div v-if="loadding">
 <Loader/>
 </div>
-<Banner/>
+
 <Map/>
 <Contact/>
  </div>

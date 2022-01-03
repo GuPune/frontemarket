@@ -91,6 +91,11 @@ url:null
         computed: {
                 ...mapGetters(["cate_by_shop","product_by_shop"]),
 
+                        currentRouteName() {
+console.log('this.$route.name',this.$route.name);
+        return this.$route.name;
+    },
+
         },
              
        async mounted() {
