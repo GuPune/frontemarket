@@ -198,10 +198,9 @@
 
 -->
 <div>
- <b-navbar toggleable="sm" type="dark" variant="sat" class="banav navbar-fixed-top" fixed="top">
+ <b-navbar toggleable="sm" type="dark"   :style="{'background-color':objectslayout.color}" class="banav navbar-fixed-top" fixed="top">
     <b-navbar-brand  @click="redirectTo('index')">
-  
-     <img src="../assets/log.jpg" alt=""  class="icon-mobile">
+     <img src="../assets/log.jpg"  alt=""  class="icon-mobile">
     </b-navbar-brand>
     <b-navbar-brand href="#" class="cart-mobile"  @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i><span> ({{ cartTotal }}) </span></b-nav-item></b-navbar-brand>
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -217,12 +216,12 @@
      <b-navbar-nav class="ml-auto">
      <b-nav-item href="#"><img src="http://www.dgtfarm.com/images/thai-flag.png" alt="" height="20px" width="20px"></b-nav-item>
      <b-nav-item href="#"><img src="http://www.dgtfarm.com/images/eng-flag.png" alt="" height="20px" width="20px"></b-nav-item>
-     <b-nav-item  @click="redirectTo('form-shopregis')">ขายสินค้ากับเรา</b-nav-item>
+     <b-nav-item  @click="redirectTo('form-shopregis')">{{objectslayout.textsellermyshop}}</b-nav-item>
      <b-nav-item href="#" @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i>
                     <span> ({{ cartTotal }}) </span></b-nav-item>
 
               
-   <b-nav-item  v-if="!isLogins" @click="redirectTo('form-login')">เข้าสู่ระบบ</b-nav-item>
+   <b-nav-item  v-if="!isLogins" @click="redirectTo('form-login')">{{objectslayout.textlogin}}</b-nav-item>
           <b-nav-item-dropdown right  v-if="isLogins">
           <!-- Using 'button-content' slot -->
           <template #button-content>
@@ -231,14 +230,8 @@
           <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">Profile</b-dropdown-item>
           <b-dropdown-item href="#"  @click.prevent="logout">Sign Out</b-dropdown-item>
         </b-nav-item-dropdown>
-    
-
-    
       </b-navbar-nav>
-
-      
     </b-collapse>
-    
   </b-navbar>
   
   
@@ -250,14 +243,16 @@
 
 <script>
 import { mapGetters,mapState } from "vuex";
-import { CHECK_LOGIN } from "../store/actions.type.js";
+import { CHECK_LOGIN,GET_NAVBAR,GET_MENU,GET_SHOP_BY_ITEM } from "../store/actions.type.js";
 import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,FETCH_GET_PROFILE } from "@/store/actions.type.js";
   export default {
     data() {
     return {
       IsLogin: false,
       loggedIn: this.$auth.loggedIn,
-      name:{}
+      name:{},
+      form:{},
+      color:null
 
     };
   },
@@ -268,6 +263,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
 
           ...mapState({
                 objects: state => state.user.profile,
+                objectslayout: state => state.Layout.navbar,
              }),
 			
         isLogins () {
@@ -290,8 +286,10 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
            
 
         },
-        created(){
-           
+        async created(){
+            this.form.url = window.location.origin
+                let getnav = await this.$store.dispatch(GET_NAVBAR,this.form);
+              
         },
         
 
@@ -301,11 +299,17 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
           let checker = await localStorage.getItem("user");
               //    let a = await this.$store.dispatch(FETCH_GET_PROFILE)
 
-
+        this.form.url = window.location.origin
           let cart = await this.$store.dispatch(GET_CART);
+         //    let getnav = await this.$store.dispatch(GET_NAVBAR,this.form);
+          // this.color = getnav.color;
+           //    console.log('payload',getnav);
           // let profile = await this.$store.dispatch(FETCH_GET_PROFILE);
           // this.name = profile['name']
           // console.log('profile',profile['name']);
+
+
+          
 
       
           if(this.user.user == null){

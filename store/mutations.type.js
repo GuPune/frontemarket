@@ -50,8 +50,13 @@ export const SET_ABOUT = "set_about";
 export const SET_SYSTEM = "set_system";
 export const SET_PROVINCES = "set_provinces";
 export const SET_FORM_USER = "set_form_user";
+
+export const SET_NAVBAR = "set_nav";
+
 export const SET_LOADER = "set_loader";
 export const SET_LOGOUT = "set_logout";
+
+
 
 
 

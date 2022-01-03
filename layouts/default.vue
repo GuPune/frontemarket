@@ -5,7 +5,8 @@
 
 <div>
 <Loader v-if="product.loading"/>
- <Nav  v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou')  && (currentRouteName != 'line')  && (currentRouteName != 'line-id')"/>
+ <Nav  v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou')  && (currentRouteName != 'line')  && (currentRouteName != 'line-id') && (currentRouteName == 'index') && (currentRouteName != 'cart-orderlist') " />
+ <NavShop  v-if="(currentRouteName != 'index')  && (currentRouteName != 'id-about')  && (currentRouteName != 'id-contact')  && (currentRouteName != 'id-new')" />
 <nuxt-child></nuxt-child>
 
 
@@ -35,7 +36,7 @@
 
 
 <script>
-import Header from "@/components/Header"
+import NavShop from "@/components/NavbarShop"
 import Nav from "@/components/Nav"
 import Ads from "@/components/Ads"
 import Categories from "@/components/Categories"
@@ -58,7 +59,7 @@ Vue.use(VueFbCustomerChat, {
     
     export default {
       components: {
-          Header,
+          NavShop,
           Nav,Loader
           },
 
@@ -74,7 +75,7 @@ Vue.use(VueFbCustomerChat, {
                 product: state => state.ProductShell
             }),
         currentRouteName() {
-
+console.log('this.$route.name',this.$route.name);
         return this.$route.name;
     },
     isUrl () {

@@ -96,6 +96,10 @@ export const GET_PRODUCT_FIND = "get_product_find";
 export const GET_PRODUCT_SHELL_FIND = "get_product_find_shell";
 export const CORE_USER = "core_user";
 export const FETCH_LOADER = "fetch_loader";
+
+
+export const GET_NAVBAR = "get_navbar";
+
 export const LOG_OUT = "log_out";
 
 
