@@ -1,6 +1,6 @@
 <template>
 <section id="long-footer">
-                    <div class="mt-5 pt-5 pb-5 long-footer navbar-expand-lg navbar-dark bg-dark">
+                    <div class="pt-5 pb-5 long-footer navbar-expand-lg navbar-dark bg-dark">
                         <div class="container">
                                 <div class="row">
                                     <div class="col-lg-5 col-xs-12 about-company">
