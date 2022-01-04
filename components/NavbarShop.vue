@@ -26,7 +26,12 @@
     <b-navbar-brand href="#"><div class="shop-name-nav-mobile">
        <img src="../assets/log.jpg"  alt=""  class="icon-mobile">
     </div></b-navbar-brand>
-    <b-navbar-brand href="#" class="cart-mobile"><i class="fas fa fa-cart-plus" aria-hidden="true"></i><span> ({{ cartTotal }}) </span></b-nav-item></b-navbar-brand>
+
+        <b-navbar-brand href="#" @click="redirectTo('cart-orderlist')"><div class="shop-name-nav-mobile">
+  <i class="fas fa fa-cart-plus" aria-hidden="true"></i>
+                    <span> ({{ cartTotal }}) </span>
+    </div></b-navbar-brand>
+
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
