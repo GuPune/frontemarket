@@ -197,6 +197,7 @@
 
 
 -->
+
 <div>
  <b-navbar toggleable="sm" type="dark"   :style="{'background-color':objectslayout.color}" class="banav navbar-fixed-top" fixed="top">
     <b-navbar-brand  @click="redirectTo('index')">
@@ -208,7 +209,6 @@
     <b-collapse id="nav-collapse" is-nav>
     <b-col cols="12" md="6"  sm="3">
         <b-form-input placeholder="Search"></b-form-input>
-
       </b-col>
   
 
@@ -236,6 +236,11 @@
   
   
 </div>
+  
+  
+
+
+
 </template>
 
 
