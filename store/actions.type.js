@@ -99,6 +99,7 @@ export const FETCH_LOADER = "fetch_loader";
 
 
 export const GET_NAVBAR = "get_navbar";
+export const GET_NAVBAR_SHOP = "get_navbar_shop";
 
 export const LOG_OUT = "log_out";
 

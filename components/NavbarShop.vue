@@ -1,6 +1,6 @@
 <template>
 <div>
-   <b-navbar  type="dark" variant="dark" class="banav">
+   <b-navbar   :style="{'background-color':objectslayoutshop.color}" class="banav">
     <b-navbar-brand href="#"></b-navbar-brand>
          <img src="../assets/log.jpg"  alt=""  class="icon-mobile">
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -10,9 +10,10 @@
 
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
-     <b-nav-item href="#"><img src="../assets/facebook.png" alt="" height="20px" width="20px"></b-nav-item>
-     <b-nav-item href="#"><img src="../assets/line.png" alt="" height="20px" width="20px"></b-nav-item>
-     <b-nav-item href="#"><img src="../assets/insta.png" alt="" height="20px" width="20px"></b-nav-item>
+     <b-nav-item :href="objectslayoutshop.link_social_face"  target="_blank"><img  :src="Checkimage(objectslayoutshop.image_face)"  alt="" height="20px" width="20px"></b-nav-item>
+     <b-nav-item  :href="objectslayoutshop.link_social_line"><img  :src="Checkimage(objectslayoutshop.image_line)" alt="" height="20px" width="20px"></b-nav-item>
+    <b-nav-item  :href="objectslayoutshop.link_social_instr"><img  :src="Checkimage(objectslayoutshop.image_line)" alt="" height="20px" width="20px"></b-nav-item>
+
       </b-navbar-nav>
 
       
@@ -22,14 +23,14 @@
 
   
 
-   <b-navbar toggleable="sm" type="light" variant="light" class="banav navbar-fixed-top" :fixed="position" v-on:scroll.native="handleScroll">
+   <b-navbar toggleable="sm"   :style="{'background-color':colors}"  class="banav navbar-fixed-top" :fixed="position" v-on:scroll.native="handleScroll">
     <b-navbar-brand href="#"><div class="shop-name-nav-mobile">
        <img src="../assets/log.jpg"  alt=""  class="icon-mobile">
     </div></b-navbar-brand>
 
         <b-navbar-brand href="#" @click="redirectTo('cart-orderlist')"><div class="shop-name-nav-mobile">
   <i class="fas fa fa-cart-plus" aria-hidden="true"></i>
-                    <span> ({{ cartTotal }}) </span>
+                    <span> ({{ cartTotal }})</span>
     </div></b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -45,13 +46,13 @@
 
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
-     <b-nav-item href="#"><img src="http://www.dgtfarm.com/images/thai-flag.png" alt="" height="20px" width="20px"></b-nav-item>
-     <b-nav-item href="#"><img src="http://www.dgtfarm.com/images/eng-flag.png" alt="" height="20px" width="20px"></b-nav-item>
-     <b-nav-item href="#">ขายสินค้ากับเรา</b-nav-item>
-     <b-nav-item href="#" @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i>
-                    <span> ({{ cartTotal }}) </span></b-nav-item>
+     <!-- <b-nav-item href="#"><img src="http://www.dgtfarm.com/images/thai-flag.png" alt="" height="20px" width="20px"></b-nav-item>
+     <b-nav-item href="#"><img src="http://www.dgtfarm.com/images/eng-flag.png" alt="" height="20px" width="20px"></b-nav-item> -->
+     <b-nav-item href="#">{{objectslayoutshop.textsellermyshop}}</b-nav-item>
+     <b-nav-item href="#" @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus"  :style="{'color':objectslayoutshop.icon_color}" aria-hidden="true"></i>
+                    <span  :style="{'color':objectslayoutshop.text_login_color}"> ({{ cartTotal }}) </span></b-nav-item>
 
-   <b-nav-item  v-if="!isLogins" @click="redirectTo('form-login')">เข้าสู่ระบบ</b-nav-item>
+   <b-nav-item  v-if="!isLogins" @click="redirectTo('form-login')"><span   :style="{'color':objectslayoutshop.text_login_color}">{{objectslayoutshop.textlogin}}</span></b-nav-item>
           <b-nav-item-dropdown right  v-if="isLogins">
           <!-- Using 'button-content' slot -->
           <template #button-content>
@@ -79,6 +80,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
   export default {
     data() {
     return {
+      colors:'',
       IsLogin: false,
       position:'',
             shopitem:null,
@@ -95,7 +97,10 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
 
              ...mapState({
                 objects: state => state.user.profile,
+                objectslayoutshop: state => state.Layout.navbar_shop,
              }),
+
+             
 
              
 			
@@ -115,6 +120,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
 
         },
       created () {
+        
             window.addEventListener('scroll', this.handleScroll);
     },
     destroyed () {
@@ -144,18 +150,31 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
           }else{
             this.IsLogin = false;
           }
+
+
+          console.log('objectslayoutshop',this.objectslayoutshop);
+         
+          this.colors = this.objectslayoutshop.navbar_menu_color;
          },
 
       methods: {
+
+            Checkimage(image){
+                let public_images = process.env.ImageURL+image;
+           
+                return 'http://127.0.0.1:8000/images/'+image;
+          },
 
         handleScroll(event) {
       // Any code to be executed when the window is scrolled
 
       if(window.scrollY > 100){
-
+     this.colors = this.objectslayoutshop.navbar_menu_color_scroll;
+  
         this.position = 'top'
       }else {
-        this.position = '-'
+     this.colors = this.objectslayoutshop.navbar_menu_color;
+      this.position = '-'
       }
    
    
