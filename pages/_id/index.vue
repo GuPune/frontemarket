@@ -58,7 +58,7 @@ import AdsShop from "@/components/AdsShop"
 import { mapGetters } from "vuex";
 import Adsmini from "@/components/Adsmini"
 import Relation from "@/components/Relation"
-import Banner2 from "@/components/Banner2"
+import Banner from "@/components/Banner"
 import ProductBestSeller from "@/components/ProductSeller"
 import ProductNew from "@/components/ProductNew"
 import ProductRecom from "@/components/ProductRecommend"
