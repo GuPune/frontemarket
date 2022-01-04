@@ -221,6 +221,8 @@ button.button, a.button {
 
 .row.product{
     margin-top: 25px;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 .product-byshop{
