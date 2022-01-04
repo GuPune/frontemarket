@@ -197,30 +197,39 @@
 
 
 -->
-
 <div>
- <b-navbar toggleable="sm" type="dark"   :style="{'background-color':objectslayout.color}" class="banav navbar-fixed-top" fixed="top">
+
+  <b-container class="bv-example-row">
+  <b-row>
+    
+    <b-navbar toggleable="sm" type="dark"   :style="{'background-color':objectslayout.color}" class="banav navbar-fixed-top" fixed="top">
     <b-navbar-brand  @click="redirectTo('index')">
-     <img src="../assets/log.jpg"  alt=""  class="icon-mobile">
+   <img src="../assets/log.jpg"  alt=""  class="icon-mobile">
     </b-navbar-brand>
-    <b-navbar-brand href="#" class="cart-mobile"  @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i><span> ({{ cartTotal }}) </span></b-nav-item></b-navbar-brand>
-    <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+    <b-navbar-brand href="#" class="cart-mobi"  @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i><span style="font-size:14px"> ({{ cartTotal }})  ตะกร้าสินค้า </span></b-nav-item></b-navbar-brand>
+      
+      <b-navbar-nav>
 
-    <b-collapse id="nav-collapse" is-nav>
-    <b-col cols="12" md="6"  sm="3">
-        <b-form-input placeholder="Search"></b-form-input>
+   <b-nav-item  class="cart-mobi" v-if="!isLogins" @click="redirectTo('form-login')">{{objectslayout.textlogin}}</b-nav-item>
+          <b-nav-item-dropdown right  v-if="isLogins">
+          <!-- Using 'button-content' slot -->
+          <template #button-content>
+            <em>{{objects.name}} </em>
+          </template>
+          <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">Profile</b-dropdown-item>
+          <b-dropdown-item href="#"  @click.prevent="logout">Sign Out</b-dropdown-item>
+        </b-nav-item-dropdown>
+      </b-navbar-nav>
       </b-col>
-  
 
-      <!-- Right aligned nav items -->
-     <b-navbar-nav class="ml-auto">
-     <b-nav-item href="#"><img src="http://www.dgtfarm.com/images/thai-flag.png" alt="" height="20px" width="20px"></b-nav-item>
-     <b-nav-item href="#"><img src="http://www.dgtfarm.com/images/eng-flag.png" alt="" height="20px" width="20px"></b-nav-item>
-     <b-nav-item  @click="redirectTo('form-shopregis')">{{objectslayout.textsellermyshop}}</b-nav-item>
-     <b-nav-item href="#" @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i>
-                    <span> ({{ cartTotal }}) </span></b-nav-item>
+      <b-col cols="12" md="6"  sm="3" class="nav-form-search">
+        <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?"></b-form-input>
+      </b-col>
+       <b-col cols="12" md="4"  sm="12">
+      <b-col>
+      <b-navbar-nav class="ml-auto cart-desktop">
+    <b-navbar-brand href="#"   @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i><span> ({{ cartTotal }}) </span></b-nav-item></b-navbar-brand>
 
-              
    <b-nav-item  v-if="!isLogins" @click="redirectTo('form-login')">{{objectslayout.textlogin}}</b-nav-item>
           <b-nav-item-dropdown right  v-if="isLogins">
           <!-- Using 'button-content' slot -->
@@ -231,11 +240,21 @@
           <b-dropdown-item href="#"  @click.prevent="logout">Sign Out</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
-    </b-collapse>
+      </b-col>
+      </b-col>
   </b-navbar>
+
+    </b-col>
+
+  </b-row>
+</b-container>
+
+
   
   
 </div>
+  
+  
   
   
 
