@@ -1,6 +1,6 @@
 <template>
 <div>
-   <b-navbar   :style="{'background-color':objectslayoutshop.color}" class="banav">
+   <b-navbar   :style="{'background-color':objectslayoutshop.color}" class="banav nav-shop-tops">
     <b-navbar-brand href="#"></b-navbar-brand>
          <img src="../assets/log.jpg"  alt=""  class="icon-mobile">
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
