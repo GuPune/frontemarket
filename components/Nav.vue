@@ -214,7 +214,7 @@
           <b-nav-item-dropdown right   class="cart-mobi" v-if="isLogins">
           <!-- Using 'button-content' slot -->
           <template #button-content>
-            <em>{{ 'xxxxxxxxxx'.substring(0,7)+".." }} </em>
+            <em>{{ objects.name.substring(0,7)+".." }} </em>
           </template>
           <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">Profile</b-dropdown-item>
           <b-dropdown-item href="#"  @click.prevent="logout">Sign Out</b-dropdown-item>
