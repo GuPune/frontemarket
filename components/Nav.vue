@@ -211,7 +211,7 @@
       <b-navbar-nav>
 
    <b-nav-item  class="cart-mobi" v-if="!isLogins" @click="redirectTo('form-login')">{{objectslayout.textlogin}}</b-nav-item>
-          <b-nav-item-dropdown right  v-if="isLogins">
+          <b-nav-item-dropdown right   class="cart-mobi" v-if="isLogins">
           <!-- Using 'button-content' slot -->
           <template #button-content>
             <em>{{objects.name}} </em>
@@ -220,7 +220,7 @@
           <b-dropdown-item href="#"  @click.prevent="logout">Sign Out</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
-      </b-col>
+  
 
       <b-col cols="12" md="6"  sm="3" class="nav-form-search">
         <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?"></b-form-input>
@@ -244,7 +244,7 @@
       </b-col>
   </b-navbar>
 
-    </b-col>
+
 
   </b-row>
 </b-container>
