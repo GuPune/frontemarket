@@ -2,7 +2,7 @@
 <div>
    <b-navbar   :style="{'background-color':objectslayoutshop.color}" class="banav nav-shop-tops">
     <b-navbar-brand href="#"></b-navbar-brand>
-         <img src="../assets/log.jpg"  alt=""  class="icon-mobile">
+         <img :src="Checkimage(objectslayoutshop.logo)"  alt=""  class="icon-mobile">
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
@@ -25,7 +25,7 @@
 
    <b-navbar toggleable="sm"   :style="{'background-color':colors}"  class="banav navbar-fixed-top" :fixed="position" v-on:scroll.native="handleScroll">
     <b-navbar-brand href="#"><div class="shop-name-nav-mobile">
-       <img src="../assets/log.jpg"  alt=""  class="icon-mobile">
+       <img :src="Checkimage(objectslayoutshop.logo)" alt=""  class="icon-mobile">
     </div></b-navbar-brand>
 
         <b-navbar-brand href="#" @click="redirectTo('cart-orderlist')"><div class="shop-name-nav-mobile">
@@ -150,10 +150,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
           }else{
             this.IsLogin = false;
           }
-
-
-          console.log('objectslayoutshop',this.objectslayoutshop);
-         
+        
           this.colors = this.objectslayoutshop.navbar_menu_color;
          },
 
