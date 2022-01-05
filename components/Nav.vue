@@ -199,7 +199,7 @@
 -->
 <div>
 
-  <b-container class="bv-example-row nav-first-s">
+  <b-container class="bv-example-row nav-first-s" v-if="objectslayout">
   <b-row>
     
     <b-navbar toggleable="sm" type="dark"   :style="{'background-color':objectslayout.color}" class="banav navbar-fixed-top" fixed="top">
