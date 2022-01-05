@@ -145,7 +145,7 @@ axios: {
   ImageURL: "https://cmsecom.idtest.work/public/product/",
   ImageSoc: "https://cmsecom.idtest.work/public/images/",
 
-// },
+ },
 
 env: {
   ImageURL: "https://cmsecom.idtest.work/public/product/",
