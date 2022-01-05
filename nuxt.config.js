@@ -128,12 +128,14 @@ export default {
 //   axios: {
 //     // See https://github.com/nuxt-community/axios-module#options
 //     baseURL: "http://127.0.0.1:8000/api",
-//     ImageURL: "https://cmsecom.idtest.work/public/product/",
+//     ImageURL: "http://127.0.0.1:8000/public/product/",
+//     ImageSoc: "http://127.0.0.1:8000/public/images/",
   
 //   },
 
 //   env: {
-//     ImageURL: "https://cmsecom.idtest.work/public/product/",
+//     ImageURL: "http://127.0.0.1:8000/public/product/",
+//     ImageSoc: "http://127.0.0.1:8000/public/images/",
 //     backend:"http://127.0.0.1:8000",
 // },
 
@@ -141,12 +143,14 @@ axios: {
   // See https://github.com/nuxt-community/axios-module#options
   baseURL: "https://cmsecom.idtest.work/api",
   ImageURL: "https://cmsecom.idtest.work/public/product/",
+  ImageSoc: "https://cmsecom.idtest.work/public/images/",
 
-},
+// },
 
 env: {
   ImageURL: "https://cmsecom.idtest.work/public/product/",
-  backend:"https://cmsecom.idtest.work/api",
+  ImageSoc: "https://cmsecom.idtest.work/public/images/",
+  backend:"https://cmsecom.idtest.work",
 },
 
   auth: {

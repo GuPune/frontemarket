@@ -160,9 +160,9 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
       methods: {
 
             Checkimage(image){
-                let public_images = process.env.ImageURL+image;
-           
-                return 'http://127.0.0.1:8000/images/'+image;
+                let public_images = process.env.ImageSoc+image;
+         
+                return public_images;
           },
 
         handleScroll(event) {
