@@ -199,7 +199,7 @@
 -->
 <div>
 
-  <b-container class="bv-example-row">
+  <b-container class="bv-example-row nav-first-s">
   <b-row>
     
     <b-navbar toggleable="sm" type="dark"   :style="{'background-color':objectslayout.color}" class="banav navbar-fixed-top" fixed="top">
@@ -214,7 +214,7 @@
           <b-nav-item-dropdown right   class="cart-mobi" v-if="isLogins">
           <!-- Using 'button-content' slot -->
           <template #button-content>
-            <em>{{objects.name}} </em>
+            <em>{{ 'xxxxxxxxxx'.substring(0,10)+".." }} </em>
           </template>
           <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">Profile</b-dropdown-item>
           <b-dropdown-item href="#"  @click.prevent="logout">Sign Out</b-dropdown-item>

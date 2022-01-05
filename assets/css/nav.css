@@ -183,6 +183,10 @@ padding-left:0px ;
 padding-right:0px ;  
 border-radius: 0px; 
    }
+
+   .nav-first-s{
+    justify-content: normal;
+   }
     
 @media screen and (max-width: 400px) {
   .icon-mobile{
