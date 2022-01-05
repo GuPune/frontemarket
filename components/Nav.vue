@@ -214,11 +214,11 @@
 
       </b-navbar-nav>
 
-                <b-nav-item-dropdown right   class="subst-mobile cart-mobi" v-if="isLogins" no-caret>
+                <b-nav-item-dropdown right   class="cart-mobi" v-if="isLogins" no-caret>
           <!-- Using 'button-content' slot -->
           <template #button-content>
       
-            <em  class="substra" style="color:beige;">{{ objects.name}}</em>
+            <em   style="color:beige;">{{ objects.name.substring(0,7)+".." }}</em>
            
           </template>
           <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">Profile</b-dropdown-item>
