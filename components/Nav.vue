@@ -214,10 +214,12 @@
 
       </b-navbar-nav>
 
-                <b-nav-item-dropdown right   class="cart-mobi" v-if="isLogins" no-caret>
+                <b-nav-item-dropdown right   class="subst-mobile cart-mobi" v-if="isLogins" no-caret>
           <!-- Using 'button-content' slot -->
           <template #button-content>
-            <em style="color:beige;">{{ objects.name.substring(0,7)+".." }} </em>
+      
+            <em  class="substra" style="color:beige;">{{ objects.name}}</em>
+           
           </template>
           <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">Profile</b-dropdown-item>
           <b-dropdown-item href="#"  @click.prevent="logout">Sign Out</b-dropdown-item>
@@ -352,6 +354,15 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
          },
 
       methods: {
+
+        Checkstring(x){
+
+
+                
+
+
+return x;
+        },
             redirectTo(names) {
   
                 let path = this.$route.path

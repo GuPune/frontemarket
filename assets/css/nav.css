@@ -200,7 +200,13 @@ width: 80px;
   }
   .cart-mobi{
     display: block;
+    width: 50px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
+
+  
 
 
 }
@@ -217,6 +223,14 @@ width: 80px;
   }
   .cart-mobi{
     display: block;
+  }
+
+   .subst-mobile
+  {
+    width: 222px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
 
