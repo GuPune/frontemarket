@@ -10,7 +10,7 @@
 <nuxt-child></nuxt-child>
 
 
-      <Ads   v-if="currentRouteName == 'index'"/>
+      <Ads   v-if="currentRouteName == 'index'" style="padding-top:50px"/>
                 <!-- <Categories  v-if="currentRouteName == 'index'" /> -->
                 <Test  v-if="currentRouteName == 'index'" />
                
