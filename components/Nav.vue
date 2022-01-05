@@ -211,7 +211,10 @@
       <b-navbar-nav>
 
    <b-nav-item  class="cart-mobi" v-if="!isLogins" @click="redirectTo('form-login')">{{objectslayout.textlogin}}</b-nav-item>
-          <b-nav-item-dropdown right   class="cart-mobi" v-if="isLogins">
+
+      </b-navbar-nav>
+
+                <b-nav-item-dropdown right   class="cart-mobi" v-if="isLogins">
           <!-- Using 'button-content' slot -->
           <template #button-content>
             <em>{{ objects.name.substring(0,7)+".." }} </em>
@@ -219,7 +222,7 @@
           <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">Profile</b-dropdown-item>
           <b-dropdown-item href="#"  @click.prevent="logout">Sign Out</b-dropdown-item>
         </b-nav-item-dropdown>
-      </b-navbar-nav>
+      
   
 
       <b-col cols="12" md="6"  sm="3" class="nav-form-search">
