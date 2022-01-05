@@ -194,7 +194,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
                const Shopid = this.$route.params.id;
                console.log('Shopid',Shopid);
                 console.log('Shopid',names);
-             this.$router.push({ name: id-about, params: { id: Shopid }})
+             this.$router.push({ name: names, params: { id: Shopid }})
                 }
         },
 
