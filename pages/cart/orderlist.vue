@@ -191,7 +191,7 @@
 
 
    
-    <div class="col-md-3 ipad-order">
+    <div class="col-md-3 ipad-order or-mob">
             <Sum/>
 <br>
             <Coupon/>
