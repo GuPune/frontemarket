@@ -1,6 +1,6 @@
 <template>
 <div>
-      <div class="card mb-3" style="margin-top:80px;">
+      <div class="card mb-3 profile-con">
       <h2 class="profile-cart-title profile-bg-order"><span>ข้อมูลของฉัน </span>
             <span id="showLinkChangeAddress"><a class="linkChangeAddress"></a></span>
       </h2>

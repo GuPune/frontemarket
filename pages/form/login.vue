@@ -305,7 +305,7 @@ console.log(this.form.url);
         //        await this.$auth.loginWith("local", {
         //     data: this.form
         //   })
-
+console.log('a',this.form);
           try {
         await this.$auth.loginWith('local', {
           data: this.form
@@ -314,8 +314,7 @@ console.log(this.form.url);
 
      //   let token = this.$auth.getToken('local')   //get token
           let a = this.$store.dispatch(FETCH_GET_PROFILE)
-   this.$router.push("/")
-
+ 
 
   
          
