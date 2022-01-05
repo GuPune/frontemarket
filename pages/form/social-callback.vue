@@ -14,12 +14,14 @@ export default {
         }
     },
     mounted() {
-        console.log('this.token',this.token);
+ 
         this.$auth.setToken('local', 'Bearer ' + this.token);
 
         this.$auth.setStrategy('local');
         this.$auth.fetchUser().then( () => {
-            return this.$router.push('/');
+
+       
+            return this.$router.push('/').catch(err=>err);
         }).catch( (e) => {
             this.$auth.logout();
             return this.$router.push(`/auth/${this.$route.query.origin ? this.$route.query.origin : 'register'}?error=1`);
