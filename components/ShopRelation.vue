@@ -23,14 +23,14 @@
   </div>
  
     <VueSlickCarousel v-bind="slickOptions">
-    <div v-for="i in items"  class="img-wrapper">
+    <div v-for="i in 10"  class="img-wrapper">
   
              <div class="card c-shopinmy">
                     <div class="cardproduct">
-                 <img class="imgproduct related-images imgproductmyshop im-rela-mobile" :src="Checkimage(i.icon)">
+                 <img class="imgproduct related-images imgproductmyshop im-rela-mobile" >
                                                    <div class="product-footer">
                                                    <div class="addtocart">
-                                                       <b-button  variant="success shop-relation" size="sm" @click="redirectTo(i.shop_name)">ช้อปเลย</b-button>
+                                                       <b-button  variant="success shop-relation" size="sm" >ช้อปเลย</b-button>
                                                    </div></div>
                 
                                                 </div>
@@ -53,7 +53,6 @@
                         <!-- -------------------------Mobile------------------------------ -->
 
 
-    </div>
 
     <br>
     </section>
@@ -106,7 +105,7 @@
         // ],
         
    
- slickOptions:{
+  slickOptions:{
   "dots": true,
   "infinite": false,
   "arrows": false,
@@ -118,6 +117,15 @@
   "speed": 500,
   "autoplaySpeed": 500,
   "responsive": [
+      {
+      "breakpoint": 1300,
+      "settings": {
+        "slidesToShow": 4,
+        "slidesToScroll": 4,
+        "infinite": true,
+        "dots": true
+      }
+    },
     {
       "breakpoint": 1024,
       "settings": {
