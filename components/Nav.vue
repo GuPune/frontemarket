@@ -233,6 +233,7 @@
        <b-col cols="12" md="4"  sm="12">
       <b-col>
       <b-navbar-nav class="ml-auto cart-desktop">
+       <b-nav-item  @click="redirectTo('form-shopregis')">{{objectslayout.textsellermyshop}}</b-nav-item>
     <b-navbar-brand href="#"   @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i><span> ({{ cartTotal }}) </span></b-nav-item></b-navbar-brand>
 
    <b-nav-item  v-if="!isLogins" @click="redirectTo('form-login')">{{objectslayout.textlogin}}</b-nav-item>
