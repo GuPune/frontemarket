@@ -22,8 +22,9 @@
     </div>
   </div>
  
-    <VueSlickCarousel v-bind="slickOptions">
-    <div v-for="i in items"  class="img-wrapper">
+     <VueSlickCarousel v-bind="slickOptions"  v-if="items.length">
+    
+    <div v-for="(i, index) in items" class="img-wrapper">
   
              <div class="card c-shopinmy">
                     <div class="cardproduct">

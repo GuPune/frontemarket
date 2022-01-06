@@ -13,12 +13,12 @@
       <Ads   v-if="currentRouteName == 'index'"/>
                 <!-- <Categories  v-if="currentRouteName == 'index'" /> -->
                 <Test  v-if="currentRouteName == 'index'" />
-                <!--
+               
 <Related v-if="currentRouteName == 'index'"/>
-
+    
     <ShopRelation v-if="currentRouteName == 'index'"/>
 
--->
+
    <LongFooter/>
 
 
