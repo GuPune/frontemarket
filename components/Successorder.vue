@@ -32,8 +32,9 @@
             <!-- Start Tracking -->
             <div class="row pt-0 pb-4 pt-md-4 pb-md-4">
                 <div class="col-12 text-center">
-                    <a class="btn btn-style fs-16" href="/orderstatus/4f78275733adc206a88be972efef5b97" target="_blank">
-                        ตรวจสอบสถานะการสั่งซื้อ                    </a>
+                
+
+                         <button type="submit" class="btn btn-info"   @click="orderstatus('profile-historyorder')">ตรวจสอบสถานะการสั่งซื้อ</button>
                 </div>
             </div>
             <!-- End Tracking -->
@@ -70,7 +71,7 @@
                         </div>
                         <div class="col-12 fs-ta-14 fs-md-ta-16 text-theme-1 mt-1">
                             ชื่อผู้รับ: {{this.orderlist.fname}} {{this.orderlist.lname}}<br>
-               ที่อยู่:   {{this.orderlist.shipping_address.address}} {{this.orderlist.shipping_address.address}} ต.{{this.orderlist.shipping_address.sub_districts_id}} อ.{{this.orderlist.shipping_address.districts_id}} จ.{{this.orderlist.shipping_address.province_id}}<br>
+               ที่อยู่:  {{this.orderlist.shipping_address.address}} ต.{{this.orderlist.shipping_address.sub_districts_id}} อ.{{this.orderlist.shipping_address.districts_id}} จ.{{this.orderlist.shipping_address.province_id}}<br>
                             เบอร์โทรศัพท์: {{this.orderlist.tel}}<br>
                             อีเมล: {{this.orderlist.email}}
                             </div>
@@ -85,7 +86,7 @@
                             </div>
                             <div class="col-12 fs-ta-14 fs-md-ta-16 text-theme-1 mt-1">
                                 ชื่อผู้รับ: {{this.orderlist.fname}} {{this.orderlist.lname}}<br>
-               ที่อยู่:   {{this.orderlist.shipping_address.address}} {{this.orderlist.shipping_address.address}} ต.{{this.orderlist.shipping_address.sub_districts_id}} อ.{{this.orderlist.shipping_address.districts_id}} จ.{{this.orderlist.shipping_address.province_id}}<br>
+               ที่อยู่: ต.{{this.orderlist.shipping_address.sub_districts_id}} อ.{{this.orderlist.shipping_address.districts_id}} จ.{{this.orderlist.shipping_address.province_id}}<br>
                                 เบอร์โทรศัพท์: {{this.orderlist.tel}}<br>
                                 อีเมล: {{this.orderlist.email}}
                             </div>
@@ -337,7 +338,7 @@
                         
                 </div>
                 <div class="col-6 col-md-6 text-right">
-                                            <button type="button" class="btn btn-primary btn-sm" id="buttonInform">
+                                            <button type="button" class="btn btn-primary btn-sm" id="buttonInform" @click="myModel = true" >
                             แจ้งชำระเงิน                        </button>
                     
                      
@@ -350,28 +351,235 @@
         </div>
     </div>
 
+
+    <div v-if="myModel">
+    <transition name="model modal-open">
+          <div class="modal-mask modal fad xtdas">
+            <div class="modal-wrapper">
+            <div class="modal-dialog modal-login">
+              <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">แจ้งการชำระเงิน </h5>
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-hidden="true"  @click="closeModel()"> &times;
+                    </button>
+                  </div>
+                <div class="modal-body">
+                   <div class="form-group">
+                        <div class="wrap-input100 validate-input">
+                          <p>จำนวนเงินที่ชำระ <span style="color:red;">*</span></p>
+                          <input
+                            class="form-control"
+                            type="text"
+                            name="contact"
+                            placeholder="0"
+                             v-model="form.total"
+                                :error-messages="TotalErrors"
+                                        required
+                                        @input="$v.form.total.$touch()"
+                                        @blur="$v.form.total.$touch()"
+                                        :class="{ 'is-invalid': $v.form.total.$error}"
+                           
+                          />
+                         </div> 
+                      </div> 
+
+                       <div>
+    <label for="timepicker-sm">วันที่ชำระเงิน <span style="color:red;">*</span></label>
+<datepicker :value="form.dateavalue" @input="onDateChange" format="dd/MM/yyyy" 
+ :error-messages="TotalErrors" required 
+  :class="{ 'is-invalid': $v.form.dateavalue.$error}" 
+/>
+  </div>
+
+
+    <div>
+    <label for="timepicker-sm">เวลาชำระ <span style="color:red;">*</span></label>
+ <b-input-group class="mb-3">
+      <b-form-input
+        id="example-input"
+        v-model="form.time"
+        type="text"
+        placeholder="HH:mm:ss" 
+        :disabled="true"
+
+          :error-messages="TimeErrors"
+                                        required
+                                        @input="$v.form.time.$touch()"
+                                        @blur="$v.form.time.$touch()"
+                                        :class="{ 'is-invalid': $v.form.time.$error}"
+      ></b-form-input>
+      <b-input-group-append>
+        <b-form-timepicker
+          v-model="form.time"
+          button-only
+          right
+          locale="en"
+          show-seconds
+          aria-controls="example-input"
+        ></b-form-timepicker>
+      </b-input-group-append>
+    </b-input-group>
+
+      <div v-if="!$v.form.time.required">
+    last change date is required
+  </div>
+
+     <label for="timepicker-sm">หลักฐานการชำระเงิน <span style="color:red;">*</span></label>
+
+        <div class="form-group">
+                        <div class="wrap-input100 validate-input">
+                          <input
+                            class="form-control"
+                            type="file"
+                            name="contact"
+                              @change="onFileChange"
+                        />
+                          <span class="focus-input100"></span>
+                        </div>
+                      </div>
+
+                        <div v-if="isHiddenUpload == true">
+    
+    <span style="color: red;">กรุณาอัพโหลดสลิป </span>
+  </div>
+
+                          <center>
+                        <div id="preview">
+                              <img class="imgtax" v-if="url" :src="url" />
+                            </div>
+                        </center>
+  </div>
+
+
+                      
+
+
+                </div>
+
+                <div class="modal-footer">
+                    <div class="container-contact100-form-btn">
+                      <button
+                        type="button"
+                        class="myButton"
+                     
+                      >
+                        ส่งข้อมูล
+                      </button>
+                    </div>
+
+       
+          </div>
+           </div>
+           
+            </div>
+            </div>
+          </div>
+      </transition>
+  </div>
+
 </div>
 
   
 </template>
 
+<style>
+ 
+  
+   .modal-mask {
+     position: fixed;
+     z-index: 1050;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, .5);
+     display: grid;
+     overflow  : scroll;
+     transition: opacity .3s ease;
+   }
 
+   .modal-open {
+    overflow: hidden;
+}
+
+    .modal-mask .modal-wrapper {
+     display: -ms-flexbox;
+   
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+   }
+
+    .imgtax{
+    width: 70%;
+    height: auto;
+  }
+
+  .xtdas {
+    overflow: auto;
+}
+
+.modal-open {
+   overflow: hidden;
+}
+
+
+.container.set.col-6{
+  border: 5px;
+  border-radius: 20px;
+  background-image: url("https://www.thebangkokinsight.com/wp-content/uploads/2020/11/%E0%B8%A0%E0%B8%B2%E0%B8%A9%E0%B8%B5%E0%B8%A3%E0%B8%96.jpg");
+}
+
+  </style>
+
+   <script src="https://unpkg.com/vue"></script>
 <script>
 import { mapGetters } from "vuex";
+import Datepicker from 'vuejs-datepicker'
+import { Datetime } from 'vue-datetime';
+import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
 import { FETCH_BANK,CHOOSE_BANK,GET_ORDER_DATA } from "@/store/actions.type.js";
   export default {
+              components: {
+    Datepicker,
+    datetime: Datetime
+  },
+          validations: {
+        form: {
+            total: { numeric,required },
+            dateavalue: { required },
+            time: { required },
+           
+
+        }
+    },
     data() {
       
       return {
+           file:null,
+           url:null,
+          isHiddenUpload:false,
+          isHiddenUploadSlip:false,
         status: 'not_accepted',
+        myModel:false,
         selectedAdd: null,
         selectedBank: null,
         statusdelivery:null,
         bank:null,
-        form:{
+              form:{
         url:null,
-        cartnumber:null
+        cartnumber:null,
+        total:null,
+        dateavalue:"",
+        time:""
+   
         },
+   
         orderlist:{
 
         },
@@ -386,6 +594,30 @@ import { FETCH_BANK,CHOOSE_BANK,GET_ORDER_DATA } from "@/store/actions.type.js";
 
             isUrl () {
                 return this.$store.state.user.url_id;
+            },
+
+      
+            isValid() {
+      return new Date(this.dateavalue).getDay() === 1;
+    },
+
+            TotalErrors() {
+            const errors = [];
+            if (!this.$v.form.total.$dirty) return errors;
+            !this.$v.form.total.required && errors.push("โปรดระบุชื่อ");
+            return errors;
+            },
+            DateavalueErrors() {
+            const errors = [];
+            if (!this.$v.form.dateavalue.$dirty) return errors;
+            !this.$v.form.dateavalue.required && errors.push("โปรดระบุชื่อ");
+            return errors;
+            },
+            TimeErrors() {
+            const errors = [];
+            if (!this.$v.form.time.$dirty) return errors;
+            !this.$v.form.time.required && errors.push("โปรดระบุชื่อ");
+            return errors;
             },
           
 
@@ -406,13 +638,117 @@ import { FETCH_BANK,CHOOSE_BANK,GET_ORDER_DATA } from "@/store/actions.type.js";
 
       methods: {
 
-        
+              onFileChange(event) {
+      var file = event.target.files[0];
+     this.url = URL.createObjectURL(file);
+     this.isHiddenUpload = false
+    // Ensure it's an image
+
+
+    if(file.type.match(/image.*/)) {
+      
+
+        // Load the image
+        var reader = new FileReader();
+        reader.onload = (readerEvent) =>{
+            var image = new Image();
+          image.onload = (imageEvent) => {
+         var canvas = document.createElement('canvas'),
+                    max_size = 544,// TODO : pull max size from a site config
+                    width = image.width,
+                    height = image.height;
+                if (width > height) {
+                    if (width > max_size) {
+                        height *= max_size / width;
+                        width = max_size;
+                    }
+                } else {
+                    if (height > max_size) {
+                        width *= max_size / height;
+                        height = max_size;
+                    }
+                }
+                canvas.width = width;
+                canvas.height = height;
+                canvas.getContext('2d').drawImage(image, 0, 0, width, height);
+                var dataUrl = canvas.toDataURL('image/jpeg');
+                let resizedImage = this.dataURLToBlob(dataUrl);
+            
+                      axios.post('http://127.0.0.1:8000/api/upload', {
+        image: dataUrl
+      }).then(res => {
+      this.file = res.data
+      }).catch(function(){
+         
+              this.$swal({
+                type: "error",
+                title: "Upload รูปภาพไม่ผ่านติดต่อเจ้าหน้าที่",
+                showConfirmButton: true,
+                reverseButtons: true
+            });
+      
+        });
+          
+                
+                 
+            };
+            image.src = readerEvent.target.result;
+
+         
+        }
+        reader.readAsDataURL(file);
+     
+    }
+    
+
+
+     
+    },
+
+        orderstatus(names){
+
+      this.$router.push({ name: names })
+        },
+
+        paymentnotification(){
+              
+                  this.form.images = this.url;
+                if(this.form.images == '') {
+                    this.isUpload = true;      
+                }
+                if(this.form.images != '') {
+                    this.isUpload = true;      
+                }
+                if(this.form.time == '') {
+                    this.time = true;
+                    
+                }
+                if(this.form.time != '') {
+                    this.time = false;
+                }
+                if(this.form.dateavalue == '') {
+                    this.dateavalue = true;
+                     
+                }
+                if(this.form.dateavalue != '') {
+                    this.dateavalue = false;
+                  
+                }
+                if(this.form.dateavalue == '' || this.form.time == '' || this.form.url == ''){
+                      
+                    return false;
+                }
+                this.success();
+ this.$v.$touch();
+            },
         Checkimage(image){
                 let public_images = process.env.ImageURL+image;
                 console.log(public_images);
                 return public_images;
         },
-
+    onDateChange(date) {
+      this.form.dateavalue = date.toISOString();
+    },
   
         changeBank(event){
            this.selectedBank = event.target.value

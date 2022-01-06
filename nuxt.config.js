@@ -125,33 +125,33 @@ export default {
   },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-//   axios: {
-//     // See https://github.com/nuxt-community/axios-module#options
-//     baseURL: "http://127.0.0.1:8000/api",
-//     ImageURL: "http://127.0.0.1:8000/public/product/",
-//     ImageSoc: "http://127.0.0.1:8000/public/images/",
+  axios: {
+    // See https://github.com/nuxt-community/axios-module#options
+    baseURL: "http://127.0.0.1:8000/api",
+    ImageURL: "http://127.0.0.1:8000/public/product/",
+    ImageSoc: "http://127.0.0.1:8000/public/images/",
   
-//   },
+  },
 
-//   env: {
-//     ImageURL: "http://127.0.0.1:8000/public/product/",
-//     ImageSoc: "http://127.0.0.1:8000/public/images/",
-//     backend:"http://127.0.0.1:8000",
-// },
-
-axios: {
-  // See https://github.com/nuxt-community/axios-module#options
-  baseURL: "https://cmsecom.idtest.work/api",
-  ImageURL: "https://cmsecom.idtest.work/public/product/",
-  ImageSoc: "https://cmsecom.idtest.work/public/images/",
-
- },
-
-env: {
-  ImageURL: "https://cmsecom.idtest.work/public/product/",
-  ImageSoc: "https://cmsecom.idtest.work/public/images/",
-  backend:"https://cmsecom.idtest.work",
+  env: {
+    ImageURL: "http://127.0.0.1:8000/public/product/",
+    ImageSoc: "http://127.0.0.1:8000/public/images/",
+    backend:"http://127.0.0.1:8000",
 },
+
+// axios: {
+//   // See https://github.com/nuxt-community/axios-module#options
+//   baseURL: "https://cmsecom.idtest.work/api",
+//   ImageURL: "https://cmsecom.idtest.work/public/product/",
+//   ImageSoc: "https://cmsecom.idtest.work/public/images/",
+
+//  },
+
+// env: {
+//   ImageURL: "https://cmsecom.idtest.work/public/product/",
+//   ImageSoc: "https://cmsecom.idtest.work/public/images/",
+//   backend:"https://cmsecom.idtest.work",
+// },
 
   auth: {
     strategies: {
