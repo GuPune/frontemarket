@@ -465,7 +465,7 @@
                       <button
                         type="button"
                         class="myButton"
-                     
+                       @click="saveform()"
                       >
                         ส่งข้อมูล
                       </button>
@@ -543,7 +543,8 @@ import { mapGetters } from "vuex";
 import Datepicker from 'vuejs-datepicker'
 import { Datetime } from 'vue-datetime';
 import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
-import { FETCH_BANK,CHOOSE_BANK,GET_ORDER_DATA } from "@/store/actions.type.js";
+import { FETCH_BANK,CHOOSE_BANK,GET_ORDER_DATA,UPDATE_SLIP  } from "@/store/actions.type.js";
+import axios from 'axios';
   export default {
               components: {
     Datepicker,
@@ -588,6 +589,11 @@ import { FETCH_BANK,CHOOSE_BANK,GET_ORDER_DATA } from "@/store/actions.type.js";
         }
       }
     },
+          watch: {
+    value() {
+      this.form.time = this.form.time.split(":").slice(0, 2).join(":");
+    },
+  },
 
    computed: {
             ...mapGetters(["order"]),
@@ -631,12 +637,23 @@ import { FETCH_BANK,CHOOSE_BANK,GET_ORDER_DATA } from "@/store/actions.type.js";
     this.form.cartnumber = order_id;
     let order_data = await this.$store.dispatch(GET_ORDER_DATA,this.form);
     this.orderlist = order_data;
-    console.log('data',this.orderlist);
+   
+
+            this.form.dateavalue = '04/11/2021';
+
+         var today = new Date();
+    var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
+   this.form.dateavalue = date;
 
 
     },
 
       methods: {
+
+                 closeModel:function(){
+         this.myModel = false;
+  
+      },
 
               onFileChange(event) {
       var file = event.target.files[0];
@@ -704,6 +721,62 @@ import { FETCH_BANK,CHOOSE_BANK,GET_ORDER_DATA } from "@/store/actions.type.js";
 
      
     },
+
+         dataURLToBlob(dataURI) {
+ 
+  // convert base64 to raw binary data held in a string
+  // doesn't handle URLEncoded DataURIs - see SO answer #6850276 for code that does this
+  var byteString = atob(dataURI.split(',')[1]);
+
+  // separate out the mime component
+  var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
+
+  // write the bytes of the string to an ArrayBuffer
+  var ab = new ArrayBuffer(byteString.length);
+
+  // create a view into the buffer
+  var ia = new Uint8Array(ab);
+
+  // set the bytes of the buffer to the correct values
+  for (var i = 0; i < byteString.length; i++) {
+      ia[i] = byteString.charCodeAt(i);
+  }
+
+  // write the ArrayBuffer to a blob, and you're done
+  var blob = new Blob([ab], {type: mimeString});
+  return blob;
+
+},
+
+          async saveform() {
+      this.$v.$touch();
+            if (this.$v.form.$pending || this.$v.form.$error) return;
+if(this.url == null){
+this.isHiddenUpload = true;
+}
+
+ var formData = new FormData(); // Currently empty
+           formData.append('cartnumber', this.orderlist.cartnumber);
+           formData.append('total', this.form.total);
+           formData.append('dateavalue', this.form.dateavalue);
+           formData.append('time', this.form.time);
+           formData.append('image', this.file);
+
+    
+
+ let update_slip = await this.$store.dispatch(UPDATE_SLIP,formData);
+        
+ this.isHiddenUploadSlip = true;
+ this.myModel = false;
+
+
+//     let a = window.location.origin
+//    this.form.url = a;
+//    this.form.cartnumber = this.objectss.cartnumber;
+
+    // let order_data = await this.$store.dispatch(GET_ORDER_DATA_HISTORY,this.form);
+              
+      },
 
         orderstatus(names){
 

@@ -772,6 +772,7 @@ import axios from 'axios';
 
       async saveform() {
    this.$v.$touch();
+         if (this.$v.form.$pending || this.$v.form.$error) return;
 if(this.url == null){
 this.isHiddenUpload = true;
 }
@@ -789,7 +790,7 @@ this.isHiddenUpload = true;
   let update_slip = await this.$store.dispatch(UPDATE_SLIP,formData);
         
  this.isHiddenUploadSlip = true;
- this.myModel = false;
+// this.myModel = false;
 
 
      let a = window.location.origin
