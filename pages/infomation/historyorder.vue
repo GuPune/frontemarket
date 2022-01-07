@@ -302,10 +302,10 @@ import axios from 'axios';
             
         methods: {
             checkorder(){
-console.log('this',this.form.cartnumber);
 
+   let public_images = process.env.baseURL;
 
-                      axios.post('http://127.0.0.1:8000/api/checkorder', {
+                      axios.post(public_images+'/checkorder', {
         cartnumber: this.form.cartnumber
       }).then(res => {
 if(res.data == 1){
@@ -386,8 +386,8 @@ this.isCartnumber = true
                 canvas.getContext('2d').drawImage(image, 0, 0, width, height);
                 var dataUrl = canvas.toDataURL('image/jpeg');
                 let resizedImage = this.dataURLToBlob(dataUrl);
-            
-                      axios.post('http://127.0.0.1:8000/api/upload', {
+             let public_images = process.env.baseURL;
+                      axios.post(public_images+'/upload', {
         image: dataUrl
       }).then(res => {
       this.file = res.data

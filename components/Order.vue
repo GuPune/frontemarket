@@ -843,7 +843,7 @@ this.isHiddenUpload = true;
             
                    let public_images = process.env.baseURL;
                  
-                   console.log('public_images',public_images)
+                
                       axios.post(public_images+'/upload', {
         image: dataUrl
       }).then(res => {
