@@ -266,10 +266,13 @@ padding-left: 15px;
   
   }
 
- @media (min-width: 900px) {
-    .cards-mobile { grid-template-columns: repeat(2, 1fr); }
+ @media (max-width: 900px) {
+    .cards-mobile { grid-template-columns: repeat(3, 1fr); }
   }
 
+  @media (max-width: 1400px) {
+    .cards-mobile { grid-template-columns: repeat(4, 1fr); }
+  }
 
 
 
