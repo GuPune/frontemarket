@@ -267,7 +267,7 @@ padding-left: 15px;
   }
 
  @media (min-width: 900px) {
-    .cards-mobile { grid-template-columns: repeat(4, 1fr); }
+    .cards-mobile { grid-template-columns: repeat(2, 1fr); }
   }
 
 
@@ -316,6 +316,8 @@ padding-left: 15px;
       border-color: #4c791b;
       font-size: 9px;
     }
+
+    .cards-mobile { grid-template-columns: repeat(2, 1fr); }
   }
 
 
