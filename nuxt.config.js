@@ -130,10 +130,12 @@ export default {
 //     baseURL: "http://127.0.0.1:8000/api",
 //     ImageURL: "http://127.0.0.1:8000/public/product/",
 //     ImageSoc: "http://127.0.0.1:8000/public/images/",
+//       ImageSoc: "http://127.0.0.1:8000/public/images/",
   
 //   },
 
 //   env: {
+//     baseURL: "http://127.0.0.1:8000/api",
 //     ImageURL: "http://127.0.0.1:8000/public/product/",
 //     ImageSoc: "http://127.0.0.1:8000/public/images/",
 //     backend:"http://127.0.0.1:8000",
@@ -148,6 +150,7 @@ axios: {
  },
 
 env: {
+ baseURL: "https://cmsecom.idtest.work/api",
   ImageURL: "https://cmsecom.idtest.work/public/product/",
   ImageSoc: "https://cmsecom.idtest.work/public/images/",
   backend:"https://cmsecom.idtest.work",
