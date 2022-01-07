@@ -53,7 +53,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Categoriesbyshop from "@/components/Categoriesbyshop";
 import Productbyshop from "@/components/Productbyshop";
-import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,GET_NAVBAR_SHOP } from "@/store/actions.type.js";
+import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,GET_NAVBAR_SHOP,GET_CHECK_SHOP } from "@/store/actions.type.js";
 import AdsShop from "@/components/AdsShop"
 import { mapGetters } from "vuex";
 import Adsmini from "@/components/Adsmini"
@@ -108,9 +108,12 @@ url:null
         },
              
        async mounted() {
+
          this.form.url = window.location.origin;
          this.form.shop_name = this.$route.params;
 
+     
+          let checkshop = await this.$store.dispatch(GET_CHECK_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
 
           let navarshop = await this.$store.dispatch(GET_NAVBAR_SHOP,this.form);
 
@@ -132,7 +135,7 @@ url:null
             },
             error($text) {
 
-           this.$router.push('/error')
+           this.$router.push('/shoperror')
 
           
             },

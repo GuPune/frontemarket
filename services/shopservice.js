@@ -14,4 +14,9 @@ export const MyshopService = {
    
       return ApiServiceAll.post("getshopitem",param);
     },
+    checkshop(param) {
+   
+      return ApiServiceAll.post("checkshop",param);
+    },
+
 };

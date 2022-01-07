@@ -1,7 +1,7 @@
 
 import { MyshopService }  from "../../services/shopservice";
 import {
-    GET_SHOP,GET_SHOP_BY_ITEM,GET_SHOP_LINE
+    GET_SHOP,GET_SHOP_BY_ITEM,GET_SHOP_LINE,GET_CHECK_SHOP
 } from "../actions.type.js";
 import {
     SET_ADS,SET_ADS_SHOP,SET_ADS_SHOP_SEMI
@@ -39,6 +39,14 @@ const actions = {
    
         return data;
     },
+    async [GET_CHECK_SHOP](context,payload) {
+
+        const { data } = await MyshopService.checkshop(payload);
+   
+        return data;
+    },
+
+
 
 
 
