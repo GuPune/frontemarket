@@ -387,6 +387,7 @@ this.isCartnumber = true
                 var dataUrl = canvas.toDataURL('image/jpeg');
                 let resizedImage = this.dataURLToBlob(dataUrl);
              let public_images = process.env.baseURL;
+             console.log('public_images',public_images);
                       axios.post(public_images+'/upload', {
         image: dataUrl
       }).then(res => {
