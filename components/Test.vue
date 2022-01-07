@@ -130,7 +130,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
   "autoplaySpeed": 500,
   "responsive": [
             {
-      "breakpoint": 1600,
+      "breakpoint": 1700,
       "settings": {
         "slidesToShow": 6,
         "slidesToScroll": 4,
@@ -138,8 +138,17 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
         "dots": true
       }
     },
-          {
+            {
       "breakpoint": 1500,
+      "settings": {
+        "slidesToShow": 5,
+        "slidesToScroll": 4,
+        "infinite": true,
+        "dots": true
+      }
+    },
+          {
+      "breakpoint": 1440,
       "settings": {
         "slidesToShow": 5,
         "slidesToScroll": 4,
