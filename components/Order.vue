@@ -625,6 +625,7 @@ import axios from 'axios';
     data() {
       
       return {
+        processEnv: process.env.baseURL,
         file:null,
           url: null,
           isHiddenUpload:false,
@@ -840,7 +841,7 @@ this.isHiddenUpload = true;
                 var dataUrl = canvas.toDataURL('image/jpeg');
                 let resizedImage = this.dataURLToBlob(dataUrl);
             
-                      axios.post('http://127.0.0.1:8000/api/upload', {
+                      axios.post(processEnv+'/upload', {
         image: dataUrl
       }).then(res => {
       this.file = res.data
