@@ -690,8 +690,9 @@ import axios from 'axios';
                 canvas.getContext('2d').drawImage(image, 0, 0, width, height);
                 var dataUrl = canvas.toDataURL('image/jpeg');
                 let resizedImage = this.dataURLToBlob(dataUrl);
-            
-                      axios.post('http://127.0.0.1:8000/api/upload', {
+                let public_images = process.env.baseURL;
+    
+                      axios.post(public_images+'/upload', {
         image: dataUrl
       }).then(res => {
       this.file = res.data
@@ -816,7 +817,7 @@ this.isHiddenUpload = true;
             },
         Checkimage(image){
                 let public_images = process.env.ImageURL+image;
-                console.log(public_images);
+             
                 return public_images;
         },
     onDateChange(date) {
