@@ -76,7 +76,7 @@
                     <div class="col-xs-6 col-sm-8 col-md-5 col-lg-5 text-mobile">
                         <h5 class="order-name">{{item.name_en}}</h5></div>
                         <div class="col-xs-6 col-sm-8 col-md-2 col-lg-2 text-mobile shop-name-order-pc">
-                        <h5 class="order-name">{{item.shop_name}}</h5></div>
+                        <h5 class="order-name">{{item.shop_name_title}}</h5></div>
                 </div>
             </div>
         

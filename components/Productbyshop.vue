@@ -163,7 +163,7 @@ const names = 'id-form-login'
            async addToCart(item){
 
 
-
+console.log('shop',item);
 
    this.$swal("Add Product!", "Product To Cart!", "success")
   let add_producttocart = await this.$store.dispatch(ADD_CART,item);

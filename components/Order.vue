@@ -791,7 +791,7 @@ this.isHiddenUpload = true;
   let update_slip = await this.$store.dispatch(UPDATE_SLIP,formData);
         
  this.isHiddenUploadSlip = true;
-// this.myModel = false;
+ this.myModel = false;
 
 
      let a = window.location.origin

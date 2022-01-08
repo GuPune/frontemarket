@@ -68,6 +68,7 @@ import ProductRecom from "@/components/ProductRecommend"
     export default {
       components: {
           AdsShop,
+          Productbyshop,
           Nav,
           Footer,
           Categoriesbyshop,
