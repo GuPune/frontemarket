@@ -163,10 +163,20 @@ position: fixed;
   display: block;
 }
 
-.selnav-op{
-  background-color: white;
+.selnav-op > button{
   color: black;
   border-radius: 0px;
+  border-color: white;
+  background-color: #e6e6e6;
+}
+.nav-search > input {
+
+  border-radius: 0px;
+}
+
+select option {
+  background-color: #fafafa;
+  color: rgb(10, 10, 10);
 }
 
 /* .dropdown:hover .dropbtn {

@@ -227,16 +227,15 @@
       
   
 
-      <b-col cols="12" md="4"  sm="3" class="nav-form-search">
+      <b-col cols="8" md="4"  sm="3" class="nav-form-search nav-search">
         <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?"></b-form-input>
       </b-col>
-       <b-col cols="12" md="2"  sm="3" class="nav-form-search">
-      <b-dropdown id="dropdown-left" text="Left align" variant="primary" class="m-0 selnav-op">
-    <b-dropdown-item href="#">Action</b-dropdown-item>
-    <b-dropdown-item href="#">Another action</b-dropdown-item>
-    <b-dropdown-item href="#">Something else here</b-dropdown-item>
-  </b-dropdown>
+       <b-col cols="4" md="2"  sm="3" class="nav-form-search">
+  <b-form-select v-model="selected" :options="options"></b-form-select>
+   
+
       </b-col>
+     
    
       <b-navbar-nav class="ml-auto cart-desktop">
        <b-nav-item  @click="redirectTo('form-shopregis')">{{objectslayout.textsellermyshop}}</b-nav-item>
@@ -288,7 +287,13 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
       loggedIn: this.$auth.loggedIn,
       name:{},
       form:{},
-      color:null
+      color:null,
+        options: [
+   
+          { value: 'a', text: 'สินค้า'},
+          { value: 'b', text: 'ร้านค้า' },
+
+        ]
 
     };
   },
