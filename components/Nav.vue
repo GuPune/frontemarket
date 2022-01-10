@@ -228,7 +228,7 @@
   
 
       <b-col cols="8" md="4"  sm="3" class="nav-form-search nav-search">
-        <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?"></b-form-input>
+        <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?" v-model="search"></b-form-input>
       </b-col>
        <b-col cols="3" md="2"  sm="3" class="nav-form-search">
   <b-form-select v-model="selected" :options="options"></b-form-select>
@@ -238,7 +238,7 @@
              <b-col cols="1" md="1"  sm="1" class="nav-form-search">
       <div >
 
-  <b-button variant="outline-primary ic-nav-bg-white">   <i class="fas fa  fas fa-search ic-nav-black" aria-hidden="true"></i></b-button>
+  <b-button variant="outline-primary ic-nav-bg-white" @click="Search()">   <i class="fas fa  fas fa-search ic-nav-black" aria-hidden="true"></i></b-button>
 </div>
       </b-col>
 
@@ -295,6 +295,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
       name:{},
       form:{},
       selected: 'a',
+      search:"",
       color:null,
         options: [
    
@@ -372,6 +373,12 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
          },
 
       methods: {
+
+        Search(){
+        console.log('search',this.selected);
+        console.log('search',this.search);
+        
+        },
 
         Checkstring(x){
 
