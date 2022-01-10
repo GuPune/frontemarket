@@ -163,6 +163,12 @@ position: fixed;
   display: block;
 }
 
+.selnav-op{
+  background-color: white;
+  color: black;
+  border-radius: 0px;
+}
+
 /* .dropdown:hover .dropbtn {
   background-color: #3e8e41;
 } */
