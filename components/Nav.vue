@@ -231,7 +231,7 @@
         <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?"></b-form-input>
       </b-col>
        <b-col cols="12" md="2"  sm="3" class="nav-form-search">
-      <b-dropdown id="dropdown-left" text="Left align" variant="primary" class="m-0">
+      <b-dropdown id="dropdown-left" text="Left align" variant="primary" class="m-0 selnav-op">
     <b-dropdown-item href="#">Action</b-dropdown-item>
     <b-dropdown-item href="#">Another action</b-dropdown-item>
     <b-dropdown-item href="#">Something else here</b-dropdown-item>
