@@ -230,12 +230,19 @@
       <b-col cols="8" md="4"  sm="3" class="nav-form-search nav-search">
         <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?"></b-form-input>
       </b-col>
-       <b-col cols="4" md="2"  sm="3" class="nav-form-search">
+       <b-col cols="3" md="2"  sm="3" class="nav-form-search">
   <b-form-select v-model="selected" :options="options"></b-form-select>
    
 
       </b-col>
-     
+             <b-col cols="1" md="1"  sm="1" class="nav-form-search">
+      <div >
+
+  <b-button variant="outline-primary ic-nav-bg-white">   <i class="fas fa  fas fa-search ic-nav-black" aria-hidden="true"></i></b-button>
+</div>
+      </b-col>
+
+  
    
       <b-navbar-nav class="ml-auto cart-desktop">
        <b-nav-item  @click="redirectTo('form-shopregis')">{{objectslayout.textsellermyshop}}</b-nav-item>
@@ -287,6 +294,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
       loggedIn: this.$auth.loggedIn,
       name:{},
       form:{},
+      selected: 'a',
       color:null,
         options: [
    

@@ -179,6 +179,17 @@ select option {
   color: rgb(10, 10, 10);
 }
 
+.ic-nav-black{
+
+  color: black;
+}
+
+.ic-nav-bg-white{
+  border-radius: 0px;
+  background-color: #fafafa;
+  border-color: #ffffff;
+}
+
 /* .dropdown:hover .dropbtn {
   background-color: #3e8e41;
 } */
