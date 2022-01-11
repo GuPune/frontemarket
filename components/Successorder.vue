@@ -86,7 +86,7 @@
                             </div>
                             <div class="col-12 fs-ta-14 fs-md-ta-16 text-theme-1 mt-1">
                                 ชื่อผู้รับ: {{this.orderlist.fname}} {{this.orderlist.lname}}<br>
-               ที่อยู่: ต.{{this.orderlist.shipping_address.sub_districts_id}} อ.{{this.orderlist.shipping_address.districts_id}} จ.{{this.orderlist.shipping_address.province_id}}<br>
+                  ที่อยู่:  {{this.orderlist.shipping_address.address}} ต.{{this.orderlist.shipping_address.sub_districts_id}} อ.{{this.orderlist.shipping_address.districts_id}} จ.{{this.orderlist.shipping_address.province_id}}<br>
                                 เบอร์โทรศัพท์: {{this.orderlist.tel}}<br>
                                 อีเมล: {{this.orderlist.email}}
                             </div>
