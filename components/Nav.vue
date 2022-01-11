@@ -252,7 +252,7 @@
           <b-navbar-brand href="#"   @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i><span> ({{ cartTotal }}) </span></b-navbar-brand>
       </b-col>
 
-      <b-col cols="2" md="2"  sm="1" class="nav-form-search px-2">
+      <b-col cols="2" md="2"  sm="1" class="nav-form-search px-2 nav-regishop-mobile">
           <b-navbar-brand href="#"   v-if="!isLogins" @click="redirectTo('form-login')">{{objectslayout.textlogin}}</b-navbar-brand>
 
 
