@@ -113,6 +113,39 @@
 
     </div>
 
+     <b-row>
+    <b-col cols="12" md="12">    <b-form-checkbox
+      id="checkbox-1"
+      v-model="status"
+      name="checkbox-1"
+      value="accepted"
+      unchecked-value="not_accepted"
+
+  
+    >
+     ข้าพเจ้าเข้าใจและตกลงตาม
+     
+       
+      <label for="commerce" style="color: red;"      v-on:click="Checkpolicy()"
+                                  >เงื่อนไขการให้บริการ </label>
+และ
+      <label for="commerce" style="color: red;"  v-on:click="CheckService()"
+                                  >นโยบายความเป็นส่วนตัว </label>
+      
+
+    </b-form-checkbox></b-col>
+
+
+    
+
+  </b-row>
+ <b-row>
+   <b-col cols="12" md="12">
+   <h6 v-if="status == 'not_accepted'"  style="color: red; text-align:center;">กรุณาอ่านและยอมรับข้อตกลงในการใช้งาน</h6>
+   </b-col>
+
+</b-row>
+
     <center>
     <button class="btn btn-primary"  @click="register()"><span>สมัครสมาชิก</span></button>
     </center>
@@ -158,6 +191,7 @@ import Datepicker from "@/components/TouchDatePicker";
         }
     },
       data: () => ({
+        status: 'not_accepted',
         isLoading: false,
         form: {
             email: "",
@@ -226,10 +260,21 @@ import Datepicker from "@/components/TouchDatePicker";
 
             
         methods: {
+
+               Checkpolicy(){
+ window.open("https://pdpa.pro/policies/view/th/w8GcSSxUhNt1n1SBCWPc86DN", "_blank");  
+        },
+              CheckService(){
+ window.open("https://pdpa.pro/policies/view/th/w8GcSSxUhNt1n1SBCWPc86DN", "_blank");  
+        },
         async register(){
           this.form.url = window.location.origin
             this.$v.$touch()
             if (this.$v.form.$pending || this.$v.form.$error) return;
+
+            if(this.status == 'not_accepted'){
+            return false
+            }
 
              await this.loader()
                await this.send()

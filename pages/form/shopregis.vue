@@ -36,7 +36,7 @@
     <div class="row">
       
       <div class="input-group input-group-icon">
-        <input type="text" class="form-control" placeholder="ชื่อร้านค้า" v-model="form.shop_name"  v-on:keypress="english($event)" 
+        <input type="text" class="form-control" placeholder="ชื่อร้านค้า" v-model="form.shop_name"  
                                                                          :error-messages="ShopnameErrors" required
                                                                          :class="{ 'is-invalid': $v.form.shop_name.$error}"
                                                                          @input="$v.form.shop_name.$touch()"
@@ -44,7 +44,7 @@
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-shopping-bag"></i></div>
       </div>
 
-    <label for="vehicle2" style="color:red">ชื่อร้านใช้เป็นภาษาอังกฤษ</label><br>
+   
 
        <div class="input-group input-group-icon">
         <input type="text" class="form-control" placeholder="เบอร์ติดต่อ" v-model="form.tel" 
@@ -127,6 +127,41 @@
         -->
     <center>
 
+    
+
+ 
+    <b-row>
+    <b-col cols="12" md="12">    <b-form-checkbox
+      id="checkbox-1"
+      v-model="status"
+      name="checkbox-1"
+      value="accepted"
+      unchecked-value="not_accepted"
+
+  
+    >
+     ข้าพเจ้าเข้าใจและตกลงตาม
+     
+       
+      <label for="commerce" style="color: red;"      v-on:click="Checkpolicy()"
+                                  >เงื่อนไขการให้บริการ </label>
+และ
+      <label for="commerce" style="color: red;"  v-on:click="CheckService()"
+                                  >นโยบายความเป็นส่วนตัว </label>
+      
+
+    </b-form-checkbox></b-col>
+
+
+    
+
+  </b-row>
+ <b-row>
+   <b-col cols="12" md="12">
+   <h6 v-if="status == 'not_accepted'"  style="color: red; text-align:center;">กรุณาอ่านและยอมรับข้อตกลงในการใช้งาน</h6>
+   </b-col>
+
+</b-row>
 
     <button class="btn btn-primary" @click="registershop()"><span>สร้างร้านค้า</span></button>
     </center>
@@ -171,7 +206,9 @@ import Loader from '@/components/Loader'
     },
 
      data: () => ({
+        status: 'not_accepted',
         isLoading: false,
+        checkpol:false,
         max:10,
         typeshop:"",
         type_id:"",
@@ -246,6 +283,14 @@ this.typeshop = typeshop;
         },
        
         methods: {
+
+        Checkpolicy(){
+ window.open("https://pdpa.pro/policies/view/th/w8GcSSxUhNt1n1SBCWPc86DN", "_blank");  
+        },
+        CheckService(){
+ window.open("https://pdpa.pro/policies/view/th/w8GcSSxUhNt1n1SBCWPc86DN", "_blank");  
+        },
+
         
         async isNumber(event, message) {
            
@@ -276,6 +321,8 @@ this.typeshop = typeshop;
 
         },
         async registershop(){
+
+ 
               
              this.$v.$touch()
             if (this.$v.form.$pending || this.$v.form.$error) return;
@@ -285,6 +332,9 @@ this.typeshop = typeshop;
      
                  this.errortype()
                 return false;
+            }
+            if(this.status == 'not_accepted'){
+            return false
             }
              await this.loader()
               await this.send()
