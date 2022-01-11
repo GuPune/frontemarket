@@ -236,23 +236,23 @@
 
       </b-col>
              <b-col cols="1" md="1"  sm="1" class="nav-form-search">
-      <div >
+    
 
   <b-button variant="outline-primary ic-nav-bg-white" @click="Search()">   <i class="fas fa  fas fa-search ic-nav-black" aria-hidden="true"></i></b-button>
-</div>
+
       </b-col>
 
       
 
 
-       <b-col cols="2" md="2"  sm="1" class="nav-regishop-mobile">
+       <b-col cols="1" md="1"  sm="2" class="nav-regishop-mobile px-2" style="max-width: 16.7777%">
           <b-navbar-brand href="#"  @click="redirectTo('form-shopregis')" style="font-size: 14px;">{{objectslayout.textsellermyshop}}</b-navbar-brand>
       </b-col>
-        <b-col cols="1" md="1"  sm="1" class="nav-regishop-mobile">
+        <b-col cols="1" md="1"  sm="1" class="nav-regishop-mobile px-2">
           <b-navbar-brand href="#"   @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i><span> ({{ cartTotal }}) </span></b-navbar-brand>
       </b-col>
 
-      <b-col cols="2" md="2"  sm="1" class="nav-form-search">
+      <b-col cols="2" md="2"  sm="1" class="nav-form-search px-2">
           <b-navbar-brand href="#"   v-if="!isLogins" @click="redirectTo('form-login')">{{objectslayout.textlogin}}</b-navbar-brand>
 
 
