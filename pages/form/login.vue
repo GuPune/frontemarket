@@ -177,17 +177,17 @@
          v-if="Isshow">
             <div class="popup">
                 <h6>ลืมรหัสผ่านใช่หรือไม่?</h6><br>
-                <small>กรุณายืนยันอีเมลล์</small>
+                <small>กรุณายืนยันอีเมล</small>
                 <a class="close" href="#">&times;</a><br>
                 <div class="content">
                     <div class="alert alert-danger" role="alert" v-if="emailalert">
-                        กรุณณากรอกอีเมลล์
+                        กรุณณากรอกอีเมล
                     </div>
                     <div class="alert alert-success" role="alert" v-if="alertforgot.messageforgot">
-                         ส่งไปที่อีเมลล์สำเร็จ
+                         ส่งไปที่อีเมลสำเร็จ
                     </div>
                     <input type="email" class="form-control" placeholder="example@mail.com" required v-model="forms.email"><br>
-                    <button type="submit" class="btn btn-info"  @click="forgot()">ส่งไปที่อีเมลล์</button>
+                    <button type="submit" class="btn btn-info"  @click="forgot()">ส่งไปที่อีเมล</button>
                 </div>
             </div>
         </div>

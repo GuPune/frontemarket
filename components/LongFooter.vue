@@ -30,7 +30,7 @@
                                     <div class="col-lg-4 col-xs-12">
                                             <h4 class="mt-lg-0 mt-sm-4" style="color:#e67825;">ช่องทางการติดต่อ</h4><br>
                                             <p class="mb-0">โทร  : 043-228899</p>
-                                            <p>อีเมลล์ : idofficer@iddrives.co.th</p><br>
+                                            <p>อีเมล : idofficer@iddrives.co.th</p><br>
                                               <a href="#">
                                                 <i class="fab fa-facebook-f"></i>&nbsp;&nbsp;
                                                 </a>
@@ -46,7 +46,7 @@
 
                                             <!-- <p>200/222 ม.2 ถ.ชัยพฤกษ์ ต.ในเมือง อ.เมือง จ.ขอนแก่น 40000</p>
                                             <p class="mb-0">โทร  : 043-228899</p>
-                                            <p>อีเมลล์ : idofficer@iddrives.co.th</p> -->
+                                            <p>อีเมล : idofficer@iddrives.co.th</p> -->
                                     </div>
                                 </div>
                         </div>
