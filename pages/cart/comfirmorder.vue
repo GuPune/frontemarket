@@ -621,11 +621,29 @@
         isUrl () {
                 return this.$store.state.user.url_id;
         },
+        cart () {
+        return this.$store.state.Cart.cart
+        },
               selectshipping () {
                 return this.$store.shipping;
         },
 
         
+        },
+
+        
+       async created(){
+
+       
+
+if (this.cart.length > 0) {    
+   // not empty  
+    
+} else { 
+    this.$router.push({ name: 'cart-orderlist'});
+} 
+           
+
         },
              
         mounted() {

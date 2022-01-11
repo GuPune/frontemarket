@@ -30,7 +30,7 @@
          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
          <div  class="button-order boxSubmitCart">
         
-            <b-button block variant="primary" size="lg" class="btn btn-lg-auto btn-style buttonCheckout" @click="deliverys('cart-success')">ยืนยันการสั่งซื้อ</b-button>
+            <b-button block variant="primary" size="lg" class="btn btn-lg-auto btn-style buttonCheckout" @click="deliverys('cart-success')">ยืนยันการสั่งซื้อ </b-button>
             </div>
          </div>
          
@@ -643,10 +643,24 @@
 
         
         },
+
+       async created(){
+
+       
+
+if (this.cart.length > 0) {    
+   // not empty  
+    
+} else { 
+    this.$router.push({ name: 'cart-orderlist'});
+} 
+           
+
+        },
              
         mounted() {
 
-          
+      
         },
         methods: {
 
