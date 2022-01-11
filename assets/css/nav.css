@@ -259,6 +259,9 @@ width: 80px;
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  .nav-regishop-mobile{
+    display: none;
+  }
 
 
 

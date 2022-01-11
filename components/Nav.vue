@@ -230,7 +230,7 @@
       <b-col cols="8" md="4"  sm="3" class="nav-form-search nav-search">
         <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?" v-model="search"></b-form-input>
       </b-col>
-       <b-col cols="3" md="2"  sm="3" class="nav-form-search">
+       <b-col cols="3" md="1"  sm="3" class="nav-form-search">
   <b-form-select v-model="selected" :options="options"></b-form-select>
    
 
@@ -242,24 +242,37 @@
 </div>
       </b-col>
 
-  
-   
-      <b-navbar-nav class="ml-auto cart-desktop">
-       <b-nav-item  @click="redirectTo('form-shopregis')">{{objectslayout.textsellermyshop}}</b-nav-item>
-    <b-navbar-brand href="#"   @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i><span> ({{ cartTotal }}) </span></b-nav-item></b-navbar-brand>
+      
 
-   <b-nav-item  v-if="!isLogins" @click="redirectTo('form-login')">{{objectslayout.textlogin}}</b-nav-item>
+
+       <b-col cols="2" md="2"  sm="1" class="nav-regishop-mobile">
+          <b-navbar-brand href="#"  @click="redirectTo('form-shopregis')" style="font-size: 14px;">{{objectslayout.textsellermyshop}}</b-navbar-brand>
+      </b-col>
+        <b-col cols="1" md="1"  sm="1" class="nav-regishop-mobile">
+          <b-navbar-brand href="#"   @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i><span> ({{ cartTotal }}) </span></b-navbar-brand>
+      </b-col>
+
+      <b-col cols="2" md="2"  sm="1" class="nav-form-search">
+          <b-navbar-brand href="#"   v-if="!isLogins" @click="redirectTo('form-login')">{{objectslayout.textlogin}}</b-navbar-brand>
+
+
+                <b-navbar-nav class="ml-auto cart-desktop">
+
+
           <b-nav-item-dropdown right  v-if="isLogins">
           <!-- Using 'button-content' slot -->
           <template #button-content>
-            <em>{{ objects.name.substring(0,7)+".." }}</em>
+            <em>{{ objects.name}}</em>
           </template>
           <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">Profile</b-dropdown-item>
           <b-dropdown-item href="#"  @click.prevent="logout">Sign Out</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
+
       </b-col>
-      </b-col>
+
+
+     
   </b-navbar>
 
 
