@@ -370,7 +370,7 @@ import { SAVE_CONTACT,GET_CAPTCHA,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,S
  
    var product =  await this.$store.dispatch(GET_PRODUCT_SALEPAGE,this.form)
 this.product = product
-
+console.log('ssa',this.product);
 this.summary.add = this.add
 this.summary.price = product[0].price
 
