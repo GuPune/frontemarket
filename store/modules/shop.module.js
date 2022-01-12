@@ -1,7 +1,7 @@
 
 import { MyshopService }  from "../../services/shopservice";
 import {
-    GET_SHOP,GET_SHOP_BY_ITEM,GET_SHOP_LINE,GET_CHECK_SHOP
+    GET_SHOP,GET_SHOP_BY_ITEM,GET_SHOP_LINE,GET_CHECK_SHOP,FETCH_FACEBOOK
 } from "../actions.type.js";
 import {
     SET_ADS,SET_ADS_SHOP,SET_ADS_SHOP_SEMI
@@ -46,6 +46,16 @@ const actions = {
         return data;
     },
 
+    async [FETCH_FACEBOOK](context,payload) {
+
+        
+        const { data } = await MyshopService.faceid(payload);
+        console.log('payload',data);
+        return data;
+    },
+
+
+    
 
 
 

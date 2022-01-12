@@ -52,7 +52,7 @@ import LongFooter from "@/components/LongFooter"
 import Footer from "@/components/Footer"
 import Loader from '@/components/Loader'
 import { mapState } from 'vuex'
-import { FETCH_ID_URL } from "@/store/actions.type.js";
+import { FETCH_ID_URL,FETCH_FACEBOOK } from "@/store/actions.type.js";
 import Vue from 'vue'
 import VueFbCustomerChat from 'vue-fb-customer-chat'
  
@@ -77,7 +77,7 @@ import VueFbCustomerChat from 'vue-fb-customer-chat'
                 product: state => state.ProductShell
             }),
         currentRouteName() {
-console.log('this.$route.name',this.$route.name);
+
         return this.$route.name;
     },
     isUrl () {
@@ -99,6 +99,8 @@ console.log('this.$route.name',this.$route.name);
        
         this.form.url = window.location.origin
         let get_url = this.$store.dispatch(FETCH_ID_URL,this.form);
+        let get_face = this.$store.dispatch(FETCH_FACEBOOK,this.form);
+
 
 
        // let clearalert = this.$store.dispatch(CLEARALRET);

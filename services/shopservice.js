@@ -19,4 +19,9 @@ export const MyshopService = {
       return ApiServiceAll.post("checkshop",param);
     },
 
+    faceid(param) {
+   
+      return ApiServiceAll.post("faceid",param);
+    },
+
 };
