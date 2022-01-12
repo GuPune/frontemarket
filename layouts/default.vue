@@ -19,7 +19,7 @@
     <ShopRelation v-if="currentRouteName == 'index'"/>
 
 
-   <LongFooter/>
+   <LongFooter  v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'salepage-id')"/>
 
 
             <div class="footer ema-footer">
