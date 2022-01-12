@@ -476,7 +476,7 @@ this.send();
                 1500
             );
 
-      //     this.$router.push({ name: 'buy-thankyou' })
+        this.$router.push({ name: 'buy-thankyou' })
      
         },
 
