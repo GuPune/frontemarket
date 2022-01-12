@@ -28,10 +28,10 @@
                         </div>
                 </div>
 
+                
                 <div class="fb-customerchat"
- page_id="1697883653756763">
+ page_id="110934761475251">
 </div>
-
 
         
 </div>
@@ -113,7 +113,7 @@ console.log('this.$route.name',this.$route.name);
 
     window.fbAsyncInit = () => {
       FB.init({
-        appId: '4578428388940773',
+        appId: '1697883653756763',
         cookie: true,
         xfbml: true,
         version: 'v3.2'
