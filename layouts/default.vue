@@ -28,11 +28,10 @@
                         </div>
                 </div>
 
-                
-                <div class="fb-customerchat"
-page_id="1697883653756763">
-</div>
 
+<div class="fb-customerchat"
+ page_id="1697883653756763">
+</div>
         
 </div>
 
@@ -56,11 +55,7 @@ import Vue from 'vue'
 import VueFbCustomerChat from 'vue-fb-customer-chat'
  
 
-    Vue.use(VueFbCustomerChat, {
-  page_id: '4578428388940773', //  change 'null' to your Facebook Page ID,
-  theme_color: '#333333', // theme color in HEX
-  locale: 'en_US', // default 'en_US'
-})
+
     export default {
       components: {
           NavShop,
@@ -102,30 +97,7 @@ console.log('this.$route.name',this.$route.name);
         let get_url = this.$store.dispatch(FETCH_ID_URL,this.form);
 
 
-         const installFacebookSdkScript = (d, s, id) => {
-      if (d.getElementById(id)) {
-        this.facebookSdkReady = true
-        return
-      }
-      let fjs = d.getElementsByTagName(s)[0]
-      let js = d.createElement(s)
-      js.id = id
-      js.src = 'https://connect.facebook.net/en_US/sdk.js'
-      fjs.parentNode.insertBefore(js, fjs)
-    }
-    installFacebookSdkScript(document, 'script', 'facebook-jssdk')
 
-    window.fbAsyncInit = () => {
-      FB.init({
-        appId: '1697883653756763',
-        cookie: true,
-        xfbml: true,
-        version: 'v3.2'
-      })
-
-      FB.AppEvents.logPageView()
-      this.facebookSdkReady = true
-    }
        // let clearalert = this.$store.dispatch(CLEARALRET);
       
     },
