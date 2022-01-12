@@ -22,9 +22,9 @@
    <LongFooter  v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou') "/>
 
 
-            <div class="footer ema-footer">
+            <div class="footer ema-footer" v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou') ">
                       <div class="col-sm">
-                            <small>Copyright © 2022 ID ID-Market Place. All rights reserved Beta 17/12/2564</small>
+                            <small>Copyright © 2022 ID ID-Market Place. All rights reserved Beta 12/1/2565</small>
                         </div>
                 </div>
 
