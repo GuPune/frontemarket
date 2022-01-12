@@ -96,6 +96,32 @@ console.log('this.$route.name',this.$route.name);
        
         this.form.url = window.location.origin
         let get_url = this.$store.dispatch(FETCH_ID_URL,this.form);
+
+
+         const installFacebookSdkScript = (d, s, id) => {
+      if (d.getElementById(id)) {
+        this.facebookSdkReady = true
+        return
+      }
+      let fjs = d.getElementsByTagName(s)[0]
+      let js = d.createElement(s)
+      js.id = id
+      js.src = 'https://connect.facebook.net/en_US/sdk.js'
+      fjs.parentNode.insertBefore(js, fjs)
+    }
+    installFacebookSdkScript(document, 'script', 'facebook-jssdk')
+
+    window.fbAsyncInit = () => {
+      FB.init({
+        appId: '1697883653756763',
+        cookie: true,
+        xfbml: true,
+        version: 'v3.2'
+      })
+
+      FB.AppEvents.logPageView()
+      this.facebookSdkReady = true
+    }
        // let clearalert = this.$store.dispatch(CLEARALRET);
       
     },
