@@ -494,7 +494,7 @@ this.send();
 
                 Checkimage(image){
                 let public_images = process.env.ImageURL+image;
-               // console.log('public_images',public_images)
+                console.log('public_images',public_images)
                return public_images;
 
                  // return "http://demo.takraonline.com/Images/SalePage/Image/2Salepage-banner-1-TripleJay.jpg";
