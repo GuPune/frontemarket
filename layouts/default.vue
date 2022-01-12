@@ -56,7 +56,7 @@ import Vue from 'vue'
 import VueFbCustomerChat from 'vue-fb-customer-chat'
  
 Vue.use(VueFbCustomerChat, {
-  page_id: null, //  change 'null' to your Facebook Page ID,
+  page_id: '4578428388940773', //  change 'null' to your Facebook Page ID,
   theme_color: '#333333', // theme color in HEX
   locale: 'en_US', // default 'en_US'
 })
@@ -117,7 +117,7 @@ console.log('this.$route.name',this.$route.name);
 
     window.fbAsyncInit = () => {
       FB.init({
-        appId: '1697883653756763',
+        appId: '4578428388940773',
         cookie: true,
         xfbml: true,
         version: 'v3.2'
