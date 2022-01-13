@@ -29,11 +29,9 @@
                 </div>
 
 
-<div class="fb-customerchat" :page_id="pageId">
- 
-</div>
 
 
+<div class="fb-customerchat" page_id="110934761475251"  :page_id="pageId"></div>
         
 </div>
 
