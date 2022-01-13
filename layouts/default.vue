@@ -92,13 +92,13 @@ function deleteConf() {
  
 
  console.log('response',response.data.data.facebook)
-return 110934761475251;
+return response.data.data.facebook;
 
 })
 .catch(function (error) {
     console.log(error);
 });
-return 110934761475251;
+
   }
 
 
