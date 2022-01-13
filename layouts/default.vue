@@ -116,16 +116,15 @@ import axios from 'axios';
         this.form.url = window.location.origin
         let get_face = await this.$store.dispatch(FETCH_FACEBOOK,this.form);
      //  this.abc = 1697883653756763;
-  let a = parseInt(get_face.facebook)
-console.log('a',a);
+   //     get_face.facebook
 
-   let b = 110934761475251;
-   console.log('a',b);
+
+   let a = 110934761475251;
 // console.log('a',a);
 // let b = a.toString;
 
     Vue.use(VueFbCustomerChat, {
-  page_id: b, //  change 'null' to your Facebook Page ID,
+  page_id: a, //  change 'null' to your Facebook Page ID,
   theme_color: '#333333', // theme color in HEX
   locale: 'en_US', // default 'en_US'
 })
