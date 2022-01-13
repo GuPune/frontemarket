@@ -75,17 +75,11 @@ import axios from 'axios';
 //                 console.log('public_images',public_images);
 console.log('xxxx',deleteConf());
 
-    Vue.use(VueFbCustomerChat, {
-  page_id: deleteConf(), //  change 'null' to your Facebook Page ID,
-  theme_color: '#333333', // theme color in HEX
-  locale: 'en_US', // default 'en_US'
-})
 
-
-async function  deleteConf() {
+function  deleteConf() {
 
  let public_images = process.env.baseURL;
- let c =  await axios.post(public_images+'/faceid', {
+     let c =  axios.post(public_images+'/faceid', {
           url: "https://emarketplace.idtest.work", 
 })
 .then(function (response) {
@@ -93,18 +87,29 @@ async function  deleteConf() {
 
 
 //return parseInt(response.data.data.facebook);
-return response.data.data.facebook;
+ Vescahat(response.data.data.facebook);
 
 })
 .catch(function (error) {
     console.log(error);
 });
 
-return c;
+};
 
 
-  }
+function Vescahat(e){
+console.log(parseInt(e));
 
+      Vue.use(VueFbCustomerChat, {
+  page_id: parseInt(e), //  change 'null' to your Facebook Page ID,
+  theme_color: '#333333', // theme color in HEX
+  locale: 'en_US', // default 'en_US'
+})
+
+
+return e;
+
+}
 
 
   
