@@ -77,6 +77,7 @@ axios.post(public_images+'/faceid', {
 
 
 let a = 110934761475251;
+console.log('a',a);
 let b = a.toString;
 
     Vue.use(VueFbCustomerChat, {
