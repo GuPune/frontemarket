@@ -29,7 +29,7 @@
                 </div>
 
 
-<div class="fb-customerchat" page_id="110934761475251"  :page_id="pageId">
+<div class="fb-customerchat" page_id="pageId">
  
 </div>
 
@@ -95,13 +95,12 @@ import VueFbCustomerChat from 'vue-fb-customer-chat'
         
     },
      
-    mounted() {
+    async mounted() {
        
         this.form.url = window.location.origin
         let get_url = this.$store.dispatch(FETCH_ID_URL,this.form);
-        let get_face = this.$store.dispatch(FETCH_FACEBOOK,this.form);
-
-
+        let get_face = await this.$store.dispatch(FETCH_FACEBOOK,this.form);
+        this.pageId = get_face.facebook
 
        // let clearalert = this.$store.dispatch(CLEARALRET);
       

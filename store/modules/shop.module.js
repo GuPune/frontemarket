@@ -50,8 +50,7 @@ const actions = {
 
         
         const { data } = await MyshopService.faceid(payload);
-        console.log('payload',data);
-        return data;
+        return data.data;
     },
 
 
