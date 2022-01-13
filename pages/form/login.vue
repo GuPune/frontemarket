@@ -312,7 +312,7 @@ this.form.url = window.location.hostname;
         }).then(data => {
 
 
-     //   let token = this.$auth.getToken('local')   //get token
+      let token = this.$auth.getToken('local')   //get token
           let a = this.$store.dispatch(FETCH_GET_PROFILE)
  
 
