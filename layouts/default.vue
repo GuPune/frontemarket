@@ -73,43 +73,17 @@ import axios from 'axios';
 //      const s = null;
   
 //                 console.log('public_images',public_images);
-console.log('xxxx',deleteConf());
 
 
-function  deleteConf() {
+localStorage.setItem("pageId", "110934761475251");
+      let checker = localStorage.getItem("pageId");
 
- let public_images = process.env.baseURL;
-     let c =  axios.post(public_images+'/faceid', {
-          url: "https://emarketplace.idtest.work", 
-})
-.then(function (response) {
- 
-
-
-//return parseInt(response.data.data.facebook);
- Vescahat(response.data.data.facebook);
-
-})
-.catch(function (error) {
-    console.log(error);
-});
-
-};
-
-
-function Vescahat(e){
-console.log(parseInt(e));
-
+      console.log('checker',checker);
       Vue.use(VueFbCustomerChat, {
-  page_id: parseInt(e), //  change 'null' to your Facebook Page ID,
+  page_id: checker, //  change 'null' to your Facebook Page ID,
   theme_color: '#333333', // theme color in HEX
   locale: 'en_US', // default 'en_US'
 })
-
-
-return e;
-
-}
 
 
   
