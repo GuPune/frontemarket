@@ -50,6 +50,8 @@ const actions = {
 
         
         const { data } = await MyshopService.faceid(payload);
+
+        console.log('dffff',data);
         return data.data;
     },
 
