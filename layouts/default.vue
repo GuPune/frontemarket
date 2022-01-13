@@ -30,7 +30,7 @@
 
 
 <div v-if="this.pageId">
-{{this.pageId}}
+
 <div class="fb-customerchat"  :page_id="pageId">
  
 </div>

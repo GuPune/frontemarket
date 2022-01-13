@@ -86,6 +86,7 @@ const actions = {
     },
     async [GET_PRODUCT_SHELL_FIND](context,payload) {
         const { data } = await ProductService.getproductshellfind(payload);
+        console.log('find navbar',data);
        context.commit(SET_PRODUCTSHELL_FIND,data);
         return data;
     },

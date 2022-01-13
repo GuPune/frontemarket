@@ -228,7 +228,7 @@
   
 
       <b-col cols="8" md="4"  sm="3" class="nav-form-search nav-search">
-        <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?" v-model="search"></b-form-input>
+        <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?" v-model="form.search"></b-form-input>
       </b-col>
        <b-col cols="3" md="1"  sm="3" class="nav-form-search">
   <b-form-select v-model="selected" :options="options"></b-form-select>
@@ -299,16 +299,17 @@
 <script>
 import { mapGetters,mapState } from "vuex";
 import { CHECK_LOGIN,GET_NAVBAR,GET_MENU,GET_SHOP_BY_ITEM } from "../store/actions.type.js";
-import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,FETCH_GET_PROFILE } from "@/store/actions.type.js";
+import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,FETCH_GET_PROFILE,GET_PRODUCT_SHELL_FIND } from "@/store/actions.type.js";
   export default {
     data() {
     return {
       IsLogin: false,
       loggedIn: this.$auth.loggedIn,
       name:{},
-      form:{},
+      form:{
+        search:"",
+      },
       selected: 'a',
-      search:"",
       color:null,
         options: [
    
@@ -387,9 +388,20 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
 
       methods: {
 
-        Search(){
+       async Search(){
+  if(this.form.search == ''){
+  return   this.$router.push('/');
+
+  }
+          let productfind = await this.$store.dispatch(GET_PRODUCT_SHELL_FIND,this.form);
         console.log('search',this.selected);
         console.log('search',this.search);
+
+                        let path = this.$route.path
+  this.$router.push({ name: 'find' })
+
+
+        
         
         },
 
