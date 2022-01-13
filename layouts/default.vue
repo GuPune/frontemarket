@@ -38,6 +38,9 @@
 </template>
 
  <script>
+ import Vue from 'vue'
+import VueFbCustomerChat from 'vue-fb-customer-chat'
+
 
 a = "110934761475251";
  Vue.use(VueFbCustomerChat, {
