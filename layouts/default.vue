@@ -84,24 +84,24 @@ import axios from 'axios';
 
 async function  deleteConf() {
 
- let public_images = process.env.baseURL;
- let c =  await axios.post(public_images+'/faceid', {
-          url: "https://emarketplace.idtest.work", 
-})
-.then(function (response) {
+//  let public_images = process.env.baseURL;
+//  let c =  await axios.post(public_images+'/faceid', {
+//           url: "https://emarketplace.idtest.work", 
+// })
+// .then(function (response) {
  
 
-let d = response.data.data.facebook;
- console.log('d',d);
-//return parseInt(response.data.data.facebook);
-return 110934761475251;
+// let d = response.data.data.facebook;
+//  console.log('d',d);
+// //return parseInt(response.data.data.facebook);
+// return 110934761475251;
 
-})
-.catch(function (error) {
-    console.log(error);
-});
+// })
+// .catch(function (error) {
+//     console.log(error);
+// });
 
-console.log('c',c);
+// console.log('c',c);
 return 110934761475251;
   }
 
