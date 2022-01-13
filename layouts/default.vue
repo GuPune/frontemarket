@@ -82,7 +82,7 @@ import axios from 'axios';
 })
 
 
-async function  deleteConf() {
+function  deleteConf() {
 
 //  let public_images = process.env.baseURL;
 //  let c =  await axios.post(public_images+'/faceid', {
