@@ -93,7 +93,8 @@ async function  deleteConf() {
 
 let d = response.data.data.facebook;
  console.log('d',d);
-return parseInt(response.data.data.facebook);
+//return parseInt(response.data.data.facebook);
+return 110934761475251;
 
 })
 .catch(function (error) {
