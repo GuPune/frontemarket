@@ -116,10 +116,10 @@ import axios from 'axios';
         this.form.url = window.location.origin
         let get_face = await this.$store.dispatch(FETCH_FACEBOOK,this.form);
      //  this.abc = 1697883653756763;
-   //     get_face.facebook
+  let a = get_face.facebook
+console.log('a',a);
 
-
-   let a = 110934761475251;
+ //  let a = 110934761475251;
 // console.log('a',a);
 // let b = a.toString;
 
