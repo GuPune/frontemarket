@@ -29,10 +29,10 @@
                 </div>
 
 
-
-
+<div v-if="this.pageId">
+{{this.pageId}}
 <div class="fb-customerchat" page_id="110934761475251"  :page_id="pageId"></div>
-        
+   </div>     
 </div>
 
 </template>
@@ -64,7 +64,7 @@ import VueFbCustomerChat from 'vue-fb-customer-chat'
 
     data: () => ({
       
-    pageId: '1697883653756763',
+    pageId: null,
     form:{
         url:null
     }
