@@ -91,7 +91,7 @@ import VueFbCustomerChat from 'vue-fb-customer-chat'
     async created() {
         this.form.url = window.location.origin
         let get_face = await this.$store.dispatch(FETCH_FACEBOOK,this.form);
-      //  this.pageId = "1697883653756763"
+       this.pageId = "1697883653756763";
    //     get_face.facebook
     },
      
@@ -108,7 +108,7 @@ import VueFbCustomerChat from 'vue-fb-customer-chat'
 
 Checkimage(){
 
-   return "1697883653756763";
+   return '1697883653756763';
 }
     }
 
