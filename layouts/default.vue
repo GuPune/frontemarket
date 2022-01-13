@@ -64,7 +64,7 @@ import VueFbCustomerChat from 'vue-fb-customer-chat'
 
     data: () => ({
       
-    
+    pageId: '110934761475251',
     form:{
         url:null
     }
