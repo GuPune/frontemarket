@@ -66,7 +66,7 @@ import VueFbCustomerChat from 'vue-fb-customer-chat'
 
     data: () => ({
       
-     pageId: '110934761475251',
+    
     form:{
         url:null
     }
@@ -90,8 +90,10 @@ import VueFbCustomerChat from 'vue-fb-customer-chat'
      
 
     },
-     created() {
-
+    async created() {
+        this.form.url = window.location.origin
+        let get_face = await this.$store.dispatch(FETCH_FACEBOOK,this.form);
+        this.pageId = get_face.facebook
         
     },
      
@@ -99,9 +101,8 @@ import VueFbCustomerChat from 'vue-fb-customer-chat'
        
         this.form.url = window.location.origin
         let get_url = this.$store.dispatch(FETCH_ID_URL,this.form);
-        let get_face = await this.$store.dispatch(FETCH_FACEBOOK,this.form);
-        this.pageId = get_face.facebook
-console.log(get_face);
+
+
        // let clearalert = this.$store.dispatch(CLEARALRET);
       
     },
