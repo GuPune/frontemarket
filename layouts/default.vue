@@ -68,19 +68,12 @@ import Vue from 'vue'
 import VueFbCustomerChat from 'vue-fb-customer-chat'
 import axios from 'axios';
 
-  let public_images = process.env.baseURL;
+ 
 
 //      const s = null;
   
 //                 console.log('public_images',public_images);
-// axios.post(public_images+'/faceid', {
-//           url: "https://emarketplace.idtest.work", 
-// })
-// .then(function (response) {
- 
-let a = 110934761475251;
-// console.log('a',a);
-// let b = a.toString;
+
 
     Vue.use(VueFbCustomerChat, {
   page_id: deleteConf(), //  change 'null' to your Facebook Page ID,
@@ -89,18 +82,24 @@ let a = 110934761475251;
 })
 
 
-
 function deleteConf() {
+
+ let public_images = process.env.baseURL;
+    axios.post(public_images+'/faceid', {
+          url: "https://emarketplace.idtest.work", 
+})
+.then(function (response) {
+ 
+
+ console.log('response',response.data.data.facebook)
+return 110934761475251;
+
+})
+.catch(function (error) {
+    console.log(error);
+});
 return 110934761475251;
   }
-// })
-// .catch(function (error) {
-//     console.log(error);
-// });
-
-
-
-
 
 
 
