@@ -91,14 +91,16 @@ function deleteConf() {
 .then(function (response) {
  
 
- console.log('response',response.data.data.facebook)
-return response.data.data.facebook;
+ console.log('response',parseInt(response.data.data.facebook))
+ console.log('response',110934761475251)
+ 
+return parseInt(response.data.data.facebook);
 
 })
 .catch(function (error) {
     console.log(error);
 });
-
+return 110934761475251;
   }
 
 
