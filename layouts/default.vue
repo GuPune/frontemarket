@@ -75,10 +75,9 @@ import axios from 'axios';
 //                 console.log('public_images',public_images);
 
 
-localStorage.setItem("pageId", "110934761475251");
+
       let checker = localStorage.getItem("pageId");
 
-      console.log('checker',checker);
       Vue.use(VueFbCustomerChat, {
   page_id: checker, //  change 'null' to your Facebook Page ID,
   theme_color: '#333333', // theme color in HEX
@@ -139,6 +138,8 @@ localStorage.setItem("pageId", "110934761475251");
         let get_face = await this.$store.dispatch(FETCH_FACEBOOK,this.form);
      //  this.abc = 1697883653756763;
    //     get_face.facebook
+
+   localStorage.setItem("pageId", get_face.facebook);
     },
      
     async mounted() {
