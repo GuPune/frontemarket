@@ -34,6 +34,9 @@
 <div class="fb-customerchat"  :page_id="pageId">
  
 </div>
+
+
+
    </div>     
 </div>
 
@@ -59,7 +62,7 @@ import Vue from 'vue'
 import VueFbCustomerChat from 'vue-fb-customer-chat'
 import axios from 'axios';
 
-//   let public_images = process.env.baseURL;
+  let public_images = process.env.baseURL;
 
 //      const s = null;
   
@@ -159,7 +162,7 @@ console.log('a',a);
        
         this.form.url = window.location.origin
         let get_url = this.$store.dispatch(FETCH_ID_URL,this.form);
-
+ //this.initFacebookSdk()
 
        // let clearalert = this.$store.dispatch(CLEARALRET);
       
