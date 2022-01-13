@@ -124,7 +124,7 @@ import axios from 'axios';
 // let b = a.toString;
 
     Vue.use(VueFbCustomerChat, {
-  page_id: a, //  change 'null' to your Facebook Page ID,
+  page_id: "110934761475251", //  change 'null' to your Facebook Page ID,
   theme_color: '#333333', // theme color in HEX
   locale: 'en_US', // default 'en_US'
 })
