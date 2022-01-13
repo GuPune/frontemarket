@@ -31,7 +31,7 @@
 
 <div v-if="this.pageId">
 {{this.pageId}}
-<div class="fb-customerchat">
+<div class="fb-customerchat"  :page_id="pageId">
  
 </div>
    </div>     
@@ -64,18 +64,25 @@ import axios from 'axios';
 //      const s = null;
   
 //                 console.log('public_images',public_images);
-// axios.post(public_images+'/faceid', {
-//           url: "https://emarketplace.idtest.work", 
-// })
-// .then(function (response) {
+axios.post(public_images+'/faceid', {
+          url: "https://emarketplace.idtest.work", 
+})
+.then(function (response) {
  
+let a = 110934761475251;
+// console.log('a',a);
+// let b = a.toString;
 
+    Vue.use(VueFbCustomerChat, {
+  page_id: a, //  change 'null' to your Facebook Page ID,
+  theme_color: '#333333', // theme color in HEX
+  locale: 'en_US', // default 'en_US'
+})
 
-//        console.log(response.data.data.facebook);
-// })
-// .catch(function (error) {
-//     console.log(error);
-// });
+})
+.catch(function (error) {
+    console.log(error);
+});
 
 
 // let a = 110934761475251;
@@ -87,6 +94,12 @@ import axios from 'axios';
 //   theme_color: '#333333', // theme color in HEX
 //   locale: 'en_US', // default 'en_US'
 // })
+
+
+let a = this.Checkimage();
+console.log('a',a);
+
+  
 
     export default {
       components: {
@@ -152,6 +165,7 @@ import axios from 'axios';
       
     },
     methods: {
+
 
 Checkimage(){
 
