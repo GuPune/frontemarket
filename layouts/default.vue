@@ -84,8 +84,8 @@ import axios from 'axios';
 
 function  deleteConf() {
 
-//  let public_images = process.env.baseURL;
-//  let c =  await axios.post(public_images+'/faceid', {
+ let public_images = process.env.baseURL;
+//  let c =  axios.post(public_images+'/faceid', {
 //           url: "https://emarketplace.idtest.work", 
 // })
 // .then(function (response) {
@@ -102,7 +102,21 @@ function  deleteConf() {
 // });
 
 // console.log('c',c);
-return 110934761475251;
+return axios.post(public_images+'/faceid', {
+          url: "https://emarketplace.idtest.work", 
+})
+.then(function (response) {
+ 
+
+let d = response.data.data.facebook;
+ console.log('d',d);
+return parseInt(response.data.data.facebook);
+//return 110934761475251;
+
+});
+
+
+
   }
 
 
