@@ -29,7 +29,7 @@
                 </div>
 
 
-<div class="fb-customerchat" page_id="pageId">
+<div class="fb-customerchat" :page_id="pageId">
  
 </div>
 
