@@ -73,7 +73,7 @@ import axios from 'axios';
 //      const s = null;
   
 //                 console.log('public_images',public_images);
-
+console.log('xxxx',deleteConf());
 
     Vue.use(VueFbCustomerChat, {
   page_id: deleteConf(), //  change 'null' to your Facebook Page ID,
@@ -82,39 +82,25 @@ import axios from 'axios';
 })
 
 
-async function  deleteConf() {
+function  deleteConf() {
 
  let public_images = process.env.baseURL;
-//  let c =  axios.post(public_images+'/faceid', {
-//           url: "https://emarketplace.idtest.work", 
-// })
-// .then(function (response) {
- 
-
-// let d = response.data.data.facebook;
-//  console.log('d',d);
-// //return parseInt(response.data.data.facebook);
-// return 110934761475251;
-
-// })
-// .catch(function (error) {
-//     console.log(error);
-// });
-
-// console.log('c',c);
-return await axios.post(public_images+'/faceid', {
+ let c =  axios.post(public_images+'/faceid', {
           url: "https://emarketplace.idtest.work", 
 })
 .then(function (response) {
  
 
-let d = response.data.data.facebook;
- console.log('d',d);
-return parseInt(response.data.data.facebook);
-//return 110934761475251;
 
+//return parseInt(response.data.data.facebook);
+return response.data.data.facebook;
+
+})
+.catch(function (error) {
+    console.log(error);
 });
 
+return 110934761475251;
 
 
   }
