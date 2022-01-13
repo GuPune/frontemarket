@@ -108,7 +108,9 @@ import VueFbCustomerChat from 'vue-fb-customer-chat'
 
 Checkimage(){
 
-   return '1697883653756763';
+     this.pageId = "1697883653756763";
+
+   return this.pageId;
 }
     }
 
