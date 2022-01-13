@@ -37,6 +37,15 @@
 
 </template>
 
+ <script>
+
+a = "110934761475251";
+ Vue.use(VueFbCustomerChat, {
+  page_id: a, //  change 'null' to your Facebook Page ID,
+  theme_color: '#333333', // theme color in HEX
+  locale: 'en_US', // default 'en_US'
+})
+ </script>
 
 <script>
 import NavShop from "@/components/NavbarShop"
@@ -53,12 +62,8 @@ import { mapState } from 'vuex'
 import { FETCH_ID_URL,FETCH_FACEBOOK } from "@/store/actions.type.js";
 import Vue from 'vue'
 import VueFbCustomerChat from 'vue-fb-customer-chat'
- 
-Vue.use(VueFbCustomerChat, {
-  page_id: "110934761475251", //  change 'null' to your Facebook Page ID,
-  theme_color: '#333333', // theme color in HEX
-  locale: 'en_US', // default 'en_US'
-})
+
+
 
     export default {
       components: {
