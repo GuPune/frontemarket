@@ -82,7 +82,7 @@ import axios from 'axios';
 })
 
 
-function  deleteConf() {
+async function  deleteConf() {
 
  let public_images = process.env.baseURL;
 //  let c =  axios.post(public_images+'/faceid', {
@@ -102,7 +102,7 @@ function  deleteConf() {
 // });
 
 // console.log('c',c);
-return axios.post(public_images+'/faceid', {
+return await axios.post(public_images+'/faceid', {
           url: "https://emarketplace.idtest.work", 
 })
 .then(function (response) {
