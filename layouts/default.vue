@@ -31,7 +31,9 @@
 
 <div v-if="this.pageId">
 {{this.pageId}}
-<div class="fb-customerchat"></div>
+<div class="fb-customerchat" page_id="110934761475251"  :page_id="pageId">
+ 
+</div>
    </div>     
 </div>
 
@@ -57,34 +59,34 @@ import Vue from 'vue'
 import VueFbCustomerChat from 'vue-fb-customer-chat'
 import axios from 'axios';
 
-  let public_images = process.env.baseURL;
+//   let public_images = process.env.baseURL;
 
-     const s = null;
+//      const s = null;
   
-                console.log('public_images',public_images);
-axios.post(public_images+'/faceid', {
-          url: "https://emarketplace.idtest.work", 
-})
-.then(function (response) {
+//                 console.log('public_images',public_images);
+// axios.post(public_images+'/faceid', {
+//           url: "https://emarketplace.idtest.work", 
+// })
+// .then(function (response) {
  
 
 
-       console.log(response.data.data.facebook);
-})
-.catch(function (error) {
-    console.log(error);
-});
+//        console.log(response.data.data.facebook);
+// })
+// .catch(function (error) {
+//     console.log(error);
+// });
 
 
-let a = 110934761475251;
-console.log('a',a);
-let b = a.toString;
+// let a = 110934761475251;
+// console.log('a',a);
+// let b = a.toString;
 
-    Vue.use(VueFbCustomerChat, {
-  page_id: a, //  change 'null' to your Facebook Page ID,
-  theme_color: '#333333', // theme color in HEX
-  locale: 'en_US', // default 'en_US'
-})
+//     Vue.use(VueFbCustomerChat, {
+//   page_id: a, //  change 'null' to your Facebook Page ID,
+//   theme_color: '#333333', // theme color in HEX
+//   locale: 'en_US', // default 'en_US'
+// })
 
     export default {
       components: {
@@ -94,7 +96,7 @@ let b = a.toString;
 
     data: () => ({
       
- 
+    pageId:null,
     form:{
         url:null
     }
@@ -121,7 +123,7 @@ let b = a.toString;
     async created() {
         this.form.url = window.location.origin
         let get_face = await this.$store.dispatch(FETCH_FACEBOOK,this.form);
-       this.pageId = "1697883653756763";
+       this.pageId = 1697883653756763;
    //     get_face.facebook
     },
      
