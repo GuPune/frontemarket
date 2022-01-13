@@ -64,7 +64,7 @@ import VueFbCustomerChat from 'vue-fb-customer-chat'
 
     data: () => ({
       
-    pageId: Checkimage(),
+    pageId: '1697883653756763',
     form:{
         url:null
     }
