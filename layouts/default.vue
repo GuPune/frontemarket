@@ -78,15 +78,15 @@ import axios from 'axios';
 // })
 // .then(function (response) {
  
- let a = 110934761475251;
-// // console.log('a',a);
-// // let b = a.toString;
+//  let a = 110934761475251;
+// // // console.log('a',a);
+// // // let b = a.toString;
 
-    Vue.use(VueFbCustomerChat, {
-  page_id: a, //  change 'null' to your Facebook Page ID,
-  theme_color: '#333333', // theme color in HEX
-  locale: 'en_US', // default 'en_US'
-})
+//     Vue.use(VueFbCustomerChat, {
+//   page_id: a, //  change 'null' to your Facebook Page ID,
+//   theme_color: '#333333', // theme color in HEX
+//   locale: 'en_US', // default 'en_US'
+// })
 
 // })
 // .catch(function (error) {
@@ -135,6 +135,17 @@ import axios from 'axios';
     },
 
     beforeCreate(){
+
+         let a = 110934761475251;
+// // console.log('a',a);
+// // let b = a.toString;
+
+    Vue.use(VueFbCustomerChat, {
+  page_id: a, //  change 'null' to your Facebook Page ID,
+  theme_color: '#333333', // theme color in HEX
+  locale: 'en_US', // default 'en_US'
+})
+        
 
     },
     async created() {
