@@ -34,7 +34,13 @@
 <div class="fb-customerchat"  :page_id="pageId">
  
 </div>
+  <div
 
+    class="fb-customerchat"
+    :page_id="pageId"
+    theme_color="#4586ff"
+
+  ></div>
 
 
    </div>     
@@ -111,7 +117,7 @@ let a = 110934761475251;
 
     data: () => ({
       
-    pageId:null,
+    pageId:"110934761475251",
     form:{
         url:null
     }
@@ -161,12 +167,47 @@ let a = 110934761475251;
        
         this.form.url = window.location.origin
         let get_url = this.$store.dispatch(FETCH_ID_URL,this.form);
- //this.initFacebookSdk()
+ this.initFacebookSdk()
 
        // let clearalert = this.$store.dispatch(CLEARALRET);
       
     },
     methods: {
+
+
+        initFacebookSdk() {
+ 
+
+      window.fbAsyncInit = function () {
+        window.FB.init({
+          appId: "1697883653756763",
+          autoLogAppEvents: true,
+          xfbml: true,
+          version: 'v10.0',
+        })
+      }
+      ;(function (d, s, id) {
+        let js = d.getElementById(id),
+          fjs = d.getElementsByTagName(s)[0]
+        if (js) js.parentNode.removeChild(js) // remove script tag if exists
+        js = d.createElement(s)
+        js.id = id
+        js.src = `https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js`
+        fjs.parentNode.insertBefore(js, fjs)
+      })(document, 'script', `facebook-jssdk`)
+    },
+
+    resetFacebookSdk() {
+      const fbRoot = this.$el.closest('#fb-root')
+      if (!fbRoot) return
+
+      // Move fb-customerchat element outside of fb-root (created by Facebook SDK)
+      fbRoot.parentNode.insertBefore(this.$el, fbRoot)
+      // Delete fb-root to let Facebook SDK create it again
+      fbRoot.parentNode.removeChild(fbRoot)
+
+      this.initFacebookSdk()
+    },
 
 
 Checkimage(){
