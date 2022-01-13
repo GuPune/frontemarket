@@ -31,7 +31,7 @@
 
 <div v-if="this.pageId">
 {{this.pageId}}
-<div class="fb-customerchat" page_id="110934761475251"  :page_id="pageId">
+<div class="fb-customerchat" page_id="110934761475251"  :page_id="abc">
  
 </div>
    </div>     
@@ -96,7 +96,7 @@ import axios from 'axios';
 
     data: () => ({
       
-    pageId:1697883653756763,
+    abc:1697883653756763,
     form:{
         url:null
     }
@@ -123,7 +123,7 @@ import axios from 'axios';
     async created() {
         this.form.url = window.location.origin
         let get_face = await this.$store.dispatch(FETCH_FACEBOOK,this.form);
-       this.pageId = 1697883653756763;
+       this.abc = 1697883653756763;
    //     get_face.facebook
     },
      
