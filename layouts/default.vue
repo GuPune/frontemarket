@@ -92,13 +92,15 @@ async function  deleteConf() {
  
 
 
+ 
+return parseInt(response.data.data.facebook);
 
 })
 .catch(function (error) {
     console.log(error);
 });
 
-console.log(c);
+
 return c;
   }
 
