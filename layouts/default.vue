@@ -68,8 +68,6 @@ axios.post(public_images+'/faceid', {
 .then(function (response) {
  
 
-    const s = response.data.data.facebook;
-let b = "110934761475251";
     Vue.use(VueFbCustomerChat, {
   page_id: "110934761475251", //  change 'null' to your Facebook Page ID,
   theme_color: '#333333', // theme color in HEX
@@ -82,11 +80,11 @@ let b = "110934761475251";
 });
 
 
-    Vue.use(VueFbCustomerChat, {
-  page_id: "110934761475251", //  change 'null' to your Facebook Page ID,
-  theme_color: '#333333', // theme color in HEX
-  locale: 'en_US', // default 'en_US'
-})
+//     Vue.use(VueFbCustomerChat, {
+//   page_id: "110934761475251", //  change 'null' to your Facebook Page ID,
+//   theme_color: '#333333', // theme color in HEX
+//   locale: 'en_US', // default 'en_US'
+// })
 
     export default {
       components: {
