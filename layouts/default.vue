@@ -94,15 +94,7 @@ import axios from 'axios';
 // });
 
 
- let a = 110934761475251;
-// // console.log('a',a);
-// // let b = a.toString;
 
-    Vue.use(VueFbCustomerChat, {
-  page_id: a, //  change 'null' to your Facebook Page ID,
-  theme_color: '#333333', // theme color in HEX
-  locale: 'en_US', // default 'en_US'
-})
 
 
 
@@ -147,7 +139,15 @@ import axios from 'axios';
     },
     async created() {
 
-        let a = 110934761475251;
+         let a = 110934761475251;
+// // console.log('a',a);
+// // let b = a.toString;
+
+    Vue.use(VueFbCustomerChat, {
+  page_id: a, //  change 'null' to your Facebook Page ID,
+  theme_color: '#333333', // theme color in HEX
+  locale: 'en_US', // default 'en_US'
+})
 // console.log('a',a);
 // let b = a.toString;
 
