@@ -99,8 +99,7 @@ let a = 110934761475251;
 // })
 
 
-let a = this.Checkimage();
-console.log('a',a);
+
 
   
 
