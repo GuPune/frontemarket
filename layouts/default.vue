@@ -91,8 +91,8 @@ import VueFbCustomerChat from 'vue-fb-customer-chat'
     async created() {
         this.form.url = window.location.origin
         let get_face = await this.$store.dispatch(FETCH_FACEBOOK,this.form);
-        this.pageId = get_face.facebook
-        
+        this.pageId = "1697883653756763"
+   //     get_face.facebook
     },
      
     async mounted() {
