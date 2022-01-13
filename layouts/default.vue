@@ -73,36 +73,36 @@ import axios from 'axios';
 //      const s = null;
   
 //                 console.log('public_images',public_images);
-axios.post(public_images+'/faceid', {
-          url: "https://emarketplace.idtest.work", 
-})
-.then(function (response) {
+// axios.post(public_images+'/faceid', {
+//           url: "https://emarketplace.idtest.work", 
+// })
+// .then(function (response) {
  
-let a = 110934761475251;
-// console.log('a',a);
-// let b = a.toString;
+// let a = 110934761475251;
+// // console.log('a',a);
+// // let b = a.toString;
+
+// //     Vue.use(VueFbCustomerChat, {
+// //   page_id: a, //  change 'null' to your Facebook Page ID,
+// //   theme_color: '#333333', // theme color in HEX
+// //   locale: 'en_US', // default 'en_US'
+// // })
+
+// })
+// .catch(function (error) {
+//     console.log(error);
+// });
+
+
+ let a = 110934761475251;
+// // console.log('a',a);
+// // let b = a.toString;
 
     Vue.use(VueFbCustomerChat, {
   page_id: a, //  change 'null' to your Facebook Page ID,
   theme_color: '#333333', // theme color in HEX
   locale: 'en_US', // default 'en_US'
 })
-
-})
-.catch(function (error) {
-    console.log(error);
-});
-
-
-// let a = 110934761475251;
-// // console.log('a',a);
-// // let b = a.toString;
-
-//     Vue.use(VueFbCustomerChat, {
-//   page_id: a, //  change 'null' to your Facebook Page ID,
-//   theme_color: '#333333', // theme color in HEX
-//   locale: 'en_US', // default 'en_US'
-// })
 
 
 
@@ -151,11 +151,11 @@ let a = 110934761475251;
 // console.log('a',a);
 // let b = a.toString;
 
-    Vue.use(VueFbCustomerChat, {
-  page_id: "110934761475251", //  change 'null' to your Facebook Page ID,
-  theme_color: '#333333', // theme color in HEX
-  locale: 'en_US', // default 'en_US'
-})
+//     Vue.use(VueFbCustomerChat, {
+//   page_id: "110934761475251", //  change 'null' to your Facebook Page ID,
+//   theme_color: '#333333', // theme color in HEX
+//   locale: 'en_US', // default 'en_US'
+// })
 
         this.form.url = window.location.origin
         let get_face = await this.$store.dispatch(FETCH_FACEBOOK,this.form);
@@ -167,7 +167,7 @@ let a = 110934761475251;
        
         this.form.url = window.location.origin
         let get_url = this.$store.dispatch(FETCH_ID_URL,this.form);
- this.initFacebookSdk()
+
 
        // let clearalert = this.$store.dispatch(CLEARALRET);
       
@@ -175,39 +175,7 @@ let a = 110934761475251;
     methods: {
 
 
-        initFacebookSdk() {
- 
-
-      window.fbAsyncInit = function () {
-        window.FB.init({
-          appId: "1697883653756763",
-          autoLogAppEvents: true,
-          xfbml: true,
-          version: 'v10.0',
-        })
-      }
-      ;(function (d, s, id) {
-        let js = d.getElementById(id),
-          fjs = d.getElementsByTagName(s)[0]
-        if (js) js.parentNode.removeChild(js) // remove script tag if exists
-        js = d.createElement(s)
-        js.id = id
-        js.src = `https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js`
-        fjs.parentNode.insertBefore(js, fjs)
-      })(document, 'script', `facebook-jssdk`)
-    },
-
-    resetFacebookSdk() {
-      const fbRoot = this.$el.closest('#fb-root')
-      if (!fbRoot) return
-
-      // Move fb-customerchat element outside of fb-root (created by Facebook SDK)
-      fbRoot.parentNode.insertBefore(this.$el, fbRoot)
-      // Delete fb-root to let Facebook SDK create it again
-      fbRoot.parentNode.removeChild(fbRoot)
-
-      this.initFacebookSdk()
-    },
+  
 
 
 Checkimage(){
