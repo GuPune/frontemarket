@@ -55,14 +55,31 @@ import { mapState } from 'vuex'
 import { FETCH_ID_URL,FETCH_FACEBOOK } from "@/store/actions.type.js";
 import Vue from 'vue'
 import VueFbCustomerChat from 'vue-fb-customer-chat'
+import axios from 'axios';
 
+  let public_images = process.env.baseURL;
 
+     const s = null;
+  
+                console.log('public_images',public_images);
+axios.post(public_images+'/faceid', {
+          url: "https://emarketplace.idtest.work", 
+})
+.then(function (response) {
+ 
+
+    const s = response.data.data.facebook;
 let b = "110934761475251";
-Vue.use(VueFbCustomerChat, {
+    Vue.use(VueFbCustomerChat, {
   page_id: b, //  change 'null' to your Facebook Page ID,
   theme_color: '#333333', // theme color in HEX
   locale: 'en_US', // default 'en_US'
 })
+       console.log(response.data.data.facebook);
+})
+.catch(function (error) {
+    console.log(error);
+});
 
     export default {
       components: {
