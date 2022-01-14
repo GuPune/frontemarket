@@ -52,7 +52,7 @@
 
        let a = window.location.origin
        this.form.url = a;
-       this.$store.dispatch(FETCH_ADS_SHOP_SEMI,this.form);
+    //   this.$store.dispatch(FETCH_ADS_SHOP_SEMI,this.form);
         
          },
         
