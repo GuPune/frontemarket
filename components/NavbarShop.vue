@@ -1,6 +1,6 @@
 <template>
 <div>
-   <b-navbar   :style="{'background-color':objectslayoutshop.color}" class="banav nav-shop-tops">
+   <b-navbar   style="background-color:#EF7318" class="banav nav-shop-tops">
     <b-navbar-brand href="#"></b-navbar-brand>
          <img :src="Checkimage(objectslayoutshop.logo)"  alt=""  class="icon-mobile">
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -12,7 +12,7 @@
       <b-navbar-nav class="ml-auto">
      <b-nav-item :href="objectslayoutshop.link_social_face"  target="_blank"><img  :src="Checkimage(objectslayoutshop.image_face)"  alt="" height="20px" width="20px"></b-nav-item>
      <b-nav-item  :href="objectslayoutshop.link_social_line"><img  :src="Checkimage(objectslayoutshop.image_line)" alt="" height="20px" width="20px"></b-nav-item>
-    <b-nav-item  :href="objectslayoutshop.link_social_instr"><img  :src="Checkimage(objectslayoutshop.image_line)" alt="" height="20px" width="20px"></b-nav-item>
+    <b-nav-item  :href="objectslayoutshop.link_social_instr"><img  :src="Checkimage(objectslayoutshop.image_intra)" alt="" height="20px" width="20px"></b-nav-item>
 
       </b-navbar-nav>
 
@@ -80,7 +80,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
   export default {
     data() {
     return {
-      colors:'',
+      colors:'#F5ECEA',
       IsLogin: false,
       position:'',
             shopitem:null,
@@ -151,7 +151,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
             this.IsLogin = false;
           }
         
-          this.colors = this.objectslayoutshop.navbar_menu_color;
+       //   this.colors = this.objectslayoutshop.navbar_menu_color;
          },
 
       methods: {
@@ -166,11 +166,11 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
       // Any code to be executed when the window is scrolled
 
       if(window.scrollY > 100){
-     this.colors = this.objectslayoutshop.navbar_menu_color_scroll;
+     this.colors = '#EF7318';
   
         this.position = 'top'
       }else {
-     this.colors = this.objectslayoutshop.navbar_menu_color;
+     this.colors = '#F5ECEA';
       this.position = '-'
       }
    
