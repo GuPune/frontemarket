@@ -238,6 +238,7 @@ width: 80px;
 
 }
 
+
 @media screen and (max-width: 350px) {
   .icon-mobile{
 width: 80px;
@@ -252,6 +253,9 @@ width: 80px;
     display: block;
     white-space: nowrap;
     text-overflow: ellipsis;
+    overflow: unset;
+      /* overflow: hidden; */
+       /* width: 50px; */
   }
 
   
