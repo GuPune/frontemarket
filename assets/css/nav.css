@@ -238,6 +238,23 @@ width: 80px;
 
 }
 
+@media screen and (max-width: 375px) {
+
+
+
+  .cart-mobi{
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: unset;
+ 
+  }
+
+  
+
+
+}
+
 
 @media screen and (max-width: 350px) {
   .icon-mobile{
