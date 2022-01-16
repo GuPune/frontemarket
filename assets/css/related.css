@@ -217,7 +217,7 @@ button.button, a.button {
 
  */
 
- .cards-mobile { grid-template-columns: repeat(4, 1fr); }
+ .cards-mobile { grid-template-columns: repeat(5, 1fr); }
 
 .row.product{
     margin-top: 25px;
@@ -450,8 +450,8 @@ font-size: 20px;
   }
 
   .imgproduct-product {
-    width: 290px;
-    height: 290px;
+    width: 200px;
+    height: 200px;
   }
 
 
