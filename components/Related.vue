@@ -19,15 +19,7 @@
 	<em class="">สินค้าทั้งหมด</em>
 			</h2>
         </div>
-         <div class="row">
-    <div class="col">
-    </div>
-    <div class="col">
-    </div>
-    <div class="col relation-all" >
-      ดูสินค้าทั้งหมด 
-    </div>
-  </div>
+        
         <div class="product" id="product">
             <div class="row product">
                  <div class="cards cards-mobile">

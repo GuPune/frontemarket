@@ -12,14 +12,7 @@
 			</h2>
         </div>
  <div>
-          <div class="row">
-    <div class="col">
-    </div>
-    <div class="col">
-    </div>
-    <div class="col relation-all" >
-      ดูร้านค้าทั้งหมด 
-    </div>
+
   </div>
  
      <VueSlickCarousel v-bind="slickOptions"  v-if="items.length">
