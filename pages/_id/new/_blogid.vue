@@ -70,7 +70,9 @@ url:null
    this.form.url = window.location.origin;
    this.form.shop_name = this.$route.params;
    this.form.blog_id = this.$route.params.blogid;
+      let navarshop = await this.$store.dispatch(GET_NAVBAR_SHOP,this.form);
    let blogonly = await this.$store.dispatch(FETCH_BLOG_ONLY,this.form);
+   
    this.content = this.blogonly
 
         },

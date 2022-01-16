@@ -142,7 +142,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
 
        let shopby = await this.$store.dispatch(GET_SHOP_BY_ITEM,this.form);
         this.shopitem = shopby;
-     console.log('this.shopitem',this.shopitem);
+
 
           if(checker){
             this.IsLogin = true;

@@ -38,7 +38,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Categoriesbyshop from "@/components/Categoriesbyshop";
 import Productbyshop from "@/components/Productbyshop";
-import { GET_ABOUT } from "@/store/actions.type.js";
+import { GET_ABOUT,GET_NAVBAR_SHOP } from "@/store/actions.type.js";
 import AdsShop from "@/components/AdsShop"
 import { mapGetters } from "vuex";
 import Adsmini from "@/components/Adsmini"
@@ -81,9 +81,13 @@ console.log('this.$route.name',this.$route.name);
    
    this.form.url = window.location.origin;
    this.form.shop_name = this.$route.params;
+   let navarshop = await this.$store.dispatch(GET_NAVBAR_SHOP,this.form);
    let a = await this.$store.dispatch(GET_ABOUT,this.form);
+
    this.content = this.about
    this.loadding = false
+
+
         },
 
          methods: {
