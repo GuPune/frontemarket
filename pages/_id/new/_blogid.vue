@@ -29,7 +29,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Categoriesbyshop from "@/components/Categoriesbyshop";
 import Productbyshop from "@/components/Productbyshop";
-import { GET_ABOUT,FETCH_BLOG_ONLY } from "@/store/actions.type.js";
+import { GET_ABOUT,FETCH_BLOG_ONLY,GET_NAVBAR_SHOP } from "@/store/actions.type.js";
 import AdsShop from "@/components/AdsShop"
 import { mapGetters } from "vuex";
 import Adsmini from "@/components/Adsmini"
