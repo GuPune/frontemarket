@@ -445,7 +445,7 @@ padding-left: 15px;
 
   .product-name-first{
 margin-top: 10px;
-font-size: 20px;
+font-size: 16px;
 
   }
 
@@ -599,7 +599,7 @@ button.addcart:hover {
 @media (max-width: 420px) {
 
   .imgproduct-product{
-    width:150px;
+    width:170px;
     height:150px;
   } 
   .im-rela-mobile{
