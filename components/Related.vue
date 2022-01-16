@@ -41,12 +41,15 @@
 
                                                               <div class="row">
                                                               <div class="col"> <div class="price rela-left">฿{{formatPrice(item.price)}}</div></div>
+                                                              <!--
                                                               <div class="col">
                                                                <div class="price price-mini">
                                                              <span class="price-mini-decoration">฿{{item.price}}.00</span>
                                                              <span>-56%</span>
                                                              </div>
                                                               </div>
+
+                                                              -->
                                                               </div>
 
                                              
