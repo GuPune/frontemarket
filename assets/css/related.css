@@ -280,6 +280,17 @@ padding-left: 15px;
 
 
 
+  @media screen and (max-width: 350px) {
+    .button.btn-cart span span {
+      font-size: 10px;
+  
+  }
+  
+  }
+
+
+
+
 /* .row.product{
 
 } */
