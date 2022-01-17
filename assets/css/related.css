@@ -280,7 +280,7 @@ padding-left: 15px;
 
 
 
-  @media screen and (max-width: 350px) {
+  @media screen and (max-width: 320px) {
     .button.btn-cart span span {
       font-size: 10px;
   
