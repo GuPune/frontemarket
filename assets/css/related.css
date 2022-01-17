@@ -666,6 +666,18 @@ button.addcart:hover {
  }
 
 
+ 
+@media (max-width: 375px) {
+
+  .imgproduct-product{
+    width:150px;
+    height:150px;
+  } 
+
+ }
+
+
+
 
  @media (min-width: 602px) and (max-width: 900px) { 
 
