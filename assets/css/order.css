@@ -475,6 +475,11 @@ margin-top: 30px;
       display: none; 
     }
 
+    .ipad-site{
+      flex: 0 0 100%;
+      max-width: 100%;
+  }
+
 
     
 
