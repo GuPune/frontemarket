@@ -450,6 +450,16 @@ margin-top: 30px;
 
   }
 
+  @media screen and (max-width: 900px) {
+
+  
+    .ipad-site{
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+  }
+
+
   @media screen and (max-width: 1400px) {
     .shop-name-order-pc{
       display:none;
