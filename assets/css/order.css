@@ -460,6 +460,12 @@ margin-top: 30px;
 
     }
 
+    .cart-mobile-dis{
+      /* justify-content: center; */
+      display: none; 
+    }
+
+
     
 
   }
