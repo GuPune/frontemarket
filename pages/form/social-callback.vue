@@ -20,7 +20,7 @@ export default {
         this.$auth.setStrategy('local');
         this.$auth.fetchUser().then( () => {
 
-       
+       location.reload();
           //  return this.$router.push('/').catch(err=>err);
         }).catch( (e) => {
             this.$auth.logout();
