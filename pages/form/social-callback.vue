@@ -20,8 +20,8 @@ export default {
         this.$auth.setStrategy('local');
         this.$auth.fetchUser().then( () => {
 
-       location.reload();
-          //  return this.$router.push('/').catch(err=>err);
+     
+      this.$router.push({ name: 'index' })
         }).catch( (e) => {
             this.$auth.logout();
             return this.$router.push(`/auth/${this.$route.query.origin ? this.$route.query.origin : 'register'}?error=1`);
