@@ -13,6 +13,10 @@ body {
 
 }
 
+.container {
+  text-align: left;
+}
+
 .nav-link a {
 color: black !important;
 }
