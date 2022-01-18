@@ -21,7 +21,7 @@ export default {
         this.$auth.fetchUser().then( () => {
 
        
-            return this.$router.push('/').catch(err=>err);
+          //  return this.$router.push('/').catch(err=>err);
         }).catch( (e) => {
             this.$auth.logout();
             return this.$router.push(`/auth/${this.$route.query.origin ? this.$route.query.origin : 'register'}?error=1`);
