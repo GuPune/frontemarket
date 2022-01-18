@@ -204,7 +204,7 @@
     
     <b-navbar toggleable="sm" type="dark"   :style="{'background-color':objectslayout.color}" class="banav navbar-fixed-top" fixed="top">
     <b-navbar-brand  @click="redirectTo('index')">
-   <img src="../assets/logo-njoy.png"  alt=""  class="icon-mobile">
+   <img src="../assets/ROGO_THAIONSON.png"  alt=""  class="icon-mobile">
     </b-navbar-brand>
     <b-navbar-brand href="#" class="cart-mobi"  @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i><span style="font-size:14px"> ({{ cartTotal }})  ตะกร้าสินค้า </span></b-nav-item></b-navbar-brand>
       
