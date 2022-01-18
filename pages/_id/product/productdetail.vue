@@ -109,7 +109,10 @@
 
  
  
- <div class="marginInner mb-4 mb-md-4"><div class="dividerFix"></div></div>
+ <div class="marginInner mb-4 mb-md-4">
+ <div class="dividerFix">
+ </div>
+ </div>
  <div class="row">
                 <div class="col-md-12">
                     <div class="form-group h5">
@@ -121,23 +124,22 @@
                     </div>
                 </div>
             </div>
+
+
+
+             <div class="row">
+                <div class="col-md-4 col-sm-12 pta-detau">
+      <b-button size="md" variant="outline-warning" class="pro-des-btt" @click="addToCart(product_by_item)"><i class="fa fa-shopping-cart fa-1x">&nbsp;</i>เพิ่มลงตะกร้า</b-button>
+
+                </div>
+
+                  <div class="col-md-4 col-sm-12 pta-detau">
+    <b-button size="md" variant="danger" class="pro-des-btt">ซื้อสินค้า</b-button>
+                </div>
+            </div>
     
-            <div class="marginInner d-md-none mb-4 mb-md-0">
-                                    <div class="dividerFix">
-                                  
-                                    </div>
-                            </div>
-                        <div class="button-wrapper">
-                                    <div class="my-col-12 col-md-4 col-lg-4 pl-0">
+      
                     
-                          <b-button size="md" variant="outline-warning" class="pro-des-btt" @click="addToCart(product_by_item)"><i class="fa fa-shopping-cart fa-1x">&nbsp;</i>เพิ่มลงตะกร้า</b-button>
-                    </div>
-                                        <div class="my-col-12 col-md-4 col-lg-4 pl-0">
-           
-                          <b-button size="md" variant="danger" class="pro-des-btt">ซื้อสินค้า</b-button>
-                    </div>
-                    
-                    </div>
 
 
               </div> 
@@ -236,7 +238,7 @@
             form:{
 
             },
-  add:0
+  add:1
     };
   },
       components: {

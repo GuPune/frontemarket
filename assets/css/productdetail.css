@@ -193,3 +193,16 @@ padding-left:30px ;
         
 
  }
+
+ @media screen and (max-width: 600px) {
+
+  
+    .pro-des-btt{
+        width: 100%;
+    
+    
+    }
+    .pta-detau{
+        padding: 5px;
+    }
+  }
