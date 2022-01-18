@@ -349,7 +349,6 @@ width: 50%!important;
     }
     .shop-name-order-pc{
       display:none;
-
     }
     .cart-row-order-mobile{
       padding-top:10px;
@@ -447,6 +446,13 @@ margin-top: 30px;
     .cart-mobile-dis{
       /* justify-content: center; */
       display: none; 
+    }
+
+  }
+
+  @media screen and (max-width: 1400px) {
+    .shop-name-order-pc{
+      display:none;
     }
 
   }
