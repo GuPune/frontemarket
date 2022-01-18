@@ -330,8 +330,8 @@ width: 50%!important;
     }
     
     .cart-mobile-dis{
-      justify-content: center;
-      /* display: none; */
+      /* justify-content: center; */
+      display: none; 
     }
     .order-picture-mobile{
 
