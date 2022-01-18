@@ -20,7 +20,7 @@
                                                     <li class="breadcrumb-item "  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
                                                                     <a itemscope itemtype="https://schema.org/Thing" itemprop="item"
                                        alt="คลิกไปที่ สินค้าทั้งหมด" title="คลิกไปที่ สินค้าทั้งหมด" id="2">
-                                        <span itemprop="name"  @click="redirectTo(product_by_item.user_id)">{{product_by_item.shop_name}}</span>
+                                        <span itemprop="name"  @click="redirectTo(product_by_item.shop_name)">{{product_by_item.shop_name_title}}</span>
                                     </a>
                                    
                                  
@@ -168,16 +168,22 @@
                     </div>
                 </div>
 
-                    <div class="row">
-                    </div>
+                  
                     <div class ="row"> 
+<div class="col-12">
+
                     <b-tabs class="product-detail-tab"><b-tab active>
                     <template #title><b-spinner type="grow" small></b-spinner> 
-                    คุณสมบัติ
+                    ข้อมูลสินค้า
                     </template><p class="p-3" >
                  
                     <p><span v-html="product_by_item.details"></span></p></p>
-                    </b-tab></b-tabs></div>
+                    </b-tab></b-tabs>
+                    
+                  </div>
+     
+                    
+                    </div>
  
 
                   

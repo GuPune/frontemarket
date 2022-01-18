@@ -112,7 +112,7 @@ const actions = {
     async [FETCH_BY_PRODUCT_SHOP_ONE_ITEM](context,payload) {
            const { data } = await ProductService.getproductbyitem(payload);
          
-    
+   
          context.commit(SET_BY_PRODUCT_SHOP_ONE_ITEM,data);
           return data;
     },   
@@ -188,6 +188,7 @@ const mutations = {
         state.images.thumbs = state.product_by_item.thumbs
         state.images.normal_size = state.product_by_item.normal_size
         state.images.large_size = state.product_by_item.large_size
+        console.log('product_by_item',state.product_by_item);
        
     },
 
