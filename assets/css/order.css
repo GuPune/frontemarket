@@ -333,6 +333,10 @@ width: 50%!important;
       /* justify-content: center; */
       display: none; 
     }
+
+    .cart-aamob-dis{
+  justify-content: center;
+    }
     .order-picture-mobile{
 
     height: 200px;

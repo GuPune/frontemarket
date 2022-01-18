@@ -13,7 +13,7 @@
                   </h2>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="cart-row cart-row-top hidden-xs cart-row-order-mobile">
-                        <div class="row"  v-if="cart.length == 0">
+                        <div class="row cart-aamob-dis"  v-if="cart.length == 0">
                             <div class="col-xs-12 col-sm-5 col-md-12 col-lg-12">
                                 <div class="row">
                                        <div class="card-body">
@@ -116,7 +116,7 @@
          <div class="row shop-name-order-mobile">
             <div class="row">
                 <div class="col-10 shop-name-order">
-                        <h5>{{item.shop_name_title}}</h5>
+                        <h5>ชื่อร้าน : xxxxxx</h5>
                  </div>
            
             <div class="col-2 shop-name-order trash-mobile">
