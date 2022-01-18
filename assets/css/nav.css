@@ -321,6 +321,17 @@ display: block;
     display: none;
   }
 
+  .icon-mobile{
+    width: 60px;
+        height: 60px;
+ }
+
+ .nav-regishop-mobile{
+  display: none;
+  font-size: 16px;
+}
+
+
 }
  
 
