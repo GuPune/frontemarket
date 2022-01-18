@@ -327,8 +327,11 @@ display: block;
  }
 
  .nav-regishop-mobile{
-  display: none;
   font-size: 16px;
+}
+.nav-regishop-ipad{
+  display: none;
+
 }
 
 

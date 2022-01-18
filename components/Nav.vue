@@ -245,7 +245,7 @@
       
 
 
-       <b-col cols="1" md="1"  sm="2" class="nav-regishop-mobile px-2" style="max-width: 16.7777%">
+       <b-col cols="1" md="1"  sm="2" class="px-2 nav-regishop-ipad" style="max-width: 16.7777%">
           <b-navbar-brand href="#"  @click="redirectTo('form-shopregis')" style="font-size: 14px;">{{objectslayout.textsellermyshop}}</b-navbar-brand>
       </b-col>
         <b-col cols="1" md="1"  sm="1" class="nav-regishop-mobile px-2">
