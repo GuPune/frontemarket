@@ -439,10 +439,17 @@ margin-top: 30px;
 }
 
 
+  }
 
-
-
+  @media screen and (max-width: 767px) {
+    
+    
+    .cart-mobile-dis{
+      /* justify-content: center; */
+      display: none; 
+    }
 
   }
+
 
   

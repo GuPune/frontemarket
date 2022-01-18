@@ -81,7 +81,7 @@
             </div>
         
 
-            <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
+            <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
                 <div class="row shop-name-order-pc">
                     <div class="col-xs col-sm-3 col-md-3 col-lg-3">
                                  <div class="tax-excl text-mobile "><span class="cart-price"><span class="price">฿{{formatPrice(item.price)}}
