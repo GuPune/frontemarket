@@ -411,7 +411,13 @@ display: block;
   }
 
 
+}
 
-
+@media screen and (max-width: 1200px) {
+  .icon-mobile{
+    width: 60px;
+        height: 60px;
+ }
 
 }
+ 
