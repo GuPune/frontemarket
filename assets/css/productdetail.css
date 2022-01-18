@@ -206,3 +206,15 @@ padding-left:30px ;
         padding: 5px;
     }
   }
+
+  @media screen and (max-width: 375px) {
+
+  
+    .preview-box{
+width: 300px;
+    }
+  }
+
+
+
+  
