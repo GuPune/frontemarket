@@ -328,9 +328,10 @@ width: 50%!important;
 
     text-align: center;
     }
+    
     .cart-mobile-dis{
-
-      display: none;
+      justify-content: center;
+      /* display: none; */
     }
     .order-picture-mobile{
 

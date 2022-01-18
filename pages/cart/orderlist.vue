@@ -13,7 +13,7 @@
                   </h2>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="cart-row cart-row-top hidden-xs cart-row-order-mobile">
-                        <div class="row cart-mobile-dis"  v-if="cart.length == 0">
+                        <div class="row"  v-if="cart.length == 0">
                             <div class="col-xs-12 col-sm-5 col-md-12 col-lg-12">
                                 <div class="row">
                                        <div class="card-body">
