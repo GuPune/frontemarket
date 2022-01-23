@@ -5,11 +5,27 @@
          <img :src="Checkimage(objectslayoutshop.logo)"  alt=""  class="icon-mobile">
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-    <b-collapse id="nav-collapse" is-nav>
 
+
+    <b-collapse id="nav-collapse" is-nav>
+   <b-col cols="8" md="8"  sm="3" class="nav-form-search nav-search">
+        <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?" v-model="form.search"></b-form-input>
+      </b-col>
+       <b-col cols="4" md="2"  sm="3" class="nav-form-search">
+  <b-form-select v-model="selected" :options="options"></b-form-select>
+      </b-col>
+             <b-col cols="1" md="1"  sm="1" class="nav-form-search">
+    
+
+  <b-button variant="outline-primary ic-nav-bg-white" @click="Search()">   <i class="fas fa  fas fa-search ic-nav-black" aria-hidden="true"></i></b-button>
+
+      </b-col>
 
       <!-- Right aligned nav items -->
+
       <b-navbar-nav class="ml-auto">
+
+      
      <b-nav-item :href="objectslayoutshop.link_social_face"  target="_blank"><img  :src="Checkimage(objectslayoutshop.image_face)"  alt="" height="20px" width="20px"></b-nav-item>
      <b-nav-item  :href="objectslayoutshop.link_social_line"><img  :src="Checkimage(objectslayoutshop.image_line)" alt="" height="20px" width="20px"></b-nav-item>
     <b-nav-item  :href="objectslayoutshop.link_social_instr"><img  :src="Checkimage(objectslayoutshop.image_intra)" alt="" height="20px" width="20px"></b-nav-item>
@@ -18,8 +34,12 @@
 
       
     </b-collapse>
+
+    
     
   </b-navbar>
+
+  
 
   
 
@@ -28,7 +48,7 @@
        <img :src="Checkimage(objectslayoutshop.logo)" alt=""  class="icon-mobile">
     </div>
     </b-navbar-brand>
-      <b-navbar-brand href="#">
+      <b-navbar-brand href="#" class="navshop-mobile-search">
         <b-row>
      <b-col cols="10" md="8"  sm="12" class="nav-form-search nav-search">
         <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?" v-model="form.search"></b-form-input>
@@ -98,6 +118,10 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
         search:"",
       },
 
+      options: [
+          { value: 'a', text: 'สินค้า'},
+          { value: 'b', text: 'ร้านค้า' },
+        ]
     };
   },
 

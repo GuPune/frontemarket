@@ -203,6 +203,10 @@ select option {
   display: none;
 }
 
+.navshop-mobile-search{
+  display: none;
+}
+
 
     .icon-mobile{
       width: 200px;
@@ -217,6 +221,10 @@ border-radius: 0px;
 
    .nav-first-s{
     justify-content: normal;
+   }
+
+   .nav-sell{
+     display: none;
    }
     
 @media screen and (max-width: 400px) {
@@ -236,6 +244,8 @@ width: 80px;
     overflow: hidden;
     text-overflow: ellipsis;
   } */
+
+
 
   
 
@@ -312,6 +322,14 @@ width: 80px;
   .navshop-mobiles{
 
     background-color: #EF7318!important;
+  }
+
+  .navshop-mobile-search{
+    display: block;
+  }
+
+  .nav-sell{
+    display: block;
   }
 
 
