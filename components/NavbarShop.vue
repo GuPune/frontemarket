@@ -23,15 +23,25 @@
 
   
 
-   <b-navbar toggleable="sm"   :style="{'background-color':colors}"  class="banav navbar-fixed-top" :fixed="position" v-on:scroll.native="handleScroll">
+   <b-navbar toggleable="sm"   style="{'background-color':colors}"  class="banav navbar-fixed-top navshop-mobiles" :fixed="position" v-on:scroll.native="handleScroll">
     <b-navbar-brand href="#"><div class="shop-name-nav-mobile">
        <img :src="Checkimage(objectslayoutshop.logo)" alt=""  class="icon-mobile">
-    </div></b-navbar-brand>
+    </div>
+    </b-navbar-brand>
+      <b-navbar-brand href="#">
+        <b-row>
+     <b-col cols="10" md="8"  sm="12" class="nav-form-search nav-search">
+        <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?" v-model="form.search"></b-form-input>
 
-        <b-navbar-brand href="#" @click="redirectTo('cart-orderlist')"><div class="shop-name-nav-mobile">
-  <i class="fas fa fa-cart-plus" aria-hidden="true"></i>
-                    <span> ({{ cartTotal }})</span>
-    </div></b-navbar-brand>
+      </b-col>
+     <b-col cols="2" md="8"  sm="12" class="nav-form-search nav-search">
+                         <b-button variant="outline-primary ic-nav-bg-white" @click="Search()">   <i class="fas fa  fas fa-search ic-nav-black" aria-hidden="true"></i></b-button>
+
+      </b-col>
+  </b-row>
+      
+
+    </b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -84,8 +94,8 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
       IsLogin: false,
       position:'',
             shopitem:null,
-      form:{
-
+     form:{
+        search:"",
       },
 
     };

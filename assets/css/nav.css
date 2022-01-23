@@ -41,6 +41,10 @@
   text-decoration: none !important
 }
 
+.navshop-mobiles{
+
+  background-color: #e0e0cd!important;
+}
 
 
 
@@ -304,6 +308,10 @@ width: 80px;
   }
   .nav-regishop-mobile{
     display: none;
+  }
+  .navshop-mobiles{
+
+    background-color: #EF7318!important;
   }
 
 

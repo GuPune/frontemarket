@@ -234,8 +234,6 @@
       </b-col>
        <b-col cols="3" md="1"  sm="3" class="nav-form-search">
   <b-form-select v-model="selected" :options="options"></b-form-select>
-   
-
       </b-col>
              <b-col cols="1" md="1"  sm="1" class="nav-form-search">
     
