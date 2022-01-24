@@ -254,6 +254,7 @@ width: 80px;
 
 }
 
+
 @media screen and (max-width: 375px) {
 
 
@@ -312,6 +313,8 @@ width: 80px;
 
 
 
+
+
 @media screen and (max-width: 500px) {
   .icon-mobile{
 width: 80px;
@@ -348,6 +351,13 @@ width: 80px;
   .nav-sell{
     display: block;
   }
+
+  
+  .nav-sell{
+    font-size: 10px;
+  }
+
+
 
 
 
@@ -413,6 +423,7 @@ width: 80px;
   }
   .cart-mobi{
     display: block;
+    font-size: 10px;
   }
 
    .subst-mobile
