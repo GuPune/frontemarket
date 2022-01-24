@@ -206,13 +206,13 @@
     <b-navbar-brand  @click="redirectTo('index')">
    <img src="../assets/ROGO_THAIONSON.png"  alt=""  class="icon-mobile">
     </b-navbar-brand>
-              <b-navbar-brand href="#" class="nav-sell"  @click="redirectTo('form-shopregis')" style="font-size: 14px;">{{objectslayout.textsellermyshop}}</b-navbar-brand>
+              <b-navbar-brand href="#" class="nav-sell"  @click="redirectTo('form-shopregis')" >{{objectslayout.textsellermyshop}}</b-navbar-brand>
 
-    <b-navbar-brand href="#" class="cart-mobi"  @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i><span style="font-size:14px"> ({{ cartTotal }})  ตะกร้าสินค้า </span></b-nav-item></b-navbar-brand>
+    <b-navbar-brand href="#" class="cart-mobi"  @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i><span> ({{ cartTotal }})  ตะกร้าสินค้า </span></b-nav-item></b-navbar-brand>
       
       <b-navbar-nav>
 
-   <b-nav-item  class="cart-mobi" v-if="!isLogins" @click="redirectTo('form-login')">{{objectslayout.textlogin}}</b-nav-item>
+   <b-nav-item  class="cart-mobi"  v-if="!isLogins" @click="redirectTo('form-login')">{{objectslayout.textlogin}}</b-nav-item>
 
       </b-navbar-nav>
 
