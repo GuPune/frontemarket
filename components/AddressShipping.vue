@@ -61,23 +61,83 @@
 
 
          <div class="modal-body">
-          <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>ที่อยู่</th>
-        <th></th>
-    
-      </tr>
-    </thead>
-    <tbody>
-      <tr  v-for="(item, index) in items" :key="item.id">
-        <td> <input type="radio" :value="item.id" v-model="selectedAdd"  @change="changeAdd($event)"></td>
-        <td> {{item.address}}, ต.{{item.sub_districts_id}}  อ.{{item.districts_id}}  จังหวัด.{{item.province_id}}</td>
-     
-     </tr>
-     
-    </tbody>
-  </table>
+ <form name="formEditAddressShipping" id="formEditAddressShipping" method="POST">
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-6">
+                        <div class="form-group">
+                            <label for="textMemberName" class="font-weight-bold">ชื่อ</label>
+                            <input type="text" class="form-control" id="textMemberName" name="textMemberName">
+                            <div class="invalid-feedback" id="divError_textMemberName"></div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-6">
+                        <div class="form-group">
+                            <label for="textPhoneNumber" class="font-weight-bold">หมายเลขโทรศัพท์</label>
+                            <input type="text" class="form-control" id="textPhoneNumber" name="textPhoneNumber"  />
+                            <div class="invalid-feedback" id="divError_textPhoneNumber"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label for="textEditAddress" class="font-weight-bold">ที่อยู่</label>
+                            <textarea class="form-control" id="textEditAddress" name="textEditAddress" rows="3" ></textarea>
+                            <div class="invalid-feedback" id="divError_textEditAddress"></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="row thaiPanel">
+                    <div class="col-12 col-md-6 col-lg-3 alotcolerror">
+                        <div class="form-group">
+                            <label class="label-bold font-weight-bold">
+                                รหัสไปรษณีย์                            </label>
+                            <input class="form-control" type="text" id="customerPostal" name="customerPostal[thai]" />
+                            <div class="invalid-feedback" id="divError_customerPostal"></div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 alotcolerror">
+                        <div class="form-group">
+                            <label class="label-bold font-weight-bold">
+                                จังหวัด                            </label>
+                           
+                            <div class="invalid-feedback" id="divError_customerRegionsID"></div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 alotcolerror">
+                        <div class="form-group">
+                            <label class="label-bold font-weight-bold">
+                                เขต/อำเภอ                            </label>
+                          
+                            <div class="invalid-feedback" id="divError_customerDistrictID"></div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3 alotcolerror">
+                        <div class="form-group">
+                            <label class="label-bold font-weight-bold">
+                                แขวง/ตำบล                            </label>
+                          
+                            <div class="invalid-feedback" id="divError_customerSubDistrictID"></div>
+                        </div>
+                    </div>
+                  
+                </div>
+
+                <div class="row AddressPanel"></div>
+                <input type="hidden" id="isCustomize" value="0" />
+
+         
+                <div class="row">
+                    <div class="col-12">
+                        <button type="button" class="btn btn-style px-4" id="btnSaveAdress" >
+                            บันทึก                        </button>&nbsp;&nbsp;&nbsp;
+                        <button type="button" class="btn px-4" id="btncancelAdress">
+                            ยกเลิก                        </button>
+                                                    <input type="hidden" name="task" value="saveaddaddressshipform">
+                                            </div>
+                </div>
+            </form>
   </div>
   
       
