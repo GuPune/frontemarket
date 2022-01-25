@@ -93,7 +93,14 @@
                         <div class="form-group">
                             <label class="label-bold font-weight-bold">
                                 รหัสไปรษณีย์                            </label>
-                            <input class="form-control" type="text" id="customerPostal" name="customerPostal[thai]" />
+                            <input class="form-control" type="text" id="customerPostal" name="customerPostal[thai]"
+                            :class="{ 'is-invalid': $v.form.zipcode.$error}"
+                                  :error-messages="ZipcodeErrors"
+                                            required
+                                            @input="$v.form.zipcode.$touch()"
+                                            @blur="$v.form.zipcode.$touch()"
+                             v-model="form.zipcode" 
+                            />
                             <div class="invalid-feedback" id="divError_customerPostal"></div>
                         </div>
                     </div>
