@@ -459,15 +459,11 @@ this.send();
             this.$store.dispatch(SAVE_ADDRESS_BY_ID, this.form)
             .then((response) => response.content ==  "สำเร็จ" ? this.success() : this.error())
             .catch((error) => console.log(error))
-        this.form.pros_id = '';
-        this.form.dist_id = '';
-        this.form.address = '';
-        this.form.name = '';
-        this.form.zipcode = '';
-        this.form.tel = '';
+
+
     
 
-             await this.fetchaddress(); 
+          //   await this.fetchaddress(); 
         },
 
     error() {
@@ -482,6 +478,14 @@ this.send();
       },
 
     success() {
+        this.form.pros_id = '';
+        this.form.dist_id = '';
+        this.form.address = '';
+        this.form.name = '';
+        this.form.zipcode = '';
+        this.form.tel = '';
+
+
            setTimeout(() =>
                 this.$swal.fire({
                     type: "success",
