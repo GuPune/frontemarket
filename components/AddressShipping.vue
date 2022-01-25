@@ -322,6 +322,16 @@ export default {
 
       methods: {
 
+              async isNumber(event, message) {
+           
+                if (!/\d/.test(event.key) &&  
+                    (event.key !== "." || /\./.test(message))  
+                    )  
+                return event.preventDefault();  
+
+                
+        },
+
                  async ChangeProvinces(event){
              this.pros_id = event.target.value;
         let districts = await this.$store.dispatch(GET_DISTRICTS,this.pros_id);
@@ -427,14 +437,56 @@ this.form.select_shipping = event.target.value
         // Rows are indexed from 0, so the third row is index 2
         this.$refs.selectableTable.unselectRow(2)
       },
-            save(){
-
-                this.$v.$touch();
-  alert('ok');
-
+     save(){
+      this.$v.$touch();
+      this.form.customer_id = this.profile.id;
+        this.form.pros_id = this.pros_id;
+        this.form.dist_id = this.dist_id;
+        this.form.subdist_id = this.subdist_id;
+            if (this.$v.form.$pending || this.$v.form.$error) return;
+            if (this.form.pros_id == '' || this.form.pros_id == '' || this.form.subdist_id == ''){
+               
+ this.error()
+                return false;
+            }
+           this.form.customer_id = this.profile.id;
+this.send();
 
 
       },
+
+        send() {
+            this.$store.dispatch(SAVE_ADDRESS_BY_ID, this.form)
+            .then((response) => response.content ==  "สำเร็จ" ? this.success() : this.error())
+            .catch((error) => console.log(error))
+        },
+
+    error() {
+            this.$swal({
+                type: "error",
+                title: "บันทึกไม่สำเร็จ กรุณากรอกข้อมูลให้ครบ",
+                showConfirmButton: true,
+                reverseButtons: true
+            });
+
+
+      },
+
+    success() {
+           setTimeout(() =>
+                this.$swal.fire({
+                    type: "success",
+                    title: "ส่งข้อมูลเรียบร้อยแล้ว",
+                    showConfirmButton: false,
+                    timer: 1500
+                }),
+                1500
+            );
+
+            this.redirectTo();
+          
+     
+        },
     
   }
        
