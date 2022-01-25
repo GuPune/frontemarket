@@ -141,12 +141,12 @@
                 <input type="hidden" id="isCustomize" value="0" />
 
          
-                <div class="row" hidden>
+                <div class="row" >
                     <div class="col-12">
                         <button type="button" class="btn btn-style px-4" id="btnSaveAdress" >
                             บันทึก                        </button>&nbsp;&nbsp;&nbsp;
-                        <button type="button" class="btn px-4" id="btncancelAdress">
-                            ยกเลิก                        </button>
+                        <!-- <button type="button" class="btn px-4" id="btncancelAdress">
+                            ยกเลิก                        </button> -->
                                                     <input type="hidden" name="task" value="saveaddaddressshipform">
                                             </div>
                 </div>
@@ -169,7 +169,7 @@
 
 <script>
 import { mapGetters,mapState } from "vuex";
-import { FETCH_GET_PROFILE,FETCH_ADDRESS_BY_ID,FETCH_ADDRESS,UPDATE_ADDRESS_SHIPPING,SELECT_SHIPPING} from "@/store/actions.type.js";
+import { FETCH_GET_PROFILE,FETCH_ADDRESS_BY_ID,FETCH_ADDRESS,UPDATE_ADDRESS_SHIPPING,SELECT_SHIPPING,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,SAVE_ADDRESS_BY_ID} from "@/store/actions.type.js";
 import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
 import RingLoader from 'vue-spinner/src/RingLoader.vue'
 import BounceLoader from 'vue-spinner/src/BounceLoader.vue'
