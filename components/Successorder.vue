@@ -770,7 +770,7 @@ this.isHiddenUpload = true;
  this.isHiddenUploadSlip = true;
   this.myModel = false;
 
-
+  this.success();
 //     let a = window.location.origin
 //    this.form.url = a;
 //    this.form.cartnumber = this.objectss.cartnumber;
@@ -778,6 +778,23 @@ this.isHiddenUpload = true;
     // let order_data = await this.$store.dispatch(GET_ORDER_DATA_HISTORY,this.form);
               
       },
+
+          success() {
+
+           setTimeout(() =>
+                this.$swal.fire({
+                    type: "success",
+                    title: "ส่งข้อมูลเรียบร้อยแล้ว",
+                    showConfirmButton: false,
+                    timer: 1500
+                }),
+                1500
+            );
+
+         //   this.redirectTo();
+          
+     
+        },
 
         orderstatus(names){
 
