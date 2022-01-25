@@ -5,7 +5,7 @@
         <h2 class="shoping-cart-title bg-order"><span>ที่อยู่ในการจัดส่ง </span>
             <span id="showLinkChangeAddress">
             <a class="linkChangeAddress">  <b-button v-b-modal.modal-1 class="bt-ship"  @click="showModal()">เปลี่ยนที่อยู่</b-button></a>
-                   <a class="linkChangeAddress">  <b-button class="bt-ship">เพิ่มที่อยู่</b-button></a>
+                   <a class="linkChangeAddress">  <b-button v-b-modal.modal-2 class="bt-ship">เพิ่มที่อยู่</b-button></a>
             </span>
         </h2>
                         <div class="card-body">
@@ -27,6 +27,36 @@
     </div>    
 
       <b-modal id="modal-1"  title="เลือกที่อยู่ในการจัดส่ง" size="lg">
+        <div>
+
+
+         <div class="modal-body">
+          <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ที่อยู่</th>
+        <th></th>
+    
+      </tr>
+    </thead>
+    <tbody>
+      <tr  v-for="(item, index) in items" :key="item.id">
+        <td> <input type="radio" :value="item.id" v-model="selectedAdd"  @change="changeAdd($event)"></td>
+        <td> {{item.address}}, ต.{{item.sub_districts_id}}  อ.{{item.districts_id}}  จังหวัด.{{item.province_id}}</td>
+     
+     </tr>
+     
+    </tbody>
+  </table>
+  </div>
+  
+      
+  </div>
+     
+      </b-modal>
+
+
+    <b-modal id="modal-2"  title="เลือกที่อยู่ในการจัดส่ง" size="lg">
         <div>
 
 
