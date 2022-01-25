@@ -101,6 +101,11 @@
                         <div class="form-group">
                             <label class="label-bold font-weight-bold">
                                 จังหวัด                            </label>
+                                  <select class="form-control" name="customerRegionsID" id="customerRegionsID" @change="ChangeProvinces($event)" >
+                                <option value="">- เลือก-</option>
+                                  <option :value="province.id"  v-for="(province, index) in provin" :key="province.id" >{{province.name_en}}</option>
+                                                             
+                             </select>
                            
                             <div class="invalid-feedback" id="divError_customerRegionsID"></div>
                         </div>
@@ -109,6 +114,10 @@
                         <div class="form-group">
                             <label class="label-bold font-weight-bold">
                                 เขต/อำเภอ                            </label>
+                                  <select class="form-control" name="customerDistrictID" id="customerDistrictID"  @change="ChangeDistris($event)">
+                                <option value="">- เลือก - </option>
+                                <option :value="distris.id"  v-for="(distris, index) in distri" :key="distris.id" >{{distris.name_en}} </option>
+                                                            </select>
                           
                             <div class="invalid-feedback" id="divError_customerDistrictID"></div>
                         </div>
@@ -117,6 +126,10 @@
                         <div class="form-group">
                             <label class="label-bold font-weight-bold">
                                 แขวง/ตำบล                            </label>
+                                               <select class="form-control" name="x" id="x"  @change="ChangeSubDistris($event)">
+                                <option value="">- เลือก - </option>
+                                  <option :value="subdi.id"  v-for="(subdi, index) in subdis" :key="subdi.id" >{{subdi.name_en}}</option>
+                                                            </select>
                           
                             <div class="invalid-feedback" id="divError_customerSubDistrictID"></div>
                         </div>
@@ -187,7 +200,16 @@ export default {
         selectMode: 'single',
         selected: '',
         selectedAdd: '',
-        detailAddress:''
+        detailAddress:'',
+         district:"",
+    Subdistrict:"",
+    province:"",
+     provin:"",
+      pros_id:"",
+      dist_id:"",
+      subdist_id:"",
+      distri:"",
+      subdis:"",
       }
     },
       
@@ -195,6 +217,15 @@ export default {
       
            
               },
+
+                 async created(){
+           
+           
+        let provinces = await this.$store.dispatch(GET_PROVINCES);
+
+        this.provin = provinces;
+        },
+        
              
       async mounted() {
  await this.fetchaddress(); 
@@ -205,6 +236,26 @@ export default {
         },
 
       methods: {
+
+                 async ChangeProvinces(event){
+             this.pros_id = event.target.value;
+        let districts = await this.$store.dispatch(GET_DISTRICTS,this.pros_id);
+           this.distri = districts;
+           this.subdis = '';
+          },
+
+         async ChangeDistris(event){
+             this.dist_id = event.target.value;
+
+       let subdistrct = await this.$store.dispatch(GET_SUBDISTRICTS,this.dist_id);
+   
+          this.subdis = subdistrct;
+          },
+          async ChangeSubDistris(event){
+
+       this.subdist_id = event.target.value;
+          
+          },
         changeAdd(event){
           this.form.url = window.location.origin;
           this.form.user_id = this.profile.id;
