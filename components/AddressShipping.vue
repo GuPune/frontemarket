@@ -56,7 +56,7 @@
       </b-modal>
 
 
-    <b-modal id="modal-2"  title="เลือกที่อยู่ในการจัดส่ง" size="lg">
+    <b-modal id="modal-2"  title="เพิ่มที่อยู่" size="lg">
         <div>
 
 
