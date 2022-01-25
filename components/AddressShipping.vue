@@ -406,6 +406,8 @@ this.form.select_shipping = event.target.value
         this.$refs.selectableTable.unselectRow(2)
       },
             save(){
+
+                this.$v.$touch();
   alert('ok');
 
 
