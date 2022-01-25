@@ -66,14 +66,29 @@
                     <div class="col-12 col-md-12 col-lg-6">
                         <div class="form-group">
                             <label for="textMemberName" class="font-weight-bold">ชื่อ</label>
-                            <input type="text" class="form-control" id="textMemberName" name="textMemberName">
+                            <input type="text" class="form-control" id="textMemberName" name="textMemberName"
+                            :class="{ 'is-invalid': $v.form.name.$error}"
+                                 :error-messages="NameErrors"
+                                            required
+                                            @input="$v.form.name.$touch()"
+                                            @blur="$v.form.name.$touch()"
+                             v-model="form.name"
+                            >
                             <div class="invalid-feedback" id="divError_textMemberName"></div>
                         </div>
                     </div>
                     <div class="col-12 col-md-12 col-lg-6">
                         <div class="form-group">
                             <label for="textPhoneNumber" class="font-weight-bold">หมายเลขโทรศัพท์</label>
-                            <input type="text" class="form-control" id="textPhoneNumber" name="textPhoneNumber"  />
+                            <input type="text" class="form-control" id="textPhoneNumber" name="textPhoneNumber" 
+                            :class="{ 'is-invalid': $v.form.tel.$error}"
+                                 :error-messages="TelErrors"
+                                            required
+                                            @input="$v.form.tel.$touch()"
+                                            @blur="$v.form.tel.$touch()"
+                                             v-on:keypress="isNumber($event)"   :maxlength="max"
+                             v-model="form.tel"
+                             />
                             <div class="invalid-feedback" id="divError_textPhoneNumber"></div>
                         </div>
                     </div>
@@ -82,7 +97,14 @@
                     <div class="col-12">
                         <div class="form-group">
                             <label for="textEditAddress" class="font-weight-bold">ที่อยู่</label>
-                            <textarea class="form-control" id="textEditAddress" name="textEditAddress" rows="3" ></textarea>
+                            <textarea class="form-control" id="textEditAddress" name="textEditAddress" rows="3" 
+                            :class="{ 'is-invalid': $v.form.address.$error}"
+                                  :error-messages="AddressErrors"
+                                            required
+                                            @input="$v.form.address.$touch()"
+                                            @blur="$v.form.address.$touch()"
+                             v-model="form.address"
+                            ></textarea>
                             <div class="invalid-feedback" id="divError_textEditAddress"></div>
                         </div>
                     </div>
