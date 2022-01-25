@@ -484,6 +484,9 @@ this.send();
         this.form.name = '';
         this.form.zipcode = '';
         this.form.tel = '';
+           this.form.district = '';
+        this.form.Subdistrict = '';
+        this.form.province = '';
 
 
            setTimeout(() =>
