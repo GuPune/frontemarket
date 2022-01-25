@@ -128,7 +128,7 @@
                 <input type="hidden" id="isCustomize" value="0" />
 
          
-                <div class="row">
+                <div class="row" hidden>
                     <div class="col-12">
                         <button type="button" class="btn btn-style px-4" id="btnSaveAdress" >
                             บันทึก                        </button>&nbsp;&nbsp;&nbsp;
