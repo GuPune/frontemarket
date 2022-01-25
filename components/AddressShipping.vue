@@ -56,7 +56,7 @@
       </b-modal>
 
 
-    <b-modal id="modal-2"  title="เพิ่มที่อยู่" size="lg" no-close-on-backdrop>
+    <b-modal id="modal-2"  title="เพิ่มที่อยู่" size="lg" no-close-on-backdrop hide-footer>
         <div>
 
 
