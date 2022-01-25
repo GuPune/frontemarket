@@ -143,7 +143,7 @@
          
                 <div class="row" >
                     <div class="col-12">
-                        <button type="button" class="btn btn-style px-4" id="btnSaveAdress" >
+                        <button type="button" class="btn btn-style px-4" id="btnSaveAdress"  @click="save()">
                             บันทึก                        </button>&nbsp;&nbsp;&nbsp;
                         <!-- <button type="button" class="btn px-4" id="btncancelAdress">
                             ยกเลิก                        </button> -->
@@ -168,15 +168,61 @@
 
 
 <script>
+import { required, email, numeric, maxLength,minLength } from "vuelidate/lib/validators";
 import { mapGetters,mapState } from "vuex";
 import { FETCH_GET_PROFILE,FETCH_ADDRESS_BY_ID,FETCH_ADDRESS,UPDATE_ADDRESS_SHIPPING,SELECT_SHIPPING,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,SAVE_ADDRESS_BY_ID} from "@/store/actions.type.js";
 import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
 import RingLoader from 'vue-spinner/src/RingLoader.vue'
 import BounceLoader from 'vue-spinner/src/BounceLoader.vue'
 export default {
+              validations: {
+        form: {
+            address      : { required },
+            name: { required },
+            zipcode: { required,numeric,minLength: minLength(5),maxLength: maxLength(5) },
+            tel: { required },
+         
+
+        }
+    },
       computed: {
   
             ...mapGetters(["address","selectedad","profile"]),
+
+
+               NameErrors() {
+            const errors = [];
+            if (!this.$v.form.name.$dirty) return errors;
+            !this.$v.form.name.required && errors.push("โปรดระบุชื่อ");
+            return errors;
+            },
+
+
+
+                AddressErrors () {
+            const errors = []
+            if (!this.$v.form.address.$dirty) return errors
+            !this.$v.form.address.required && errors.push('โปรดระบุอีเมล')
+      
+            return errors
+        },
+
+            
+         
+            TelErrors() {
+            const errors = [];
+            if (!this.$v.form.tel.$dirty) return errors;
+            !this.$v.form.tel.required && errors.push("โปรดระบุชื่อ");
+            return errors;
+            },
+
+       ZipcodeErrors() {
+            const errors = [];
+            if (!this.$v.form.zipcode.$dirty) return errors;
+            !this.$v.form.zipcode.required  && errors.push("โปรดระบุรายละเอียดที่ติดต่อ");
+            return errors;
+        },
+  
            
 
         
@@ -192,8 +238,16 @@ export default {
           id:null
         },
         form:{
-          id:null
-        },
+        id:null,
+      customer_id:"",
+      name:"",
+      tel:"",
+      address:"",
+      zipcode:"",
+    district:"",
+    Subdistrict:"",
+    province:""
+      },
         modes: ['multi', 'single', 'range'],
         fields: ['index','selected', 'isActive', 'age', 'first_name', 'last_name'],
         items: [],
@@ -212,6 +266,8 @@ export default {
       subdis:"",
       }
     },
+
+    
       
       components: {
       
@@ -341,7 +397,13 @@ this.form.select_shipping = event.target.value
       unselectThirdRow() {
         // Rows are indexed from 0, so the third row is index 2
         this.$refs.selectableTable.unselectRow(2)
-      }
+      },
+            save(){
+  alert('ok');
+
+
+
+      },
     
   }
        
