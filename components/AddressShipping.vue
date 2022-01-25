@@ -3,7 +3,10 @@
         <div class="card shopping-cart">
 
         <h2 class="shoping-cart-title bg-order"><span>ที่อยู่ในการจัดส่ง </span>
-            <span id="showLinkChangeAddress"><a class="linkChangeAddress">  <b-button v-b-modal.modal-1 class="bt-ship"  @click="showModal()">เปลี่ยนที่อยู่</b-button></a></span>
+            <span id="showLinkChangeAddress">
+            <a class="linkChangeAddress">  <b-button v-b-modal.modal-1 class="bt-ship"  @click="showModal()">เปลี่ยนที่อยู่</b-button></a>
+                   <a class="linkChangeAddress">  <b-button v-b-modal.modal-1 class="bt-ship">เพิ่มที่อยู่</b-button></a>
+            </span>
         </h2>
                         <div class="card-body">
                        <div class="row" id="scrollMemberList">
