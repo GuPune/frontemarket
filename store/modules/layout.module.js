@@ -39,13 +39,13 @@ const actions = {
     },
     async [GET_NAVBAR_SHOP](context,payload) {
         const { data } = await LayoutService.navbarshop(payload);
-    
+        console.log('navbar',data);
         await context.commit(SET_NAVBAR_SHOP,data);  
         return data.data
     
     },
     async [GET_FOOTER](context,payload) {
-        console.log('footer',payload);
+     
         const { data } = await LayoutService.footer(payload);
 
         console.log('footer',data);
