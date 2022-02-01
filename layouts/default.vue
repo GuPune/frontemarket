@@ -26,7 +26,7 @@
 
                 <Footer  v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou')"/>
 
-
+     <AcceptCookkie/>
 <div v-if="this.pageId">
 
 <div class="fb-customerchat"  :page_id="pageId">
@@ -65,6 +65,7 @@ import { FETCH_ID_URL,FETCH_FACEBOOK,GET_FOOTER } from "@/store/actions.type.js"
 import Vue from 'vue'
 import VueFbCustomerChat from 'vue-fb-customer-chat'
 import axios from 'axios';
+import AcceptCookkie from "@/components/AcceptCookkie"
 
  
 
@@ -88,7 +89,7 @@ import axios from 'axios';
     export default {
       components: {
           NavShop,
-          Nav,Loader
+          Nav,Loader,AcceptCookkie
           },
 
     data: () => ({
