@@ -26,11 +26,6 @@
                     <div class="cardproduct-first" v-for="(item, index) in product_shell" :key="product.id"  v-on:mouseover="mouseover(index)" v-on:mouseleave="mouseleave(index)">
                                                         <img class="imgproduct-product related-images" :src="Checkimage(item.img_product)" @click="Shop(item)">
                                                             <div class="product-name-first">{{item.name_th}}</div>
-                                                            
-                                                      
-                                                        
-                                                      
-
                                                               <div class="row">
                                                               <div class="col"> <div class="price rela-left">฿{{formatPrice(item.price)}}</div></div>
                                                               <!--

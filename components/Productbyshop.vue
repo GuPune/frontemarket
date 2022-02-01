@@ -14,7 +14,7 @@
             <div class="row product" >
                  <div class="cards product-byshop">
                  
-                    <div class="cardproduct-rela"  v-for="item in lists" :value="item.id">
+                    <div class="cardproduct-first"  v-for="item in lists" :value="item.id">
                         <img class="imgproduct imgproduct-byshop-mobile"  :src="Checkimage(item.img_product)">
                                                             <div class="product-name product-name-byshop">{{item.name_en}}</div>
                                                             <p class="price product-name-byshop">฿{{formatPrice(item.price)}}</p>
