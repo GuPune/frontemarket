@@ -15,7 +15,7 @@
                  <div class="cards product-byshop">
                  
                     <div class="cardproduct-first"  v-for="item in lists" :value="item.id">
-                        <img class="imgproduct imgproduct-byshop-mobile"  :src="Checkimage(item.img_product)">
+                        <img class="imgproduct-product related-images"  :src="Checkimage(item.img_product)">
                                                             <div class="product-name product-name-byshop">{{item.name_en}}</div>
                                                             <p class="price product-name-byshop">฿{{formatPrice(item.price)}}</p>
                                       <div class="product-footer product-footer-mobile">
