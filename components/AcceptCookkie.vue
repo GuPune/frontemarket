@@ -27,7 +27,7 @@
                                   </div>
                                     <center>  
                                     <div class="col-sm-2">
-                                              <label for="checkbox" class="accept-cookie">Accept All</label>
+                                              <label for="checkbox" class="accept-cookie" @click="accept()">Accept All</label>
                                               
                                               <p  class="close-cookie" style="color:e67825;" ><u>Change Preferences</u></p><br>
                                     </div>
@@ -226,13 +226,29 @@ import { mapGetters,mapState } from "vuex";
           redirectTo(){
             window.location.reload();
           },
-          async accept(){
+     async accept(){
            
          
 
+//             var date = new Date;
+// date.setDate(date.getDate() + 21);
+ 
+  let x = this.$cookie.set("ssid","xxj_7Sl6xDq2Kc3ym0fmrSSk2xV2XkUkX",{ expires: '1D' })
 
-      
-    
+    var allcookies = document.cookie;
+
+
+  //  var o = JSON.parse('{"id":1,"value":"code.google.com"}');
+  // let yy = this.$cookie.set("cwc_consent",o,{ expires: '10s' })
+
+  
+  // console.log('process.browser',process.browser);
+      localStorage.setItem("GDPR:accepted", "yes");
+     this.$ga.enable();
+     this.$fb.enable();
+
+
+        
         
  
           },

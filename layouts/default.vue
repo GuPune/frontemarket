@@ -49,24 +49,7 @@
 </div>
 
 </template>
-<style scoped>
-#dialog {
-  display: none;
-  position: fixed;
-  top: 10vh;
-  left: 10vw;
-  width: 80vw;
-  height: 80vw;
-  border: 1px solid #eee;
-  border-radius: 4px;
-  padding: 10px;
-  text-align: center;
-  z-index: 1;
-  background-color: #444;
-  color: #fff;
-}
 
-</style>
  <script>
  </script>
 
@@ -133,6 +116,12 @@ import AcceptCookkie from "@/components/AcceptCookkie"
                 return this.$store.state.user.url_id;
     },
 
+          checkCookie() {
+             let checkcookie = this.$store.getters.checkcook;
+
+              return checkcookie;
+            },
+
  
 
   
@@ -164,6 +153,7 @@ import AcceptCookkie from "@/components/AcceptCookkie"
      
     async mounted() {
        
+        let getcook = this.$cookie.get("ssid");
         this.form.url = window.location.origin
         let get_url = this.$store.dispatch(FETCH_ID_URL,this.form);
 
