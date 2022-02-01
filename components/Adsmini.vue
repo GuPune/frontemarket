@@ -74,8 +74,7 @@
       this.form.url = window.location.origin;
        this.form.shop_name = this.$route.params;
 
-       console.log(this.form);
-    
+
     
        this.$store.dispatch(FETCH_ADS_SHOP_SEMI,this.form);
         

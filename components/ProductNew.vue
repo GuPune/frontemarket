@@ -139,7 +139,7 @@
 
            //     let a = this.$store.dispatch(FETCH_PRODUCT_SHELL);
 
-           console.log(process.env.TEST_VARIABLE);
+     
 
         this.form.url = window.location.origin;
         this.form.shop_name = this.$route.params;

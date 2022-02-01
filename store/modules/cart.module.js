@@ -40,7 +40,7 @@ const actions = {
     },
     async [ADD_PRODETAIL](context,payload) {
      
-        console.log('payload',payload);
+      
         await context.commit(SET_CART_DETAIL,payload);
          await context.commit(SET_TOTAL);   
     },
@@ -85,7 +85,7 @@ const actions = {
 const mutations = {
    
     addToCart (state, item) {
-        console.log('addcart',item);
+     
         state.cartTotal++
         if (item.slug in state.cart) {
           state.cart[item.slug].count++
@@ -111,7 +111,7 @@ const mutations = {
     
             let sum = 0;
             let total = 0;
-            console.log('this.cart.length',this.getcart );
+      
             Object.keys(this.getcart).forEach(key => {
                 sum += parseInt(this.getcart [key].totalPrice)
                 total += this.getcart[key].quantity;
@@ -179,12 +179,12 @@ if (found) {
 
  found.quantity ++;
  found.totalPrice = found.quantity * found.price;
- console.log('if',found.totalPrice);
+
 } else {
     
     state.cart.push(item);
 
-   console.log('item',item)
+
     Vue.set(item, 'quantity', 1);
     Vue.set(item, 'totalPrice', item.price);
  
@@ -201,7 +201,7 @@ let a = localStorage.setItem("cart", JSON.stringify(state.cart));
 
 
 if (found) {
- console.log('if');
+
 
  found.quantity ++;
  found.totalPrice = found.quantity * found.price;
@@ -217,10 +217,10 @@ let a = localStorage.setItem("cart", JSON.stringify(state.cart));
     },
     [SET_CART_DETAIL](state,item) {
 
-        console.log('item',item);
+   
 
         let found = state.cart.find(product => product.id == item.id);
-        console.log('found1',found);
+     
      
         if (found) {
             found.quantity  = found.quantity + item.add;
@@ -230,7 +230,7 @@ let a = localStorage.setItem("cart", JSON.stringify(state.cart));
            } else {
                
         
-            console.log('nosum',item);
+     
              
 
               var sumprice = item.price * item.add;

@@ -74,7 +74,7 @@
 
         Checkimage(image){
                 let public_images = process.env.ImageURL+image;
-                console.log('รูป',public_images)
+          
                 return public_images;
         },
 
@@ -91,7 +91,7 @@
 
 
  if (name === path) {
-   console.log('true');
+
                         return true
                     } else {
                         return false

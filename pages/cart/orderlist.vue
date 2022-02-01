@@ -291,7 +291,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
 
 
 this.test == 0 ? true : false;
-console.log(this.test);
+
 
   //return { backgroundColor: 'white' };
         },

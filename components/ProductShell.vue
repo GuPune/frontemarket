@@ -77,7 +77,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART } from "@
 
         lists () {
       const items = this.$store.getters.product_shell_find
-      console.log('items',items);
+ 
       // Return just page of items needed
       return items.slice(
         (this.currentPage - 1) * this.perPage,
@@ -104,7 +104,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART } from "@
          this.form.shop_name = this.$route.params;
       let product_by_shop = await this.$store.dispatch(FETCH_PRODUCT_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
         this.paginatedItems = this.product_by_shop
-        console.log('paginatedItems',this.paginatedItems);
+ 
         this.totalRows = this.product_by_shop.length
          await this.paginate(this.perPage, 0);
          },
@@ -112,7 +112,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART } from "@
       methods: {
 
                async CheckLogin(item){
-                 console.log('item',item);
+            
               if(!this.authenticated){
                          let path = this.$route.path
 
@@ -132,13 +132,13 @@ const names = 'id-form-login'
 
           paginate(page_size, page_number) {
       let itemsToParse = this.product_by_shop;
-      console.log('itemsToParse',itemsToParse);
+  
       this.paginatedItems = itemsToParse.slice(
         page_number * page_size,
         (page_number + 1) * page_size
       );
 
-      console.log('this.paginatedItems',this.paginatedItems)
+   
     },
     onPageChanged(page) {
       this.paginate(this.perPage, page - 1);

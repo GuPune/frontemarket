@@ -218,7 +218,7 @@ import { FETCH_ADS_SHOP,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,SAVE_ADDRES
     
         
      async mounted() {
-console.log(this.profile.id);
+
       },
 
       methods: {

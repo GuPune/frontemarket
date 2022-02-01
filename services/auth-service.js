@@ -21,7 +21,7 @@ class AuthService {
                 return response.data;
             }).catch(
       function (error) {
-        console.log('Show error notification!')
+
       }
     );
     }

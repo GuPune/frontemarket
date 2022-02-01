@@ -232,7 +232,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
                 
                   this.form.cate = this.objects.id;
          }
-console.log('this.form',this.form);
+
            let find_product = this.$store.dispatch(FETCH_PRODUCT_FIND,this.form);  
         
          },

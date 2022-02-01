@@ -152,7 +152,7 @@
                 return public_images;
         },
         async addToCart(item){
-          console.log('add',item);
+        
            let add_producttocart = await this.$store.dispatch(ADD_CART,item);
                  await this.$swal("Add Product!", "Product To Cart!", "success")
         },

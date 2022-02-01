@@ -24,7 +24,7 @@ const actions = {
     async [GET_SHOP](context) {
 
         const { data } = await MyshopService.getshop();
-        console.log('data',data.data);
+    
         return data.data;
     },
     async [GET_SHOP_BY_ITEM](context,payload) {

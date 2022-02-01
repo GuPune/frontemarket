@@ -28,7 +28,7 @@ export const ShippingService = {
       return ApiServiceAll.post("defaultshipping",param);
     },
     saveordersalepage(param) {
-      console.log('param',param);
+
       return ApiServiceAll.post("saveordersalepage",param);
     },
 

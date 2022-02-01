@@ -316,7 +316,7 @@ this.typeshop = typeshop;
         async ChooseType(event){
 
                this.form.type_id = event.target.value;
-               console.log(this.type_id);
+        
 
 
         },

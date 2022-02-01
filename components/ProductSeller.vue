@@ -139,7 +139,6 @@
 
            //     let a = this.$store.dispatch(FETCH_PRODUCT_SHELL);
 
-           console.log(process.env.TEST_VARIABLE);
 
         this.form.url = window.location.origin;
         this.form.shop_name = this.$route.params;
@@ -149,8 +148,6 @@
 
       
           let product = await this.$store.dispatch(GET_PRODUCR_SELLER,this.form);
-          console.log('GET_PRODUCR_SELLER',product.data);
-
 this.items = product.data;
 
         

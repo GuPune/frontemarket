@@ -68,7 +68,7 @@ const actions = {
 
     async [FETCH_PRODUCT_FIND](context,payload) {
         const { data } = await ProductService.find(payload);
-        console.log('FETCH_PRODUCT_FIND',data);
+       
         context.commit(SET_PRODUCT_SHELL,data);
         context.commit(SET_SHELL_CATE,payload);
         return data;
@@ -86,7 +86,7 @@ const actions = {
     },
     async [GET_PRODUCT_SHELL_FIND](context,payload) {
         const { data } = await ProductService.getproductshellfind(payload);
-        console.log('find navbar',data);
+      
        context.commit(SET_PRODUCTSHELL_FIND,data);
         return data;
     },
@@ -150,7 +150,7 @@ const mutations = {
         state.loading = isLoading
     },
     [SET_PRODUCT_SHELL](state,data) {
-        console.log('xxxxxwdawfaf',data);
+     
         state.product_shell = data;
         state.loading = false
    
@@ -166,7 +166,7 @@ const mutations = {
      
     },
     [SET_SHELL_CATE](state,data) {
-      console.log(data.cat);
+ 
         state.shell_cate = data.cat;
  
     },
@@ -188,7 +188,7 @@ const mutations = {
         state.images.thumbs = state.product_by_item.thumbs
         state.images.normal_size = state.product_by_item.normal_size
         state.images.large_size = state.product_by_item.large_size
-        console.log('product_by_item',state.product_by_item);
+
        
     },
 

@@ -226,8 +226,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
               let path = this.$route.path
                if (path !== names) {
                const Shopid = this.$route.params.id;
-               console.log('Shopid',Shopid);
-                console.log('Shopid',names);
+         
              this.$router.push({ name: names, params: { id: Shopid }})
                 }
         },
@@ -237,7 +236,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
 
 
  if (name === path) {
-   console.log('true');
+
                         return true
                     } else {
                         return false

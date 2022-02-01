@@ -394,8 +394,8 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
 
   }
           let productfind = await this.$store.dispatch(GET_PRODUCT_SHELL_FIND,this.form);
-        console.log('search',this.selected);
-        console.log('search',this.search);
+     
+ 
 
                         let path = this.$route.path
   this.$router.push({ name: 'find' })

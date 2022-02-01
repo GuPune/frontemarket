@@ -99,7 +99,7 @@ export default {
         },
              
         mounted() {
-            console.log('คำนวนใหม่',this.cart);
+    
 
           
         },

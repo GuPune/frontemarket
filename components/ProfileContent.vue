@@ -238,7 +238,7 @@ this.profile.image = this.file;
         },
         profileimage(){
             
-          console.log('this.file',this.url);
+    
              this.$set(this.profile, 'profile_images',this.url)
 
         }

@@ -370,7 +370,7 @@ import { SAVE_CONTACT,GET_CAPTCHA,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,S
  
    var product =  await this.$store.dispatch(GET_PRODUCT_SALEPAGE,this.form)
 this.product = product
-console.log('ssa',this.product);
+
 this.summary.add = this.add
 this.summary.price = product[0].price
 
@@ -389,7 +389,7 @@ var sum =  await this.$store.dispatch(GET_SALEPAGESUMMARY,this.summary)
 
         validateNumber: (event) => {
       let keyCode = event.keyCode;
-      console.log('keyCode',event.target.value);
+   
       if (keyCode < 48 || keyCode > 57) {
         event.preventDefault();
       }
@@ -494,7 +494,7 @@ this.send();
 
                 Checkimage(image){
                 let public_images = process.env.ImageURL+image;
-                console.log('public_images',public_images)
+        
                return public_images;
 
                  // return "http://demo.takraonline.com/Images/SalePage/Image/2Salepage-banner-1-TripleJay.jpg";

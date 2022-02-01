@@ -90,7 +90,7 @@ import { mapGetters } from "vuex";
         let cateshell = await this.$store.dispatch(GET_CATEGORY_SHELL)
           this.form.selected = this.selected
 this.options = cateshell;
-console.log('this.cate_by_shop',this.form);
+
   let productfind = await this.$store.dispatch(GET_PRODUCT_SHELL_FIND,this.form);
 
          },

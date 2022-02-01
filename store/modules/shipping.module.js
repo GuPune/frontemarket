@@ -57,7 +57,7 @@ const actions = {
     },
     async [DELIVERY_DATA](context,payload) { 
         const { data } = await ShippingService.getdatashipping(payload);
-        console.log('const ',data);
+   
 
         if (typeof data === 'undefined') {
             this.$auth.logout();
@@ -87,7 +87,7 @@ const actions = {
 
     async [GET_DISTRICTSSALEPAGE](context,payload) { 
     
-        console.log('payload',payload)
+      
         const { data } = await ShippingService.getdistrictsalgepag(payload);
      //   context.commit(SET_PROVINCES,data);
         return data.data;
@@ -111,7 +111,7 @@ const actions = {
       
 
         const { data } = await ShippingService.updatedefault(payload);
-        console.log('payload',payload);
+        
          context.commit(SET_SELECT_SHIPPING,payload);
        // const { data } = await ShippingService.getsubdistricts(payload);
       //  return data.data;

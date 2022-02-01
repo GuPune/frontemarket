@@ -177,7 +177,7 @@
 
       this.items = product;
 
-      console.log('this.items',this.items);
+  
 
         this.loadcategory()
         

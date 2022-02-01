@@ -67,7 +67,7 @@ import { FETCH_BANK,CHOOSE_BANK } from "../store/actions.type.js";
 
        let sel_bank = await localStorage.getItem('bank');
       if(sel_bank){
-         console.log(sel_bank);
+   
          this.selectedBank = sel_bank;
       }
  

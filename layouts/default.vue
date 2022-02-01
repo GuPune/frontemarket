@@ -156,7 +156,7 @@ this.footer();
    
     this.form.url = window.location.origin;
          this.form.shop_name = this.$route.params;
-         console.log('footer',this.form);
+    
      let footer = this.$store.dispatch(GET_FOOTER,this.form);
 
 },

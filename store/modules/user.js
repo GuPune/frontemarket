@@ -192,7 +192,7 @@ alert('okkkk');
             ...state.line,
             ...data
           }
-          console.log('state.line',state.line);
+       
     
     },
     [SET_CHECK_LOGIN](state) {
