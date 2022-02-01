@@ -93,21 +93,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    ['@nuxtjs/google-analytics', {
-      disabled: () => {
-      
-        const getGDPR = window.localStorage.getItem("GDPR:accepted");
-
-
-        if (typeof getGDPR !== null && getGDPR === "no") {
-          return true;
-        }
-        if (typeof getGDPR !== null && getGDPR === "yes") {
-          return false;
-        }
-        return true;
-      },
-    }],
+    
     [
       '@nuxtjs/router',
       '@nuxtjs/pwa',
