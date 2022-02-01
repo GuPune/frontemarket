@@ -9,7 +9,7 @@
  <NavShop  v-if="(currentRouteName == 'id')  || (currentRouteName == 'id-about') || (currentRouteName == 'id-new') || (currentRouteName == 'id-contact') || (currentRouteName == 'id-new-blogid')"/>
 
  
-     <AcceptCookkie/>
+ 
 <nuxt-child></nuxt-child>
 
 
@@ -43,7 +43,8 @@
   ></div>
 
 
-   </div>     
+   </div>    
+       <AcceptCookkie/> 
 </div>
 
 </template>
