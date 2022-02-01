@@ -233,9 +233,9 @@ import { mapGetters,mapState } from "vuex";
 //             var date = new Date;
 // date.setDate(date.getDate() + 21);
  
-  let x = this.$cookie.set("ssid","xxj_7Sl6xDq2Kc3ym0fmrSSk2xV2XkUkX",{ expires: '1D' })
+let x = this.$cookie.set("ssid","xxj_7Sl6xDq2Kc3ym0fmrSSk2xV2XkUkX",{ expires: '1D' })
 
-    var allcookies = document.cookie;
+  //  var allcookies = document.cookie;
 
 
   //  var o = JSON.parse('{"id":1,"value":"code.google.com"}');
@@ -244,8 +244,7 @@ import { mapGetters,mapState } from "vuex";
   
   // console.log('process.browser',process.browser);
       localStorage.setItem("GDPR:accepted", "yes");
-     this.$ga.enable();
-     this.$fb.enable();
+
 
 
         

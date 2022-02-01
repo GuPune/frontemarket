@@ -73,6 +73,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~plugins/vue-cookies.js',
     { src: '~/plugins/vue-product-zoomer.js', mode: 'client' },
     // { src: './plugins/echo', mode: 'client' },
     '~plugins/local-storage.js',
