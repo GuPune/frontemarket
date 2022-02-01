@@ -27,6 +27,7 @@ export default {
     ],
     
     link: [
+      
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
@@ -39,6 +40,11 @@ export default {
       }
     ]
   },
+  pwa: {
+    icon: {
+         fileName: 'log.png',
+    },
+},
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '@/assets/css/main.css',
@@ -89,6 +95,7 @@ export default {
     // Doc: https://github.com/nuxt-community/eslint-module
     [
       '@nuxtjs/router',
+      '@nuxtjs/pwa',
       {
         path: 'router',
         fileName: 'index.js',
