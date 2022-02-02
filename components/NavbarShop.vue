@@ -45,7 +45,7 @@
 
    <b-navbar toggleable="sm"   style="{'background-color':colors}"  class="banav navbar-fixed-top navshop-mobiles" :fixed="position" v-on:scroll.native="handleScroll">
     <b-navbar-brand href="#"><div class="shop-name-nav-mobile">
-       <img :src="Checkimage(objectslayoutshop.logo)" alt=""  class="icon-mobile">
+       <!-- <img :src="Checkimage(objectslayoutshop.logo)" alt=""  class="icon-mobile"> -->
     </div>
     </b-navbar-brand>
       <b-navbar-brand href="#" class="navshop-mobile-search">
