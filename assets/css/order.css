@@ -468,15 +468,10 @@ margin-top: 30px;
       display: none; 
     }
 
-    .sum-textas{
-      font-size: 16px;
-    }
 
    .te-oreder-carde{
     font-size: 3vw;
    }
-
-   
 
    .te-oreder-cat{
     font-size: 3vw;
@@ -484,6 +479,13 @@ margin-top: 30px;
 
   }
 
+
+
+    @media only screen and (min-device-width : 320px) and (max-device-width : 720px) {
+      .sum-textas{
+        font-size: 5vw;
+      }
+      }
   @media screen and (max-width: 900px) {
 
   
