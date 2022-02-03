@@ -225,6 +225,10 @@
   .te-oreder-carde{
     font-size: 0.8vw;
   }
+  
+  .te-oreder-cat{
+    font-size: 0.9vw;
+   }
 
   .sum-textas{
     font-size: 0.8vw;
@@ -472,6 +476,10 @@ margin-top: 30px;
     font-size: 3vw;
    }
 
+   .te-oreder-cat{
+    font-size: 3vw;
+   }
+
   }
 
   @media screen and (max-width: 900px) {
@@ -495,6 +503,8 @@ margin-top: 30px;
       padding-right: 5px;
           }
     }
+
+    
 
 
 
