@@ -265,7 +265,7 @@
         },
              
        async mounted() {
-           let a = await this.$store.dispatch(FETCH_GET_PROFILE)
+          
 this.form.product_id = this.$route.params.slug;
 this.form.shop_name = this.$route.params.id;
 this.form.url = window.location.origin
@@ -282,6 +282,7 @@ let images_product = await this.$store.dispatch(FETCH_IMAGE_PRODUCT,this.form);
 
     
      this.zoom(productshop_item);
+      let a = await this.$store.dispatch(FETCH_GET_PROFILE)
         },
 
 
