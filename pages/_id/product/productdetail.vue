@@ -207,7 +207,7 @@
 
 <script>
   import { mapGetters,mapState } from "vuex";
-  import { FETCH_BY_PRODUCT_SHOP_ONE_ITEM,FETCH_IMAGE_PRODUCT,ADD_CART,ADD_PRODETAIL } from "@/store/actions.type.js";
+  import { FETCH_BY_PRODUCT_SHOP_ONE_ITEM,FETCH_IMAGE_PRODUCT,ADD_CART,ADD_PRODETAIL,FETCH_GET_PROFILE } from "@/store/actions.type.js";
   import Nav from "@/components/Nav";
   import Footer from "@/components/Footer";
     
@@ -265,6 +265,7 @@
         },
              
        async mounted() {
+           let a = await this.$store.dispatch(FETCH_GET_PROFILE)
 this.form.product_id = this.$route.params.slug;
 this.form.shop_name = this.$route.params.id;
 this.form.url = window.location.origin
