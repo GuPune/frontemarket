@@ -9,7 +9,7 @@
                                     </div>
                 <div class="col-9 px-0">
                     <div class="row mr-0">
-                        <div class="col-12 text-left">
+                        <div class="col-12 text-left te-oreder-cat">
                             <span class="product-name">
                                 {{item.name_en}}<br>
                             </span>
