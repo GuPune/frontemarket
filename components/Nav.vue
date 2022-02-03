@@ -231,7 +231,7 @@
 
       <b-col cols="8" md="4"  sm="3" class="nav-form-search nav-search">
         <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?" v-model="form.search"></b-form-input>
-      </b-col>{{isLogins}}
+      </b-col>
        <b-col cols="3" md="1"  sm="3" class="nav-form-search">
   <b-form-select v-model="selected" :options="options"></b-form-select>
       </b-col>
