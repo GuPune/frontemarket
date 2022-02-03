@@ -33,7 +33,7 @@
         name="flavour-3a"
          @change="choosecate($event)"
       >
-        {{ option.name_en }}
+        {{ option.name_th }}
       </b-form-checkbox>
     </b-form-group>
 

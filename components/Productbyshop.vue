@@ -16,7 +16,7 @@
                  
                     <div class="cardproduct-first"  v-for="item in lists" :value="item.id">
                         <img class="imgproduct-product related-images"  :src="Checkimage(item.img_product)"  @click="Shop(item)">
-                                                            <div class="product-name product-name-byshop">{{item.name_en}}</div>
+                                                            <div class="product-name product-name-byshop">{{item.name_th}}</div>
                                                             <p class="price product-name-byshop">฿{{formatPrice(item.price)}}</p>
                                       <div class="product-footer product-footer-mobile">
                                           <div class="addtocart">

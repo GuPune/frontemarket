@@ -69,7 +69,7 @@
                                 จังหวัด                            </label>
                             <select class="form-control" name="customerRegionsID" id="customerRegionsID" @change="ChangeProvinces($event)" >
                                 <option value="">- เลือก-</option>
-                                  <option :value="province.id"  v-for="(province, index) in provin" :key="province.id" >{{province.name_en}}</option>
+                                  <option :value="province.id"  v-for="(province, index) in provin" :key="province.id" >{{province.name_th}}</option>
                                                              
                              </select>
                             <div class="invalid-feedback" id="divError_customerRegionsID"></div>
@@ -81,7 +81,7 @@
                                 เขต/อำเภอ                            </label>
                             <select class="form-control" name="customerDistrictID" id="customerDistrictID"  @change="ChangeDistris($event)">
                                 <option value="">- เลือก - </option>
-                                <option :value="distris.id"  v-for="(distris, index) in distri" :key="distris.id" >{{distris.name_en}} </option>
+                                <option :value="distris.id"  v-for="(distris, index) in distri" :key="distris.id" >{{distris.name_th}} </option>
                                                             </select>
                             <div class="invalid-feedback" id="divError_customerDistrictID"></div>
                         </div>
@@ -92,7 +92,7 @@
                                 แขวง/ตำบล                            </label>
                             <select class="form-control" name="x" id="x"  @change="ChangeSubDistris($event)">
                                 <option value="">- เลือก - </option>
-                                  <option :value="subdi.id"  v-for="(subdi, index) in subdis" :key="subdi.id" >{{subdi.name_en}}</option>
+                                  <option :value="subdi.id"  v-for="(subdi, index) in subdis" :key="subdi.id" >{{subdi.name_th}}</option>
                                                             </select>
                             <div class="invalid-feedback" id="divError_customerSubDistrictID"></div>
                         </div>

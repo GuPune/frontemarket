@@ -11,7 +11,7 @@
                     <div class="row mr-0">
                         <div class="col-12 text-left te-oreder-cat">
                             <span class="product-name">
-                                {{item.name_en}}<br>
+                                {{item.name_th}}<br>
                             </span>
                                                     </div>
                     </div>

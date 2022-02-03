@@ -74,7 +74,7 @@
                         <a href="#"  class="product-image"><img class="img-responsive lazy order-picture-mobile"  :src="Checkimage(item.img_product)" width="60" height="60" alt="C-DIAL PRO 4 ตัวควบคุม 4 สถานี 9 V. รุ่นใช้ในร่ม" /></a>
                         </div>
                     <div class="col-xs-6 col-sm-8 col-md-5 col-lg-5 text-mobile">
-                        <h5 class="order-name">{{item.name_en}}</h5></div>
+                        <h5 class="order-name">{{item.name_th}}</h5></div>
                         <div class="col-xs-6 col-sm-8 col-md-2 col-lg-2 text-mobile shop-name-order-pc">
                         <h5 class="order-name">{{item.shop_name_title}}</h5></div>
                 </div>
@@ -133,7 +133,7 @@
                      <div class="col-12 shop-name-order">
                             <div class="row">
                                 <div class="col-12 shop-name-order order-name-mobile-font">
-                                        <div>{{item.name_en}}</div>
+                                        <div>{{item.name_th}}</div>
                                 </div>    
                                 <div class="col-12 shop-name-order order-price-mobile-font">
                                         <div>฿{{formatPrice(item.price)}}</div>
