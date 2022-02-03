@@ -179,6 +179,12 @@
 }
   
 
+.responsive{
+
+  width: 100%;
+  height: auto;
+}
+
 
 
   /* .product-name {
@@ -212,6 +218,14 @@
 
   .text-desktop{
     text-align: center;
+  }
+
+  .te-oreder-carde{
+    font-size: 0.8vw;
+  }
+
+  .sum-textas{
+    font-size: 0.8vw;
   }
 
   @media (min-width: 992px) { 
@@ -448,6 +462,14 @@ margin-top: 30px;
       display: none; 
     }
 
+    .sum-textas{
+      font-size: 2vw;
+    }
+
+   .te-oreder-carde{
+    font-size: 3vw;
+   }
+
   }
 
   @media screen and (max-width: 900px) {
@@ -458,6 +480,21 @@ margin-top: 30px;
         max-width: 100%;
     }
   }
+
+  @media screen and (min-width: 720px) {
+
+  
+
+  }
+
+  @media only screen and (min-width: 720px) and (max-width: 820px)  {
+   
+    .te-oreder-carde{
+      padding-right: 5px;
+          }
+    }
+
+
 
 
   @media screen and (max-width: 1400px) {

@@ -11,8 +11,8 @@
                         </div>
                     </label>
                 </div>
-                <div class="col-3 col-md-5 col-xs-12">
-                    <div class="text-center"><img class="shippingImage fill" :src="Checkimage(data.avatar)"  width="300" height="100" />
+                <div class="col-12 col-md-5 col-xs-12">
+                    <div class="text-center"><img class="shippingImage fill responsive" :src="Checkimage(data.avatar)"  width="300" height="100" />
                     </div>
                 </div> 
                 <div class="col-12 col-md-3 col-xs-12">

@@ -15,10 +15,10 @@
                             </span>
                                                     </div>
                     </div>
-                    <div class="row mr-0">
-                        <div class="col-4 text-muted text-left pr-1">
+                    <div class="row mr-0 te-oreder-carde">
+                        <div class="col-6 text-muted text-left pr-1">
                            ฿  {{formatPrice(item.price)}}                </div>
-                        <div class="col-3 text-muted text-center px-0">
+                        <div class="col-1 text-muted text-center px-0">
                             x{{item.quantity}}                     </div>
                         <div class="col-5 text-right pl-0">
                             <span>฿ {{formatPrice(item.totalPrice)}}</span>
@@ -29,7 +29,7 @@
         </div> 
     </div>   
     <div class="col-12 mx-0 mt-0 border-top d-lg-none"></div>
-<div class="card-footer px-lg-3 cardnoborder">
+<div class="card-footer px-lg-3 cardnoborder sum-textas">
     <!-- Start Promotion Code -->
         <!-- END Promotion Code -->
 
