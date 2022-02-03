@@ -42,7 +42,7 @@
 
 <div class="col-12 col-md-7 col-sm-12 product-detail-ipad">
             <div class="marginInner">
-            <h2 class="productName-detail">{{product_by_item.name_th}}</h2>
+            <h2 class="productName-detail">{{product_by_item.name_en}}</h2>
             </div>
             <div class="row">
                 <div class="col-md-12">
