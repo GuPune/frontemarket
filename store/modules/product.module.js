@@ -112,7 +112,7 @@ const actions = {
     async [FETCH_BY_PRODUCT_SHOP_ONE_ITEM](context,payload) {
            const { data } = await ProductService.getproductbyitem(payload);
          
-   
+   console.log(data);
          context.commit(SET_BY_PRODUCT_SHOP_ONE_ITEM,data);
           return data;
     },   
