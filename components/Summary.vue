@@ -20,7 +20,7 @@
                            ฿  {{formatPrice(item.price)}}                </div>
                         <div class="col-1 text-muted text-center px-0">
                             x{{item.quantity}}                     </div>
-                        <div class="col-5 text-right pl-0">
+                        <div class="col-5 text-right pl-0 te-oreder-totalPrice">
                             <span>฿ {{formatPrice(item.totalPrice)}}</span>
                         </div>
                     </div>
