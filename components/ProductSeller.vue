@@ -10,7 +10,7 @@
 	<em class="">สินค้าขายดี</em>
 			</h2>
         </div>
- <div>
+ <div v-if="items.length">
  
     <VueSlickCarousel v-bind="slickOptions">
     <div v-for="i in items"  class="img-wrapper">

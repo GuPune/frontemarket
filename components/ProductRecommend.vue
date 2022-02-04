@@ -11,8 +11,8 @@
 			</h2>
         </div>
  <div>
- 
-    <VueSlickCarousel v-bind="slickOptions">
+ <div v-if="items.length">
+    <VueSlickCarousel v-bind="slickOptions" :dots="true" >
     <div v-for="i in items"  class="img-wrapper">
       
              <div class="card c-shopinmy">
@@ -71,19 +71,18 @@
             url:null
           },
           items: [],
-        
+        	settings: {
+					"dots": true,
+					"slidesToShow": 3,
+					"slidesToScroll": 1
+				},
    
  slickOptions:{
-  "dots": true,
-  "infinite": false,
-  "arrows": false,
-  "speed": 500,
-  "slidesToShow": 6,
-  "slidesToScroll": 4,
-  "initialSlide": 0,
-   "autoplay": false,
-  "speed": 500,
-  "autoplaySpeed": 500,
+ 
+ "slidesToShow": 6,
+        "slidesToScroll": 3,
+        "infinite": true,
+        "dots": true,
   "responsive": [
     {
       "breakpoint": 1024,

@@ -10,7 +10,7 @@
 	<em class="">สินค้าใหม่</em>
 			</h2>
         </div>
- <div>
+ <div v-if="items.length">
  
     <VueSlickCarousel v-bind="slickOptions">
     <div v-for="i in items"  class="img-wrapper">
@@ -50,7 +50,13 @@
     
 </template>
 
-
+<style>
+.slick-dots{
+    display: block;
+}
+</style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.5.0/slick.min.js"></script>
 <script>
   import { mapGetters,mapState } from "vuex";
   import { FETCH_PRODUCT_SHELL } from "../store/actions.type.js";
@@ -66,14 +72,26 @@
   export default {
         data() {
       return {
+        h:false,
+        a: [{"dots": true,}, {"dots": true,}, {"dots": true,}, {"dots": true,}, {"dots": true,}],
                   form:{
           shop_name:null,
             url:null
           },
           items: [],
-        
-   
- slickOptions:{
+
+          settings:{
+  "dots": true,
+  "infinite": true,
+  "slidesToShow": 3,
+  "slidesToScroll": 1,
+  "autoplay": true,
+  "autoplaySpeed": 2000,
+  "pauseOnDotsHover": true,
+  "pauseOnFocus": true,
+  "pauseOnHover": true
+},
+          slickOptions:{
   "dots": true,
   "infinite": false,
   "arrows": false,
@@ -85,6 +103,15 @@
   "speed": 500,
   "autoplaySpeed": 500,
   "responsive": [
+      {
+      "breakpoint": 1300,
+      "settings": {
+        "slidesToShow": 4,
+        "slidesToScroll": 4,
+        "infinite": true,
+        "dots": true
+      }
+    },
     {
       "breakpoint": 1024,
       "settings": {
@@ -119,6 +146,9 @@
   ]
 }
  
+   
+ 
+ 
       }
     },
         
@@ -133,15 +163,46 @@
   
 
         },
+
+          async created() {
+            
+        this.form.url = window.location.origin;
+        this.form.shop_name = this.$route.params;
+       
+
+
+
+      
+          let product = await this.$store.dispatch(GET_PRODUCR_NEW,this.form);
+  
+ this.items = product.data;
+
+ 
+
+ 
+
+
+
+          },
         
        async mounted() {
+
+         this.h = true;
         //  this.$store.dispatch(ToogleAction);
 
            //     let a = this.$store.dispatch(FETCH_PRODUCT_SHELL);
 
      
 
-        this.form.url = window.location.origin;
+
+        
+         },
+        
+  
+        methods: {
+
+       async onInitCarousel() {
+           this.form.url = window.location.origin;
         this.form.shop_name = this.$route.params;
        
 
@@ -153,11 +214,8 @@
 
 this.items = product.data;
 
-        
-         },
-        
-  
-        methods: {
+
+      },
 
         redirectTo(name) {
                     this.$router.push(name)
