@@ -24,6 +24,7 @@
                             <div class="row pb-3 justify-content-center d-none d-md-flex">
                     <div class="col-auto py-3 bg-yellow">
                         <div class="fs-ta-14 text-pumpkin text-center">
+            
                                           </div>
                     </div>
                 </div>
@@ -70,13 +71,15 @@
                             <span class="fs-ta-16 text-theme-1"><b>ข้อมูลจัดส่ง</b></span>
                         </div>
                         <div class="col-12 fs-ta-14 fs-md-ta-16 text-theme-1 mt-1">
-                            ชื่อผู้รับ: {{this.orderlist.fname}} {{this.orderlist.lname}}<br>
+                            ชื่อผู้รับ:{{this.orderlist.shipping_address.name}}<br>
                ที่อยู่:  {{this.orderlist.shipping_address.address}} ต.{{this.orderlist.shipping_address.sub_districts_id}} อ.{{this.orderlist.shipping_address.districts_id}} จ.{{this.orderlist.shipping_address.province_id}}<br>
-                            เบอร์โทรศัพท์: {{this.orderlist.tel}}<br>
+                            เบอร์โทรศัพท์: {{this.orderlist.shipping_address.tel}}<br>
                             อีเมล: {{this.orderlist.email}}
                             </div>
                     </div>
                 </div>
+
+        
                 <!-- End Shipping Address -->
                 <!-- Start Tax Address -->
                                     <div class="col-12 col-md">
@@ -85,9 +88,9 @@
                                 <span class="fs-ta-16 text-theme-1"><b>ข้อมูลออกใบเสร็จ</b></span>
                             </div>
                             <div class="col-12 fs-ta-14 fs-md-ta-16 text-theme-1 mt-1">
-                                ชื่อผู้รับ: {{this.orderlist.fname}} {{this.orderlist.lname}}<br>
+                                   ชื่อผู้รับ:{{this.orderlist.shipping_address.name}}<br>
                   ที่อยู่:  {{this.orderlist.shipping_address.address}} ต.{{this.orderlist.shipping_address.sub_districts_id}} อ.{{this.orderlist.shipping_address.districts_id}} จ.{{this.orderlist.shipping_address.province_id}}<br>
-                                เบอร์โทรศัพท์: {{this.orderlist.tel}}<br>
+                                 เบอร์โทรศัพท์: {{this.orderlist.shipping_address.tel}}<br>
                                 อีเมล: {{this.orderlist.email}}
                             </div>
                         </div>
