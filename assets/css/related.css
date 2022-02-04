@@ -724,3 +724,13 @@ button.addcart:hover {
 
   }
   }
+
+
+  @media (min-width: 350px) and (max-width: 601px) { 
+    .product-byshop{
+      grid-template-columns: repeat(2, 1fr);
+  
+    }
+ 
+    }
+  
