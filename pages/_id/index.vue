@@ -23,8 +23,8 @@
                 <div class="row relatedweb">
 
      
-  <div class="col-sm-12 col-md-3"> <Categoriesbyshop :cate_by_shop="cate_by_shop"/></div>
-  <div class="col-sm-12 col-md-9"> <Productbyshop  :product_by_shop="product_by_shop"/></div>
+  <div class="col-sm-12 col-md-12 col-lg-12 col-xl-3"> <Categoriesbyshop :cate_by_shop="cate_by_shop"/></div>
+  <div class="col-sm-12 col-md-12 col-lg-12 col-xl-9"> <Productbyshop  :product_by_shop="product_by_shop"/></div>
 
 </div>
 </div>

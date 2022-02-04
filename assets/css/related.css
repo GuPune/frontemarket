@@ -276,6 +276,7 @@ padding-left: 15px;
 
   @media (max-width: 1400px) {
     .cards-mobile { grid-template-columns: repeat(3, 1fr); }
+    .product-byshop { grid-template-columns: repeat(3, 1fr); }
   }
 
 
@@ -717,5 +718,9 @@ button.addcart:hover {
 
   .cards {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-myshop {
+    grid-template-columns: repeat(2, 1fr);
+
   }
   }
