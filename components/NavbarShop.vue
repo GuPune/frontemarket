@@ -15,7 +15,7 @@
   <b-form-select v-model="selected" :options="options"></b-form-select>
       </b-col>
              <b-col cols="1" md="1"  sm="1" class="nav-form-search">
-    
+
 
   <b-button variant="outline-primary ic-nav-bg-white" @click="Search()">   <i class="fas fa  fas fa-search ic-nav-black" aria-hidden="true"></i></b-button>
 
@@ -25,23 +25,23 @@
 
       <b-navbar-nav class="ml-auto">
 
-      
+
      <b-nav-item :href="objectslayoutshop.link_social_face"  target="_blank"><img  :src="Checkimage(objectslayoutshop.image_face)"  alt="" height="20px" width="20px"></b-nav-item>
      <b-nav-item  :href="objectslayoutshop.link_social_line"><img  :src="Checkimage(objectslayoutshop.image_line)" alt="" height="20px" width="20px"></b-nav-item>
     <b-nav-item  :href="objectslayoutshop.link_social_instr"><img  :src="Checkimage(objectslayoutshop.image_intra)" alt="" height="20px" width="20px"></b-nav-item>
 
       </b-navbar-nav>
 
-      
+
     </b-collapse>
 
-    
-    
+
+
   </b-navbar>
 
-  
 
-  
+
+
 
    <b-navbar toggleable="sm"   style="{'background-color':colors}"  class="banav navbar-fixed-top navshop-mobiles" :fixed="position" v-on:scroll.native="handleScroll">
     <b-navbar-brand href="#"><div class="shop-name-nav-mobile">
@@ -59,7 +59,7 @@
 
       </b-col>
   </b-row>
-      
+
 
     </b-navbar-brand>
 
@@ -70,7 +70,7 @@
 
     <b-navbar-nav>
       <b-nav-item href="#" v-for="(item, index) in menu" :key="item.id"  @click="redirectTolink(item.link)"  :class="{'rkknoob': checkPath(item.link)}">{{item.name}}</b-nav-item>
-  
+
     </b-navbar-nav>
 
 
@@ -120,7 +120,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
 
       options: [
           { value: 'a', text: 'สินค้า'},
-          { value: 'b', text: 'ร้านค้า' },
+
         ]
     };
   },
@@ -134,36 +134,36 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
                 objectslayoutshop: state => state.Layout.navbar_shop,
              }),
 
-             
 
-             
-			
+
+
+
         isLogins () {
                 return this.$store.state.auth.loggedIn;
         },
 
         isUrl () {
                 return this.$store.state.user.url_id;
-        },  
-  
+        },
+
 
         cartTotal () {
         return this.$store.state.Cart.cartTotal
         }
-           
+
 
         },
       created () {
-        
+
             window.addEventListener('scroll', this.handleScroll);
     },
     destroyed () {
             window.removeEventListener('scroll', this.handleScroll);
     },
-        
 
-    
-        
+
+
+
       async mounted() {
     let a = this.$store.dispatch(FETCH_GET_PROFILE)
           let checker = await localStorage.getItem("user");
@@ -184,7 +184,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
           }else{
             this.IsLogin = false;
           }
-        
+
        //   this.colors = this.objectslayoutshop.navbar_menu_color;
          },
 
@@ -192,7 +192,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
 
             Checkimage(image){
                 let public_images = process.env.ImageSoc+image;
-         
+
                 return public_images;
           },
 
@@ -201,17 +201,17 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
 
       if(window.scrollY > 100){
      this.colors = '#EF7318';
-  
+
         this.position = 'top'
       }else {
      this.colors = '#F5ECEA';
       this.position = '-'
       }
-   
-   
+
+
             },
             redirectTo(names) {
-  
+
                 let path = this.$route.path
                 if (path !== names) {
 
@@ -226,7 +226,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
               let path = this.$route.path
                if (path !== names) {
                const Shopid = this.$route.params.id;
-         
+
              this.$router.push({ name: names, params: { id: Shopid }})
                 }
         },
@@ -249,12 +249,12 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
           logout() {
     this.$auth.logout()
 
-    
+
      }
         }
 
 
-           
+
         }
 
 
