@@ -13,14 +13,14 @@
         </h2>
 
              <b-row>
-      
 
-      
+
+
 
       <b-col lg="6" class="my-1">
         <b-form-group
-          label="Filter"
-          label-for="filter-input"
+          label="ค้นหา"
+          label-for="ออเดอร์ที่ต้องการค้นหา"
           label-cols-sm="3"
           label-align-sm="right"
           label-size="sm"
@@ -35,18 +35,18 @@
             ></b-form-input>
 
             <b-input-group-append>
-              <b-button :disabled="!filter" @click="filter = ''">Clear</b-button>
+              <b-button :disabled="!filter" @click="filter = ''">ลบ</b-button>
             </b-input-group-append>
           </b-input-group>
         </b-form-group>
       </b-col>
 
 
-      <b-col sm="5" md="6" class="my-1">
+      <b-col sm="5" md="5" class="my-1">
         <b-form-group
-          label="Per page"
+          label="รายการ"
           label-for="per-page-select"
-          label-cols-sm="6"
+          label-cols-sm="4"
           label-cols-md="4"
           label-cols-lg="3"
           label-align-sm="right"
@@ -62,9 +62,9 @@
         </b-form-group>
       </b-col>
     </b-row>
-        
+
         <div class="card-body pt-0">
- 
+
 
 
 
@@ -84,51 +84,51 @@
       show-empty
       small
       @filtered="onFiltered"
-      @row-clicked="expandAdditionalInfo" 
+      @row-clicked="expandAdditionalInfo"
     >
- 
+
          <template #cell(status)="row">
 
   <div  v-if="row.item.status == 'C'">
  <span style="color: #FF0000"> ยกเลิก </span>
- 
+
 </div>
          <div  v-if="row.item.status == 'Y'">
  <span style="color: #33CC00"> ยืนยันการชำระ </span>
- 
+
 </div>
   <div  v-if="row.item.status == 'O'">
  <span style="color: #FFB912"> รอตรวจสอบ </span>
- 
+
 </div>
   <div  v-if="row.item.status == 'N'">
  <span style="color: #FF6347"> สั่งซื้อสินค้า
  </span>
- 
+
 </div>
   <div  v-if="row.item.status == 'S'">
  <span style="color: #2E8B57"> จัดส่งสินค้า </span>
- 
+
 </div>
 
-         
- 
+
+
       </template>
 
    <template #cell(created_at)="row">
-  
+
 
           {{covertdate(row.item.created_at)}}
       </template>
-      
+
 
       <template #cell(actions)="row">
         <b-button size="sm" @click="row.toggleDetails">
-          {{ row.detailsShowing ? 'Hide' : 'Show' }} 
+          {{ row.detailsShowing ? 'Hide' : 'Show' }}
         </b-button>
       </template>
 
-  
+
 
       <template #row-details="row">
         <b-card>
@@ -152,18 +152,18 @@
       <td>
        <div  v-if="value.delivertStatus == 'Y'">
   <span style="color: #33CC00"> จัดส่งเรียบร้อย </span>
-     
+
 </div>
 <div v-else>
      <span style="color: #FFB912"> รอการจัดส่ง </span>
 </div>
-         
-      
-    
+
+
+
       </td>
       <td> <img loading="lazy" :src="Checkimage(value.product_images)" class="col-12 no-padding banner-icon" style="display: block;padding: 0;" width="75" height="75"></td>
     </tr>
-  
+
   </tbody>
 </table>
         </b-card>
@@ -186,7 +186,7 @@
       <pre>{{ infoModal.content }}</pre>
     </b-modal>
   </div>
-           
+
         </div>
     </div>
 
@@ -196,7 +196,7 @@
     </div>
 
 
-    
+
 
 
 
@@ -218,17 +218,17 @@ import { FETCH_ADS_SHOP,FETCH_GET_PROFILE,FETCH_ADDRESS,DEL_ADDRESS_BY_ID,GET_OR
        loadding:true,
       IsLogin: false,
   items: [
-        
+
 
         ],
         fields: [
           { key: 'order_cartnumber', label: 'หมายเลขคำสั่งซื้อ	', sortable: true, sortDirection: 'desc' },
-          { key: 'sumPrice', label: 'ราคา(THB)	', sortable: true, class: 'text-center' },
+          { key: 'sumPrice', label: 'ราคา(บาท)	', sortable: true, class: 'text-center' },
           { key: 'status', label: 'สถานะการสั่งซื้อ	', sortable: true, class: 'text-center' },
         { key: 'created_at', label: 'วันที่สั่งซื้อ	', sortable: true, class: 'text-center' },
-       
-          { key: 'actions', label: 'Actions' },
-    
+
+          { key: 'actions', label: 'รายละเอียด' },
+
         ],
         totalRows: 1,
         currentPage: 1,
@@ -258,7 +258,7 @@ import { FETCH_ADS_SHOP,FETCH_GET_PROFILE,FETCH_ADDRESS,DEL_ADDRESS_BY_ID,GET_OR
 
      computed: {
    ...mapGetters(["address","profile","orderall"]),
-   
+
 
     isUrl () {
                 return this.$store.state.user.url_id;
@@ -268,16 +268,16 @@ import { FETCH_ADS_SHOP,FETCH_GET_PROFILE,FETCH_ADDRESS,DEL_ADDRESS_BY_ID,GET_OR
         return this.items.length
       }
         },
-           
 
-   
+
+
         created(){
-           
-        },
-        
 
-    
-        
+        },
+
+
+
+
      async mounted() {
          this.form.url = window.location.origin;
    this.form.shop_name = this.$route.params;
@@ -292,7 +292,7 @@ import { FETCH_ADS_SHOP,FETCH_GET_PROFILE,FETCH_ADDRESS,DEL_ADDRESS_BY_ID,GET_OR
       methods: {
           formatPrice(value) {
         let val = (value/1).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")
-    
+
         return val;
         },
             onFiltered(filteredItems) {
@@ -303,19 +303,19 @@ import { FETCH_ADS_SHOP,FETCH_GET_PROFILE,FETCH_ADDRESS,DEL_ADDRESS_BY_ID,GET_OR
 
         redirectTo() {
               this.$router.push({ name: 'profile-addressshipping' })
-          
+
         },
 
         covertdate(date){
             return moment(date, 'YYYY-MM-DD').format('DD/MM/YYYY');
-                
+
         },
         Checkimage(image){
                 let public_images = process.env.ImageURL+image;
                 return public_images;
         },
        async expandAdditionalInfo(row) {
-       
+
           this.loadding = true;
          this.tabs = 2;
 
@@ -330,7 +330,7 @@ import { FETCH_ADS_SHOP,FETCH_GET_PROFILE,FETCH_ADDRESS,DEL_ADDRESS_BY_ID,GET_OR
                  let order_data = await this.$store.dispatch(GET_ORDER_DATA_HISTORY,this.form);
              let changetabs = await this.$store.dispatch(CHANGE_TABS,this.tabs);
            //  let getorder = await this.$store.dispatch(CHANGE_TABS,this.tabs);
-       
+
 
               this.loadding = false;
 //    this.$router.push({ name: '/profile/orderstatus' })
@@ -343,16 +343,16 @@ import { FETCH_ADS_SHOP,FETCH_GET_PROFILE,FETCH_ADDRESS,DEL_ADDRESS_BY_ID,GET_OR
 //                 //   this.$router.push({ params: { id: '1' } ,name: name})
 //                    this.$router.push({ name: names, params: { id: Shopid }})
 
-  
-        
+
+
         },
 
-      
+
 
       }
 
 
-           
+
         }
 
 

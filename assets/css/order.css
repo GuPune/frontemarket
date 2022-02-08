@@ -9,7 +9,7 @@
 }
 
 .container.allorderweb{
-    
+
     height: auto;
     background-color: rgb(224, 234, 255);
     margin-top: 30px;
@@ -44,23 +44,23 @@
     border-collapse: collapse;
     width: 100%;
   }
-  
+
   #customers td, #customers th {
-    
- 
+
+
     padding: 8px;
   }
-  
+
   #customers tr:nth-child(even){background-color: #f2f2f2;}
-  
-  
-  
+
+
+
   #customers th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-  
-  
+
+
   }
 
   .bg-order{
@@ -79,7 +79,7 @@
     width: 80px;
     overflow: hidden
   }
-  
+
   .quantity input {
     margin: 0;
     text-align: center;
@@ -93,7 +93,7 @@
     outline: 0;
     background-color: #F6F6F6
   }
-  
+
   .quantity input.qty {
     position: relative;
     border: 0;
@@ -106,7 +106,7 @@
     border-radius: 0;
     background-clip: padding-box
   }
-  
+
   .quantity .minus, .quantity .plus {
     line-height: 0;
     background-clip: padding-box;
@@ -125,22 +125,22 @@
     width: 25px;
     z-index: 3
   }
-  
+
   .quantity .minus:hover, .quantity .plus:hover {
     background-color: #dad8da
   }
-  
+
   .quantity .minus {
     bottom: 0
   }
-  
+
   .container.shopcarts{
     justify-content: center;
     width: 100%;
-  
+
   }
   .order-name{
-
+font-size: 16px;
     height: 33px;
   }
   .shop-name-order{
@@ -175,11 +175,11 @@
 
 .back-order{
 
-  
+
 }
 
 
-  
+
 
 .responsive{
 
@@ -196,9 +196,9 @@
     overflow: hidden;
     text-align: center;
     color: #303030; */
-/* } */ 
-  
-  
+/* } */
+
+
   .card-header{
     background-color: rgb(205, 228, 255);
   }
@@ -225,7 +225,7 @@
   .te-oreder-carde{
     font-size: 0.8vw;
   }
-  
+
   .te-oreder-cat{
     font-size: 0.9vw;
    }
@@ -234,10 +234,10 @@
     font-size: 0.8vw;
   }
 
-  @media (min-width: 992px) { 
+  @media (min-width: 992px) {
     .cart-row {
       border-bottom: 1px solid #cccccc;
-      padding: 30px 0;
+      padding: 15px 0;
     }
 
    }
@@ -249,7 +249,7 @@
     /* flex: 0 0 75%; */
     flex: 0 0 100%;
     max-width: 100%;
-    
+
 }
 
 .ipad-order-input{
@@ -274,7 +274,7 @@ width: 40%!important;
  }
 
  /* @media (max-width: 900px) {
-  
+
 .ipad-order-input-number{
 width: 50%!important;
 
@@ -284,42 +284,42 @@ width: 50%!important;
 
 
  @media (max-width: 1400px) {
-  
+
   .ipad-order-input{
     display: block;
-  
+
   }
 
   .ipad-order-input-number{
     width: 37%!important;
-    
+
     }
-  
+
    }
 
 
    @media (max-width: 1330px) {
-  
+
     .ipad-order-input{
       display: block;
-    
+
     }
-  
+
     .ipad-order-input-number{
       width: 50%!important;
-      
+
       }
-    
+
      }
 
      @media (max-width: 1300px) {
-  
-  
+
+
       .ipad-order-input-number{
         width: 50%!important;
-        
+
         }
-      
+
        }
    */
 
@@ -328,7 +328,7 @@ width: 50%!important;
 @media (min-width: 1200px) {
   .cart-row {
     border-bottom: 1px solid #cccccc;
-    padding: 30px 0;
+    padding: 15px 0;
   }
   .after-sus{
     margin: 20px 80px;
@@ -336,7 +336,7 @@ width: 50%!important;
 
  }
   @media screen and (max-width: 600px) {
-    
+
     .order-mod{
       padding-top: 1em;
     }
@@ -348,10 +348,10 @@ width: 50%!important;
 
     text-align: center;
     }
-    
+
     .cart-mobile-dis{
       /* justify-content: center; */
-      display: none; 
+      display: none;
     }
 
     .cart-aamob-dis{
@@ -391,10 +391,10 @@ width: 50%!important;
       text-align: center;
     }
 
-    
+
     .shop-name-order-mobile{
       padding-top: 15px;
-      
+
      }
 
      .bg-order-mobile{
@@ -454,18 +454,18 @@ width: 50%!important;
 
 .ipad-order {
 margin-top: 30px;
-  
+
 }
 
 
   }
 
   @media screen and (max-width: 767px) {
-    
-    
+
+
     .cart-mobile-dis{
       /* justify-content: center; */
-      display: none; 
+      display: none;
     }
 
 
@@ -493,7 +493,7 @@ margin-top: 30px;
         }
   @media screen and (max-width: 900px) {
 
-  
+
     .ipad-site{
         flex: 0 0 100%;
         max-width: 100%;
@@ -502,23 +502,23 @@ margin-top: 30px;
 
   @media screen and (min-width: 720px) {
 
-  
+
 
   }
 
   @media only screen and (min-width: 720px) and (max-width: 820px)  {
-   
+
     .te-oreder-carde{
       padding-right: 5px;
           }
     }
 
-    
 
 
 
 
-  @media screen and (max-width: 1400px) {
+
+  @media screen and (max-width: 1215px) {
     .shop-name-order-pc{
       display:none;
     }
@@ -530,7 +530,7 @@ margin-top: 30px;
 
     .cart-mobile-dis{
       /* justify-content: center; */
-      display: none; 
+      display: none;
     }
 
     .ipad-site{
@@ -539,9 +539,34 @@ margin-top: 30px;
   }
 
 
-    
 
   }
 
 
-  
+  @media screen and (min-width: 1401px) {
+
+
+    .orderlist-center-deskop{
+      text-align: center;
+    }
+
+
+  }
+
+
+  @media screen and (max-width: 1401px) {
+
+
+
+  }
+
+
+
+
+  @media only screen and (min-width: 1211px) and (max-width: 1401px)  {
+
+    .text-ord{
+      font-size: 13px;
+          }
+
+    }

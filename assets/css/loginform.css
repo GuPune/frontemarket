@@ -11,10 +11,15 @@
     background-color:#EF7318;
     color: whitesmoke;
     border-radius: 20px;
-  
+
 }
 
-/* 
+.changepass-btn{
+  background-color: #EF7318;
+  color: whitesmoke;
+}
+
+/*
 .container.loginformmobile{
     width:95%;
     height: auto;
@@ -49,8 +54,8 @@
     visibility: visible;
     opacity: 1;
   }
-  
-  
+
+
   .popup {
     margin: 70px auto;
     padding: 20px;
@@ -60,7 +65,7 @@
     position: relative;
     transition: all 5s ease-in-out;
   }
-  
+
   .popup h2 {
     margin-top: 0;
     color: #333;
@@ -81,14 +86,16 @@
   }
   .popup .content {
     max-height: 30%;
-  
+
   }
 
   .form-login-desktop{
 
     padding-top: 70px;
   }
-  
+
+
+
   @media screen and (max-width: 700px){
     .box{
       width: 70%;
@@ -100,12 +107,11 @@
 
 
   @media screen and (max-width: 600px) {
-    
-   
+
+
     .form-login-desktop{
       margin-top: 50px;
     }
-  
+
   }
-  
-  
+
