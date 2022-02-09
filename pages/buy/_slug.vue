@@ -202,7 +202,7 @@
           <SalePageSummary/>
 <div style = "display: flex; justify-content:flex-end;padding-top: 15px">
 <button type="button" class="btn btn-light">ยกเลิก</button>
-<button type="button" class="btn btn-primary changepass-btn" @click="buy()">ยืนยันการสั่งซื้อ</button>
+<button type="button" class="btn changepass-btn" @click="buy()">ยืนยันการสั่งซื้อ</button>
 </div>
 
     </div>
