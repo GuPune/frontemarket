@@ -76,6 +76,10 @@ color: black !important;
   background-color: #E94335;
   color: white;
 }
+
+.slick-list{
+  text-align: -webkit-center;
+}
   
 
     
