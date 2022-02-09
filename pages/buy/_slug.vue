@@ -10,7 +10,7 @@
         <div class="card shopping-cart">
 
         <h2 class="shoping-cart-title bg-order"><h1>สั่งซื้อสินค้า</h1>
-          
+
         </h2>
         <div class="card-body"  v-for="(item, index) in product" :key="item.id" >
         <div class="row" id="scrollMemberList">
@@ -18,12 +18,12 @@
             <div class="row form-group">
                 <div class="col-12 divMemberAddressChoose">
                     <div class="text-muted" >
-              
+
                     <a href="#" title="C-DIAL PRO 4 ตัวควบคุม 4 สถานี 9 V. รุ่นใช้ในร่ม" class="product-image"><img class="img-responsive lazy"  :src="Checkimage(item.img_product)" width="125" height="125" alt="C-DIAL PRO 4 ตัวควบคุม 4 สถานี 9 V. รุ่นใช้ในร่ม" /></a>
 
                     </div>
                 </div>
-            </div>    
+            </div>
         </div>
 
 
@@ -33,7 +33,7 @@
             <h2 class="productName-detail">{{item.name_th}}</h2>
             </div>
             <div class="row">
-           
+
                 </div>
                                     <div class="marginInner mb-4 mb-md-4"><div class="dividerFix"></div></div>
                                     <div class="row ">
@@ -41,7 +41,7 @@
                     <div class="form-group">
                         <div class="marginInner">
                             <div class="productPrice">
-                           
+
                             </div>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                     <div class="form-group h5">
                         <div class="marginInner mb-4 mb-md-4">
                             <p class="productPrice"> ฿  {{ formatPrice(item.price) }}</p>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
                                         <b-input-group-append>
                                         <b-btn variant="outline-secondary"   v-on:click='Addup()'>+</b-btn>
                                         </b-input-group-append>
-                                        </b-input-group>   
+                                        </b-input-group>
                     </div>
                 </div>
                   <div class="col-md-4 attrHeader form-group">ชิ้น  </div>
@@ -84,14 +84,14 @@
 
 
 
- 
-     </div>    
-      
+
+     </div>
+
         </div>
 
-        
-        
-        
+
+
+
     </div>
 
               <div class="row">
@@ -103,7 +103,7 @@
                                             required
                                             @input="$v.form.name.$touch()"
                                             @blur="$v.form.name.$touch()"
-                                      
+
                         />
                     </div>
 
@@ -116,7 +116,7 @@
                                     required
                                     @input="$v.form.details.$touch()"
                                     @blur="$v.form.details.$touch()"
-                        
+
                         ></textarea>
                     </div>
               <div class="form-group">
@@ -126,7 +126,7 @@
                                             required
                                             @input="$v.form.email.$touch()"
                                             @blur="$v.form.email.$touch()"
-                                      
+
                         />
                     </div>
                     <div class="form-group">
@@ -151,15 +151,15 @@
                              v-model="form.zipcode" />
                     </div>
 
-                    
 
-                
 
-      
 
-                   
+
+
+
+
             </div>
-            
+
 
              <div class="col-12 col-md-6 col-lg-6 alotcolerror">
                         <div class="form-group">
@@ -168,7 +168,7 @@
                             <select class="form-control" name="customerRegionsID" id="customerRegionsID" @change="ChangeProvinces($event)"   :class="{ 'is-invalid': $v.form.pros_id.$error}">
                                 <option value="">- เลือก-</option>
                                   <option :value="province.id"  v-for="(province, index) in provin" :key="province.id" >{{province.name_en}}</option>
-                                                             
+
                              </select>
                             <div class="invalid-feedback" id="divError_customerRegionsID"></div>
                         </div>
@@ -196,17 +196,17 @@
                         </div>
                     </div>
 
-    
+
         </div>
 <br>
           <SalePageSummary/>
 <div style = "display: flex; justify-content:flex-end;padding-top: 15px">
 <button type="button" class="btn btn-light">ยกเลิก</button>
-<button type="button" class="btn btn-primary" @click="buy()">ยืนยันการสั่งซื้อ</button>
+<button type="button" class="btn btn-primary changepass-btn" @click="buy()">ยืนยันการสั่งซื้อ</button>
 </div>
 
-    </div>    
-    </div> 
+    </div>
+    </div>
 
 
 </b-container>
@@ -214,7 +214,7 @@
 
 
 
-   
+
 </template>
 
 <style>
@@ -279,7 +279,7 @@ import { SAVE_CONTACT,GET_CAPTCHA,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,S
           pros_id:'',
           dist_id:"",
           subdist_id:"",
-      
+
         },
         summary: {
           total:'',
@@ -291,10 +291,10 @@ import { SAVE_CONTACT,GET_CAPTCHA,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,S
       }),
 
           computed: {
-              
+
                              ...mapState({
                 objects: state => state.Shipping.summary,
-              
+
             }),
 
      NameErrors() {
@@ -321,8 +321,8 @@ import { SAVE_CONTACT,GET_CAPTCHA,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,S
             return errors;
         },
 
-            
-         
+
+
             TelErrors() {
             const errors = [];
             if (!this.$v.form.tel.$dirty) return errors;
@@ -348,26 +348,26 @@ import { SAVE_CONTACT,GET_CAPTCHA,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,S
 
     },
 
-       
+
        async created(){
-           
+
         let provinces = await this.$store.dispatch(GET_PROVINCESSALEPAGE);
 
         this.provin = provinces;
-     
-    
+
+
         },
-             
+
             async mounted() {
 
-              
+
       var product_sale = localStorage.getItem('salepageitem');
- 
+
 
     this.form.product_id = product_sale;
     this.form.url = window.location.origin
 
- 
+
    var product =  await this.$store.dispatch(GET_PRODUCT_SALEPAGE,this.form)
 this.product = product
 
@@ -381,19 +381,19 @@ var sum =  await this.$store.dispatch(GET_SALEPAGESUMMARY,this.summary)
  //var product =  await this.$store.dispatch(GET_PRODUCT_SALEPAGE,this.form)
 
 
-  
-      
+
+
       },
 
              methods: {
 
         validateNumber: (event) => {
       let keyCode = event.keyCode;
-   
+
       if (keyCode < 48 || keyCode > 57) {
         event.preventDefault();
       }
-    
+
     },
 
         async Addup(){
@@ -411,10 +411,10 @@ var sum =  await this.$store.dispatch(GET_SALEPAGESUMMARY,this.summary)
               if(this.add == 1){
 
             let keytext = 'สินค้าจำกัดจำนวนไม่ต่ำกว่า 1!'
-            
+
                 return await this.error(keytext);
             }
-   
+
      this.add -= 1;
     this.summary.add = this.add
 
@@ -422,7 +422,7 @@ var sum =  await this.$store.dispatch(GET_SALEPAGESUMMARY,this.summary)
 
 var sum =  await this.$store.dispatch(GET_SALEPAGESUMMARY,this.summary)
 
-          
+
         },
                    async ChangeProvinces(event){
              this.pros_id = event.target.value;
@@ -437,14 +437,14 @@ var sum =  await this.$store.dispatch(GET_SALEPAGESUMMARY,this.summary)
              this.form.dist_id = event.target.value
 
        let subdistrct = await this.$store.dispatch(GET_SUBDISTRICTSSALEPAGE,this.dist_id);
-   
+
           this.subdis = subdistrct;
           },
           async ChangeSubDistris(event){
 
        this.subdist_id = event.target.value;
        this.form.subdist_id = event.target.value
-          
+
           },
 
         gencapcha() {
@@ -456,7 +456,7 @@ var sum =  await this.$store.dispatch(GET_SALEPAGESUMMARY,this.summary)
             if (this.$v.form.$pending || this.$v.form.$error) return;
 
 this.send();
-           
+
 
               },
 
@@ -477,7 +477,7 @@ this.send();
             );
 
         this.$router.push({ name: 'buy-thankyou' })
-     
+
         },
 
         error(keytext) {
@@ -490,11 +490,11 @@ this.send();
                 });
         },
 
-        
+
 
                 Checkimage(image){
                 let public_images = process.env.ImageURL+image;
-        
+
                return public_images;
 
                  // return "http://demo.takraonline.com/Images/SalePage/Image/2Salepage-banner-1-TripleJay.jpg";
@@ -508,7 +508,7 @@ this.send();
         this.form.salepage_id = salepage_id
 
 
-    
+
           this.$v.$touch();
             if (this.$v.form.$pending || this.$v.form.$error) return;
                 this.$store.dispatch(SAVE_ORDER_SALEPAGE, this.form)
@@ -519,18 +519,18 @@ this.send();
 
         formatPrice(value) {
         let val = (value/1).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")
- 
+
         return val;
         },
 
 
-  
-    
-      }
-       
-           
 
-     
+
+      }
+
+
+
+
     };
 </script>
 
