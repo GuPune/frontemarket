@@ -173,8 +173,6 @@ import 'sweetalert2/dist/sweetalert2.min.css';
         async saveprofile(){
 
 
-       this.$v.$touch()
-            if (this.$v.form.$pending || this.$v.form.$error) return;
 
 this.profile.image = this.file;
 
