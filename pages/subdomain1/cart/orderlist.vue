@@ -273,7 +273,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
                 return public_images;
         },
         RemoveToCart(item){
-    this.$swal("Remove Product!", "Remove Product From Cart!", "success")
+    this.$swal("ลบสินค้าเรียบร้อยแล้ว", "ลบสินค้าออกจากตะกร้าเรียบร้อยแล้ว", "success")
     let remove_producttocart =  this.$store.dispatch(REMOVE_CART,item);
         },
 

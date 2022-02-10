@@ -2,7 +2,7 @@
 
  <section id="Related">
         <div class="row relatedweb">
-    
+
 
         </div>
 
@@ -14,9 +14,9 @@
 
     </section>
 
-    
 
- 
+
+
 </template>
 
 
@@ -36,11 +36,11 @@
   },
 
      computed: {
-           
+
         ...mapGetters(["product_shell","authenticated","ads_semi"]),
 
         },
-        
+
         mounted() {
         //  this.$store.dispatch(ToogleAction);
 
@@ -53,14 +53,14 @@
        let a = window.location.origin
        this.form.url = a;
     //   this.$store.dispatch(FETCH_ADS_SHOP_SEMI,this.form);
-        
+
          },
-        
-  
+
+
         methods: {
 
         Checkimage(image){
-        
+
                 let a = 'http://cmsecom.idtest.work/public/product/' + image;
                 return a;
         },
@@ -72,12 +72,12 @@
           let productinshell = this.$store.dispatch(FETCH_PRODUCT_SHELL);
         },
         Checkimage(image){
-        
+
                 let a = 'http://cmsecom.idtest.work/public/product/' + image;
                 return a;
         },
         async addToCart(item){
-                 await this.$swal("Add Product!", "Product To Cart!", "success")
+                 await this.$swal("เพิ่มสินค้าเรียบร้อยแล้ว", "สินค้าอยู่ตะกร้าแล้ว", "success")
         },
         async CheckLogin(item){
        if(!this.authenticated){
@@ -88,7 +88,7 @@
         },
 
         },
-  
+
 
         components: {
 

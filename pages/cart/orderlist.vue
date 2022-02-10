@@ -301,7 +301,7 @@ this.test == 0 ? true : false;
         },
 
         RemoveToCart(item){
-    this.$swal("Remove Product!", "Remove Product From Cart!", "success")
+    this.$swal("ลบสินค้าเรียบร้อยแล้ว", "ลบสินค้าออกจากตะกร้าเรียบร้อยแล้ว", "success")
     let remove_producttocart =  this.$store.dispatch(REMOVE_CART,item);
         },
 

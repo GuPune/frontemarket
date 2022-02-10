@@ -154,7 +154,7 @@
         async addToCart(item){
 
            let add_producttocart = await this.$store.dispatch(ADD_CART,item);
-                 await this.$swal("Add Product!", "Product To Cart!", "success")
+                 await this.$swal("เพิ่มสินค้าเรียบร้อยแล้ว", "สินค้าอยู่ตะกร้าแล้ว", "success")
         },
         async CheckLogin(item){
        if(!this.authenticated){

@@ -14,17 +14,17 @@
                 <a  class="row top-container"><img src="https://demo.bagisto.com/marketplace-184-82-60-131/themes/velocity/assets/images/watch.png" :src="Checkimage(ads_semi.Top.images)"  class="col-12 pr0"  v-if="ads_semi.Top" /></a>
                 <a  class="row bottom-container"><img src="https://demo.bagisto.com/marketplace-184-82-60-131/themes/velocity/assets/images/kids-2.png" :src="Checkimage(ads_semi.Bottom.images)" class="col-12 pr0"  v-if="ads_semi.Bottom"  /></a>
             </div>
-    
+
     </div>
-    
+
         </div>
         </div>
 
-  
-                                
 
-                        
-                    </div> 
+
+
+
+                    </div>
       </div>
 
     </div>
@@ -37,7 +37,7 @@
 
     </section>
 
- 
+
 </template>
 
 
@@ -56,31 +56,31 @@
   },
 
      computed: {
-           
+
         ...mapGetters(["product_shell","authenticated","ads_semi"]),
 
         },
-        
+
         mounted() {
         //  this.$store.dispatch(ToogleAction);
 
            //     let a = this.$store.dispatch(FETCH_PRODUCT_SHELL);
 
-        
+
         this.loadcategory()
 
 
-   
+
       this.form.url = window.location.origin;
        this.form.shop_name = this.$route.params;
 
 
-    
+
        this.$store.dispatch(FETCH_ADS_SHOP_SEMI,this.form);
-        
+
          },
-        
-  
+
+
         methods: {
 
         Checkimage(image){
@@ -94,9 +94,9 @@
         loadcategory(){
           let productinshell = this.$store.dispatch(FETCH_PRODUCT_SHELL);
         },
- 
+
         async addToCart(item){
-                 await this.$swal("Add Product!", "Product To Cart!", "success")
+                 await this.$swal("เพิ่มสินค้าเรียบร้อยแล้ว", "สินค้าอยู่ตะกร้าแล้ว", "success")
         },
         async CheckLogin(item){
        if(!this.authenticated){
@@ -107,7 +107,7 @@
         },
 
         },
-  
+
 
         components: {
 

@@ -9,14 +9,14 @@
 
       <div class="row mb-3">
 
-        <div class="col-4 pl-2 pr-2" v-for="(itemss, index) in items[0].shop" :key="itemss.id"> 
-     
+        <div class="col-4 pl-2 pr-2" v-for="(itemss, index) in items[0].shop" :key="itemss.id">
+
           <div class="card shadow"  @click="redirectTo('line-id')">
             <div class="card-body text-center"> <img :src="Checkimage(itemss.icon)" width="100%"/> </div>
           </div>
-  
+
         </div>
-    
+
       </div>
 
 
@@ -28,18 +28,18 @@
       <div class="row mb-3">
 
         <div class="col-4 pl-2 pr-2"  v-for="(item, index) in items[1].shop" :key="item.id"> <a href="#" onclick="return confirm('เมนูนี้ยังไม่เปิดให้บริการ')">
-        
+
           <div class="card shadow">
             <div class="card-body text-center"> <img :src="Checkimage(item.icon)" width="100%"/> </div>
           </div>
-          </a> 
+          </a>
         </div>
-    
+
       </div>
 
 
-      
-</div>    
+
+</div>
 </template>
 
 
@@ -53,8 +53,8 @@
   // optional style for arrows & dots
   import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
-  
-  
+
+
   export default {
         data() {
       return {
@@ -87,55 +87,55 @@
         //     src: 'https://static.bigc.co.th/media/bannerads/images/unicharmm.png',
         //   },
         // ],
-        
-   
+
+
  slickOptions:{
    "infinite": true,
   "slidesToShow": 3,
   "speed": 500,
   "rows": 2,
   "slidesPerRow": 1
-  
+
 }
- 
+
       }
     },
-        
+
      computed: {
-           
+
      ...mapGetters(["product_shell","authenticated"]),
 
 
          isUrl () {
                 return this.$store.state.user.url_id;
-        },  
-  
+        },
+
 
         },
-        
+
        async mounted() {
-   
+
 
       let product = await this.$store.dispatch(GET_SHOP_LINE);
-     
+
 
       this.items = product;
 
 
 
-    
+
          },
-        
-  
+
+
         methods: {
 
                  redirectTo(names){
-       
+
              this.$router.push({ name: names, params: { id:'Admin' }})
         } ,
 
 
- 
+
         loadcategory(){
           let productinshell = this.$store.dispatch(FETCH_PRODUCT_SHELL);
         },
@@ -145,13 +145,13 @@
         },
         async addToCart(item){
            let add_producttocart = await this.$store.dispatch(ADD_CART,item);
-                 await this.$swal("Add Product!", "Product To Cart!", "success")
+                 await this.$swal("เพิ่มสินค้าเรียบร้อยแล้ว", "สินค้าอยู่ตะกร้าแล้ว", "success")
         },
         async CheckLogin(item){
        if(!this.authenticated){
 
                          let path = this.$route.path
-            
+
 const names = 'id-form-login'
  const Shopid = this.isUrl.id;
 
@@ -161,7 +161,7 @@ const names = 'id-form-login'
             //  this.$router.push({ path: `/1/${name}` }) // -> /user/123
                 //   this.$router.push({ params: { id: '1' } ,name: name})
                    this.$router.push({ name: names, params: { id: Shopid }})
-               
+
               //  this.$router.push('/form/login')
        }else{
         this.addToCart(item);
@@ -174,7 +174,7 @@ const names = 'id-form-login'
         },
 
         },
-  
+
 
         components: {
 
