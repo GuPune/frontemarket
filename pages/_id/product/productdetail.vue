@@ -40,7 +40,7 @@
 
 
 
-<div class="col-12 col-md-7 col-sm-12 product-detail-ipad">
+<div class="col-12 col-md-12 col-lg-12 col-xl-7 col-sm-12 product-detail-ipad">
             <div class="marginInner">
             <h2 class="productName-detail">{{product_by_item.name_th}}</h2>
             </div>
