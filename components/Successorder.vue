@@ -343,7 +343,7 @@
 
                 </div>
                 <div class="col-6 col-md-6 text-right">
-                                            <button type="button" class="btn btn-primary btn-sm" id="buttonInform" @click="myModel = true" >
+                                            <button type="button" class="btn btn-primary btn-sm" id="buttonInform" @click="scrollToTop()" >
                             แจ้งชำระเงิน                        </button>
 
 
@@ -654,6 +654,10 @@ import axios from 'axios';
     },
 
       methods: {
+
+          scrollToTop() {
+    window.scrollTo(0,0);
+  },
 
                  closeModel:function(){
          this.myModel = false;
