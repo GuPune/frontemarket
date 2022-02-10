@@ -87,6 +87,19 @@
       @row-clicked="expandAdditionalInfo"
     >
 
+
+             <template #cell(sumPrice)="row">
+
+  <div>
+ <span style="color: #FF0000"> {{row.item.sumPrice}} </span>
+
+</div>
+
+
+
+
+      </template>
+
          <template #cell(status)="row">
 
   <div  v-if="row.item.status == 'C'">
