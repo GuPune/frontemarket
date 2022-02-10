@@ -44,7 +44,7 @@
             <div class="row mt-3">
                 <div class="col-12">
                                             <button type="button" class="btn btn-style" id="btnPlusMemAdrrShipping" style="background-color: coral;" @click="redirectTo('profile-addressshipping')">
-                            <i class="fa fa-circle-o"></i>
+                            <i class="fa fa-home"></i>
                             เพิ่มที่อยู่ใหม่                        </button>
                                     </div>
             </div>
