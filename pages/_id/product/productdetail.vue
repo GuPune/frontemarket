@@ -149,7 +149,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <div class="mb-4 mb-md-4">
-
+<!--
                                         <div class="divSocilaGroupNew social-pro-des">
                                              <label class="mr-sm-2" for="inline-form-custom-select-pref">แชร์</label>
                                             <div class="btn-group social-widget">
@@ -163,7 +163,7 @@
                                                     </a>
                                                      </div>
                                         </div>
-
+-->
 
                             </div>
                         </div>
