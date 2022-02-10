@@ -48,7 +48,7 @@
                         </div>
                     </div>
                 </div>
-            
+
                 <div class="row thaiPanel">
                     <div class="col-12 col-md-6 col-lg-3 alotcolerror">
                         <div class="form-group">
@@ -70,7 +70,7 @@
                             <select class="form-control" name="customerRegionsID" id="customerRegionsID" @change="ChangeProvinces($event)" >
                                 <option value="">- เลือก-</option>
                                   <option :value="province.id"  v-for="(province, index) in provin" :key="province.id" >{{province.name_th}}</option>
-                                                             
+
                              </select>
                             <div class="invalid-feedback" id="divError_customerRegionsID"></div>
                         </div>
@@ -106,7 +106,7 @@
                 <div class="row AddressPanel"></div>
                 <input type="hidden" id="isCustomize" value="0" />
 
-         
+
                 <div class="row">
                     <div class="col-12">
                         <button type="button" class="btn btn-style px-4" id="btnSaveAdress"  @click="save()">
@@ -137,11 +137,11 @@ import { FETCH_ADS_SHOP,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,SAVE_ADDRES
             name: { required },
             zipcode: { required,numeric,minLength: minLength(5),maxLength: maxLength(5) },
             tel: { required },
-         
+
 
         }
     },
-    
+
     data() {
     return {
          max:10,
@@ -182,12 +182,12 @@ import { FETCH_ADS_SHOP,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,SAVE_ADDRES
             const errors = []
             if (!this.$v.form.address.$dirty) return errors
             !this.$v.form.address.required && errors.push('โปรดระบุอีเมล')
-      
+
             return errors
         },
 
-            
-         
+
+
             TelErrors() {
             const errors = [];
             if (!this.$v.form.tel.$dirty) return errors;
@@ -201,22 +201,22 @@ import { FETCH_ADS_SHOP,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,SAVE_ADDRES
             !this.$v.form.zipcode.required  && errors.push("โปรดระบุรายละเอียดที่ติดต่อ");
             return errors;
         },
-  
-        },
-           
 
-   
+        },
+
+
+
        async created(){
-           
-           
+
+
         let provinces = await this.$store.dispatch(GET_PROVINCES);
 
         this.provin = provinces;
         },
-        
 
-    
-        
+
+
+
      async mounted() {
 
       },
@@ -224,13 +224,13 @@ import { FETCH_ADS_SHOP,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,SAVE_ADDRES
       methods: {
 
         async isNumber(event, message) {
-           
-                if (!/\d/.test(event.key) &&  
-                    (event.key !== "." || /\./.test(message))  
-                    )  
-                return event.preventDefault();  
 
-                
+                if (!/\d/.test(event.key) &&
+                    (event.key !== "." || /\./.test(message))
+                    )
+                return event.preventDefault();
+
+
         },
          async ChangeProvinces(event){
              this.pros_id = event.target.value;
@@ -243,19 +243,19 @@ import { FETCH_ADS_SHOP,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,SAVE_ADDRES
              this.dist_id = event.target.value;
 
        let subdistrct = await this.$store.dispatch(GET_SUBDISTRICTS,this.dist_id);
-   
+
           this.subdis = subdistrct;
           },
           async ChangeSubDistris(event){
 
        this.subdist_id = event.target.value;
-          
+
           },
         redirectTo() {
               this.$router.push({ name: 'profile-userprofileadd' })
-          
+
         },
-   
+
       save(){
       this.$v.$touch();
       this.form.customer_id = this.profile.id;
@@ -264,7 +264,7 @@ import { FETCH_ADS_SHOP,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,SAVE_ADDRES
         this.form.subdist_id = this.subdist_id;
             if (this.$v.form.$pending || this.$v.form.$error) return;
             if (this.form.pros_id == '' || this.form.pros_id == '' || this.form.subdist_id == ''){
-               
+
  this.error()
                 return false;
             }
@@ -275,6 +275,7 @@ this.send();
       },
 
         send() {
+
             this.$store.dispatch(SAVE_ADDRESS_BY_ID, this.form)
             .then((response) => response.content ==  "สำเร็จ" ? this.success() : this.error())
             .catch((error) => console.log(error))
@@ -303,14 +304,14 @@ this.send();
             );
 
             this.redirectTo();
-          
-     
+
+
         },
 
       }
 
 
-           
+
         }
 
 

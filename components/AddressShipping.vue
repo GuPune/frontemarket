@@ -18,13 +18,14 @@
                     <label class="pl-2">0843745454</label>
                     -->
                     <div class="text-muted" v-if="detailAddress">
-                     {{detailAddress.address}}, ต.{{detailAddress.sub_districts_id}}  อ.{{detailAddress.districts_id}}  จังหวัด.{{detailAddress.province_id}}     
+                      {{detailAddress}}
+                     {{detailAddress.address}}, ต.{{detailAddress.sub_districts_id}}  อ.{{detailAddress.districts_id}}  จังหวัด.{{detailAddress.province_id}}  {{detailAddress.zipcode}}
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>    
+    </div>
 
       <b-modal id="modal-1"  title="เลือกที่อยู่ในการจัดส่ง" size="lg">
         <div>
@@ -36,23 +37,23 @@
       <tr>
         <th>ที่อยู่</th>
         <th></th>
-    
+
       </tr>
     </thead>
     <tbody>
       <tr  v-for="(item, index) in items" :key="item.id">
         <td> <input type="radio" :value="item.id" v-model="selectedAdd"  @change="changeAdd($event)"></td>
-        <td> {{item.address}}, ต.{{item.sub_districts_id}}  อ.{{item.districts_id}}  จังหวัด.{{item.province_id}}</td>
-     
+        <td> {{item.address}}, ต.{{item.sub_districts_id}}  อ.{{item.districts_id}}  จังหวัด.{{item.province_id}} {{item.province_id}}</td>
+
      </tr>
-     
+
     </tbody>
   </table>
   </div>
-  
-      
+
+
   </div>
-     
+
       </b-modal>
 
 
@@ -80,7 +81,7 @@
                     <div class="col-12 col-md-12 col-lg-6">
                         <div class="form-group">
                             <label for="textPhoneNumber" class="font-weight-bold">หมายเลขโทรศัพท์</label>
-                            <input type="text" class="form-control" id="textPhoneNumber" name="textPhoneNumber" 
+                            <input type="text" class="form-control" id="textPhoneNumber" name="textPhoneNumber"
                             :class="{ 'is-invalid': $v.form.tel.$error}"
                                  :error-messages="TelErrors"
                                             required
@@ -97,7 +98,7 @@
                     <div class="col-12">
                         <div class="form-group">
                             <label for="textEditAddress" class="font-weight-bold">ที่อยู่</label>
-                            <textarea class="form-control" id="textEditAddress" name="textEditAddress" rows="3" 
+                            <textarea class="form-control" id="textEditAddress" name="textEditAddress" rows="3"
                             :class="{ 'is-invalid': $v.form.address.$error}"
                                   :error-messages="AddressErrors"
                                             required
@@ -109,7 +110,7 @@
                         </div>
                     </div>
                 </div>
-            
+
                 <div class="row thaiPanel">
                     <div class="col-12 col-md-6 col-lg-3 alotcolerror">
                         <div class="form-group">
@@ -121,7 +122,7 @@
                                             required
                                             @input="$v.form.zipcode.$touch()"
                                             @blur="$v.form.zipcode.$touch()"
-                             v-model="form.zipcode" 
+                             v-model="form.zipcode"
                             />
                             <div class="invalid-feedback" id="divError_customerPostal"></div>
                         </div>
@@ -133,9 +134,9 @@
                                   <select class="form-control" name="customerRegionsID" id="customerRegionsID" @change="ChangeProvinces($event)" >
                                 <option value="">- เลือก-</option>
                                   <option :value="province.id"  v-for="(province, index) in provin" :key="province.id" >{{province.name_th}}</option>
-                                                             
+
                              </select>
-                           
+
                             <div class="invalid-feedback" id="divError_customerRegionsID"></div>
                         </div>
                     </div>
@@ -147,7 +148,7 @@
                                 <option value="">- เลือก - </option>
                                 <option :value="distris.id"  v-for="(distris, index) in distri" :key="distris.id" >{{distris.name_th}} </option>
                                                             </select>
-                          
+
                             <div class="invalid-feedback" id="divError_customerDistrictID"></div>
                         </div>
                     </div>
@@ -159,20 +160,20 @@
                                 <option value="">- เลือก - </option>
                                   <option :value="subdi.id"  v-for="(subdi, index) in subdis" :key="subdi.id" >{{subdi.name_th}}</option>
                                                             </select>
-                          
+
                             <div class="invalid-feedback" id="divError_customerSubDistrictID"></div>
                         </div>
                     </div>
-                  
+
                 </div>
 
                 <div class="row AddressPanel"></div>
                 <input type="hidden" id="isCustomize" value="0" />
 
-         
+
                 <div class="row" >
                     <div class="col-12">
-                        <button type="button" class="btn btn-style px-4" id="btnSaveAdress"  @click="save()">
+                        <button type="button" class="btn changepass-btn px-4" id="btnSaveAdress"  @click="save()">
                             บันทึก                        </button>&nbsp;&nbsp;&nbsp;
                         <!-- <button type="button" class="btn px-4" id="btncancelAdress">
                             ยกเลิก                        </button> -->
@@ -181,15 +182,15 @@
                 </div>
             </form>
   </div>
-  
-      
+
+
   </div>
-     
+
       </b-modal>
             </div>
 
 
-            
+
 </template>
 
 
@@ -210,12 +211,12 @@ export default {
             name: { required },
             zipcode: { required,numeric,minLength: minLength(5),maxLength: maxLength(5) },
             tel: { required },
-         
+
 
         }
     },
       computed: {
-  
+
             ...mapGetters(["address","selectedad","profile"]),
 
 
@@ -232,12 +233,12 @@ export default {
             const errors = []
             if (!this.$v.form.address.$dirty) return errors
             !this.$v.form.address.required && errors.push('โปรดระบุอีเมล')
-      
+
             return errors
         },
 
-            
-         
+
+
             TelErrors() {
             const errors = [];
             if (!this.$v.form.tel.$dirty) return errors;
@@ -251,14 +252,14 @@ export default {
             !this.$v.form.zipcode.required  && errors.push("โปรดระบุรายละเอียดที่ติดต่อ");
             return errors;
         },
-  
-           
 
-        
+
+
+
         isUrl () {
                 return this.$store.state.user.url_id;
         },
-      
+
         },
           data() {
       return {
@@ -296,40 +297,40 @@ export default {
       }
     },
 
-    
-      
+
+
       components: {
-      
-           
+
+
               },
 
                  async created(){
-           
-           
+
+
         let provinces = await this.$store.dispatch(GET_PROVINCES);
 
         this.provin = provinces;
         },
-        
-             
+
+
       async mounted() {
- await this.fetchaddress(); 
-   
+ await this.fetchaddress();
 
 
-         
+
+
         },
 
       methods: {
 
               async isNumber(event, message) {
-           
-                if (!/\d/.test(event.key) &&  
-                    (event.key !== "." || /\./.test(message))  
-                    )  
-                return event.preventDefault();  
 
-                
+                if (!/\d/.test(event.key) &&
+                    (event.key !== "." || /\./.test(message))
+                    )
+                return event.preventDefault();
+
+
         },
 
                  async ChangeProvinces(event){
@@ -343,13 +344,13 @@ export default {
              this.dist_id = event.target.value;
 
        let subdistrct = await this.$store.dispatch(GET_SUBDISTRICTS,this.dist_id);
-   
+
           this.subdis = subdistrct;
           },
           async ChangeSubDistris(event){
 
        this.subdist_id = event.target.value;
-          
+
           },
         changeAdd(event){
           this.form.url = window.location.origin;
@@ -357,22 +358,22 @@ export default {
            var data = event.target.value;
            let selectdata = this.items
 this.form.select_shipping = event.target.value
-        
+
            let shipping = localStorage.setItem("shipping", data);
         if(selectdata.length > 0){
         const arr3 = selectdata.filter(d => d.id == data);
         this.detailAddress = arr3[0]
 
    let update_add_shipping = this.$store.dispatch(UPDATE_ADDRESS_SHIPPING,this.form);
-        
-           
+
+
         }
 
-              
-              
+
+
         },
 
-        
+
 
    rowClass(item, type) {
         if (!item || type !== 'row') return
@@ -385,17 +386,17 @@ this.form.select_shipping = event.target.value
         this.items = getaddress;
 
 
-       await this.checkedaddress(this.items); 
-       
+       await this.checkedaddress(this.items);
+
 
       },
   	showModal() {
-     
-       
+
+
     },
 
     checkedaddress(checkb) {
- 
+
      if(checkb.length > 0){
         const arr2 = checkb.filter(d => d.flag_address === 'F');
         this.selectedAdd = arr2[0].id
@@ -408,7 +409,7 @@ this.form.select_shipping = event.target.value
              let selectshipping =  this.$store.dispatch(SELECT_SHIPPING,this.form);
      }
         let shipping = localStorage.setItem("shipping", this.selectedAdd);
- 
+
     },
 
 
@@ -417,8 +418,8 @@ this.form.select_shipping = event.target.value
 
                let selectableTable = this.$refs.selectableTable
    selectableTable.selectRow(0)
-     
-        
+
+
       },
       selectAllRows() {
         this.$refs.selectableTable.selectAllRows()
@@ -428,10 +429,10 @@ this.form.select_shipping = event.target.value
         this.$refs.selectableTable.clearSelected()
       },
       selectThirdRow() {
-         
+
         // Rows are indexed from 0, so the third row is index 2
         this.$refs.selectableTable.selectRow(1)
-          
+
       },
       unselectThirdRow() {
         // Rows are indexed from 0, so the third row is index 2
@@ -445,7 +446,7 @@ this.form.select_shipping = event.target.value
         this.form.subdist_id = this.subdist_id;
             if (this.$v.form.$pending || this.$v.form.$error) return;
             if (this.form.pros_id == '' || this.form.pros_id == '' || this.form.subdist_id == ''){
-               
+
  this.error()
                 return false;
             }
@@ -456,14 +457,15 @@ this.send();
       },
 
       async  send() {
+
           await  this.$store.dispatch(SAVE_ADDRESS_BY_ID, this.form)
             .then((response) => response.content ==  "สำเร็จ" ? this.success() : this.error())
             .catch((error) => console.log(error))
 
 
-    
 
-            await this.fetchaddress(); 
+
+            await this.fetchaddress();
         },
 
     error() {
@@ -500,15 +502,15 @@ this.send();
             );
 
          //   this.redirectTo();
-          
-     
-        },
-    
-  }
-       
-           
 
-     
-    
+
+        },
+
+  }
+
+
+
+
+
     };
 </script>
