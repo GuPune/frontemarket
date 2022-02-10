@@ -146,8 +146,8 @@
   <tbody>
     <tr v-for="(value, key) in row.item.order_item" :key="key.id">
       <th scope="row">{{ value.product_name }}</th>
-      <td>{{formatPrice(value.sumPrice)}}</td>
-      <td>{{ value.qty }}</td>
+      <td >{{formatPrice(value.sumPrice)}}</td>
+      <td style="text-align:center">{{ value.qty }}</td>
       <td>{{ value.trackNumber }}</td>
       <td>
        <div  v-if="value.delivertStatus == 'Y'">
