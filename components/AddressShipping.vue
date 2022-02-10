@@ -58,6 +58,20 @@
 
 
     <b-modal id="modal-2" ref="modal"  title="เพิ่มที่อยู่" size="lg" no-close-on-backdrop hide-footer>
+
+       <template #modal-footer>
+        <div class="w-100">
+          <p class="float-left">Modal Footer Content</p>
+          <b-button
+            variant="primary"
+            size="sm"
+            class="float-right"
+            @click="show=false"
+          >
+            Close
+          </b-button>
+        </div>
+      </template>
         <div>
 
 
