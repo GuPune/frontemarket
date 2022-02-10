@@ -764,6 +764,7 @@ import axios from 'axios';
             if (this.$v.form.$pending || this.$v.form.$error) return;
 if(this.url == null){
 this.isHiddenUpload = true;
+return false;
 }
 
  var formData = new FormData(); // Currently empty
