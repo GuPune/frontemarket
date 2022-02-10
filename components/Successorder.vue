@@ -72,8 +72,9 @@
                         </div>
                         <div class="col-12 fs-ta-14 fs-md-ta-16 text-theme-1 mt-1">
                             ชื่อผู้รับ:{{this.orderlist.shipping_address.name}}<br>
+                            เบอร์โทรศัพท์: {{this.orderlist.shipping_address.tel}}<br>
                ที่อยู่:  {{this.orderlist.shipping_address.address}} ต.{{this.orderlist.shipping_address.sub_districts_id}} อ.{{this.orderlist.shipping_address.districts_id}} จ.{{this.orderlist.shipping_address.province_id}}<br>
-                          {{this.orderlist.shipping_address.zipcode}}  เบอร์โทรศัพท์: {{this.orderlist.shipping_address.tel}}<br>
+                         รหัสไปรษณีย์: {{this.orderlist.shipping_address.zipcode}}<br>
                             อีเมล: {{this.orderlist.email}}
                             </div>
                     </div>
@@ -89,8 +90,9 @@
                             </div>
                             <div class="col-12 fs-ta-14 fs-md-ta-16 text-theme-1 mt-1">
                                    ชื่อผู้รับ:{{this.orderlist.shipping_address.name}}<br>
+                                   เบอร์โทรศัพท์: {{this.orderlist.shipping_address.tel}}<br>
                   ที่อยู่:  {{this.orderlist.shipping_address.address}} ต.{{this.orderlist.shipping_address.sub_districts_id}} อ.{{this.orderlist.shipping_address.districts_id}} จ.{{this.orderlist.shipping_address.province_id}}<br>
-                               {{this.orderlist.shipping_address.zipcode}}  เบอร์โทรศัพท์: {{this.orderlist.shipping_address.tel}}<br>
+                             รหัสไปรษณีย์: {{this.orderlist.shipping_address.zipcode}}  <br>
                                 อีเมล: {{this.orderlist.email}}
                             </div>
                         </div>
