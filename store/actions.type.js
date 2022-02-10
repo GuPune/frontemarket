@@ -79,6 +79,7 @@ export const GET_PRODUCT_SALEPAGE = "get_salepage";
 export const GET_SHOP_BY_ITEM = "get_shop_by_item";
 export const GET_CAPTCHA = "get_captcha";
 export const GET_PROVINCES = "get_address_provinces";
+export const FIND_PROVINCES = "find_address_provinces";
 export const GET_PROVINCESSALEPAGE = "get_address_provincessalepage";
 export const GET_DISTRICTSSALEPAGE = "get_address_districtssalepage";
 export const GET_SUBDISTRICTSSALEPAGE = "get_address_subdistrictsalepage";
@@ -102,6 +103,8 @@ export const FETCH_FACEBOOK = "fetch_facebook";
 export const GET_NAVBAR = "get_navbar";
 export const GET_NAVBAR_SHOP = "get_navbar_shop";
 export const GET_CHECK_SHOP = "get_check_shop";
+
+
 
 export const GET_FOOTER = "get_footer";
 

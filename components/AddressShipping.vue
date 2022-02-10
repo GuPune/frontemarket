@@ -139,7 +139,7 @@
                                             required
                                             @input="$v.form.zipcode.$touch()"
                                             @blur="$v.form.zipcode.$touch()"
-                             v-model="form.zipcode"
+                             v-model="form.zipcode"   v-on:keyup="Changezipcode"  maxlength="5"
                             />
                             <div class="invalid-feedback" id="divError_customerPostal"></div>
                         </div>
@@ -147,25 +147,26 @@
                     <div class="col-12 col-md-6 col-lg-3 alotcolerror">
                         <div class="form-group">
                             <label class="label-bold font-weight-bold">
-                                จังหวัด                            </label>
-                                  <select class="form-control" name="customerRegionsID" id="customerRegionsID" @change="ChangeProvinces($event)" >
-                                <option value="">- เลือก-</option>
-                                  <option :value="province.id"  v-for="(province, index) in provin" :key="province.id" >{{province.name_th}}</option>
-
+                                จังหวัด                            
+                            </label>
+                            <select class="form-control" name="customerRegionsID" id="customerRegionsID" @change="ChangeProvinces($event)" :disabled="disabled == 1" v-if="provin">
+                                  <option :value="province.id"  v-for="(province, index) in provin" :key="province.id" :selected="true">{{province.name_th}}</option>
                              </select>
-
+                             <select class="form-control" name="customerRegionsID" id="customerRegionsID" v-else disabled>
+                                 <option :selected="true">- เลือก-</option>
+                                 
+                             </select>
                             <div class="invalid-feedback" id="divError_customerRegionsID"></div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-3 alotcolerror">
+                     <div class="col-12 col-md-6 col-lg-3 alotcolerror">
                         <div class="form-group">
                             <label class="label-bold font-weight-bold">
                                 เขต/อำเภอ                            </label>
-                                  <select class="form-control" name="customerDistrictID" id="customerDistrictID"  @change="ChangeDistris($event)">
+                            <select class="form-control" name="customerDistrictID" id="customerDistrictID"  @change="ChangeDistris($event)"  :disabled="disabledaum == 1">
                                 <option value="">- เลือก - </option>
                                 <option :value="distris.id"  v-for="(distris, index) in distri" :key="distris.id" >{{distris.name_th}} </option>
                                                             </select>
-
                             <div class="invalid-feedback" id="divError_customerDistrictID"></div>
                         </div>
                     </div>
@@ -173,15 +174,13 @@
                         <div class="form-group">
                             <label class="label-bold font-weight-bold">
                                 แขวง/ตำบล                            </label>
-                                               <select class="form-control" name="x" id="x"  @change="ChangeSubDistris($event)">
+                            <select class="form-control" name="x" id="x"  @change="ChangeSubDistris($event)" :disabled="disabledtumbon == 1">
                                 <option value="">- เลือก - </option>
-                                  <option :value="subdi.id"  v-for="(subdi, index) in subdis" :key="subdi.id" >{{subdi.name_th}}</option>
+                                  <option :value="subdi.id"  v-for="(subdi, index) in subdis" :key="subdi.id"  >{{subdi.name_th}}</option>
                                                             </select>
-
                             <div class="invalid-feedback" id="divError_customerSubDistrictID"></div>
                         </div>
                     </div>
-
                 </div>
 
                 <div class="row AddressPanel"></div>
@@ -217,7 +216,7 @@
 <script>
 import { required, email, numeric, maxLength,minLength } from "vuelidate/lib/validators";
 import { mapGetters,mapState } from "vuex";
-import { FETCH_GET_PROFILE,FETCH_ADDRESS_BY_ID,FETCH_ADDRESS,UPDATE_ADDRESS_SHIPPING,SELECT_SHIPPING,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,SAVE_ADDRESS_BY_ID} from "@/store/actions.type.js";
+import { FETCH_GET_PROFILE,FETCH_ADDRESS_BY_ID,FETCH_ADDRESS,UPDATE_ADDRESS_SHIPPING,SELECT_SHIPPING,GET_PROVINCES,GET_DISTRICTS,GET_SUBDISTRICTS,SAVE_ADDRESS_BY_ID,FIND_PROVINCES} from "@/store/actions.type.js";
 import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
 import RingLoader from 'vue-spinner/src/RingLoader.vue'
 import BounceLoader from 'vue-spinner/src/BounceLoader.vue'
@@ -281,6 +280,11 @@ export default {
           data() {
       return {
       loading:true,
+           selectedDay: '1',
+         disabled: 1,
+         disabledaum: 1,
+         disabledtumbon: 1,
+         selecteded:false,
         forms:{
           id:null
         },
@@ -324,9 +328,9 @@ export default {
                  async created(){
 
 
-        let provinces = await this.$store.dispatch(GET_PROVINCES);
+    //    let provinces = await this.$store.dispatch(GET_PROVINCES);
 
-        this.provin = provinces;
+      //  this.provin = provinces;
         },
 
 
@@ -339,6 +343,37 @@ export default {
         },
 
       methods: {
+
+           async Changezipcode(){
+          if(this.form.zipcode.length == 5){
+              if(this.form.zipcode == '00000'){
+
+              }else {
+                   let xxxx = await this.$store.dispatch(FIND_PROVINCES,this.form);
+                     this.provin = [xxxx];
+                     this.disabled = 0;
+                     this.pros_id = this.provin[0].id
+                    let districts = await this.$store.dispatch(GET_DISTRICTS,this.pros_id);
+                     this.distri = districts;
+                     this.disabledaum = 0;
+                
+              }
+           
+   
+          }else {
+              this.provin = null;
+              this.distri = null;
+                this.subdis = null;
+              this.selecteded = true;
+           
+              this.selectedDay = '0';
+                 this.disabled = 1;
+              this.disabledaum = 1;
+     
+          this.disabledtumbon = 1;
+          }
+               
+        },
 
               async isNumber(event, message) {
 
@@ -363,6 +398,7 @@ export default {
        let subdistrct = await this.$store.dispatch(GET_SUBDISTRICTS,this.dist_id);
 
           this.subdis = subdistrct;
+           this.disabledtumbon = 0;
           },
           async ChangeSubDistris(event){
 
