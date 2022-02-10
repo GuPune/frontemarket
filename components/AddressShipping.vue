@@ -56,12 +56,12 @@
 
    <template #modal-footer>
         <div class="w-100">
-          <p class="float-left">Modal Footer Content</p>
+
           <b-button
             variant="primary"
             size="sm"
             class="float-right"
-
+@click="$bvModal.hide('modal-1')"
           >
             Close
           </b-button>
