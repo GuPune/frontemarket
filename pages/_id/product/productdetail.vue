@@ -129,7 +129,7 @@
 
              <div class="row">
                 <div class="col-md-4 col-sm-12 pta-detau">
-      <b-button size="md" variant="outline-warning" class="pro-des-btt" @click="addToCart(product_by_item)"><i class="fa fa-shopping-cart fa-1x">&nbsp;</i>เพิ่มลงตะกร้า</b-button>
+      <b-button size="md" variant="outline-success" class="pro-des-btt" @click="addToCart(product_by_item)"><i class="fa fa-shopping-cart fa-1x">&nbsp;</i>เพิ่มลงตะกร้า</b-button>
 
                 </div>
 
