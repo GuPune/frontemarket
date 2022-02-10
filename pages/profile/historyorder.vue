@@ -7,11 +7,11 @@
                 <!-- /Breadcrumb -->
             
                 <div class="row gutters-sm" v-if="objects == 1">
-                    <div class="col-md-4 mb-3">
+                    <div class="col-md-12 col-lg-12 col-xl-4 mb-3">
                     <ProfileImage :profile="profile"/>
                     <ProfileAddress />
                     </div>
-                    <div class="col-md-8" >
+                    <div class="col-md-12 col-lg-12 col-xl-8" >
                     <ProfileOrder/>
                          <div class="card">
             
