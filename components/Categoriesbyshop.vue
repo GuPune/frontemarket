@@ -21,7 +21,7 @@
                                                                                         <li>
                                                 <div class="field">ค้นหา:</div>
 
-          <b-form-input v-model="form.search" placeholder="ค้นหาสินค้า"></b-form-input>
+          <b-form-input v-model="form.search" placeholder="ค้นหาสินค้า" v-on:keyup="search"></b-form-input>
 
                                             </li>
 
@@ -82,6 +82,12 @@ import { mapGetters } from "vuex";
         async all_price(){
             let cate_by_shop = this.$store.dispatch(FETCH_FIND_PRODUCT,this.form)
         },
+
+         async search(){
+            let cate_by_shop = this.$store.dispatch(FETCH_FIND_PRODUCT,this.form)
+        },
+
+
              formatPrice(value) {
         let val = (value/1).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")
         return val;
