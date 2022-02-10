@@ -1,7 +1,7 @@
 <template>
 
 <div class="divPageData pageCartSuccess pageConfig">
-    
+
     <div class="card card-theme card-xs-full">
         <div class="card-body after-sus">
             <!-- Start Page Title -->
@@ -11,7 +11,7 @@
                 </div>
                 <div class="col-12 d-none d-md-block mt-3">
                     <div class="fs-ta-16 text-theme-1 text-center">
-                
+
                         หมายเลขคำสั่งซื้อ <span class="text-theme-2">{{this.orderlist.cartnumber}}</span>
                         &nbsp;&nbsp;
                         วันที่สั่งซื้อ <span class="text-theme-2">{{this.orderlist.created_at}}</span>
@@ -24,7 +24,7 @@
                             <div class="row pb-3 justify-content-center d-none d-md-flex">
                     <div class="col-auto py-3 bg-yellow">
                         <div class="fs-ta-14 text-pumpkin text-center">
-            
+
                                           </div>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
             <!-- Start Tracking -->
             <div class="row pt-0 pb-4 pt-md-4 pb-md-4">
                 <div class="col-12 text-center">
-                
+
 
                          <button type="submit" class="btn btn-info"   @click="orderstatus('profile-historyorder')">ตรวจสอบสถานะการสั่งซื้อ</button>
                 </div>
@@ -48,7 +48,7 @@
                 <div class="col text-right">
                     <span class="fs-ta-14 text-theme-2">{{this.orderlist.cartnumber}}</span>
                 </div>
-            </div>    
+            </div>
             <!-- End Order Code -->
 
             <!-- Start Order Date -->
@@ -73,13 +73,13 @@
                         <div class="col-12 fs-ta-14 fs-md-ta-16 text-theme-1 mt-1">
                             ชื่อผู้รับ:{{this.orderlist.shipping_address.name}}<br>
                ที่อยู่:  {{this.orderlist.shipping_address.address}} ต.{{this.orderlist.shipping_address.sub_districts_id}} อ.{{this.orderlist.shipping_address.districts_id}} จ.{{this.orderlist.shipping_address.province_id}}<br>
-                            เบอร์โทรศัพท์: {{this.orderlist.shipping_address.tel}}<br>
+                          {{this.orderlist.shipping_address.zipcode}}  เบอร์โทรศัพท์: {{this.orderlist.shipping_address.tel}}<br>
                             อีเมล: {{this.orderlist.email}}
                             </div>
                     </div>
                 </div>
 
-        
+
                 <!-- End Shipping Address -->
                 <!-- Start Tax Address -->
                                     <div class="col-12 col-md">
@@ -90,7 +90,7 @@
                             <div class="col-12 fs-ta-14 fs-md-ta-16 text-theme-1 mt-1">
                                    ชื่อผู้รับ:{{this.orderlist.shipping_address.name}}<br>
                   ที่อยู่:  {{this.orderlist.shipping_address.address}} ต.{{this.orderlist.shipping_address.sub_districts_id}} อ.{{this.orderlist.shipping_address.districts_id}} จ.{{this.orderlist.shipping_address.province_id}}<br>
-                                 เบอร์โทรศัพท์: {{this.orderlist.shipping_address.tel}}<br>
+                               {{this.orderlist.shipping_address.zipcode}}  เบอร์โทรศัพท์: {{this.orderlist.shipping_address.tel}}<br>
                                 อีเมล: {{this.orderlist.email}}
                             </div>
                         </div>
@@ -151,7 +151,7 @@
                                                         <div class="col-4 pr-1">
                                                             <p class="fs-ta-14 text-theme-2 mb-0">x {{item.qty}} ชิ้น</p>
                                                         </div>
-                                                  
+
                                                     </div>
                                                       <div class="row">
                                                       <!--
@@ -163,10 +163,10 @@
                                                 </div>
                                             </div>
 
-                                            
+
                                         </div>
 
-                                        
+
                                         <div class="col-12 col-md-7 d-none d-md-block">
                                             <div class="row">
                                                 <div class="col-4 pr-1 text-right">
@@ -182,14 +182,14 @@
                                         </div>
                                     </div>
 
-                                  
+
                                 </div>
                                                     </div>
                     </div>
                 </div>
             </div>
             <!-- End Order Item -->
-                                                    
+
             <!-- Start Summary -->
             <div class="row py-3 py-md-0 border-top border-md-top-0 border-theme">
                 <div class="col-12 col-md-6 d-none d-md-block">
@@ -200,7 +200,7 @@
                                         <!-- End Promotion List -->
                     <!-- Start Order Note -->
                                         <!-- End Order Note -->
-                </div> 
+                </div>
                 <div class="col-12 col-md-6">
                     <!-- Start Net price -->
                     <div class="row py-2">
@@ -211,11 +211,11 @@
                             <p class="fs-ta-16 text-theme-1 mb-0 text-right">฿ {{formatPrice(this.orderlist.sumPrice)}}</p>
                         </div>
                     </div>
-                    <!-- End Net price --> 
-                    
+                    <!-- End Net price -->
+
                     <!-- Start Promotion Discount price -->
                                         <!-- End Promotion Discount price -->
-                    
+
                     <!-- Start Promotion Coupon -->
                                         <!-- End Promotion Coupon -->
 
@@ -232,7 +232,7 @@
 
                     <!-- Start Promotion Shipping price -->
                                         <!-- End Promotion Shipping price -->
-                    
+
                     <!-- Start Total price -->
                     <div class="my-2 border-top border-bottom border-top-dash border-bottom-dash border-theme">
                         <div class="row py-2">
@@ -265,7 +265,7 @@
                             <span class="fs-ta-14 fs-md-ta-16 text-theme-2 text-md-theme-1">{{this.orderlist.bank.name}}</span>
                         </div>
                     </div>
-                </div>      
+                </div>
                 <!-- End PaymentType -->
                 <!-- Start ShippingType -->
                                 <div class="col-12 col-md">
@@ -275,15 +275,15 @@
                         </div>
                         <div class="col col-md-12 text-right text-md-left mt-md-1">
                             <span class="fs-ta-14 fs-md-ta-16 text-theme-2 text-md-theme-1">
-                                      
+
                                 {{this.orderlist.delivery_name}}               </span>
                             <br class="d-md-none">
                             <span class="fs-ta-14 fs-md-ta-16 text-theme-2">
-                                 {{this.orderlist.delivery_details}} 
+                                 {{this.orderlist.delivery_details}}
                             </span>
                         </div>
-                    </div>      
-                </div>      
+                    </div>
+                </div>
                                 <!-- End ShippingType -->
 
                 <!-- Start PaymentType Mobile -->
@@ -296,11 +296,11 @@
                             <span class="fs-ta-14 fs-md-ta-16 text-theme-2 text-md-theme-1">{{this.orderlist.bank.name}}</span>
                         </div>
                     </div>
-                </div>      
+                </div>
                 <!-- End PaymentType Mobile -->
-            </div>      
+            </div>
             <!-- End PaymentType + ShippingType -->
-            
+
             <!-- Start Transfer -->
                         <div class="row py-3 border-top border-md-top-0 border-theme">
                 <div class="col-12">
@@ -313,7 +313,7 @@
                                         </div>
                                         <div class="col">
                                             <p class="fs-ta-16 text-theme-1 mb-0">{{this.orderlist.bank.details}}</p>
-                                           
+
                                         </div>
                                     </div>
                                 </div>
@@ -338,18 +338,18 @@
                     <button type="button" class="btn btn-primary btn-sm" id="buttonPrint">
                         <i class="fa fa-print"></i>
                         พิมพ์ใบสั่งซื้อ                    </button>
-                        
+
                 </div>
                 <div class="col-6 col-md-6 text-right">
                                             <button type="button" class="btn btn-primary btn-sm" id="buttonInform" @click="myModel = true" >
                             แจ้งชำระเงิน                        </button>
-                    
-                     
-                                    
-                                                                
+
+
+
+
                 </div>
             </div>
-            
+
             <!-- End Button -->
         </div>
     </div>
@@ -385,16 +385,16 @@
                                         @input="$v.form.total.$touch()"
                                         @blur="$v.form.total.$touch()"
                                         :class="{ 'is-invalid': $v.form.total.$error}"
-                           
+
                           />
-                         </div> 
-                      </div> 
+                         </div>
+                      </div>
 
                        <div>
     <label for="timepicker-sm">วันที่ชำระเงิน <span style="color:red;">*</span></label>
-<datepicker :value="form.dateavalue" @input="onDateChange" format="dd/MM/yyyy" 
- :error-messages="TotalErrors" required 
-  :class="{ 'is-invalid': $v.form.dateavalue.$error}" 
+<datepicker :value="form.dateavalue" @input="onDateChange" format="dd/MM/yyyy"
+ :error-messages="TotalErrors" required
+  :class="{ 'is-invalid': $v.form.dateavalue.$error}"
 />
   </div>
 
@@ -406,7 +406,7 @@
         id="example-input"
         v-model="form.time"
         type="text"
-        placeholder="HH:mm:ss" 
+        placeholder="HH:mm:ss"
         :disabled="true"
 
           :error-messages="TimeErrors"
@@ -446,7 +446,7 @@
                       </div>
 
                         <div v-if="isHiddenUpload == true">
-    
+
     <span style="color: red;">กรุณาอัพโหลดสลิป </span>
   </div>
 
@@ -458,7 +458,7 @@
   </div>
 
 
-                      
+
 
 
                 </div>
@@ -474,10 +474,10 @@
                       </button>
                     </div>
 
-       
+
           </div>
            </div>
-           
+
             </div>
             </div>
           </div>
@@ -486,12 +486,12 @@
 
 </div>
 
-  
+
 </template>
 
 <style>
- 
-  
+
+
    .modal-mask {
      position: fixed;
      z-index: 1050;
@@ -511,7 +511,7 @@
 
     .modal-mask .modal-wrapper {
      display: -ms-flexbox;
-   
+
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -558,12 +558,12 @@ import axios from 'axios';
             total: { numeric,required },
             dateavalue: { required },
             time: { required },
-           
+
 
         }
     },
     data() {
-      
+
       return {
            file:null,
            url:null,
@@ -581,9 +581,9 @@ import axios from 'axios';
         total:null,
         dateavalue:"",
         time:""
-   
+
         },
-   
+
         orderlist:{
 
         },
@@ -605,7 +605,7 @@ import axios from 'axios';
                 return this.$store.state.user.url_id;
             },
 
-      
+
             isValid() {
       return new Date(this.dateavalue).getDay() === 1;
     },
@@ -628,9 +628,9 @@ import axios from 'axios';
             !this.$v.form.time.required && errors.push("โปรดระบุชื่อ");
             return errors;
             },
-          
 
-        
+
+
         },
 
      async mounted() {
@@ -640,7 +640,7 @@ import axios from 'axios';
     this.form.cartnumber = order_id;
     let order_data = await this.$store.dispatch(GET_ORDER_DATA,this.form);
     this.orderlist = order_data;
-   
+
 
             this.form.dateavalue = '04/11/2021';
 
@@ -655,7 +655,7 @@ import axios from 'axios';
 
                  closeModel:function(){
          this.myModel = false;
-  
+
       },
 
               onFileChange(event) {
@@ -666,7 +666,7 @@ import axios from 'axios';
 
 
     if(file.type.match(/image.*/)) {
-      
+
 
         // Load the image
         var reader = new FileReader();
@@ -694,40 +694,40 @@ import axios from 'axios';
                 var dataUrl = canvas.toDataURL('image/jpeg');
                 let resizedImage = this.dataURLToBlob(dataUrl);
                 let public_images = process.env.baseURL;
-    
+
                       axios.post(public_images+'/upload', {
         image: dataUrl
       }).then(res => {
       this.file = res.data
       }).catch(function(){
-         
+
               this.$swal({
                 type: "error",
                 title: "Upload รูปภาพไม่ผ่านติดต่อเจ้าหน้าที่",
                 showConfirmButton: true,
                 reverseButtons: true
             });
-      
+
         });
-          
-                
-                 
+
+
+
             };
             image.src = readerEvent.target.result;
 
-         
+
         }
         reader.readAsDataURL(file);
-     
+
     }
-    
 
 
-     
+
+
     },
 
          dataURLToBlob(dataURI) {
- 
+
   // convert base64 to raw binary data held in a string
   // doesn't handle URLEncoded DataURIs - see SO answer #6850276 for code that does this
   var byteString = atob(dataURI.split(',')[1]);
@@ -769,7 +769,7 @@ this.isHiddenUpload = true;
 
 
  let update_slip = await this.$store.dispatch(UPDATE_SLIP,formData);
-        
+
  this.isHiddenUploadSlip = true;
   this.myModel = false;
 
@@ -779,7 +779,7 @@ this.isHiddenUpload = true;
 //    this.form.cartnumber = this.objectss.cartnumber;
 
     // let order_data = await this.$store.dispatch(GET_ORDER_DATA_HISTORY,this.form);
-              
+
       },
 
           success() {
@@ -795,8 +795,8 @@ this.isHiddenUpload = true;
             );
 
          //   this.redirectTo();
-          
-     
+
+
         },
 
         orderstatus(names){
@@ -805,31 +805,31 @@ this.isHiddenUpload = true;
         },
 
         paymentnotification(){
-              
+
                   this.form.images = this.url;
                 if(this.form.images == '') {
-                    this.isUpload = true;      
+                    this.isUpload = true;
                 }
                 if(this.form.images != '') {
-                    this.isUpload = true;      
+                    this.isUpload = true;
                 }
                 if(this.form.time == '') {
                     this.time = true;
-                    
+
                 }
                 if(this.form.time != '') {
                     this.time = false;
                 }
                 if(this.form.dateavalue == '') {
                     this.dateavalue = true;
-                     
+
                 }
                 if(this.form.dateavalue != '') {
                     this.dateavalue = false;
-                  
+
                 }
                 if(this.form.dateavalue == '' || this.form.time == '' || this.form.url == ''){
-                      
+
                     return false;
                 }
                 this.success();
@@ -837,17 +837,17 @@ this.isHiddenUpload = true;
             },
         Checkimage(image){
                 let public_images = process.env.ImageURL+image;
-             
+
                 return public_images;
         },
     onDateChange(date) {
       this.form.dateavalue = date.toISOString();
     },
-  
+
         changeBank(event){
            this.selectedBank = event.target.value
            let choosebank =  this.$store.dispatch(CHOOSE_BANK,this.selectedBank);
-    
+
         },
         formatPrice(value) {
         let val = (value/1).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")
