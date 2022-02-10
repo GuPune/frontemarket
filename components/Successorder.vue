@@ -430,7 +430,7 @@
     </b-input-group>
 
       <div v-if="!$v.form.time.required">
-    last change date is required
+
   </div>
 
      <label for="timepicker-sm">หลักฐานการชำระเงิน <span style="color:red;">*</span></label>
