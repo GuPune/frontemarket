@@ -63,7 +63,7 @@
             class="float-right"
 @click="$bvModal.hide('modal-1')"
           >
-            Close
+            ปิด
           </b-button>
         </div>
       </template>
