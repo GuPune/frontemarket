@@ -135,12 +135,12 @@
           <table class="table">
   <thead>
     <tr>
-      <th scope="col">ชื่อสินค้า</th>
-      <th scope="col">ราคารวม</th>
-      <th scope="col">จำนวน</th>
-      <th scope="col">เลขพัสดุ</th>
-      <th scope="col">สถานะ</th>
-      <th scope="col">รูป</th>
+      <th scope="col" style="text-align:center">ชื่อสินค้า</th>
+      <th scope="col" style="text-align:center">ราคารวม</th>
+      <th scope="col" style="text-align:center">จำนวน</th>
+      <th scope="col" style="text-align:center">เลขพัสดุ</th>
+      <th scope="col" style="text-align:center">สถานะ</th>
+      <th scope="col" style="text-align:center">รูป</th>
     </tr>
   </thead>
   <tbody>
