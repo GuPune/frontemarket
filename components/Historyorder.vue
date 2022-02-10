@@ -137,7 +137,7 @@
 
       <template #cell(actions)="row">
         <b-button size="sm" @click="row.toggleDetails">
-          {{ row.detailsShowing ? 'Hide' : 'Show' }}
+          {{ row.detailsShowing ? 'ซ่อน' : 'แสดง' }}
         </b-button>
       </template>
 
