@@ -18,7 +18,7 @@
                     <label class="pl-2">0843745454</label>
                     -->
                     <div class="text-muted" v-if="detailAddress">
-                      {{detailAddress}}
+
                      {{detailAddress.address}}, ต.{{detailAddress.sub_districts_id}}  อ.{{detailAddress.districts_id}}  จังหวัด.{{detailAddress.province_id}}  {{detailAddress.zipcode}}
                     </div>
                 </div>
