@@ -5,7 +5,7 @@
                                                 <div class="field">ประเภทสินค้า:</div>
                                                 <div class="value" v-if="cate_by_shop">
                                                     <select class="form-control" name="items" id="items"  @change="onChange($event)">
-                                                     <option value="" disabled selected>Default</option>
+                                                     <option value="" disabled selected>ค่าเริ่มต้น</option>
                                                     <option v-for="item in cate_by_shop" :value="item.id">{{item.name_th}}</option>
                                                     </select>
                                                 </div>
@@ -80,10 +80,12 @@ import { mapGetters } from "vuex";
             let cate_by_shop = this.$store.dispatch(FETCH_FIND_PRODUCT,this.form)
         },
         async all_price(){
+           console.log('this.form',this.form);
             let cate_by_shop = this.$store.dispatch(FETCH_FIND_PRODUCT,this.form)
         },
 
          async search(){
+           console.log('this.form',this.form);
             let cate_by_shop = this.$store.dispatch(FETCH_FIND_PRODUCT,this.form)
         },
 
