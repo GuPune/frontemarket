@@ -135,7 +135,9 @@ position: fixed;
   width: 100%;
 }
 
-
+.nav-icon-mobile{
+  display: none;
+}
 
 
 .dropdown {
@@ -565,6 +567,15 @@ display: block;
     width: 60px;
         height: 60px;
  }
+ .nav-icon-desktop{
+display: none;
+}
+.nav-icon-mobile{
+  display: block;
+  }
+  
+
+
 
 }
  
