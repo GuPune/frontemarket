@@ -657,6 +657,7 @@ import axios from 'axios';
 
           scrollToTop() {
     window.scrollTo(0,0);
+      this.myModel = true;
   },
 
                  closeModel:function(){
