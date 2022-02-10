@@ -1,6 +1,6 @@
 <template>
 
-   
+
    <div class="container col-12" style="padding-top: 90px;">
 
 <!-- --------------------------------store 1--------------------------------- -->
@@ -24,7 +24,7 @@
                                                 <i class="fa fa-cart-plus fa-3x"></i>
                                                 <p class="text-muted fs-24 mt-3">ไม่มีสินค้าในตะกร้าของคุณ</p>
                                                        <b-button squared  variant="outline-primary" size="lg" class="btn btn-lg-auto btn-style-o buttonShopping"  @click="redirectToroot('index')">กลับไปสั่งซื้อสินค้า</b-button>
-                      
+
                                             </div>
                                         </div>
                                     </div>
@@ -33,7 +33,7 @@
                         </div>
                                 </div>
                             </div>
-                     
+
                         </div>
 
                         <div class="row cart-mobile-dis"  v-if="cart.length > 0">
@@ -78,7 +78,7 @@
                         <h5 class="order-name">{{item.name_en}}</h5></div>
                 </div>
             </div>
-        
+
             <div class="col-xs-12 col-sm-7 col-md-6 col-lg-6">
                 <div class="row shop-name-order-pc">
                     <div class="col-xs col-sm-3 col-md-3 col-lg-3">
@@ -93,9 +93,9 @@
                                         <b-input-group-append>
                                         <b-btn variant="outline-secondary" v-on:click='Addup(item)'>+</b-btn>
                                         </b-input-group-append>
-                                        </b-input-group>    
-                                 
-                        
+                                        </b-input-group>
+
+
                     </div>
                     <div class="visible-xs-block clearfix"></div>
                     <div class="col-xs col-sm-3 col-md-4 col-lg-4">
@@ -110,13 +110,13 @@
                     </div>
                 </div>
          <div class="row shop-name-order-mobile">
-    
+
             <div class="row">
-               
+
                 <div class="col-10 shop-name-order">
                         <h5>ชื่อร้าน : xxxxxx</h5>
                  </div>
-           
+
             <div class="col-2 shop-name-order trash-mobile">
                         <div class="remove-item-cart"  @click="RemoveToCart(index)">
                                          <i class="fa fa-trash"></i>
@@ -131,15 +131,15 @@
                             <div class="row">
                                 <div class="col-12 shop-name-order order-name-mobile-font">
                                         <div>{{item.name_en}}</div>
-                                </div>    
+                                </div>
                                 <div class="col-12 shop-name-order order-price-mobile-font">
                                         <div>฿{{item.price}}</div>
-                                </div>   
+                                </div>
                                 <div class="col-12 shop-name-order">
-                              
+
                                          <span class="visible-xs-inline-block">ทั้งหมด </span>
-                                                                            <span class="price">฿{{item.totalPrice}} -</span>       
-                                </div>  
+                                                                            <span class="price">฿{{item.totalPrice}} -</span>
+                                </div>
                                 <div class="col-12 shop-name-order input-number-order">
                                       <b-input-group>
                                         <b-input-group-prepend>
@@ -149,24 +149,24 @@
                                         <b-input-group-append>
                                         <b-btn variant="outline-secondary" v-on:click='Addup(item)'>+</b-btn>
                                         </b-input-group-append>
-                                        </b-input-group>    
-                                </div>  
+                                        </b-input-group>
+                                </div>
                             </div>
                      </div>
-                </div>    
+                </div>
             </div>
             </div>
         </div>
         </div>
-        
-        
+
+
     </div>
      <div class="row">
      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 button-order-spac">
      <div  class="float-right" v-if="cart.length > 0">
-     
+
     <b-button variant="outline-danger" class="button-order"  @click="RemoveToCartAll()"><i class="fa fa-trash"></i> ลบสินค้าในตะกร้าทั้งหมด</b-button>
-    
+
     </div>
     </div>
     </div>
@@ -174,7 +174,7 @@
 
     </div>
     </div>
-    
+
     </div>
      <div class="row">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
@@ -187,31 +187,31 @@
     </div>
 
 
-   
+
     <div class="col-md-3">
             <Sum/>
 <br>
             <Coupon/>
 
-         
-    
+
+
     </div>
-   
+
   </div>
 
  </div>
 
 
-    
-                
-    
+
+
+
 </template>
 
 
 
 
 <script>
-  
+
   import Nav from "@/components/Nav";
   import Footer from "@/components/Footer";
   import Coupon from "@/components/Coupon";
@@ -224,27 +224,27 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
           Nav,
           Footer,
           Coupon
-           
+
               },
 
                computed: {
 
         isUrl () {
                 return this.$store.state.user.url_id;
-        },  
-    
+        },
+
         cart () {
         return this.$store.state.Cart.cart
         },
         PriceToTal () {
         return this.$store.state.Cart.PriceToTal
         }
-           
+
 
         },
-             
+
         mounted() {
-          
+
         },
 
        methods: {
@@ -268,7 +268,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
 
         this.$router.push({ name: names, params: { id: Shopid }})
         },
-        
+
         redirectToroot(root) {
 
          this.$router.push({ name: root})
@@ -287,18 +287,18 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
    let add_cart =  this.$store.dispatch(ADD_INPUT,item);
         },
         async isNumber(event, message) {
-           
-                if (!/\d/.test(event.key) &&  
-                    (event.key !== "." || /\./.test(message))  
-                    )  
-                return event.preventDefault();  
 
-                
+                if (!/\d/.test(event.key) &&
+                    (event.key !== "." || /\./.test(message))
+                    )
+                return event.preventDefault();
+
+
         },
         async Addup(item){
             //// logic // จำนวนสินค้าที่มี
             let Add_up = await this.$store.dispatch(ADD_UP,item);
-            let keytext = 'เพิ่มสินค้าเรียร้อย!'
+            let keytext = 'เพิ่มลงตะกร้าเรียร้อย!'
             await this.success(keytext);
 
         },
@@ -315,7 +315,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
 
         let Remove = await this.$store.dispatch(REMOVIE_ALL);
         },
-      
+
         error() {
                 this.$swal({
                     icon: 'error',
@@ -326,7 +326,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
                 });
         },
         success(keytext) {
-                  
+
                  this.$swal({
                     icon: 'success',
                     title: 'สินค้า',
@@ -334,13 +334,13 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
                     showConfirmButton: true,
                     reverseButtons: true
                 });
-              
-        },
-        
-       }
-           
 
-     
-    
+        },
+
+       }
+
+
+
+
     };
 </script>

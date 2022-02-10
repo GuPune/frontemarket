@@ -321,7 +321,7 @@ this.test == 0 ? true : false;
         async Addup(item){
             //// logic // จำนวนสินค้าที่มี
             let Add_up = await this.$store.dispatch(ADD_UP,item);
-            let keytext = 'เพิ่มสินค้าเรียร้อย!'
+            let keytext = 'เพิ่มลงตะกร้าเรียร้อย!'
           //  await this.success(keytext);
 
         },

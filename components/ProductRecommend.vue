@@ -14,15 +14,15 @@
  <div v-if="items.length">
     <VueSlickCarousel v-bind="slickOptions" :dots="true" >
     <div v-for="i in items"  class="img-wrapper">
-      
+
              <div class="card c-shopinmy">
                     <div class="cardproduct">
                  <img class="imgproduct related-images imgproductmyshop im-rela-mobile" :src="Checkimage(i.img_product)">
                                                    <div class="product-footer">
                                                    <div class="addtocart">
-                                                       <b-button  variant="success shop-relation" size="sm"  @click="addToCart(i)">เพิ่มสินค้า</b-button>
+                                                       <b-button  variant="success shop-relation" size="sm"  @click="addToCart(i)">เพิ่มลงตะกร้า</b-button>
                                                    </div></div>
-                
+
                                                 </div>
         </div>
       </div>
@@ -30,11 +30,11 @@
 
     </VueSlickCarousel>
   </div>
-  
-                                
 
-                        
-                    </div> 
+
+
+
+                    </div>
       </div>
 
     </div>
@@ -47,7 +47,7 @@
 
     <br>
     </section>
-    
+
 </template>
 
 
@@ -61,8 +61,8 @@
   // optional style for arrows & dots
   import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
-  
-  
+
+
   export default {
         data() {
       return {
@@ -76,9 +76,9 @@
 					"slidesToShow": 3,
 					"slidesToScroll": 1
 				},
-   
+
  slickOptions:{
- 
+
  "slidesToShow": 6,
         "slidesToScroll": 3,
         "infinite": true,
@@ -117,22 +117,22 @@
     }
   ]
 }
- 
+
       }
     },
-        
+
      computed: {
-           
+
      ...mapGetters(["product_shell","authenticated"]),
 
 
          isUrl () {
                 return this.$store.state.user.url_id;
-        },  
-  
+        },
+
 
         },
-        
+
        async mounted() {
         //  this.$store.dispatch(ToogleAction);
 
@@ -142,14 +142,14 @@
          this.form.shop_name = this.$route.params;
 
           let product = await this.$store.dispatch(GET_PRODUCR_RECOM,this.form);
-         
+
 this.items = product.data;
 
 
-        
+
          },
-        
-  
+
+
         methods: {
 
         redirectTo(name) {
@@ -170,7 +170,7 @@ this.items = product.data;
        if(!this.authenticated){
 
                          let path = this.$route.path
-            
+
 const names = 'id-form-login'
  const Shopid = this.isUrl.id;
 
@@ -180,7 +180,7 @@ const names = 'id-form-login'
             //  this.$router.push({ path: `/1/${name}` }) // -> /user/123
                 //   this.$router.push({ params: { id: '1' } ,name: name})
                    this.$router.push({ name: names, params: { id: Shopid }})
-               
+
               //  this.$router.push('/form/login')
        }else{
         this.addToCart(item);
@@ -193,7 +193,7 @@ const names = 'id-form-login'
         },
 
         },
-  
+
 
         components: {
 
