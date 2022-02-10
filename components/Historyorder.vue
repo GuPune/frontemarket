@@ -91,7 +91,7 @@
              <template #cell(sumPrice)="row">
 
   <div>
- <span> ฿ {{ formatPrice(row.item.sumPrice) }} </span>
+ <span> {{ formatPrice(row.item.sumPrice) }} </span>
 
 </div>
 
