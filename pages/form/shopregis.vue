@@ -182,7 +182,7 @@
 import Nav from "@/components/Nav";
 import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
 import { mapGetters } from "vuex";
-import { REGISSHOP,GET_TYPE_SHOP } from "@/store/actions.type.js";
+import { REGISSHOP,GET_TYPE_SHOP,SYSTEM_PDPA } from "@/store/actions.type.js";
 import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/vue-loading.css';
 import 'sweetalert2/dist/sweetalert2.min.css';
@@ -281,6 +281,7 @@ import Loader from '@/components/Loader'
 
        async mounted() {
      let typeshop = await this.$store.dispatch(GET_TYPE_SHOP);
+     let pdpa = await this.$store.dispatch(SYSTEM_PDPA);
 this.typeshop = typeshop;
         },
 
