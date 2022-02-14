@@ -24,7 +24,7 @@
                                         <td class="td-col-1">{{item.name}}<br>
 
                                         </td>
-                                        <td class="td-col-2">{{item.address}} ,{{item.province_id}} ,{{item.districts_id}} ,{{item.sub_districts_id}}
+                                        <td class="td-col-2">{{item.address}} ต.{{item.sub_districts_id}}  อ.{{item.districts_id}} จ.{{item.province_id}} {{item.zipcode}}
                                         </td>
                                         <td class="td-col-3">{{item.tel}}</td>
 

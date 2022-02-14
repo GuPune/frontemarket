@@ -19,7 +19,7 @@
                     -->
                     <div class="text-muted" v-if="detailAddress">
 
-                     {{detailAddress.address}}, ต.{{detailAddress.sub_districts_id}}  อ.{{detailAddress.districts_id}}  จังหวัด.{{detailAddress.province_id}}  {{detailAddress.zipcode}}
+                     {{detailAddress.address}}, ต.{{detailAddress.sub_districts_id}}  อ.{{detailAddress.districts_id}}  จ.{{detailAddress.province_id}}  {{detailAddress.zipcode}}
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
       <tr  v-for="(item, index) in items" :key="item.id">
 
         <td> <input type="radio" :value="item.id" v-model="selectedAdd"  @change="changeAdd($event)"></td>
-        <td> {{item.address}}, ต.{{item.sub_districts_id}}  อ.{{item.districts_id}}  จังหวัด.{{item.province_id}}</td>
+        <td> {{item.address}}, ต.{{item.sub_districts_id}}  อ.{{item.districts_id}}  จ.{{item.province_id}}</td>
 
      </tr>
 
