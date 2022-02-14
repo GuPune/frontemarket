@@ -42,7 +42,7 @@
     </thead>
     <tbody>
       <tr  v-for="(item, index) in items" :key="item.id">
-        {{item}}
+
         <td> <input type="radio" :value="item.id" v-model="selectedAdd"  @change="changeAdd($event)"></td>
         <td> {{item.address}}, ต.{{item.sub_districts_id}}  อ.{{item.districts_id}}  จังหวัด.{{item.province_id}}</td>
 
