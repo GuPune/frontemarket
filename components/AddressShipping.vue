@@ -42,8 +42,9 @@
     </thead>
     <tbody>
       <tr  v-for="(item, index) in items" :key="item.id">
+        {{item}}
         <td> <input type="radio" :value="item.id" v-model="selectedAdd"  @change="changeAdd($event)"></td>
-        <td> {{item.address}}, ต.{{item.sub_districts_id}}  อ.{{item.districts_id}}  จังหวัด.{{item.province_id}} {{item.province_id}}</td>
+        <td> {{item.address}}, ต.{{item.sub_districts_id}}  อ.{{item.districts_id}}  จังหวัด.{{item.province_id}}</td>
 
      </tr>
 
@@ -147,14 +148,14 @@
                     <div class="col-12 col-md-6 col-lg-3 alotcolerror">
                         <div class="form-group">
                             <label class="label-bold font-weight-bold">
-                                จังหวัด                            
+                                จังหวัด
                             </label>
                             <select class="form-control" name="customerRegionsID" id="customerRegionsID" @change="ChangeProvinces($event)" :disabled="disabled == 1" v-if="provin">
                                   <option :value="province.id"  v-for="(province, index) in provin" :key="province.id" :selected="true">{{province.name_th}}</option>
                              </select>
                              <select class="form-control" name="customerRegionsID" id="customerRegionsID" v-else disabled>
                                  <option :selected="true">- เลือก-</option>
-                                 
+
                              </select>
                             <div class="invalid-feedback" id="divError_customerRegionsID"></div>
                         </div>
@@ -356,23 +357,23 @@ export default {
                     let districts = await this.$store.dispatch(GET_DISTRICTS,this.pros_id);
                      this.distri = districts;
                      this.disabledaum = 0;
-                
+
               }
-           
-   
+
+
           }else {
               this.provin = null;
               this.distri = null;
                 this.subdis = null;
               this.selecteded = true;
-           
+
               this.selectedDay = '0';
                  this.disabled = 1;
               this.disabledaum = 1;
-     
+
           this.disabledtumbon = 1;
           }
-               
+
         },
 
               async isNumber(event, message) {
