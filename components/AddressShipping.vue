@@ -438,6 +438,8 @@ this.form.select_shipping = event.target.value
         this.forms.id = a.id;
         let getaddress = await this.$store.dispatch(FETCH_ADDRESS,this.forms);
         this.items = getaddress;
+        console.log('ที่อยู่',getaddress);
+
 
 
        await this.checkedaddress(this.items);
