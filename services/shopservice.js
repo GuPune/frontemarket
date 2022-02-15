@@ -23,5 +23,10 @@ export const MyshopService = {
    
       return ApiServiceAll.post("faceid",param);
     },
+    pdpa(param) {
+   
+      return ApiServiceAll.post("pdpa",param);
+    },
+
 
 };

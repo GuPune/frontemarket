@@ -280,18 +280,25 @@ import Loader from '@/components/Loader'
     },
 
        async mounted() {
+          this.form.url = window.location.origin;
      let typeshop = await this.$store.dispatch(GET_TYPE_SHOP);
-     let pdpa = await this.$store.dispatch(SYSTEM_PDPA);
+     
+
+     let pdpa = await this.$store.dispatch(SYSTEM_PDPA,this.form);
+     this.policies = pdpa.policies
+      this.protectdata = pdpa.protectdata
+         
 this.typeshop = typeshop;
         },
 
         methods: {
 
         Checkpolicy(){
- window.open("https://pdpa.pro/policies/view/th/w8GcSSxUhNt1n1SBCWPc86DN", "_blank");
+
+ window.open(this.policies, "_blank");
         },
         CheckService(){
- window.open("https://pdpa.pro/policies/view/th/w8GcSSxUhNt1n1SBCWPc86DN", "_blank");
+ window.open(this.protectdata, "_blank");
         },
 
 
