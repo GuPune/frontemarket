@@ -8,7 +8,7 @@
  
                                             </li>
 
-                                                                                        <li>
+                                                                                        <li hidden>
                                                 <div class="field">ค้นหา:</div>
                                             
           <b-form-input v-model="form.search" placeholder="Enter your name"></b-form-input>
@@ -21,7 +21,7 @@
                                                 </div>
 
                                                                                               <b-form-group
-      label="Individual stacked checkboxes (default)"
+    
       v-slot="{ ariaDescribedby }"
     >
       <b-form-checkbox
@@ -37,7 +37,7 @@
       </b-form-checkbox>
     </b-form-group>
 
-        {{ selected }}
+    
                                             </li> <br>
 
                                           
@@ -74,7 +74,7 @@ import { mapGetters } from "vuex";
 
 
      computed: {
-    
+    ...mapGetters(["searchkeyword"]),
         },
            
 
@@ -89,9 +89,11 @@ import { mapGetters } from "vuex";
      async mounted() {
         let cateshell = await this.$store.dispatch(GET_CATEGORY_SHELL)
           this.form.selected = this.selected
+   
 this.options = cateshell;
+this.form.search = this.searchkeyword;
 
-  let productfind = await this.$store.dispatch(GET_PRODUCT_SHELL_FIND,this.form);
+ let productfind = await this.$store.dispatch(GET_PRODUCT_SHELL_FIND,this.form);
 
          },
 
@@ -101,6 +103,7 @@ this.options = cateshell;
         },
        async choosecate(){
   this.form.selected = this.selected
+      this.form.search = this.searchkeyword;
   let productfind = await this.$store.dispatch(GET_PRODUCT_SHELL_FIND,this.form);
 
         },

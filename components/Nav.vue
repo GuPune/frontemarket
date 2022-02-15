@@ -312,10 +312,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
       selected: 'a',
       color:null,
         options: [
-
           { value: 'a', text: 'สินค้า'},
-
-
         ]
 
     };

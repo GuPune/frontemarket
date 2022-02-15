@@ -106,13 +106,14 @@
 
 import { mapGetters,mapState } from "vuex";
 import { CHECK_LOGIN } from "../store/actions.type.js";
-import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,GET_MENU,GET_SHOP_BY_ITEM,FETCH_GET_PROFILE } from "@/store/actions.type.js";
+import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,GET_MENU,GET_SHOP_BY_ITEM,FETCH_GET_PROFILE,GET_PRODUCT_SHELL_FIND } from "@/store/actions.type.js";
   export default {
     data() {
     return {
       colors:'#F5ECEA',
       IsLogin: false,
       position:'',
+      selected: 'a',
             shopitem:null,
      form:{
         search:"",
@@ -120,7 +121,6 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
 
       options: [
           { value: 'a', text: 'สินค้า'},
-
         ]
     };
   },
@@ -189,6 +189,24 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
          },
 
       methods: {
+
+               async Search(){
+  if(this.form.search == ''){
+  return   this.$router.push('/');
+
+  }
+
+          let productfind = await this.$store.dispatch(GET_PRODUCT_SHELL_FIND,this.form);
+
+
+
+                        let path = this.$route.path
+  this.$router.push({ name: 'find' })
+
+
+
+
+        },
 
             Checkimage(image){
                 let public_images = process.env.ImageSoc+image;

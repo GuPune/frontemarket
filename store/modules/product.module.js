@@ -4,13 +4,14 @@ import {
     FETCH_PRODUCT_SHELL,FETCH_PRODUCT_FIND,FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,FETCH_FIND_PRODUCT,FETCH_BY_PRODUCT_SHOP_ONE_ITEM,GET_PRODUCR_SELLER,GET_PRODUCR_NEW,GET_PRODUCR_RECOM,FETCH_IMAGE_PRODUCT,GET_PRODUCT_FIND,GET_PRODUCT_SHELL_FIND
 } from "../actions.type.js";
 import {
-    SET_PRODUCT_SHELL,SET_PRODUCT_BY_SHOP,SET_CATE_BY_SHOP,SET_CATE_SEC,SET_BY_PRODUCT_SHOP_ONE_ITEM,SET_LOADER,SET_IMAGES,SET_PRODUCTSHELL_FIND,SET_SHELL_CATE
+    SET_PRODUCT_SHELL,SET_PRODUCT_BY_SHOP,SET_CATE_BY_SHOP,SET_CATE_SEC,SET_BY_PRODUCT_SHOP_ONE_ITEM,SET_LOADER,SET_IMAGES,SET_PRODUCTSHELL_FIND,SET_SHELL_CATE,SET_KEYWORD
 } from "../mutations.type";
 import Vuex from 'vuex'
 
 
 
 const state = {
+    searchkeyword:null,
     loading:false,
     product_shell:[],
     product_shell_find:[],
@@ -53,6 +54,9 @@ const getters = {
     shell_cate: state => {
         return state.shell_cate
     },
+    searchkeyword: state => {
+        return state.searchkeyword
+    },
 
 };
 
@@ -86,7 +90,8 @@ const actions = {
     },
     async [GET_PRODUCT_SHELL_FIND](context,payload) {
         const { data } = await ProductService.getproductshellfind(payload);
-
+  
+        context.commit(SET_KEYWORD,payload);
        context.commit(SET_PRODUCTSHELL_FIND,data);
         return data;
     },
@@ -102,7 +107,7 @@ const actions = {
        },
 
        async [FETCH_FIND_PRODUCT](context,payload) {
-         console.log('find',payload);
+       
         const { data } = await ProductService.findcatebyshop(payload);
 
         context.commit(SET_CATE_SEC,payload);
@@ -194,13 +199,15 @@ const mutations = {
     },
 
     [SET_PRODUCTSHELL_FIND](state,data) {
-
         state.product_shell_find = data;
-
         console.log('state.product_shell_find',state.product_shell_find);
-
-
     },
+
+    [SET_KEYWORD](state,data) {
+        state.searchkeyword = data.search;
+        console.log('state.searchkeyword',state.searchkeyword);
+    },
+    
 
 
 
