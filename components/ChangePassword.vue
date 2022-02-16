@@ -35,7 +35,7 @@
                              v-model="form.password">
 
 
-  <div class="error" v-if="!$v.form.password.minLength" style="color:red;">Password must have at least {{ $v.form.password.$params.minLength.min }} letters.</div>
+  <div class="error" v-if="!$v.form.password.minLength" style="color:red;">รหัสผ่านต้องมีตัวอักษรอย่างน้อย {{ $v.form.password.$params.minLength.min }} ตัว</div>
                             <div class="invalid-feedback" id="divError_textMemberName"></div>
 
 
@@ -53,7 +53,7 @@
                                             required
 
                              v-model="form.password_confirm" >
-                               <div class="error"  style="color:red;" v-if="!$v.form.password_confirm.sameAsPassword">Passwords must be identical.</div>
+                               <div class="error"  style="color:red;" v-if="!$v.form.password_confirm.sameAsPassword">รหัสผ่านต้องเหมือนกัน</div>
                             <div class="invalid-feedback" id="divError_textMemberName"></div>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                     <div class="col-12">
                         <button type="button" class="btn  px-4 changepass-btn" id="btnSaveAdress"  @click="save()">
                             บันทึก                        </button>&nbsp;&nbsp;&nbsp;
-                        <button type="button" class="btn px-4" id="btncancelAdress">
+                        <button type="button" class="btn px-4" id="btncancelAdress" @click="clear()">
                             ยกเลิก                        </button>
                                                     <input type="hidden" name="task" value="saveaddaddressshipform">
                                             </div>
@@ -163,6 +163,16 @@ import VueSweetalert2 from 'vue-sweetalert2';
       },
 
       methods: {
+
+        async clear(){
+
+    
+             this.form.password = '';
+             this.form.password_same = '';
+             this.form.password_confirm = '';
+
+
+        },
 
 
       async save(){
