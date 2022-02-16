@@ -217,7 +217,7 @@ button.button, a.button {
 
  */
 
- .cards-mobile { grid-template-columns: repeat(5, 1fr); }
+ .cards-mobile { grid-template-columns: repeat(4, 1fr); }
 
 .row.product{
     margin-top: 25px;
@@ -733,4 +733,9 @@ button.addcart:hover {
     }
  
     }
+
+    @media (min-width: 1450px) { 
+      .cards-mobile { grid-template-columns: repeat(5, 1fr); }
+   
+      }   
   
