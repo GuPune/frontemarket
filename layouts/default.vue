@@ -162,9 +162,10 @@ import AcceptCookkie from "@/components/AcceptCookkie"
 this.footer();
        // let clearalert = this.$store.dispatch(CLEARALRET);
 
-        if(this.$store.state.auth.user){
-              let a = await this.$store.dispatch(FETCH_GET_PROFILE)
-        }
+        // if(this.$store.state.auth.user){
+        //       let a = await this.$store.dispatch(FETCH_GET_PROFILE)
+        // }
+        // console.log('this.$store.state.auth.user',this.$store.state.auth.user);
       
     },
     methods: {

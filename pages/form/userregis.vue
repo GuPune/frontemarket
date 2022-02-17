@@ -303,7 +303,7 @@ import Datepicker from "@/components/TouchDatePicker";
               
                 this.$store.dispatch(REGISTER,this.form).then((response) => response.code_return == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
             },
-            success() {
+           async success() {
                 setTimeout(() =>
                     this.$swal.fire({
                         type: "success",
@@ -319,6 +319,7 @@ import Datepicker from "@/components/TouchDatePicker";
                this.$auth.loginWith('local', {
           data: this.form
         });
+          let a = await this.$store.dispatch(FETCH_GET_PROFILE)
 
      this.$router.push('/');
     
