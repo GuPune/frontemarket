@@ -34,16 +34,16 @@
                                             <p class="mb-0">โทร  : 043-228899</p>
                                             <p>อีเมล : idofficer@iddrives.co.th</p><br>
                                               <a href="#">
-                                                <i class="fab fa-facebook-f"></i>&nbsp;&nbsp;
+                                                <!-- <i class="fab fa-facebook-f"></i>&nbsp;&nbsp; -->
                                                 </a>
                                                 <a href="#">
-                                                    <i class="fab fa-youtube"></i>&nbsp;&nbsp;
+                                                    <!-- <i class="fab fa-youtube"></i>&nbsp;&nbsp; -->
                                                 </a>
                                                 <a href="#">
-                                                    <i class="fab fa-instagram"></i>&nbsp;&nbsp;
+                                                    <!-- <i class="fab fa-instagram"></i>&nbsp;&nbsp; -->
                                                 </a>
                                                 <a href="#">
-                                                    <i class="fab fa-line"></i>
+                                                    <!-- <i class="fab fa-line"></i> -->
                                                 </a>
 
                                             <!-- <p>200/222 ม.2 ถ.ชัยพฤกษ์ ต.ในเมือง อ.เมือง จ.ขอนแก่น 40000</p>
