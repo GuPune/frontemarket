@@ -244,7 +244,7 @@ import Datepicker from "@/components/TouchDatePicker";
 
     },
              
-        mounted(){
+      async mounted(){
     // liff.init({
     //   liffId: '1655623618-XrxrgnDw'
     // }).then(() => {
