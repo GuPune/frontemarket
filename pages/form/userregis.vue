@@ -320,7 +320,7 @@ import Datepicker from "@/components/TouchDatePicker";
           data: this.form
         });
 
-     this.$router.push('/');
+   //  this.$router.push('/');
     
             },
             error($text) {
