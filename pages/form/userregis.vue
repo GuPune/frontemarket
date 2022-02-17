@@ -256,7 +256,7 @@ import Datepicker from "@/components/TouchDatePicker";
     //       liff.login();
     //   }
     // })
-
+ this.form.url = window.location.origin;
     let pdpa = await this.$store.dispatch(SYSTEM_PDPA,this.form);
      this.policies = pdpa.policies
       this.protectdata = pdpa.protectdata
