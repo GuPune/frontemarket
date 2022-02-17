@@ -164,7 +164,7 @@
 <script>
   
 import Nav from "@/components/Nav";
-import { REGISTER,SAVE_SETLINE } from "../../store/actions.type.js";
+import { REGISTER,SAVE_SETLINE,SYSTEM_PDPA } from "../../store/actions.type.js";
 import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
 import { mapGetters } from "vuex";
 import Loading from 'vue-loading-overlay';
@@ -256,16 +256,22 @@ import Datepicker from "@/components/TouchDatePicker";
     //       liff.login();
     //   }
     // })
+
+    let pdpa = await this.$store.dispatch(SYSTEM_PDPA,this.form);
+     this.policies = pdpa.policies
+      this.protectdata = pdpa.protectdata
   }, 
 
             
         methods: {
 
-               Checkpolicy(){
- window.open("https://pdpa.pro/policies/view/th/w8GcSSxUhNt1n1SBCWPc86DN", "_blank");  
+   
+        Checkpolicy(){
+
+ window.open(this.policies, "_blank");
         },
-              CheckService(){
- window.open("https://pdpa.pro/policies/view/th/w8GcSSxUhNt1n1SBCWPc86DN", "_blank");  
+        CheckService(){
+ window.open(this.protectdata, "_blank");
         },
         async register(){
           this.form.url = window.location.origin
