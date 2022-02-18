@@ -102,6 +102,9 @@
                                                                          @blur="$v.form.password.$touch()"/>
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-key"></i></div>
       </div>
+
+        <div class="error" v-if="!$v.form.password.minLength" style="color:red;text-align:center">รหัสผ่านต้องมีตัวอักษรอย่างน้อย {{ $v.form.password.$params.minLength.min }} ตัว</div>
+
     </div>
 
 
