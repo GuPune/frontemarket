@@ -29,7 +29,7 @@ import { FETCH_GET_PROFILE } from "@/store/actions.type.js";
              
       async mounted() {
 
-
+alert('root');
         },
        
            
