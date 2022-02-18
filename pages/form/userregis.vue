@@ -303,8 +303,8 @@ import Datepicker from "@/components/TouchDatePicker";
               
                 this.$store.dispatch(REGISTER,this.form).then((response) => response.code_return == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
             },
-            success() {
-                setTimeout(() =>
+           async success() {
+               await setTimeout(() =>
                     this.$swal.fire({
                         type: "success",
                         title: "ส่งข้อมูลเรียบร้อยแล้ว สามารถติดตามรายละเอียดได้ทางอีเมล",
@@ -314,13 +314,13 @@ import Datepicker from "@/components/TouchDatePicker";
                     1000
                 );
 
-                setTimeout(() => (this.dialog = false), 4000);
+              await setTimeout(() => (this.dialog = false), 4000);
                //  this.$store.dispatch('auth/login', this.form);
                this.$auth.loginWith('local', {
           data: this.form
         });
 
-     this.$router.push('/');
+   //  this.$router.push('/');
     
             },
             error($text) {
