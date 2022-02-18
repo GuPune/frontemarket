@@ -319,7 +319,7 @@ import Datepicker from "@/components/TouchDatePicker";
                this.$auth.loginWith('local', {
           data: this.form
         });
-
+alert('ทำงานต่อ')
    //  this.$router.push('/');
     
             },
