@@ -26,7 +26,7 @@
                  <div class="row">
                     <div class="col-12 col-md-12 col-lg-7">
                         <div class="form-group">
-                            <label for="textMemberName" class="font-weight-bold">รหัสผ่านปัจจุบัน <span class="label" style="color:red;">*</span></label>
+                            <label for="textMemberName" class="font-weight-bold">รหัสผ่านใหม่ <span class="label" style="color:red;">*</span></label>
                             <input type="password" class="form-control" id="textMemberName" name="textMemberName" :class="{ 'is-invalid': $v.form.password.$error}"
                                  :error-messages="PasswordErrors"
                                             required

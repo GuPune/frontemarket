@@ -180,7 +180,7 @@
 <script>
 
 import Nav from "@/components/Nav";
-import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
+import { required, email, numeric,maxLength,minLength } from "vuelidate/lib/validators";
 import { mapGetters } from "vuex";
 import { REGISSHOP,GET_TYPE_SHOP,SYSTEM_PDPA } from "@/store/actions.type.js";
 import Loading from 'vue-loading-overlay';
@@ -197,7 +197,7 @@ import Loader from '@/components/Loader'
        validations: {
         form: {
             email: { required, email },
-            password: { required },
+            password: { required,minLength: minLength(6) },
             first_name: { required },
             last_name: { required },
             shop_name: { required },
