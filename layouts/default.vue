@@ -152,7 +152,7 @@ import AcceptCookkie from "@/components/AcceptCookkie"
     },
      
     async mounted() {
-     
+       alert('test');
         let getcook = this.$cookie.get("ssid");
         this.form.url = window.location.origin
         let get_url = this.$store.dispatch(FETCH_ID_URL,this.form);
