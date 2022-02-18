@@ -28,8 +28,9 @@ import { FETCH_GET_PROFILE } from "@/store/actions.type.js";
               },
              
       async mounted() {
-alert('index');
+
 let a = await this.$store.dispatch(FETCH_GET_PROFILE)
+
         },
        
            

@@ -213,6 +213,7 @@ alert('okkkk');
      },
      [SET_PROFILE](state,data) {
         state.profile = data;
+        console.log('state.profile',state.profile);
       
      },
      [SET_FORM_USER](state,data) {
