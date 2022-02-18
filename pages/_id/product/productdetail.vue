@@ -32,10 +32,17 @@
         </div>
 <div class="row no-margin" v-if="isHidden">
    <div class="left col-lg-5 col-md-6 col-sm-6">
+ <product-zoomer :base-images="images"></product-zoomer>
+   <div >
 
-    <client-only>
-   <ProductZoomer :base-images="images" :base-zoomer-options="zoomerOptions" :key=""key/>
-</client-only>
+      <!-- <no-ssr>
+       <ProductZoomer
+    :base-images="images"
+    :base-zoomer-options="zoomerOptions"
+  />
+    </no-ssr> -->
+    
+   </div>
    </div>
 
 
@@ -189,13 +196,7 @@
 
 
 
-
-
     </div>
-
-
-
-  </div>
 
 
 
@@ -208,6 +209,8 @@
 <script>
   import { mapGetters,mapState } from "vuex";
   import { FETCH_BY_PRODUCT_SHOP_ONE_ITEM,FETCH_IMAGE_PRODUCT,ADD_CART,ADD_PRODETAIL,FETCH_GET_PROFILE } from "@/store/actions.type.js";
+  
+  import ProductZoomer from 'vue-product-zoomer'
   import Nav from "@/components/Nav";
   import Footer from "@/components/Footer";
 
@@ -216,8 +219,31 @@
     export default {
       data() {
         return {
+ ima: {
+          thumbs: [
+            {
+              'id': 1,
+              'url': 'http://yoohooworld.com/images/vue-product-zoomer/images/thumbs/1.jpeg'
+            }
+          ],
+          normal_size: [
+            {
+              'id': 1,
+              'url': 'http://yoohooworld.com/images/vue-product-zoomer/images/normal_size/1.jpeg'
+            }
+        
+          ],
+          large_size: [
+            {
+              'id': 1,
+              'url': 'http://yoohooworld.com/images/vue-product-zoomer/images/large_size/1.jpeg'
+            },
+          ]
+      },
+          
+          
   key:0,
-
+  isHiddenzoom:false,
         isHidden:false,
     loadding:true,
       zoomerOptions: {
@@ -271,6 +297,10 @@ this.form.shop_name = this.$route.params.id;
 this.form.url = window.location.origin
 
 let productshop_item = await this.$store.dispatch(FETCH_BY_PRODUCT_SHOP_ONE_ITEM,this.form);
+
+     this.ima.thumbs = productshop_item.data.thumbs;
+     this.ima.large_size = productshop_item.data.large_size;
+     this.ima.normal_size = productshop_item.data.normal_size;
 let images_product = await this.$store.dispatch(FETCH_IMAGE_PRODUCT,this.form);
 
 
@@ -278,11 +308,13 @@ let images_product = await this.$store.dispatch(FETCH_IMAGE_PRODUCT,this.form);
     this.key++
 
 
-        // this.loadding = false;
+
 
 
      this.zoom(productshop_item);
       let a = await this.$store.dispatch(FETCH_GET_PROFILE)
+
+           this.loadding = false;
         },
 
 
@@ -322,7 +354,7 @@ let add_producttocart = await this.$store.dispatch(ADD_PRODETAIL,item);
         Checkimage(image){
 
                 let public_images = process.env.ImageURL+image;
-                console.log('testtttttttttttttt');
+            
                 return public_images;
         },
         async Addup(stock){
@@ -377,10 +409,14 @@ let add_producttocart = await this.$store.dispatch(ADD_PRODETAIL,item);
 // thumbs
 
 
-     this.images.thumbs = productshop_item.data.thumbs,
-     this.images.large_size = productshop_item.data.large_size,
-     this.images.normal_size = productshop_item.data.normal_size,
+    //  this.ima.thumbs = productshop_item.data.thumbs,
+    //  this.ima.large_size = productshop_item.data.large_size,
+    //  this.ima.normal_size = productshop_item.data.normal_size,
   this.loadding = false;
+  this.showImg = true;
+this.isHiddenzoom = true;
+  console.log(this.ima);
+
 
         //       this.images.thumbs = [
         // {
