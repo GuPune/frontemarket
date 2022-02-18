@@ -31,6 +31,7 @@ import { FETCH_GET_PROFILE } from "@/store/actions.type.js";
 
 let a = await this.$store.dispatch(FETCH_GET_PROFILE)
 
+console.log('a',a);
         },
        
            
