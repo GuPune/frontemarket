@@ -32,7 +32,7 @@
         </div>
 <div class="row no-margin" v-if="isHidden">
    <div class="left col-lg-5 col-md-6 col-sm-6">
- <product-zoomer :base-images="images"></product-zoomer>
+
    <div >
 
       <!-- <no-ssr>
@@ -41,7 +41,7 @@
     :base-zoomer-options="zoomerOptions"
   />
     </no-ssr> -->
-    
+     <product-zoomer :base-images="images"></product-zoomer>
    </div>
    </div>
 
@@ -204,7 +204,14 @@
 
 
 </template>
+<style>
+.thumb-list{
+  height: unset!important;
+  width:76.6px;
 
+  visibility:visible !important;
+}
+</style>
 
 <script>
   import { mapGetters,mapState } from "vuex";
