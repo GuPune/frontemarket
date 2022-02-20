@@ -51,6 +51,8 @@ const actions = {
         
         const { data } = await MyshopService.faceid(payload);
 
+        console.log(data.data);
+
         return data.data;
     },
 
