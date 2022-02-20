@@ -1,16 +1,6 @@
 <template>
 <div>
      
-            <div class="acceptcookkie" hidden>
-                  <input class="checkbox-cb" id="checkbox-cb" type="checkbox" />
-                        <div class="cookie-bar">
-                          <strong>
-                          <p class="cookkie">เว็บไซต์นี้มีการใช้งานของคุกกี้ <a href="#">เรียนรู้เพิ่มเติม</a></p></strong>
-                          <label for="checkbox-cb" class="accept-cb" >ยอมรับ</label>
-                          <label for="checkbox-cb" class="close-cb" >ไม่ยอมรับ</label>
-                        </div>
-            </div>
-
 
               <div class="accept">
                     <input class="checkbox" id="checkbox" type="checkbox" >
