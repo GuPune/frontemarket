@@ -1,40 +1,20 @@
 <template>
-<div>
-     
+ <transition name="modal">
+        <div class="modal-mask open-modal-term">
+          <div class="modal-wrapper">
+            <div class="modal-content col-sm-6">
+              <div class="modal-header header1">
+                <h3>ข้อตกลงและเงื่อนไขการใช้งานเว็บไซต์</h3>
+                </div>
+                <!-- <slot name="header">
+                  <h3>ข้อตกลงและเงื่อนไขการใช้งานเว็บไซต์</h3>
+                </slot> -->
+              
 
-              <div class="accept">
-                    <input class="checkbox" id="checkbox" type="checkbox" >
-                          <div class="cookiebar ">
-                          
-                              <div class="row bar">
-                                  <div class="col-sm-10">
-                                    <strong>
-                                    <p class="cookkies" style="color:black;">We use cookies<br>This website uses cookies to enhance your browsing experience 
-                                    on our website, to show you personalized content and targeted ads, 
-                                    to analyze our website traffic, and to understand where our visitors are coming from. 
-                                    You can manage your preferences by clicking "Change Preferences".  <a style="color: blue;" v-b-modal.modal-1>
-                                    "Privacy Policy"</a></p></strong>
-                                  </div>
-                                    <center>  
-                                    <div class="col-sm-2">
-                                              <label for="checkbox" class="accept-cookie" @click="accept()">Accept All</label>
-                                              
-                                              <p  class="close-cookie" style="color:e67825;" ><u>Change Preferences</u></p><br>
-                                    </div>
-                                    </center>
-                              </div>
-                            
-                            
-                          </div>
-              </div>
-      
-
-
-
-       <div>
-  <b-modal id="modal-1" size="xl" title="ข้อตกลงและเงื่อนไขการใช้งานเว็บไซต์">
-    <p class="my-4">
-         <p>การเข้าเว็บไซต์นี้ ตลอดจนการเปิดหน้าเว็บต่าง ๆ ที่อยู่ในเว็บไซต์นี้ ผู้ใช้งานเว็บไซต์ (“ผู้ใช้งาน”) ตกลงและยินยอมที่จะปฏิบัติตามนโยบายของบริษัท ออนไลน์ แอสเซ็ท จำกัด (“ออนไลน์ แอสเซ็ท”) กฎหมายที่ใช้บังคับ และข้อตกลงและเงื่อนไขการใช้งานเว็บไซต์ที่กำหนดไว้ในข้อตกลงนี้ทั้งที่กำหนดไว้เป็นการทั่วไปและที่ได้กำหนดไว้โดยเฉพาะเจาะจงในส่วนใดส่วนหนึ่งของเว็บไซต์นี้ทั้งหมด (“ข้อตกลงและเงื่อนไขการใช้”) โดยผู้ใช้งานรับทราบและตกลงว่าข้อตกลงและเงื่อนไขการใช้ที่กำหนดไว้นั้นอาจมีการเปลี่ยนแปลงได้โดยไม่ต้องมีการบอกกล่าวล่วงหน้า
+              <div class="modal-body" @scroll="handleScroll">
+              
+                <slot name="body">
+                  <p>การเข้าเว็บไซต์นี้ ตลอดจนการเปิดหน้าเว็บต่าง ๆ ที่อยู่ในเว็บไซต์นี้ ผู้ใช้งานเว็บไซต์ (“ผู้ใช้งาน”) ตกลงและยินยอมที่จะปฏิบัติตามนโยบายของบริษัท ออนไลน์ แอสเซ็ท จำกัด (“ออนไลน์ แอสเซ็ท”) กฎหมายที่ใช้บังคับ และข้อตกลงและเงื่อนไขการใช้งานเว็บไซต์ที่กำหนดไว้ในข้อตกลงนี้ทั้งที่กำหนดไว้เป็นการทั่วไปและที่ได้กำหนดไว้โดยเฉพาะเจาะจงในส่วนใดส่วนหนึ่งของเว็บไซต์นี้ทั้งหมด (“ข้อตกลงและเงื่อนไขการใช้”) โดยผู้ใช้งานรับทราบและตกลงว่าข้อตกลงและเงื่อนไขการใช้ที่กำหนดไว้นั้นอาจมีการเปลี่ยนแปลงได้โดยไม่ต้องมีการบอกกล่าวล่วงหน้า
 
 อย่างไรก็ดี การเปลี่ยนแปลงใด ๆ ที่เกี่ยวกับข้อตกลงและเงื่อนไขการใช้จะมีการเผยแพร่ไว้ในเว็บไซต์นี้ และเมื่อผู้ใช้งานได้เข้าใช้งานเว็บไซต์นี้ภายหลังการเปลี่ยนแปลงดังกล่าวแล้ว ย่อมถือว่าผู้ใช้งานตกลงยอมรับข้อตกลงและเงื่อนไขการใช้ทั้งหมดตามที่ได้เปลี่ยนแปลงแล้ว ดังนั้น ผู้ใช้งานจึงควรติดตามข้อตกลงและเงื่อนไขการใช้งานเว็บไซต์ที่กำหนดไว้นี้อยู่เสมอ
 
@@ -51,270 +31,182 @@
 
 <p>1.3	
 บรรดาเนื้อหา ไฟล์ หรือเอกสารที่ปรากฏในเว็บไซต์นี้ ผู้ใช้งานมีสิทธิเพียงเข้าดู ดาวน์โหลด อัพโหลดเนื้อหา และพิมพ์เนื้อหาดังกล่าว เฉพาะเพื่อประโยชน์แก่การใช้งานในทางส่วนตัวและต้องไม่ใช่การใช้งานที่เป็นไปเพื่อประโยชน์ในทางการค้า และผู้ใช้งานตกลงไม่ทำสำเนา หรือจัดเก็บ หรือดาวน์โหลดเนื้อหาไม่ว่าจะในรูปของเอกสารหรือในรูปแบบสื่ออิเล็กทรอนิกส์อื่นใดอันมีวัตถุประสงค์เพื่อการส่ง โอน จัดทำ เผยแพร่ พิมพ์ ทำซ้ำ ดัดแปลง สร้างงานที่พัฒนา นำออกแสดง แพร่กระจาย จำหน่าย ให้สิทธิ เช่า ให้เช่า หรือโอนเนื้อหาใด ๆ ให้แก่บุคคลภายนอก ไม่ว่าการกระทำดังกล่าวจะเป็นไปเพื่อประโยชน์ในทางการค้าหรือได้รับประโยชน์เป็นสิ่งตอบแทนอื่นใดหรือไม่ก็ตาม เว้นแต่จะได้รับความยินยอมเป็นลายลักษณ์อักษรล่วงหน้าจากออนไลน์ แอสเซ็ทก่อนดำเนินการ</p>
+                </slot>
+                
+              </div>
 
-    </p>
-  </b-modal>
-</div>
-
-
-      
-       
-</div>
-
-
+              <div class="modal-footer">
+                <slot name="footer" v-if="this.HideFooter == true">
+                  <button class="btn btn-primary" @click="$emit('close')">
+                    ยอมรับ
+                  </button>
+                </slot>
+              </div>
+            </div>
+          </div>
+        </div>
+      </transition>
 </template>
+
 
 
 <style>
 
+#sorlice {
+    max-height: 640px;
 
-
-
-/*---------------------------------------------------------*/
-
-
-
-.cookiebar {
-  position: fixed;
-  width: 90%;
-  bottom: 10px;
-  right:5%;
-  left: 5%;
-  /* height: 270px; */
-  /* text-align: center; */
-  line-height: 30px;
-  background: linear-gradient(#ffffff, #ffffff);
-  color: white;
-  font-family: "Lato", sans-serif;
-  font-weight: 100;
-  transition: 0.8s;
-  -webkit-animation: slideIn 0.8s;
-          animation: slideIn 0.8s;
-  -webkit-animation-delay: 0.8s;
-          animation-delay: 0.8s;
-  font-size: 15px;
-  z-index: 100;
-  border: 5px solid #e2e2e2;
-  border-radius: 10px;
+}
+.dart {
+    width: 50%;
+}
+.open-modal-term {
+    overflow: hidden;
 }
 
 
-.cookiebar .message {
-  white-space: nowrap;
-  text-shadow: 0 1px 0 #cc0000;
-}
-
-
-@-webkit-keyframes slideIn {
-  0% {
-    transform: translateY(-50px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideIn {
-  0% {
-    transform: translateY(-50px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-.close-cookie {
-  border: none;
-  color: #e67825;
-  /* background: #970000; */
+/* .modal-mask {
   position: absolute;
-  display: inline-block;
-  /* right: 10px; */
-  top:18px;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: table;
+  transition: opacity 0.3s ease;
+}
+
+
+
+.modal-wrapper {
+  display: block;
+  vertical-align: middle;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.modal-container {
+  width: auto;
+  margin: 0px auto;
+  padding: 20px 30px;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33);
+  transition: all 0.3s ease;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.modal-header h3 {
+  margin-top: 0;
+  color: #42b983;
+}
+
+.modal-body {
+  margin: 20px 0;
+}
+
+.modal-default-button {
+  float: right;
+} */
+
+/*
+ * The following styles are auto-applied to elements with
+ * transition="modal" when their visibility is toggled
+ * by Vue.js.
+ *
+ * You can easily play with the modal transition by editing
+ * these styles.
+ */
+
+
+
+
+/* .modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.button {
+  padding: 15px 25px;
+  font-size: 20px;
   text-align: center;
   cursor: pointer;
-  /* border-radius: 3px;
-  box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.2); */
-  line-height: 30px;
-  height: auto;
-  width: 150px;
-  font-size: 16px;
-  font-weight: bold;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
 }
 
+.button:hover {background-color: #3e8e41}
 
-/* .close-cookie:hover {
-  background: #eb2525;
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 } */
 
 
-.checkbox {
-  display: none;
-}
-.checkbox:checked + .cookiebar {
-  transform: translateY(120%);
-}
-
-
-
-.accept-cookie {
-  border: none;
-  color: white;
-  background: #e67825;
-  position: absolute;
-  display: inline-block;
-  /* right: 10px; */
-  bottom: 5px;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 3px;
-  box-shadow: inset 0 0 3px 0 rgba(0, 0, 0, 0.2);
-  line-height: 30px;
-  height: auto;
-  width: 150px;
-  font-size: 16px;
-  font-weight: bold;
-}
-.accept-cookie:hover {
-  background: #ff9544;
-}
-
-.checkbox {
-  display: none;
-}
-.checkbox:checked + .cookiebar {
-  transform: translateY(120%);
-}
-
-
-
-.bar{
-  align-items: center;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 30px;
-  padding-right: 30px;
-
-}
-
-
-
 </style>
-
 <script>
-import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
-import { mapGetters,mapState } from "vuex";
-import TermsofService from "@/components/TermsofService"
 
 
 
-    export default {
-      components: {
-        TermsofService
-    },
-
-
-
-    data: () => ({
-
-
-        showModal: true,
-        showModalPrivacypolicy:false,
-        showModalSettingCookie:false,
-   
-          form: {
-            name:"Analytics",
-            accepted:false
-        },
-           
-    
-      }),
-      
-      computed: {
-       
-             
-        
-      },
-   
-       async mounted() {
-       
-       },
-
-        methods: {
-          redirectTo(){
-            window.location.reload();
-          },
-     async accept(){
-           
-         
-
-//             var date = new Date;
-// date.setDate(date.getDate() + 21);
+export default {
  
-let x = this.$cookie.set("ssid","xxj_7Sl6xDq2Kc3ym0fmrSSk2xV2XkUkX",{ expires: '1D' })
 
-  //  var allcookies = document.cookie;
+    data() {
+    return {
+         HideFooter:false,
+         scrollPosition: 0,
+    };
+  },
+   created() {
 
-
-  //  var o = JSON.parse('{"id":1,"value":"code.google.com"}');
-  // let yy = this.$cookie.set("cwc_consent",o,{ expires: '10s' })
 
   
-  // console.log('process.browser',process.browser);
-      localStorage.setItem("GDPR:accepted", "yes");
-
-
-
-        
-        
- 
-          },
-
-
-
-           Privacypolicy(){
-        alert('Privacypolicy');
-      },
-    TermsofService(){
-   alert('TermsofService');
-    },
-    SettingCookie(){
-   alert('SettingCookie');
-    },
-    Checkpolicy(){
-
-
- this.checkpol = this.checkpol ? false : true;
-
-
- if(this.checkpol == true){
- this.isHidden = false;
- }else {
- this.isHidden = true;
-
- }
-
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         },
+        computed: {
 
 
+    },
+      mounted() {
+      //  console.log('ok ผ่าน');
+      },
+      methods: {
+            	handleScroll: function(e) {
+               this.HideFooter = true;
+          var currentScrollPosition = e.srcElement.scrollTop;
+            var currentscrollHeight = e.srcElement.scrollHeight;
+        // console.log(currentScrollPosition);
+        //    console.log(currentscrollHeight);
+            // if (currentScrollPosition > this.scrollPosition) {
+            //   //  console.log("Scrolling down");
+              
+            // }
+            if(currentscrollHeight - currentScrollPosition == 640){
 
-    }
+            }
+       
+            this.scrollPosition = currentScrollPosition;
+		}
+
+     
+
+
+    
+
+  
+      }
+}
 </script>
