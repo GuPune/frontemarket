@@ -80,7 +80,7 @@ import AcceptCookkie from "@/components/AcceptCookkie"
 
 
       let checker = localStorage.getItem("pageId");
-
+console.log('checker',checker);
       Vue.use(VueFbCustomerChat, {
   page_id: checker, //  change 'null' to your Facebook Page ID,
   theme_color: '#333333', // theme color in HEX
