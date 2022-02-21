@@ -105,7 +105,7 @@ export const GET_NAVBAR_SHOP = "get_navbar_shop";
 export const GET_CHECK_SHOP = "get_check_shop";
 export const SYSTEM_PDPA = "get_ststem_pdpa";
 export const GET_FOOTER = "get_footer";
-
+export const HIDECOOKIEFIRST = "hide_cookie";
 export const LOG_OUT = "log_out";
 
 

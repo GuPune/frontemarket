@@ -51,16 +51,12 @@ export const SET_SYSTEM = "set_system";
 export const SET_PROVINCES = "set_provinces";
 export const SET_FORM_USER = "set_form_user";
 export const SET_KEYWORD = "set_keyword";
-
 export const SET_NAVBAR = "set_nav";
 export const SET_NAVBAR_SHOP = "set_nav_shop";
+export const SETHIDECOOKIEFIRST = "set_hide_cookie";
 export const SET_FOOTER = "set_footer";
 export const SET_LOADER = "set_loader";
 export const SET_LOGOUT = "set_logout";
-
-
-
-
 
 
 

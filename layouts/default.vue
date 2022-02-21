@@ -10,31 +10,31 @@
  <Nav  v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou')  && (currentRouteName != 'line')  && (currentRouteName != 'line-id') && (currentRouteName == 'index') || (currentRouteName == 'cart-orderlist') || (currentRouteName == 'cart-comfirmorder') || (currentRouteName == 'cart-payment') || (currentRouteName == 'cart-success') || (currentRouteName == 'profile-historyorder') || (currentRouteName == 'find') || (currentRouteName == 'form-shopregis')  || (currentRouteName == 'form-userregis') || (currentRouteName == 'id-product-productdetail-slug')  || (currentRouteName == 'shoperror')"/>
  <NavShop  v-if="(currentRouteName == 'id')  || (currentRouteName == 'id-about') || (currentRouteName == 'id-new') || (currentRouteName == 'id-contact') || (currentRouteName == 'id-new-blogid')"/>
 
- 
- 
+
+
 <nuxt-child></nuxt-child>
 
 
       <Ads   v-if="currentRouteName == 'index'"/>
                 <!-- <Categories  v-if="currentRouteName == 'index'" /> -->
                 <Test  v-if="currentRouteName == 'index'" />
-               
+
 <Related v-if="currentRouteName == 'index'"/>
-    
+
     <ShopRelation v-if="currentRouteName == 'index'"/>
 
 
    <LongFooter  v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou') "/>
 
 
-   
+
 
                 <Footer  v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou')"/>
 
 <div v-if="this.pageId">
 
 <div class="fb-customerchat"  :page_id="pageId">
- 
+
 </div>
   <div
 
@@ -45,11 +45,11 @@
   ></div>
 
 
-   </div> 
+   </div>
 
-   
-         <AcceptCookkie/> 
-   
+
+         <AcceptCookkie v-if="this.hide == true"/>
+
 </div>
 
 
@@ -77,10 +77,10 @@ import VueFbCustomerChat from 'vue-fb-customer-chat'
 import axios from 'axios';
 import AcceptCookkie from "@/components/AcceptCookkie"
 
- 
+
 
 //      const s = null;
-  
+
 //                 console.log('public_images',public_images);
 
 
@@ -94,7 +94,7 @@ import AcceptCookkie from "@/components/AcceptCookkie"
 })
 
 
-  
+
 
     export default {
       components: {
@@ -103,7 +103,7 @@ import AcceptCookkie from "@/components/AcceptCookkie"
           },
 
     data: () => ({
-      
+hide:false,
     pageId:null,
     form:{
         url:null
@@ -128,10 +128,10 @@ import AcceptCookkie from "@/components/AcceptCookkie"
               return checkcookie;
             },
 
- 
 
-  
-     
+
+
+
 
     },
 
@@ -156,15 +156,25 @@ import AcceptCookkie from "@/components/AcceptCookkie"
 
    localStorage.setItem("pageId", get_face.facebook);
     },
-     
+
     async mounted() {
-    
+
         let getcook = this.$cookie.get("ssid");
+        console.log('sssssssssssss',getcook)
+
+        if(getcook == null){
+
+this.hide = true;
+
+    }else{
+
+this.hide = false;
+    }
         this.form.url = window.location.origin
         let get_url = this.$store.dispatch(FETCH_ID_URL,this.form);
 
 
-    
+
 this.footer();
        // let clearalert = this.$store.dispatch(CLEARALRET);
 
@@ -172,18 +182,18 @@ this.footer();
         //       let a = await this.$store.dispatch(FETCH_GET_PROFILE)
         // }
         // console.log('this.$store.state.auth.user',this.$store.state.auth.user);
-      
+
     },
     methods: {
  footer(){
-   
+
     this.form.url = window.location.origin;
          this.form.shop_name = this.$route.params;
-    
+
      let footer = this.$store.dispatch(GET_FOOTER,this.form);
 
 },
-  
+
 
 
 Checkimage(){
@@ -194,8 +204,8 @@ Checkimage(){
 }
     }
 
- 
+
     };
-    
+
 </script>
 

@@ -1,33 +1,34 @@
 <template>
 <div>
-     
+
 
               <div class="accept">
+
                     <input class="checkbox" id="checkbox" type="checkbox" >
                           <div class="cookiebar ">
-                          
+
                               <div class="row bar">
                                   <div class="col-sm-10">
                                     <strong>
-                                    <p class="cookkies" style="color:black;">We use cookies<br>This website uses cookies to enhance your browsing experience 
-                                    on our website, to show you personalized content and targeted ads, 
-                                    to analyze our website traffic, and to understand where our visitors are coming from. 
+                                    <p class="cookkies" style="color:black;">We use cookies<br>This website uses cookies to enhance your browsing experience
+                                    on our website, to show you personalized content and targeted ads,
+                                    to analyze our website traffic, and to understand where our visitors are coming from.
                                     You can manage your preferences by clicking "Change Preferences".  <a style="color: blue;" v-b-modal.modal-1>
                                     "Privacy Policy"</a></p></strong>
                                   </div>
-                                    <center>  
+                                    <center>
                                     <div class="col-sm-2">
                                               <label for="checkbox" class="accept-cookie" @click="accept()">Accept All</label>
-                                              
+
                                               <p  class="close-cookie" style="color:e67825;" v-b-modal.modal-2 ><u> Change Preferences</u></p><br>
                                     </div>
                                     </center>
                               </div>
-                            
-                            
+
+
                           </div>
               </div>
-      
+
 
 
 
@@ -41,28 +42,28 @@
 ทั้งนี้ หากท่านไม่เห็นด้วยหรือประสงค์ที่จะปฏิเสธความมีผลผูกพันตามข้อตกลงและเงื่อนไขการใช้ใด ๆ ขอความกรุณาท่านยุติการเข้าชมและใช้งานเว็บไซต์นี้</p>
 
 <p>1. การใช้เว็บไซต์และทรัพย์สินทางปัญญา</p>
-<p>1.1	
+<p>1.1
 บรรดาข้อมูลที่ปรากฏในเว็บไซต์นี้ซึ่งรวมถึงแต่ไม่จำกัดเฉพาะ ข้อความ รูปภาพ ตารางข้อมูล กราฟ ราคาหรือมูลค่าหลักทรัพย์ (ถ้ามี) เครื่องหมายการค้า กราฟิกต่าง ๆ เสียง การออกแบบหน้าจอแอปพลิเคชัน การออกแบบส่วนต่อประสานกับผู้ใช้ (Interface) ข้อมูลต่าง ๆ ไม่ว่าจะอยู่ในรูปแบบใด โปรแกรมซอฟท์แวร์ใด ๆ ที่มีอยู่ในเว็บไซต์นี้ รวมถึงข้อมูลทั้งหลายที่ผู้ใช้งานได้ดาวน์โหลดจากเว็บไซต์นี้ (ซึ่งต่อไปนี้จะรวมเรียกว่า “เนื้อหา”) ถือเป็นสิทธิของออนไลน์ แอสเซ็ท หรือผู้ให้อนุญาตแก่ออนไลน์ แอสเซ็ท ซึ่งเนื้อหาเหล่านั้นได้รับความคุ้มครองด้านทรัพย์สินทางปัญญา และ/หรือสิทธิในความเป็นเจ้าของอื่น ๆ ตามกฎหมายของประเทศไทยและ/หรือกฎหมายของประเทศอื่นไม่ว่าในรูปแบบใด ๆ และไม่ว่าจะได้รับการจดทะเบียนไว้แล้วหรือไม่ก็ตาม
 
 ทั้งนี้ การนำชื่อทางการค้า เครื่องหมายการค้า เครื่องหมายบริการ และเครื่องหมายอื่น ๆ ของออนไลน์ แอสเซ็ท รวมถึงทรัพย์สินทางปัญญาใด ๆ ที่ปรากฏในเว็บไซต์นี้ไปใช้ ไม่ว่าจะด้วยวัตถุประสงค์ใด ๆ ผู้ใช้งานจะต้องได้รับความยินยอมล่วงหน้าเป็นลายลักษณ์อักษรจากออนไลน์ แอสเซ็ท ก่อนดำเนินการ</p>
 
-<p>1.2	
+<p>1.2
 บรรดาชื่อทางการค้า ชื่อสินค้า เครื่องหมายการค้า เครื่องหมายบริการ และเครื่องหมายอื่น ๆ รวมถึงทรัพย์สินทางปัญญาอื่นใดที่ปรากฏในเว็บไซต์นี้ นอกเหนือจากสิ่งที่เป็นทรัพย์สินทางปัญญาของออนไลน์ แอสเซ็ท ซึ่งได้ถูกนำมาเรียบเรียงหรือจัดให้มีขึ้นเพื่อใช้เป็นส่วนประกอบของเว็บไซต์นี้ มีขึ้นเพื่อวัตถุประสงค์ในการตกแต่งรูปลักษณ์ของเว็บไซต์ โดยออนไลน์ แอสเซ็ทในฐานะผู้ให้บริการเว็บไซต์ไม่ได้มีเจตนาที่จะกระทำการใด ๆ อันเป็นการละเมิดสิทธิในทางการค้าหรือทรัพย์สินทางปัญญาของผู้ใด เว้นแต่มีข้อความระบุไว้เป็นอย่างอื่นในเว็บไซต์นี้</p>
 
-<p>1.3	
+<p>1.3
 บรรดาเนื้อหา ไฟล์ หรือเอกสารที่ปรากฏในเว็บไซต์นี้ ผู้ใช้งานมีสิทธิเพียงเข้าดู ดาวน์โหลด อัพโหลดเนื้อหา และพิมพ์เนื้อหาดังกล่าว เฉพาะเพื่อประโยชน์แก่การใช้งานในทางส่วนตัวและต้องไม่ใช่การใช้งานที่เป็นไปเพื่อประโยชน์ในทางการค้า และผู้ใช้งานตกลงไม่ทำสำเนา หรือจัดเก็บ หรือดาวน์โหลดเนื้อหาไม่ว่าจะในรูปของเอกสารหรือในรูปแบบสื่ออิเล็กทรอนิกส์อื่นใดอันมีวัตถุประสงค์เพื่อการส่ง โอน จัดทำ เผยแพร่ พิมพ์ ทำซ้ำ ดัดแปลง สร้างงานที่พัฒนา นำออกแสดง แพร่กระจาย จำหน่าย ให้สิทธิ เช่า ให้เช่า หรือโอนเนื้อหาใด ๆ ให้แก่บุคคลภายนอก ไม่ว่าการกระทำดังกล่าวจะเป็นไปเพื่อประโยชน์ในทางการค้าหรือได้รับประโยชน์เป็นสิ่งตอบแทนอื่นใดหรือไม่ก็ตาม เว้นแต่จะได้รับความยินยอมเป็นลายลักษณ์อักษรล่วงหน้าจากออนไลน์ แอสเซ็ทก่อนดำเนินการ</p>
 
- 
+
   </b-modal>
 
 
     <b-modal id="modal-2" size="xl" title="การตั้งค่าความเป็นส่วนตัว" hide-footer hide-header>
-       
-         
+
+
 
               <div class="modal-header header1">
                 <h3>การตั้งค่าความเป็นส่วนตัว</h3>
-                <button class="btn btn" 
+                <button class="btn btn"
                 style="background-color:#e67825;
                       color:white;"  v-if="isHiddenaccept == true"  @click="accept()">
                     Accept All
@@ -141,24 +142,24 @@
                   </button>
                 </slot>
               </div>
-          
-        
 
 
 
 
 
- 
 
 
 
- 
+
+
+
+
   </b-modal>
 </div>
 
 
-      
-       
+
+
 </div>
 
 
@@ -412,6 +413,7 @@ input:checked + .slider:before {
 <script>
 import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
 import { mapGetters,mapState } from "vuex";
+import { HIDECOOKIEFIRST } from "@/store/actions.type.js";
 import TermsofService from "@/components/TermsofService"
 
 
@@ -421,10 +423,7 @@ import TermsofService from "@/components/TermsofService"
         TermsofService
     },
 
-
-
     data: () => ({
-
         analytics:false,
          marketing:false,
         showModal: true,
@@ -433,29 +432,32 @@ import TermsofService from "@/components/TermsofService"
           isHidden:true,
          isHiddenaccept:true,
          isHiddenacceptall:true,
-   
+
           form: {
             name:"Analytics",
             accepted:false
         },
-           
-    
+
+
       }),
-      
+
       computed: {
-       
-             
-        
+          ...mapState({
+            objectsbanner: state => state.menu
+             }),
+
+
+
       },
-   
+
        async mounted() {
-       
+
        },
 
         methods: {
 
         mychoices(){
-      
+
 
         },
            async Checkanalytics(){
@@ -482,13 +484,13 @@ this.isHiddenaccept = true;
             window.location.reload();
         },
      async accept(){
-           
-         
+
+
 
 //             var date = new Date;
 // date.setDate(date.getDate() + 21);
- 
-let x = this.$cookie.set("ssid","xxj_7Sl6xDq2Kc3ym0fmrSSk2xV2XkUkX",{ expires: '1D' })
+
+let x = this.$cookie.set("ssid","xxj_7Sl6xDq2Kc3ym0fmrSSk2xV2XkUkX",{ expires: '7D' })
 
   //  var allcookies = document.cookie;
 
@@ -496,15 +498,19 @@ let x = this.$cookie.set("ssid","xxj_7Sl6xDq2Kc3ym0fmrSSk2xV2XkUkX",{ expires: '
   //  var o = JSON.parse('{"id":1,"value":"code.google.com"}');
   // let yy = this.$cookie.set("cwc_consent",o,{ expires: '10s' })
 
-  
-  // console.log('process.browser',process.browser);
       localStorage.setItem("GDPR:accepted", "yes");
+     this.$ga.enable();
+     this.$fb.enable();
+
+  // console.log('process.browser',process.browser);
+
+      this.$store.dispatch(HIDECOOKIEFIRST);  /// dispa
 
 
 
-        
-        
- 
+
+
+
           },
 
 
