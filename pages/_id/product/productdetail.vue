@@ -212,13 +212,13 @@
   visibility:visible !important;
 }
 .preview-box {
-height: 300px;
-width: 300px;
+height: 300px!important;
+width: 300px!important;
 }
 
 .choosed-thumb{
-  height: 100px;
-width: 100px;
+  height: 100px!important;
+width: 100px!important;
 }
 </style>
 
