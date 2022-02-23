@@ -211,6 +211,10 @@
 
   visibility:visible !important;
 }
+.preview-box {
+height: 300px;
+
+}
 </style>
 
 <script>
