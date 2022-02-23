@@ -543,9 +543,7 @@ margin-top: 30px;
   }
 
 
-  @media screen and (min-width: 1401px) {
-
-
+  @media screen and (min-width: 1216px) {
     .orderlist-center-deskop{
       text-align: center;
     }
