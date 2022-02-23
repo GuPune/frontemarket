@@ -213,7 +213,7 @@
 }
 .preview-box {
 height: 300px;
-
+width: 300px;
 }
 </style>
 
