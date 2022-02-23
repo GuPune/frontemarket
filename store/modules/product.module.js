@@ -89,6 +89,7 @@ const actions = {
         return data;
     },
     async [GET_PRODUCT_SHELL_FIND](context,payload) {
+        console.log('payload',payload);
         const { data } = await ProductService.getproductshellfind(payload);
   
         context.commit(SET_KEYWORD,payload);
