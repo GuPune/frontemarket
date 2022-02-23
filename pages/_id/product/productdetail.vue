@@ -215,6 +215,11 @@
 height: 300px;
 width: 300px;
 }
+
+.choosed-thumb{
+  height: 100px;
+width: 100px;
+}
 </style>
 
 <script>
