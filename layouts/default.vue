@@ -57,9 +57,12 @@
 </template>
 
  <script>
+
+ 
  </script>
 
 <script>
+
 import NavShop from "@/components/NavbarShop"
 import Nav from "@/components/Nav"
 import Ads from "@/components/Ads"

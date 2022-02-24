@@ -6,6 +6,7 @@ export default {
     htmlAttrs: {
       lang: 'en'
     },
+    titleTemplate: 'Nuxt.js Fundamental - %s',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -18,7 +19,7 @@ export default {
       { src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     link: [
      
