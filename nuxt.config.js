@@ -19,7 +19,7 @@ export default {
       { src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: 'https://cmsecom.idtest.work/public/product/202111220826582VUbS2ECA0oGhGD62Jfh.jpg' }
       
     ],
     link: [
