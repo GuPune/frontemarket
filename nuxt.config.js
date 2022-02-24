@@ -11,16 +11,13 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Thaionzon | Thailand ซื่อขายสินค้าออนไลน์'},
-      { name: 'format-detection', content: 'telephone=no' }
+      { name: 'format-detection', content: 'telephone=no' },
+      { rel: 'icon', type: 'image/x-icon', href: 'https://cmsecom.idtest.work/favicon.ico' }
     ],
     script: [
       { src: 'https://static.line-scdn.net/liff/edge/2.1/sdk.js' },
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js' },
       { src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js' },
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: 'https://cmsecom.idtest.work/favicon.ico' }
-      
     ],
     link: [
      
