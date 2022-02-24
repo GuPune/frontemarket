@@ -10,7 +10,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Thaionzon | Thailand ซื่อขายสินค้าออนไลน์', href: 'https://cmsecom.idtest.work/public/product/202111220826582VUbS2ECA0oGhGD62Jfh.jpg' },
+      { hid: 'description', name: 'description', content: 'Thaionzon | Thailand ซื่อขายสินค้าออนไลน์', href: 'https://cmsecom.idtest.work/A1.png' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     script: [
@@ -19,7 +19,7 @@ export default {
       { src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: 'https://cmsecom.idtest.work/public/product/202111220826582VUbS2ECA0oGhGD62Jfh.jpg' }
+      { rel: 'icon', type: 'image/x-icon', href: 'https://cmsecom.idtest.work/A1.png' }
       
     ],
     link: [
