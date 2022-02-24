@@ -2,14 +2,14 @@ export default {
   mode: "spa",
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'ThaionZon',
+    title: 'Thaionzon',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'my website description' },
+      { hid: 'description', name: 'description', content: 'Thaionzon | Thailand ซื่อขายสินค้าออนไลน์' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     script: [
