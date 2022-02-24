@@ -28,7 +28,7 @@ export default {
 
     link: [
 
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: "https://s.yimg.com/rz/l/favicon.ico" },
       {
         rel: 'stylesheet',
         type: 'text/css',
@@ -39,6 +39,7 @@ export default {
         href: 'https://fonts.googleapis.com/css?family=Lato:400,700'
       }
     ]
+    
   },
   pwa: {
     icon: {
