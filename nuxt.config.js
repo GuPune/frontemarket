@@ -11,6 +11,7 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'Thaionzon | Thailand ซื่อขายสินค้าออนไลน์' },
+      { hid: 'description', name: 'description', content: 'https://thenextbit.de/seo/og_image.jpg' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     script: [
@@ -20,6 +21,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      
     ],
     link: [
      
