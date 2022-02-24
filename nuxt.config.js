@@ -20,8 +20,10 @@ export default {
       { src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/static/favicon.ico' },
-      
+      { rel: 'icon', type: 'image/x-icon', href: '/sh.ico' },
+      { rel: 'icon', type: 'image/png',  sizes="96x96", href: '/96.png' },
+      { rel: 'icon', type: 'image/png',  sizes="32x32", href: '/32.png'  },
+      { rel: 'icon', type: 'image/png',  sizes="16x16" ,href: '/16.png'  },
       {
         rel: 'stylesheet',
         type: 'text/css',
