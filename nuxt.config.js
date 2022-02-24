@@ -1,5 +1,5 @@
 export default {
-  mode: "spa",
+  mode: "universal",
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'Thaionzon',
@@ -44,6 +44,7 @@ export default {
     icon: {
          fileName: 'log.png',
     },
+    
 },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
