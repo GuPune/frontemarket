@@ -18,7 +18,10 @@ export default {
       { src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
+    ],
+    link: [
+     
       {
         rel: 'stylesheet',
         type: 'text/css',
