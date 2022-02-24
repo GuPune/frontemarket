@@ -163,7 +163,7 @@ hide:false,
     async mounted() {
 
         let getcook = this.$cookie.get("ssid");
-        console.log('sssssssssssss',getcook)
+       
 
         if(getcook == null){
 
