@@ -182,8 +182,11 @@
                     <div class="alert alert-danger" role="alert" v-if="emailalert == true">
                         กรุณากรอกอีเมล
                     </div>
-                    <div class="alert alert-success" role="alert" v-if="alertforgot.messageforgot">
+                    <div class="alert alert-success" role="alert" v-if="alertforgot.messageforgot == 1">
                          ส่งไปที่อีเมลสำเร็จ
+                    </div>
+                      <div class="alert alert-danger" role="alert" v-if="alertforgot.messageforgot == 2">
+                         ไม่มีอีเมลนี้
                     </div>
                     <input type="email" class="form-control" placeholder="example@gmail.com" required v-model="forms.email"><br>
                     <button type="submit" class="btn btn-info"  @click="forgot()">ส่งไปที่อีเมล</button>
