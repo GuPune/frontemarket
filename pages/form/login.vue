@@ -180,8 +180,8 @@
                 <small>กรุณายืนยันอีเมล</small>
                 <a class="close" href="#">&times;</a><br>
                 <div class="content">
-                    <div class="alert alert-danger" role="alert" v-if="emailalert">
-                        กรุณณากรอกอีเมล
+                    <div class="alert alert-danger" role="alert" v-if="emailalert == true">
+                        กรุณากรอกอีเมล
                     </div>
                     <div class="alert alert-success" role="alert" v-if="alertforgot.messageforgot">
                          ส่งไปที่อีเมลสำเร็จ
