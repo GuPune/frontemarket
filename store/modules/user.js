@@ -202,7 +202,12 @@ alert('okkkk');
        if(data.code_return == 200){
         state.typeforgot = 'alert alert-success';
         state.messageforgot = 1;
-       }else{
+       }else if(data.code_return == 201){
+           console.log('201');
+        state.typeforgot = 'alert alert-success';
+        state.messageforgot = 1;
+       }
+       else{
         state.typeforgot = 'alert alert-danger';
         state.messageforgot = 1;
        }
