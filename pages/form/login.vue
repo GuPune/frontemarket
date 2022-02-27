@@ -177,7 +177,6 @@
          v-if="Isshow">
             <div class="popup">
                 <h6>ลืมรหัสผ่านใช่หรือไม่?</h6><br>
-                <small>กรุณายืนยันอีเมล</small>
                 <a class="close" href="#">&times;</a><br>
                 <div class="content">
                     <div class="alert alert-danger" role="alert" v-if="emailalert == true">
