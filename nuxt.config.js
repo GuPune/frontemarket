@@ -165,20 +165,37 @@ export default {
 // },
 
 
+// axios: {
+//   // See https://github.com/nuxt-community/axios-module#options
+//   baseURL: "https://backoffice.thaionzon.com/api",
+//   ImageURL: "https://backoffice.thaionzon.com/public/product/",
+//   ImageSoc: "https://backoffice.thaionzon.com/public/images/",
+
+//  },
+
+// env: {
+//  baseURL: "https://backoffice.thaionzon.com/api",
+//   ImageURL: "https://backoffice.thaionzon.com/public/product/",
+//   ImageSoc: "https://backoffice.thaionzon.com/public/images/",
+//   backend:"https://backoffice.thaionzon.com",
+// },
+
+
 axios: {
   // See https://github.com/nuxt-community/axios-module#options
-  baseURL: "https://backoffice.thaionzon.com/api",
-  ImageURL: "https://backoffice.thaionzon.com/public/product/",
-  ImageSoc: "https://backoffice.thaionzon.com/public/images/",
+  baseURL: "https://backend.pra84000.com/api",
+  ImageURL: "https://backend.pra84000.com/public/product/",
+  ImageSoc: "https://backend.pra84000.com/public/images/",
 
  },
 
 env: {
- baseURL: "https://backoffice.thaionzon.com/api",
-  ImageURL: "https://backoffice.thaionzon.com/public/product/",
-  ImageSoc: "https://backoffice.thaionzon.com/public/images/",
-  backend:"https://backoffice.thaionzon.com",
+ baseURL: "https://backend.pra84000.com/api",
+  ImageURL: "https://backend.pra84000.com/public/product/",
+  ImageSoc: "https://backend.pra84000.com/public/images/",
+  backend:"https://backend.pra84000.com",
 },
+
 
 
 
