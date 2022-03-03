@@ -140,9 +140,9 @@
 
                 </div>
 
-                  <div class="col-md-4 col-sm-12 pta-detau">
+                  <!-- <div class="col-md-4 col-sm-12 pta-detau">
     <b-button size="md" variant="danger" class="pro-des-btt" @click="redirect('cart-orderlist')">ซื้อสินค้า</b-button>
-                </div>
+                </div> -->
             </div>
 
 
@@ -225,7 +225,7 @@ width: 100px!important;
 <script>
   import { mapGetters,mapState } from "vuex";
   import { FETCH_BY_PRODUCT_SHOP_ONE_ITEM,FETCH_IMAGE_PRODUCT,ADD_CART,ADD_PRODETAIL,FETCH_GET_PROFILE } from "@/store/actions.type.js";
-  
+
   import ProductZoomer from 'vue-product-zoomer'
   import Nav from "@/components/Nav";
   import Footer from "@/components/Footer";
@@ -247,7 +247,7 @@ width: 100px!important;
               'id': 1,
               'url': 'http://yoohooworld.com/images/vue-product-zoomer/images/normal_size/1.jpeg'
             }
-        
+
           ],
           large_size: [
             {
@@ -256,8 +256,8 @@ width: 100px!important;
             },
           ]
       },
-          
-          
+
+
   key:0,
   isHiddenzoom:false,
         isHidden:false,
@@ -337,7 +337,7 @@ let images_product = await this.$store.dispatch(FETCH_IMAGE_PRODUCT,this.form);
         methods: {
 
             redirect(names) {
-  
+
                 let path = this.$route.path
                 if (path !== names) {
 
@@ -383,7 +383,7 @@ let add_producttocart = await this.$store.dispatch(ADD_PRODETAIL,item);
         Checkimage(image){
 
                 let public_images = process.env.ImageURL+image;
-            
+
                 return public_images;
         },
         async Addup(stock){
