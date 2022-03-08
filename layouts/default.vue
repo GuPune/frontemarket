@@ -58,7 +58,7 @@
 
  <script>
 
- 
+
  </script>
 
 <script>
@@ -163,7 +163,7 @@ hide:false,
     async mounted() {
 
         let getcook = this.$cookie.get("ssid");
-       
+
 
         if(getcook == null){
 

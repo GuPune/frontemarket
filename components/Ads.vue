@@ -8,7 +8,7 @@
     <b-carousel
       id="carousel-1"
       v-model="slide"
-   
+
       controls
       indicators
       background="#ababab"
@@ -17,24 +17,36 @@
       style="text-shadow: 1px 1px 2px #333;"
       @sliding-start="onSlideStart"
       @sliding-end="onSlideEnd"
+       @click="gotoSlide()"
     >
-      <b-carousel-slide  v-for="(item, index) in ads" :key="ads.id"  :img-src="Checkimage(item.images)">
-      </b-carousel-slide>
+    <div v-for="(item, index) in ads">
+         <a :href="item.link_url" target="_blank">
+        <b-carousel-slide  :key="ads.id"
+
+   :img-src="Checkimage(item.images)">
+  </b-carousel-slide>
+      </a>
+      </div>
+
+
+
+
     </b-carousel>
+
   </div>
   </div>
 
 
 
 
-  
 
 
-           
 
 
-              
-                
+
+
+
+
     </div></center>
 
 
@@ -42,7 +54,7 @@
 
 
 </section>
-    
+
 </template>
 
 
@@ -63,16 +75,16 @@ import { FETCH_ADS } from "../store/actions.type.js";
      computed: {
       ...mapGetters(["ads"]),
         },
-           
 
-   
+
+
         created(){
-           
-        },
-        
 
-    
-        
+        },
+
+
+
+
       mounted() {
        this.$store.dispatch(FETCH_ADS);
          },
@@ -85,14 +97,18 @@ import { FETCH_ADS } from "../store/actions.type.js";
         this.sliding = false
       },
       Checkimage(image){
+
                 let public_images = process.env.ImageURL+image;
                 return public_images;
       },
+      handleCarouselClick(){
+        alert('ok');
+      }
 
         }
 
 
-           
+
         }
 
 
