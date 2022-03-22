@@ -41,7 +41,7 @@
 
                                                    <div class="product-footer">
                                                    <div class="addtocart">
-                                                   <button type="button" title="เพิ่มลงตะกร้า" data-placement="top" class="button btn-cart" @click="addToCart(item)">
+                                                   <button type="button" title="เพิ่มลงตะกร้าป" data-placement="top" class="button btn-cart" @click="addToCart(item)">
                                                    <span>
                                                    <span>เพิ่มลงตะกร้า </span></span>
                                                    </button></div></div>
@@ -50,8 +50,8 @@
         </div>
         </div>
         </div>
-    
-          
+
+
       <b-row>
       <b-col>
         <b-pagination
@@ -64,8 +64,8 @@
         />
       </b-col>
     </b-row>
-      
-     
+
+
     </div>
 </template>
 

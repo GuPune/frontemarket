@@ -231,7 +231,9 @@
 
 
       <b-col cols="8" md="4"  sm="3" class="nav-form-search nav-search">
-        <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?" v-model="form.search"></b-form-input>
+              <b-form-input placeholder="Find a good product ?" v-model="form.search" v-if ="this.language == 'en'"></b-form-input>
+              <b-form-input placeholder="寻找好的产品 ?" v-model="form.search" v-if ="this.language == 'ch'"></b-form-input>
+              <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?" v-model="form.search" v-if ="this.language == 'th' || this.language == null"></b-form-input>
       </b-col>
        <b-col cols="3" md="1"  sm="3" class="nav-form-search">
   <b-form-select v-model="selected" :options="options"></b-form-select>
@@ -247,19 +249,30 @@
 
 
        <b-col cols="1" md="1"  sm="2" class="px-2 nav-regishop-ipad" style="max-width: 16.7777%">
-          <b-navbar-brand href="#"  @click="redirectTo('form-shopregis')" style="font-size: 14px;">{{objectslayout.textsellermyshop}}</b-navbar-brand>
+          <b-navbar-brand href="#"  @click="redirectTo('form-shopregis')" style="font-size: 14px;">
+
+
+              <div v-if ="this.language == 'en'" > {{this.placeholder_mysell}} </div>
+             <div v-if ="this.language == 'ch'" > {{this.placeholder_mysell}}</div>
+              <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_mysell}} </div>
+
+            </b-navbar-brand>
       </b-col>
         <b-col cols="1" md="1"  sm="1" class="nav-regishop-mobile px-2">
           <b-navbar-brand href="#"   @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i><span> ({{ cartTotal }}) </span></b-navbar-brand>
       </b-col>
 
       <b-col cols="2" md="2"  sm="1" class="nav-form-search px-2 nav-regishop-mobile login-size-ipad">
-          <b-navbar-brand href="#"   v-if="!isLogins" @click="redirectTo('form-login')">{{objectslayout.textlogin}}</b-navbar-brand>
+          <b-navbar-brand href="#"   v-if="!isLogins" @click="redirectTo('form-login')">
+
+
+            <div v-if ="this.language == 'en'" > {{this.placeholder_login}} </div>
+             <div v-if ="this.language == 'ch'" > {{this.placeholder_login}}</div>
+              <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_login}} </div>
+            </b-navbar-brand>
 
 
                 <b-navbar-nav class="ml-auto cart-desktop">
-
-
           <b-nav-item-dropdown right  v-if="isLogins">
           <!-- Using 'button-content' slot -->
           <template #button-content>
@@ -303,6 +316,10 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
   export default {
     data() {
     return {
+      placeholder_sereach:'',
+      placeholder_login:'',
+      placeholder_mysell:'',
+      language:'',
       IsLogin: false,
       loggedIn: this.$auth.loggedIn,
       name:{},
@@ -350,6 +367,30 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
         async created(){
             this.form.url = window.location.origin
                 let getnav = await this.$store.dispatch(GET_NAVBAR,this.form);
+
+
+        this.language = localStorage.getItem("language");
+
+        if(this.language == 'en'){
+         this.placeholder_sereach = 'Find a good product ?';
+         this.options[0].text = 'Product';
+         this.placeholder_login = 'Login';
+        this.placeholder_mysell = 'Sell products with us';
+
+
+        }
+        if(this.language == 'ch'){
+          this.placeholder_sereach = '寻找好的产品';
+          this.options[0].text = '产品';
+          this.placeholder_login = '登入';
+            this.placeholder_mysell = '和我们一起卖';
+        }
+         if(this.language == 'th' || this.language == null){
+          this.placeholder_sereach = 'ค้นหาสินค้าอะไรดี ?';
+          this.options[0].text = 'สินค้า';
+          this.placeholder_login = 'เข้าสู่ระบบ';
+           this.placeholder_mysell = 'ขายสินค้ากับเรา';
+        }
 
         },
 

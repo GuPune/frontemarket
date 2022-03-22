@@ -24,7 +24,7 @@
                  <img class="imgproduct related-images imgproductmyshop im-rela-mobile" :src="Checkimage(i.icon)">
                                                    <div class="product-footer">
                                                    <div class="addtocart">
-                                                       <b-button  variant="success shop-relation" size="sm" @click="redirectTo(i.shop_name)">ช้อปเลย</b-button>
+                                                       <b-button  variant="success shop-relation" size="sm" @click="redirectTo(i.shop_name)">{{placeholder_shop}}</b-button>
                                                    </div></div>
 
                                                 </div>
@@ -69,6 +69,7 @@
   export default {
         data() {
       return {
+        placeholder_shop:null,
             form:{
           shop_name:null,
             url:null
@@ -168,6 +169,25 @@
 
 
         },
+
+            async created() {
+
+        this.language = localStorage.getItem("language");
+        if(this.language == 'en'){
+         this.placeholder_shop = 'Shop now';
+
+        }
+        if(this.language == 'ch'){
+          this.placeholder_shop = '現在去購物';
+        }
+         if(this.language == 'th' || this.language == null){
+          this.placeholder_shop = 'ช้อปเลย';
+
+        }
+
+
+
+    },
 
        async mounted() {
 

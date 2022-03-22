@@ -49,7 +49,10 @@
                                                    <div class="addtocart">
                                                    <button type="button" title="เพิ่มลงตะกร้า" data-placement="top" class="button btn-cart" @click="addToCart(item)">
                                                    <span>
-                                                   <span>เพิ่มลงตะกร้า </span></span>
+                                                   <span>{{placeholder_buy}} </span>
+
+
+                                                   </span>
                                                    </button></div></div>
 
                                                 </div>
@@ -87,6 +90,8 @@
   export default {
     data() {
       return {
+        placeholder_buy: "",
+        language:"",
         isHovered: false,
          message: 'Hover Me!',
         product: {},
@@ -110,6 +115,22 @@
 
 
         },
+
+        async created() {
+
+        this.language = localStorage.getItem("language");
+        if(this.language == 'en'){
+         this.placeholder_buy = 'Add To Cart';
+
+        }
+        if(this.language == 'ch'){
+          this.placeholder_buy = '添加到購物車';
+        }
+         if(this.language == 'th' || this.language == null){
+          this.placeholder_buy = 'เพิ่มลงตะกร้า';
+
+        }
+    },
 
         mounted() {
         //  this.$store.dispatch(ToogleAction);
