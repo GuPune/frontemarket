@@ -31,7 +31,24 @@
 
                 <Footer  v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou')"/>
 
+
+<div class="icon-bar">
+  <a href="" class="facebook" @click="language('th')"><img src="https://www.jib.co.th/web/images/flag/th-icon.jpg?v=03" title="ไทย"></a>
+
+
+  <a href="" class="twitter"  @click="language('en')"><img src="https://www.jib.co.th/web/images/flag/en-icon.jpg?v=03" title="อังกฤษ"></a>
+  <a href="" class="youtube" @click="language('ch')"><img src="https://www.jib.co.th/web/images/flag/en-icon.jpg?v=03" title="จีน"></a>
+  <!-- <nuxt-link v-if="$i18n.locale !== 'en'" :to="switchLocalePath('en')">English</nuxt-link>
+<nuxt-link v-if="$i18n.locale !== 'th'" :to="switchLocalePath('th')">ไทย</nuxt-link> -->
+  <!-- <a href="#" class="google"><i class="fa fa-google"></i></a>
+  <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+  <a href="#" class="youtube"><i class="fa fa-youtube"></i></a> -->
+</div>
 <div v-if="this.pageId">
+
+
+
+
 
 <div class="fb-customerchat"  :page_id="pageId">
 
@@ -143,6 +160,11 @@ hide:false,
     },
     async created() {
 
+        let language = localStorage.getItem("language");
+
+
+
+
 // console.log('a',a);
 // let b = a.toString;
 
@@ -188,6 +210,10 @@ this.footer();
 
     },
     methods: {
+      language(e){
+          let x =  localStorage.setItem("language", e);
+
+      },
  footer(){
 
     this.form.url = window.location.origin;
