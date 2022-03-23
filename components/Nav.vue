@@ -266,7 +266,7 @@
           <b-navbar-brand href="#"   v-if="!isLogins" @click="redirectTo('form-login')">
 
 
-                   <div v-if ="this.language == 'en'" > {{this.placeholder_login}} </div>
+            <div v-if ="this.language == 'en'" > {{this.placeholder_login}} </div>
              <div v-if ="this.language == 'ch'" > {{this.placeholder_login}}</div>
               <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_login}} </div>
             </b-navbar-brand>
@@ -281,9 +281,9 @@
           <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">
             <div>
 
-              <div v-if ="this.language == 'en'" > {{this.placeholder_login}} </div>
-             <div v-if ="this.language == 'ch'" > {{this.placeholder_login}}</div>
-              <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_login}} </div>
+              <div v-if ="this.language == 'en'" > {{this.placeholder_profile}} </div>
+             <div v-if ="this.language == 'ch'" > {{this.placeholder_profile}}</div>
+              <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_profile}} </div>
             </div>
           </b-dropdown-item>
           <b-dropdown-item href="#"  @click.prevent="logout">
