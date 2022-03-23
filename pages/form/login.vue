@@ -5,14 +5,17 @@
       <div class="container forms">
 
        <div class="alert alert-danger" role="alert" v-if="alert.message">
-                        ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง !
-                        </div>
+              <div v-if ="this.language == 'en'" > {{this.placeholder_alert}} </div>
+             <div v-if ="this.language == 'ch'" > {{this.placeholder_alert}}</div>
+              <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_alert}} </div>
+        </div>
 
     <div class="row">
-      <h5 style="color: #171c24;">เข้าสู่ระบบ</h5>
+      <h5 style="color: #171c24;" v-if ="this.language == 'en'" >{{this.placeholder_login}}</h5>
+      <h5 style="color: #171c24;" v-if ="this.language == 'ch'">{{this.placeholder_login}}</h5>
+      <h5 style="color: #171c24;"  v-if ="this.language == 'th' || this.language == null" >{{this.placeholder_login}}</h5>
       <div class="input-group input-group-icon">
-        <input class="form-control"
-        placeholder="ชื่อผู้ใช้งาน" type="text" v-model="form.email"
+        <input class="form-control"  :placeholder="[[ placeholder_name ]]" type="text" v-model="form.email"
             :error-messages="EmailErrors"
 
               :class="{ 'is-invalid': $v.form.email.$error}"
@@ -24,7 +27,7 @@
 
 
       <div class="input-group input-group-icon">
-        <input type="password" class="form-control" placeholder="รหัสผ่าน"
+        <input type="password" class="form-control" :placeholder="[[ placeholder_password ]]"
         v-model="form.password"
          :error-messages="PassErrors"
 
@@ -36,15 +39,19 @@
 
 
       </div>
-           <label @click="showmodal()"><a href="#forgotpass">ลืมรหัสผ่าน?</a></label><br>
+           <label @click="showmodal()"><a href="#forgotpass">
+            {{this.placeholder_passforgot}}</a></label><br>
 
     </div>
 
 
 
     <center>
-    <button class="btn btn-primary" @click="login()"><span>เข้าสู่ระบบ</span></button>
-    <p>คุณมีบัญชีแล้วใช่หรือไม่ ?  <nuxt-link to="userregis"><a href="">สมัครสมาชิก</a></nuxt-link></p></center>
+    <button class="btn btn-primary" @click="login()"><span>{{this.placeholder_login}}</span></button>
+    <p>{{this.placeholder_account}}  <nuxt-link to="userregis">
+      <a href="" >{{this.placeholder_subscribe}}</a>
+
+    </nuxt-link></p></center>
 
 
 <div class="row">
@@ -60,10 +67,15 @@
 
 
     <div class="form-group pt-3">
-    <button type="submit" class="btn btn-lg btn-block btnFacebook btn-facebook" id="btnLogin"  @click="socialLogin('facebook')"> เข้าสู่ระบบด้วย Facebook </button>
+    <button type="submit" class="btn btn-lg btn-block btnFacebook btn-facebook" id="btnLogin"  @click="socialLogin('facebook')">
+
+      <div>
+        {{this.placeholder_login_to}} Facebook
+        </div>
+      </button>
      </div>
     <div class="form-group pt-3">
-    <button type="submit" class="btn btn-lg btn-block btnGoogle" id="btnLogin"  @click="socialLogin('google')">เข้าสู่ระบบด้วย Google </button> </div>
+    <button type="submit" class="btn btn-lg btn-block btnGoogle" id="btnLogin"  @click="socialLogin('google')">{{this.placeholder_login_to}} Google </button> </div>
 
 
 
@@ -232,6 +244,14 @@ import { FORGOTEMAIL,CLEARALRET } from "../../store/actions.type.js";
      }
     },
     data: () => ({
+      placeholder_login:'เข้าสู่ระบบ',
+      placeholder_password:'รหัสผ่าน',
+      placeholder_name:'ชื่อผู้ใช้งาน',
+      placeholder_alert:'ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง !',
+      placeholder_account:'คุณมีบัญชีแล้วใช่หรือไม่ ?',
+      placeholder_subscribe:'',
+      placeholder_passforgot:'ลืมรหัสผ่าน ?',
+       placeholder_login_to:'เข้าสู่ระบบด้วย',
         emailalert:false,
         emailsuccess:false,
         Isshow:false,
@@ -275,11 +295,43 @@ import { FORGOTEMAIL,CLEARALRET } from "../../store/actions.type.js";
         }
 
     },
-    created() {
+      async created(){
 
+        this.language = localStorage.getItem("language");
+        if(this.language == 'en'){
+         this.placeholder_login = 'Login';
+         this.placeholder_password = 'Password';
+         this.placeholder_name = 'Username';
+        this.placeholder_alert = 'ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง !';
+        this.placeholder_subscribe = 'Subscribe';
+        this.placeholder_account = 'Do you have a account?';
+         this.placeholder_passforgot = 'Forgot password ?';
+         this.placeholder_login_to = 'Login to ';
+        }
+        if(this.language == 'ch'){
+         this.placeholder_login = '登入';
+         this.placeholder_password = '当前密码';
+         this.placeholder_name = '姓名';
+         this.placeholder_alert = 'ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง !';
+         this.placeholder_subscribe = '订阅';
+         this.placeholder_account = 'คุณมีบัญชีแล้วใช่หรือไม่ ?';
+        this.placeholder_passforgot = '忘记密码 ?';
+        this.placeholder_login_to = 'เข้าสู่ระบบด้วย';
 
+        }
+         if(this.language == 'th' || this.language == null){
+         this.placeholder_login = 'เข้าสู่ระบบ';
+         this.placeholder_password = 'รหััสผ่าน';
+         this.placeholder_name = 'ชื่อผู้ใช้งาน';
+         this.placeholder_alert = 'ชื่อผู้ใช้งานหรือรหัสผ่านไม่ถูกต้อง !';
+         this.placeholder_subscribe = 'สมัครสมาชิก';
+         this.placeholder_account = 'คุณมีบัญชีแล้วใช่หรือไม่ ?';
+          this.placeholder_passforgot = 'ลืมรหัสผ่าน ?';
+          this.placeholder_login_to = 'เข้าสู่ระบบด้วย';
+        }
 
-    },
+        },
+
     mounted() {
 
 

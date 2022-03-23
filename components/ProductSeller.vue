@@ -20,7 +20,7 @@
                  <img class="imgproduct related-images imgproductmyshop im-rela-mobile" :src="Checkimage(i.img_product)">
                                                    <div class="product-footer">
                                                    <div class="addtocart">
-                                                       <b-button  variant="success shop-relation" size="sm"  @click="addToCart(i)">เพิ่มลงตะกร้า</b-button>
+                                                       <b-button  variant="success shop-relation" size="sm"  @click="addToCart(i)">{{placeholder_buy}}</b-button>
                                                    </div></div>
 
                                                 </div>
@@ -66,7 +66,8 @@
   export default {
         data() {
       return {
-                  form:{
+        placeholder_buy:'',
+          form:{
           shop_name:null,
             url:null
           },
@@ -131,6 +132,23 @@
                 return this.$store.state.user.url_id;
         },
 
+
+        },
+
+
+        async created(){
+
+        this.language = localStorage.getItem("language");
+
+        if(this.language == 'en'){
+         this.placeholder_buy = 'Add To Cart';
+        }
+        if(this.language == 'ch'){
+          this.placeholder_buy = '添加到購物車';
+        }
+         if(this.language == 'th' || this.language == null){
+          this.placeholder_buy = 'เพิ่มลงตะกร้า';
+        }
 
         },
 

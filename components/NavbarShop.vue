@@ -9,7 +9,9 @@
 
     <b-collapse id="nav-collapse" is-nav>
    <b-col cols="8" md="8"  sm="3" class="nav-form-search nav-search">
-        <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?" v-model="form.search"></b-form-input>
+        <b-form-input placeholder="Find a good product ?" v-model="form.search" v-if ="this.language == 'en'"></b-form-input>
+              <b-form-input placeholder="寻找好的产品 ?" v-model="form.search" v-if ="this.language == 'ch'"></b-form-input>
+              <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?" v-model="form.search" v-if ="this.language == 'th' || this.language == null"></b-form-input>
       </b-col>
        <b-col cols="4" md="2"  sm="3" class="nav-form-search">
   <b-form-select v-model="selected" :options="options"></b-form-select>
@@ -51,7 +53,9 @@
       <b-navbar-brand href="#" class="navshop-mobile-search">
         <b-row>
      <b-col cols="10" md="8"  sm="12" class="nav-form-search nav-search">
-        <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?" v-model="form.search"></b-form-input>
+              <b-form-input placeholder="Find a good product ?" v-model="form.search" v-if ="this.language == 'en'"></b-form-input>
+              <b-form-input placeholder="寻找好的产品 ?" v-model="form.search" v-if ="this.language == 'ch'"></b-form-input>
+              <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?" v-model="form.search" v-if ="this.language == 'th' || this.language == null"></b-form-input>
 
       </b-col>
      <b-col cols="2" md="8"  sm="12" class="nav-form-search nav-search">
@@ -110,6 +114,12 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
   export default {
     data() {
     return {
+      placeholder_sereach:'',
+      placeholder_login:'',
+      placeholder_logout:'',
+      placeholder_mysell:'',
+      placeholder_profile:'',
+      language:'',
       colors:'#F5ECEA',
       IsLogin: false,
       position:'',
@@ -153,9 +163,38 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
 
 
         },
-      created () {
+     async created () {
 
             window.addEventListener('scroll', this.handleScroll);
+
+
+                   this.language = localStorage.getItem("language");
+
+        if(this.language == 'en'){
+         this.placeholder_sereach = 'Find a good product ?';
+         this.options[0].text = 'Product';
+         this.placeholder_login = 'Login';
+        this.placeholder_mysell = 'Sell products with us';
+        this.placeholder_profile = 'Profile';
+        this.placeholder_logout = 'Logout';
+        }
+        if(this.language == 'ch'){
+          this.placeholder_sereach = '寻找好的产品';
+          this.options[0].text = '产品';
+          this.placeholder_login = '登入';
+          this.placeholder_mysell = '和我们一起卖';
+          this.placeholder_profile = 'Profile';
+          this.placeholder_logout = 'Logout';
+        }
+        if(this.language == 'th' || this.language == null){
+          this.placeholder_sereach = 'ค้นหาสินค้าอะไรดี ?';
+          this.options[0].text = 'สินค้า';
+          this.placeholder_login = 'เข้าสู่ระบบ';
+          this.placeholder_mysell = 'ขายสินค้ากับเรา';
+          this.placeholder_profile = 'โปรไฟล์';
+          this.placeholder_logout = 'ออกจากระบบ';
+        }
+
     },
     destroyed () {
             window.removeEventListener('scroll', this.handleScroll);

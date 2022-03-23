@@ -392,24 +392,22 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
         this.placeholder_mysell = 'Sell products with us';
         this.placeholder_profile = 'Profile';
         this.placeholder_logout = 'Logout';
-
-
         }
         if(this.language == 'ch'){
           this.placeholder_sereach = '寻找好的产品';
           this.options[0].text = '产品';
           this.placeholder_login = '登入';
-            this.placeholder_mysell = '和我们一起卖';
-             this.placeholder_profile = 'Profile';
-             this.placeholder_logout = 'Logout';
+          this.placeholder_mysell = '和我们一起卖';
+          this.placeholder_profile = 'Profile';
+          this.placeholder_logout = 'Logout';
         }
-         if(this.language == 'th' || this.language == null){
+        if(this.language == 'th' || this.language == null){
           this.placeholder_sereach = 'ค้นหาสินค้าอะไรดี ?';
           this.options[0].text = 'สินค้า';
           this.placeholder_login = 'เข้าสู่ระบบ';
-           this.placeholder_mysell = 'ขายสินค้ากับเรา';
-            this.placeholder_profile = 'โปรไฟล์';
-            this.placeholder_logout = 'ออกจากระบบ';
+          this.placeholder_mysell = 'ขายสินค้ากับเรา';
+          this.placeholder_profile = 'โปรไฟล์';
+          this.placeholder_logout = 'ออกจากระบบ';
         }
 
         },

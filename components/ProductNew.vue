@@ -7,7 +7,7 @@
                    <div class="main-heading">
          <div class="heading-title-relat">
             <h2><span>New Product</span>
-	<em class="">สินค้าใหม่</em>
+	<em class="">{{placeholder_name}}</em>
 			</h2>
         </div>
  <div v-if="items.length">
@@ -20,7 +20,7 @@
                  <img class="imgproduct related-images imgproductmyshop im-rela-mobile" :src="Checkimage(i.img_product)">
                                                    <div class="product-footer">
                                                    <div class="addtocart">
-                                                       <b-button  variant="success shop-relation" size="sm"  @click="addToCart(i)">เพิ่มลงตะกร้า</b-button>
+                                                       <b-button  variant="success shop-relation" size="sm"  @click="addToCart(i)">{{placeholder_buy}}</b-button>
                                                    </div></div>
 
                                                 </div>
@@ -72,6 +72,8 @@
   export default {
         data() {
       return {
+        placeholder_name:"",
+        placeholder_buy:'',
         h:false,
         a: [{"dots": true,}, {"dots": true,}, {"dots": true,}, {"dots": true,}, {"dots": true,}],
                   form:{
@@ -177,10 +179,20 @@
 
  this.items = product.data;
 
+  this.language = localStorage.getItem("language");
 
-
-
-
+         if(this.language == 'en'){
+         this.placeholder_buy = 'Add To Cart';
+         this.placeholder_name = 'สินค้าใหม่';
+        }
+        if(this.language == 'ch'){
+          this.placeholder_buy = '添加到購物車';
+          this.placeholder_name = 'สินค้าใหม่';
+        }
+         if(this.language == 'th' || this.language == null){
+          this.placeholder_buy = 'เพิ่มลงตะกร้า';
+          this.placeholder_name = 'สินค้าใหม่';
+        }
 
 
           },

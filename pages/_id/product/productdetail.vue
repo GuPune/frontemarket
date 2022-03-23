@@ -93,7 +93,7 @@
 
               <div class="row">
 
-             <div class="col-md-2 attrHeader form-group">จำนวน </div>
+             <div class="col-md-2 attrHeader form-group">{{placeholder_q}} </div>
 
 
                 <div class="col-md-4 col-sm-4">
@@ -109,7 +109,7 @@
                                         </b-input-group>
                     </div>
                 </div>
-                  <div class="col-md-4 attrHeader form-group">มีสินค้าจำนวนทั้งหมด  {{product_by_item.stock}}  </div>
+                  <div class="col-md-4 attrHeader form-group">{{placeholder_qtotal}}  {{product_by_item.stock}}  </div>
             </div>
 
 
@@ -124,7 +124,7 @@
                 <div class="col-md-12">
                     <div class="form-group h5">
                         <div class="marginInner mb-4 mb-md-4">
-                            <p >รายละเอียด
+                            <p >{{placeholder_detail}}
 </p>
                        <h1 class="product-mini">{{product_by_item.product_details}}</h1>
                         </div>
@@ -136,7 +136,7 @@
 
              <div class="row">
                 <div class="col-md-4 col-sm-12 pta-detau">
-      <b-button size="md" variant="outline-success" class="pro-des-btt" @click="addToCart(product_by_item)"><i class="fa fa-shopping-cart fa-1x">&nbsp;</i>เพิ่มลงตะกร้า</b-button>
+      <b-button size="md" variant="outline-success" class="pro-des-btt" @click="addToCart(product_by_item)"><i class="fa fa-shopping-cart fa-1x">&nbsp;</i>{{placeholder_buy}}</b-button>
 
                 </div>
 
@@ -183,7 +183,7 @@
 
                     <b-tabs class="product-detail-tab"><b-tab active>
                     <template #title><b-spinner type="grow" small></b-spinner>
-                    ข้อมูลสินค้า
+                    {{placeholder_info}}
                     </template><p class="p-3" >
 
                     <p><span v-html="product_by_item.details"></span></p></p>
@@ -295,16 +295,35 @@ width: 100px!important;
 
         },
 
-        async created(){
+     async created () {
 
 
+                   this.language = localStorage.getItem("language");
+
+  if(this.language == 'en'){
+         this.placeholder_buy = 'Add To Cart';
+         this.placeholder_q = 'Quantity';
+          this.placeholder_qtotal = 'Product Total';
+          this.placeholder_detail = 'Details';
+           this.placeholder_info = 'Information';
+        }
+        if(this.language == 'ch'){
+          this.placeholder_buy = '添加到購物車';
+          this.placeholder_q = '数量';
+           this.placeholder_qtotal = 'มีสินค้าจำนวนทั้งหมด';
+           this.placeholder_detail = 'รายละเอียด';
+           this.placeholder_info = 'ข้อมูลสินค้า';
+        }
+         if(this.language == 'th' || this.language == null){
+          this.placeholder_buy = 'เพิ่มลงตะกร้า';
+          this.placeholder_q = 'จำนวน';
+           this.placeholder_qtotal = 'มีสินค้าจำนวนทั้งหมด';
+           this.placeholder_detail = 'รายละเอียด';
+           this.placeholder_info = 'ข้อมูลสินค้า';
+        }
 
 
-
-
-
-
-        },
+    },
 
        async mounted() {
 

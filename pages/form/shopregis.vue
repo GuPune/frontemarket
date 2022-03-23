@@ -3,9 +3,8 @@
 <div class="container forms">
 <Loader v-if="isLoading"/>
 
-      <h5 style="color: #171c24;" v-if ="this.language == 'en'">Register Shop</h5>
-      <h5 style="color: #171c24;" v-if ="this.language == 'ch'">สมัครสมาชิกร้านค้า</h5>
-      <h5 style="color: #171c24;" v-if ="this.language == 'th' || this.language == null">สมัครสมาชิกร้านค้า {{this.language}}</h5>
+      <h5 style="color: #171c24;">{{this.placeholder_menu}}</h5>
+
 
     <div class="row">
             <div class="input-group input-group-icon">
@@ -213,6 +212,7 @@ import Loader from '@/components/Loader'
     },
 
      data: () => ({
+        placeholder_menu: "",
         placeholder_first_name: "",
         placeholder_last_name:"",
         placeholder_store_name:"",
@@ -305,6 +305,7 @@ import Loader from '@/components/Loader'
          this.placeholder_email = 'Email';
          this.placeholder_password = 'Password';
          this.placeholder_choose = 'Choose';
+         this.placeholder_menu = 'Subscribe to a store';
 
 
         }
@@ -317,6 +318,7 @@ import Loader from '@/components/Loader'
           this.placeholder_email = '电子邮件';
           this.placeholder_password = '密码';
           this.placeholder_choose = '选择';
+           this.placeholder_menu = '商店订阅';
 
 
         }
@@ -329,6 +331,7 @@ import Loader from '@/components/Loader'
           this.placeholder_email = 'อีเมล';
           this.placeholder_password = 'รหัสผ่าน';
           this.placeholder_choose = 'เลือก';
+           this.placeholder_menu = 'สมัครสมาชิกร้านค้า';
 
         }
 
