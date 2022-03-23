@@ -15,20 +15,31 @@
                                 <div class="boxMenu">
                                     <ul class="nav flex-column nav-pills memberMenu">
                                         <li class="prof-s" id="member-MyAccount" @click="redirectTo('profile-userprofile')"  :class="{'profile-menu': checkPath('profile-userprofile')}">
-                                            <p>ข้อมูลของฉัน</p>
+                                            <p  v-if ="this.language == 'en'">{{this.placeholder_profiledata}}</p>
+                                            <p  v-if ="this.language == 'ch'">{{this.placeholder_profiledata}}</p>
+                                            <p  v-if ="this.language == 'th' || this.language == null">{{this.placeholder_profiledata}}</p>
                                         </li>
                                        <!-- <li class="" id="member-editprofile" >
                                             <p></p>
                                         </li> -->
 
                                         <li class="prof-s" id="member-editaddressbook" @click="redirectTo('profile-userprofileadd')"  :class="{'profile-menu': checkPath('profile-userprofileadd')}">
-                                            <p>ที่อยู่จัดส่ง</p>
+                                           
+                                              <p  v-if ="this.language == 'en'">{{this.placeholder_address}}</p>
+                                            <p  v-if ="this.language == 'ch'">{{this.placeholder_address}}</p>
+                                            <p  v-if ="this.language == 'th' || this.language == null">{{this.placeholder_address}}</p>
+                                            
                                         </li>
                                         <li class="prof-s" id="member-orderedhistory" @click="redirectTo('profile-historyorder')"  :class="{'profile-menu': checkPath('profile-historyorder')}" >
-                                            <p>ประวัติการสั่งซื้อ</p>
+                                
+                                                 <p  v-if ="this.language == 'en'">{{this.placeholder_history}}</p>
+                                            <p  v-if ="this.language == 'ch'">{{this.placeholder_history}}</p>
+                                            <p  v-if ="this.language == 'th' || this.language == null">{{this.placeholder_history}}</p>
                                         </li>
                                                                                 <li class="prof-s" id="member-changepassword"  :class="{'profile-menu': checkPath('profile-changepassword')}"  @click="redirectTo('profile-changepassword')">
-                                            <p>ตั้งค่ารหัสผ่าน</p>
+                                             <p  v-if ="this.language == 'en'">{{this.placeholder_password}}</p>
+                                            <p  v-if ="this.language == 'ch'">{{this.placeholder_password}}</p>
+                                            <p  v-if ="this.language == 'th' || this.language == null">{{this.placeholder_password}}</p>
                                         </li>
                                       
                                     </ul>
@@ -49,11 +60,53 @@ import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/vue-loading.css';
 import 'sweetalert2/dist/sweetalert2.min.css';
   export default {
+          data() {
+    return {
+      placeholder_profiledata:'',
+      placeholder_address:'',
+       placeholder_history:'',
+       placeholder_password:'',
+    };
+  },
     props: ['profile'],
      computed: {
             
    
         },
+
+
+         async created(){
+
+
+
+        this.language = localStorage.getItem("language");
+
+        if(this.language == 'en'){
+         this.placeholder_profiledata = 'ข้อมูลของฉัน';
+         this.placeholder_address = 'Delivery address';
+         this.placeholder_history = 'Order History';
+         this.placeholder_password = 'ตั้งค่ารหัสผ่าน';
+      
+        
+
+        }
+        if(this.language == 'ch'){
+          this.placeholder_profiledata = 'ข้อมูลของฉัน';
+          this.placeholder_address = '邮寄地址';
+          this.placeholder_history = '订单历史';
+          this.placeholder_password = 'ตั้งค่ารหัสผ่าน';
+
+        }
+         if(this.language == 'th' || this.language == null){
+          this.placeholder_profiledata = 'ข้อมูลของฉัน';
+          this.placeholder_address = 'ที่อยู่จัดส่ง';
+         this.placeholder_history = 'ประวัติการสั่งซื้อ';
+         this.placeholder_password = 'ตั้งค่ารหัสผ่าน';
+    
+        }
+
+        },
+
         
         mounted() {
 

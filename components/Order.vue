@@ -2,12 +2,12 @@
 
 <div class="divPageData pageCartSuccess pageConfig">
     
-    <div class="card card-theme card-xs-full">
+    <div class="card card-theme card-xs-full" ref="document">
       <div class="row">
                 <div class="col-lg-8">
                     <div id="boxLeft">
                         <!-- Start Order Items -->
-                        <div class="row py-md-3 border-top border-md-top-0 border-thmLight">
+                        <div class="row py-md-3 border-top border-md-top-0 border-thmLight" >
                             <div class="col-12">
                                 <div class="card card-thmLight card-xs-full c-order">
                                     <div class="card-header order-header">
@@ -15,6 +15,7 @@
                                             <span class="fs-ta-20 text-thmLight-1">รายการสั่งซื้อ</span>
                                         </div>
                                     </div>
+                                  
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-12">
@@ -384,7 +385,7 @@
                                            
                                         </div>
                                         <div class="col-6" size="sm" v-if="objectss.status == 'N'"> <b-button variant="outline-primary"  lg="4" size="sm" @click="myModel = true" v-if="isHiddenUploadSlip == false">แจ้งชำระเงิน</b-button></div>
-                                                                                <div class="col-6" size="sm"> <b-button variant="outline-primary"  lg="4" size="sm" @click="downloadpdf()" ><i class="fa fa-print"></i>พิมพ์ใบสั่งซื้อ</b-button></div>
+                                                                                <div class="col-6" size="sm"> <b-button variant="outline-primary"  lg="4" size="sm" @click="exportToPDF()" ><i class="fa fa-print"></i>พิมพ์ใบสั่งซื้อ</b-button></div>
 
                                             
                                         
@@ -598,7 +599,8 @@
 }
 
   </style>
-
+  <script src="https://cdn.bootcss.com/html2pdf.js/0.9.1/html2pdf.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.1/html2pdf.bundle.min.js"></script>
    <script src="https://unpkg.com/vue"></script>
 <script>
 import Datepicker from 'vuejs-datepicker'
@@ -607,6 +609,8 @@ import { mapGetters,mapState } from "vuex";
 import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
 import { FETCH_BANK,CHOOSE_BANK,GET_ORDER_DATA,UPDATE_SLIP,GET_ORDER_DATA_HISTORY } from "@/store/actions.type.js";
 import axios from 'axios';
+import html2pdf from 'html2pdf.js'
+
   export default {
         components: {
     Datepicker,
@@ -751,10 +755,20 @@ import axios from 'axios';
          this.myModel = false;
   
       },
+      	exportToPDF () {
+           
+				html2pdf(this.$refs.document, {
+					margin: 0.3,
+					filename: 'document.pdf',
+                    image: { type: 'png', quality: 0.98 },
+					html2canvas: { dpi: 192, letterRendering: true },
+					jsPDF: { unit: 'in', format: 'letter', orientation: 'landscape' }
+				})
+			},
       downloadpdf(){
 
               axios({
-                    url: 'http://127.0.0.1:8000/api/get-file/'+this.objectss.cartnumber,
+                    url: 'https://cmsecom.idtest.work/api/get-file/'+this.objectss.cartnumber,
                     method: 'GET',
                     responseType: 'blob',
                 }).then((response) => {

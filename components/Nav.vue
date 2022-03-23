@@ -266,9 +266,9 @@
           <b-navbar-brand href="#"   v-if="!isLogins" @click="redirectTo('form-login')">
 
 
-            <div v-if ="this.language == 'en'" > {{this.placeholder_login}} </div>
-             <div v-if ="this.language == 'ch'" > {{this.placeholder_login}}</div>
-              <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_login}} </div>
+            <div v-if ="this.language == 'en'" > {{this.placeholder_profile}} </div>
+             <div v-if ="this.language == 'ch'" > {{this.placeholder_profile}}</div>
+              <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_profile}} </div>
             </b-navbar-brand>
 
 
@@ -278,8 +278,20 @@
           <template #button-content>
             <em>{{ objects.name}}</em>
           </template>
-          <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">โปรไฟล์</b-dropdown-item>
-          <b-dropdown-item href="#"  @click.prevent="logout">ออกจากระบบ</b-dropdown-item>
+          <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">
+            <div>
+              
+              <div v-if ="this.language == 'en'" > {{this.placeholder_login}} </div>
+             <div v-if ="this.language == 'ch'" > {{this.placeholder_login}}</div>
+              <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_login}} </div>
+            </div>
+          </b-dropdown-item>
+          <b-dropdown-item href="#"  @click.prevent="logout">
+               <div v-if ="this.language == 'en'" > {{this.placeholder_logout}} </div>
+             <div v-if ="this.language == 'ch'" > {{this.placeholder_logout}}</div>
+              <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_logout}} </div>
+
+          </b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
 
@@ -318,7 +330,9 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
     return {
       placeholder_sereach:'',
       placeholder_login:'',
+      placeholder_logout:'',
       placeholder_mysell:'',
+      placeholder_profile:'',
       language:'',
       IsLogin: false,
       loggedIn: this.$auth.loggedIn,
@@ -376,6 +390,8 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
          this.options[0].text = 'Product';
          this.placeholder_login = 'Login';
         this.placeholder_mysell = 'Sell products with us';
+        this.placeholder_profile = 'Profile';
+        this.placeholder_logout = 'Logout';
 
 
         }
@@ -384,12 +400,16 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
           this.options[0].text = '产品';
           this.placeholder_login = '登入';
             this.placeholder_mysell = '和我们一起卖';
+             this.placeholder_profile = 'Profile';
+             this.placeholder_logout = 'Logout';
         }
          if(this.language == 'th' || this.language == null){
           this.placeholder_sereach = 'ค้นหาสินค้าอะไรดี ?';
           this.options[0].text = 'สินค้า';
           this.placeholder_login = 'เข้าสู่ระบบ';
            this.placeholder_mysell = 'ขายสินค้ากับเรา';
+            this.placeholder_profile = 'โปรไฟล์';
+            this.placeholder_logout = 'ออกจากระบบ';
         }
 
         },
