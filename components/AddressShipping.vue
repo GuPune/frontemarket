@@ -72,7 +72,7 @@
       </b-modal>
 
 
-    <b-modal id="modal-2" ref="modal"  title="เพิ่มที่อยู่" size="lg" no-close-on-backdrop hide-footer>
+    <b-modal id="modal-2" ref="modal"  :title="[[ placeholder_add_address ]]" size="lg" no-close-on-backdrop hide-footer>
 
 
 
@@ -337,6 +337,9 @@ export default {
           this.placeholder_add = 'Add';
            this.placeholder_choose_add = 'Choose a delivery address';
            this.placeholder_address = 'Address';
+          this.placeholder_add_address = 'Add Address';
+          this.placeholder_add_address_save = 'Save';
+
 
 
         }
@@ -345,7 +348,8 @@ export default {
                 this.placeholder_change = '更换地址';
           this.placeholder_add = '添加地址';
           this.placeholder_choose_add = '选择送货地址';
-          this.placeholder_address = 'Address';
+         this.placeholder_add_address = 'Add Address';
+           this.placeholder_add_address_save = '添加地址';
 
 
         }
@@ -355,6 +359,8 @@ export default {
           this.placeholder_add = 'เพิ่มที่อยู่';
           this.placeholder_choose_add = 'เลือกที่อยู่ในการจัดส่ง';
           this.placeholder_address = 'ที่อยู่';
+          this.placeholder_add_address = 'เพิ่มที่อยู่';
+            this.placeholder_add_address_save = 'บันทึก';
         }
 
 
