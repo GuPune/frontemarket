@@ -310,9 +310,9 @@ width: 100px!important;
         if(this.language == 'ch'){
           this.placeholder_buy = '添加到購物車';
           this.placeholder_q = '数量';
-           this.placeholder_qtotal = 'มีสินค้าจำนวนทั้งหมด';
-           this.placeholder_detail = 'รายละเอียด';
-           this.placeholder_info = 'ข้อมูลสินค้า';
+           this.placeholder_qtotal = '有所有产品';
+           this.placeholder_detail = '细节';
+           this.placeholder_info = '产品信息';
         }
          if(this.language == 'th' || this.language == null){
           this.placeholder_buy = 'เพิ่มลงตะกร้า';
