@@ -129,6 +129,19 @@ color: black !important;
   color: white;
 }
 
+.bt-top {
+  position: fixed;
+  bottom: 95px;
+  right: 24px;
+  /* bottom: 30px; */
+  /* right: 30px; */
+  /* left: 30px; */
+  z-index: 12;
+  border-radius: 70px;
+  padding: 10px;
+  background-color: #4caf50;
+  border-color: #4caf50;
+}
 
 
 /* Mobile */
