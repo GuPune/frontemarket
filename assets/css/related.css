@@ -4,13 +4,15 @@
 .zoompor{
   width:82px;
   height:82px;
-  padding: 15px;
-
+  
+}
+.zoomporr{
+  padding: 5px;
 }
 
 .hosve:hover{
   border-style: solid;
-  border-color: green;
+  border-color: rgb(204, 70, 17);
 }
 
 .zoompos{
