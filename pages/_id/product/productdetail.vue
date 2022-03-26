@@ -177,7 +177,7 @@
         <img class="zoompos"  :src="action" alt=""/>
       </div>
       <div class="yoom" v-else>
-          <iframe width="420" height="420"
+          <iframe class="yor"
                             src="https://www.youtube.com/embed/4FZKdEZ4T5E?&controls=0&autoplay=1&loop=1&mute=1&rel=0"
                             frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -194,7 +194,7 @@
           <img class="zoompor hosve"  :src="item.url" alt=""   @mouseover="mouseOver(item)"/>
       </div>
        <div v-else  @mouseover="mouseOver(item)" class="zoompor hosve">
-                  <iframe width="80" height="80"
+                  <iframe class="zoompor"
                             src="https://www.youtube.com/embed/4FZKdEZ4T5E?&controls=0&1&loop=1&mute=1&rel=0"
                             frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
