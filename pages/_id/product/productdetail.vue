@@ -152,17 +152,7 @@
               </div>
                     </div>
 
-                            <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <div class="mb-4 mb-md-4">
-
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+                       
 
 
 
