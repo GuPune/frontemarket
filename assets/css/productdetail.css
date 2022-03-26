@@ -21,7 +21,7 @@
 
 
 
-  
+
 .card.productdetail{
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
@@ -88,7 +88,7 @@ font-size: 30px;
 
 }
 .product-details-in{
-    padding-top:20px;
+    padding-top:50px;
 }
 
 .no-margin {
@@ -170,9 +170,9 @@ font-size: 30px;
 
 
 
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
 and (orientation : landscape) {
 
     .product-detail-ipad{
@@ -185,22 +185,22 @@ padding-left:30px ;
   /* Styles */
 }
 
-@media (min-width: 992px) and (max-width: 1199.98px) { 
+@media (min-width: 992px) and (max-width: 1199.98px) {
     .product-detail-ipad{
         padding-left:50px ;
-        
+
             }
-        
+
 
  }
 
  @media screen and (max-width: 600px) {
 
-  
+
     .pro-des-btt{
         width: 100%;
-    
-    
+
+
     }
     .pta-detau{
         padding: 5px;
@@ -209,7 +209,7 @@ padding-left:30px ;
 
   @media screen and (max-width: 420px) {
 
-  
+
     .preview-box{
 width: 350px;
     }
@@ -217,7 +217,7 @@ width: 350px;
 
   @media screen and (max-width: 375px) {
 
-  
+
     .preview-box{
 width: 300px;
     }
@@ -227,4 +227,4 @@ width: 300px;
 
 
 
-  
+
