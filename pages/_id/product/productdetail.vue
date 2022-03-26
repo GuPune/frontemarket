@@ -33,7 +33,7 @@
 <div class="row no-margin" v-if="isHidden">
    <div class="left col-lg-5 col-md-6 col-sm-6">
 
-   <div >
+
 
       <!-- <no-ssr>
        <ProductZoomer
@@ -41,9 +41,12 @@
     :base-zoomer-options="zoomerOptions"
   />
     </no-ssr> -->
-     <product-zoomer :base-images="images"></product-zoomer>
+
+     <product-zoomer :base-images="images" ></product-zoomer>
+
    </div>
-   </div>
+
+
 
 
 
@@ -139,43 +142,148 @@
       <b-button size="md" variant="outline-success" class="pro-des-btt" @click="addToCart(product_by_item)"><i class="fa fa-shopping-cart fa-1x">&nbsp;</i>{{placeholder_buy}}</b-button>
 
                 </div>
+            </div>
+              </div>
+                    </div>
+<div class="row" v-if="isHidden">
+ <div class="left col-lg-5 col-md-6 col-sm-6">
+  <div v-if="action">
+    <div v-if="type == 'p'">
+        <img class="zoompos"  :src="action" alt=""/>
+      </div>
+      <div class="yoom" v-else>
+          <iframe width="420" height="420"
+                            src="https://www.youtube.com/embed/4FZKdEZ4T5E?&controls=0&autoplay=1&loop=1&mute=1&rel=0"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            >
+                        </iframe>
 
-                  <!-- <div class="col-md-4 col-sm-12 pta-detau">
-    <b-button size="md" variant="danger" class="pro-des-btt" @click="redirect('cart-orderlist')">ซื้อสินค้า</b-button>
-                </div> -->
+        </div>
+</div>
+  </div>
+
+
+<div class="col-12 col-md-12 col-lg-12 col-xl-7 col-sm-12 product-detail-ipad">
+            <div class="marginInner">
+            <h2 class="productName-detail">{{product_by_item.name_th}}</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                <div class="form-group">
+                <div class="marginInner">
+                   <h1 class="product-detail-title">{{product_by_item.description}}</h1>
+                <div class="ratings">
+                <div class="rating-box-detail">
+                <div class="rating" style="width:%">
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                                    <div class="marginInner mb-4 mb-md-4"><div class="dividerFix"></div></div>
+                                    <div class="row ">
+                <div class="col-12">
+                    <div class="form-group">
+                        <div class="marginInner">
+                            <div class="productPrice">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                            <input type="hidden" class="hiddenAttributeSelected" name="hiddenAttributeSelected[]" value="0" />
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group h5">
+                        <div class="marginInner mb-4 mb-md-4">
+                            <p class="productPrice"> ฿{{formatPrice(product_by_item.price)}}</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+              <div class="row">
+
+             <div class="col-md-2 attrHeader form-group">{{placeholder_q}} </div>
+
+
+                <div class="col-md-4 col-sm-4">
+                    <div class="group-product-number">
+                           <b-input-group size="sm">
+                                        <b-input-group-prepend>
+                                        <b-btn variant="outline-info" v-on:click='Adddown(product_by_item.stock)'>-</b-btn>
+                                        </b-input-group-prepend>
+                                        <b-form-input type="text" min="0" class="text-number-order productde-text-ce"  v-model="add"   @keypress="validateNumber"  :disabled="selected === 0"></b-form-input>
+                                        <b-input-group-append>
+                                        <b-btn variant="outline-secondary"  v-on:click='Addup(product_by_item.stock)'>+</b-btn>
+                                        </b-input-group-append>
+                                        </b-input-group>
+                    </div>
+                </div>
+                  <div class="col-md-4 attrHeader form-group">{{placeholder_qtotal}}  {{product_by_item.stock}}  </div>
             </div>
 
 
 
 
 
-              </div>
-                    </div>
-
-                            <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <div class="mb-4 mb-md-4">
-<!--
-                                        <div class="divSocilaGroupNew social-pro-des">
-                                             <label class="mr-sm-2" for="inline-form-custom-select-pref">แชร์</label>
-                                            <div class="btn-group social-widget">
-                                            <img src="../../../assets/line.png" style="width:40px;">
-                                            <a class="faco-top fa-layers fa-fw twitterSocialPD" target="_blank" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.pattanagems.com%2Fproduct%2F28463-28068%2F%25E0%25B9%2581%25E0%25B8%25AB%25E0%25B8%25A7%25E0%25B8%2599%25E0%25B9%2584%25E0%25B8%259E%25E0%25B8%25A5%25E0%25B8%25B4%25E0%25B8%2599-a4989&text=%E0%B9%81%E0%B8%AB%E0%B8%A7%E0%B8%99%E0%B9%84%E0%B8%9E%E0%B8%A5%E0%B8%B4%E0%B8%99+A4989"><i class="fas fa-square colorTwitterBGPD"></i>
-                                                        <i class="fa-inverse fab fa-twitter colorTwitterPD" data-fa-transform="shrink-7"></i></a>
-                                                        <img src="../../../assets/facebook.png" style="width:40px;">
-                                             <a class="faco-top fa-layers fa-fw pinterestSocialPD" target="_blank" href="https://pinterest.com/pin/create/button/?url=https://www.pattanagems.com/product/28463-28068/&media=https://image.makewebeasy.net/makeweb/0/pYN8s1ZiT/Gemstones/แหวนไพลิน_A4989.png&description=แหวนไพลิน A4989">
-                                                        <i class="fas fa-square colorPinterestBGPD"></i>
-                                                        <i class="fa-inverse fab fa-pinterest-p colorPinterestPD" data-fa-transform="shrink-7"></i>
-                                                    </a>
-                                                     </div>
-                                        </div>
--->
-
-                            </div>
+ <div class="marginInner mb-4 mb-md-4">
+ <div class="dividerFix">
+ </div>
+ </div>
+ <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group h5">
+                        <div class="marginInner mb-4 mb-md-4">
+                            <p >{{placeholder_detail}}
+</p>
+                       <h1 class="product-mini">{{product_by_item.product_details}}</h1>
                         </div>
                     </div>
                 </div>
+            </div>
+
+
+
+             <div class="row">
+                <div class="col-md-4 col-sm-12 pta-detau">
+      <b-button size="md" variant="outline-success" class="pro-des-btt" @click="addToCart(product_by_item)"><i class="fa fa-shopping-cart fa-1x">&nbsp;</i>{{placeholder_buy}}</b-button>
+
+                </div>
+            </div>
+              </div>
+
+</div>
+
+
+  <div class="row" v-if="isHidden">
+
+      <div v-for="(item, index) in xx.normal_size" class="hosve">
+      <div v-if="item.type == 'p'">
+          <img class="zoompor"  :src="item.url" alt=""   @mouseover="mouseOver(item)"/>
+      </div>
+       <div v-else  @mouseover="mouseOver(item)" class="zoompor">
+                  <iframe width="50" height="50"
+                            src="https://www.youtube.com/embed/4FZKdEZ4T5E?&controls=0&1&loop=1&mute=1&rel=0"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            >
+                    </iframe>
+      </div>
+      </div>
+</div>
+
+
+
+
+
+
 
 
                     <div class ="row">
@@ -235,6 +343,38 @@ width: 100px!important;
     export default {
       data() {
         return {
+          type:null,
+          action:null,
+           xx: {
+        normal_size: [
+          {
+            id: 1,
+            'url': 'https://assets.brandinside.asia/uploads/2020/02/shutterstock_473639749.jpg',
+            type:'v'
+          },
+          {
+            id: 2,
+            'url': 'https://assets.brandinside.asia/uploads/2020/02/shutterstock_473639749.jpg',
+            type:'p'
+          },
+          {
+            id: 3,
+             'url': 'https://assets.brandinside.asia/uploads/2020/02/shutterstock_473639749.jpg',
+             type:'p'
+          },
+          {
+            id: 4,
+              'url': 'https://assets.brandinside.asia/uploads/2020/02/shutterstock_473639749.jpg',
+              type:'p'
+          },
+             {
+            id: 5,
+              'url': 'https://assets.brandinside.asia/uploads/2020/02/shutterstock_473639749.jpg',
+              type:'p'
+          }
+        ],
+
+      },
  ima: {
           thumbs: [
             {
@@ -354,6 +494,13 @@ let images_product = await this.$store.dispatch(FETCH_IMAGE_PRODUCT,this.form);
 
 
         methods: {
+
+ mouseOver: function(e){
+
+      this.action = e.url
+      this.type = e.type
+      console.log(e);
+    },
 
             redirect(names) {
 

@@ -1,8 +1,30 @@
 @import 'https://fonts.googleapis.com/css?family=Kanit|Prompt';
 
 
+.zoompor{
+  width:82px;
+  height:82px;
+  padding: 15px;
 
+}
 
+.hosve:hover{
+  border-style: solid;
+  border-color: green;
+}
+
+.zoompos{
+  width:450px;
+  height:450px;
+  padding:15px;
+
+}
+.yoom{
+  width:450px;
+  height:440px;
+  padding:15px;
+
+}
 
 .row.relatedweb{
     justify-content: center;
