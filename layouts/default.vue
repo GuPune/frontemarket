@@ -33,10 +33,10 @@
 
 
 <div class="icon-bar">
-  <a href="" class="facebook" @click="language('th')"><img src="https://www.jib.co.th/web/images/flag/th-icon.jpg?v=03" title="ไทย"></a>
+  <a href="" class="facebook" @click="language('th')"><img src="../assets/th.jpg" title="ไทย"></a>
 
 
-  <a href="" class="twitter"  @click="language('en')"><img src="https://www.jib.co.th/web/images/flag/en-icon.jpg?v=03" title="อังกฤษ"></a>
+  <a href="" class="twitter"  @click="language('en')"><img src="../assets/en.jpg" title="อังกฤษ"></a>
   <a href="" class="youtube" @click="language('ch')"><img src="../assets/ch.png" title="จีน"></a>
   <!-- <nuxt-link v-if="$i18n.locale !== 'en'" :to="switchLocalePath('en')">English</nuxt-link>
 <nuxt-link v-if="$i18n.locale !== 'th'" :to="switchLocalePath('th')">ไทย</nuxt-link> -->
