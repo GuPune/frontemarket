@@ -300,8 +300,8 @@
        </div>
        <div class="col-12 col-md-1 col-sm-3">
 <div class="share social">
-<div class="fb-share-button" data-href="https://www.thailandpostmart.com/product/1013450004276/%E0%B8%82%E0%B8%99%E0%B8%A1%E0%B8%9B%E0%B8%B1%E0%B9%89%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%9A-%E0%B8%AA%E0%B8%B9%E0%B8%95%E0%B8%A3%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%A2%E0%B8%B2%E0%B8%A2-150-%E0%B8%81%E0%B8%A3%E0%B8%B1%E0%B8%A1-4-%E0%B8%96%E0%B8%B8%E0%B8%87/" data-layout="button_count" data-mobile-iframe="true">
-<a target="_blank" onclick="goclicky(this); return false;" href="https://www.facebook.com/sharer/sharer.php?u=https://www.thailandpostmart.com/product/1013450004276/%E0%B8%82%E0%B8%99%E0%B8%A1%E0%B8%9B%E0%B8%B1%E0%B9%89%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%9A-%E0%B8%AA%E0%B8%B9%E0%B8%95%E0%B8%A3%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%A2%E0%B8%B2%E0%B8%A2-150-%E0%B8%81%E0%B8%A3%E0%B8%B1%E0%B8%A1-4-%E0%B8%96%E0%B8%B8%E0%B8%87/&amp;src=sdkpreparse">
+<div class="fb-share-button" data-href="https://emarketplace.idtest.work/SHOPEMARKET09022022000195/product/productdetail/184" data-layout="button_count" data-mobile-iframe="true">
+<a target="_blank" onclick="goclicky(this); return false;" href="https://www.facebook.com/sharer/sharer.php?u=https://emarketplace.idtest.work/SHOPEMARKET09022022000195/product/productdetail/184">
 <img src="https://www.thailandpostmart.com/templates/images/icon-type/ic_facebook.png" width="35" height="35">
 </a>
 <div id="fb-root"></div>
@@ -312,7 +312,7 @@
        <div class="col-12 col-md-1 col-sm-1">
 <div class="share">
 
-<a href="//lineit.line.me/share/ui?url=https://www.thailandpostmart.com/product/1013450004276/%E0%B8%82%E0%B8%99%E0%B8%A1%E0%B8%9B%E0%B8%B1%E0%B9%89%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%9A-%E0%B8%AA%E0%B8%B9%E0%B8%95%E0%B8%A3%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%A2%E0%B8%B2%E0%B8%A2-150-%E0%B8%81%E0%B8%A3%E0%B8%B1%E0%B8%A1-4-%E0%B8%96%E0%B8%B8%E0%B8%87/" target="_blank">
+<a href="//lineit.line.me/share/ui?url=https://emarketplace.idtest.work/SHOPEMARKET09022022000195/product/productdetail/184" target="_blank">
 <img src="https://www.thailandpostmart.com/templates/images/icon-type/ic_line.png" width="35" height="35">
 </a>
 </div>
@@ -322,7 +322,7 @@
        <div class="col-12 col-md-1 col-sm-3">
 
          <div class="share">
-<a href="https://twitter.com/intent/tweet?text=ขนมปั้นสิบ สูตรคุณยาย (150 กรัม) 4 ถุง&amp;tw_p=tweetbutton&amp;url=https://www.thailandpostmart.com/product/1013450004276/%E0%B8%82%E0%B8%99%E0%B8%A1%E0%B8%9B%E0%B8%B1%E0%B9%89%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%9A-%E0%B8%AA%E0%B8%B9%E0%B8%95%E0%B8%A3%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%A2%E0%B8%B2%E0%B8%A2-150-%E0%B8%81%E0%B8%A3%E0%B8%B1%E0%B8%A1-4-%E0%B8%96%E0%B8%B8%E0%B8%87/&amp;via=thailand_post" target="_blank">
+<a href="https://twitter.com/intent/tweet?text=test&amp;tw_p=tweetbutton&amp;url=https://emarketplace.idtest.work/SHOPEMARKET09022022000195/product/productdetail/184" target="_blank">
 <img src="https://www.thailandpostmart.com/templates/images/icon-type/ic_twitter.png" width="35" height="35">
 </a>
 </div>
