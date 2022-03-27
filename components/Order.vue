@@ -768,7 +768,7 @@ import axios from 'axios';
       downloadpdf(){
 
               axios({
-                    url: 'https://cmsecom.idtest.work/api/get-file/'+this.objectss.cartnumber,
+                    url: 'https://backoffice.thaionzon.com/api/get-file/'+this.objectss.cartnumber,
                     method: 'GET',
                     responseType: 'blob',
                 }).then((response) => {
