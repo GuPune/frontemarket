@@ -685,7 +685,7 @@ button.addcart:hover {
   .breadcrumb {
     margin-top: 30px;
   }
-  
+
   .imgproduct-product{
     width:175px;
     height:150px;
@@ -755,6 +755,11 @@ button.addcart:hover {
 .yor{
 width: 370px;
 height:230px;
+}
+
+.zoomthu{
+  padding-left: 10px;
+
 }
 
 

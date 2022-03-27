@@ -28,11 +28,11 @@
 
 
 .pro-des-button-buy{
-
     border-radius: 0%;
 }
 .pro-des-btt{
     width: 200px;
+    height: 50px;
     border-radius: 0%;
 }
 
@@ -85,6 +85,7 @@ padding-top:100px;
 }
 .productPrice{
 font-size: 30px;
+color: #f57224;
 
 }
 .product-details-in{
@@ -205,6 +206,10 @@ padding-left:30px ;
     .pta-detau{
         padding: 5px;
     }
+
+    .pro_des_pad_mobile{
+        padding-top: 30px;
+    }
   }
 
   @media screen and (max-width: 420px) {
@@ -213,6 +218,8 @@ padding-left:30px ;
     .preview-box{
 width: 350px;
     }
+
+ 
   }
 
   @media screen and (max-width: 375px) {

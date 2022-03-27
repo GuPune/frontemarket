@@ -136,7 +136,7 @@
 
              <div class="row">
                 <div class="col-md-4 col-sm-12 pta-detau">
-      <b-button size="md" variant="outline-success" class="pro-des-btt" @click="addToCart(product_by_item)"><i class="fa fa-shopping-cart fa-1x">&nbsp;</i>{{placeholder_buy}}</b-button>
+      <b-button size="lg" variant="outline-success" class="pro-des-btt" @click="addToCart(product_by_item)"><i class="fa fa-shopping-cart fa-1x">&nbsp;</i>{{placeholder_buy}}</b-button>
 
                 </div>
 
@@ -163,7 +163,8 @@
   <div class="col-12 col-md-5 col-sm-12">
     <div class="row">
         <div v-if="action">
-    <div v-if="type == 'p'">
+          
+    <div v-if="type == 'N'">
         <img class="zoompos"  :src="action" alt=""/>
       </div>
       <div class="yoom" v-else>
@@ -177,10 +178,11 @@
         </div>
 </div>
     </div>
-      <div class="row" v-if="isHidden">
+      <div class="row zoomthu" v-if="isHidden">
 
       <div v-for="(item, index) in xx.normal_size" class="zoomporr">
-      <div v-if="item.type == 'p'">
+    
+      <div v-if="item.type == 'N'">
           <img class="zoompor hosve"  :src="item.url" alt=""   @mouseover="mouseOver(item)"/>
       </div>
        <div v-else  @mouseover="mouseOver(item)" class="zoompor hosve">
@@ -194,7 +196,7 @@
       </div>
 </div>
   </div>
-<div class="col-12 col-md-7 col-lg-7 col-xl-7 col-sm-12 product-detail-ipad">
+<div class="col-12 col-md-12 col-lg-7 col-xl-7 col-sm-12 product-detail-ipad pro_des_pad_mobile">
             <div class="marginInner">
             <h2 class="productName-detail">{{product_by_item.name_th}}</h2>
             </div>
@@ -239,10 +241,7 @@
             </div>
 
               <div class="row">
-
              <div class="col-md-2 attrHeader form-group">{{placeholder_q}} </div>
-
-
                 <div class="col-md-4 col-sm-4">
                     <div class="group-product-number">
                            <b-input-group size="sm">
@@ -278,13 +277,64 @@
                     </div>
                 </div>
             </div>
+  <div class="marginInner mb-4 mb-md-4"><div class="dividerFix"></div></div>
 
+             <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group h5">
+                        <div class="marginInner mb-4 mb-md-4">
+                            <p >ร้านค้า : {{product_by_item.shop_name_title}}
+</p>
+                  
+                       
+                        </div>
+                    </div>
+                </div>
+            </div>
+<div class="marginInner mb-4 mb-md-4"><div class="dividerFix"></div></div>
+
+            <div class="row">
+       <div class="col-12 col-md-5 col-sm-12">
+
+<div class="share">แชร์: </div>
+       </div>
+       <div class="col-12 col-md-1 col-sm-3">
+<div class="share social">
+<div class="fb-share-button" data-href="https://www.thailandpostmart.com/product/1013450004276/%E0%B8%82%E0%B8%99%E0%B8%A1%E0%B8%9B%E0%B8%B1%E0%B9%89%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%9A-%E0%B8%AA%E0%B8%B9%E0%B8%95%E0%B8%A3%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%A2%E0%B8%B2%E0%B8%A2-150-%E0%B8%81%E0%B8%A3%E0%B8%B1%E0%B8%A1-4-%E0%B8%96%E0%B8%B8%E0%B8%87/" data-layout="button_count" data-mobile-iframe="true">
+<a target="_blank" onclick="goclicky(this); return false;" href="https://www.facebook.com/sharer/sharer.php?u=https://www.thailandpostmart.com/product/1013450004276/%E0%B8%82%E0%B8%99%E0%B8%A1%E0%B8%9B%E0%B8%B1%E0%B9%89%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%9A-%E0%B8%AA%E0%B8%B9%E0%B8%95%E0%B8%A3%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%A2%E0%B8%B2%E0%B8%A2-150-%E0%B8%81%E0%B8%A3%E0%B8%B1%E0%B8%A1-4-%E0%B8%96%E0%B8%B8%E0%B8%87/&amp;src=sdkpreparse">
+<img src="https://www.thailandpostmart.com/templates/images/icon-type/ic_facebook.png" width="35" height="35">
+</a>
+<div id="fb-root"></div>
+</div>
+</div>
+
+       </div>
+       <div class="col-12 col-md-1 col-sm-1">
+<div class="share">
+
+<a href="//lineit.line.me/share/ui?url=https://www.thailandpostmart.com/product/1013450004276/%E0%B8%82%E0%B8%99%E0%B8%A1%E0%B8%9B%E0%B8%B1%E0%B9%89%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%9A-%E0%B8%AA%E0%B8%B9%E0%B8%95%E0%B8%A3%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%A2%E0%B8%B2%E0%B8%A2-150-%E0%B8%81%E0%B8%A3%E0%B8%B1%E0%B8%A1-4-%E0%B8%96%E0%B8%B8%E0%B8%87/" target="_blank">
+<img src="https://www.thailandpostmart.com/templates/images/icon-type/ic_line.png" width="35" height="35">
+</a>
+</div>
+
+
+       </div>
+       <div class="col-12 col-md-1 col-sm-3">
+
+         <div class="share">
+<a href="https://twitter.com/intent/tweet?text=ขนมปั้นสิบ สูตรคุณยาย (150 กรัม) 4 ถุง&amp;tw_p=tweetbutton&amp;url=https://www.thailandpostmart.com/product/1013450004276/%E0%B8%82%E0%B8%99%E0%B8%A1%E0%B8%9B%E0%B8%B1%E0%B9%89%E0%B8%99%E0%B8%AA%E0%B8%B4%E0%B8%9A-%E0%B8%AA%E0%B8%B9%E0%B8%95%E0%B8%A3%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%A2%E0%B8%B2%E0%B8%A2-150-%E0%B8%81%E0%B8%A3%E0%B8%B1%E0%B8%A1-4-%E0%B8%96%E0%B8%B8%E0%B8%87/&amp;via=thailand_post" target="_blank">
+<img src="https://www.thailandpostmart.com/templates/images/icon-type/ic_twitter.png" width="35" height="35">
+</a>
+</div>
+       </div>
+            </div>
+
+<br>
 
 
              <div class="row">
                 <div class="col-md-4 col-sm-12 pta-detau">
       <b-button size="md" variant="outline-success" class="pro-des-btt" @click="addToCart(product_by_item)"><i class="fa fa-shopping-cart fa-1x">&nbsp;</i>{{placeholder_buy}}</b-button>
-
                 </div>
 
                   <!-- <div class="col-md-4 col-sm-12 pta-detau">
@@ -312,6 +362,9 @@
                     </b-tab></b-tabs>
                   </div>
                     </div>
+
+
+                    
 
 
 
@@ -471,7 +524,7 @@ width: 100px!important;
            this.placeholder_info = '产品信息';
         }
          if(this.language == 'th' || this.language == null){
-          this.placeholder_buy = 'เพิ่มลงตะกร้า';
+          this.placeholder_buy = 'เพิ่มลงในตะกร้าสินค้า';
           this.placeholder_q = 'จำนวน';
            this.placeholder_qtotal = 'มีสินค้าจำนวนทั้งหมด';
            this.placeholder_detail = 'รายละเอียด';
@@ -489,6 +542,10 @@ this.form.url = window.location.origin
 
 let productshop_item = await this.$store.dispatch(FETCH_BY_PRODUCT_SHOP_ONE_ITEM,this.form);
 
+
+this.xx.normal_size = productshop_item.data.normal_size;
+this.action = this.xx.normal_size[0].url
+this.type = this.xx.normal_size[0].type
      this.ima.thumbs = productshop_item.data.thumbs;
      this.ima.large_size = productshop_item.data.large_size;
      this.ima.normal_size = productshop_item.data.normal_size;
