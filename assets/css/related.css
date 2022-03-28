@@ -817,6 +817,18 @@ height:230px;
 
     }
 
+
+    @media (min-width: 300px) and (max-width: 400px) {
+
+
+      .yor{
+        width: 300px;
+        height:230px;
+      }
+
+      }
+
+
     @media (min-width: 1450px) {
       .cards-mobile {
         grid-template-columns: repeat(5, 1fr);
