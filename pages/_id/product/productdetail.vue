@@ -152,7 +152,7 @@
               </div>
                     </div>
 
-                       
+
 
 
 
@@ -163,7 +163,7 @@
   <div class="col-12 col-md-5 col-sm-12">
     <div class="row">
         <div v-if="action">
-          
+
     <div v-if="type == 'N'">
         <img class="zoompos"  :src="action" alt=""/>
       </div>
@@ -181,7 +181,7 @@
       <div class="row zoomthu" v-if="isHidden">
 
       <div v-for="(item, index) in xx.normal_size" class="zoomporr">
-    
+
       <div v-if="item.type == 'N'">
           <img class="zoompor hosve"  :src="item.url" alt=""   @mouseover="mouseOver(item)"/>
       </div>
@@ -285,21 +285,21 @@
                         <div class="marginInner mb-4 mb-md-4">
                             <p >ร้านค้า : {{product_by_item.shop_name_title}}
 </p>
-                  
-                       
+
+
                         </div>
                     </div>
                 </div>
             </div>
 <div class="marginInner mb-4 mb-md-4"><div class="dividerFix"></div></div>
 
-            <div class="row">
-       <div class="col-12 col-md-5 col-sm-12">
+  <div class="row">
+  <div class="col-1 col-sm-3">
+    <div class="share">แชร์: </div>
+  </div>
+  <div class="col-1 col-sm-1">
 
-<div class="share">แชร์: </div>
-       </div>
-       <div class="col-12 col-md-1 col-sm-3">
-<div class="share social">
+    <div class="share social">
 <div class="fb-share-button" data-href="https://emarketplace.idtest.work/SHOPEMARKET09022022000195/product/productdetail/184" data-layout="button_count" data-mobile-iframe="true">
 <a target="_blank" onclick="goclicky(this); return false;" href="https://www.facebook.com/sharer/sharer.php?u=https://emarketplace.idtest.work/SHOPEMARKET09022022000195/product/productdetail/184">
 <img src="https://www.thailandpostmart.com/templates/images/icon-type/ic_facebook.png" width="35" height="35">
@@ -307,27 +307,24 @@
 <div id="fb-root"></div>
 </div>
 </div>
+  </div>
+  <div class="col-1 col-sm-1">
 
-       </div>
-       <div class="col-12 col-md-1 col-sm-1">
-<div class="share">
-
+    <div class="share">
 <a href="//lineit.line.me/share/ui?url=https://emarketplace.idtest.work/SHOPEMARKET09022022000195/product/productdetail/184" target="_blank">
 <img src="https://www.thailandpostmart.com/templates/images/icon-type/ic_line.png" width="35" height="35">
 </a>
 </div>
+  </div>
+  <div class="col-1 col-sm-1">
 
-
-       </div>
-       <div class="col-12 col-md-1 col-sm-3">
-
-         <div class="share">
+             <div class="share">
 <a href="https://twitter.com/intent/tweet?text=test&amp;tw_p=tweetbutton&amp;url=https://emarketplace.idtest.work/SHOPEMARKET09022022000195/product/productdetail/184" target="_blank">
 <img src="https://www.thailandpostmart.com/templates/images/icon-type/ic_twitter.png" width="35" height="35">
 </a>
 </div>
-       </div>
-            </div>
+  </div>
+</div>
 
 <br>
 
@@ -364,7 +361,7 @@
                     </div>
 
 
-                    
+
 
 
 
@@ -542,7 +539,7 @@ this.form.url = window.location.origin
 
 let productshop_item = await this.$store.dispatch(FETCH_BY_PRODUCT_SHOP_ONE_ITEM,this.form);
 
-
+console.log('productshop_item',productshop_item);
 this.xx.normal_size = productshop_item.data.normal_size;
 this.action = this.xx.normal_size[0].url
 this.type = this.xx.normal_size[0].type
