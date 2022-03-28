@@ -303,12 +303,6 @@ padding-left: 15px;
     height:230px;
   }
 
-  .yoom{
-    width:350px;
-    height:440px;
-    padding:15px;
-
-  }
 
 
 
@@ -677,6 +671,17 @@ button.addcart:hover {
 
 
  }
+
+ @media (min-width: 450px) {
+  .yoom{
+    width:350px;
+    height:440px;
+    padding:15px;
+  }
+ }
+
+
+
 
 
  @media only screen and (min-width : 992px) {
