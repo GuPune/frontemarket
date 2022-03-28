@@ -26,8 +26,7 @@
 
 }
 .yoom{
-  width:450px;
-  height:440px;
+
   padding:15px;
 
 }
@@ -296,11 +295,6 @@ padding-left: 15px;
     .zoompor {
       width: 40px;
       height: 40px;
-  }
-
-  .yor{
-    width: 370px;
-    height:230px;
   }
 
 
@@ -672,13 +666,7 @@ button.addcart:hover {
 
  }
 
- @media (min-width: 450px) {
-  .yoom{
-    width:350px;
-    height:440px;
-    padding:15px;
-  }
- }
+
 
 
 
@@ -810,6 +798,9 @@ height:230px;
     grid-template-columns: repeat(2, 1fr);
 
   }
+
+
+
   }
 
 
@@ -817,6 +808,11 @@ height:230px;
     .product-byshop{
       grid-template-columns: repeat(2, 1fr);
 
+    }
+
+    .yor{
+      width: 370px;
+      height:230px;
     }
 
     }
