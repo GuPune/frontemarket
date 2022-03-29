@@ -41,7 +41,13 @@
        <b-col cols="3" md="1"  sm="3" class="nav-form-search">
   <b-form-select v-model="selected" :options="options"></b-form-select>
       </b-col>
-      <b-button variant="outline-primary ic-nav-bg-white" @click="Search()">   <i class="fas fa  fas fa-search ic-nav-black" aria-hidden="true"></i></b-button>
+             <b-col cols="1" md="1"  sm="1" class="nav-form-search">
+
+
+  <b-button variant="outline-primary ic-nav-bg-white" @click="Search()">   <i class="fas fa  fas fa-search ic-nav-black" aria-hidden="true"></i></b-button>
+
+      </b-col>
+
 
 
 
