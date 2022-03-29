@@ -660,6 +660,10 @@ display: block;
     display: none;
   }
 
+  .descquickmenu {
+    font-size: 14px;
+}
+
 
 
 }
