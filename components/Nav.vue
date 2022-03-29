@@ -2,7 +2,7 @@
 
 <div>
 
-  <b-container class="bv-example-row nav-first-s" v-if="objectslayout">
+  <b-container class="bv-example-row nav-first-s" v-if="objectslayout" hidden>
   <b-row>
 
     <b-navbar toggleable="sm" type="dark"   :style="{'background-color':objectslayout.color}" class="banav navbar-fixed-top" fixed="top">
@@ -51,7 +51,7 @@
 
 
 
-       <b-col cols="1" md="1"  sm="2" class="px-2 nav-regishop-ipad" style="max-width: 16.7777%">
+       <b-col cols="1" md="1"  sm="2" xl="1" class="px-2 nav-regishop-ipad" style="max-width: 16.7777%">
           <b-navbar-brand href="#"  @click="redirectTo('form-shopregis')" style="font-size: 14px;">
 
 
@@ -127,6 +127,76 @@
 
   </b-row>
 </b-container>
+
+
+<b-container class="bv-example-row nav-first-s" v-if="objectslayout">
+  <b-row>
+
+    <b-navbar toggleable="sm" type="dark"   :style="{'background-color':objectslayout.color}" class="banav navbar-fixed-top" fixed="top">
+    <b-navbar-brand class="nav_mobie_fisrt">
+       <b-row>
+           <b-col cols="2" md="2"  sm="2" xl="3" >
+           <img src="../assets/log.png"  alt=""  class="icon-mobile nav-icon-mobile">
+            </b-col>
+       <b-col cols="2" md="2"  sm="2" lg="2" xl="1" class="px-2" style="max-width: 16.7777%">
+          <b-navbar-brand href="#"  @click="redirectTo('form-shopregis')" style="font-size: 14px;">
+
+
+              <div v-if ="this.language == 'en'" class="regishover" > {{this.placeholder_mysell}} </div>
+             <div v-if ="this.language == 'ch'"  class="regishover" > {{this.placeholder_mysell}}</div>
+              <div v-if ="this.language == 'th' || this.language == null" class="regishover" > {{this.placeholder_mysell}} </div>
+
+            </b-navbar-brand>
+      </b-col>
+
+       <b-col cols="2" md="2"  sm="2" class="px-2">
+          <b-navbar-brand href="#"   @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus fa-w-18 icon-size-nav regishover" aria-hidden="true"></i><span class="numitem "> {{ cartTotal }}  </span><span class="descquickmenu regishover">ตะกร้าสินค้า</span>
+
+          </b-navbar-brand>
+      </b-col>
+
+          <b-col cols="2" md="2"  sm="2" lg="2" class="px-2">
+          <b-navbar-brand href="#">
+            <i class="fa fa-heart-o regishover" aria-hidden="true"></i><span class="descquickmenu regishover" >รายการโปรด</span>
+
+
+
+          </b-navbar-brand>
+      </b-col>
+
+      <b-col cols="3" md="4"  sm="1" lg="3" class="nav-form-search px-2 login-size-ipad">
+          <b-navbar-brand href="#"   v-if="!isLogins">
+                 <i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="descquickmenu">
+                   <span @click="redirectTo('form-userregis')" class="regishover">สมัครสมาชิก </span>| <span @click="redirectTo('form-login')" class="regishover">{{this.placeholder_login}}</span></span>
+            </b-navbar-brand>
+            </b-col>
+       </b-row>
+
+
+        <b-row>
+     <b-col cols="8" md="8"  sm="8" lg="8" class="nav-form-search nav-search">
+              <b-form-input placeholder="Find a good product ?" v-model="form.search" v-if ="this.language == 'en'"></b-form-input>
+              <b-form-input placeholder="寻找好的产品 ?" v-model="form.search" v-if ="this.language == 'ch'"></b-form-input>
+              <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?" v-model="form.search" v-if ="this.language == 'th' || this.language == null"></b-form-input>
+      </b-col>
+     <b-col cols="3" md="3"  sm="3" lg="3" class="nav-form-search">
+  <b-form-select v-model="selected" :options="options"></b-form-select>
+      </b-col>
+      <b-col cols="1" md="1"  sm="1" lg="1" class="nav-form-search">
+
+
+  <b-button variant="outline-primary ic-nav-bg-white" @click="Search()">   <i class="fas fa  fas fa-search ic-nav-black" aria-hidden="true"></i></b-button>
+
+      </b-col>
+  </b-row>
+    </b-navbar-brand>
+
+
+  </b-navbar>
+
+  </b-row>
+</b-container>
+
 
 
 
