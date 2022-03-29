@@ -2,7 +2,7 @@
 
 <div>
 
-  <b-container class="bv-example-row nav-first-s" v-if="objectslayout" hidden>
+  <b-container class="bv-example-row nav-first-s nav-desktop-last" v-if="objectslayout">
   <b-row>
 
     <b-navbar toggleable="sm" type="dark"   :style="{'background-color':objectslayout.color}" class="banav navbar-fixed-top" fixed="top">
@@ -129,7 +129,7 @@
 </b-container>
 
 
-<b-container class="bv-example-row nav-first-s" v-if="objectslayout">
+<b-container class="bv-example-row nav-first-s nav-mobile-last" v-if="objectslayout">
   <b-row>
 
     <b-navbar toggleable="sm" type="dark"   :style="{'background-color':objectslayout.color}" class="banav navbar-fixed-top" fixed="top">
@@ -138,13 +138,13 @@
            <b-col cols="2" md="2"  sm="2" xl="3" >
            <img src="../assets/log.png"  alt=""  class="icon-mobile nav-icon-mobile">
             </b-col>
-       <b-col cols="2" md="2"  sm="2" lg="2" xl="1" class="px-2" style="max-width: 16.7777%">
-          <b-navbar-brand href="#"  @click="redirectTo('form-shopregis')" style="font-size: 14px;">
+       <b-col cols="2" md="2"  sm="2" lg="2" xl="1" class="px-2">
+          <b-navbar-brand href="#"  @click="redirectTo('form-shopregis')">
 
 
-              <div v-if ="this.language == 'en'" class="regishover" > {{this.placeholder_mysell}} </div>
-             <div v-if ="this.language == 'ch'"  class="regishover" > {{this.placeholder_mysell}}</div>
-              <div v-if ="this.language == 'th' || this.language == null" class="regishover" > {{this.placeholder_mysell}} </div>
+              <div v-if ="this.language == 'en'" class="descquickmenu regishover" > {{this.placeholder_mysell}} </div>
+             <div v-if ="this.language == 'ch'"  class="descquickmenu regishover" > {{this.placeholder_mysell}}</div>
+              <div v-if ="this.language == 'th' || this.language == null" class="descquickmenu regishover" > {{this.placeholder_mysell}} </div>
 
             </b-navbar-brand>
       </b-col>
@@ -164,11 +164,35 @@
           </b-navbar-brand>
       </b-col>
 
-      <b-col cols="3" md="4"  sm="1" lg="3" class="nav-form-search px-2 login-size-ipad">
+      <b-col cols="4" md="4"  sm="4" lg="3" class="nav-form-search px-2 login-size-ipad">
           <b-navbar-brand href="#"   v-if="!isLogins">
                  <i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="descquickmenu">
                    <span @click="redirectTo('form-userregis')" class="regishover">สมัครสมาชิก </span>| <span @click="redirectTo('form-login')" class="regishover">{{this.placeholder_login}}</span></span>
             </b-navbar-brand>
+
+
+                      <b-navbar-nav class="ml-auto cart-desktop">
+          <b-nav-item-dropdown right  v-if="isLogins">
+          <!-- Using 'button-content' slot -->
+          <template #button-content>
+            <em>  <i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="descquickmenu" style="color:#ffffff">คุณ{{ objects.name}}</span></em>
+          </template>
+          <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">
+            <div>
+
+              <div v-if ="this.language == 'en'" > {{this.placeholder_profile}} </div>
+             <div v-if ="this.language == 'ch'" > {{this.placeholder_profile}}</div>
+              <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_profile}} </div>
+            </div>
+          </b-dropdown-item>
+          <b-dropdown-item href="#"  @click.prevent="logout">
+               <div v-if ="this.language == 'en'" > {{this.placeholder_logout}} </div>
+             <div v-if ="this.language == 'ch'" > {{this.placeholder_logout}}</div>
+              <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_logout}} </div>
+
+          </b-dropdown-item>
+        </b-nav-item-dropdown>
+      </b-navbar-nav>
             </b-col>
        </b-row>
 

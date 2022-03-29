@@ -566,6 +566,16 @@ display: block;
 
  }
 
+ @media (max-width: 600px) {
+
+  .descquickmenu {
+ 
+    font-size: 10px;
+  
+
+ }
+
+}
 
  @media (min-width: 1100px) {
   .banav {
@@ -588,6 +598,13 @@ display: block;
   }
 
   .shop-name-nav-mobile{
+    display: none;
+  }
+
+  .nav-desktop-last{
+    display: block;
+  }
+  .nav-mobile-last{
     display: none;
   }
 
