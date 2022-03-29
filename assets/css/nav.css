@@ -265,6 +265,9 @@ border-radius: 0px;
      display: none;
    }
 
+
+ 
+
 @media screen and (max-width: 400px) {
   .icon-mobile{
 width: 80px;
@@ -646,12 +649,14 @@ display: block;
     display: none;
   }
 
-  .nav-desktop-last{
+  .nav-mobile-last{
     display: block;
   }
-  .nav-mobile-last{
+
+  .nav-mobile-smal-last{
     display: none;
   }
+
 
 
 }
@@ -660,7 +665,7 @@ display: block;
 
 
   .nav-desktop-last{
-    display: none;
+    display: block;
   }
   .nav-mobile-last{
     display: none;
@@ -688,4 +693,33 @@ display: none;
 
 
 
+}
+
+
+@media screen and (max-width: 2400px) and (min-width: 1200px) {
+
+
+  .nav-desktop-last{
+    display: block;
+  }
+  .nav-mobile-last{
+    display: none;
+  }
+  .nav-mobile-smal-last{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 450px) {
+
+
+  .nav-desktop-last{
+    display: none;
+  }
+  .nav-mobile-last{
+    display: block;
+  }
+  .nav-mobile-smal-last{
+    display: none;
+  }
 }

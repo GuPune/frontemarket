@@ -268,10 +268,13 @@
               <div v-if ="this.language == 'en'" > {{this.placeholder_profile}} </div>
              <div v-if ="this.language == 'ch'" > {{this.placeholder_profile}}</div>
               <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_profile}} </div>
-                 <div v-if ="this.language == 'en'" > {{this.placeholder_logout}} </div>
             </div>
           </b-dropdown-item>
-
+          <b-dropdown-item href="#"  @click.prevent="logout">
+               <div v-if ="this.language == 'en'" > {{this.placeholder_logout}} </div>
+             <div v-if ="this.language == 'ch'" > {{this.placeholder_logout}}</div>
+              <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_logout}} </div>
+          </b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
             </b-col>
