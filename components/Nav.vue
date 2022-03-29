@@ -55,23 +55,42 @@
           <b-navbar-brand href="#"  @click="redirectTo('form-shopregis')" style="font-size: 14px;">
 
 
-              <div v-if ="this.language == 'en'" > {{this.placeholder_mysell}} </div>
-             <div v-if ="this.language == 'ch'" > {{this.placeholder_mysell}}</div>
-              <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_mysell}} </div>
+              <div v-if ="this.language == 'en'" class="regishover" > {{this.placeholder_mysell}} </div>
+             <div v-if ="this.language == 'ch'"  class="regishover" > {{this.placeholder_mysell}}</div>
+              <div v-if ="this.language == 'th' || this.language == null" class="regishover" > {{this.placeholder_mysell}} </div>
 
             </b-navbar-brand>
       </b-col>
-        <b-col cols="1" md="1"  sm="1" class="nav-regishop-mobile px-2">
-          <b-navbar-brand href="#"   @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i><span> ({{ cartTotal }}) </span></b-navbar-brand>
+        <b-col cols="2" md="1"  sm="1" class="nav-regishop-mobile px-2">
+          <b-navbar-brand href="#"   @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus fa-w-18 icon-size-nav regishover" aria-hidden="true"></i><span class="numitem "> {{ cartTotal }}  </span><span class="descquickmenu regishover">ตะกร้าสินค้า</span>
+
+          </b-navbar-brand>
       </b-col>
 
+          <b-col cols="2" md="1"  sm="1" class="nav-regishop-mobile px-2">
+          <b-navbar-brand href="#">
+            <i class="fa fa-heart-o regishover" aria-hidden="true"></i><span class="descquickmenu regishover" >รายการโปรด</span>
+
+
+
+          </b-navbar-brand>
+      </b-col>
+
+
+
+
+
+
+
       <b-col cols="2" md="2"  sm="1" class="nav-form-search px-2 nav-regishop-mobile login-size-ipad">
-          <b-navbar-brand href="#"   v-if="!isLogins" @click="redirectTo('form-login')">
+          <b-navbar-brand href="#"   v-if="!isLogins">
 
 
-            <div v-if ="this.language == 'en'" > {{this.placeholder_login}} </div>
+            <!-- <div v-if ="this.language == 'en'" > {{this.placeholder_login}} </div>
              <div v-if ="this.language == 'ch'" > {{this.placeholder_login}}</div>
-              <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_login}} </div>
+              <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_login}} </div> -->
+                 <i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="descquickmenu">
+                   <span @click="redirectTo('form-userregis')" class="regishover">สมัครสมาชิก </span>| <span @click="redirectTo('form-login')" class="regishover">{{this.placeholder_login}}</span></span>
             </b-navbar-brand>
 
 

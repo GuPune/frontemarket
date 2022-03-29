@@ -15,9 +15,28 @@
 
 } */
 
+.numitem {
+  position: absolute;
+  top: -5px;
+  width: 16px;
+  height: 16px;
+  background: #e3191b;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  line-height: 15px;
+  border-radius: 4px;
+}
+.descquickmenu {
+  margin-left: 5px;
+  font-size: 13px;
+  margin-top: 8px;
+  font-family: kanit,sans-serif;
+}
 
-
-
+.icon-size-nav{
+  font-size: 25px;
+}
 
 .header-main {
   position: relative;
@@ -167,6 +186,10 @@ position: fixed;
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.regishover:hover{
+  color: black;
 }
 
 .selnav-op > button{
