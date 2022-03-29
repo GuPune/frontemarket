@@ -249,7 +249,7 @@
 
   
 
-      <b-col cols="4" md="4"  sm="4" lg="3" class="nav-form-search px-2 login-size-ipad descquickmenumobile-login">
+      <b-col cols="4" md="4"  sm="4" lg="3" class="nav-form-search px-2 login-size-ipad descquickmenumobile-login nav-tp-pad">
           <b-navbar-brand href="#"   v-if="!isLogins">
                  <i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="descquickmenumobile">
                    <span @click="redirectTo('form-login')" class="regishover">  {{this.placeholder_login}}</span></span>
@@ -265,9 +265,8 @@
           <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')" class="xdasdasd">
             <div>
 
-              <div v-if ="this.language == 'en'" > {{this.placeholder_profile}} </div>
-             <div v-if ="this.language == 'ch'" > {{this.placeholder_profile}}</div>
-              <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_profile}} </div>
+              <span @click="redirectTo('profile-userprofile')">  {{this.placeholder_profile}}</span>
+      
             </div>
           </b-dropdown-item>
           <b-dropdown-item href="#"  @click.prevent="logout">

@@ -264,6 +264,9 @@ border-radius: 0px;
    .nav-sell{
      display: none;
    }
+   .nav-tp-pad{
+     padding-top: 3px;
+   }
 
 
  
