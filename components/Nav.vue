@@ -155,7 +155,7 @@
           </b-navbar-brand>
       </b-col>
 
-          <b-col cols="2" md="2"  sm="2" lg="2" class="px-2">
+          <b-col cols="2" md="2"  sm="2" lg="2" class="px-2 nav-mobile-fav">
           <b-navbar-brand href="#">
             <i class="fa fa-heart-o regishover" aria-hidden="true"></i><span class="descquickmenu regishover" >รายการโปรด</span>
 
@@ -198,7 +198,7 @@
 
 
         <b-row>
-     <b-col cols="8" md="8"  sm="8" lg="8" class="nav-form-search nav-search">
+     <b-col cols="8" md="8"  sm="8" lg="8" class="nav-form-search nav-search search-mobile">
               <b-form-input placeholder="Find a good product ?" v-model="form.search" v-if ="this.language == 'en'"></b-form-input>
               <b-form-input placeholder="寻找好的产品 ?" v-model="form.search" v-if ="this.language == 'ch'"></b-form-input>
               <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?" v-model="form.search" v-if ="this.language == 'th' || this.language == null"></b-form-input>
