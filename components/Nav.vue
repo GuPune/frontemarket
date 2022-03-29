@@ -98,7 +98,7 @@
           <b-nav-item-dropdown right  v-if="isLogins">
           <!-- Using 'button-content' slot -->
           <template #button-content>
-            <em>  <i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="descquickmenu">{{ objects.name}}</span>{</em>
+            <em>  <i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="descquickmenu" style="color:#ffffff">{{ objects.name}}</span></em>
           </template>
           <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">
             <div>
