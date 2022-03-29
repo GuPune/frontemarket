@@ -78,7 +78,7 @@
 .search-form {
   border: 1px solid #ffffff !important;
   justify-content: center;
-  
+
 }
 
 .search-button {
@@ -216,9 +216,9 @@ select option {
    }
 
    .nav-form-search{
-padding-left:0px ;    
-padding-right:0px ;  
-border-radius: 0px; 
+padding-left:0px ;
+padding-right:0px ;
+border-radius: 0px;
    }
 
    .nav-first-s{
@@ -228,7 +228,7 @@ border-radius: 0px;
    .nav-sell{
      display: none;
    }
-    
+
 @media screen and (max-width: 400px) {
   .icon-mobile{
 width: 80px;
@@ -237,7 +237,7 @@ width: 80px;
 
   .cart-desktop{
     display: none;
-       
+
   }
   .nav-sell{
     font-size: 10px;
@@ -266,10 +266,10 @@ width: 80px;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: unset;
- 
+
   }
 
-  
+
 
 
 }
@@ -283,7 +283,7 @@ width: 80px;
 
   .cart-desktop{
     display: none;
-       
+
   }
   .cart-mobi{
     display: block;
@@ -294,7 +294,7 @@ width: 80px;
        /* width: 50px; */
   }
 
-  
+
 
 
 }
@@ -305,10 +305,10 @@ width: 80px;
   .nav-sell{
     font-size: 10px;
   }
-  
 
 
-  
+
+
 
 
 }
@@ -325,7 +325,7 @@ width: 80px;
 
   .cart-desktop{
     display: none;
-       
+
   }
   .cart-mobi{
     display: block;
@@ -354,7 +354,7 @@ width: 80px;
     display: block;
   }
 
-  
+
   .nav-sell{
     font-size: 10px;
   }
@@ -378,7 +378,7 @@ width: 80px;
 
   .cart-desktop{
     display: none;
-       
+
   }
   .cart-mobi{
     display: block;
@@ -421,7 +421,7 @@ width: 80px;
 
   .cart-desktop{
     display: none;
-       
+
   }
   .cart-mobi{
     display: block;
@@ -461,10 +461,10 @@ width: 80px;
 }
 
 @media screen and (max-width: 600px) {
-    
+
   /* .cart-mobile{
 display: block;
- 
+
   }
   .nav-shop-tops{
     display: none;
@@ -491,7 +491,7 @@ display: block;
 }
 
 @media screen and (max-width: 700px) {
-    
+
 
 
 
@@ -520,29 +520,29 @@ display: block;
  }
 
 }
- 
- 
 
-@media (min-width: 992px) { 
+
+
+@media (min-width: 992px) {
   .banav {
 
     /* height: 60px; */
     padding-left: 4%;
     padding-right: 4%;
   }
-  
+
 
  }
 
- 
- @media (min-width: 1100px) { 
+
+ @media (min-width: 1100px) {
   .banav {
 
     /* height: 60px; */
     padding-left: 5%;
     padding-right: 5%;
   }
-  
+
 
  }
 
@@ -551,8 +551,8 @@ display: block;
   .banav {
 
     /* height: 60px; */
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 10%;
+    padding-right: 10%;
   }
 
   .shop-name-nav-mobile{
@@ -573,9 +573,8 @@ display: none;
 .nav-icon-mobile{
   display: block;
   }
-  
+
 
 
 
 }
- 
