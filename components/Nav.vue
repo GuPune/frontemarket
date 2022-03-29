@@ -33,7 +33,7 @@
 
 
 
-      <b-col cols="8" md="4"  sm="3" class="nav-form-search nav-search">
+      <b-col cols="8" md="3"  sm="3" class="nav-form-search nav-search">
               <b-form-input placeholder="Find a good product ?" v-model="form.search" v-if ="this.language == 'en'"></b-form-input>
               <b-form-input placeholder="寻找好的产品 ?" v-model="form.search" v-if ="this.language == 'ch'"></b-form-input>
               <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?" v-model="form.search" v-if ="this.language == 'th' || this.language == null"></b-form-input>
