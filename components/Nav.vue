@@ -249,10 +249,10 @@
 
   
 
-      <b-col cols="4" md="4"  sm="4" lg="3" class="nav-form-search px-2 login-size-ipad">
+      <b-col cols="4" md="4"  sm="4" lg="3" class="nav-form-search px-2 login-size-ipad descquickmenumobile-login">
           <b-navbar-brand href="#"   v-if="!isLogins">
                  <i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="descquickmenumobile">
-                   <span @click="redirectTo('form-login')" class="regishover"> {{this.placeholder_login}}</span></span>
+                   <span @click="redirectTo('form-login')" class="regishover">  {{this.placeholder_login}}</span></span>
             </b-navbar-brand>
 
 
@@ -260,7 +260,7 @@
           <b-nav-item-dropdown right  v-if="isLogins">
           <!-- Using 'button-content' slot -->
           <template #button-content>
-            <em>  <i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="descquickmenumobile" style="color:#ffffff">คุณ{{ objects.name}}</span></em>
+            <em>  <i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="descquickmenumobile" style="color:#ffffff"> คุณ{{ objects.name}}</span></em>
           </template>
           <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">
             <div>

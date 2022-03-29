@@ -20,7 +20,7 @@
 }
 
 .descquickmenumobile{
-  font-size: 14px;
+  font-size: 13px;
 }
 
 .numitem {
@@ -40,6 +40,9 @@
   font-size: 13px;
   margin-top: 8px;
   font-family: kanit,sans-serif;
+}
+.descquickmenumobile-login{
+  text-align: center;
 }
 
 .icon-size-nav{
