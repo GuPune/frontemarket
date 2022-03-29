@@ -256,7 +256,7 @@
             </b-navbar-brand>
 
 
-                      <b-navbar-nav class="ml-auto cart-desktop">
+                      <b-navbar-nav class="ml-auto">
           <b-nav-item-dropdown right  v-if="isLogins">
           <!-- Using 'button-content' slot -->
           <template #button-content>
