@@ -349,7 +349,7 @@
           <b-nav-item-dropdown right  v-if="isLogins">
           <!-- Using 'button-content' slot -->
           <template #button-content>
-            <em>  <i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="descquickmenumobile" style="color:#ffffff"> คุณ{{ objects.name}}</span></em>
+            <em>  <i class="fa fa-user-circle-o" aria-hidden="true"></i></em>
           </template>
           <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')" class="xdasdasd">
             <div>
