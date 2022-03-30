@@ -316,22 +316,22 @@
             </b-col>
 
 
-        <b-col cols="8" md="2"  sm="2" class="px-2">
+        <b-col cols="6" md="2"  sm="2" class="px-2">
           <b-navbar-brand href="#"   @click="redirectTo('form-shopregis')"><span class="descquickmenumobile regishover">{{this.placeholder_mysell}} | </span>
 
           </b-navbar-brand>
       </b-col>
 
 
-       <b-col cols="1" md="2"  sm="2" class="px-2">
-          <b-navbar-brand href="#"   @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus fa-w-18 icon-size-nav regishover" aria-hidden="true"></i><span class="numitem "> {{ cartTotal }}  </span><span class="descquickmenumobile regishover"></span>
+       <b-col cols="2" md="2"  sm="2" class="px-2">
+          <b-navbar-brand href="#"   @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus fa-w-18 icon-size-nav regishover" aria-hidden="true"></i><span class="numitem ">{{ cartTotal }} </span><span class="descquickmenumobile regishover"> :</span>
 
           </b-navbar-brand>
       </b-col>
 
 
 
-      <b-col cols="1" md="4"  sm="4" lg="3" class="nav-form-search px-2 login-size-ipad descquickmenumobile-login">
+      <b-col cols="2" md="4"  sm="4" lg="3" class="nav-form-search px-2 login-size-ipad descquickmenumobile-login">
           <b-navbar-brand href="#"   v-if="!isLogins">
                  <i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="descquickmenumobile">
                    <span @click="redirectTo('form-login')" class="regishover"></span></span>
