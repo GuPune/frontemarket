@@ -227,7 +227,7 @@
   <b-row>
 
     <b-navbar toggleable="sm" type="dark"   :style="{'background-color':objectslayout.color}" class="banav navbar-fixed-top" fixed="top">
-    <b-navbar-brand class="nav_mobie_fisrt">
+    <b-navbar-brand class="nav_mobie_fisrt" @click="redirectTo('index')">
        <b-row>
            <b-col cols="2" md="2"  sm="2" xl="3" >
            <img src="../assets/log.png"  alt=""  class="icon-mobile nav-icon-mobile">
@@ -309,7 +309,7 @@
   <b-row>
 
     <b-navbar toggleable="sm" type="dark"   :style="{'background-color':objectslayout.color}" class="banav navbar-fixed-top" fixed="top">
-    <b-navbar-brand class="nav_mobie_fisrt">
+    <b-navbar-brand class="nav_mobie_fisrt" @click="redirectTo('index')">
        <b-row>
            <b-col cols="2" md="2"  sm="2" xl="3" >
            <img src="../assets/log.png"  alt=""  class="icon-mobile nav-icon-mobile last375">
@@ -340,8 +340,8 @@
 
       <b-col cols="2" md="4"  sm="4" lg="3" class="nav-form-search px-2 login-size-ipad descquickmenumobile-login">
           <b-navbar-brand href="#"   v-if="!isLogins">
-                 <i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="descquickmenumobile">
-                   <span @click="redirectTo('form-login')" class="regishover"></span></span>
+                 <i class="fa fa-user-circle-o" aria-hidden="true" @click="redirectTo('form-login')"></i><span class="descquickmenumobile">
+                   <span class="regishover"></span></span>
             </b-navbar-brand>
 
 
