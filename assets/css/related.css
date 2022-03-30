@@ -31,6 +31,14 @@
 
 }
 
+.heart-rel{
+  color: #ccc;
+}
+
+.heart-rel.active{
+  color: #f57224;
+}
+
 
 
 .row.relatedweb{
@@ -269,6 +277,13 @@ padding-left: 15px;
   height: 150px;
 }
 
+.prdoc-rela{
+  padding-left: 10px;
+}
+.prdoc-rela-rating{
+  text-align: center;
+  padding-left: 20px;
+}
 
 
 @media screen and (max-width: 600px) {
@@ -306,6 +321,8 @@ padding-left: 15px;
       /* background-color: rgba(0, 0, 0, 0.03); */
       /* border-top: 1px solid rgba(0, 0, 0, 0.125); */
     }
+
+
 
   }
 
@@ -502,7 +519,7 @@ padding-left: 15px;
 .cardproduct-first:hover {
   box-shadow: 0 8px 16px 0 rgba(34, 235, 78, 0.2);
   border: 1px solid #1fc210; /*1fc210*/
-  color: #1fc210;
+
 }
 
 

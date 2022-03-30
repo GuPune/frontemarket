@@ -62,7 +62,7 @@
             </b-navbar-brand>
       </b-col>
         <b-col cols="2" md="1"  sm="1" class="nav-regishop-mobile px-2">
-          <b-navbar-brand href="#"   @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus fa-w-18 icon-size-nav regishover" aria-hidden="true"></i><span class="numitem "> {{ cartTotal }}  </span><span class="descquickmenu regishover">{{placeholder_cart}}</span>
+          <b-navbar-brand href="#"   @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus fa-w-18 icon-size-nav regishover" aria-hidden="true"></i><span class="numitem "> {{ cartTotal }}  </span><span class="descquickmenu regishover">{{this.placeholder_cart}}</span>
 
           </b-navbar-brand>
       </b-col>
@@ -90,7 +90,7 @@
              <div v-if ="this.language == 'ch'" > {{this.placeholder_login}}</div>
               <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_login}} </div> -->
                  <i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="descquickmenu">
-                   <span @click="redirectTo('form-userregis')" class="regishover">{{placeholder_regis}}  </span>| <span @click="redirectTo('form-login')" class="regishover">{{this.placeholder_login}}</span></span>
+                   <span @click="redirectTo('form-userregis')" class="regishover">{{this.placeholder_regis}}  </span>| <span @click="redirectTo('form-login')" class="regishover">{{this.placeholder_login}}</span></span>
             </b-navbar-brand>
 
 
@@ -167,7 +167,7 @@
       <b-col cols="4" md="4"  sm="4" lg="3" class="nav-form-search px-2 login-size-ipad">
           <b-navbar-brand href="#"   v-if="!isLogins">
                  <i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="descquickmenu">
-                   <span @click="redirectTo('form-userregis')" class="regishover">{{placeholder_regis}} </span>| <span @click="redirectTo('form-login')" class="regishover">{{this.placeholder_login}}</span></span>
+                   <span @click="redirectTo('form-userregis')" class="regishover">{{this.placeholder_regis}} </span>| <span @click="redirectTo('form-login')" class="regishover">{{this.placeholder_login}}</span></span>
             </b-navbar-brand>
 
 
@@ -411,6 +411,8 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
       placeholder_logout:'',
       placeholder_mysell:'',
       placeholder_profile:'',
+      placeholder_cart:'',
+      placeholder_regis:'',
       language:'',
       IsLogin: false,
       loggedIn: this.$auth.loggedIn,

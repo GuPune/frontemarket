@@ -91,7 +91,7 @@ const actions = {
     async [GET_PRODUCT_SHELL_FIND](context,payload) {
         console.log('payload',payload);
         const { data } = await ProductService.getproductshellfind(payload);
-  
+
         context.commit(SET_KEYWORD,payload);
        context.commit(SET_PRODUCTSHELL_FIND,data);
         return data;
@@ -108,7 +108,7 @@ const actions = {
        },
 
        async [FETCH_FIND_PRODUCT](context,payload) {
-       
+
         const { data } = await ProductService.findcatebyshop(payload);
 
         context.commit(SET_CATE_SEC,payload);
@@ -158,8 +158,18 @@ const mutations = {
     },
     [SET_PRODUCT_SHELL](state,data) {
 
-        state.product_shell = data;
+
+      state.product_shell = data;
+    //  let b = state.product_shell = data;
         state.loading = false
+
+
+
+        // for (let i = 0; i < b.length; i++) {
+
+
+        //   }
+        //   console.log(b);
 
     },
     [SET_PRODUCT_BY_SHOP](state,data) {
@@ -208,7 +218,7 @@ const mutations = {
         state.searchkeyword = data.search;
         console.log('state.searchkeyword',state.searchkeyword);
     },
-    
+
 
 
 
