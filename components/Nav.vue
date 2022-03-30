@@ -316,7 +316,7 @@
             </b-col>
 
 
-        <b-col cols="6" md="2"  sm="2" class="px-2">
+        <b-col cols="4" md="2"  sm="2" class="px-2">
           <b-navbar-brand href="#"   @click="redirectTo('form-shopregis')"><span class="descquickmenumobile regishover">{{this.placeholder_mysell}} | </span>
 
           </b-navbar-brand>
@@ -324,11 +324,16 @@
 
 
        <b-col cols="2" md="2"  sm="2" class="px-2">
-          <b-navbar-brand href="#"   @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus fa-w-18 icon-size-nav regishover" aria-hidden="true"></i><span class="numitem ">{{ cartTotal }} </span><span class="descquickmenumobile regishover"> :</span>
+          <b-navbar-brand href="#"   @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus fa-w-18 icon-size-nav regishover" aria-hidden="true"></i><span class="numitem ">{{ cartTotal }} </span><span class="descquickmenumobile regishover"> |</span>
 
           </b-navbar-brand>
       </b-col>
 
+          <b-col cols="2" md="2"  sm="2" lg="2" class="px-2">
+          <b-navbar-brand href="#">
+            <i class="fa fa-heart-o regishover" aria-hidden="true"></i><span class="descquickmenu regishover" > | </span>
+          </b-navbar-brand>
+      </b-col>
 
 
       <b-col cols="2" md="4"  sm="4" lg="3" class="nav-form-search px-2 login-size-ipad descquickmenumobile-login">
