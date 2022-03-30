@@ -737,6 +737,25 @@ display: none;
   }
 }
 
+
+@media screen and (max-width: 450px) and (min-width: 400px) {
+
+
+  .nav-desktop-last{
+    display: none;
+  }
+  .nav-mobile-last{
+    display: none;
+  }
+  .nav-mobile-smal-last{
+    display: block;
+  }
+  .nav-mobile-smal-last375{
+    display: none;
+  }
+
+}
+
 @media screen and (max-width: 400px) and (min-width: 350px) {
 
 
