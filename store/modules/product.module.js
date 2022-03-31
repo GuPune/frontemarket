@@ -7,6 +7,7 @@ import {
     SET_PRODUCT_SHELL,SET_PRODUCT_BY_SHOP,SET_CATE_BY_SHOP,SET_CATE_SEC,SET_BY_PRODUCT_SHOP_ONE_ITEM,SET_LOADER,SET_IMAGES,SET_PRODUCTSHELL_FIND,SET_SHELL_CATE,SET_KEYWORD
 } from "../mutations.type";
 import Vuex from 'vuex'
+import Vue from 'vue'
 
 
 
@@ -20,6 +21,11 @@ const state = {
     cate_sel:[],
     shell_cate:null,
     product_by_item:[],
+    purchase: {
+        product: null,
+        customer: null,
+        quantity: null
+      },
     images: {
 
       },
@@ -160,17 +166,28 @@ const mutations = {
 
 
       state.product_shell = data;
-    //  let b = state.product_shell = data;
+   let b = state.product_shell
         state.loading = false
 
-
-
-        // for (let i = 0; i < b.length; i++) {
-
-
+        // const rkknoob = {
+        //     'id': 1,
+        //     'desc': 1
         //   }
-        //   console.log(b);
 
+        for (let i = 0; i < b.length; i++) {
+           
+
+   
+            Vue.set(b[i], 'fav', 0);
+        
+
+
+        // Vue.set(item, 'quantity', 1);
+        // Vue.set(item, 'totalPrice', item.price);
+
+          }
+          console.log('c',state.product_shell);
+   
     },
     [SET_PRODUCT_BY_SHOP](state,data) {
         state.product_by_shop = data.data;

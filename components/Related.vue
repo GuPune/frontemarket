@@ -19,7 +19,7 @@
 	<em class="">สินค้าทั้งหมด</em>
 			</h2>
         </div>
-
+{{product_shell}}
         <div class="product" id="product">
             <div class="row product">
                  <div class="cards cards-mobile">
@@ -47,7 +47,9 @@
       <div class="row prdoc-rela">
     <div class="col">
 
-                            <i class="fa fa-heart heart heart-rel" :class="{ active : index === activeItem}" aria-hidden="true" title="เพิ่มในรายการที่ชอบ" @click="addfav(index)"></i>
+                            <i class="fa fa-heart heart heart-rel active"  aria-hidden="true" title="เพิ่มในรายการที่ชอบ" @click="addfav(index)" v-if ="item.fav == '1'"></i>
+                                                        <i class="fa fa-heart heart heart-rel"  aria-hidden="true" title="ลบในรายการที่ชอบ" @click="addfav(index)" v-else></i>
+
        <i class="fa fa-exchange" aria-hidden="true"></i>
     </div>
     <div class="col prdoc-rela-rating" style="font-size:10px">
@@ -130,6 +132,8 @@
          isUrl () {
                 return this.$store.state.user.url_id;
         },
+
+        
 
 
         },
