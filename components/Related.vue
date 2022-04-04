@@ -19,7 +19,7 @@
 	<em class="">สินค้าทั้งหมด</em>
 			</h2>
         </div>
-{{product_shell}}
+
         <div class="product" id="product">
             <div class="row product">
                  <div class="cards cards-mobile">
@@ -133,7 +133,7 @@
                 return this.$store.state.user.url_id;
         },
 
-        
+
 
 
         },

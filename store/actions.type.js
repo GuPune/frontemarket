@@ -108,6 +108,9 @@ export const GET_FOOTER = "get_footer";
 export const HIDECOOKIEFIRST = "hide_cookie";
 export const LOG_OUT = "log_out";
 
+export const ADD_ITEM = "add_item";
+
+
 
 
 

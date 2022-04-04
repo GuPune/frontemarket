@@ -293,6 +293,7 @@
             </div>
 <div class="marginInner mb-4 mb-md-4"><div class="dividerFix"></div></div>
 
+
   <div class="row">
   <div class="col-1 col-sm-3">
     <div class="share">แชร์: </div>

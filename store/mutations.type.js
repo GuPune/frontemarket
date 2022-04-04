@@ -58,6 +58,8 @@ export const SET_FOOTER = "set_footer";
 export const SET_LOADER = "set_loader";
 export const SET_LOGOUT = "set_logout";
 
+export const SET_ITEM = "set_item";
+
 
 
 

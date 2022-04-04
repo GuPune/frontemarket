@@ -1,10 +1,10 @@
 
 import { AdsService }  from "../../services/ads";
 import {
-    ADD_CART,REMOVE_CART,GET_CART,ADD_UP,ADD_DOWN,ADD_INPUT,REMOVIE_ALL,CART_SUCCESS,ADD_PRODETAIL
+    ADD_CART,REMOVE_CART,GET_CART,ADD_UP,ADD_DOWN,ADD_INPUT,REMOVIE_ALL,CART_SUCCESS,ADD_PRODETAIL,ADD_ITEM
 } from "../actions.type.js";
 import {
-    SET_CART,SET_REMOVECART,SET_GET_CART,SET_TOTAL,SET_ADDUP,SET_ADDDOWN,SET_ADD_INPUT,SET_REMOVE_ALL,SET_CART_SUCCESS,SET_CART_DETAIL 
+    SET_CART,SET_REMOVECART,SET_GET_CART,SET_TOTAL,SET_ADDUP,SET_ADDDOWN,SET_ADD_INPUT,SET_REMOVE_ALL,SET_CART_SUCCESS,SET_CART_DETAIL,SET_ITEM
 } from "../mutations.type";
 import Vuex from 'vuex'
 import Vue from 'vue'
@@ -12,6 +12,7 @@ import Vue from 'vue'
 const state = {
     cartTotal: 0,
     cart: [],
+    item:[],
     Price:0,
     PriceToTal:{
         quantitys:0,
@@ -29,63 +30,74 @@ const getters = {
     PriceToTal: state => {
         return state.PriceToTal
     },
- 
+    item: state => {
+      return state.item
+  },
+
 };
 
 
 const actions = {
     async [ADD_CART](context,payload) {
         await context.commit(SET_CART,payload);
-        await context.commit(SET_TOTAL);   
+        await context.commit(SET_TOTAL);
     },
     async [ADD_PRODETAIL](context,payload) {
-     
-      
+
+
         await context.commit(SET_CART_DETAIL,payload);
-         await context.commit(SET_TOTAL);   
+         await context.commit(SET_TOTAL);
     },
 
 
     async [REMOVE_CART](context,payload) {
        await context.commit(SET_REMOVECART,payload);
-       await context.commit(SET_TOTAL);   
+       await context.commit(SET_TOTAL);
     },
     async [GET_CART](context) {
-      
-        await context.commit(SET_GET_CART);  
-        await context.commit(SET_TOTAL);    
+
+        await context.commit(SET_GET_CART);
+        await context.commit(SET_TOTAL);
     },
     async [ADD_UP](context,payload) {
-      
-        await context.commit(SET_ADDUP,payload);  
-        await context.commit(SET_TOTAL);  
-         
+
+        await context.commit(SET_ADDUP,payload);
+        await context.commit(SET_TOTAL);
+
     },
     async [ADD_DOWN](context,payload) {
-        await context.commit(SET_ADDDOWN,payload);  
-        await context.commit(SET_TOTAL);   
+        await context.commit(SET_ADDDOWN,payload);
+        await context.commit(SET_TOTAL);
     },
     async [ADD_INPUT](context,payload) {
-      await context.commit(SET_ADD_INPUT,payload);  
-      await context.commit(SET_TOTAL);   
+      await context.commit(SET_ADD_INPUT,payload);
+      await context.commit(SET_TOTAL);
     },
 
     async [REMOVIE_ALL](context,payload) {
-        await context.commit(SET_REMOVE_ALL);   
-      //  await context.commit(SET_TOTAL);   
+        await context.commit(SET_REMOVE_ALL);
+      //  await context.commit(SET_TOTAL);
     },
     async [CART_SUCCESS](context,payload) {
-        await context.commit(SET_CART_SUCCESS);   
-      //  await context.commit(SET_TOTAL);   
+        await context.commit(SET_CART_SUCCESS);
+      //  await context.commit(SET_TOTAL);
     },
+    async [ADD_ITEM](context,payload) {
 
-    
+      await context.commit(SET_ITEM,payload);
+
+
+  },
+
+
+
+
 };
 
 const mutations = {
-   
+
     addToCart (state, item) {
-     
+
         state.cartTotal++
         if (item.slug in state.cart) {
           state.cart[item.slug].count++
@@ -96,59 +108,88 @@ const mutations = {
         }
       },
 
+      [SET_ITEM](state,data) {
+
+        console.log('data',data);
+     let found = state.item.find(item => item.id == data.id);
+     if (found) {
+
+      found.qty ++;
+
+
+     } else {
+         state.item.push(data);
+     }
+
+     //   state.item.push(data);
+
+console.log(state.item);
+// if (found) {
+
+
+
+// } else {
+
+//     state.item.push(item);
+
+
+// }
+// console.log();
+      },
+
 
       [SET_TOTAL](state){
 
-      
+
         let cart = localStorage.setItem("cart", JSON.stringify(state.cart));
         this.getcart = JSON.parse(localStorage.getItem("cart"));
 
 
-   
-   
- 
+
+
+
         if('cart',this.getcart ){
-    
+
             let sum = 0;
             let total = 0;
-      
+
             Object.keys(this.getcart).forEach(key => {
                 sum += parseInt(this.getcart [key].totalPrice)
                 total += this.getcart[key].quantity;
-              
-         
+
+
             })
-   
+
           state.PriceToTal.PriceToTals = sum
           state.PriceToTal.quantitys = total
-       
-           
+
+
         }else {
-            state.PriceToTal.PriceToTals = 0        
+            state.PriceToTal.PriceToTals = 0
         }
 
       },
       [SET_REMOVECART](state,item) {
-       
+
         state.cartTotal--
-        state.cart.splice(item, 1); 
-       
+        state.cart.splice(item, 1);
+
       },
       [SET_GET_CART](state) {
         this.cart = JSON.parse(localStorage.getItem("cart"));
         if(!this.cart){
             this.cart = [];
-         
+
         }
- 
+
         state.cartTotal = this.cart.length
-      
-      
+
+
         state.cart = this.cart
       },
       [SET_CART](state,item) {
 
-  
+
 ///เช็คสินค้าว่ามีอยู่ใน cart ไหม
 // ถ้า  ให้ + จำนวน
 // ถ้าไม่มีให้ Add
@@ -181,13 +222,13 @@ if (found) {
  found.totalPrice = found.quantity * found.price;
 
 } else {
-    
+
     state.cart.push(item);
 
 
     Vue.set(item, 'quantity', 1);
     Vue.set(item, 'totalPrice', item.price);
- 
+
     state.cartTotal++;
 }
 let a = localStorage.setItem("cart", JSON.stringify(state.cart));
@@ -217,21 +258,21 @@ let a = localStorage.setItem("cart", JSON.stringify(state.cart));
     },
     [SET_CART_DETAIL](state,item) {
 
-   
+
 
         let found = state.cart.find(product => product.id == item.id);
-     
-     
+
+
         if (found) {
             found.quantity  = found.quantity + item.add;
              found.totalPrice = found.quantity * found.price;
-          
-          
+
+
            } else {
-               
-        
-     
-             
+
+
+
+
 
               var sumprice = item.price * item.add;
                Vue.set(item, 'quantity', item.add);
@@ -241,14 +282,14 @@ let a = localStorage.setItem("cart", JSON.stringify(state.cart));
                console.log('sum',item);
              state.cart.push(item);
               // console.log('found else',item.price * item.quantity);
-             
-            
+
+
                state.cartTotal++;
            }
            console.log('found2',state.cart);
            let a = localStorage.setItem("cart", JSON.stringify(state.cart));
     }
-    
+
     ,
     [SET_ADDDOWN](state,item) {
 
@@ -261,7 +302,7 @@ let a = localStorage.setItem("cart", JSON.stringify(state.cart));
          found.totalPrice = found.quantity * found.price;
         } else {
             // state.cart.push(item);
-        
+
             // Vue.set(item, 'quantity', 1);
             // Vue.set(item, 'totalPrice', item.price);
             // state.cartTotal++;
@@ -277,10 +318,10 @@ let a = localStorage.setItem("cart", JSON.stringify(state.cart));
         if (found) {
          found.quantity = item.quantityinput
          found.totalPrice = found.quantity * found.price;
-      
+
         } else {
             // state.cart.push(item);
-        
+
             // Vue.set(item, 'quantity', 1);
             // Vue.set(item, 'totalPrice', item.price);
             // state.cartTotal++;
@@ -291,27 +332,30 @@ let a = localStorage.setItem("cart", JSON.stringify(state.cart));
 
     [SET_REMOVE_ALL](state) {
 
-    
-        
+
+
         state.cart = [];
-     
+
         let a = localStorage.setItem("cart", JSON.stringify(state.cart));
-        state.cartTotal = 0  
-        state.PriceToTal = 0  
-  
+        state.cartTotal = 0
+        state.PriceToTal = 0
+
         state.cartTotal = 0,
         state.cart = [],
         state.Price = 0,
         state.PriceToTal = {  quantitys:0, PriceToTals:0 }
-    
- 
+
+
     },
     [SET_CART_SUCCESS](state) {
 
         state.cartTotal = 0,
         state.cart = []
     },
-    
+
+
+
+
 };
 
 export default {

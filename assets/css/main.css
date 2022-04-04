@@ -13,6 +13,10 @@ body {
 
 }
 
+.pos{
+  background-color: #dcd9ed;
+  border: 0px;
+}
 .midnav {
   background: #fff;
   border-bottom: 1px solid #eaeaea;
