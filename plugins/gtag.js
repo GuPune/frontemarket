@@ -12,9 +12,9 @@ axios.post('https://backend.pra84000.com/api/gtag', {
     config: { id: res.data }
   })
   }).catch(function(){
-     
-  
-  
+
+
+
 });
 
 
