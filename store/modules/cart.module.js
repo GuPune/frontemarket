@@ -83,9 +83,7 @@ const actions = {
       //  await context.commit(SET_TOTAL);
     },
     async [ADD_ITEM](context,payload) {
-
       await context.commit(SET_ITEM,payload);
-
 
   },
 
