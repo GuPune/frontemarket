@@ -7,8 +7,8 @@
 
     <b-navbar toggleable="sm" type="dark"   :style="{'background-color':objectslayout.color}" class="banav navbar-fixed-top" fixed="top">
     <b-navbar-brand  @click="redirectTo('index')">
-   <img src="../assets/fti.png"  alt=""  class="icon-mobile nav-icon-desktop">
-     <img src="../assets/fti.png"  alt=""  class="icon-mobile nav-icon-mobile">
+   <img src="../assets/pra.png"  alt=""  class="icon-mobile nav-icon-desktop">
+     <img src="../assets/pra1.png"  alt=""  class="icon-mobile nav-icon-mobile">
     </b-navbar-brand>
               <b-navbar-brand href="#" class="nav-sell"  @click="redirectTo('form-shopregis')" >{{objectslayout.textsellermyshop}}</b-navbar-brand>
 
@@ -136,7 +136,7 @@
     <b-navbar-brand class="nav_mobie_fisrt">
        <b-row>
            <b-col cols="2" md="2"  sm="2" xl="3" >
-           <img src="../assets/fti.png"  alt=""  class="icon-mobile nav-icon-mobile">
+           <img src="../assets/pra.png"  alt=""  class="icon-mobile nav-icon-mobile">
             </b-col>
        <b-col cols="2" md="2"  sm="2" lg="2" xl="1" class="px-2">
           <b-navbar-brand href="#"  @click="redirectTo('form-shopregis')">
