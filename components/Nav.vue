@@ -7,8 +7,8 @@
 
     <b-navbar toggleable="sm" type="dark"   :style="{'background-color':objectslayout.color}" class="banav navbar-fixed-top" fixed="top">
     <b-navbar-brand  @click="redirectTo('index')">
-   <img src="../assets/123-01-remo.png"  alt=""  class="icon-mobile nav-icon-desktop">
-     <img src="../assets/log.png"  alt=""  class="icon-mobile nav-icon-mobile">
+   <img src="../assets/fti.png"  alt=""  class="icon-mobile nav-icon-desktop">
+     <img src="../assets/fti.png"  alt=""  class="icon-mobile nav-icon-mobile">
     </b-navbar-brand>
               <b-navbar-brand href="#" class="nav-sell"  @click="redirectTo('form-shopregis')" >{{objectslayout.textsellermyshop}}</b-navbar-brand>
 
