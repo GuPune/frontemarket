@@ -427,6 +427,18 @@ width: 100px!important;
 
 
     export default {
+head() {
+    return {
+      title: `Estudios Claw`,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: `test`,
+        },
+      ],
+    };
+  },
       data() {
         return {
           active_el:0,
