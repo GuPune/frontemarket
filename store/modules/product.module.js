@@ -151,6 +151,11 @@ const actions = {
         context.commit(SET_IMAGES,data);
         return data;
     },
+    async [GET_FAV](context,payload) {
+        const { data } = await ProductService.getfav(payload);
+ 
+        return data;
+    }
 };
 
 const mutations = {

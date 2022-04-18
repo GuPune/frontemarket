@@ -569,6 +569,7 @@ width: 100px!important;
         this.form.product_id = this.$route.params.slug;
       
       let getfav = await this.$store.dispatch(GET_FAV,this.form);
+      console.log('getfav',getfav);
        }
 
 
