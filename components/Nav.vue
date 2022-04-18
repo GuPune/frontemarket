@@ -459,6 +459,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
 
         },
         async created(){
+
             this.form.url = window.location.origin
                 let getnav = await this.$store.dispatch(GET_NAVBAR,this.form);
 

@@ -201,7 +201,7 @@
             <h2 class="productName-detail">{{product_by_item.name_th}}</h2>
             </div>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-10">
                 <div class="form-group">
                 <div class="marginInner">
                    <h1 class="product-detail-title">{{product_by_item.description}}</h1>
@@ -209,11 +209,14 @@
                 <div class="rating-box-detail">
                 <div class="rating" style="width:%">
                 </div>
+
                 </div>
                 </div>
                 </div>
                 </div>
                 </div>
+
+
                 </div>
                                     <div class="marginInner mb-4 mb-md-4"><div class="dividerFix"></div></div>
                                     <div class="row ">
@@ -280,7 +283,7 @@
   <div class="marginInner mb-4 mb-md-4"><div class="dividerFix"></div></div>
 
              <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-8">
                     <div class="form-group h5">
                         <div class="marginInner mb-4 mb-md-4">
                             <p >ร้านค้า : {{product_by_item.shop_name_title}}
@@ -290,7 +293,29 @@
                         </div>
                     </div>
                 </div>
+
+                                <div class="col-md-4">
+                    <div class="form-group h5">
+                        <div class="marginInner mb-4 mb-md-4">
+                            <p >สินค้าโปรด
+
+
+                                         <i class="fa fa-heart heart heart-rel active"  aria-hidden="true" title="เพิ่มในรายการที่ชอบ" @click="removeaddfav()" v-if ="active_el == '1'"></i>
+                                                        <i class="fa fa-heart heart heart-rel"  aria-hidden="true" title="ลบในรายการที่ชอบ" @click="addfav()" v-else></i>
+
+</p>
+
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
+            <div class="row">
+
+
+            </div>
+
 <div class="marginInner mb-4 mb-md-4"><div class="dividerFix"></div></div>
 
 
@@ -405,6 +430,7 @@ width: 100px!important;
     export default {
       data() {
         return {
+          active_el:0,
           type:null,
           action:null,
            xx: {
@@ -585,6 +611,24 @@ let images_product = await this.$store.dispatch(FETCH_IMAGE_PRODUCT,this.form);
                    this.$router.push({ name: names})
                 }
             },
+
+         async addfav(){
+       if(!this.authenticated){
+          this.$router.push('/form/login')
+       }else{
+         this.active_el = 1;
+       }
+
+          },
+        async removeaddfav(){
+
+  if(!this.authenticated){
+               this.$router.push('/form/login')
+  }else{
+    this.active_el = 0;
+  }
+
+          },
         async addToCart(item){
 
 

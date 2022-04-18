@@ -32,8 +32,9 @@ const actions = {
         context.commit(SET_MENU,data);
     },
 
-    async [HIDECOOKIEFIRST](context) {
+    async [HIDECOOKIEFIRST](context,payload) {
 
+      const { data } = await MenuService.cookie(payload);
       context.commit(SETHIDECOOKIEFIRST);
 
      },
