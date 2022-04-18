@@ -420,7 +420,6 @@ width: 100px!important;
 <script>
   import { mapGetters,mapState } from "vuex";
   import { FETCH_BY_PRODUCT_SHOP_ONE_ITEM,FETCH_IMAGE_PRODUCT,ADD_CART,ADD_PRODETAIL,FETCH_GET_PROFILE } from "@/store/actions.type.js";
-
   import ProductZoomer from 'vue-product-zoomer'
   import Nav from "@/components/Nav";
   import Footer from "@/components/Footer";
@@ -567,7 +566,6 @@ this.form.url = window.location.origin
 
 let productshop_item = await this.$store.dispatch(FETCH_BY_PRODUCT_SHOP_ONE_ITEM,this.form);
 
-console.log('productshop_item',productshop_item);
 this.xx.normal_size = productshop_item.data.normal_size;
 this.action = this.xx.normal_size[0].url
 this.type = this.xx.normal_size[0].type
@@ -614,17 +612,19 @@ let images_product = await this.$store.dispatch(FETCH_IMAGE_PRODUCT,this.form);
             },
 
          async addfav(){
+           console.log('this.authenticated',this.authenticated);
        if(!this.authenticated){
-          this.$router.push('/form/login')
        }else{
          this.active_el = 1;
        }
+
+
 
           },
         async removeaddfav(){
 
   if(!this.authenticated){
-               this.$router.push('/form/login')
+
   }else{
     this.active_el = 0;
   }
