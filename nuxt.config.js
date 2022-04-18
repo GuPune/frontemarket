@@ -24,7 +24,7 @@ export default {
     ],
 
     link: [
-      { rel: 'shortcut icon', type: 'image/x-icon', href: '/sh.ico' },
+      { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'icon', type: 'image/png', href: '/96.png' },
       { rel: 'icon', type: 'image/png', href: '/32.png'  },
       { rel: 'icon', type: 'image/png', href: '/16.png'  },
