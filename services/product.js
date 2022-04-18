@@ -37,7 +37,11 @@ export const ProductService = {
     },
     getfav(param){
       return ApiService.post("getfav",param);
-    }
-
-    
-};
+    },
+    addfav(param){
+      return ApiService.post("addfav",param);
+    },
+    delfav(param){
+      return ApiService.post("delfav",param);
+    },
+}

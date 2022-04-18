@@ -419,7 +419,7 @@ width: 100px!important;
 
 <script>
   import { mapGetters,mapState } from "vuex";
-  import { FETCH_BY_PRODUCT_SHOP_ONE_ITEM,FETCH_IMAGE_PRODUCT,ADD_CART,ADD_PRODETAIL,FETCH_GET_PROFILE,GET_FAV } from "@/store/actions.type.js";
+  import { FETCH_BY_PRODUCT_SHOP_ONE_ITEM,FETCH_IMAGE_PRODUCT,ADD_CART,ADD_PRODETAIL,FETCH_GET_PROFILE,GET_FAV,ADD_FAV,DEL_FAV } from "@/store/actions.type.js";
   import ProductZoomer from 'vue-product-zoomer'
   import Nav from "@/components/Nav";
   import Footer from "@/components/Footer";
@@ -569,7 +569,6 @@ width: 100px!important;
         this.form.product_id = this.$route.params.slug;
       
       let getfav = await this.$store.dispatch(GET_FAV,this.form);
-      console.log('getfav',getfav);
       this.active_el = getfav;
        }
 
@@ -637,7 +636,10 @@ let images_product = await this.$store.dispatch(FETCH_IMAGE_PRODUCT,this.form);
        if(!this.$auth.user){
             this.$router.push('/form/login')
        }else{
-         this.active_el = 1;
+        
+               let getfav = await this.$store.dispatch(ADD_FAV,this.form);
+              this.active_el = getfav;
+
        }
 
 
@@ -648,7 +650,8 @@ let images_product = await this.$store.dispatch(FETCH_IMAGE_PRODUCT,this.form);
   if(!this.$auth.user){
    this.$router.push('/form/login')
   }else{
-    this.active_el = 0;
+    let getfav = await this.$store.dispatch(DEL_FAV,this.form);
+     this.active_el = getfav;
   }
 
           },
