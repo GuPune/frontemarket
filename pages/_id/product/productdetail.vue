@@ -326,7 +326,7 @@
   <div class="col-1 col-sm-1">
 
     <div class="share social">
-<div class="fb-share-button" data-href="https://emarketplace.idtest.work/SHOPEMARKET09022022000195/product/productdetail/184" data-layout="button_count" data-mobile-iframe="true">
+<div class="fb-share-button" :data-href="sharefacebook()" data-layout="button_count" data-mobile-iframe="true">
 <a target="_blank" onclick="goclicky(this); return false;" href="https://www.facebook.com/sharer/sharer.php?u=https://emarketplace.idtest.work/SHOPEMARKET09022022000195/product/productdetail/184">
 <img src="https://www.thailandpostmart.com/templates/images/icon-type/ic_facebook.png" width="35" height="35">
 </a>
@@ -629,6 +629,11 @@ let images_product = await this.$store.dispatch(FETCH_IMAGE_PRODUCT,this.form);
   }else{
     this.active_el = 0;
   }
+
+          },
+          async sharefacebook(){
+
+return 'https://emarketplace.idtest.work/SHOPEMARKET05022022000166/product/productdetail/297';
 
           },
         async addToCart(item){
