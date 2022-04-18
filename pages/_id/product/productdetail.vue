@@ -427,18 +427,17 @@ width: 100px!important;
 
 
     export default {
-head() {
-    return {
-      title: `Estudios Claw`,
-      meta: [
-        {
-          hid: "description",
-          name: "description",
-          content: `test`,
-        },
-      ],
-    };
-  },
+ head() {
+      return {
+        title: 'This is about title',
+        link: [
+          {
+            rel: 'stylesheet',
+            href: 'https://fonts.googleapis.com/css?family=Lato&display=swap'
+          }
+        ]
+      };
+    },
       data() {
         return {
           active_el:0,
