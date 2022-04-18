@@ -429,17 +429,12 @@ width: 100px!important;
     export default {
  head() {
       return {
-        title: 'This is about title',
-        link: [
-          {
-            rel: 'stylesheet',
-            href: 'https://fonts.googleapis.com/css?family=Lato&display=swap'
-          }
-        ]
+        title: 'Home page',
       };
     },
       data() {
         return {
+           title: 'Home page',
           active_el:0,
           type:null,
           action:null,

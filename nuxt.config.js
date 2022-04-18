@@ -1,46 +1,16 @@
 export default {
   mode: "spa",
   // Global page headers: https://go.nuxtjs.dev/config-head
-  head: {
-    title: 'Thaionzon',
-    htmlAttrs: {
-      lang: 'en'
-    },
-    titleTemplate: 'Thaionzon | Thailand ซื้อขายสินค้าออนไลน์',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Thaionzon | Thailand ซื้อขายสินค้าออนไลน์'},
-      { name: 'format-detection', content: 'telephone=no' },
 
-    ],
-    script: [
-      { src: 'https://static.line-scdn.net/liff/edge/2.1/sdk.js' },
-      { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js' },
-      { src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js' },
-    ],
-    link: [
-      { rel: 'shortcut icon', type: 'image/x-icon', href: '/sh.ico' },
-      { rel: 'icon', type: 'image/png', href: '/96.png' },
-      { rel: 'icon', type: 'image/png', href: '/32.png'  },
-      { rel: 'icon', type: 'image/png', href: '/16.png'  },
-      {
-        rel: 'stylesheet',
-        type: 'text/css',
-        href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'
-      },
-      {
-        rel: 'stylesheet',
-        type: 'text/css',
-        href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'
-      },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Lato:400,700'
-      }
-    ]
-
-  },
+head: {
+  titleTemplate: 'Nuxt.js Fundamental - %s',
+  title: 'Nuxt.js Fundamental',
+  meta: [
+    { charset: 'utf-8' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { hid: 'description', name: 'description', content: 'Meta description' }
+  ]
+},
   pwa: {
     icon: {
          fileName: 'log.png',
