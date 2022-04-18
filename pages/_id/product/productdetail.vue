@@ -434,7 +434,6 @@ width: 100px!important;
     },
       data() {
         return {
-
           active_el:0,
           type:null,
           action:null,
@@ -560,6 +559,12 @@ width: 100px!important;
            this.placeholder_detail = 'รายละเอียด';
            this.placeholder_info = 'ข้อมูลสินค้า';
         }
+
+        if(!this.$auth.user){
+          console.log('no log');
+       }else{
+        console.log('log');
+       }
 
 
     },
