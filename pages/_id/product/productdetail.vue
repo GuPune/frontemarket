@@ -614,6 +614,7 @@ let images_product = await this.$store.dispatch(FETCH_IMAGE_PRODUCT,this.form);
          async addfav(){
 
        if(!this.$auth.user){
+            this.$router.push('/form/login')
        }else{
          this.active_el = 1;
        }
@@ -624,7 +625,7 @@ let images_product = await this.$store.dispatch(FETCH_IMAGE_PRODUCT,this.form);
         async removeaddfav(){
 
   if(!this.$auth.user){
-
+   this.$router.push('/form/login')
   }else{
     this.active_el = 0;
   }
