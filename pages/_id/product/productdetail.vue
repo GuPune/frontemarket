@@ -612,7 +612,7 @@ let images_product = await this.$store.dispatch(FETCH_IMAGE_PRODUCT,this.form);
             },
 
          async addfav(){
-           console.log('this.authenticated',this.$auth.isLoggedIn);
+           console.log('this.authenticated',this.$auth.user);
        if(!this.authenticated){
        }else{
          this.active_el = 1;
