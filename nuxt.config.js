@@ -24,10 +24,7 @@ export default {
     ],
 
     link: [
-      { rel: 'shortcut icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'icon', type: 'image/png', href: '/96.png' },
-      { rel: 'icon', type: 'image/png', href: '/32.png'  },
-      { rel: 'icon', type: 'image/png', href: '/16.png'  },
+      { rel: 'shortcut icon', type: 'image/x-icon', href: '/x1.ico' },
       {
         rel: 'stylesheet',
         type: 'text/css',
@@ -45,7 +42,7 @@ export default {
     ]
 
   },
-  pwa: { icon: { source: '~/static/favicon.icon' } },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '@/assets/css/main.css',
