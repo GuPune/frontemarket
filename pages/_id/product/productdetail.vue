@@ -524,7 +524,8 @@ width: 100px!important;
 
                  computed: {
 
-        ...mapGetters(["product_by_item","images","cart"]),
+
+        ...mapGetters(["product_by_item","images","cart","authenticated"]),
 
         },
 
