@@ -567,8 +567,8 @@ width: 100px!important;
          let a = await this.$store.dispatch(FETCH_GET_PROFILE);
         this.form.id = a.id;
         this.form.product_id = this.$route.params.slug;
-        console.log('form',this.form);
-       // let getfav = await this.$store.dispatch(GET_FAV);
+      
+      let getfav = await this.$store.dispatch(GET_FAV,this.form);
        }
 
 

@@ -34,6 +34,9 @@ export const ProductService = {
     },
     getimages(param){
       return ApiService.post("producimages",param);
+    },
+    getfav(param){
+      return ApiService.post("getfav",param);
     }
 
     
