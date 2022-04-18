@@ -419,7 +419,7 @@ width: 100px!important;
 
 <script>
   import { mapGetters,mapState } from "vuex";
-  import { FETCH_BY_PRODUCT_SHOP_ONE_ITEM,FETCH_IMAGE_PRODUCT,ADD_CART,ADD_PRODETAIL,FETCH_GET_PROFILE } from "@/store/actions.type.js";
+  import { FETCH_BY_PRODUCT_SHOP_ONE_ITEM,FETCH_IMAGE_PRODUCT,ADD_CART,ADD_PRODETAIL,FETCH_GET_PROFILE,GET_FAV } from "@/store/actions.type.js";
   import ProductZoomer from 'vue-product-zoomer'
   import Nav from "@/components/Nav";
   import Footer from "@/components/Footer";
@@ -529,7 +529,8 @@ width: 100px!important;
                  computed: {
 
 
-        ...mapGetters(["product_by_item","images","cart","authenticated"]),
+        ...mapGetters(["product_by_item","images","cart","authenticated","profile"]),
+        
 
         },
 
@@ -563,7 +564,8 @@ width: 100px!important;
         if(!this.$auth.user){
           console.log('no log');
        }else{
-        console.log('log');
+        console.log('log',this.$auth.user);
+       // let getfav = await this.$store.dispatch(GET_FAV);
        }
 
 

@@ -107,6 +107,7 @@ export const SYSTEM_PDPA = "get_ststem_pdpa";
 export const GET_FOOTER = "get_footer";
 export const HIDECOOKIEFIRST = "hide_cookie";
 export const LOG_OUT = "log_out";
+export const GET_FAV = "get_fav";
 
 export const ADD_ITEM = "add_item";
 
