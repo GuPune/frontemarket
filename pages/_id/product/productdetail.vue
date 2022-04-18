@@ -570,6 +570,7 @@ width: 100px!important;
       
       let getfav = await this.$store.dispatch(GET_FAV,this.form);
       console.log('getfav',getfav);
+      this.active_el = getfav;
        }
 
 
