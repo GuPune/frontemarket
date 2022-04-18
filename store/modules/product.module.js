@@ -160,6 +160,8 @@ const actions = {
         return data;
     },
     async [DEL_FAV](context,payload) {
+
+      
         const { data } = await ProductService.delfav(payload);
         return data;
     }
