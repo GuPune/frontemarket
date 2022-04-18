@@ -434,7 +434,7 @@ width: 100px!important;
     },
       data() {
         return {
-           title: 'Home page',
+
           active_el:0,
           type:null,
           action:null,
@@ -569,6 +569,9 @@ width: 100px!important;
 this.form.product_id = this.$route.params.slug;
 this.form.shop_name = this.$route.params.id;
 this.form.url = window.location.origin
+
+
+
 
 let productshop_item = await this.$store.dispatch(FETCH_BY_PRODUCT_SHOP_ONE_ITEM,this.form);
 
