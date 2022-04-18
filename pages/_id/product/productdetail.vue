@@ -564,8 +564,8 @@ width: 100px!important;
         if(!this.$auth.user){
           console.log('no log');
        }else{
-        console.log('log',this.product_by_item);
-        this.form.id = this.$auth.user.id;
+        console.log('log',this.profile.id);
+        this.form.id = this.profile.id;
         this.form.product_id = this.$route.params.slug;
         console.log('form',this.form);
        // let getfav = await this.$store.dispatch(GET_FAV);
