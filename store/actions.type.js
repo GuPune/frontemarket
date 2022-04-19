@@ -111,6 +111,7 @@ export const GET_FAV = "get_fav";
 export const ADD_FAV = "add_fav";
 export const DEL_FAV = "del_fav";
 export const ADD_ITEM = "add_item";
+export const GET_FAVALL = "get_favall";
 
 
 

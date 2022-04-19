@@ -68,10 +68,9 @@
                                                    <button type="button" title="เพิ่มลงตะกร้า" data-placement="top" class="button btn-cart" @click="addToCart(item)">
                                                    <span>
                                                    <span>{{placeholder_buy}} </span>
-
-
                                                    </span>
-                                                   </button></div></div>
+                                                   </button>
+                                                   </div></div>
 
                                                 </div>
         </div>

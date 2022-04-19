@@ -1,7 +1,7 @@
 
 import { ProductService }  from "../../services/product";
 import {
-    FETCH_PRODUCT_SHELL,FETCH_PRODUCT_FIND,FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,FETCH_FIND_PRODUCT,FETCH_BY_PRODUCT_SHOP_ONE_ITEM,GET_PRODUCR_SELLER,GET_PRODUCR_NEW,GET_PRODUCR_RECOM,FETCH_IMAGE_PRODUCT,GET_PRODUCT_FIND,GET_PRODUCT_SHELL_FIND,GET_FAV,DEL_FAV,ADD_FAV
+    FETCH_PRODUCT_SHELL,FETCH_PRODUCT_FIND,FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,FETCH_FIND_PRODUCT,FETCH_BY_PRODUCT_SHOP_ONE_ITEM,GET_PRODUCR_SELLER,GET_PRODUCR_NEW,GET_PRODUCR_RECOM,FETCH_IMAGE_PRODUCT,GET_PRODUCT_FIND,GET_PRODUCT_SHELL_FIND,GET_FAV,DEL_FAV,ADD_FAV,GET_FAVALL
 } from "../actions.type.js";
 import {
     SET_PRODUCT_SHELL,SET_PRODUCT_BY_SHOP,SET_CATE_BY_SHOP,SET_CATE_SEC,SET_BY_PRODUCT_SHOP_ONE_ITEM,SET_LOADER,SET_IMAGES,SET_PRODUCTSHELL_FIND,SET_SHELL_CATE,SET_KEYWORD
@@ -160,11 +160,15 @@ const actions = {
         return data;
     },
     async [DEL_FAV](context,payload) {
-
-      
         const { data } = await ProductService.delfav(payload);
         return data;
-    }
+    },
+    async [GET_FAVALL](context,payload) {
+      const { data } = await ProductService.getfavall(payload);
+      return data;
+  }
+
+
 
 };
 
@@ -190,11 +194,11 @@ const mutations = {
         //   }
 
         for (let i = 0; i < b.length; i++) {
-           
 
-   
+
+
             Vue.set(b[i], 'fav', 0);
-        
+
 
 
         // Vue.set(item, 'quantity', 1);
@@ -202,7 +206,7 @@ const mutations = {
 
           }
           console.log('c',state.product_shell);
-   
+
     },
     [SET_PRODUCT_BY_SHOP](state,data) {
         state.product_by_shop = data.data;

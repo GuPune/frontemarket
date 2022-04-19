@@ -42,7 +42,11 @@ export const ProductService = {
       return ApiService.post("addfav",param);
     },
     delfav(param){
-      console.log('del',param);
+
       return ApiService.post("delfav",param);
     },
+    getfavall(param){
+      return ApiService.post("getfavall",param);
+    },
+
 }

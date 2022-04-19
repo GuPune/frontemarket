@@ -68,7 +68,7 @@
       </b-col>
 
           <b-col cols="2" md="1"  sm="1" class="nav-regishop-mobile px-2">
-          <b-navbar-brand href="#">
+          <b-navbar-brand href="#" @click="redirectTo('fav-favorite')">
             <i class="fa fa-heart-o regishover" aria-hidden="true"></i><span class="descquickmenu regishover" >สินค้าโปรด</span>
 
 
