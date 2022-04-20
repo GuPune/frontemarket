@@ -81,7 +81,7 @@
                         </div>
 
                           <div class="row" style="font-size:12px;">
-        <div class="remove-item-cart"  @click="RemoveToFav(index)">
+        <div class="remove-item-cart"  @click="RemoveToFav(fav.id)">
 
 <span style="color: brown;">ลบรายการสินค้า</span>
                         </div>
