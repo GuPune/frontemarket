@@ -360,6 +360,7 @@ this.test == 0 ? true : false;
         },
 
         RemoveToFav(item){
+            console.log('item',item);
                let remove_fav =  this.$store.dispatch(REMOVE_FAVALL,item);
     this.$swal("ลบสินค้าเรียบร้อยแล้ว", "ลบสินค้าออกจากตะกร้าเรียบร้อยแล้ว", "success")
    
