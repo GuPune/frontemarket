@@ -308,7 +308,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
 
 
        if(!this.$auth.user){
-
+console.log('log in');
        }else{
         let a = await this.$store.dispatch(FETCH_GET_PROFILE);
         this.form.id = a.id;
