@@ -48,5 +48,7 @@ export const ProductService = {
     getfavall(param){
       return ApiService.post("getfavall",param);
     },
-
+    removefavall(param){
+      return ApiService.post("removefavall",param);
+    },
 }

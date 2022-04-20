@@ -219,7 +219,7 @@ import { mapGetters } from "vuex";
   import Nav from "@/components/Nav";
   import Footer from "@/components/Footer";
 
-import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,ADD_DOWN,ADD_INPUT,REMOVIE_ALL,GET_FAVALL,FETCH_GET_PROFILE } from "@/store/actions.type.js";
+import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,ADD_DOWN,ADD_INPUT,REMOVIE_ALL,GET_FAVALL,FETCH_GET_PROFILE,REMOVE_FAVALL } from "@/store/actions.type.js";
 
 
     export default {
@@ -360,6 +360,7 @@ this.test == 0 ? true : false;
         },
 
         RemoveToFav(item){
+               let remove_fav =  this.$store.dispatch(REMOVE_FAVALL,item);
     this.$swal("ลบสินค้าเรียบร้อยแล้ว", "ลบสินค้าออกจากตะกร้าเรียบร้อยแล้ว", "success")
    
         },
