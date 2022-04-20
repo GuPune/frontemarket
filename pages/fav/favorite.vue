@@ -228,6 +228,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
           background:true,
           form:{
           id:"",
+          product_id:"",
           },
           test:0,
             items: [
@@ -360,8 +361,9 @@ this.test == 0 ? true : false;
         },
 
         RemoveToFav(item){
-            console.log('item',item);
-               let remove_fav =  this.$store.dispatch(REMOVE_FAVALL,item);
+         
+            this.form.product_id = item.id;
+               let remove_fav =  this.$store.dispatch(REMOVE_FAVALL,this.form);
     this.$swal("ลบสินค้าเรียบร้อยแล้ว", "ลบสินค้าออกจากตะกร้าเรียบร้อยแล้ว", "success")
    
         },
