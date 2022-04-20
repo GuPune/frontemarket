@@ -81,7 +81,7 @@
                         </div>
 
                           <div class="row" style="font-size:12px;">
-        <div class="remove-item-cart"  @click="RemoveToCart(index)">
+        <div class="remove-item-cart"  @click="RemoveToFav(index)">
 
 <span style="color: brown;">ลบรายการสินค้า</span>
                         </div>
@@ -317,7 +317,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
         let a = await this.$store.dispatch(FETCH_GET_PROFILE);
         this.form.id = a.id;
         let getfavall = await this.$store.dispatch(GET_FAVALL,this.form);
-        console.log('getfavall',getfavall);
+    
        }
         },
 
