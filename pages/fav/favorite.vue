@@ -314,6 +314,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
         this.form.id = a.id;
 
       let getfavall = await this.$store.dispatch(GET_FAVALL,this.form);
+      console.log('getfavall',getfavall);
 
        }
 
