@@ -315,15 +315,9 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
 
        }else{
         let a = await this.$store.dispatch(FETCH_GET_PROFILE);
-        console.log('log in',a);
         this.form.id = a.id;
-
-      let getfavall = await this.$store.dispatch(GET_FAVALL,this.form);
-      console.log('getfavall',getfavall);
-
+        let getfavall = await this.$store.dispatch(GET_FAVALL,this.form);
        }
-
-
         },
 
        methods: {
