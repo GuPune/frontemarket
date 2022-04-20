@@ -10,7 +10,7 @@
                   <h2 class="title-shoping-fav bg-order bg-order-mobile">
                   <span>{{placeholder_cart}}</span>
                   </h2>
-
+{{fav}}
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="cart-row cart-row-top hidden-xs cart-row-order-mobile">
                         <div class="row cart-aamob-dis">
@@ -215,7 +215,7 @@
 
 
 <script>
-
+import { mapGetters } from "vuex";
   import Nav from "@/components/Nav";
   import Footer from "@/components/Footer";
 
@@ -247,7 +247,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
 
 
                computed: {
-
+    ...mapGetters(["fav"]),
         isUrl () {
                 return this.$store.state.user.url_id;
         },

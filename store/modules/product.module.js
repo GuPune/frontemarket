@@ -4,7 +4,7 @@ import {
     FETCH_PRODUCT_SHELL,FETCH_PRODUCT_FIND,FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,FETCH_FIND_PRODUCT,FETCH_BY_PRODUCT_SHOP_ONE_ITEM,GET_PRODUCR_SELLER,GET_PRODUCR_NEW,GET_PRODUCR_RECOM,FETCH_IMAGE_PRODUCT,GET_PRODUCT_FIND,GET_PRODUCT_SHELL_FIND,GET_FAV,DEL_FAV,ADD_FAV,GET_FAVALL
 } from "../actions.type.js";
 import {
-    SET_PRODUCT_SHELL,SET_PRODUCT_BY_SHOP,SET_CATE_BY_SHOP,SET_CATE_SEC,SET_BY_PRODUCT_SHOP_ONE_ITEM,SET_LOADER,SET_IMAGES,SET_PRODUCTSHELL_FIND,SET_SHELL_CATE,SET_KEYWORD
+    SET_PRODUCT_SHELL,SET_PRODUCT_BY_SHOP,SET_CATE_BY_SHOP,SET_CATE_SEC,SET_BY_PRODUCT_SHOP_ONE_ITEM,SET_LOADER,SET_IMAGES,SET_PRODUCTSHELL_FIND,SET_SHELL_CATE,SET_KEYWORD,SET_FAV
 } from "../mutations.type";
 import Vuex from 'vuex'
 import Vue from 'vue'
@@ -19,6 +19,7 @@ const state = {
     product_by_shop:[],
     cate_by_shop:[],
     cate_sel:[],
+    fav:[],
     shell_cate:null,
     product_by_item:[],
     purchase: {
@@ -63,6 +64,10 @@ const getters = {
     searchkeyword: state => {
         return state.searchkeyword
     },
+    fav: state => {
+      return state.fav
+    },
+
 
 };
 
@@ -165,6 +170,7 @@ const actions = {
     },
     async [GET_FAVALL](context,payload) {
       const { data } = await ProductService.getfavall(payload);
+      context.commit(SET_FAV,data);
       return data;
   }
 
@@ -254,6 +260,14 @@ const mutations = {
         state.searchkeyword = data.search;
         console.log('state.searchkeyword',state.searchkeyword);
     },
+    [SET_FAV](state,data) {
+      console.log('state.fav',data);
+      state.fav = data.fav;
+      console.log('state.fav',state.fa);
+
+  },
+
+
 
 
 
