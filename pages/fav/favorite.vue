@@ -10,10 +10,10 @@
                   <h2 class="title-shoping-fav bg-order bg-order-mobile">
                   <span>{{placeholder_cart}}</span>
                   </h2>
-{{fav}}
+
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="cart-row cart-row-top hidden-xs cart-row-order-mobile">
-                        <div class="row cart-aamob-dis">
+                        <div class="row cart-aamob-dis"  v-if="fav.length == 0">
 
                             <div class="col-xs-12 col-sm-5 col-md-12 col-lg-12">
                                 <div class="row">
@@ -38,7 +38,7 @@
 
                         </div>
 
-                                     <div class="row cart-mobile-dis orderlist-center-deskop"  v-if="cart.length > 0">
+                                     <div class="row cart-mobile-dis orderlist-center-deskop"  v-if="fav.length > 0">
                             <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
                                 <div class="row">
                                     <div class="col-xs-6 col-sm-4 col-md-6 col-lg-6"><div class="title-top h4">{{placeholder_pic}}</div></div>
@@ -68,7 +68,7 @@
 
 
                          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 orderlist-center-deskop" >
-    <div class="cart-row"  v-for="(item, index) in fav" :key="cart.id" :style="[index % 2 == 0 ? null : { 'background-color': '#F5F5F5' } ]">
+    <div class="cart-row"  v-for="(item, index) in fav" :key="fav.id" :style="[index % 2 == 0 ? null : { 'background-color': '#F5F5F5' } ]">
         <div class="row">
             <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 shop-name-order-pc">
                 <div class="row">
@@ -125,7 +125,7 @@
                  </div>
 
             <div class="col-2 shop-name-order trash-mobile">
-                        <div class="remove-item-cart"  @click="RemoveToCart(index)">
+                        <div class="remove-item-cart"  @click="RemoveToFav(index)">
 
                                          <img  src="../../assets/delete2.png" width="40" height="40" />
                                      </div>
@@ -359,9 +359,9 @@ this.test == 0 ? true : false;
                 return public_images;
         },
 
-        RemoveToCart(item){
+        RemoveToFav(item){
     this.$swal("ลบสินค้าเรียบร้อยแล้ว", "ลบสินค้าออกจากตะกร้าเรียบร้อยแล้ว", "success")
-    let remove_producttocart =  this.$store.dispatch(REMOVE_CART,item);
+   
         },
 
         addEvent (target,item) {
