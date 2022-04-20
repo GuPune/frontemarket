@@ -68,7 +68,7 @@
 
 
                          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 orderlist-center-deskop" >
-    <div class="cart-row"  v-for="(item, index) in cart" :key="cart.id" :style="[index % 2 == 0 ? null : { 'background-color': '#F5F5F5' } ]">
+    <div class="cart-row"  v-for="(item, index) in fav" :key="cart.id" :style="[index % 2 == 0 ? null : { 'background-color': '#F5F5F5' } ]">
         <div class="row">
             <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 shop-name-order-pc">
                 <div class="row">
