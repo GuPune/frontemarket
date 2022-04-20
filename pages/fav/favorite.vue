@@ -226,6 +226,9 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
             data() {
       return {
           background:true,
+          form:{
+          id:"",
+          },
           test:0,
             items: [
           { age: 40, first_name: 'Dickerson', last_name: 'Macdonald', x: 'Macdonald', a: 'Macdonald' },
@@ -241,6 +244,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
 
 
               },
+
 
                computed: {
 
@@ -308,9 +312,10 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
 
 
        if(!this.$auth.user){
-console.log('log in');
+
        }else{
         let a = await this.$store.dispatch(FETCH_GET_PROFILE);
+        console.log('log in',a);
         this.form.id = a.id;
 
       let getfavall = await this.$store.dispatch(GET_FAVALL,this.form);
