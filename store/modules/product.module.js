@@ -262,7 +262,7 @@ const mutations = {
     },
     [SET_FAV](state,data) {
       console.log('state.fav',data);
-      state.fav = data.fav;
+      state.fav = data;
       console.log('state.fav',state.fav);
 
   },
