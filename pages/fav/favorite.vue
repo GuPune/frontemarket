@@ -103,7 +103,7 @@
                     <div class="visible-xs-block clearfix"></div>
                     <div class="col-xs col-sm-3 col-md-3 col-lg-3">
                                                 <div class="total-tax-excl text-desktop">
-                                                            <span class="cart-price"><span class="price  text-ord">50</span></span>
+                                                            <span class="cart-price"><span class="price  text-ord">฿{{formatPrice(item.price)}}</span></span>
                                                     </div>
                                                                     </div>
                         <div class="col-xs-4 col-sm-4 col-md-2 col-lg-3 text-mobile">
