@@ -219,7 +219,7 @@ import { mapGetters } from "vuex";
   import Nav from "@/components/Nav";
   import Footer from "@/components/Footer";
 
-import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,ADD_DOWN,ADD_INPUT,REMOVIE_ALL,GET_FAVALL,FETCH_GET_PROFILE,REMOVE_FAVALL,ADD_CART } from "@/store/actions.type.js";
+import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,ADD_DOWN,ADD_INPUT,REMOVIE_ALL,GET_FAVALL,FETCH_GET_PROFILE,REMOVE_FAVALL } from "@/store/actions.type.js";
 
 
     export default {
