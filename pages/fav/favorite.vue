@@ -107,7 +107,7 @@
                                                     </div>
                                                                     </div>
                         <div class="col-xs-4 col-sm-4 col-md-2 col-lg-3 text-mobile">
-                        <div class="remove-item-cart"  @click="RemoveToCart(index)">
+                        <div class="remove-item-cart"   @click="addToCart(item)">
 
                                       <button type="button" title="เพิ่มลงตะกร้า" data-placement="top" class="button">
                                                    <span>
@@ -219,7 +219,7 @@ import { mapGetters } from "vuex";
   import Nav from "@/components/Nav";
   import Footer from "@/components/Footer";
 
-import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,ADD_DOWN,ADD_INPUT,REMOVIE_ALL,GET_FAVALL,FETCH_GET_PROFILE,REMOVE_FAVALL } from "@/store/actions.type.js";
+import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,ADD_DOWN,ADD_INPUT,REMOVIE_ALL,GET_FAVALL,FETCH_GET_PROFILE,REMOVE_FAVALL,ADD_CART } from "@/store/actions.type.js";
 
 
     export default {
@@ -327,6 +327,12 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
         redirectToroot(root) {
 
          this.$router.push({ name: root})
+        },
+
+        async addToCart(item){
+
+           let add_producttocart = await this.$store.dispatch(ADD_CART,item);
+                 await this.$swal("เพิ่มสินค้าเรียบร้อยแล้ว", "สินค้าอยู่ตะกร้าแล้ว", "success")
         },
 
         redirectTo(names) {
