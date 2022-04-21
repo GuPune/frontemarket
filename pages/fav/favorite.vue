@@ -318,7 +318,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
         let a = await this.$store.dispatch(FETCH_GET_PROFILE);
         this.form.id = a.id;
         let getfavall = await this.$store.dispatch(GET_FAVALL,this.form);
-    
+
        }
         },
 
@@ -360,12 +360,13 @@ this.test == 0 ? true : false;
                 return public_images;
         },
 
-        RemoveToFav(item){
-         
-            this.form.product_id = item.id;
-               let remove_fav =  this.$store.dispatch(REMOVE_FAVALL,this.form);
+       async RemoveToFav(item){
+
+                 this.form.product_id = item.id;
+               let remove_fav =  await this.$store.dispatch(REMOVE_FAVALL,this.form);
     this.$swal("ลบสินค้าเรียบร้อยแล้ว", "ลบสินค้าออกจากตะกร้าเรียบร้อยแล้ว", "success")
-   
+        let getfavall = await this.$store.dispatch(GET_FAVALL,this.form);
+
         },
 
         addEvent (target,item) {

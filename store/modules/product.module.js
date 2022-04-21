@@ -175,7 +175,7 @@ const actions = {
     },
     async [REMOVE_FAVALL](context,payload) {
         const { data } = await ProductService.removefavall(payload);
-        console.log('REMOVE_FAVALL',data);
+      
         return data;
     }
 };
