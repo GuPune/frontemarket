@@ -76,7 +76,7 @@ const actions = {
     async [FETCH_PRODUCT_SHELL](context,payload) {
         context.commit(SET_LOADER);
         const { data } = await ProductService.getshell(payload);
-        console.log('getshell',data);
+
         context.commit(SET_PRODUCT_SHELL,data);
 
         return data;
@@ -84,7 +84,7 @@ const actions = {
 
     async [FETCH_PRODUCT_FIND](context,payload) {
         const { data } = await ProductService.find(payload);
-
+        console.log('FETCH_PRODUCT_FIND',data);
         context.commit(SET_PRODUCT_SHELL,data);
         context.commit(SET_SHELL_CATE,payload);
         return data;
