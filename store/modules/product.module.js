@@ -76,6 +76,7 @@ const actions = {
     async [FETCH_PRODUCT_SHELL](context,payload) {
         context.commit(SET_LOADER);
         const { data } = await ProductService.getshell(payload);
+        console.log('getshell',data);
         context.commit(SET_PRODUCT_SHELL,data);
 
         return data;
@@ -175,7 +176,7 @@ const actions = {
     },
     async [REMOVE_FAVALL](context,payload) {
         const { data } = await ProductService.removefavall(payload);
-      
+
         return data;
     }
 };
