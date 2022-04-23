@@ -131,7 +131,7 @@
                                      </div>
                  </div>
                 <div class="col-5 shop-name-order">
-                                                <a href="https://www.svgroup.co.th/c-dial-pro-4.html" title="C-DIAL PRO 4 ตัวควบคุม 4 สถานี 9 V. รุ่นใช้ในร่ม" class="product-image"><img class="img-responsive lazy"  :src="Checkimage(item.img_product)" width="125" height="125" alt="C-DIAL PRO 4 ตัวควบคุม 4 สถานี 9 V. รุ่นใช้ในร่ม" /></a>
+                                            
 
                 </div>
                 <div class="col-7 shop-name-order">
@@ -148,17 +148,15 @@
                                          <span class="visible-xs-inline-block">ทั้งหมด </span>
                                          <span class="price">฿{{formatPrice(item.totalPrice)}} -</span>
                                 </div>
-                                <div class="col-12 shop-name-order input-number-order">
-                                      <b-input-group>
-                                        <b-input-group-prepend>
-                                        <b-btn variant="outline-info" v-on:click='Adddown(item)'>-</b-btn>
-                                        </b-input-group-prepend>
-                                        <b-form-input type="text" min="0" class="text-number-order"  :disabled="true" :value="item.quantity" maxlength=2 v-on:keypress="isNumber($event, item)" v-on:input="addEvent($event, item)"></b-form-input>
-                                        <b-input-group-append>
-                                        <b-btn variant="outline-secondary" v-on:click='Addup(item)'>+</b-btn>
-                                        </b-input-group-append>
-                                        </b-input-group>
-                                </div>
+                                 <div class="remove-item-cart"   @click="addToCart(item)">
+
+                                      <button type="button" title="เพิ่มลงตะกร้า" data-placement="top" class="button">
+                                                   <span>
+                                                   <span style="font-size: 15px;">{{placeholder_buy}}</span>
+                                                   </span>
+                                                   </button>
+
+                        </div>
                             </div>
                      </div>
                 </div>
