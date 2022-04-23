@@ -141,13 +141,9 @@
                                         <div>{{item.name_th}}</div>
                                 </div>
                                 <div class="col-12 shop-name-order order-price-mobile-font">
-                                        <div>฿{{formatPrice(item.price)}}</div>
+                                        <div>฿{{formatPrice(item.price)}} </div>
                                 </div>
-                                <div class="col-12 shop-name-order">
 
-                                         <span class="visible-xs-inline-block">ทั้งหมด </span>
-                                         <span class="price">฿{{formatPrice(item.totalPrice)}} -</span>
-                                </div>
                                  <div class="remove-item-cart"   @click="addToCart(item)">
 
                                       <button type="button" title="เพิ่มลงตะกร้า" data-placement="top" class="button">
