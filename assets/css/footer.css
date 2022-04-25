@@ -46,6 +46,13 @@
    border-radius: 20px;
 }
 
+#longtext{
+   background-color: white;
+    margin-top: -25px;
+    padding-top: 25px;
+    border-top: 1px solid rgb(205, 207, 218);
+}
+
 .long-footer{
    background-color: #16192c !important;
    color:white;
@@ -58,6 +65,11 @@
    transition: color 0.2s ease 0s;
 }
 
+.x14{
+   height: 33px;
+   width: 110px;
+   margin-bottom: 8px;
+}
 
 
 .long-footer .links ul {
