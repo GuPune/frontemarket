@@ -19,7 +19,8 @@
                     <div class="cardproduct c-cate">
                  <img class="imgproduct related-images testimage imgproductcate im-cate-mobile"   :src="Checkimage(i.image)"  @click="ChangeProduct(i)" style="border-radius: 50%;">
                                                    <div class="product-footer mobile-cate asx">
-                                                   {{i.name_th}}
+                                                  
+                                                   <span class="im-cate-text">{{i.name_th}}</span>
                                                    </div>
                 
                                                 </div>
@@ -122,7 +123,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
   "infinite": false,
   "arrows": false,
   "speed": 500,
-  "slidesToShow": 6,
+  "slidesToShow": 10,
   "slidesToScroll": 4,
   "initialSlide": 0,
    "autoplay": false,
@@ -132,7 +133,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
             {
       "breakpoint": 1700,
       "settings": {
-        "slidesToShow": 6,
+        "slidesToShow": 8,
         "slidesToScroll": 4,
         "infinite": true,
         "dots": true
@@ -141,7 +142,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
             {
       "breakpoint": 1500,
       "settings": {
-        "slidesToShow": 5,
+        "slidesToShow": 8,
         "slidesToScroll": 4,
         "infinite": true,
         "dots": true
@@ -150,7 +151,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
           {
       "breakpoint": 1440,
       "settings": {
-        "slidesToShow": 5,
+        "slidesToShow": 8,
         "slidesToScroll": 4,
         "infinite": true,
         "dots": true
@@ -159,7 +160,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
       {
       "breakpoint": 1300,
       "settings": {
-        "slidesToShow": 4,
+        "slidesToShow": 8,
         "slidesToScroll": 4,
         "infinite": true,
         "dots": true
@@ -177,8 +178,9 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
     {
       "breakpoint": 600,
       "settings": {
-        "slidesToShow": 5,
+        "slidesToShow": 4,
         "slidesToScroll": 5,
+          "rows": 2,
         "initialSlide": 2
       }
     },
@@ -186,6 +188,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
       "breakpoint": 480,
       "settings": {
         "slidesToShow": 5,
+          "rows": 2,
         "slidesToScroll": 5
       }
     },
@@ -193,7 +196,9 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
       "breakpoint": 375,
       "settings": {
         "slidesToShow": 5,
+          "rows": 2,
         "slidesToScroll": 5
+        
       }
     }
   ]

@@ -665,8 +665,8 @@ button.addcart:hover {
 /* // Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   .imgproduct{
-    width:200px;
-    height:200px;
+    width:70px;
+    height:70px;
   }
 
   .imgproduct-product{
