@@ -1,6 +1,6 @@
 <template>
 <div >
-<div data-v-76387e28="" id="longtext">
+<div data-v-76387e28="" id="longtext" class="hiHGcU">
     <div class="container">
     <div id="footer-top">
     <div class="row footer-top" data-v-2eecd278="">
@@ -12,7 +12,7 @@
 <div class="footer-list" data-v-2eecd278="">
 <p data-v-2eecd278="">เกี่ยวกับ Emarketplace</p>
 <ul class="list-unstyled" data-v-2eecd278="">
-<li data-v-2eecd278="">เกี่ยวกับบิ๊กซีช้อปปิ้งออนไลน์</li>
+<li data-v-2eecd278="">เกี่ยวกับช้อปปิ้งออนไลน์</li>
 <li data-v-2eecd278="">การสั่งซื้อสินค้า</li>
 <li data-v-2eecd278="">การชำระเงิน</li>
 </ul>
@@ -64,6 +64,7 @@
                   </div>
                   </div> 
                   <div class="big-c-app">
+                      <span type="Body5-System-Regular" class="sc-3tpgds-0 lhTHMK sc-1bfilmk-6 bKugib">© 2565 บริษัท ไอดีไดรฟ์ จำกัด</span>
                     </div></div></div></div></div> 
                
                   </div>

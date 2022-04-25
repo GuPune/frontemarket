@@ -49,8 +49,9 @@
 #longtext{
    background-color: white;
     margin-top: -25px;
-    padding-top: 25px;
+    padding-top: 50px;
     border-top: 1px solid rgb(205, 207, 218);
+   
 }
 
 .long-footer{
@@ -87,3 +88,18 @@
 text-align: center;
 
 }
+
+.hiHGcU {
+   text-align: left;
+}
+
+
+
+ @media screen and (max-width: 600px) {
+
+   .hiHGcU {
+      text-align: center;
+   }
+ }
+
+
