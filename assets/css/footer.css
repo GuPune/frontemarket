@@ -93,6 +93,29 @@ text-align: center;
    text-align: left;
 }
 
+.footer-curved-bg {
+   background-color: transparent;
+   background-size: cover;
+   -webkit-background-size: cover;
+   height: 4rem;
+   overflow: hidden;
+   position: relative;
+   width: 100%;
+}
+
+.footer-curved-bg:after {
+   background: #EF7318;
+   border-radius: 100%;
+   content: "";
+   height: 0;
+   left: 50%;
+   padding-top: 200%;
+   position: absolute;
+   top: 0;
+   transform: translateX(-50%);
+   width: 550%;
+}
+
 
 
  @media screen and (max-width: 600px) {

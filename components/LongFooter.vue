@@ -1,5 +1,7 @@
 <template>
 <div >
+
+
 <div data-v-76387e28="" id="longtext" class="hiHGcU">
     <div class="container">
     <div id="footer-top">
@@ -10,7 +12,7 @@
     <div class="flex-row col-lg-9"><div id="footer-main" class="row" style="font-size: 14px;">
 <div class="col col-12 col-md-4 col-xs-12"  data-v-2eecd278="">
 <div class="footer-list" data-v-2eecd278="">
-<p data-v-2eecd278="">เกี่ยวกับ Emarketplace</p>
+<p data-v-2eecd278="" style="font-weight: 900;">เกี่ยวกับ Emarketplace</p>
 <ul class="list-unstyled" data-v-2eecd278="">
 <li data-v-2eecd278="">เกี่ยวกับช้อปปิ้งออนไลน์</li>
 <li data-v-2eecd278="">การสั่งซื้อสินค้า</li>
@@ -20,7 +22,7 @@
 </div>
 <div class="col-12 col-md-4 col-xs-12"  data-v-2eecd278="">
 <div class="footer-list" data-v-2eecd278="">
-<p data-v-2eecd278="">บริการลูกค้า</p>
+<p data-v-2eecd278="" style="font-weight: 900;">บริการลูกค้า</p>
 <ul class="list-unstyled" data-v-2eecd278="">
 <li data-v-2eecd278="">คำถามที่พบบ่อย</li>
 <li data-v-2eecd278="">การตรวจสอบสถานะการจัดส่ง</li>
@@ -30,7 +32,7 @@
 </div>
 </div>
 <div class="contact-us col-12 col-md-4 col-xs-12" data-v-2eecd278="">
-<p data-v-2eecd278="">ติดตามเรา</p>
+<p data-v-2eecd278="" style="font-weight: 900;">ติดตามเรา</p>
     <div>
       <a href="" class="me-4 text-reset">
         <img alt="Link to Facebook" src="https://ast.kaidee.com/blackpearl/_static/images/shared/socials/facebook-icon.svg" class="sc-1f2nd0k-2 huuFqJ">
@@ -50,13 +52,13 @@
 </div>
 </div>
  <div class="newsletter col-lg-3"><div class="row">
-    <div class="col-md-12 col-lg-12"><div class="row"><div class="pb-3 col-md-6 col-lg-12"><p>เพื่อประสบการณ์ใช้งานที่ดีขึ้น
+    <div class="col-md-12 col-lg-12"><div class="row"><div class="pb-3 col-md-6 col-lg-12"><p style="font-weight: 900;">เพื่อประสบการณ์ใช้งานที่ดีขึ้น
 </p>  
 
-<div class="sc-1bfilmk-7 gmZUEV"><a href="https://itunes.apple.com/th/app/dealfish/id623734120" rel="noopener noreferrer" target="_blank" class="sc-1bfilmk-1 dmSGJL">
+<div class="sc-1bfilmk-7 gmZUEV"><a href="#" rel="noopener noreferrer" target="_blank" class="sc-1bfilmk-1 dmSGJL">
 <div class="sc-1bfilmk-10 fegwqE">
     <div class="sc-1f2nd0k-0 geXxFB">
-        <div class="lazyload-wrapper "><img alt="Link to AppStore" src="https://ast.kaidee.com/blackpearl/_static/images/shared/appstore-badge-download-en.png" class="sc-1f2nd0k-2 x14"></div></div></div></a><a href="https://play.google.com/store/apps/details?id=com.app.dealfish.main" rel="noopener noreferrer" target="_blank" class="sc-1bfilmk-1"><div class="sc-1bfilmk-10 fegwqE"><div class="sc-1f2nd0k-0 huuFqJ"><div class="lazyload-wrapper "><img alt="Link to Google Play Store" src="https://ast.kaidee.com/blackpearl/_static/images/shared/googleplay-badge-download-en.png" class="sc-1f2nd0k-2 x14"></div></div></div></a><a href="https://appgallery.huawei.com/app/C100928675" rel="noopener noreferrer" target="_blank" class="sc-1bfilmk-1 huuFqJ"><div class="sc-1bfilmk-10 fegwqE"><div class="sc-1f2nd0k-0 geXxFB"><div class="lazyload-wrapper ">
+        <div class="lazyload-wrapper "><img alt="Link to AppStore" src="https://ast.kaidee.com/blackpearl/_static/images/shared/appstore-badge-download-en.png" class="sc-1f2nd0k-2 x14"></div></div></div></a><a href="#" rel="noopener noreferrer" target="_blank" class="sc-1bfilmk-1"><div class="sc-1bfilmk-10 fegwqE"><div class="sc-1f2nd0k-0 huuFqJ"><div class="lazyload-wrapper "><img alt="Link to Google Play Store" src="https://ast.kaidee.com/blackpearl/_static/images/shared/googleplay-badge-download-en.png" class="sc-1f2nd0k-2 x14"></div></div></div></a><a href="https://appgallery.huawei.com/app/C100928675" rel="noopener noreferrer" target="_blank" class="sc-1bfilmk-1 huuFqJ"><div class="sc-1bfilmk-10 fegwqE"><div class="sc-1f2nd0k-0 geXxFB"><div class="lazyload-wrapper ">
             
         </div>
         </div>
