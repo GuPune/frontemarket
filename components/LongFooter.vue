@@ -66,7 +66,7 @@
                   </div>
                   </div> 
                   <div class="big-c-app">
-                      <span type="Body5-System-Regular" class="sc-3tpgds-0 lhTHMK sc-1bfilmk-6 bKugib">© 2565 บริษัท ไอดีไดรฟ์ จำกัด</span>
+                      <!-- <span type="Body5-System-Regular" class="sc-3tpgds-0 lhTHMK sc-1bfilmk-6 bKugib">© 2565 บริษัท ไอดีไดรฟ์ จำกัด</span> -->
                     </div></div></div></div></div> 
                
                   </div>
