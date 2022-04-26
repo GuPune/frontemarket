@@ -83,7 +83,7 @@
 
        <!-- <i class="fa fa-exchange" aria-hidden="true"></i> -->
     <div class="col">
-         <div class="product_view" style="text-align: center;"><img src="https://img.advice.co.th/images_nas/advice/oneweb/images/views-2.png" class="view_eye"> 786 <a style="color: rgb(168, 168, 168); font-size: 9px;">( 43 วัน )</a>
+         <div class="product_view" style="text-align: center;"><img src="https://img.advice.co.th/images_nas/advice/oneweb/images/views-2.png" class="view_eye"> 786
 </div>
 </div>
 
