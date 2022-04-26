@@ -157,7 +157,15 @@ button.button, a.button {
   color: #303030;
 }
 
+.product_view{
+  font-size: 12px;
+  color: #333;
+}
 
+.view_eye {
+  width: 18px!important;
+  margin-top: -3px!important;
+}
 
 
 .product-name {
@@ -673,7 +681,7 @@ button.addcart:hover {
     height:200px;
   }
 
-  
+
 
   .imgproduct-product{
     width:400;

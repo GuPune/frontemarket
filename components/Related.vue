@@ -44,7 +44,9 @@
 
 
 						</div>
+
       <div class="row prdoc-rela">
+
     <div class="col" style="font-size:10px" v-if="item.start_rated > 0">
         <svg v-for="i in item.start_rated" :key="i"  class="svg-inline--fa fa-star fa-w-18 start-check" aria-hidden="true" data-prefix="fas" data-icon="star" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" data-fa-i2svg=""><path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
 
@@ -74,13 +76,23 @@
 
     </div>
 
+
+
                             <!-- <i class="fa fa-heart heart heart-rel active"  aria-hidden="true" title="เพิ่มในรายการที่ชอบ" @click="addfav(index)" v-if =" == '1'"></i>
                                                         <i class="fa fa-heart heart heart-rel"  aria-hidden="true" title="ลบในรายการที่ชอบ" @click="addfav(index)" v-else></i> -->
 
        <!-- <i class="fa fa-exchange" aria-hidden="true"></i> -->
-
+    <div class="col">
+      <div class="price rela-left">
+         <div class="product_view" style="text-align: center;"><img src="https://img.advice.co.th/images_nas/advice/oneweb/images/views-2.png" class="view_eye"> 786 <a style="color: rgb(168, 168, 168); font-size: 9px;">( 43 วัน )</a>
+         </div>
+</div>
+</div>
 
   </div>
+
+
+
 
 
                                                    <div class="product-footer">
