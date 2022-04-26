@@ -1,10 +1,10 @@
 <template>
- 
-    
+
+
 
                   <div class="footer" v-if="objects"  :style="{'background-color':objects.color,'text-align':objects.position}">
-                 
-                      <div class="col-sm">
+
+                      <div class="col-sm" style="padding: 25px;">
                             <small>{{objects.details}}</small>
                         </div>
                 </div>
@@ -32,24 +32,24 @@ url:""
   },
 
      computed: {
-           
+
       ...mapState({
                 objects: state => state.Layout.footer,
             }),
 
         },
-        
+
       async  mounted() {
         //  this.$store.dispatch(ToogleAction);
 
 
 
 
-     
-        
+
+
          },
-        
-  
+
+
         methods: {
 
       redirectTo(name) {
