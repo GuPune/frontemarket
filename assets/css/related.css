@@ -208,6 +208,10 @@ button.button, a.button {
 
 }
 
+.rating-re{
+  font-size:8px;
+}
+
 
 
 .heading-title h2 {
@@ -664,6 +668,11 @@ button.addcart:hover {
     height:200px;
 
   }
+
+  .rating-re{
+    font-size:8px;
+  }
+
 
 
 
