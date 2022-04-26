@@ -11,8 +11,8 @@
 <div class="row main-footer">
     <div class="flex-row col-lg-12"><div id="footer-main" class="row" style="font-size: 14px;">
 <div class="col col-12 col-md-6 col-xs-12"  data-v-2eecd278="">
-<div class="footer-list" data-v-2eecd278="" style="hiHGcU">
-<p data-v-2eecd278="" style="font-weight: 900;">{{objects.details}}</p>
+<div class="footer-list hiHGcU" style="line-height:25px">
+<p data-v-2eecd278="">{{objects.details}}</p>
 </div>
 </div>
 <div class="col-12 col-md-6 col-xs-12"  data-v-2eecd278="">
