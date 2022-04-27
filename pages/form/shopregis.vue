@@ -128,7 +128,8 @@
 
 
     <div class="input-group input-group-icon">
-       ข้าพเจ้าเข้าใจและตกลงตาม
+      <b-form-checkbox  id="checkbox-1" v-model="status" name="checkbox-1" value="accepted" unchecked-value="not_accepted">ข้าพเจ้าเข้าใจและตกลงตาม</b-form-checkbox>
+       
       </div>
     </div>
 
