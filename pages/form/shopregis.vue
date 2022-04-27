@@ -167,12 +167,12 @@
 
 
   </b-row> -->
- <!-- <b-row>
+ <b-row>
    <b-col cols="12" md="12">
    <h6 v-if="status == 'not_accepted'"  style="color: red; text-align:center;">กรุณาอ่านและยอมรับข้อตกลงในการใช้งาน</h6>
    </b-col>
 
-</b-row> -->
+</b-row>
 
     <button class="btn btn-primary" @click="registershop()"><span>สร้างร้านค้า</span></button>
     </center>
@@ -226,7 +226,7 @@ import Loader from '@/components/Loader'
         placeholder_email:"",
         placeholder_password:"",
         placeholder_choose:"",
-        status: 'not_accepted',
+        status: "",
         isLoading: false,
         checkpol:false,
         max:10,
@@ -409,7 +409,8 @@ this.typeshop = typeshop;
                  this.errortype()
                 return false;
             }
-            if(this.status == 'not_accepted'){
+            if((this.status == 'not_accepted') || (this.status == '')){
+              this.status = 'not_accepted';
             return false
             }
              await this.loader()
