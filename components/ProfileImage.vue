@@ -42,7 +42,7 @@
                                             <p  v-if ="this.language == 'th' || this.language == null">{{this.placeholder_password}}</p>
                                         </li>
 
-                                        <li class="prof-s" id="member-changepassword"  :class="{'profile-menu': checkPath('profile-logout')}"  @click="redirectTo('profile-changepassword')">
+                                        <li class="prof-s" id="member-changepassword"  :class="{'profile-menu': checkPath('profile-logout')}"   @click.prevent="logout">
                                              <p  v-if ="this.language == 'en'">{{this.placeholder_logout}}</p>
                                             <p  v-if ="this.language == 'ch'">{{this.placeholder_logout}}</p>
                                             <p  v-if ="this.language == 'th' || this.language == null">{{this.placeholder_logout}}</p>
@@ -126,6 +126,23 @@ import 'sweetalert2/dist/sweetalert2.min.css';
         
   
         methods: {
+
+                      logout() {
+            localStorage.removeItem("shipping");
+            localStorage.removeItem("listorder");
+            localStorage.removeItem("delivery");
+          localStorage.removeItem("cart");
+
+
+    this.$auth.logout()
+     setTimeout(function () {
+            location.reload();
+            }, 1000);
+
+
+
+
+     },
 
         Checkimage(image){
             
