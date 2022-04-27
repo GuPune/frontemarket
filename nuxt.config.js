@@ -42,9 +42,7 @@ export default {
 
   },
   pwa: {
-    icon: {
-         fileName: 'log.png',
-    },
+
 
 },
   // Global CSS: https://go.nuxtjs.dev/config-css
