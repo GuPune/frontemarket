@@ -126,7 +126,7 @@
 
     <div class="row">
     <div class="input-group input-group-icon">
-      <b-form-checkbox  id="checkbox-1" v-model="status" name="checkbox-1" value="accepted" unchecked-value="not_accepted">ข้าพเจ้าเข้าใจและตกลงตาม</b-form-checkbox>
+      <b-form-checkbox  id="checkbox-1" v-model="status" name="checkbox-1" value="accepted" unchecked-value="not_accepted">ข้าพเจ้าเข้าใจและตกลงตาม เงื่อนไขการให้บริการ นโยบายความเป็นส่วนตัว</b-form-checkbox>
        <label for="commerce" style="color: red;"      v-on:click="Checkpolicy()"
                                   >เงื่อนไขการให้บริการ </label>
 และ
