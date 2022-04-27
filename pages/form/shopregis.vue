@@ -141,14 +141,6 @@
       <b-form-checkbox  id="checkbox-1" v-model="status" name="checkbox-1" value="accepted" unchecked-value="not_accepted">
      ข้าพเจ้าเข้าใจและตกลงตาม
 
-
-      <label for="commerce" style="color: red;"      v-on:click="Checkpolicy()"
-                                  >เงื่อนไขการให้บริการ </label>
-และ
-      <label for="commerce" style="color: red;"  v-on:click="CheckService()"
-                                  >นโยบายความเป็นส่วนตัว </label>
-
-
     </b-form-checkbox></b-col>
 
 
