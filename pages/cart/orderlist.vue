@@ -5,7 +5,7 @@
 
 <!-- --------------------------------store 1--------------------------------- -->
 
- <div class="row" style="padding-top: 40px;">
+ <div class="row" style="padding-top: 40px;padding-bottom: 40px;">
     <div class="col-md-12 col-sm-12 col-lg-12 col-xl-9">
       <div class="card shopping-cart" >
                   <h2 class="title-shoping-cart bg-order bg-order-mobile">
