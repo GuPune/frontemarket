@@ -137,15 +137,8 @@
 
 
     <b-row>
-    <b-col cols="12" md="12">    <b-form-checkbox
-      id="checkbox-1"
-      v-model="status"
-      name="checkbox-1"
-      value="accepted"
-      unchecked-value="not_accepted"
-
-
-    >
+    <b-col cols="12" md="12" sm="12">    
+      <b-form-checkbox  id="checkbox-1" v-model="status" name="checkbox-1" value="accepted" unchecked-value="not_accepted">
      ข้าพเจ้าเข้าใจและตกลงตาม
 
 
