@@ -1,7 +1,7 @@
 <template>
 
 
-   <div class="container col-12 col-xl-9 col-sm-12" style="padding-top: 90px;">
+   <div class="container col-12 col-xl-9 col-sm-12" style="padding-top: 90px;padding-bottom: 40px;">
   <Nav />
 <!-- --------------------------------store 1--------------------------------- -->
 <div class="row" style="padding-top: 40px;">
