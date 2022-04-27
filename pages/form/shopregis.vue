@@ -1,6 +1,6 @@
 <template>
 <section class="Shopregis">
-<div class="container forms">
+<div class="container forms" style="margin-bottom: 40px;">
 <Loader v-if="isLoading"/>
 
       <h5 style="color: #171c24;">{{this.placeholder_menu}}</h5>
