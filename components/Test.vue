@@ -178,7 +178,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
     {
       "breakpoint": 600,
       "settings": {
-        "slidesToShow": 4,
+        "slidesToShow": 5,
         "slidesToScroll": 5,
           "rows": 2,
         "initialSlide": 2

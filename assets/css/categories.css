@@ -98,6 +98,11 @@
 
   */
 
+  .im-cate-mobile{
+    width: 70px!important;
+    height: 70px!important;
+      }
+
 
   .asx:hover {
     color: white;
@@ -204,7 +209,7 @@
   
 
 
-  @media (max-width: 420px) {
+  @media (max-width: 500px) {
     .im-cate-mobile{
       width: 50px!important;
       height: 50px!important;
