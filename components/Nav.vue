@@ -230,7 +230,7 @@
     <b-navbar-brand class="nav_mobie_fisrt">
        <b-row>
            <b-col cols="2" md="2"  sm="2" xl="3"  @click="redirectTo('index')">
-           <img src="../assets/log.png"  alt=""  class="icon-mobile nav-icon-mobile">
+           <img src="../assets/fti.png"  alt=""  class="icon-mobile nav-icon-mobile">
             </b-col>
 
 
