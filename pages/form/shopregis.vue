@@ -124,6 +124,16 @@
     </div>
 
 
+        <div class="row">
+
+
+    <div class="input-group input-group-icon">
+       ข้าพเจ้าเข้าใจและตกลงตาม
+      </div>
+    </div>
+
+
+
 
 
 <!--
@@ -136,34 +146,29 @@
 
 
 
-    <b-row>
-
-          <div class="row">
-
-
-    <div class="input-group input-group-icon">
-             
- ข้าพเจ้าเข้าใจและตกลงตาม
-      </div>
-    </div>
-
-    <!-- <b-col cols="12" md="12" sm="12">    
+    <!-- <b-row>
+    <b-col cols="12" md="12" sm="12">    
       <b-form-checkbox  id="checkbox-1" v-model="status" name="checkbox-1" value="accepted" unchecked-value="not_accepted">
      ข้าพเจ้าเข้าใจและตกลงตาม
+      <label for="commerce" style="color: red;"      v-on:click="Checkpolicy()"
+                                  >เงื่อนไขการให้บริการ </label>
+และ
+      <label for="commerce" style="color: red;"  v-on:click="CheckService()"
+                                  >นโยบายความเป็นส่วนตัว </label>
 
-    </b-form-checkbox>
-    </b-col> -->
+
+    </b-form-checkbox></b-col>
 
 
 
 
-  </b-row>
- <b-row>
+  </b-row> -->
+ <!-- <b-row>
    <b-col cols="12" md="12">
    <h6 v-if="status == 'not_accepted'"  style="color: red; text-align:center;">กรุณาอ่านและยอมรับข้อตกลงในการใช้งาน</h6>
    </b-col>
 
-</b-row>
+</b-row> -->
 
     <button class="btn btn-primary" @click="registershop()"><span>สร้างร้านค้า</span></button>
     </center>
