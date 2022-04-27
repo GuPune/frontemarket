@@ -41,6 +41,15 @@
                                             <p  v-if ="this.language == 'ch'">{{this.placeholder_password}}</p>
                                             <p  v-if ="this.language == 'th' || this.language == null">{{this.placeholder_password}}</p>
                                         </li>
+
+                                        <li class="prof-s" id="member-changepassword"  :class="{'profile-menu': checkPath('profile-logout')}"  @click="redirectTo('profile-changepassword')">
+                                             <p  v-if ="this.language == 'en'">{{this.placeholder_logout}}</p>
+                                            <p  v-if ="this.language == 'ch'">{{this.placeholder_logout}}</p>
+                                            <p  v-if ="this.language == 'th' || this.language == null">{{this.placeholder_logout}}</p>
+                                        </li>
+
+
+                                        
                                       
                                     </ul>
                                 </div>
@@ -86,6 +95,7 @@ import 'sweetalert2/dist/sweetalert2.min.css';
          this.placeholder_address = 'Delivery address';
          this.placeholder_history = 'Order History';
          this.placeholder_password = 'ตั้งค่ารหัสผ่าน';
+            this.placeholder_logout = 'ออกจากระบบ';
       
         
 
@@ -95,6 +105,7 @@ import 'sweetalert2/dist/sweetalert2.min.css';
           this.placeholder_address = '邮寄地址';
           this.placeholder_history = '订单历史';
           this.placeholder_password = 'ตั้งค่ารหัสผ่าน';
+             this.placeholder_logout = 'ออกจากระบบ';
 
         }
          if(this.language == 'th' || this.language == null){
@@ -102,7 +113,7 @@ import 'sweetalert2/dist/sweetalert2.min.css';
           this.placeholder_address = 'ที่อยู่จัดส่ง';
          this.placeholder_history = 'ประวัติการสั่งซื้อ';
          this.placeholder_password = 'ตั้งค่ารหัสผ่าน';
-    
+        this.placeholder_logout = 'ออกจากระบบ';
         }
 
         },
