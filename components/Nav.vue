@@ -360,6 +360,20 @@
           </template>
 
 
+           <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')" class="xdasdasd">
+            <div>
+
+              <span @click="redirectTo('profile-userprofile')">  {{this.placeholder_profile}}</span>
+
+            </div>
+          </b-dropdown-item>
+          <b-dropdown-item href="#"  @click.prevent="logout">
+               <div v-if ="this.language == 'en'" > {{this.placeholder_logout}} </div>
+             <div v-if ="this.language == 'ch'" > {{this.placeholder_logout}}</div>
+              <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_logout}} </div>
+          </b-dropdown-item>
+
+
         </b-nav-item-dropdown>
       </b-navbar-nav>
             </b-col>
