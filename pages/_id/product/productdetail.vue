@@ -1,7 +1,7 @@
 <template>
 
 <section id="Productdetail" class="product-details">
-<div class="container product-details-in productItemDetail" style="background-color: white;">
+<div class="container product-details-in productItemDetail" style="background-color: white;padding-bottom: 40px;">
 <div v-if="loadding">
 
 <Loader/>
