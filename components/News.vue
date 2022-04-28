@@ -26,7 +26,52 @@
   </div>
  <div>
 
+      <VueSlickCarousel v-bind="slickOptions">
+    <div v-for="i in items"  class="img-wrapper cards">
 
+
+
+              <div class="cards c-shopinmy-tt">
+
+
+                                                <div class="cardproduct-new">
+
+                                                  <img  :src="Checkimage(i.image)"  @click="ChangeProduct(i)" class="imgproduct-new related-images">
+                                                  <div class="row">
+                                                    <div class="col-12">
+
+                                                    <div class="product-name-new">
+
+คณะผู้บริหารบริษัท ไอดีไดรฟ์ จำกัด ร่วมเป็นเจ้าภาพ โครงการ “บรรพชาสามเณรฟื้นฟูพระพุทธศาสนาทั่วไทย พ.ศ. ๒๔๕๖๕” ณ ศูนย์
+                                                    </div>
+                                                    </div>
+                                                    </div>
+
+                                                           <div class="row">
+                                                    <div class="col-12">
+
+                                                    <div class="product-name-new-tit">
+
+ศาสนาพุทธนิกายเถรวาท เป็นศาสนาที่อยู่คู่กับประเทศไทยมาอย่างยาวนาน และคนไทยส่วนใหญ่กว่า 94 เปอร์เซ็นต์นับถือศาสนาพุทธ วัดวาอารามต่าง ๆ จึงเป็นอีกสิ่งที่เราคุ้นตาและพบเห็นอยู่ได้ทั่ว ๆ ไป ในแทบทุกพื้นที่ รวมถึงพระประทานหรือพระพุทธรูปก็เป็นสิ่งที่คุ้นเคยและคุ้นชินในวิถีของชาวพุทธไปแล้ว และอีกสิ่งที่เชื่อว่าพุทธศาสนิกชนทุกคนต้องเคยสักการะ เคารพบูชาอยู่เป็นประจำ อย่าง “พระประจำวันเกิด” ซึ่งเป็นปางที่มีลักษณะพิเศษแตกต่างกันไปในแต่ละวัน พี่ไปร ฯ จึงอยากพาทุกคนไปไขความลับ ประวัติของพระประจำวันเกิดว่ามีความเป็นมาอย่างไร เราจะพาไปรู้จักกัน
+                                                    </div>
+                                                    </div>
+                                                    </div>
+     </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+      </div>
+
+
+    </VueSlickCarousel>
   </div>
 
 
@@ -119,6 +164,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
   slickOptions:{
  "centerMode": true,
   "centerPadding": "20px",
+   "arrows": false,
   "focusOnSelect": true,
   "infinite": true,
   "slidesToShow": 5,
