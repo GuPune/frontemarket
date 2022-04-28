@@ -26,24 +26,7 @@
   </div>
  <div>
 
-      <VueSlickCarousel v-bind="slickOptions">
-    <div v-for="i in items"  class="img-wrapper cards">
 
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-
-
-    </VueSlickCarousel>
   </div>
 
 
