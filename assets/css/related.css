@@ -583,12 +583,25 @@ height: 54px;
   .product-name-new{
     padding: 0 10px 0;
 margin-top: 10px;
-font-size: 16px;
+font-size: 18px;
 display: -webkit-box;
--webkit-line-clamp: 3;
+-webkit-line-clamp: 2;
 -webkit-box-orient: vertical;
 overflow: hidden;
-height: 100px;
+height: 54px;
+font-weight: 800;
+
+  }
+
+  .product-name-new-tit{
+    padding: 0 10px 0;
+margin-top: 10px;
+font-size: 14px;
+display: -webkit-box;
+-webkit-line-clamp: 1;
+-webkit-box-orient: vertical;
+overflow: hidden;
+height: 25px;
 
   }
 
