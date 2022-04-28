@@ -5,26 +5,59 @@
         <div class="row relatedweb-test">
                 <div class="col-12 col-md-9 col-lg-9">
                    <div class="main-heading">
-        <div class="heading-title-relat">
-                            <h2><span>PRODUCT CATEGORIES</span>
-	<em class="">ประเภทสินค้า</em>
+          <div class="row heading-title-new" >
+    <div class="col-12 col-md-6 col-lg-6">
+  <h2 v-if="shell_cate"  class="mobile-news"><span>ข่าวสาร และ กิจกรรม</span>
 
 			</h2>
-        </div>
+
+          <h2 v-else  class="mobile-news">
+
+
+            <span >
+    <img src="../assets/new11.png" style="width: 50px;height: 50px;">
+              ข่าวและกิจกรรม</span>
+
+			</h2>
+
+
+    </div>
+   <div class="col-12 col-md-6 col-lg-6"></div>
+  </div>
  <div>
 
       <VueSlickCarousel v-bind="slickOptions">
-    <div v-for="i in items"  class="img-wrapper">
-              <div class="card c-shopinmy-tt">
-                    <div class="cardproduct c-cate">
-                 <img class="imgproduct related-images testimage imgproductcate im-cate-mobile"   :src="Checkimage(i.image)"  @click="ChangeProduct(i)" style="border-radius: 50%;">
-                                                   <div class="product-footer mobile-cate asx">
+    <div v-for="i in items"  class="img-wrapper cards">
 
-                                                   <span class="im-cate-text">{{i.name_th}}</span>
-                                                   </div>
 
-                                                </div>
+
+              <div class="cards c-shopinmy-tt">
+
+
+                                                <div class="cardproduct-new">
+
+                                                  <img  :src="Checkimage(i.image)"  @click="ChangeProduct(i)" class="imgproduct-new related-images">
+                                                  <div class="row">
+                                                    <div class="col-12">
+
+                                                    <div class="product-name-new">
+
+คณะผู้บริหารบริษัท ไอดีไดรฟ์ จำกัด ร่วมเป็นเจ้าภาพ โครงการ “บรรพชาสามเณรฟื้นฟูพระพุทธศาสนาทั่วไทย พ.ศ. ๒๔๕๖๕” ณ ศูนย์
+                                                    </div>
+                                                    </div>
+                                                    </div>
+     </div>
         </div>
+
+
+
+
+
+
+
+
+
+
       </div>
 
 
@@ -119,16 +152,12 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
 
 
   slickOptions:{
-  "dots": true,
-  "infinite": false,
-  "arrows": false,
+ "centerMode": true,
+  "centerPadding": "20px",
+  "focusOnSelect": true,
+  "infinite": true,
+  "slidesToShow": 5,
   "speed": 500,
-  "slidesToShow": 10,
-  "slidesToScroll": 4,
-  "initialSlide": 0,
-   "autoplay": false,
-  "speed": 500,
-  "autoplaySpeed": 500,
   "responsive": [
             {
       "breakpoint": 1700,
@@ -142,7 +171,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
             {
       "breakpoint": 1500,
       "settings": {
-        "slidesToShow": 8,
+        "slidesToShow": 3,
         "slidesToScroll": 4,
         "infinite": true,
         "dots": true
@@ -151,7 +180,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
           {
       "breakpoint": 1440,
       "settings": {
-        "slidesToShow": 8,
+        "slidesToShow": 3,
         "slidesToScroll": 4,
         "infinite": true,
         "dots": true
@@ -160,7 +189,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
       {
       "breakpoint": 1300,
       "settings": {
-        "slidesToShow": 8,
+        "slidesToShow": 3,
         "slidesToScroll": 4,
         "infinite": true,
         "dots": true
@@ -169,7 +198,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
     {
       "breakpoint": 1024,
       "settings": {
-        "slidesToShow": 4,
+        "slidesToShow": 3,
         "slidesToScroll": 6,
         "infinite": true,
         "dots": true
@@ -178,25 +207,25 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
     {
       "breakpoint": 600,
       "settings": {
-        "slidesToShow": 5,
+        "slidesToShow": 2,
         "slidesToScroll": 5,
-          "rows": 2,
+
         "initialSlide": 2
       }
     },
     {
       "breakpoint": 480,
       "settings": {
-        "slidesToShow": 5,
-          "rows": 2,
+        "slidesToShow": 2,
+
         "slidesToScroll": 5
       }
     },
         {
       "breakpoint": 375,
       "settings": {
-        "slidesToShow": 5,
-          "rows": 2,
+        "slidesToShow": 2,
+
         "slidesToScroll": 5
 
       }

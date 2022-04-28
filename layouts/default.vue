@@ -20,6 +20,7 @@
                 <Test  v-if="currentRouteName == 'index'" />
 
 <Related v-if="currentRouteName == 'index'"/>
+<News v-if="currentRouteName == 'index'"/>
 
     <ShopRelation v-if="currentRouteName == 'index'"/>
 
@@ -100,6 +101,7 @@ import Related from "@/components/Related"
 import ShopRelation from "@/components/ShopRelation"
 import Test from "@/components/Test"
 import LongFooter from "@/components/LongFooter"
+import News from "@/components/News"
 import Footer from "@/components/Footer"
 import Loader from '@/components/Loader'
 import { mapState } from 'vuex'
