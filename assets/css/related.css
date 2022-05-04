@@ -576,7 +576,7 @@ height: 54px;
 
   .product-name-new{
     padding: 0 10px 0;
-margin-top: 10px;
+
 font-size: 18px;
 display: -webkit-box;
 -webkit-line-clamp: 2;
@@ -589,7 +589,7 @@ font-weight: 800;
 
   .product-name-new-tit{
     padding: 0 10px 0;
-margin-top: 10px;
+
 font-size: 14px;
 display: -webkit-box;
 -webkit-line-clamp: 1;
@@ -914,8 +914,7 @@ height:230px;
 
 
     .product-name-new{
-      padding: 0 0 0 0;
-  margin-top: 10px;
+    
   font-size: 10px;
   display: -webkit-box;
   -webkit-line-clamp: 4;
@@ -925,13 +924,6 @@ height:230px;
   font-weight: 800;
 
     }
-
-    .bssdlp-title-text {
-      height: 54px;
-      font-size: 10px;
-      overflow: hidden;
-      margin: 10px 0;
-  }
     }
 
     @media (min-width: 450px) and (max-width: 601px) {
