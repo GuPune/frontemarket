@@ -925,6 +925,12 @@ height:230px;
   font-weight: 800;
 
     }
+
+    .bssdlp-title-text {
+      height: 54px;
+      overflow: hidden;
+      margin: 10px 0;
+  }
     }
 
     @media (min-width: 450px) and (max-width: 601px) {
