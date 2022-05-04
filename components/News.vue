@@ -6,7 +6,7 @@
                 <div class="col-12 col-md-9 col-lg-9">
                    <div class="main-heading">
           <div class="row heading-title-new" >
-    <div class="col-12 col-md-6 col-lg-6">
+    <div class="col-9 col-md-10 col-lg-10 col-sm-6">
   <h2 v-if="shell_cate"  class="mobile-news"><span>ข่าวสาร และ กิจกรรม</span>
 
 			</h2>
@@ -22,7 +22,9 @@
 
 
     </div>
-   <div class="col-12 col-md-6 col-lg-6"></div>
+   <div class="col-3 col-md-2 col-lg-2 col-sm-6" style="line-height: 4;text-align: right;">
+     <button type="button" class="btn btn-outline-dark">ดูทั้งหมด</button>
+   </div>
   </div>
  <div>
 
