@@ -40,7 +40,7 @@
                                                   <div class="row">
                                                     <div class="col-12">
 
-                                                    <div class="product-name-new">
+                                                    <div class="product-name-newx">
 
 คณะผู้บริหารบริษัท ไอดีไดรฟ์ จำกัด ร่วมเป็นเจ้าภาพ โครงการ “บรรพชาสามเณรฟื้นฟูพระพุทธศาสนาทั่วไทย พ.ศ. ๒๔๕๖๕” ณ ศูนย์
                                                     </div>
