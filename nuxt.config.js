@@ -2,15 +2,15 @@ export default {
   mode: "spa",
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Pra8400',
+    title: 'Thailand',
     htmlAttrs: {
       lang: 'en'
     },
-    titleTemplate: 'Pra8400 | Thailand ซื้อขายสินค้าออนไลน์',
+    titleTemplate: 'Thailand ซื้อขายสินค้าออนไลน์',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Pra8400 | Thailand ซื้อขายสินค้าออนไลน์'},
+      { hid: 'description', name: 'description', content: 'Thailand ซื้อขายสินค้าออนไลน์'},
       { name: 'format-detection', content: 'telephone=no' },
 
     ],
