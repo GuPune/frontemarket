@@ -2,15 +2,16 @@ export default {
   mode: "spa",
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Pra8400',
+    titleTemplate: 'Pra84000 | %s',
+    title: 'Thailand ซื้อขายสินค้าออนไลน์',
     htmlAttrs: {
       lang: 'en'
     },
-    titleTemplate: 'Pra8400 | Thailand ซื้อขายสินค้าออนไลน์',
+
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Pra8400 | Thailand ซื้อขายสินค้าออนไลน์'},
+      { hid: 'description', name: 'description', content: 'Pra84000 | Thailand ซื้อขายสินค้าออนไลน์'},
       { name: 'format-detection', content: 'telephone=no' },
 
     ],
@@ -19,11 +20,9 @@ export default {
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js' },
       { src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js' },
     ],
+
     link: [
-      { rel: 'shortcut icon', type: 'image/x-icon', href: '/sh.ico' },
-      { rel: 'icon', type: 'image/png', href: '/96.png' },
-      { rel: 'icon', type: 'image/png', href: '/32.png'  },
-      { rel: 'icon', type: 'image/png', href: '/16.png'  },
+      { rel: 'shortcut icon', type: 'image/x-icon', href: '/x1.ico' },
       {
         rel: 'stylesheet',
         type: 'text/css',
