@@ -4,7 +4,7 @@ export default {
 
 
   head: {
-    titleTemplate: 'Thaionzon | %s',
+    titleTemplate: 'UAT | %s',
     title: 'Thailand ซื้อขายสินค้าออนไลน์',
     htmlAttrs: {
       lang: 'en'
@@ -13,7 +13,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Thaionzon | Thailand ซื้อขายสินค้าออนไลน์'},
+      { hid: 'description', name: 'description', content: 'UAT | Thailand ซื้อขายสินค้าออนไลน์'},
       { name: 'format-detection', content: 'telephone=no' },
 
     ],
