@@ -123,6 +123,23 @@
       </div>
     </div>
 
+    <div class="row">
+   <div class="input-group input-group-icon">
+        <input type="text" class="form-control" :placeholder="[[ placeholder_store_name ]]" v-model="form.shop_name"
+                                                                         :error-messages="ShopnameErrors" required
+                                                                         :class="{ 'is-invalid': $v.form.shop_name.$error}"
+                                                                         @input="$v.form.shop_name.$touch()"
+                                                                         @blur="$v.form.shop_name.$touch()"/>
+        <div class="input-icon"><i style="color: #005dc0;" class="fa fa-shopping-bag"></i></div>
+      </div>
+       </div>
+  <div class="row">
+   <div class="input-group input-group-icon">
+            <b-form-file v-model="file" ref="file-input" class="mb-2"
+              placeholder="อัพโหลด"   @change="onFileChange"
+            ></b-form-file>
+      </div>
+       </div>
 
     <div class="row">
     <div class="input-group input-group-icon">
@@ -196,6 +213,8 @@ import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/vue-loading.css';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import Loader from '@/components/Loader'
+
+import { API_URL } from "../../environment/environment.js";
 
 
 
@@ -358,6 +377,98 @@ this.typeshop = typeshop;
         },
 
         methods: {
+
+
+              onFileChange(event) {
+            
+      var file = event.target.files[0];
+     this.url = URL.createObjectURL(file);
+    // Ensure it's an image
+    if(file.type.match(/image.*/)) {
+      
+
+        // Load the image
+        var reader = new FileReader();
+        reader.onload = (readerEvent) =>{
+            var image = new Image();
+          image.onload = (imageEvent) => {
+         var canvas = document.createElement('canvas'),
+                    max_size = 544,// TODO : pull max size from a site config
+                    width = image.width,
+                    height = image.height;
+                if (width > height) {
+                    if (width > max_size) {
+                        height *= max_size / width;
+                        width = max_size;
+                    }
+                } else {
+                    if (height > max_size) {
+                        width *= max_size / height;
+                        height = max_size;
+                    }
+                }
+                canvas.width = width;
+                canvas.height = height;
+                canvas.getContext('2d').drawImage(image, 0, 0, width, height);
+                var dataUrl = canvas.toDataURL('image/jpeg');
+                let resizedImage = this.dataURLToBlob(dataUrl);
+              
+
+                      axios.post(API_URL+'/upload', {
+        image: dataUrl
+      }).then(res => {
+      this.file = res.data
+      }).catch(function(){
+         
+              this.$swal({
+                type: "error",
+                title: "Upload รูปภาพไม่ผ่านติดต่อเจ้าหน้าที่",
+                showConfirmButton: true,
+                reverseButtons: true
+            });
+      
+        });
+          
+                
+                 
+            };
+            image.src = readerEvent.target.result;
+
+         
+        }
+        reader.readAsDataURL(file);
+     
+    }
+    
+
+
+     
+    },
+        dataURLToBlob(dataURI) {
+ 
+  // convert base64 to raw binary data held in a string
+  // doesn't handle URLEncoded DataURIs - see SO answer #6850276 for code that does this
+  var byteString = atob(dataURI.split(',')[1]);
+
+  // separate out the mime component
+  var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
+
+  // write the bytes of the string to an ArrayBuffer
+  var ab = new ArrayBuffer(byteString.length);
+
+  // create a view into the buffer
+  var ia = new Uint8Array(ab);
+
+  // set the bytes of the buffer to the correct values
+  for (var i = 0; i < byteString.length; i++) {
+      ia[i] = byteString.charCodeAt(i);
+  }
+
+  // write the ArrayBuffer to a blob, and you're done
+  var blob = new Blob([ab], {type: mimeString});
+  return blob;
+
+},
 
         Checkpolicy(){
 
