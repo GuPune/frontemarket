@@ -198,6 +198,9 @@ hide:false,
 
     async mounted() {
 
+
+this.get_cookies_array();
+
         let getcook = this.$cookie.get("ssid");
 
 
@@ -224,6 +227,13 @@ this.footer();
 
     },
     methods: {
+
+      get_cookies_array() {
+
+    document.cookie= 'foo=;domain=example.com;expires=Sat, 01-Jan-2000 00:00:00 GMT';
+console.log(document.cookie);
+
+},
       language(e){
           let x =  localStorage.setItem("language", e);
 
