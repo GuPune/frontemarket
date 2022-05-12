@@ -136,7 +136,7 @@
   <div class="row">
    <div class="input-group input-group-icon">
             <b-form-file v-model="file" ref="file-input" class="mb-2"
-              placeholder="อัพโหลด"   @change="onFileChange"
+            @change="onFileChange"
             ></b-form-file>
       </div>
        </div>
@@ -149,7 +149,7 @@
 และ
       <label for="commerce" style="color: red;"  v-on:click="CheckService()"
                                   >นโยบายความเป็นส่วนตัว </label>
-       
+
       </div>
     </div>
 
@@ -168,7 +168,7 @@
 
 
     <!-- <b-row>
-    <b-col cols="12" md="12" sm="12">    
+    <b-col cols="12" md="12" sm="12">
       <b-form-checkbox  id="checkbox-1" v-model="status" name="checkbox-1" value="accepted" unchecked-value="not_accepted">
      ข้าพเจ้าเข้าใจและตกลงตาม
       <label for="commerce" style="color: red;"      v-on:click="Checkpolicy()"
@@ -236,6 +236,8 @@ import { API_URL } from "../../environment/environment.js";
     },
 
      data: () => ({
+        file:null,
+        url: null,
         placeholder_menu: "",
         placeholder_first_name: "",
         placeholder_last_name:"",
@@ -380,12 +382,12 @@ this.typeshop = typeshop;
 
 
               onFileChange(event) {
-            
+
       var file = event.target.files[0];
      this.url = URL.createObjectURL(file);
     // Ensure it's an image
     if(file.type.match(/image.*/)) {
-      
+
 
         // Load the image
         var reader = new FileReader();
@@ -412,40 +414,40 @@ this.typeshop = typeshop;
                 canvas.getContext('2d').drawImage(image, 0, 0, width, height);
                 var dataUrl = canvas.toDataURL('image/jpeg');
                 let resizedImage = this.dataURLToBlob(dataUrl);
-              
+
 
                       axios.post(API_URL+'/upload', {
         image: dataUrl
       }).then(res => {
       this.file = res.data
       }).catch(function(){
-         
+
               this.$swal({
                 type: "error",
                 title: "Upload รูปภาพไม่ผ่านติดต่อเจ้าหน้าที่",
                 showConfirmButton: true,
                 reverseButtons: true
             });
-      
+
         });
-          
-                
-                 
+
+
+
             };
             image.src = readerEvent.target.result;
 
-         
+
         }
         reader.readAsDataURL(file);
-     
+
     }
-    
 
 
-     
+
+
     },
         dataURLToBlob(dataURI) {
- 
+
   // convert base64 to raw binary data held in a string
   // doesn't handle URLEncoded DataURIs - see SO answer #6850276 for code that does this
   var byteString = atob(dataURI.split(',')[1]);
