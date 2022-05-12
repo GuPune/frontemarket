@@ -271,7 +271,7 @@ select:active {
 .clock-r{
   padding-top: 10px;
 }
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 600px) {
   .col-half {
     width: 100%;
     padding-right: 0;
@@ -282,14 +282,6 @@ select:active {
     padding-top: 120px;
   }
 
-  .imgtax{
-    height: 400px;
-    width: 420px;
-    }
-}
-
-
-@media only screen and (max-width: 600px) {
   .imgtax{
     height: 400px;
     width: 420px;
