@@ -287,7 +287,7 @@ select:active {
 
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 740px) {
 
   .imgtax{
     height: 400px;
