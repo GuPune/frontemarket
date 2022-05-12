@@ -288,7 +288,7 @@ select:active {
     }
 }
 
-@media only screen and (min-width: 540px) {
+@media only screen and (max-width: 540px) {
 
 
   .imgtax{
@@ -297,4 +297,11 @@ select:active {
     }
 }
 
+@media only screen and (max-width: 640px) {
 
+
+  .imgtax{
+    height: 400px;
+    width: 600px;
+    }
+}
