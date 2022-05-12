@@ -213,7 +213,7 @@ import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/vue-loading.css';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import Loader from '@/components/Loader'
-
+import axios from 'axios';
 import { API_URL } from "../../environment/environment.js";
 
 
