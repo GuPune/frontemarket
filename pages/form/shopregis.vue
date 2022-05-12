@@ -420,6 +420,7 @@ this.typeshop = typeshop;
         image: dataUrl
       }).then(res => {
       this.file = res.data
+      console.log(this.file);
       }).catch(function(){
 
               this.$swal({
