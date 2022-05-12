@@ -416,7 +416,7 @@ this.typeshop = typeshop;
                 let resizedImage = this.dataURLToBlob(dataUrl);
 
 
-                      axios.post(API_URL+'/upload', {
+                      axios.post(API_URL+'/upload-shop', {
         image: dataUrl
       }).then(res => {
       this.file = res.data
