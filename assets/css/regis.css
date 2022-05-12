@@ -287,19 +287,12 @@ select:active {
 
 
 
-@media only screen and (max-width: 740px) {
 
-  .imgtax{
-    height: 400px;
-    width: 520px;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-
+@media only screen and (min-width: 540px) and (max-width: 740px) {
 
   .imgtax{
     height: 400px;
     width: 480px;
     }
+
 }
