@@ -281,6 +281,11 @@ select:active {
 
     padding-top: 120px;
   }
+
+  .imgtax{
+    height: 400px;
+    width: 420px;
+    }
 }
 
 
