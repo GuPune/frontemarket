@@ -140,6 +140,11 @@
             ></b-form-file>
       </div>
        </div>
+        <div class="row">
+                <div id="preview" v-if="isHiddenUpload == true">
+                              <img class="imgtax" v-if="url" :src="url" />
+                            </div>
+          </div>
 
     <div class="row">
     <div class="input-group input-group-icon">
@@ -238,6 +243,7 @@ import { API_URL } from "../../environment/environment.js";
      data: () => ({
         file:null,
         url: null,
+        isHiddenUpload:false,
         placeholder_menu: "",
         placeholder_first_name: "",
         placeholder_last_name:"",
@@ -420,7 +426,7 @@ this.typeshop = typeshop;
         image: dataUrl
       }).then(res => {
       this.file = res.data
-      console.log(this.file);
+     this.isHiddenUpload = true
       }).catch(function(){
 
               this.$swal({
