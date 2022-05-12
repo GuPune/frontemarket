@@ -305,3 +305,11 @@ select:active {
     width: 480px;
     }
 }
+@media only screen and (max-width: 700px) {
+
+
+  .imgtax{
+    height: 400px;
+    width: 500px;
+    }
+}
