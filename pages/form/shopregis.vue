@@ -443,7 +443,7 @@ this.typeshop = typeshop;
 
 
             };
-                console.log(res.data);
+                console.log(this.file);
             image.src = readerEvent.target.result;
 
 
