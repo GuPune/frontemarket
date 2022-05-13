@@ -327,7 +327,7 @@ import { API_URL } from "../../environment/environment.js";
     async created() {
 
         this.language = localStorage.getItem("language");
-        console.log('language shop',this.language);
+
         if(this.language == 'en'){
          this.placeholder_first_name = 'First Name';
          this.placeholder_last_name = 'Last Name';
@@ -426,6 +426,7 @@ this.typeshop = typeshop;
         image: dataUrl
       }).then(res => {
       this.file = res.data
+      conosole.log('file',res.data);
      this.isHiddenUpload = true
       }).catch(function(){
 
@@ -564,7 +565,7 @@ this.typeshop = typeshop;
 
             },
             error(response) {
-                console.log(response.data.errors.ShopName);
+
                 this.isLoading = false;
                 this.$swal({
                     icon: 'error',
