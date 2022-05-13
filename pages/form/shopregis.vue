@@ -521,7 +521,9 @@ this.typeshop = typeshop;
         },
         async registershop(){
 
+          this.form.url = this.file;
 
+        
 
              this.$v.$touch()
             if (this.$v.form.$pending || this.$v.form.$error) return;
