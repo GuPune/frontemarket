@@ -391,6 +391,7 @@ this.typeshop = typeshop;
 
       var file = event.target.files[0];
      this.url = URL.createObjectURL(file);
+     
     // Ensure it's an image
     if(file.type.match(/image.*/)) {
 
@@ -427,6 +428,7 @@ this.typeshop = typeshop;
       }).then(res => {
       this.file = res.data
      this.isHiddenUpload = true
+ 
       }).catch(function(){
 
               this.$swal({
@@ -441,6 +443,7 @@ this.typeshop = typeshop;
 
 
             };
+                console.log(res.data);
             image.src = readerEvent.target.result;
 
 
