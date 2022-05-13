@@ -391,7 +391,7 @@ this.typeshop = typeshop;
 
       var file = event.target.files[0];
      this.url = URL.createObjectURL(file);
-     
+     console.log(this.url);
     // Ensure it's an image
     if(file.type.match(/image.*/)) {
 
@@ -443,7 +443,7 @@ this.typeshop = typeshop;
 
 
             };
-                console.log(this.file);
+        
             image.src = readerEvent.target.result;
 
 
