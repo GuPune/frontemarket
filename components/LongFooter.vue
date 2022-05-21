@@ -7,7 +7,7 @@
     <div id="footer-top">
     <div class="row footer-top" data-v-2eecd278="">
 </div>
-</div> 
+</div>
 <div class="row main-footer">
     <div class="flex-row col-lg-9"><div id="footer-main" class="row" style="font-size: 14px;">
 <div class="col col-12 col-md-4 col-xs-12"  data-v-2eecd278="">
@@ -46,29 +46,29 @@
       <a href="" class="me-4 text-reset">
         <img alt="Link to Facebook" src="https://ast.kaidee.com/blackpearl/_static/images/shared/socials/youtube-icon.svg" class="sc-1f2nd0k-2 huuFqJ">
       </a>
-      
+
     </div>
 </div>
 </div>
 </div>
  <div class="newsletter col-lg-3"><div class="row">
     <div class="col-md-12 col-lg-12"><div class="row"><div class="pb-3 col-md-6 col-lg-12"><p style="font-weight: 900;">เพื่อประสบการณ์ใช้งานที่ดีขึ้น
-</p>  
+</p>
 
 <div class="sc-1bfilmk-7 gmZUEV"><a href="#" rel="noopener noreferrer" target="_blank" class="sc-1bfilmk-1 dmSGJL">
 <div class="sc-1bfilmk-10 fegwqE">
     <div class="sc-1f2nd0k-0 geXxFB">
         <div class="lazyload-wrapper "><img alt="Link to AppStore" src="https://ast.kaidee.com/blackpearl/_static/images/shared/appstore-badge-download-en.png" class="sc-1f2nd0k-2 x14"></div></div></div></a><a href="#" rel="noopener noreferrer" target="_blank" class="sc-1bfilmk-1"><div class="sc-1bfilmk-10 fegwqE"><div class="sc-1f2nd0k-0 huuFqJ"><div class="lazyload-wrapper "><img alt="Link to Google Play Store" src="https://ast.kaidee.com/blackpearl/_static/images/shared/googleplay-badge-download-en.png" class="sc-1f2nd0k-2 x14"></div></div></div></a><a href="https://appgallery.huawei.com/app/C100928675" rel="noopener noreferrer" target="_blank" class="sc-1bfilmk-1 huuFqJ"><div class="sc-1bfilmk-10 fegwqE"><div class="sc-1f2nd0k-0 geXxFB"><div class="lazyload-wrapper ">
-            
+
         </div>
         </div>
         </div></a></div>
                   </div>
-                  </div> 
+                  </div>
                   <div class="big-c-app">
                       <!-- <span type="Body5-System-Regular" class="sc-3tpgds-0 lhTHMK sc-1bfilmk-6 bKugib">© 2565 บริษัท ไอดีไดรฟ์ จำกัด</span> -->
-                    </div></div></div></div></div> 
-               
+                    </div></div></div></div></div>
+
                   </div>
                   </div>
 </div>
