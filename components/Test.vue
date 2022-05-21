@@ -180,7 +180,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
       "settings": {
         "slidesToShow": 5,
         "slidesToScroll": 5,
-          "rows": 2,
+          "rows": 1,
         "initialSlide": 2
       }
     },
@@ -188,7 +188,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
       "breakpoint": 480,
       "settings": {
         "slidesToShow": 5,
-          "rows": 2,
+          "rows": 1,
         "slidesToScroll": 5
       }
     },
@@ -196,7 +196,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
       "breakpoint": 375,
       "settings": {
         "slidesToShow": 5,
-          "rows": 2,
+          "rows": 1,
         "slidesToScroll": 5
 
       }
