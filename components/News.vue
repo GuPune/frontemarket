@@ -3,10 +3,13 @@
 
     <section id="categories">
         <div class="row relatedweb-test">
-                <div class="col-12 col-md-9 col-lg-9">
+
+
+                <div class="col-12 col-md-9 col-lg-9" v-for="x in categornew">
                    <div class="main-heading">
           <div class="row heading-title-new" >
     <div class="col-9 col-md-10 col-lg-10 col-sm-6">
+
   <h2 v-if="shell_cate"  class="mobile-news"><span>ข่าวสาร และ กิจกรรม</span>
 
 			</h2>
@@ -16,7 +19,7 @@
 
             <span >
     <img src="../assets/new11.png" style="width: 50px;height: 50px;">
-              ข่าวและกิจกรรม</span>
+              {{x.name}}</span>
 
 			</h2>
 
@@ -61,7 +64,7 @@
                                                            <div class="row">
                                                     <div class="col-12">
 
-                                                 
+
                                                     </div>
                                                     </div>
      </div>
@@ -91,10 +94,6 @@
     </div>
 
 
-                        <!-- -------------------------Mobile------------------------------ -->
-
-
-
     <br>
     </section>
 
@@ -104,7 +103,7 @@
 <script>
 import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
 import { mapGetters,mapState } from "vuex";
-import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.js";
+import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND,GET_NEWE } from "../store/actions.type.js";
   import { APP_URL } from "../environment/environment.js";
   import VueSlickCarousel from 'vue-slick-carousel'
   import 'vue-slick-carousel/dist/vue-slick-carousel.css'
@@ -117,6 +116,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
 
         data() {
       return {
+        categornew:null,
          form: {
                     catagory_id: "",
                 },
@@ -257,7 +257,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
 
      computed: {
 
- ...mapGetters(["category_shell","shell_cate"]),
+ ...mapGetters(["category_shell","shell_cate","newe"]),
 
 
       ...mapState({
@@ -300,8 +300,9 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
        async Loadcategory() {
 
 
-                   let a = await this.$store.dispatch(FETCH_CATEGORY_SHELL);
-                   this.items = a;
+                   let a = await this.$store.dispatch(GET_NEWE);
+                   this.categornew = a;
+                   console.log('item',this.items);
 
 
 

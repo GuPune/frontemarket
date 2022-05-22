@@ -114,6 +114,8 @@ export const ADD_ITEM = "add_item";
 export const REMOVE_FAVALL = "remove_item";
 export const GET_FAVALL = "get_favall";
 
+export const GET_NEWE = "get_emar";
+
 
 
 
