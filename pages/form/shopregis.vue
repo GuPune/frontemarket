@@ -339,7 +339,7 @@ import { API_URL } from "../../environment/environment.js";
          this.placeholder_menu = 'Subscribe to a store';
         this.placeholder_farmbook = 'Farm Doae';
 
-         
+
 
 
         }
@@ -383,9 +383,8 @@ import { API_URL } from "../../environment/environment.js";
 
      let pdpa = await this.$store.dispatch(SYSTEM_PDPA,this.form);
      this.policies = pdpa.policies
-      this.protectdata = pdpa.protectdata
-
-this.typeshop = typeshop;
+     this.protectdata = pdpa.protectdata
+    this.typeshop = typeshop;
         },
 
         methods: {
@@ -432,7 +431,7 @@ this.typeshop = typeshop;
       }).then(res => {
       this.file = res.data
      this.isHiddenUpload = true
- 
+
       }).catch(function(){
 
               this.$swal({
@@ -447,7 +446,7 @@ this.typeshop = typeshop;
 
 
             };
-        
+
             image.src = readerEvent.target.result;
 
 

@@ -199,7 +199,7 @@ hide:false,
     async mounted() {
 
 
-this.get_cookies_array();
+//this.get_cookies_array();
 
         let getcook = this.$cookie.get("ssid");
 
@@ -230,8 +230,7 @@ this.footer();
 
       get_cookies_array() {
 
-    document.cookie= 'foo=;domain=example.com;expires=Sat, 01-Jan-2000 00:00:00 GMT';
-console.log(document.cookie);
+
 
 },
       language(e){

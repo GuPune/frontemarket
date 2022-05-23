@@ -5,7 +5,7 @@
         <div class="row relatedweb-test">
 
 
-                <div class="col-12 col-md-9 col-lg-9" v-for="x in categornew">
+                <div class="col-12 col-md-9 col-lg-9" v-for="(x, index) in categornew" :key="x.id">
                    <div class="main-heading">
           <div class="row heading-title-new" >
     <div class="col-9 col-md-10 col-lg-10 col-sm-6">
@@ -23,7 +23,6 @@
 
 			</h2>
 
-
     </div>
    <div class="col-3 col-md-2 col-lg-2 col-sm-6" style="line-height: 4;text-align: right;">
      <button type="button" class="btn btn-outline-dark">ดูทั้งหมด</button>
@@ -32,7 +31,7 @@
  <div>
 
       <VueSlickCarousel v-bind="slickOptions">
-    <div v-for="i in items"  class="img-wrapper cards">
+    <div v-for="i in x.data"  class="img-wrapper cards">
 
 
 
@@ -41,23 +40,15 @@
 
                                                 <div class="cardproduct-new">
 
-                                                  <img  :src="Checkimage(i.image)"  @click="ChangeProduct(i)" class="imgproduct-new related-images">
+                                                  <img  :src="Checkimage(i.f_archives_img)"  class="imgproduct-new related-images">
                                                   <div class="row">
                                                     <div class="col-12">
 
-                                                    <!-- <div class="product-name-new">
 
-คณะผู้บริหารบริษัท ไอดีไดรฟ์ จำกัด ร่วมเป็นเจ้าภาพ โครงการ “บรรพชาสามเณรฟื้นฟูพระพุทธศาสนาทั่วไทย พ.ศ. ๒๔๕๖๕” ณ ศูนย์
-                                                    </div> -->
 
                                                     </div>
-                                                                                                        <!-- <div class="bssdlp-title-text">
-<a href="https://www.thailandpostmart.com/news/1337/%E0%B8%AA%E0%B9%88%E0%B8%87%E0%B8%95%E0%B9%88%E0%B8%AD%E0%B8%AA%E0%B8%B8%E0%B8%82%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%94%E0%B8%B5%E0%B8%94%E0%B9%89%E0%B8%A7%E0%B8%A2-%E0%B8%AD%E0%B8%B4%E0%B8%99%E0%B9%80%E0%B8%AE%E0%B8%B4%E0%B8%A3%E0%B9%8C%E0%B8%9A-%E0%B8%9C%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B8%A0%E0%B8%B1%E0%B8%93%E0%B8%91%E0%B9%8C%E0%B8%8A%E0%B8%87%E0%B8%94%E0%B8%B7%E0%B9%88%E0%B8%A1%E0%B9%80%E0%B8%9E%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%AA%E0%B8%B8%E0%B8%82%E0%B8%A0%E0%B8%B2%E0%B8%9E-%E0%B9%82%E0%B8%94%E0%B8%A2-%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%A9%E0%B8%B1%E0%B8%97-%E0%B8%97%E0%B8%B5%E0%B8%A7%E0%B8%B5%E0%B8%9E%E0%B8%B9%E0%B8%A5-%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B9%8A%E0%B8%9B-%E0%B8%88%E0%B8%B3%E0%B8%81%E0%B8%B1%E0%B8%94/" target="_blank" title="">
-ส่งต่อสุขภาพดีด้วย อินเฮิร์บ ผลิตภัณฑ์ชงดื่มเพื่อสุขภาพ โดย บริษัท ทีวีพูล กรุ๊ป จำกัด
-</a>
-</div> -->
  <div class="card-body">
-    <p class="card-text product-name-new">คณะผู้บริหารบริษัท ไอดีไดรฟ์ จำกัด ร่วมเป็นเจ้าภาพ โครงการ “บรรพชาสามเณรฟื้นฟูพระพุทธศาสนาทั่วไทย พ.ศ. ๒๔๕๖๕” ณ ศูนย์</p>
+    <p class="card-text product-name-new">{{i.f_name}}</p>
   </div>
                                                     </div>
 
@@ -116,6 +107,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND,GET_NEWE } from "../store/actio
 
         data() {
       return {
+        x:null,
         categornew:null,
          form: {
                     catagory_id: "",
@@ -309,6 +301,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND,GET_NEWE } from "../store/actio
           },
          Checkimage(image){
                 let public_images = process.env.ImageURL+image;
+                console.log('public_images',public_images);
                 return public_images;
         },
         ChangeProduct(i){
