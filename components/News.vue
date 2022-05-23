@@ -33,8 +33,6 @@
       <VueSlickCarousel v-bind="slickOptions">
     <div v-for="i in x.data"  class="img-wrapper cards">
 
-
-
               <div class="cards c-shopinmy-tt">
 
 
@@ -49,8 +47,9 @@
                                                     </div>
  <div class="card-body">
     <p class="card-text product-name-new">{{i.f_name}}</p>
+       <p class="card-text"><small class="text-muted">{{covertdate(i.updated_at)}}</small></p>
   </div>
-                                                    </div>
+                                            </div>
 
                                                            <div class="row">
                                                     <div class="col-12">
@@ -100,7 +99,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND,GET_NEWE } from "../store/actio
   import 'vue-slick-carousel/dist/vue-slick-carousel.css'
   // optional style for arrows & dots
   import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
-
+import moment from 'moment'
 
 
   export default {
@@ -284,6 +283,12 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND,GET_NEWE } from "../store/actio
 
 
          methods: {
+
+          covertdate(date){
+            console.log('date',date);
+                  return moment(String(date)).format('MMMM ,Do YYYY')
+        },
+
 
       redirectTo(name) {
                     this.$router.push(name)
