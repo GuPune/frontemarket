@@ -33,8 +33,6 @@
       <VueSlickCarousel v-bind="slickOptions">
     <div v-for="i in x.data"  class="img-wrapper cards">
 
-
-
               <div class="cards c-shopinmy-tt">
 
 
