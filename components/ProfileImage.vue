@@ -15,10 +15,12 @@
                                 <div class="boxMenu">
                                     <ul class="nav flex-column nav-pills memberMenu">
                                         <li class="prof-s" id="member-MyAccount" @click="redirectTo('profile-userprofile')"  :class="{'profile-menu': checkPath('profile-userprofile')}">
-                                            <p  v-if ="this.language == 'en'">{{this.placeholder_profiledata}}</p>
-                                            <p  v-if ="this.language == 'ch'">{{this.placeholder_profiledata}}</p>
-                                            <p  v-if ="this.language == 'th' || this.language == null">{{this.placeholder_profiledata}}</p>
+                                            <p  v-if ="this.language == 'en'"><i class="fa fa-phone" aria-hidden="true"> :</i>{{this.placeholder_profiledata}}</p>
+                                            <p  v-if ="this.language == 'ch'"><i class="fa fa-phone" aria-hidden="true"> :</i>{{this.placeholder_profiledata}}</p>
+                                            <p  v-if ="this.language == 'th' || this.language == null"><i class="fa fa-phone" aria-hidden="true"> :</i>{{this.placeholder_profiledata}}</p>
                                         </li>
+
+
                                        <!-- <li class="" id="member-editprofile" >
                                             <p></p>
                                         </li> -->
@@ -31,7 +33,7 @@
 
                                         </li>
                                         <li class="prof-s" id="member-orderedhistory" @click="redirectTo('profile-historyorder')"  :class="{'profile-menu': checkPath('profile-historyorder')}" >
-                                <i aria-hidden="true" class="fa fa-user-circle-o"></i>
+
                                                  <p  v-if ="this.language == 'en'">{{this.placeholder_history}}</p>
                                             <p  v-if ="this.language == 'ch'">{{this.placeholder_history}}</p>
                                             <p  v-if ="this.language == 'th' || this.language == null">{{this.placeholder_history}}</p>
