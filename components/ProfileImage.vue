@@ -34,20 +34,20 @@
                                         </li>
                                         <li class="prof-s" id="member-orderedhistory" @click="redirectTo('profile-historyorder')"  :class="{'profile-menu': checkPath('profile-historyorder')}" >
 
-                                                 <p  v-if ="this.language == 'en'"><i class="fa fa-phone" aria-hidden="true"> :</i>{{this.placeholder_history}}</p>
-                                            <p  v-if ="this.language == 'ch'"><i class="fa fa-phone" aria-hidden="true"> :</i>{{this.placeholder_history}}</p>
-                                            <p  v-if ="this.language == 'th' || this.language == null"><i class="fa fa-phone" aria-hidden="true"> :</i>{{this.placeholder_history}}</p>
+                                                 <p  v-if ="this.language == 'en'"><i class="fa fa-file-text" aria-hidden="true"> :</i>{{this.placeholder_history}}</p>
+                                            <p  v-if ="this.language == 'ch'"><i class="fa fa-file-text" aria-hidden="true"> :</i>{{this.placeholder_history}}</p>
+                                            <p  v-if ="this.language == 'th' || this.language == null"><i class="fa fa-file-text" aria-hidden="true"> :</i>{{this.placeholder_history}}</p>
                                         </li>
                                                                                 <li class="prof-s" id="member-changepassword"  :class="{'profile-menu': checkPath('profile-changepassword')}"  @click="redirectTo('profile-changepassword')">
-                                             <p  v-if ="this.language == 'en'"><i class="fa fa-phone" aria-hidden="true"> :</i>{{this.placeholder_password}}</p>
-                                            <p  v-if ="this.language == 'ch'"><i class="fa fa-phone" aria-hidden="true"> :</i>{{this.placeholder_password}}</p>
-                                            <p  v-if ="this.language == 'th' || this.language == null"><i class="fa fa-phone" aria-hidden="true"> :</i>{{this.placeholder_password}}</p>
+                                             <p  v-if ="this.language == 'en'"><i class="fa fa-exchange" aria-hidden="true"> :</i>{{this.placeholder_password}}</p>
+                                            <p  v-if ="this.language == 'ch'"><i class="fa fa-exchange" aria-hidden="true"> :</i>{{this.placeholder_password}}</p>
+                                            <p  v-if ="this.language == 'th' || this.language == null"><i class="fa fa-exchange" aria-hidden="true"> :</i>{{this.placeholder_password}}</p>
                                         </li>
 
                                         <li class="prof-s" id="member-changepassword"  :class="{'profile-menu': checkPath('profile-logout')}"   @click.prevent="logout">
-                                             <p  v-if ="this.language == 'en'"><i class="fa fa-phone" aria-hidden="true"> :</i>{{this.placeholder_logout}}</p>
-                                            <p  v-if ="this.language == 'ch'"><i class="fa fa-phone" aria-hidden="true"> :</i>{{this.placeholder_logout}}</p>
-                                            <p  v-if ="this.language == 'th' || this.language == null"><i class="fa fa-phone" aria-hidden="true"> :</i>{{this.placeholder_logout}}</p>
+                                             <p  v-if ="this.language == 'en'"><i class="fa fa-circle-o" aria-hidden="true"> :</i>{{this.placeholder_logout}}</p>
+                                            <p  v-if ="this.language == 'ch'"><i class="fa fa-circle-o" aria-hidden="true"> :</i>{{this.placeholder_logout}}</p>
+                                            <p  v-if ="this.language == 'th' || this.language == null"><i class="fa fa-circle-o" aria-hidden="true"> :</i>{{this.placeholder_logout}}</p>
                                         </li>
 
 
