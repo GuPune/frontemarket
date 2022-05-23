@@ -147,17 +147,17 @@ export default {
 
 axios: {
   // See https://github.com/nuxt-community/axios-module#options
-  baseURL: "https://cmsecom.idtest.work/api",
-  ImageURL: "https://cmsecom.idtest.work/public/product/",
-  ImageSoc: "https://cmsecom.idtest.work/public/images/",
+  baseURL: "https://back.halalthaimart.com/api",
+  ImageURL: "https://back.halalthaimart.com/public/product/",
+  ImageSoc: "https://back.halalthaimart.com/public/images/",
 
  },
 
 env: {
- baseURL: "https://cmsecom.idtest.work/api",
-  ImageURL: "https://cmsecom.idtest.work/public/product/",
-  ImageSoc: "https://cmsecom.idtest.work/public/images/",
-  backend:"https://cmsecom.idtest.work",
+ baseURL: "https://back.halalthaimart.com/api",
+  ImageURL: "https://back.halalthaimart.com/public/product/",
+  ImageSoc: "https://back.halalthaimart.com/public/images/",
+  backend:"https://back.halalthaimart.com",
 },
 
 
