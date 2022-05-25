@@ -25,12 +25,12 @@
     <ShopRelation v-if="currentRouteName == 'index'"/>
 
 
-   <LongFooter  v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou') "/>
+   <LongFooter  v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou')  && (currentRouteName != 'form-login')"/>
 
 
 
 
-                <Footer  v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou')"/>
+                <Footer  v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou')  && (currentRouteName != 'form-login')"/>
 
 
 <div class="icon-bar">
@@ -90,6 +90,9 @@
 
 
  </script>
+
+
+
 
 <script>
 
