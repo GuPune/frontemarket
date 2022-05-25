@@ -1,6 +1,5 @@
 <template>
 <div>
-<Nav/>
 <section id="Loginform" class="form-login-desktop" style="margin:15px;">
       <div class="container forms">
 
