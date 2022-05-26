@@ -8,14 +8,14 @@
  <div class="row" style="padding-top: 40px;padding-bottom: 40px;">
     <div class="col-md-12 col-sm-12 col-lg-12 col-xl-2">
   <div class="card shopping-cart" >
-<CategoriesShell/>
+
   </div>
     </div>
 
 
 
     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-10 ipad-order or-mob">
-            <ProductShell/>
+
     </div>
 
   </div>
