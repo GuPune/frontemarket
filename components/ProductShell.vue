@@ -16,8 +16,8 @@
 
         <div class="product" id="product">
             <div class="row product">
-                 <div class="cards cards-mobile">
-                    <div class="cardproduct-first" v-for="(item, index) in lists" :key="item.id" >
+                 <div class="cards cards-mobile-find">
+                    <div class="cardproduct-first-list" v-for="(item, index) in lists" :key="item.id" >
                                                         <img class="imgproduct-product related-images" :src="Checkimage(item.img_product)" @click="Shop(item)">
                                                             <div class="product-name-first">{{item.name_th}}</div>
                                                               <div class="row">
