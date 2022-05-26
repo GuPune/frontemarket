@@ -4,9 +4,11 @@
 <div>
  <div class="row">
         <div class="col-12">
-                            <div class="h3 text-center mt-3 mb-4" v-if="searchkeyword"> รายการจากการค้นหาคำว่า {{searchkeyword}}</div>
-                              <div class="h3 text-center mt-3 mb-4" v-else> ไม่มีรายการค้นหา</div>
+          <div class="card shopping-cart">
+                            <div class="h5 text-center mt-3 mb-4" v-if="searchkeyword"> รายการจากการค้นหาคำว่า {{searchkeyword}}</div>
+                              <div class="h5 text-center mt-3 mb-4" v-else> พบสินค้าทั้งหมด 36 รายการ</div>
                         </div>
+                         </div>
     </div>
   <div class="heading-title-relat" v-if="cate_sel.length == 0 ">
         </div>
