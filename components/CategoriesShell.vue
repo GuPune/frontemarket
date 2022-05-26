@@ -1,6 +1,21 @@
 <template>
 <div>
+
  <ul class="profile-info-list" style="padding: 5px;">
+
+  <li style="border-bottom: 1px solid #dee2e6;">
+                                                <div class="field">ตัวกรองสินค้า</div>
+
+
+
+                                            </li>
+
+                                               <li>
+                                                <div class="field">ค้นหาสินค้า</div>
+   <b-form-input type="text"  v-model="form.search" v-on:keyup="changeName"></b-form-input>
+
+
+                                            </li>
    <li>
                                                 <div class="field">ราคา: {{ form.price }}</div>
 
@@ -31,9 +46,10 @@
         :value="option.id"
         :aria-describedby="ariaDescribedby"
         name="flavour-3a"
-         @change="choosecate($event)"
+         @change="choosecate($event)" style="border-bottom: 1px solid #dee2e6;padding: 0.5rem 0;"
       >
         {{ option.name_th }}
+<span class="pull-right">({{ option.total }})</span>
       </b-form-checkbox>
     </b-form-group>
 
@@ -67,7 +83,8 @@ import { mapGetters } from "vuex";
      id:null,
      price:'0',
      cate_type:null,
-     search:""
+     search:"",
+     namesearch:""
    }
     };
   },
@@ -89,6 +106,7 @@ import { mapGetters } from "vuex";
      async mounted() {
         let cateshell = await this.$store.dispatch(GET_CATEGORY_SHELL)
           this.form.selected = this.selected
+          console.log('cateshell',cateshell);
 
 this.options = cateshell;
 this.form.search = this.searchkeyword;
@@ -98,6 +116,12 @@ this.form.search = this.searchkeyword;
          },
 
       methods: {
+
+       async changeName(){
+
+         console.log('this-form',this.form);
+            let productfind = await this.$store.dispatch(GET_PRODUCT_SHELL_FIND,this.form);
+        },
       async onChange(event) {
 
         },
