@@ -7,11 +7,11 @@
 
     <b-navbar toggleable="sm" type="dark"   :style="{'background-color':objectslayout.color}" class="banav navbar-fixed-top" fixed="top">
     <b-navbar-brand  @click="redirectTo('index')">
-   <img src="../assets/123-01-remo.png"  alt=""  class="icon-mobile nav-icon-desktop">
-     <img src="../assets/log.png"  alt=""  class="icon-mobile nav-icon-mobile">
+   <img src="../assets/haland.png"  alt=""  class="icon-mobile nav-icon-desktop">
+     <img src="../assets/halanmo.png"  alt=""  class="icon-mobile nav-icon-mobile">
     </b-navbar-brand>
               <b-navbar-brand href="#" class="nav-sell"  @click="redirectTo('form-shopregis')" >{{objectslayout.textsellermyshop}}
-                
+
               </b-navbar-brand>
 
     <b-navbar-brand href="#" class="cart-mobi"  @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i><span> ({{ cartTotal }})  ตะกร้าสินค้า </span></b-nav-item></b-navbar-brand>
@@ -65,8 +65,8 @@
           </b-navbar-brand>
       </b-col>
 
-    
-      
+
+
         <b-col cols="2" md="1"  sm="1" class="nav-regishop-mobile px-2">
           <b-navbar-brand href="#"   @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus fa-w-18 icon-size-nav regishover" aria-hidden="true"></i><span class="numitem "> {{ cartTotal }}  </span><span class="descquickmenu regishover">{{this.placeholder_cart}}</span>
 
@@ -142,7 +142,7 @@
     <b-navbar-brand class="nav_mobie_fisrt">
        <b-row>
            <b-col cols="2" md="2"  sm="2" xl="3" @click="redirectTo('index')">
-           <img src="../assets/log.png"  alt=""  class="icon-mobile nav-icon-mobile">
+           <img src="../assets/halanmo.png"  alt=""  class="icon-mobile nav-icon-mobile">
             </b-col>
 
                   <b-col cols="2" md="2"  sm="2" lg="2" xl="1">
@@ -354,7 +354,7 @@
 
                       <!-- <b-navbar-nav class="ml-auto">
           <b-nav-item-dropdown right  v-if="isLogins">
-       
+
           <template #button-content>
             <em>  <i class="fa fa-user-circle-o" aria-hidden="true" @click="redirectTo('profile-userprofile')" ></i></em>
           </template>
@@ -384,7 +384,7 @@
           <template #button-content style="position: absolute;">
             <em>   <i class="fa fa-user-circle-o" aria-hidden="true" @click="redirectTo('profile-userprofile')" ></i></em>
           </template>
-        
+
         </b-nav-item-dropdown>
       </b-navbar-nav>
             </b-col>

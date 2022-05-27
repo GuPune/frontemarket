@@ -1,6 +1,6 @@
 <template>
 <div>
-   <b-navbar   style="background-color:#EF7318" class="banav nav-shop-tops">
+   <b-navbar   style="background-color:colors" class="banav nav-shop-tops">
     <b-navbar-brand href="#"></b-navbar-brand>
          <img :src="Checkimage(objectslayoutshop.logo)"  alt=""  class="icon-mobile">
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
