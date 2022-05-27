@@ -1,6 +1,6 @@
 <template>
 <div>
-   <b-navbar   style="background-color:colors" class="banav nav-shop-tops">
+   <b-navbar   style="background-color:#61a81b" class="banav nav-shop-tops">
     <b-navbar-brand href="#"></b-navbar-brand>
          <img :src="Checkimage(objectslayoutshop.logo)"  alt=""  class="icon-mobile">
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
@@ -45,7 +45,7 @@
 
 
 
-   <b-navbar toggleable="sm"   style="{'background-color':colors}"  class="banav navbar-fixed-top navshop-mobiles" :fixed="position" v-on:scroll.native="handleScroll">
+   <b-navbar toggleable="sm"   style="{'background-color':#61a81b}"  class="banav navbar-fixed-top navshop-mobiles" :fixed="position" v-on:scroll.native="handleScroll">
     <b-navbar-brand href="#"><div class="shop-name-nav-mobile">
        <!-- <img :src="Checkimage(objectslayoutshop.logo)" alt=""  class="icon-mobile"> -->
     </div>
