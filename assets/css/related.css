@@ -269,7 +269,13 @@ button.button, a.button {
 
  */
 
- .cards-mobile { grid-template-columns: repeat(4, 1fr); }
+ .cards-mobile { grid-template-columns: repeat(4, 1fr);
+
+}
+.cards-mobile-find { grid-template-columns: repeat(4, 1fr);
+
+}
+
 
 .row.product{
     margin-top: 25px;
@@ -343,14 +349,19 @@ padding-left: 15px;
 
  @media (max-width: 900px) {
     .cards-mobile { grid-template-columns: repeat(2, 1fr); }
+
+    .cards-mobile-find { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (max-width: 1200) {
     .cards-mobile { grid-template-columns: repeat(2, 1fr); }
+    .cards-mobile-find { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (max-width: 1400px) {
     .cards-mobile { grid-template-columns: repeat(3, 1fr); }
+    .cards-mobile-find { grid-template-columns: repeat(3, 1fr); }
+
     .product-byshop { grid-template-columns: repeat(3, 1fr); }
   }
 
@@ -430,6 +441,8 @@ padding-left: 15px;
     }
 
     .cards-mobile { grid-template-columns: repeat(2, 1fr); }
+
+    .cards-mobile-find { grid-template-columns: repeat(2, 1fr); }
   }
 
 
@@ -520,6 +533,23 @@ padding-left: 15px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);*/
   max-width: 300px;
   margin: auto;
+ /* text-align: center;*/
+ background-color: white;
+ background-color: #fff;
+ box-shadow: 0 0 3px rgb(0 0 0 / 10%);
+ border-radius: 8px;
+}
+
+
+.cardproduct-first-list {
+  width: auto;
+  height: auto;
+  /* border:1px solid rgba(255, 0, 0, 0);
+  background-color: rgb(235, 235, 235);
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);*/
+  max-width: 300px;
+
  /* text-align: center;*/
  background-color: white;
  background-color: #fff;

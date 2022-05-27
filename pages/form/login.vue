@@ -1,7 +1,6 @@
 <template>
 <div>
-<Nav/>
-<section id="Loginform" class="form-login-desktop" style="margin:50px;">
+<section id="Loginform" class="form-login-desktop" style="margin:15px;">
       <div class="container forms">
 
        <div class="alert alert-danger" role="alert" v-if="alert.message">

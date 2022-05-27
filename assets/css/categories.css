@@ -18,6 +18,19 @@
 }
 
 
+.custom-control-label::before {
+  position: absolute;
+  top: 0.25rem;
+  left: -1.5rem;
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  pointer-events: none;
+  content: "";
+  background-color: #fff;
+  border: #41309c solid 1px;
+}
+
 
 .cateimg:hover{
     transform: scale(1.1);
@@ -48,12 +61,12 @@
     -webkit-overflow-scrolling: touch;
     scroll-snap-points-x: repeat(300px);
     scroll-snap-type: mandatory;
-    
+
 }
 
 
  .img-slider {
-  
+
     width: 120px;
     border: 2px solid whitesmoke;
     border-radius: 100px;
@@ -126,7 +139,7 @@
 
 .slidertest {
     display: flex;
-   
+
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     scroll-snap-points-x: repeat(300px);
@@ -185,11 +198,11 @@
     text-align: center;
     color: #446027;
   }
-  
+
   .main-heading-cate-mobile {
     padding: 30px 0;
   }
-  
+
   .heading-title-cate-mobile h2 em {
     color: #4c4c4c;
     font-weight: normal;
@@ -197,7 +210,7 @@
     display: block;
     font-size: 22px;
   }
-  
+
   .heading-title-cate-mobile h2 span {
     display: inline-block;
     border-bottom: 2px solid #446027;
@@ -206,7 +219,7 @@
     letter-spacing: 2px;
     font-weight: bold;
   }
-  
+
 
 
   @media (max-width: 500px) {
@@ -223,19 +236,19 @@
         .im-cate-text{
           font-size: 12px;
               }
-  
-     
-  
-  
+
+
+
+
    }
 
 @media screen and (max-width: 600px) {
 
     .cate-name-mobile-fonts {
         font-size: 0.83em!important;
-    
+
     }
- 
+
 .heading-title-cate-mobile h2 {
     font-size: 20px;
     text-transform: uppercase;
@@ -243,11 +256,11 @@
     text-align: center;
     color: #446027;
   }
-  
+
   .main-heading-cate-mobile {
     padding: 30px 0;
   }
-  
+
   .heading-title-cate-mobile h2 em {
     color: #4c4c4c;
     font-weight: normal;
@@ -255,7 +268,7 @@
     display: block;
     font-size: 22px;
   }
-  
+
   .heading-title-cate-mobile h2 span {
     display: inline-block;
     border-bottom: 2px solid #446027;
@@ -264,9 +277,15 @@
     letter-spacing: 2px;
     font-weight: bold;
   }
-  
-    
+
+
 
   }
 
-  
+
+  @media only screen and (max-width: 600px) {
+.find-mobile{
+  margin: 15px;
+}
+
+  }

@@ -32,6 +32,7 @@ const actions = {
 
         const { data } = await CategoryService.getcateshell();
 
+
         return data;
     },
 };
@@ -40,7 +41,7 @@ const mutations = {
     [SET_CATEGORY_SHELL](state,data) {
         state.category_shell = data;
     }
-  
+
 };
 
 export default {

@@ -2,7 +2,7 @@
 
 
     <section id="categories">
-        <div class="row relatedweb-test">
+        <div class="row relatedweb-test" style="margin-bottom: -25px;">
 
 
                 <div class="col-12 col-md-9 col-lg-9" v-for="(x, index) in categornew" :key="x.id">
