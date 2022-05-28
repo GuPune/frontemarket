@@ -580,6 +580,7 @@ import axios from 'axios';
             total: { numeric,required },
             dateavalue: { required },
             time: { required },
+            name: { required },
 
 
         }
