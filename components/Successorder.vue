@@ -373,6 +373,26 @@
                     </button>
                   </div>
                 <div class="modal-body">
+
+
+                         <div class="form-group">
+                        <div class="wrap-input100 validate-input">
+                          <p>ชื่อ <span style="color:red;">*</span></p>
+                          <input
+                            class="form-control"
+                            type="text"
+                            name="contact"
+                            placeholder="ชื่อ"
+                             v-model="form.name"
+                                :error-messages="NameErrors"
+                                        required
+                                        @input="$v.form.name.$touch()"
+                                        @blur="$v.form.name.$touch()"
+                                        :class="{ 'is-invalid': $v.form.name.$error}"
+
+                          />
+                         </div>
+                      </div>
                    <div class="form-group">
                         <div class="wrap-input100 validate-input">
                           <p>จำนวนเงินที่ชำระ <span style="color:red;">*</span></p>
@@ -560,6 +580,7 @@ import axios from 'axios';
             total: { numeric,required },
             dateavalue: { required },
             time: { required },
+            name: { required },
 
 
         }
@@ -582,7 +603,9 @@ import axios from 'axios';
         cartnumber:null,
         total:null,
         dateavalue:"",
-        time:""
+        name:"",
+        time:"",
+        connect:""
 
         },
 
@@ -615,7 +638,13 @@ import axios from 'axios';
             TotalErrors() {
             const errors = [];
             if (!this.$v.form.total.$dirty) return errors;
-            !this.$v.form.total.required && errors.push("โปรดระบุชื่อ");
+            !this.$v.form.total.required && errors.push("จำนวน");
+            return errors;
+            },
+            NameErrors() {
+            const errors = [];
+            if (!this.$v.form.name.$dirty) return errors;
+            !this.$v.form.name.required && errors.push("โปรดระบุชื่อ");
             return errors;
             },
             DateavalueErrors() {
@@ -767,12 +796,18 @@ this.isHiddenUpload = true;
 return false;
 }
 
+
+ this.form.connect = window.location.origin;
  var formData = new FormData(); // Currently empty
+
+
            formData.append('cartnumber', this.orderlist.cartnumber);
            formData.append('total', this.form.total);
+           formData.append('name', this.form.name);
            formData.append('dateavalue', this.form.dateavalue);
            formData.append('time', this.form.time);
            formData.append('image', this.file);
+           formData.append('connect',  this.form.connect);
 
 
 
