@@ -604,7 +604,8 @@ import axios from 'axios';
         total:null,
         dateavalue:"",
         name:"",
-        time:""
+        time:"",
+        connect:""
 
         },
 
@@ -796,12 +797,15 @@ return false;
 }
 
  var formData = new FormData(); // Currently empty
+
+ this.form.connect = window.location.origin;
            formData.append('cartnumber', this.orderlist.cartnumber);
            formData.append('total', this.form.total);
            formData.append('name', this.form.name);
            formData.append('dateavalue', this.form.dateavalue);
            formData.append('time', this.form.time);
            formData.append('image', this.file);
+           formData.append('connect',  this.form.connect);
 
 
 
