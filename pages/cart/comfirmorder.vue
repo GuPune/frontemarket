@@ -1,6 +1,6 @@
 <template>
 
-<div class="container col-12 col-lg-12 col-xl-8" style="padding-top: 90px;">
+<div class="container col-12 col-lg-12 col-xl-9" style="padding-top: 90px;padding-bottom: 40px;">
 <StatusShipping/>
     <div style="padding-top: 20px;">
     <div class="row">

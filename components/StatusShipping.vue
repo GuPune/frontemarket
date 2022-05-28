@@ -11,13 +11,14 @@
                         <i :class="icon"></i>
                          </div>
                     </div>
-                </div>           
+                </div>
                 <div class="boxText fs-ta-14 fs-md-ta-16 pt-1 active">
                     <!-- <i class="far fa-check-circle"></i> -->
-                    ข้อมูลจัดส่ง                </div>
+                    {{placeholder_datatra}}
+                      </div>
             </div>
         </div>
-        
+
 
         <!-- Step 2: Payment -->
         <div id="stepHeaderPayment" class="col px-1 divPayment text-center">
@@ -27,11 +28,15 @@
                         <div :class="paymentclass">
                         <i :class="iconpay"></i>
                         </div>
-                    </div>            
+                    </div>
                 </div>
                 <div class="boxText fs-ta-14 fs-md-ta-16 pt-1 ">
                     <!-- <i class="far fa-check-circle"></i> -->
-                    การชำระเงิน                </div>
+
+                    {{placeholder_payment}}
+
+
+                            </div>
             </div>
         </div>
 
@@ -43,19 +48,20 @@
                         <div :class="success">
                                                             <i :class="iconsuccess"></i>
                                                     </div>
-                    </div>  
+                    </div>
                 </div>
                 <div class="boxText fs-ta-14 fs-md-ta-16 pt-1 ">
                     <!-- <i class="far fa-check-circle"></i> -->
-                    ยืนยันการสั่งซื้อ                </div>
+
+{{placeholder_payment_confrim}}
+
+                         </div>
             </div>
         </div>
 
     </div>
-</div> 
-        </div>
-    </div>
-</div>    
+</div>
+
 
 
 
@@ -68,12 +74,12 @@
 <script>
 export default {
       components: {
-      
-           
+
+
               },
 
     computed: {
-     a () { 
+     a () {
          if(this.$route.name === 'cart-payment'){
               return 'box-shape-icon box-circle-icon-color visited';
          }else if(this.$route.name === 'cart-success'){
@@ -89,7 +95,7 @@ export default {
               return 'fas fa-check fa-lg icon-check-circle fa-lg position-icon position-icon-left-shipping fa';
          }else if(this.$route.name === 'cart-success'){
                 return 'fas fa-check fa-lg icon-check-circle fa-lg position-icon position-icon-left-shipping fa';
-          
+
          }
          else {
                return 'fas fa-truck stepIcon fa-lg position-icon position-icon-left-shipping fa';
@@ -110,7 +116,7 @@ export default {
               return 'fa fa-car';
          }else if(this.$route.name === 'cart-success'){
                 return 'fas fa-check fa-lg icon-check-circle fa-lg position-icon position-icon-left-shipping fa';
-          
+
          }
          else {
                return 'far fa-credit-card stepIcon fa-lg position-icon position-icon-left-payment fa';
@@ -138,15 +144,41 @@ export default {
 
       }
     },
-             
+
+        async created(){
+
+
+        this.language = localStorage.getItem("language");
+
+        if(this.language == 'en'){
+         this.placeholder_datatra = 'Delivery';
+         this.placeholder_payment = 'Payment';
+         this.placeholder_payment_confrim = 'Confirmation';
+
+        }
+        if(this.language == 'ch'){
+          this.placeholder_datatra = '配送信息';
+           this.placeholder_payment = '付款方法';
+            this.placeholder_payment_confrim = '订单确认';
+
+        }
+        if(this.language == 'th' || this.language == null){
+          this.placeholder_datatra = 'ข้อมูลจัดส่ง';
+           this.placeholder_payment = 'การชำระเงิน';
+            this.placeholder_payment_confrim = 'ยืนยันการสั่งซื้อ';
+
+        }
+
+        },
+
         mounted() {
 
-          
-        },
-       
-           
 
-     
-    
+        },
+
+
+
+
+
     };
 </script>

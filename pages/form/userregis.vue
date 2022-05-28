@@ -4,7 +4,7 @@
 
 
           
-<div class="container forms">
+<div class="container forms" style="margin-bottom: 40px;">
 
     <div class="row">
       <h5 style="color: #171c24;">สมัครสมาชิก</h5>
@@ -185,7 +185,7 @@ import Datepicker from "@/components/TouchDatePicker";
           validations: {
         form: {
             email: { required, email },
-            password: { required,minLength: minLength(6) },
+            password: { required,minLength: minLength(8) },
             first_name: { required },
             last_name: { required },
             tel: { required },

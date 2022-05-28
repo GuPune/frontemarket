@@ -1,13 +1,14 @@
 <template>
 <section class="Shopregis">
-<div class="container forms">
+<div class="container forms" style="margin-bottom: 40px;">
 <Loader v-if="isLoading"/>
-      <h5 style="color: #171c24;">สมัครสมาชิกร้านค้า</h5>
+
+      <h5 style="color: #171c24;">{{this.placeholder_menu}}</h5>
 
 
     <div class="row">
             <div class="input-group input-group-icon">
-        <input type="text"   id="tel" class="form-control"  placeholder="ชื่อ" v-model="form.first_name"
+        <input type="text"   id="tel" class="form-control"  :placeholder="[[ placeholder_first_name ]]" v-model="form.first_name"
          :error-messages="firstNameErrors" required
          :class="{ 'is-invalid': $v.form.first_name.$error}"
          @input="$v.form.first_name.$touch()"
@@ -17,7 +18,7 @@
 
 
     <div class="input-group input-group-icon">
-        <input type="text" class="form-control" placeholder="นามสกุล" v-model="form.last_name"
+        <input type="text" class="form-control" :placeholder="[[ placeholder_last_name ]]"  v-model="form.last_name"
                                                                          :error-messages="lastNameErrors" required
                                                                          :class="{ 'is-invalid': $v.form.last_name.$error}"
                                                                          @input="$v.form.last_name.$touch()"
@@ -36,7 +37,7 @@
     <div class="row">
 
       <div class="input-group input-group-icon">
-        <input type="text" class="form-control" placeholder="ชื่อร้านค้า" v-model="form.shop_name"
+        <input type="text" class="form-control" :placeholder="[[ placeholder_store_name ]]" v-model="form.shop_name"
                                                                          :error-messages="ShopnameErrors" required
                                                                          :class="{ 'is-invalid': $v.form.shop_name.$error}"
                                                                          @input="$v.form.shop_name.$touch()"
@@ -47,7 +48,7 @@
 
 
        <div class="input-group input-group-icon">
-        <input type="text" class="form-control" placeholder="เบอร์ติดต่อ" v-model="form.tel"
+        <input type="text" class="form-control" :placeholder="[[ placeholder_tel ]]" v-model="form.tel"
                                                                          :error-messages="telErrors" required
                                                                          :class="{ 'is-invalid': $v.form.tel.$error}"
                                                                          @input="$v.form.tel.$touch()"
@@ -65,7 +66,7 @@
                                                                          :class="{ 'is-invalid': $v.form.address.$error}"
                                                                          @input="$v.form.address.$touch()"
                                                                          @blur="$v.form.address.$touch()"
-                                                                           placeholder="ที่อยู่"
+                                                                           :placeholder="[[ placeholder_address ]]"
                                                                  ></b-form-textarea>
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-address-card"></i></div>
       </div>
@@ -84,7 +85,7 @@
     <div class="row">
 
     <div class="input-group input-group-icon">
-        <input type="text" class="form-control" placeholder="อีเมล"  v-model="form.email"
+        <input type="text" class="form-control"  :placeholder="[[ placeholder_email ]]"  v-model="form.email"
                                                                          :error-messages="EmailErrors" required
                                                                          :class="{ 'is-invalid': $v.form.email.$error}"
                                                                          @input="$v.form.email.$touch()"
@@ -95,7 +96,7 @@
 
 
       <div class="input-group input-group-icon">
-        <input type="password" class="form-control" placeholder="รหัสผ่าน"  v-model="form.password"
+        <input type="password" class="form-control" :placeholder="[[ placeholder_password ]]"  v-model="form.password"
                                                                          :error-messages="PassErrors" required
                                                                          :class="{ 'is-invalid': $v.form.password.$error}"
                                                                          @input="$v.form.password.$touch()"
@@ -115,12 +116,46 @@
 
     <div class="input-group input-group-icon">
                <select class="form-control" name="x" id="x" @change="ChooseType($event)">
-                                <option value="">- เลือก - </option>
+                                <option value="">- {{this.placeholder_choose}} - </option>
                                   <option :value="typeshops.id"  v-for="(typeshops, index) in typeshop" :key="typeshops.id" >{{typeshops.type_name}}</option>
                                                             </select>
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-plus"></i></div>
       </div>
     </div>
+
+
+           <div class="row">
+   <div class="input-group input-group-icon">
+        <input type="text" class="form-control" :placeholder="[[ placeholder_farmbook ]]" v-model="form.farmbook"
+                                                                        />
+        <div class="input-icon"><i style="color: #005dc0;" class="fa fa-hand-o-right"></i></div>
+      </div>
+       </div>
+  <div class="row">
+   <div class="input-group input-group-icon">
+            <b-form-file v-model="file" ref="file-input" class="mb-2"
+            @change="onFileChange"
+            ></b-form-file>
+      </div>
+       </div>
+        <div class="row">
+                <div id="preview" v-if="isHiddenUpload == true">
+                              <img class="imgtax" v-if="url" :src="url" />
+                            </div>
+          </div>
+
+    <div class="row">
+    <div class="input-group input-group-icon">
+      <b-form-checkbox  id="checkbox-1" v-model="status" name="checkbox-1" value="accepted" unchecked-value="not_accepted">ข้าพเจ้าเข้าใจและตกลงตาม</b-form-checkbox>
+       <label for="commerce" style="color: red;"      v-on:click="Checkpolicy()"
+                                  >เงื่อนไขการให้บริการ </label>
+และ
+      <label for="commerce" style="color: red;"  v-on:click="CheckService()"
+                                  >นโยบายความเป็นส่วนตัว </label>
+
+      </div>
+    </div>
+
 
 
 
@@ -135,19 +170,10 @@
 
 
 
-    <b-row>
-    <b-col cols="12" md="12">    <b-form-checkbox
-      id="checkbox-1"
-      v-model="status"
-      name="checkbox-1"
-      value="accepted"
-      unchecked-value="not_accepted"
-
-
-    >
+    <!-- <b-row>
+    <b-col cols="12" md="12" sm="12">
+      <b-form-checkbox  id="checkbox-1" v-model="status" name="checkbox-1" value="accepted" unchecked-value="not_accepted">
      ข้าพเจ้าเข้าใจและตกลงตาม
-
-
       <label for="commerce" style="color: red;"      v-on:click="Checkpolicy()"
                                   >เงื่อนไขการให้บริการ </label>
 และ
@@ -160,7 +186,7 @@
 
 
 
-  </b-row>
+  </b-row> -->
  <b-row>
    <b-col cols="12" md="12">
    <h6 v-if="status == 'not_accepted'"  style="color: red; text-align:center;">กรุณาอ่านและยอมรับข้อตกลงในการใช้งาน</h6>
@@ -190,6 +216,8 @@ import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/vue-loading.css';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import Loader from '@/components/Loader'
+import axios from 'axios';
+import { API_URL } from "../../environment/environment.js";
 
 
 
@@ -200,7 +228,7 @@ import Loader from '@/components/Loader'
        validations: {
         form: {
             email: { required, email },
-            password: { required,minLength: minLength(6) },
+            password: { required,minLength: minLength(8) },
             first_name: { required },
             last_name: { required },
             shop_name: { required },
@@ -211,7 +239,19 @@ import Loader from '@/components/Loader'
     },
 
      data: () => ({
-        status: 'not_accepted',
+        file:null,
+        url: null,
+        isHiddenUpload:false,
+        placeholder_menu: "",
+        placeholder_first_name: "",
+        placeholder_last_name:"",
+        placeholder_store_name:"",
+        placeholder_tel:"",
+        placeholder_address:"",
+        placeholder_email:"",
+        placeholder_password:"",
+        placeholder_choose:"",
+        status: "",
         isLoading: false,
         checkpol:false,
         max:10,
@@ -227,6 +267,7 @@ import Loader from '@/components/Loader'
             address:"",
             type_id:"",
             status: false,
+            farmbook:""
         },
       }),
      computed: {
@@ -282,19 +323,167 @@ import Loader from '@/components/Loader'
         }
     },
 
+    async created() {
+
+        this.language = localStorage.getItem("language");
+
+        if(this.language == 'en'){
+         this.placeholder_first_name = 'First Name';
+         this.placeholder_last_name = 'Last Name';
+         this.placeholder_store_name = 'Store Name';
+         this.placeholder_tel = 'Contact Number';
+         this.placeholder_address = 'Address';
+         this.placeholder_email = 'Email';
+         this.placeholder_password = 'Password';
+         this.placeholder_choose = 'Choose';
+         this.placeholder_menu = 'Subscribe to a store';
+        this.placeholder_farmbook = 'Farm Doae';
+
+
+
+
+        }
+        if(this.language == 'ch'){
+          this.placeholder_first_name = '姓名';
+          this.placeholder_last_name = '姓';
+          this.placeholder_store_name = '店铺名称';
+          this.placeholder_tel = '联系电话';
+          this.placeholder_address = '地址';
+          this.placeholder_email = '电子邮件';
+          this.placeholder_password = '密码';
+          this.placeholder_choose = '选择';
+           this.placeholder_menu = '商店订阅';
+           this.placeholder_farmbook = 'Farm Doae';
+
+
+        }
+         if(this.language == 'th' || this.language == null){
+          this.placeholder_first_name = 'ชื่อ';
+          this.placeholder_last_name = 'นามสกุล';
+          this.placeholder_store_name = 'ชื่อร้านค้า';
+          this.placeholder_tel = 'เบอร์ติดต่อ';
+          this.placeholder_address = 'ที่อยู่';
+          this.placeholder_email = 'อีเมล';
+          this.placeholder_password = 'รหัสผ่าน';
+          this.placeholder_choose = 'เลือก';
+           this.placeholder_menu = 'สมัครสมาชิกร้านค้า';
+           this.placeholder_farmbook = 'รหัสเกษตรกร';
+
+        }
+
+
+
+    },
+
+
        async mounted() {
           this.form.url = window.location.origin;
      let typeshop = await this.$store.dispatch(GET_TYPE_SHOP);
-     
+
 
      let pdpa = await this.$store.dispatch(SYSTEM_PDPA,this.form);
      this.policies = pdpa.policies
-      this.protectdata = pdpa.protectdata
-         
-this.typeshop = typeshop;
+     this.protectdata = pdpa.protectdata
+    this.typeshop = typeshop;
         },
 
         methods: {
+
+
+              onFileChange(event) {
+
+      var file = event.target.files[0];
+     this.url = URL.createObjectURL(file);
+     console.log(this.url);
+    // Ensure it's an image
+    if(file.type.match(/image.*/)) {
+
+
+        // Load the image
+        var reader = new FileReader();
+        reader.onload = (readerEvent) =>{
+            var image = new Image();
+          image.onload = (imageEvent) => {
+         var canvas = document.createElement('canvas'),
+                    max_size = 544,// TODO : pull max size from a site config
+                    width = image.width,
+                    height = image.height;
+                if (width > height) {
+                    if (width > max_size) {
+                        height *= max_size / width;
+                        width = max_size;
+                    }
+                } else {
+                    if (height > max_size) {
+                        width *= max_size / height;
+                        height = max_size;
+                    }
+                }
+                canvas.width = width;
+                canvas.height = height;
+                canvas.getContext('2d').drawImage(image, 0, 0, width, height);
+                var dataUrl = canvas.toDataURL('image/jpeg');
+                let resizedImage = this.dataURLToBlob(dataUrl);
+
+
+                      axios.post(API_URL+'/upload-shop', {
+        image: dataUrl
+      }).then(res => {
+      this.file = res.data
+     this.isHiddenUpload = true
+
+      }).catch(function(){
+
+              this.$swal({
+                type: "error",
+                title: "Upload รูปภาพไม่ผ่านติดต่อเจ้าหน้าที่",
+                showConfirmButton: true,
+                reverseButtons: true
+            });
+
+        });
+
+
+
+            };
+
+            image.src = readerEvent.target.result;
+
+
+        }
+        reader.readAsDataURL(file);
+
+    }
+
+
+
+
+    },
+        dataURLToBlob(dataURI) {
+
+  // convert base64 to raw binary data held in a string
+  // doesn't handle URLEncoded DataURIs - see SO answer #6850276 for code that does this
+  var byteString = atob(dataURI.split(',')[1]);
+
+  // separate out the mime component
+  var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
+
+  // write the bytes of the string to an ArrayBuffer
+  var ab = new ArrayBuffer(byteString.length);
+
+  // create a view into the buffer
+  var ia = new Uint8Array(ab);
+
+  // set the bytes of the buffer to the correct values
+  for (var i = 0; i < byteString.length; i++) {
+      ia[i] = byteString.charCodeAt(i);
+  }
+
+  // write the ArrayBuffer to a blob, and you're done
+  var blob = new Blob([ab], {type: mimeString});
+  return blob;
+
+},
 
         Checkpolicy(){
 
@@ -335,6 +524,7 @@ this.typeshop = typeshop;
         },
         async registershop(){
 
+          this.form.url = this.file;
 
 
              this.$v.$touch()
@@ -346,7 +536,8 @@ this.typeshop = typeshop;
                  this.errortype()
                 return false;
             }
-            if(this.status == 'not_accepted'){
+            if((this.status == 'not_accepted') || (this.status == '')){
+              this.status = 'not_accepted';
             return false
             }
              await this.loader()

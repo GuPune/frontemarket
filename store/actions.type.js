@@ -105,8 +105,17 @@ export const GET_NAVBAR_SHOP = "get_navbar_shop";
 export const GET_CHECK_SHOP = "get_check_shop";
 export const SYSTEM_PDPA = "get_ststem_pdpa";
 export const GET_FOOTER = "get_footer";
-
+export const HIDECOOKIEFIRST = "hide_cookie";
 export const LOG_OUT = "log_out";
+export const GET_FAV = "get_fav";
+export const ADD_FAV = "add_fav";
+export const DEL_FAV = "del_fav";
+export const ADD_ITEM = "add_item";
+export const REMOVE_FAVALL = "remove_item";
+export const GET_FAVALL = "get_favall";
+
+export const GET_NEWE = "get_emar";
+
 
 
 

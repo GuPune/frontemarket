@@ -31,7 +31,7 @@
               id="filter-input"
               v-model="filter"
               type="search"
-              placeholder="Type to Search"
+              placeholder="ค้นหาข้อมูล"
             ></b-form-input>
 
             <b-input-group-append>
@@ -246,7 +246,7 @@ import { FETCH_ADS_SHOP,FETCH_GET_PROFILE,FETCH_ADDRESS,DEL_ADDRESS_BY_ID,GET_OR
         totalRows: 1,
         currentPage: 1,
         perPage: 5,
-        pageOptions: [5, 10, 15, { value: 100, text: "Show a lot" }],
+        pageOptions: [5, 10, 15, { value: 100, text: "ทั้งหมด" }],
         sortBy: '',
         sortDesc: false,
         sortDirection: 'asc',

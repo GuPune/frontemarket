@@ -1,65 +1,77 @@
 <template>
-<section id="long-footer">
-                    <div class="pt-5 pb-5 long-footer navbar-expand-lg navbar-dark bg-dark">
-                        <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-5 col-xs-12 about-company">
-                                 
-                                            <img src="../assets/logohori2.png" class="logofoot">
-                                        <br>
-                                        <p class="font-weight-bold" style="color:#e67825; font-size:30px;">บริษัท ไอดีไดรฟ์ จำกัด</p><br>
-                                            <p>200/222 ม.2 ถ.ชัยพฤกษ์ ต.ในเมือง อ.เมือง จ.ขอนแก่น 40000</p>
-                                            
-                                      
-                                        
-                                        <!-- <p class="pr-5 text-white-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac ante mollis quam tristique convallis </p> -->
-                                        <!-- <p><a href="#"><i class="fa fa-facebook-square mr-1"></i></a><a href="#"><i class="fa fa-linkedin-square"></i></a></p> -->
-                                    </div>
-                                    
-                                    <div class="col-lg-3 col-xs-12 links" >
-                                        <h4 class="mt-lg-0 mt-sm-3" style="color:#e67825;"></h4>
-                                            <ul class="m-0 p-0">
-                                             <!-- 
-                                            <li>- <a href="#">Lorem ipsum</a></li>
-                                            <li>- <a href="#">Nam mauris velit</a></li>
-                                            <li>- <a href="#">Etiam vitae mauris</a></li>
-                                            <li>- <a href="#">Fusce scelerisque</a></li>
-                                            <li>- <a href="#">Sed faucibus</a></li>
-                                            <li>- <a href="#">Mauris efficitur nulla</a></li>
-                                            -->
-                                            </ul>
-                                    </div>
-                                    <div class="col-lg-4 col-xs-12">
-                                            <h4 class="mt-lg-0 mt-sm-4" style="color:#e67825;">ช่องทางการติดต่อ</h4><br>
-                                            <p class="mb-0">โทร  : 043-228899</p>
-                                            <p>อีเมล : idofficer@iddrives.co.th</p><br>
-                                              <a href="#">
-                                                <!-- <i class="fab fa-facebook-f"></i>&nbsp;&nbsp; -->
-                                                </a>
-                                                <a href="#">
-                                                    <!-- <i class="fab fa-youtube"></i>&nbsp;&nbsp; -->
-                                                </a>
-                                                <a href="#">
-                                                    <!-- <i class="fab fa-instagram"></i>&nbsp;&nbsp; -->
-                                                </a>
-                                                <a href="#">
-                                                    <!-- <i class="fab fa-line"></i> -->
-                                                </a>
-
-                                            <!-- <p>200/222 ม.2 ถ.ชัยพฤกษ์ ต.ในเมือง อ.เมือง จ.ขอนแก่น 40000</p>
-                                            <p class="mb-0">โทร  : 043-228899</p>
-                                            <p>อีเมล : idofficer@iddrives.co.th</p> -->
-                                    </div>
-                                </div>
-                        </div>
-                    </div>
-
-         
-         
-            
+<div >
 
 
-</section>
+<div data-v-76387e28="" id="longtext" class="hiHGcU">
+    <div class="container">
+    <div id="footer-top">
+    <div class="row footer-top" data-v-2eecd278="">
+</div>
+</div>
+<div class="row main-footer">
+    <div class="flex-row col-lg-9"><div id="footer-main" class="row" style="font-size: 14px;">
+<div class="col col-12 col-md-4 col-xs-12"  data-v-2eecd278="">
+<div class="footer-list" data-v-2eecd278="">
+<p data-v-2eecd278="" style="font-weight: 900;">เกี่ยวกับ Emarketplace</p>
+<ul class="list-unstyled" data-v-2eecd278="">
+<li data-v-2eecd278="">เกี่ยวกับช้อปปิ้งออนไลน์</li>
+<li data-v-2eecd278="">การสั่งซื้อสินค้า</li>
+<li data-v-2eecd278="">การชำระเงิน</li>
+</ul>
+</div>
+</div>
+<div class="col-12 col-md-4 col-xs-12"  data-v-2eecd278="">
+<div class="footer-list" data-v-2eecd278="">
+<p data-v-2eecd278="" style="font-weight: 900;">บริการลูกค้า</p>
+<ul class="list-unstyled" data-v-2eecd278="">
+<li data-v-2eecd278="">คำถามที่พบบ่อย</li>
+<li data-v-2eecd278="">การตรวจสอบสถานะการจัดส่ง</li>
+<li data-v-2eecd278="">ข้อตกลงและเงื่อนไขการซื้อสินค้า</li>
+<li data-v-2eecd278="">นโยบายความเป็นส่วนตัว</li>
+</ul>
+</div>
+</div>
+<div class="contact-us col-12 col-md-4 col-xs-12" data-v-2eecd278="">
+<p data-v-2eecd278="" style="font-weight: 900;">ติดตามเรา</p>
+    <div>
+      <a href="" class="me-4 text-reset">
+        <img alt="Link to Facebook" src="https://ast.kaidee.com/blackpearl/_static/images/shared/socials/facebook-icon.svg" class="sc-1f2nd0k-2 huuFqJ">
+      </a>
+      <a href="" class="me-4 text-reset">
+      <img alt="Link to Facebook" src="https://ast.kaidee.com/blackpearl/_static/images/shared/socials/twitter-icon.svg" class="sc-1f2nd0k-2 huuFqJ">
+      </a>
+      <a href="" class="me-4 text-reset">
+        <img alt="Link to Facebook" src="https://ast.kaidee.com/blackpearl/_static/images/shared/socials/instagram-icon.svg" class="sc-1f2nd0k-2 huuFqJ">
+      </a>
+      <a href="" class="me-4 text-reset">
+        <img alt="Link to Facebook" src="https://ast.kaidee.com/blackpearl/_static/images/shared/socials/youtube-icon.svg" class="sc-1f2nd0k-2 huuFqJ">
+      </a>
+
+    </div>
+</div>
+</div>
+</div>
+ <div class="newsletter col-lg-3"><div class="row">
+    <div class="col-md-12 col-lg-12"><div class="row"><div class="pb-3 col-md-6 col-lg-12"><p style="font-weight: 900;">เพื่อประสบการณ์ใช้งานที่ดีขึ้น
+</p>
+
+<div class="sc-1bfilmk-7 gmZUEV"><a href="#" rel="noopener noreferrer" target="_blank" class="sc-1bfilmk-1 dmSGJL">
+<div class="sc-1bfilmk-10 fegwqE">
+    <div class="sc-1f2nd0k-0 geXxFB">
+        <div class="lazyload-wrapper "><img alt="Link to AppStore" src="https://ast.kaidee.com/blackpearl/_static/images/shared/appstore-badge-download-en.png" class="sc-1f2nd0k-2 x14"></div></div></div></a><a href="#" rel="noopener noreferrer" target="_blank" class="sc-1bfilmk-1"><div class="sc-1bfilmk-10 fegwqE"><div class="sc-1f2nd0k-0 huuFqJ"><div class="lazyload-wrapper "><img alt="Link to Google Play Store" src="https://ast.kaidee.com/blackpearl/_static/images/shared/googleplay-badge-download-en.png" class="sc-1f2nd0k-2 x14"></div></div></div></a><a href="https://appgallery.huawei.com/app/C100928675" rel="noopener noreferrer" target="_blank" class="sc-1bfilmk-1 huuFqJ"><div class="sc-1bfilmk-10 fegwqE"><div class="sc-1f2nd0k-0 geXxFB"><div class="lazyload-wrapper ">
+
+        </div>
+        </div>
+        </div></a></div>
+                  </div>
+                  </div>
+                  <div class="big-c-app">
+                      <!-- <span type="Body5-System-Regular" class="sc-3tpgds-0 lhTHMK sc-1bfilmk-6 bKugib">© 2565 บริษัท ไอดีไดรฟ์ จำกัด</span> -->
+                    </div></div></div></div></div>
+
+                  </div>
+                  </div>
+</div>
 </template>
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">

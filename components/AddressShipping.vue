@@ -2,10 +2,10 @@
 
         <div class="card shopping-cart">
 
-        <h2 class="shoping-cart-title bg-order"><span>ที่อยู่ในการจัดส่ง </span>
+        <h2 class="shoping-cart-title bg-order"><span>{{placeholder_shipping}} </span>
             <span id="showLinkChangeAddress">
-            <a class="linkChangeAddress">  <b-button v-b-modal.modal-1 class="bt-ship"  @click="showModal()">เปลี่ยนที่อยู่</b-button></a>
-                   <a class="linkChangeAddress">  <b-button v-b-modal.modal-2 class="bt-ship">เพิ่มที่อยู่</b-button></a>
+            <a class="linkChangeAddress">  <b-button v-b-modal.modal-1 class="bt-ship"  @click="showModal()">{{placeholder_change}}</b-button></a>
+                   <a class="linkChangeAddress">  <b-button v-b-modal.modal-2 class="bt-ship">{{placeholder_add}}</b-button></a>
             </span>
         </h2>
                         <div class="card-body">
@@ -27,7 +27,7 @@
     </div>
     </div>
 
-      <b-modal id="modal-1"  title="เลือกที่อยู่ในการจัดส่ง" size="lg">
+      <b-modal id="modal-1"  :title="[[ placeholder_choose_add ]]" size="lg">
         <div>
 
 
@@ -35,7 +35,7 @@
           <table class="table table-striped">
     <thead>
       <tr>
-        <th>ที่อยู่</th>
+        <th>{{placeholder_address}}</th>
         <th></th>
 
       </tr>
@@ -72,7 +72,7 @@
       </b-modal>
 
 
-    <b-modal id="modal-2" ref="modal"  title="เพิ่มที่อยู่" size="lg" no-close-on-backdrop hide-footer>
+    <b-modal id="modal-2" ref="modal"  :title="[[ placeholder_add_address ]]" size="lg" no-close-on-backdrop hide-footer>
 
 
 
@@ -327,6 +327,41 @@ export default {
               },
 
                  async created(){
+
+
+          this.language = localStorage.getItem("language");
+
+        if(this.language == 'en'){
+         this.placeholder_shipping = 'Choose a delivery address';
+          this.placeholder_change = 'Change';
+          this.placeholder_add = 'Add';
+           this.placeholder_choose_add = 'Choose a delivery address';
+           this.placeholder_address = 'Address';
+          this.placeholder_add_address = 'Add Address';
+          this.placeholder_add_address_save = 'Save';
+
+
+
+        }
+        if(this.language == 'ch'){
+          this.placeholder_shipping = '选择送货地址';
+                this.placeholder_change = '更换地址';
+          this.placeholder_add = '添加地址';
+          this.placeholder_choose_add = '选择送货地址';
+         this.placeholder_add_address = 'Add Address';
+           this.placeholder_add_address_save = '添加地址';
+
+
+        }
+        if(this.language == 'th' || this.language == null){
+          this.placeholder_shipping = 'ที่อยู่ในการจัดส่ง';
+          this.placeholder_change = 'เปลี่ยนที่อยู่';
+          this.placeholder_add = 'เพิ่มที่อยู่';
+          this.placeholder_choose_add = 'เลือกที่อยู่ในการจัดส่ง';
+          this.placeholder_address = 'ที่อยู่';
+          this.placeholder_add_address = 'เพิ่มที่อยู่';
+            this.placeholder_add_address_save = 'บันทึก';
+        }
 
 
     //    let provinces = await this.$store.dispatch(GET_PROVINCES);

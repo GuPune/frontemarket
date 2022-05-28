@@ -5,11 +5,11 @@
 
 <!-- --------------------------------store 1--------------------------------- -->
 
- <div class="row" style="padding-top: 40px;">
+ <div class="row" style="padding-top: 40px;padding-bottom: 40px;">
     <div class="col-md-12 col-sm-12 col-lg-12 col-xl-9">
       <div class="card shopping-cart" >
                   <h2 class="title-shoping-cart bg-order bg-order-mobile">
-                  <span>สินค้าในตะกร้า</span>
+                  <span>{{placeholder_cart}}</span>
                   </h2>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="cart-row cart-row-top hidden-xs cart-row-order-mobile">
@@ -40,25 +40,25 @@
                         <div class="row cart-mobile-dis orderlist-center-deskop"  v-if="cart.length > 0">
                             <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
                                 <div class="row">
-                                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3"><div class="title-top h4">รูปภาพ</div></div>
+                                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3"><div class="title-top h4">{{placeholder_pic}}</div></div>
                                     <div class="col-xs-6 col-sm-12 col-md-5 col-lg-5">
-                                        <div class="title-top h4">ชื่อสินค้า</div>
+                                        <div class="title-top h4">{{placeholder_nameproduct}}</div>
                                     </div>
                                     <div class="col-xs-6 col-sm-12 col-md-2 col-lg-4">
-                                        <div class="title-top h4">ชื่อร้าน</div>
+                                        <div class="title-top h4">{{placeholder_shop}}</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
                                 <div class="row">
                                     <div class="col-xs-3 col-sm-12 col-md-3 col-lg-3">
-                                        <div class="title-top h4">ราคา</div>
+                                        <div class="title-top h4">{{placeholder_price}}</div>
                                     </div>
                                     <div class="col-xs-3 col-sm-12 col-md-4 col-lg-3">
-                                        <div class="title-top h4">จำนวน</div>
+                                        <div class="title-top h4">{{placeholder_q}}</div>
                                     </div>
                                     <div class="col-xs-3 col-sm-12 col-md-4 col-lg-4">
-                                        <div class="title-top h4">ทั้งหมด</div>
+                                        <div class="title-top h4">{{placeholder_total}}</div>
                                     </div>
                                     <div class="col-xs-3 col-sm-12 col-md-2 col-lg-2"></div>
                                 </div>
@@ -168,7 +168,7 @@
      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 button-order-spac">
      <div  class="float-right" v-if="cart.length > 0">
 
-    <b-button variant="outline-danger" class="button-order"  @click="RemoveToCartAll()"><i class="fa fa-trash"></i> ลบสินค้าในตะกร้าทั้งหมด</b-button>
+    <b-button variant="outline-danger" class="button-order"  @click="RemoveToCartAll()"><i class="fa fa-trash"></i> {{placeholder_del_cart}}</b-button>
 
     </div>
     </div>
@@ -182,8 +182,8 @@
      <div class="row" v-if="cart.length > 0">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12">
          <div  class="float-right button-order boxSubmitCart" >
-            <b-button squared  variant="outline-primary" size="lg" class="btn btn-lg-auto btn-style-o buttonShopping" @click="redirectToroot('index')">ซื้อสินค้าต่อ</b-button>
-            <b-button squared  variant="outline-primary" size="lg" class="btn btn-lg-auto btn-style buttonCheckout" @click="redirectTo('cart-comfirmorder')">สั่งซื้อสินค้า</b-button>
+            <b-button squared  variant="outline-primary" size="lg" class="btn btn-lg-auto btn-style-o buttonShopping" @click="redirectToroot('index')">{{placeholder_buy_cart}}</b-button>
+            <b-button squared  variant="outline-primary" size="lg" class="btn btn-lg-auto btn-style buttonCheckout" @click="redirectTo('cart-comfirmorder')">{{placeholder_buy_order}}</b-button>
             </div>
          </div>
          </div>
@@ -259,6 +259,48 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,ADD_UP,AD
         },
 
         mounted() {
+
+        },
+
+        async created(){
+        this.language = localStorage.getItem("language");
+        if(this.language == 'en'){
+          this.placeholder_cart = 'Product in Cart';
+          this.placeholder_pic = 'Picture';
+          this.placeholder_nameproduct = 'Product Name';
+          this.placeholder_shop = 'Shop';
+          this.placeholder_price = 'Price';
+          this.placeholder_q = 'Quantity';
+          this.placeholder_total = 'Total';
+          this.placeholder_del_cart = 'Remove all items in the cart';
+          this.placeholder_buy_cart = 'Continue shopping';
+          this.placeholder_buy_order = 'Place an order';
+        }
+        if(this.language == 'ch'){
+          this.placeholder_cart = '大车';
+          this.placeholder_pic = '图片';
+          this.placeholder_nameproduct = '产品名称';
+          this.placeholder_shop = '店铺名称';
+          this.placeholder_price = '价钱';
+          this.placeholder_q = '数量';
+          this.placeholder_total = '全部';
+          this.placeholder_del_cart = '删除购物车中的所有物品';
+          this.placeholder_buy_cart = '继续购物';
+          this.placeholder_buy_order = '下订单';
+
+        }
+        if(this.language == 'th' || this.language == null){
+          this.placeholder_cart = 'สินค้าในตะกร้า';
+          this.placeholder_pic = 'รูปภาพ';
+          this.placeholder_nameproduct = 'ชื่อสินค้า';
+          this.placeholder_shop = 'ชื่อร้าน';
+          this.placeholder_price = 'ราคา';
+          this.placeholder_q = 'จำนวน';
+          this.placeholder_total = 'ทั้งหมด';
+          this.placeholder_del_cart = 'ลบสินค้าในตะกร้าทั้งหมด';
+          this.placeholder_buy_cart = 'ซื้อสินค้าต่อ';
+          this.placeholder_buy_order = 'สั่งซื้อสินค้า';
+        }
 
         },
 

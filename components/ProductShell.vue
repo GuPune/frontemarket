@@ -4,9 +4,11 @@
 <div>
  <div class="row">
         <div class="col-12">
-                            <div class="h3 text-center mt-3 mb-4" v-if="searchkeyword"> รายการจากการค้นหาคำว่า {{searchkeyword}}</div>
-                              <div class="h3 text-center mt-3 mb-4" v-else> ไม่มีรายการค้นหา</div>
+          <div class="card shopping-cart">
+                            <div class="h5 text-center mt-3 mb-4" v-if="searchkeyword"> รายการจากการค้นหาคำว่า {{searchkeyword}} พบสินค้า {{this.product_shell_find.length}} รายการ</div>
+                              <div class="h5 text-center mt-3 mb-4" v-else> พบสินค้าทั้งหมด {{this.product_shell_find.length}} รายการ</div>
                         </div>
+                         </div>
     </div>
   <div class="heading-title-relat" v-if="cate_sel.length == 0 ">
         </div>
@@ -16,8 +18,8 @@
 
         <div class="product" id="product">
             <div class="row product">
-                 <div class="cards cards-mobile">
-                    <div class="cardproduct-first" v-for="(item, index) in lists" :key="item.id" >
+                 <div class="cards cards-mobile-find">
+                    <div class="cardproduct-first-list" v-for="(item, index) in lists" :key="item.id" >
                                                         <img class="imgproduct-product related-images" :src="Checkimage(item.img_product)" @click="Shop(item)">
                                                             <div class="product-name-first">{{item.name_th}}</div>
                                                               <div class="row">
@@ -41,7 +43,7 @@
 
                                                    <div class="product-footer">
                                                    <div class="addtocart">
-                                                   <button type="button" title="เพิ่มลงตะกร้า" data-placement="top" class="button btn-cart" @click="addToCart(item)">
+                                                   <button type="button" title="เพิ่มลงตะกร้าป" data-placement="top" class="button btn-cart" @click="addToCart(item)">
                                                    <span>
                                                    <span>เพิ่มลงตะกร้า </span></span>
                                                    </button></div></div>
@@ -50,8 +52,8 @@
         </div>
         </div>
         </div>
-    
-          
+
+
       <b-row>
       <b-col>
         <b-pagination
@@ -64,8 +66,8 @@
         />
       </b-col>
     </b-row>
-      
-     
+
+
     </div>
 </template>
 

@@ -1,205 +1,8 @@
 <template>
-<!--
-<header class="section-header">
-    <section class="header-main border-bottom webnav">
-        <div class="container-fluid">
-            <div class="row mx-auto col-sm-9">
-                <div class="col-sm-4">
-                  <a href="#" class="brand-wrap" data-abc="true">
 
-                        <span class="logo">
-                          E-MARKET PLACE {{authenticated}}
-
-                          </span>
-                  </a>
-                </div>
-
-                <div class="col-sm-3">
-
-
-                </div>
-                <div class="col-sm-5">
-                    <div class="d-flex justify-content-end">
-
-                            <div class="nav-link nav-user-img">
-                               <img src="http://www.dgtfarm.com/images/thai-flag.png" alt="" height="20px" width="20px">ไทย
-                            </div>
-
-
-                            <div class="nav-link nav-user-img">
-                               <img src="http://www.dgtfarm.com/images/eng-flag.png" alt="" height="20px" width="20px">อังกฤษ
-                            </div>
-
-                            <span class="vl"></span>
-                            <div  @click="redirectTo('/form/shopregis')" class="nav-link nav-user-img">
-                              <span class="login" style="font-size:14px;" >ขายสินค้ากับเรา</span>
-                            </div>
-
-                            <nuxt-link to="cart/orderlist"  class="nav-link widget-header">
-                              <i class="fas fa fa-cart-plus" aria-hidden="true"></i>
-                              <span> ({{ cartTotal }}) </span>
-                            </nuxt-link><span class="vl"></span>
-
-                            <span class="vl"></span>
-
-                            <div class="nav-link nav-user-img">
-                              <span class="login">
-                                <div class="dropdown"><i class="fas fa fa-user-circle-o" aria-hidden="true"></i>
-                                  <div class="dropdown-content">
-                                  <div v-if="isLogins">
-                                   <div  @click="redirectTo('/profile/userprofile')" class="nav-link nav-user-img text-login">
-                                         <span>จัดการบัญชี</span>
-                                       </div>
-                                 <a href="#"  @click.prevent="logout">ออกจากระบบ</a>
-                                  </div>
-
-                                  <div v-else="!isLogins">
-                                        <div  @click="redirectTo('/form/login')" class="nav-link nav-user-img text-login">
-                                         <span>เข้าสู่ระบบ</span>
-                                       </div>
-                                        <div  @click="redirectTo('/form/userregis')" class="nav-link nav-user-img text-login">
-                                         <span>สมัครสมาชิก</span>
-                                       </div>
-                                  </div>
-                                  </div>
-                                </div>
-                              </span>
-                            </div>
-
-
-
-
-                            <span class="vl"></span>
-                            <a class="nav-link nav-user-img" href="#" data-toggle="modal" data-target="#login-modal" data-abc="true">
-                              <span class="login">
-                                <div class="dropdown"> <i class="fas fa fa-globe" aria-hidden="true"></i>
-                                  <div class="dropdown-content">
-                                  <a href="#">ภาษาไทย</a>
-                                  <a href="#">ENGLISH</a>
-                                  </div>
-                                </div>
-                              </span>
-                            </a>
-
-
-
-
-
-
-
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <section class="header-main border-bottom mobilenav">
-        <div class="container-fluid">
-            <div class="row mx-auto">
-                <div class="col-sm-4">
-                  <a href="#" class="brand-wrap" data-abc="true">
-
-                        <span class="logo">
-                          E-MARKET PLACE
-
-                          </span>
-                  </a>
-                </div>
-
-                <div class="col-sm-4">
-
-                </div>
-                <div class="col-sm-4">
-                    <div class="d-flex justify-content-end">
-
-                            <span class="vl"></span>
-                            <a class="nav-link nav-user-img" href="#" data-toggle="modal" data-target="#login-modal" data-abc="true">
-                              <span class="login" style="font-size:14px;">หน้าหลัก</span>
-                            </a>
-
-
-                            <span class="vl"></span>
-                            <nuxt-link to="form/shopregis" class="nav-link nav-user-img" href="#" data-toggle="modal" data-target="#login-modal" data-abc="true">
-                              <span class="login" style="font-size:14px;" >ขายสินค้ากับเรา</span>
-                            </nuxt-link>
-
-                            <nuxt-link to="cart/orderlist"  class="nav-link widget-header">
-                              <i class="fas fa fa-cart-plus" aria-hidden="true"></i>
-                                <span> (5) </span>
-                            </nuxt-link><span class="vl"></span>
-
-
-
-                            <span class="vl"></span>
-                            <a class="nav-link nav-user-img" href="#" data-toggle="modal" data-target="#login-modal" data-abc="true">
-                              <span class="login">
-                                <div class="dropdown"><i class="fas fa fa-user-circle-o" aria-hidden="true"></i>
-                                  <div class="dropdown-content">
-                                  <nuxt-link to="form/login">เข้าสู่ระบบ</nuxt-link>
-                                  <nuxt-link to="form/userregis">สมัครสมาชิก</nuxt-link>
-                                  <nuxt-link to="profile/userprofile">จัดการบัญชี</nuxt-link>
-                                  <a href="#">ออกจากระบบ</a>
-                                  </div>
-                                </div>
-
-
-                              </span>
-                            </a>
-
-
-
-
-                            <span class="vl"></span>
-                            <a class="nav-link nav-user-img" href="#" data-toggle="modal" data-target="#login-modal" data-abc="true">
-                              <span class="login">
-                                <div class="dropdown"> <i class="fas fa fa-globe" aria-hidden="true"></i>
-                                  <div class="dropdown-content">
-                                  <a href="#">ภาษาไทย</a>
-                                  <a href="#">ENGLISH</a>
-                                  </div>
-                                </div>
-
-
-                              </span>
-                            </a>
-
-
-
-
-
-
-
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-</header>
-
-
--->
 <div>
 
-  <b-container class="bv-example-row nav-first-s" v-if="objectslayout">
+  <b-container class="bv-example-row nav-first-s nav-desktop-last" v-if="objectslayout">
   <b-row>
 
     <b-navbar toggleable="sm" type="dark"   :style="{'background-color':objectslayout.color}" class="banav navbar-fixed-top" fixed="top">
@@ -207,7 +10,9 @@
    <img src="../assets/123-01-remo.png"  alt=""  class="icon-mobile nav-icon-desktop">
      <img src="../assets/log.png"  alt=""  class="icon-mobile nav-icon-mobile">
     </b-navbar-brand>
-              <b-navbar-brand href="#" class="nav-sell"  @click="redirectTo('form-shopregis')" >{{objectslayout.textsellermyshop}}</b-navbar-brand>
+              <b-navbar-brand href="#" class="nav-sell"  @click="redirectTo('form-shopregis')" >{{objectslayout.textsellermyshop}}
+                
+              </b-navbar-brand>
 
     <b-navbar-brand href="#" class="cart-mobi"  @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i><span> ({{ cartTotal }})  ตะกร้าสินค้า </span></b-nav-item></b-navbar-brand>
 
@@ -230,8 +35,10 @@
 
 
 
-      <b-col cols="8" md="4"  sm="3" class="nav-form-search nav-search">
-        <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?" v-model="form.search"></b-form-input>
+      <b-col cols="8" md="3"  sm="3" class="nav-form-search nav-search">
+              <b-form-input placeholder="Find a good product ?" v-model="form.search" v-if ="this.language == 'en'"></b-form-input>
+              <b-form-input placeholder="寻找好的产品 ?" v-model="form.search" v-if ="this.language == 'ch'"></b-form-input>
+              <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?" v-model="form.search" v-if ="this.language == 'th' || this.language == null"></b-form-input>
       </b-col>
        <b-col cols="3" md="1"  sm="3" class="nav-form-search">
   <b-form-select v-model="selected" :options="options"></b-form-select>
@@ -246,27 +53,73 @@
 
 
 
-       <b-col cols="1" md="1"  sm="2" class="px-2 nav-regishop-ipad" style="max-width: 16.7777%">
-          <b-navbar-brand href="#"  @click="redirectTo('form-shopregis')" style="font-size: 14px;">{{objectslayout.textsellermyshop}}</b-navbar-brand>
-      </b-col>
-        <b-col cols="1" md="1"  sm="1" class="nav-regishop-mobile px-2">
-          <b-navbar-brand href="#"   @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i><span> ({{ cartTotal }}) </span></b-navbar-brand>
+
+           <b-col cols="2" md="1"  sm="1" class="nav-regishop-mobile px-2">
+          <b-navbar-brand href="#" @click="redirectTo('form-shopregis')">
+           <span class="descquickmenu regishover"  v-if ="this.language == 'en'">{{this.placeholder_mysell}}</span>
+            <span class="descquickmenu regishover"  v-if ="this.language == 'ch'">{{this.placeholder_mysell}}</span>
+             <span class="descquickmenu regishover"  v-if ="this.language == 'th' || this.language == null">{{this.placeholder_mysell}}</span>
+
+
+
+          </b-navbar-brand>
       </b-col>
 
+    
+      
+        <b-col cols="2" md="1"  sm="1" class="nav-regishop-mobile px-2">
+          <b-navbar-brand href="#"   @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus fa-w-18 icon-size-nav regishover" aria-hidden="true"></i><span class="numitem "> {{ cartTotal }}  </span><span class="descquickmenu regishover">{{this.placeholder_cart}}</span>
+
+          </b-navbar-brand>
+      </b-col>
+
+          <b-col cols="2" md="1"  sm="1" class="nav-regishop-mobile px-2">
+          <b-navbar-brand href="#" @click="redirectTo('fav-favorite')">
+            <i class="fa fa-heart-o regishover" aria-hidden="true"></i><span class="descquickmenu regishover" >สินค้าโปรด</span>
+
+
+
+          </b-navbar-brand>
+      </b-col>
+
+
+
+
+
+
+
       <b-col cols="2" md="2"  sm="1" class="nav-form-search px-2 nav-regishop-mobile login-size-ipad">
-          <b-navbar-brand href="#"   v-if="!isLogins" @click="redirectTo('form-login')">{{objectslayout.textlogin}}</b-navbar-brand>
+          <b-navbar-brand href="#"   v-if="!isLogins">
+
+
+            <!-- <div v-if ="this.language == 'en'" > {{this.placeholder_login}} </div>
+             <div v-if ="this.language == 'ch'" > {{this.placeholder_login}}</div>
+              <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_login}} </div> -->
+                 <i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="descquickmenu">
+                   <span @click="redirectTo('form-userregis')" class="regishover">{{this.placeholder_regis}}  </span>| <span @click="redirectTo('form-login')" class="regishover">{{this.placeholder_login}}</span></span>
+            </b-navbar-brand>
 
 
                 <b-navbar-nav class="ml-auto cart-desktop">
-
-
           <b-nav-item-dropdown right  v-if="isLogins">
           <!-- Using 'button-content' slot -->
           <template #button-content>
-            <em>{{ objects.name}}</em>
+            <em>  <i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="descquickmenu" style="color:#ffffff">คุณ{{ objects.name}}</span></em>
           </template>
-          <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">โปรไฟล์</b-dropdown-item>
-          <b-dropdown-item href="#"  @click.prevent="logout">ออกจากระบบ</b-dropdown-item>
+          <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">
+            <div>
+
+              <div v-if ="this.language == 'en'" > {{this.placeholder_profile}} </div>
+             <div v-if ="this.language == 'ch'" > {{this.placeholder_profile}}</div>
+              <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_profile}} </div>
+            </div>
+          </b-dropdown-item>
+          <b-dropdown-item href="#"  @click.prevent="logout">
+               <div v-if ="this.language == 'en'" > {{this.placeholder_logout}} </div>
+             <div v-if ="this.language == 'ch'" > {{this.placeholder_logout}}</div>
+              <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_logout}} </div>
+
+          </b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
 
@@ -280,6 +133,288 @@
 
   </b-row>
 </b-container>
+
+
+<b-container class="bv-example-row nav-first-s nav-mobile-last" v-if="objectslayout">
+  <b-row>
+
+    <b-navbar toggleable="sm" type="dark"   :style="{'background-color':objectslayout.color}" class="banav navbar-fixed-top" fixed="top">
+    <b-navbar-brand class="nav_mobie_fisrt">
+       <b-row>
+           <b-col cols="2" md="2"  sm="2" xl="3" @click="redirectTo('index')">
+           <img src="../assets/log.png"  alt=""  class="icon-mobile nav-icon-mobile">
+            </b-col>
+
+                  <b-col cols="2" md="2"  sm="2" lg="2" xl="1">
+          <b-navbar-brand href="#"  @click="redirectTo('form-shopregis')">
+                  <span class="descquickmenu regishover"  v-if ="this.language == 'en'">{{this.placeholder_mysell}}</span>
+            <span class="descquickmenu regishover"  v-if ="this.language == 'ch'">{{this.placeholder_mysell}}</span>
+             <span class="descquickmenu regishover"  v-if ="this.language == 'th' || this.language == null">{{this.placeholder_mysell}}</span>
+
+
+
+          </b-navbar-brand>
+      </b-col>
+
+       <b-col cols="2" md="2"  sm="2" class="px-2">
+          <b-navbar-brand href="#"   @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus fa-w-18 icon-size-nav regishover" aria-hidden="true"></i><span class="numitem "> {{ cartTotal }}  </span><span class="descquickmenu regishover">ตะกร้าสินค้า</span>
+
+          </b-navbar-brand>
+      </b-col>
+
+          <b-col cols="2" md="2"  sm="2" lg="2" class="px-2">
+          <b-navbar-brand href="#" @click="redirectTo('fav-favorite')">
+            <i class="fa fa-heart-o regishover" aria-hidden="true"></i><span class="descquickmenu regishover" >สินค้าโปรด</span>
+
+
+
+          </b-navbar-brand>
+      </b-col>
+
+      <b-col cols="4" md="4"  sm="4" lg="3" class="nav-form-search px-2 login-size-ipad">
+          <b-navbar-brand href="#"   v-if="!isLogins">
+                 <i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="descquickmenu">
+                   <span @click="redirectTo('form-userregis')" class="regishover">{{this.placeholder_regis}} </span>| <span @click="redirectTo('form-login')" class="regishover">{{this.placeholder_login}}</span></span>
+            </b-navbar-brand>
+
+
+                      <b-navbar-nav class="ml-auto cart-desktop">
+          <b-nav-item-dropdown right  v-if="isLogins">
+          <!-- Using 'button-content' slot -->
+          <template #button-content>
+            <em>  <i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="descquickmenu" style="color:#ffffff">คุณ{{ objects.name}}</span></em>
+          </template>
+          <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">
+            <div>
+
+              <div v-if ="this.language == 'en'" > {{this.placeholder_profile}} </div>
+             <div v-if ="this.language == 'ch'" > {{this.placeholder_profile}}</div>
+              <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_profile}} </div>
+            </div>
+          </b-dropdown-item>
+          <b-dropdown-item href="#"  @click.prevent="logout">
+               <div v-if ="this.language == 'en'" > {{this.placeholder_logout}} </div>
+             <div v-if ="this.language == 'ch'" > {{this.placeholder_logout}}</div>
+              <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_logout}} </div>
+
+          </b-dropdown-item>
+        </b-nav-item-dropdown>
+      </b-navbar-nav>
+            </b-col>
+       </b-row>
+
+
+        <b-row>
+     <b-col cols="8" md="8"  sm="8" lg="8" class="nav-form-search nav-search search-mobile">
+              <b-form-input placeholder="Find a good product ?" v-model="form.search" v-if ="this.language == 'en'"></b-form-input>
+              <b-form-input placeholder="寻找好的产品 ?" v-model="form.search" v-if ="this.language == 'ch'"></b-form-input>
+              <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?" v-model="form.search" v-if ="this.language == 'th' || this.language == null"></b-form-input>
+      </b-col>
+     <b-col cols="3" md="3"  sm="3" lg="3" class="nav-form-search">
+  <b-form-select v-model="selected" :options="options"></b-form-select>
+      </b-col>
+      <b-col cols="1" md="1"  sm="1" lg="1" class="nav-form-search">
+
+
+  <b-button variant="outline-primary ic-nav-bg-white" @click="Search()">   <i class="fas fa  fas fa-search ic-nav-black" aria-hidden="true"></i></b-button>
+
+      </b-col>
+  </b-row>
+    </b-navbar-brand>
+
+
+  </b-navbar>
+
+  </b-row>
+</b-container>
+
+
+
+<b-container class="bv-example-row nav-first-s nav-mobile-smal-last" v-if="objectslayout">
+  <b-row>
+
+    <b-navbar toggleable="sm" type="dark"   :style="{'background-color':objectslayout.color}" class="banav navbar-fixed-top" fixed="top">
+    <b-navbar-brand class="nav_mobie_fisrt">
+       <b-row>
+           <b-col cols="2" md="2"  sm="2" xl="3"  @click="redirectTo('index')">
+           <img src="../assets/log.png"  alt=""  class="icon-mobile nav-icon-mobile">
+            </b-col>
+
+
+        <b-col cols="3" md="2"  sm="2" class="px-2">
+          <b-navbar-brand href="#"  @click="redirectTo('form-shopregis')"><span class="descquickmenumobile regishover">{{this.placeholder_mysell}} | </span>
+
+          </b-navbar-brand>
+      </b-col>
+
+
+       <b-col cols="3" md="2"  sm="2" class="px-2">
+          <b-navbar-brand href="#"   @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus fa-w-18 icon-size-nav regishover" aria-hidden="true"></i><span class="numitem "> {{ cartTotal }}  </span><span class="descquickmenumobile regishover"> ตะกร้าสินค้า |</span>
+
+          </b-navbar-brand>
+      </b-col>
+
+
+
+      <b-col cols="4" md="4"  sm="4" lg="3" class="nav-form-search px-2 login-size-ipad descquickmenumobile-login nav-tp-pad">
+          <b-navbar-brand href="#"   v-if="!isLogins">
+                 <i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="descquickmenumobile">
+                   <span @click="redirectTo('form-login')" class="regishover">  {{this.placeholder_login}}</span></span>
+            </b-navbar-brand>
+
+
+                      <b-navbar-nav class="ml-auto">
+          <b-nav-item-dropdown right  v-if="isLogins">
+          <!-- Using 'button-content' slot -->
+          <template #button-content>
+            <em>  <i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="descquickmenumobile" style="color:#ffffff"> คุณ{{ objects.name}}</span></em>
+          </template>
+          <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')" class="xdasdasd">
+            <div>
+
+              <span @click="redirectTo('profile-userprofile')">  {{this.placeholder_profile}}</span>
+
+            </div>
+          </b-dropdown-item>
+          <b-dropdown-item href="#"  @click.prevent="logout">
+               <div v-if ="this.language == 'en'" > {{this.placeholder_logout}} </div>
+             <div v-if ="this.language == 'ch'" > {{this.placeholder_logout}}</div>
+              <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_logout}} </div>
+          </b-dropdown-item>
+        </b-nav-item-dropdown>
+      </b-navbar-nav>
+            </b-col>
+       </b-row>
+
+
+        <b-row>
+     <b-col cols="8" md="8"  sm="8" lg="8" class="nav-form-search nav-search search-mobile">
+              <b-form-input placeholder="Find a good product ?" v-model="form.search" v-if ="this.language == 'en'"></b-form-input>
+              <b-form-input placeholder="寻找好的产品 ?" v-model="form.search" v-if ="this.language == 'ch'"></b-form-input>
+              <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?" v-model="form.search" v-if ="this.language == 'th' || this.language == null"></b-form-input>
+      </b-col>
+     <b-col cols="3" md="3"  sm="3" lg="3" class="nav-form-search">
+  <b-form-select v-model="selected" :options="options"></b-form-select>
+      </b-col>
+      <b-col cols="1" md="1"  sm="1" lg="1" class="nav-form-search">
+
+
+  <b-button variant="outline-primary ic-nav-bg-white" @click="Search()">   <i class="fas fa  fas fa-search ic-nav-black" aria-hidden="true"></i></b-button>
+
+      </b-col>
+  </b-row>
+    </b-navbar-brand>
+
+
+  </b-navbar>
+
+  </b-row>
+</b-container>
+
+
+<b-container class="bv-example-row nav-first-s nav-mobile-smal-last375" v-if="objectslayout">
+  <b-row>
+
+    <b-navbar toggleable="sm" type="dark"   :style="{'background-color':objectslayout.color}" class="banav navbar-fixed-top" fixed="top">
+    <b-navbar-brand class="nav_mobie_fisrt">
+       <b-row>
+           <b-col cols="2" md="2"  sm="2" xl="3"  @click="redirectTo('index')">
+           <img src="../assets/log.png"  alt=""  class="icon-mobile nav-icon-mobile last375">
+            </b-col>
+
+
+        <b-col cols="4" md="2"  sm="2" class="px-2">
+          <b-navbar-brand href="#"   @click="redirectTo('form-shopregis')"><span class="descquickmenumobile375 regishover">{{this.placeholder_mysell}} | </span>
+
+          </b-navbar-brand>
+      </b-col>
+
+
+       <b-col cols="2" md="2"  sm="2" class="px-2">
+          <b-navbar-brand href="#"   @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus fa-w-18 icon-size-nav regishover" aria-hidden="true"></i><span class="numitem ">{{ cartTotal }} </span>
+       <span class="descquickmenumobile375" style="padding-left:15px;"> |  </span>
+
+          </b-navbar-brand>
+      </b-col>
+
+          <b-col cols="2" md="2"  sm="2" lg="2" class="px-2">
+          <b-navbar-brand href="#" @click="redirectTo('fav-favorite')">
+            <i class="fa fa-heart-o regishover" aria-hidden="true"></i>
+                  <span class="descquickmenumobile375" style="padding-left:15px;"> |  </span>
+          </b-navbar-brand>
+      </b-col>
+
+
+      <b-col cols="2" md="4"  sm="4" lg="3" class="nav-form-search px-2 login-size-ipad descquickmenumobile-login">
+          <b-navbar-brand href="#"   v-if="!isLogins">
+                 <i class="fa fa-user-circle-o" aria-hidden="true" @click="redirectTo('form-login')"></i><span class="descquickmenumobile">
+                   <span class="regishover"></span></span>
+            </b-navbar-brand>
+
+
+                      <!-- <b-navbar-nav class="ml-auto">
+          <b-nav-item-dropdown right  v-if="isLogins">
+       
+          <template #button-content>
+            <em>  <i class="fa fa-user-circle-o" aria-hidden="true" @click="redirectTo('profile-userprofile')" ></i></em>
+          </template>
+
+
+           <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')" class="xdasdasd">
+            <div>
+
+              <span @click="redirectTo('profile-userprofile')">  {{this.placeholder_profile}}</span>
+
+            </div>
+          </b-dropdown-item>
+          <b-dropdown-item href="#"  @click.prevent="logout">
+               <div v-if ="this.language == 'en'" > {{this.placeholder_logout}} </div>
+             <div v-if ="this.language == 'ch'" > {{this.placeholder_logout}}</div>
+              <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_logout}} </div>
+          </b-dropdown-item>
+
+
+        </b-nav-item-dropdown>
+      </b-navbar-nav> -->
+
+
+                <b-navbar-nav class="ml-auto">
+          <b-nav-item-dropdown right  v-if="isLogins">
+          <!-- Using 'button-content' slot -->
+          <template #button-content style="position: absolute;">
+            <em>   <i class="fa fa-user-circle-o" aria-hidden="true" @click="redirectTo('profile-userprofile')" ></i></em>
+          </template>
+        
+        </b-nav-item-dropdown>
+      </b-navbar-nav>
+            </b-col>
+       </b-row>
+
+
+        <b-row>
+     <b-col cols="8" md="8"  sm="8" lg="8" class="nav-form-search nav-search search-mobile">
+              <b-form-input placeholder="Find a good product ?" v-model="form.search" v-if ="this.language == 'en'"></b-form-input>
+              <b-form-input placeholder="寻找好的产品 ?" v-model="form.search" v-if ="this.language == 'ch'"></b-form-input>
+              <b-form-input placeholder="ค้นหาสินค้าอะไรดี ?" v-model="form.search" v-if ="this.language == 'th' || this.language == null"></b-form-input>
+      </b-col>
+     <b-col cols="3" md="3"  sm="3" lg="3" class="nav-form-search">
+  <b-form-select v-model="selected" :options="options"></b-form-select>
+      </b-col>
+      <b-col cols="1" md="1"  sm="1" lg="1" class="nav-form-search">
+
+
+  <b-button variant="outline-primary ic-nav-bg-white" @click="Search()">   <i class="fas fa  fas fa-search ic-nav-black" aria-hidden="true"></i></b-button>
+
+      </b-col>
+  </b-row>
+    </b-navbar-brand>
+
+
+  </b-navbar>
+
+  </b-row>
+</b-container>
+
 
 
 
@@ -303,6 +438,14 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
   export default {
     data() {
     return {
+      placeholder_sereach:'',
+      placeholder_login:'',
+      placeholder_logout:'',
+      placeholder_mysell:'',
+      placeholder_profile:'',
+      placeholder_cart:'',
+      placeholder_regis:'',
+      language:'',
       IsLogin: false,
       loggedIn: this.$auth.loggedIn,
       name:{},
@@ -348,8 +491,43 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
 
         },
         async created(){
+
             this.form.url = window.location.origin
                 let getnav = await this.$store.dispatch(GET_NAVBAR,this.form);
+
+
+        this.language = localStorage.getItem("language");
+
+        if(this.language == 'en'){
+         this.placeholder_sereach = 'Find a good product ?';
+         this.options[0].text = 'Product';
+         this.placeholder_login = 'Login';
+        this.placeholder_mysell = 'Sell products with us';
+        this.placeholder_profile = 'Profile';
+        this.placeholder_cart = 'Cart';
+         this.placeholder_regis = 'Registered';
+        this.placeholder_logout = 'Logout';
+        }
+        if(this.language == 'ch'){
+          this.placeholder_sereach = '寻找好的产品';
+          this.options[0].text = '产品';
+          this.placeholder_login = '登入';
+          this.placeholder_mysell = '和我们一起卖';
+          this.placeholder_cart = 'Cart';
+           this.placeholder_regis = 'Registered';
+          this.placeholder_profile = 'Profile';
+          this.placeholder_logout = 'Logout';
+        }
+        if(this.language == 'th' || this.language == null){
+          this.placeholder_sereach = 'ค้นหาสินค้าอะไรดี ?';
+          this.options[0].text = 'สินค้า';
+          this.placeholder_login = 'เข้าสู่ระบบ';
+          this.placeholder_mysell = 'ขายสินค้ากับเรา';
+          this.placeholder_profile = 'โปรไฟล์';
+          this.placeholder_cart = 'ตะกร้าสินค้า';
+          this.placeholder_regis = 'สมัครสมาชิก';
+          this.placeholder_logout = 'ออกจากระบบ';
+        }
 
         },
 

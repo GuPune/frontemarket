@@ -87,8 +87,8 @@ import VueSweetalert2 from 'vue-sweetalert2';
               validations: {
 
         form: {
-            password_same      : { required,minLength: minLength(6) },
-            password      : { required, minLength: minLength(6)},
+            password_same      : { required,minLength: minLength(8) },
+            password      : { required, minLength: minLength(8)},
             password_confirm: {sameAsPassword: sameAs('password')},
 
 

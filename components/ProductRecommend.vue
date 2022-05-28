@@ -7,7 +7,7 @@
                    <div class="main-heading">
          <div class="heading-title-relat">
             <h2><span>Product Recommend</span>
-	<em class="">สินค้าแนะนำ</em>
+	<em class="">{{placeholder_name}}</em>
 			</h2>
         </div>
  <div>
@@ -20,7 +20,7 @@
                  <img class="imgproduct related-images imgproductmyshop im-rela-mobile" :src="Checkimage(i.img_product)">
                                                    <div class="product-footer">
                                                    <div class="addtocart">
-                                                       <b-button  variant="success shop-relation" size="sm"  @click="addToCart(i)">เพิ่มลงตะกร้า</b-button>
+                                                       <b-button  variant="success shop-relation" size="sm"  @click="addToCart(i)">{{placeholder_buy}}</b-button>
                                                    </div></div>
 
                                                 </div>
@@ -66,6 +66,9 @@
   export default {
         data() {
       return {
+        placeholder_buy:"",
+        placeholder_name:"",
+
            form:{
           shop_name:null,
             url:null
@@ -132,6 +135,31 @@
 
 
         },
+
+        async created() {
+
+        this.language = localStorage.getItem("language");
+
+         if(this.language == 'en'){
+         this.placeholder_buy = 'Add To Cart';
+         this.placeholder_name = 'สินค้าแนะนำ';
+        }
+        if(this.language == 'ch'){
+          this.placeholder_buy = '添加到購物車';
+          this.placeholder_name = 'สินค้าแนะนำ';
+        }
+         if(this.language == 'th' || this.language == null){
+          this.placeholder_buy = 'เพิ่มลงตะกร้า';
+          this.placeholder_name = 'สินค้าแนะนำ';
+        }
+
+
+
+
+
+
+
+          },
 
        async mounted() {
         //  this.$store.dispatch(ToogleAction);

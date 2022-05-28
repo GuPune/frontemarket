@@ -16,11 +16,11 @@
     @click="center=m.position"
   />
 </GmapMap>
-  
+
 </div>
 </div>
 
-    
+
 </template>
 
 
@@ -61,18 +61,18 @@ import axios from '@nuxtjs/axios'
 
             }),
 
- 
-        },
-           
 
-   
+        },
+
+
+
         created(){
-   
-        },
-        
 
-    
-        
+        },
+
+
+
+
      async mounted() {
   this.form.url = window.location.origin;
    this.form.shop_name = this.$route.params;
@@ -100,7 +100,7 @@ import axios from '@nuxtjs/axios'
         this.sliding = false
       },
       Checkimage(image){
-        
+
                 let public_images = process.env.ImageURL+image;
                 return public_images;
         },
@@ -108,17 +108,17 @@ import axios from '@nuxtjs/axios'
         }
 
 
-           
+
         }
 
   let x  = localStorage.getItem("map");
 Vue.use(VueGoogleMaps, {
   load: {
     key: 'AIzaSyCmpJGPB1Vy0yZNQi2-hnNIfNI5e1qyA9U' ,
-    libraries: 'places', 
+    libraries: 'places',
 
   },
- 
+
 
 })
 

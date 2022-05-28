@@ -15,22 +15,44 @@
                                 <div class="boxMenu">
                                     <ul class="nav flex-column nav-pills memberMenu">
                                         <li class="prof-s" id="member-MyAccount" @click="redirectTo('profile-userprofile')"  :class="{'profile-menu': checkPath('profile-userprofile')}">
-                                            <p>ข้อมูลของฉัน</p>
+                                            <p  v-if ="this.language == 'en'"><i class="fa fa-address-card-o" aria-hidden="true"> :</i>{{this.placeholder_profiledata}}</p>
+                                            <p  v-if ="this.language == 'ch'"><i class="fa fa-address-card-o" aria-hidden="true"> :</i>{{this.placeholder_profiledata}}</p>
+                                            <p  v-if ="this.language == 'th' || this.language == null"><i class="fa fa-address-card-o" aria-hidden="true"> :</i>{{this.placeholder_profiledata}}</p>
                                         </li>
+
+
                                        <!-- <li class="" id="member-editprofile" >
                                             <p></p>
                                         </li> -->
 
                                         <li class="prof-s" id="member-editaddressbook" @click="redirectTo('profile-userprofileadd')"  :class="{'profile-menu': checkPath('profile-userprofileadd')}">
-                                            <p>ที่อยู่จัดส่ง</p>
+
+                                              <p  v-if ="this.language == 'en'"><i class="fa fa-file-text-o" aria-hidden="true"> :</i>{{this.placeholder_address}}</p>
+                                            <p  v-if ="this.language == 'ch'"><i class="fa fa-file-text-o" aria-hidden="true"> :</i>{{this.placeholder_address}}</p>
+                                            <p  v-if ="this.language == 'th' || this.language == null"><i class="fa fa-file-text-o" aria-hidden="true"> :</i>{{this.placeholder_address}}</p>
+
                                         </li>
                                         <li class="prof-s" id="member-orderedhistory" @click="redirectTo('profile-historyorder')"  :class="{'profile-menu': checkPath('profile-historyorder')}" >
-                                            <p>ประวัติการสั่งซื้อ</p>
+
+                                                 <p  v-if ="this.language == 'en'"><i class="fa fa-file-text" aria-hidden="true"> :</i>{{this.placeholder_history}}</p>
+                                            <p  v-if ="this.language == 'ch'"><i class="fa fa-file-text" aria-hidden="true"> :</i>{{this.placeholder_history}}</p>
+                                            <p  v-if ="this.language == 'th' || this.language == null"><i class="fa fa-file-text" aria-hidden="true"> :</i>{{this.placeholder_history}}</p>
                                         </li>
                                                                                 <li class="prof-s" id="member-changepassword"  :class="{'profile-menu': checkPath('profile-changepassword')}"  @click="redirectTo('profile-changepassword')">
-                                            <p>ตั้งค่ารหัสผ่าน</p>
+                                             <p  v-if ="this.language == 'en'"><i class="fa fa-exchange" aria-hidden="true"> :</i>{{this.placeholder_password}}</p>
+                                            <p  v-if ="this.language == 'ch'"><i class="fa fa-exchange" aria-hidden="true"> :</i>{{this.placeholder_password}}</p>
+                                            <p  v-if ="this.language == 'th' || this.language == null"><i class="fa fa-exchange" aria-hidden="true"> :</i>{{this.placeholder_password}}</p>
                                         </li>
-                                      
+
+                                        <li class="prof-s" id="member-changepassword"  :class="{'profile-menu': checkPath('profile-logout')}"   @click.prevent="logout">
+                                             <p  v-if ="this.language == 'en'"><i class="fa fa-circle-o" aria-hidden="true"> :</i>{{this.placeholder_logout}}</p>
+                                            <p  v-if ="this.language == 'ch'"><i class="fa fa-circle-o" aria-hidden="true"> :</i>{{this.placeholder_logout}}</p>
+                                            <p  v-if ="this.language == 'th' || this.language == null"><i class="fa fa-circle-o" aria-hidden="true"> :</i>{{this.placeholder_logout}}</p>
+                                        </li>
+
+
+
+
                                     </ul>
                                 </div>
                             </div>
@@ -49,31 +71,92 @@ import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/vue-loading.css';
 import 'sweetalert2/dist/sweetalert2.min.css';
   export default {
+          data() {
+    return {
+      placeholder_profiledata:'',
+      placeholder_address:'',
+       placeholder_history:'',
+       placeholder_password:'',
+    };
+  },
     props: ['profile'],
      computed: {
-            
-   
+
+
         },
-        
+
+
+         async created(){
+
+
+
+        this.language = localStorage.getItem("language");
+
+        if(this.language == 'en'){
+         this.placeholder_profiledata = 'ข้อมูลของฉัน';
+         this.placeholder_address = 'Delivery address';
+         this.placeholder_history = 'Order History';
+         this.placeholder_password = 'ตั้งค่ารหัสผ่าน';
+            this.placeholder_logout = 'ออกจากระบบ';
+
+
+
+        }
+        if(this.language == 'ch'){
+          this.placeholder_profiledata = 'ข้อมูลของฉัน';
+          this.placeholder_address = '邮寄地址';
+          this.placeholder_history = '订单历史';
+          this.placeholder_password = 'ตั้งค่ารหัสผ่าน';
+             this.placeholder_logout = 'ออกจากระบบ';
+
+        }
+         if(this.language == 'th' || this.language == null){
+          this.placeholder_profiledata = 'ข้อมูลของฉัน';
+          this.placeholder_address = 'ที่อยู่จัดส่ง';
+         this.placeholder_history = 'ประวัติการสั่งซื้อ';
+         this.placeholder_password = 'ตั้งค่ารหัสผ่าน';
+        this.placeholder_logout = 'ออกจากระบบ';
+        }
+
+        },
+
+
         mounted() {
 
 
          },
-        
-  
+
+
         methods: {
 
+                      logout() {
+            localStorage.removeItem("shipping");
+            localStorage.removeItem("listorder");
+            localStorage.removeItem("delivery");
+          localStorage.removeItem("cart");
+
+
+    this.$auth.logout()
+     setTimeout(function () {
+            location.reload();
+            }, 1000);
+
+
+
+
+     },
+
         Checkimage(image){
-            
+
                 let public_images = process.env.Upload+image;
-            
+
                 return public_images;
         },
 
-   
+
         redirectTo(names) {
               this.$router.push({ name: names })
-          
+
         },
         checkPath(name) {
                 let path = this.$nuxt.$route.name
@@ -88,9 +171,9 @@ import 'sweetalert2/dist/sweetalert2.min.css';
               //  return (name === path)
             },
 
-     
+
         },
-  
+
 
         components: {
 

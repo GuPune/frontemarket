@@ -1,16 +1,21 @@
 export default {
   mode: "spa",
   // Global page headers: https://go.nuxtjs.dev/config-head
+
+
   head: {
-    title: 'ThaionZon',
+    titleTemplate: 'UAT | %s',
+    title: 'Thailand ซื้อขายสินค้าออนไลน์',
     htmlAttrs: {
       lang: 'en'
     },
+
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { hid: 'description', name: 'description', content: 'UAT | Thailand ซื้อขายสินค้าออนไลน์'},
+      { name: 'format-detection', content: 'telephone=no' },
+
     ],
     script: [
       { src: 'https://static.line-scdn.net/liff/edge/2.1/sdk.js' },
@@ -19,16 +24,12 @@ export default {
     ],
 
     link: [
+      { rel: 'shortcut icon', type: 'image/x-icon', href: '/x1.ico' },
       {
         rel: 'stylesheet',
         type: 'text/css',
         href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'
-      }
-    ],
-
-    link: [
-
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      },
       {
         rel: 'stylesheet',
         type: 'text/css',
@@ -39,12 +40,9 @@ export default {
         href: 'https://fonts.googleapis.com/css?family=Lato:400,700'
       }
     ]
+
   },
-  pwa: {
-    icon: {
-         fileName: 'log.png',
-    },
-},
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '@/assets/css/main.css',
@@ -147,20 +145,20 @@ export default {
 //     backend:"http://127.0.0.1:8000",
 // },
 
-// axios: {
-//   // See https://github.com/nuxt-community/axios-module#options
-//   baseURL: "https://cmsecom.idtest.work/api",
-//   ImageURL: "https://cmsecom.idtest.work/public/product/",
-//   ImageSoc: "https://cmsecom.idtest.work/public/images/",
+axios: {
+  // See https://github.com/nuxt-community/axios-module#options
+  baseURL: "https://cmsecom.idtest.work/api",
+  ImageURL: "https://cmsecom.idtest.work/public/product/",
+  ImageSoc: "https://cmsecom.idtest.work/public/images/",
 
-//  },
+ },
 
-// env: {
-//  baseURL: "https://cmsecom.idtest.work/api",
-//   ImageURL: "https://cmsecom.idtest.work/public/product/",
-//   ImageSoc: "https://cmsecom.idtest.work/public/images/",
-//   backend:"https://cmsecom.idtest.work",
-// },
+env: {
+ baseURL: "https://cmsecom.idtest.work/api",
+  ImageURL: "https://cmsecom.idtest.work/public/product/",
+  ImageSoc: "https://cmsecom.idtest.work/public/images/",
+  backend:"https://cmsecom.idtest.work",
+},
 
 
 // axios: {
@@ -178,20 +176,6 @@ export default {
 //   backend:"https://backoffice.thaionzon.com",
 // },
 
-axios: {
-  // See https://github.com/nuxt-community/axios-module#options
-  baseURL: "https://back.nfemarket.online/api",
-  ImageURL: "https://back.nfemarket.online/public/product/",
-  ImageSoc: "https://back.nfemarket.online/public/images/",
-
- },
-
-env: {
- baseURL: "https://back.nfemarket.online/api",
-  ImageURL: "https://back.nfemarket.online/public/product/",
-  ImageSoc: "https://back.nfemarket.online/public/images/",
-  backend:"https://back.nfemarket.online",
-},
 
 
 
@@ -202,17 +186,10 @@ env: {
       local: {
         endpoints: {
           login: {
-            url: "login",
-            method: "post",
-            propertyName: "data.token"
-          },
-          user: {
-            url: "user",
             method: "get",
             propertyName: "meta"
           },
           logout: {
-            url: "logout",
             method: "post"
           },
           home: false

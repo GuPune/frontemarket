@@ -202,7 +202,12 @@ alert('okkkk');
        if(data.code_return == 200){
         state.typeforgot = 'alert alert-success';
         state.messageforgot = 1;
-       }else{
+       }else if(data.code_return == 201){
+    
+        state.typeforgot = 'alert alert-success';
+        state.messageforgot = 2;
+       }
+       else{
         state.typeforgot = 'alert alert-danger';
         state.messageforgot = 1;
        }
@@ -213,7 +218,7 @@ alert('okkkk');
      },
      [SET_PROFILE](state,data) {
         state.profile = data;
-        console.log('state.profile',state.profile);
+     
       
      },
      [SET_FORM_USER](state,data) {

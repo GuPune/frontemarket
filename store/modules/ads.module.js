@@ -42,7 +42,7 @@ const actions = {
     },
 
     async [FETCH_ADS_SHOP_SEMI](context,payload) {
-       
+
         console.log('FETCH_ADS_SHOP_SEMI',payload);
         const { data } = await AdsService.semi(payload);
 
@@ -53,18 +53,19 @@ const actions = {
 
 const mutations = {
     [SET_ADS](state,data) {
+
         state.ads = data;
     },
     [SET_ADS_SHOP](state,data) {
         state.ads_shop = data.data;
-  
+
     },
     [SET_ADS_SHOP_SEMI](state,data) {
         state.ads_semi = data.data;
-    
+
     }
-  
-  
+
+
 };
 
 export default {
