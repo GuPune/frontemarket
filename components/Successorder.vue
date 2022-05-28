@@ -387,7 +387,7 @@
                                 :error-messages="NameErrors"
                                         required
                                         @input="$v.form.name.$touch()"
-                                        @blur="$v.form.total.$touch()"
+                                        @blur="$v.form.name.$touch()"
                                         :class="{ 'is-invalid': $v.form.name.$error}"
 
                           />
