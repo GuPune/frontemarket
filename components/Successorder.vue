@@ -796,9 +796,11 @@ this.isHiddenUpload = true;
 return false;
 }
 
- var formData = new FormData(); // Currently empty
 
  this.form.connect = window.location.origin;
+ var formData = new FormData(); // Currently empty
+
+
            formData.append('cartnumber', this.orderlist.cartnumber);
            formData.append('total', this.form.total);
            formData.append('name', this.form.name);
