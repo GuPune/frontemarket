@@ -382,7 +382,7 @@
                             class="form-control"
                             type="text"
                             name="contact"
-                            placeholder="0"
+                            placeholder="=ชื่อ"
                              v-model="form.name"
                                 :error-messages="NameErrors"
                                         required
