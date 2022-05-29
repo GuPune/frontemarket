@@ -1,10 +1,10 @@
 
 import { ProductService }  from "../../services/product";
 import {
-    FETCH_PRODUCT_SHELL,FETCH_PRODUCT_FIND,FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,FETCH_FIND_PRODUCT,FETCH_BY_PRODUCT_SHOP_ONE_ITEM,GET_PRODUCR_SELLER,GET_PRODUCR_NEW,GET_PRODUCR_RECOM,FETCH_IMAGE_PRODUCT,GET_PRODUCT_FIND,GET_PRODUCT_SHELL_FIND,GET_FAV,DEL_FAV,ADD_FAV,GET_FAVALL,REMOVE_FAVALL
+    FETCH_PRODUCT_SHELL,FETCH_PRODUCT_FIND,FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,FETCH_FIND_PRODUCT,FETCH_BY_PRODUCT_SHOP_ONE_ITEM,GET_PRODUCR_SELLER,GET_PRODUCR_NEW,GET_PRODUCR_RECOM,FETCH_IMAGE_PRODUCT,GET_PRODUCT_FIND,GET_PRODUCT_SHELL_FIND
 } from "../actions.type.js";
 import {
-    SET_PRODUCT_SHELL,SET_PRODUCT_BY_SHOP,SET_CATE_BY_SHOP,SET_CATE_SEC,SET_BY_PRODUCT_SHOP_ONE_ITEM,SET_LOADER,SET_IMAGES,SET_PRODUCTSHELL_FIND,SET_SHELL_CATE,SET_KEYWORD,SET_FAV
+    SET_PRODUCT_SHELL,SET_PRODUCT_BY_SHOP,SET_CATE_BY_SHOP,SET_CATE_SEC,SET_BY_PRODUCT_SHOP_ONE_ITEM,SET_LOADER,SET_IMAGES,SET_PRODUCTSHELL_FIND,SET_SHELL_CATE,SET_KEYWORD
 } from "../mutations.type";
 import Vuex from 'vuex'
 import Vue from 'vue'
@@ -19,7 +19,6 @@ const state = {
     product_by_shop:[],
     cate_by_shop:[],
     cate_sel:[],
-    fav:[],
     shell_cate:null,
     product_by_item:[],
     purchase: {
@@ -64,10 +63,6 @@ const getters = {
     searchkeyword: state => {
         return state.searchkeyword
     },
-    fav: state => {
-      return state.fav
-    },
-
 
 };
 
@@ -76,7 +71,6 @@ const actions = {
     async [FETCH_PRODUCT_SHELL](context,payload) {
         context.commit(SET_LOADER);
         const { data } = await ProductService.getshell(payload);
-
         context.commit(SET_PRODUCT_SHELL,data);
 
         return data;
@@ -84,7 +78,7 @@ const actions = {
 
     async [FETCH_PRODUCT_FIND](context,payload) {
         const { data } = await ProductService.find(payload);
-        console.log('FETCH_PRODUCT_FIND',data);
+
         context.commit(SET_PRODUCT_SHELL,data);
         context.commit(SET_SHELL_CATE,payload);
         return data;
@@ -157,28 +151,6 @@ const actions = {
         context.commit(SET_IMAGES,data);
         return data;
     },
-    async [GET_FAV](context,payload) {
-        const { data } = await ProductService.getfav(payload);
-        return data;
-    },
-    async [ADD_FAV](context,payload) {
-        const { data } = await ProductService.addfav(payload);
-        return data;
-    },
-    async [DEL_FAV](context,payload) {
-        const { data } = await ProductService.delfav(payload);
-        return data;
-    },
-    async [GET_FAVALL](context,payload) {
-      const { data } = await ProductService.getfavall(payload);
-      context.commit(SET_FAV,data);
-      return data;
-    },
-    async [REMOVE_FAVALL](context,payload) {
-        const { data } = await ProductService.removefavall(payload);
-
-        return data;
-    }
 };
 
 const mutations = {
@@ -203,11 +175,11 @@ const mutations = {
         //   }
 
         for (let i = 0; i < b.length; i++) {
+           
 
-
-
+   
             Vue.set(b[i], 'fav', 0);
-
+        
 
 
         // Vue.set(item, 'quantity', 1);
@@ -215,7 +187,7 @@ const mutations = {
 
           }
           console.log('c',state.product_shell);
-
+   
     },
     [SET_PRODUCT_BY_SHOP](state,data) {
         state.product_by_shop = data.data;
@@ -263,14 +235,6 @@ const mutations = {
         state.searchkeyword = data.search;
         console.log('state.searchkeyword',state.searchkeyword);
     },
-    [SET_FAV](state,data) {
-      console.log('state.fav',data);
-      state.fav = data;
-      console.log('state.fav',state.fav);
-
-  },
-
-
 
 
 

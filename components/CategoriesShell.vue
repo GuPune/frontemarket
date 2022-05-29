@@ -1,33 +1,18 @@
 <template>
 <div>
-
- <ul class="profile-info-list" style="padding: 5px;">
-
-  <li style="border-bottom: 1px solid #dee2e6;">
-                                                <div class="field">ตัวกรองสินค้า</div>
-
-
-
-                                            </li>
-
-                                               <li>
-                                                <div class="field">ค้นหาสินค้า</div>
-   <b-form-input type="text"  v-model="form.search" v-on:keyup="changeName"></b-form-input>
-
-
-                                            </li>
+ <ul class="profile-info-list">
    <li>
                                                 <div class="field">ราคา: {{ form.price }}</div>
-
+                                            
     <b-form-input id="range-1" v-model="form.price" type="range" min="0" max="50000" v-on:change="all_price"></b-form-input>
-
+ 
                                             </li>
 
                                                                                         <li hidden>
                                                 <div class="field">ค้นหา:</div>
-
+                                            
           <b-form-input v-model="form.search" placeholder="Enter your name"></b-form-input>
-
+ 
                                             </li>
                                             <li>
                                                 <div class="field">ประเภทสินค้า:</div>
@@ -36,7 +21,7 @@
                                                 </div>
 
                                                                                               <b-form-group
-
+    
       v-slot="{ ariaDescribedby }"
     >
       <b-form-checkbox
@@ -46,18 +31,17 @@
         :value="option.id"
         :aria-describedby="ariaDescribedby"
         name="flavour-3a"
-         @change="choosecate($event)" style="border-bottom: 1px solid #dee2e6;padding: 0.5rem 0;"
+         @change="choosecate($event)"
       >
         {{ option.name_th }}
-<span class="pull-right">({{ option.total }})</span>
       </b-form-checkbox>
     </b-form-group>
 
-
+    
                                             </li> <br>
 
-
-
+                                          
+                                            
                                         </ul>
 
     </div>
@@ -83,8 +67,7 @@ import { mapGetters } from "vuex";
      id:null,
      price:'0',
      cate_type:null,
-     search:"",
-     namesearch:""
+     search:""
    }
     };
   },
@@ -93,21 +76,20 @@ import { mapGetters } from "vuex";
      computed: {
     ...mapGetters(["searchkeyword"]),
         },
+           
 
-
-
+   
         created(){
-
+           
         },
+        
 
-
-
-
+    
+        
      async mounted() {
         let cateshell = await this.$store.dispatch(GET_CATEGORY_SHELL)
           this.form.selected = this.selected
-          console.log('cateshell',cateshell);
-
+   
 this.options = cateshell;
 this.form.search = this.searchkeyword;
 
@@ -116,14 +98,8 @@ this.form.search = this.searchkeyword;
          },
 
       methods: {
-
-       async changeName(){
-
-         console.log('this-form',this.form);
-            let productfind = await this.$store.dispatch(GET_PRODUCT_SHELL_FIND,this.form);
-        },
       async onChange(event) {
-
+      
         },
        async choosecate(){
   this.form.selected = this.selected
@@ -134,12 +110,12 @@ this.form.search = this.searchkeyword;
         async all_price(){
          let productfind = await this.$store.dispatch(GET_PRODUCT_SHELL_FIND,this.form);
         }
-
-
+    
+  
         }
 
 
-
+           
         }
 
 

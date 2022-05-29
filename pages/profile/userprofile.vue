@@ -1,5 +1,5 @@
 <template>
-    <section id="Userprofile"  style="padding-bottom: 40px;">
+    <section id="Userprofile">
         <Nav />
 
 

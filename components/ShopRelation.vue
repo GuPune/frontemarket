@@ -21,7 +21,7 @@
 
              <div class="card c-shopinmy">
                     <div class="cardproduct">
-                 <img class="imgproduct imgproduct-test related-images imgproductmyshop im-rela-mobile" :src="Checkimage(i.icon)">
+                 <img class="imgproduct related-images imgproductmyshop im-rela-mobile" :src="Checkimage(i.icon)">
                                                    <div class="product-footer">
                                                    <div class="addtocart">
                                                        <b-button  variant="success shop-relation" size="sm" @click="redirectTo(i.shop_name)">{{placeholder_shop}}</b-button>

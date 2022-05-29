@@ -11,7 +11,7 @@
     background-color:#EF7318;
     color: whitesmoke;
     border-radius: 20px;
-
+  
 }
 
 
@@ -34,10 +34,7 @@
   margin-top: 100px;
 }
 
-.imgtax{
-height: 500px;
-width: 700px;
-}
+
 
 /* input,
 input[type="radio"] + label,
@@ -81,7 +78,7 @@ input:focus + .input-icon:after {
   -o-transition: 0.35s ease-in-out;
   transition: 0.35s ease-in-out;
   transition: all 0.35s ease-in-out;
-
+  
 }
 /* input[type="radio"] {
   display: none;
@@ -281,28 +278,6 @@ select:active {
 
     padding-top: 120px;
   }
-
-
-}
-
-@media only screen and (min-width: 380px) and (max-width: 540px) {
-
-  .imgtax{
-    height: 400px;
-    width: 350px;
-    }
-
-}
-
-
-
-@media only screen and (min-width: 540px) and (max-width: 740px) {
-
-  .imgtax{
-    height: 400px;
-    width: 480px;
-    }
-
 }
 
 

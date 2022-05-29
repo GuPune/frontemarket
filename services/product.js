@@ -34,21 +34,7 @@ export const ProductService = {
     },
     getimages(param){
       return ApiService.post("producimages",param);
-    },
-    getfav(param){
-      return ApiService.post("getfav",param);
-    },
-    addfav(param){
-      return ApiService.post("addfav",param);
-    },
-    delfav(param){
+    }
 
-      return ApiService.post("delfav",param);
-    },
-    getfavall(param){
-      return ApiService.post("getfavall",param);
-    },
-    removefavall(param){
-      return ApiService.post("removefavall",param);
-    },
-}
+    
+};

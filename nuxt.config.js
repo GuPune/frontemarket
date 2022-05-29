@@ -1,8 +1,6 @@
 export default {
   mode: "spa",
   // Global page headers: https://go.nuxtjs.dev/config-head
-
-
   head: {
     title: 'Thailand',
     htmlAttrs: {
@@ -21,9 +19,11 @@ export default {
       { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js' },
       { src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js' },
     ],
-
     link: [
-      { rel: 'shortcut icon', type: 'image/x-icon', href: '/x1.ico' },
+      { rel: 'shortcut icon', type: 'image/x-icon', href: '/sh.ico' },
+      { rel: 'icon', type: 'image/png', href: '/96.png' },
+      { rel: 'icon', type: 'image/png', href: '/32.png'  },
+      { rel: 'icon', type: 'image/png', href: '/16.png'  },
       {
         rel: 'stylesheet',
         type: 'text/css',
@@ -44,6 +44,7 @@ export default {
   pwa: {
 
 
+},
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '@/assets/css/main.css',
@@ -218,4 +219,4 @@ env: {
   },
 
 }
-}
+

@@ -1,6 +1,6 @@
 <template>
     <section id="Userprofile">
-        <div class="container" style="padding-bottom: 40px;">
+        <div class="container">
             <div class="main-body">
             
 

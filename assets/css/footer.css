@@ -46,13 +46,6 @@
    border-radius: 20px;
 }
 
-#longtext{
-   background-color: #EF7318;
-    margin-top: -25px;
-    padding-top: 50px;
-    border-top: 1px solid rgb(205, 207, 218);
-}
-
 .long-footer{
    background-color: #16192c !important;
    color:white;
@@ -65,17 +58,12 @@
    transition: color 0.2s ease 0s;
 }
 
-.x14{
-   height: 33px;
-   width: 110px;
-   margin-bottom: 8px;
-}
 
 
 .long-footer .links ul {
    list-style-type: none;
 }
-
+  
 .logofoot{
    width: 200px;
    border: 1px red;
@@ -87,105 +75,3 @@
 text-align: center;
 
 }
-
-.hiHGcU {
-   text-align: left;
-
-}
-
-.footer-curved-bg {
-   background-color: transparent;
-   background-size: cover;
-   -webkit-background-size: cover;
-   height: 4rem;
-   overflow: hidden;
-   position: relative;
-   width: 100%;
-}
-
-.footer-curved-bg:after {
-   background: #EF7318;
-   border-radius: 100%;
-   content: "";
-   height: 0;
-   left: 50%;
-   padding-top: 200%;
-   position: absolute;
-   top: 0;
-   transform: translateX(-50%);
-   width: 550%;
-}
-
-
-
- @media screen and (max-width: 600px) {
-
-   .hiHGcU {
-      text-align: center;
-      position: unset;
-      bottom: 0;
-      width: 100%;
-   }
-
-
-
- }
-
-
-
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-
-
-}
-
-/*
-  ##Device = Low Resolution Tablets, Mobiles (Landscape)
-  ##Screen = B/w 481px to 767px
-*/
-
-@media (min-width: 481px) and (max-width: 767px) {
-
-  .longtext{
-    position: unset;
-    bottom: 0;
-    width: 100%;
-  }
-
-}
-
-/*
-  ##Device = Most of the Smartphones Mobiles (Portrait)
-  ##Screen = B/w 320px to 479px
-*/
-
-@media (min-width: 320px) and (max-width: 480px) {
-
-
-  .longtext{
-    position: unset;
-    bottom: 0;
-    width: 100%;
-  }
-}
-
-
-
-@media (min-width: 1281px) {
-
-  /* CSS */
-
-  .longtext{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-  }
-
-
-}
-
-
-
-
-
-
-

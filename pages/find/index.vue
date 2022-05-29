@@ -1,38 +1,49 @@
 <template>
-
-
-   <div class="container col-12 col-md-9 col-sm-12" style="padding-top: 90px;">
-
-<!-- --------------------------------store 1--------------------------------- -->
-
- <div class="row" style="padding-top: 40px;padding-bottom: 40px;">
-    <div class="col-md-12 col-sm-12 col-lg-12 col-xl-2 find-mobile" style="background-color: white;">
-  <div>
-<CategoriesShell/>
-  </div>
-    </div>
+      
+<div style="background: white;">
+<div v-if="loadding">
+<Loader/>
+</div>
 
 
 
-    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-10 ipad-order or-mob">
-            <ProductShell/>
-    </div>
+  <Ads/>
 
-  </div>
+ <Relation/>
 
+        <div id="content" class="container profileweb col-12 col-md-9">
+        
+            <div class="row">
+                <div class="col-12">
+         
+   
+                </div>
+                </div>
+
+                <div class="row relatedweb" style="padding-top: 30px;">
+  <div class="col-sm-12 col-md-2" style="border-top: 1px solid #d8d8d8;
+    padding: 0.5em;
+    margin-bottom: 0;"> <CategoriesShell/></div>
+  <div class="col-sm-12 col-md-10"> <ProductShell/></div>
+
+</div>
+</div>
  </div>
 
 
 
-
-
+              
+               
+     
+                    
+             
+   
 </template>
 
 
 
-
 <script>
-
+  
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import CategoriesShell from "@/components/CategoriesShell";
@@ -44,7 +55,7 @@ import Adsmini from "@/components/Adsmini"
 import Relation from "@/components/Relation"
 import Banner from "@/components/Banner"
 
-
+    
 
 
     export default {
@@ -54,7 +65,7 @@ import Banner from "@/components/Banner"
           Footer,
           ProductShell,
           CategoriesShell
-
+           
               },
 
                   data() {
@@ -71,11 +82,11 @@ url:null
                 ...mapGetters(["cate_by_shop","product_by_shop"]),
 
         },
-
+             
        async mounted() {
          this.form.url = window.location.origin;
          this.form.shop_name = this.$route.params;
-
+   
        //   let cate_by_shop = await this.$store.dispatch(FETCH_CATE_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
         //   let product = await this.$store.dispatch(FETCH_PRODUCT_BY_SHOP,this.form).then((response) => response.status == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
 
@@ -83,24 +94,24 @@ url:null
         },
 
          methods: {
-
+     
             success() {
-
+          
             },
             success() {
-
+          
             },
             error($text) {
 
+           this.$router.push('/error')
 
-
-
+          
             },
         }
+       
+           
 
-
-
-
-
+     
+    
     };
 </script>

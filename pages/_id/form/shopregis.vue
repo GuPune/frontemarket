@@ -1,6 +1,6 @@
 <template>
 <section class="Shopregis">           
-<div class="container forms" style="margin-bottom: 40px;">
+<div class="container forms">
 
       <h5 style="color: #171c24;">สมัครสมาชิกร้านค้า</h5>
     

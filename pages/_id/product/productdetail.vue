@@ -1,7 +1,7 @@
 <template>
 
 <section id="Productdetail" class="product-details">
-<div class="container product-details-in productItemDetail" style="background-color: white;padding-bottom: 40px;">
+<div class="container product-details-in productItemDetail" style="background-color: white;">
 <div v-if="loadding">
 
 <Loader/>
@@ -201,7 +201,7 @@
             <h2 class="productName-detail">{{product_by_item.name_th}}</h2>
             </div>
             <div class="row">
-                <div class="col-md-10">
+                <div class="col-md-12">
                 <div class="form-group">
                 <div class="marginInner">
                    <h1 class="product-detail-title">{{product_by_item.description}}</h1>
@@ -209,14 +209,11 @@
                 <div class="rating-box-detail">
                 <div class="rating" style="width:%">
                 </div>
-
                 </div>
                 </div>
                 </div>
                 </div>
                 </div>
-
-
                 </div>
                                     <div class="marginInner mb-4 mb-md-4"><div class="dividerFix"></div></div>
                                     <div class="row ">
@@ -283,7 +280,7 @@
   <div class="marginInner mb-4 mb-md-4"><div class="dividerFix"></div></div>
 
              <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <div class="form-group h5">
                         <div class="marginInner mb-4 mb-md-4">
                             <p >ร้านค้า : {{product_by_item.shop_name_title}}
@@ -293,29 +290,7 @@
                         </div>
                     </div>
                 </div>
-
-                                <div class="col-md-4">
-                    <div class="form-group h5">
-                        <div class="marginInner mb-4 mb-md-4">
-                            <p >สินค้าโปรด
-
-
-                                         <i class="fa fa-heart heart heart-rel active"  aria-hidden="true" title="เพิ่มในรายการที่ชอบ" @click="removeaddfav()" v-if ="active_el == '1'"></i>
-                                                        <i class="fa fa-heart heart heart-rel"  aria-hidden="true" title="ลบในรายการที่ชอบ" @click="addfav()" v-else></i>
-
-</p>
-
-
-                        </div>
-                    </div>
-                </div>
-
             </div>
-            <div class="row">
-
-
-            </div>
-
 <div class="marginInner mb-4 mb-md-4"><div class="dividerFix"></div></div>
 
 
@@ -326,7 +301,7 @@
   <div class="col-1 col-sm-1">
 
     <div class="share social">
-<div class="fb-share-button" :data-href="sharefacebook()" data-layout="button_count" data-mobile-iframe="true">
+<div class="fb-share-button" data-href="https://emarketplace.idtest.work/SHOPEMARKET09022022000195/product/productdetail/184" data-layout="button_count" data-mobile-iframe="true">
 <a target="_blank" onclick="goclicky(this); return false;" href="https://www.facebook.com/sharer/sharer.php?u=https://emarketplace.idtest.work/SHOPEMARKET09022022000195/product/productdetail/184">
 <img src="https://www.thailandpostmart.com/templates/images/icon-type/ic_facebook.png" width="35" height="35">
 </a>
@@ -419,7 +394,8 @@ width: 100px!important;
 
 <script>
   import { mapGetters,mapState } from "vuex";
-  import { FETCH_BY_PRODUCT_SHOP_ONE_ITEM,FETCH_IMAGE_PRODUCT,ADD_CART,ADD_PRODETAIL,FETCH_GET_PROFILE,GET_FAV,ADD_FAV,DEL_FAV } from "@/store/actions.type.js";
+  import { FETCH_BY_PRODUCT_SHOP_ONE_ITEM,FETCH_IMAGE_PRODUCT,ADD_CART,ADD_PRODETAIL,FETCH_GET_PROFILE } from "@/store/actions.type.js";
+
   import ProductZoomer from 'vue-product-zoomer'
   import Nav from "@/components/Nav";
   import Footer from "@/components/Footer";
@@ -427,14 +403,8 @@ width: 100px!important;
 
 
     export default {
- head() {
-      return {
-        title: 'Home page',
-      };
-    },
       data() {
         return {
-          active_el:0,
           type:null,
           action:null,
            xx: {
@@ -528,9 +498,7 @@ width: 100px!important;
 
                  computed: {
 
-
-        ...mapGetters(["product_by_item","images","cart","authenticated","profile"]),
-        
+        ...mapGetters(["product_by_item","images","cart"]),
 
         },
 
@@ -561,17 +529,6 @@ width: 100px!important;
            this.placeholder_info = 'ข้อมูลสินค้า';
         }
 
-        if(!this.$auth.user){
-          console.log('no log');
-       }else{
-         let a = await this.$store.dispatch(FETCH_GET_PROFILE);
-        this.form.id = a.id;
-        this.form.product_id = this.$route.params.slug;
-      
-      let getfav = await this.$store.dispatch(GET_FAV,this.form);
-      this.active_el = getfav;
-       }
-
 
     },
 
@@ -581,11 +538,9 @@ this.form.product_id = this.$route.params.slug;
 this.form.shop_name = this.$route.params.id;
 this.form.url = window.location.origin
 
-
-
-
 let productshop_item = await this.$store.dispatch(FETCH_BY_PRODUCT_SHOP_ONE_ITEM,this.form);
 
+console.log('productshop_item',productshop_item);
 this.xx.normal_size = productshop_item.data.normal_size;
 this.action = this.xx.normal_size[0].url
 this.type = this.xx.normal_size[0].type
@@ -630,36 +585,6 @@ let images_product = await this.$store.dispatch(FETCH_IMAGE_PRODUCT,this.form);
                    this.$router.push({ name: names})
                 }
             },
-
-         async addfav(){
-
-       if(!this.$auth.user){
-            this.$router.push('/form/login')
-       }else{
-        
-               let getfav = await this.$store.dispatch(ADD_FAV,this.form);
-              this.active_el = getfav;
-
-       }
-
-
-
-          },
-        async removeaddfav(){
-
-  if(!this.$auth.user){
-   this.$router.push('/form/login')
-  }else{
-    let getfav = await this.$store.dispatch(DEL_FAV,this.form);
-     this.active_el = getfav;
-  }
-
-          },
-          async sharefacebook(){
-
-return 'https://emarketplace.idtest.work/SHOPEMARKET05022022000166/product/productdetail/297';
-
-          },
         async addToCart(item){
 
 

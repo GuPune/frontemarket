@@ -759,7 +759,7 @@ display: none;
 
 }
 
-@media screen and (max-width: 450px) and (min-width: 350px) {
+@media screen and (max-width: 400px) and (min-width: 350px) {
 
 
   .nav-desktop-last{
