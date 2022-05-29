@@ -1,6 +1,6 @@
 <template>
 <section class="Shopregis">
-<div class="container forms">
+<div class="container forms" style="margin-bottom: 40px;">
 <Loader v-if="isLoading"/>
 
       <h5 style="color: #171c24;">{{this.placeholder_menu}}</h5>
@@ -124,6 +124,40 @@
     </div>
 
 
+           <div class="row">
+   <div class="input-group input-group-icon">
+        <input type="text" class="form-control" :placeholder="[[ placeholder_farmbook ]]" v-model="form.farmbook"
+                                                                        />
+        <div class="input-icon"><i style="color: #005dc0;" class="fa fa-hand-o-right"></i></div>
+      </div>
+       </div>
+  <div class="row">
+   <div class="input-group input-group-icon">
+            <b-form-file v-model="file" ref="file-input" class="mb-2"
+            @change="onFileChange"
+            ></b-form-file>
+      </div>
+       </div>
+        <div class="row">
+                <div id="preview" v-if="isHiddenUpload == true">
+                              <img class="imgtax" v-if="url" :src="url" />
+                            </div>
+          </div>
+
+    <div class="row">
+    <div class="input-group input-group-icon">
+      <b-form-checkbox  id="checkbox-1" v-model="status" name="checkbox-1" value="accepted" unchecked-value="not_accepted">ข้าพเจ้าเข้าใจและตกลงตาม</b-form-checkbox>
+       <label for="commerce" style="color: red;"      v-on:click="Checkpolicy()"
+                                  >เงื่อนไขการให้บริการ </label>
+และ
+      <label for="commerce" style="color: red;"  v-on:click="CheckService()"
+                                  >นโยบายความเป็นส่วนตัว </label>
+
+      </div>
+    </div>
+
+
+
 
 
 <!--
@@ -136,19 +170,10 @@
 
 
 
-    <b-row>
-    <b-col cols="12" md="12">    <b-form-checkbox
-      id="checkbox-1"
-      v-model="status"
-      name="checkbox-1"
-      value="accepted"
-      unchecked-value="not_accepted"
-
-
-    >
+    <!-- <b-row>
+    <b-col cols="12" md="12" sm="12">
+      <b-form-checkbox  id="checkbox-1" v-model="status" name="checkbox-1" value="accepted" unchecked-value="not_accepted">
      ข้าพเจ้าเข้าใจและตกลงตาม
-
-
       <label for="commerce" style="color: red;"      v-on:click="Checkpolicy()"
                                   >เงื่อนไขการให้บริการ </label>
 และ
@@ -161,7 +186,7 @@
 
 
 
-  </b-row>
+  </b-row> -->
  <b-row>
    <b-col cols="12" md="12">
    <h6 v-if="status == 'not_accepted'"  style="color: red; text-align:center;">กรุณาอ่านและยอมรับข้อตกลงในการใช้งาน</h6>
@@ -191,6 +216,8 @@ import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/vue-loading.css';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import Loader from '@/components/Loader'
+import axios from 'axios';
+import { API_URL } from "../../environment/environment.js";
 
 
 
@@ -212,6 +239,9 @@ import Loader from '@/components/Loader'
     },
 
      data: () => ({
+        file:null,
+        url: null,
+        isHiddenUpload:false,
         placeholder_menu: "",
         placeholder_first_name: "",
         placeholder_last_name:"",
@@ -221,7 +251,7 @@ import Loader from '@/components/Loader'
         placeholder_email:"",
         placeholder_password:"",
         placeholder_choose:"",
-        status: 'not_accepted',
+        status: "",
         isLoading: false,
         checkpol:false,
         max:10,
@@ -237,6 +267,7 @@ import Loader from '@/components/Loader'
             address:"",
             type_id:"",
             status: false,
+            farmbook:""
         },
       }),
      computed: {
@@ -295,7 +326,7 @@ import Loader from '@/components/Loader'
     async created() {
 
         this.language = localStorage.getItem("language");
-        console.log('language shop',this.language);
+
         if(this.language == 'en'){
          this.placeholder_first_name = 'First Name';
          this.placeholder_last_name = 'Last Name';
@@ -306,6 +337,9 @@ import Loader from '@/components/Loader'
          this.placeholder_password = 'Password';
          this.placeholder_choose = 'Choose';
          this.placeholder_menu = 'Subscribe to a store';
+        this.placeholder_farmbook = 'Farm Doae';
+
+
 
 
         }
@@ -319,6 +353,7 @@ import Loader from '@/components/Loader'
           this.placeholder_password = '密码';
           this.placeholder_choose = '选择';
            this.placeholder_menu = '商店订阅';
+           this.placeholder_farmbook = 'Farm Doae';
 
 
         }
@@ -332,6 +367,7 @@ import Loader from '@/components/Loader'
           this.placeholder_password = 'รหัสผ่าน';
           this.placeholder_choose = 'เลือก';
            this.placeholder_menu = 'สมัครสมาชิกร้านค้า';
+           this.placeholder_farmbook = 'รหัสเกษตรกร';
 
         }
 
@@ -347,12 +383,107 @@ import Loader from '@/components/Loader'
 
      let pdpa = await this.$store.dispatch(SYSTEM_PDPA,this.form);
      this.policies = pdpa.policies
-      this.protectdata = pdpa.protectdata
-
-this.typeshop = typeshop;
+     this.protectdata = pdpa.protectdata
+    this.typeshop = typeshop;
         },
 
         methods: {
+
+
+              onFileChange(event) {
+
+      var file = event.target.files[0];
+     this.url = URL.createObjectURL(file);
+     console.log(this.url);
+    // Ensure it's an image
+    if(file.type.match(/image.*/)) {
+
+
+        // Load the image
+        var reader = new FileReader();
+        reader.onload = (readerEvent) =>{
+            var image = new Image();
+          image.onload = (imageEvent) => {
+         var canvas = document.createElement('canvas'),
+                    max_size = 544,// TODO : pull max size from a site config
+                    width = image.width,
+                    height = image.height;
+                if (width > height) {
+                    if (width > max_size) {
+                        height *= max_size / width;
+                        width = max_size;
+                    }
+                } else {
+                    if (height > max_size) {
+                        width *= max_size / height;
+                        height = max_size;
+                    }
+                }
+                canvas.width = width;
+                canvas.height = height;
+                canvas.getContext('2d').drawImage(image, 0, 0, width, height);
+                var dataUrl = canvas.toDataURL('image/jpeg');
+                let resizedImage = this.dataURLToBlob(dataUrl);
+
+
+                      axios.post(API_URL+'/upload-shop', {
+        image: dataUrl
+      }).then(res => {
+      this.file = res.data
+     this.isHiddenUpload = true
+
+      }).catch(function(){
+
+              this.$swal({
+                type: "error",
+                title: "Upload รูปภาพไม่ผ่านติดต่อเจ้าหน้าที่",
+                showConfirmButton: true,
+                reverseButtons: true
+            });
+
+        });
+
+
+
+            };
+
+            image.src = readerEvent.target.result;
+
+
+        }
+        reader.readAsDataURL(file);
+
+    }
+
+
+
+
+    },
+        dataURLToBlob(dataURI) {
+
+  // convert base64 to raw binary data held in a string
+  // doesn't handle URLEncoded DataURIs - see SO answer #6850276 for code that does this
+  var byteString = atob(dataURI.split(',')[1]);
+
+  // separate out the mime component
+  var mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
+
+  // write the bytes of the string to an ArrayBuffer
+  var ab = new ArrayBuffer(byteString.length);
+
+  // create a view into the buffer
+  var ia = new Uint8Array(ab);
+
+  // set the bytes of the buffer to the correct values
+  for (var i = 0; i < byteString.length; i++) {
+      ia[i] = byteString.charCodeAt(i);
+  }
+
+  // write the ArrayBuffer to a blob, and you're done
+  var blob = new Blob([ab], {type: mimeString});
+  return blob;
+
+},
 
         Checkpolicy(){
 
@@ -393,6 +524,7 @@ this.typeshop = typeshop;
         },
         async registershop(){
 
+          this.form.url = this.file;
 
 
              this.$v.$touch()
@@ -404,7 +536,8 @@ this.typeshop = typeshop;
                  this.errortype()
                 return false;
             }
-            if(this.status == 'not_accepted'){
+            if((this.status == 'not_accepted') || (this.status == '')){
+              this.status = 'not_accepted';
             return false
             }
              await this.loader()

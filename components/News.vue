@@ -3,28 +3,72 @@
 
     <section id="categories">
         <div class="row relatedweb-test" style="margin-bottom: -25px;">
-                <div class="col-12 col-md-9 col-lg-9">
+
+
+                <div class="col-12 col-md-9 col-lg-9" v-for="(x, index) in categornew" :key="x.id">
                    <div class="main-heading">
-        <div class="heading-title-relat">
-                            <h2><span>PRODUCT CATEGORIES</span>
-	<em class="">ประเภทสินค้า</em>
+          <div class="row heading-title-new" >
+    <div class="col-9 col-md-10 col-lg-10 col-sm-6">
+
+  <h2 v-if="shell_cate"  class="mobile-news"><span>ข่าวสาร และ กิจกรรม</span>
 
 			</h2>
-        </div>
+
+          <h2 v-else  class="mobile-news">
+
+
+            <span >
+    <img src="../assets/new11.png" style="width: 50px;height: 50px;">
+              {{x.name}}</span>
+
+			</h2>
+
+    </div>
+   <div class="col-3 col-md-2 col-lg-2 col-sm-6" style="line-height: 4;text-align: right;">
+     <button type="button" class="btn btn-outline-dark">ดูทั้งหมด</button>
+   </div>
+  </div>
  <div>
 
       <VueSlickCarousel v-bind="slickOptions">
-    <div v-for="i in items"  class="img-wrapper">
-              <div class="card c-shopinmy-tt">
-                    <div class="cardproduct c-cate">
-                 <img class="imgproduct related-images testimage imgproductcate im-cate-mobile"   :src="Checkimage(i.image)"  @click="ChangeProduct(i)" style="border-radius: 50%;">
-                                                   <div class="product-footer mobile-cate asx">
+    <div v-for="i in x.data"  class="img-wrapper cards">
 
-                                                   <span class="im-cate-text">{{i.name_th}}</span>
-                                                   </div>
+              <div class="cards c-shopinmy-tt">
 
-                                                </div>
+
+                                                <div class="cardproduct-new">
+
+                                                  <img  :src="Checkimage(i.f_archives_img)"  class="imgproduct-new related-images">
+                                                  <div class="row">
+                                                    <div class="col-12">
+
+
+
+                                                    </div>
+ <div class="card-body">
+    <p class="card-text product-name-new">{{i.f_name}}</p>
+       <p class="card-text"><small class="text-muted">{{covertdate(i.updated_at)}}</small></p>
+  </div>
+                                            </div>
+
+                                                           <div class="row">
+                                                    <div class="col-12">
+
+
+                                                    </div>
+                                                    </div>
+     </div>
         </div>
+
+
+
+
+
+
+
+
+
+
       </div>
 
 
@@ -40,10 +84,6 @@
     </div>
 
 
-                        <!-- -------------------------Mobile------------------------------ -->
-
-
-
     <br>
     </section>
 
@@ -53,19 +93,21 @@
 <script>
 import { required, email, numeric, maxLength } from "vuelidate/lib/validators";
 import { mapGetters,mapState } from "vuex";
-import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.js";
+import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND,GET_NEWE } from "../store/actions.type.js";
   import { APP_URL } from "../environment/environment.js";
   import VueSlickCarousel from 'vue-slick-carousel'
   import 'vue-slick-carousel/dist/vue-slick-carousel.css'
   // optional style for arrows & dots
   import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
-
+import moment from 'moment'
 
 
   export default {
 
         data() {
       return {
+        x:null,
+        categornew:null,
          form: {
                     catagory_id: "",
                 },
@@ -119,16 +161,13 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
 
 
   slickOptions:{
-  "dots": true,
-  "infinite": false,
-  "arrows": false,
+ "centerMode": true,
+  "centerPadding": "20px",
+   "arrows": false,
+  "focusOnSelect": true,
+  "infinite": true,
+  "slidesToShow": 5,
   "speed": 500,
-  "slidesToShow": 10,
-  "slidesToScroll": 4,
-  "initialSlide": 0,
-   "autoplay": false,
-  "speed": 500,
-  "autoplaySpeed": 500,
   "responsive": [
             {
       "breakpoint": 1700,
@@ -142,7 +181,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
             {
       "breakpoint": 1500,
       "settings": {
-        "slidesToShow": 8,
+        "slidesToShow": 3,
         "slidesToScroll": 4,
         "infinite": true,
         "dots": true
@@ -151,7 +190,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
           {
       "breakpoint": 1440,
       "settings": {
-        "slidesToShow": 8,
+        "slidesToShow": 3,
         "slidesToScroll": 4,
         "infinite": true,
         "dots": true
@@ -160,7 +199,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
       {
       "breakpoint": 1300,
       "settings": {
-        "slidesToShow": 8,
+        "slidesToShow": 3,
         "slidesToScroll": 4,
         "infinite": true,
         "dots": true
@@ -169,7 +208,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
     {
       "breakpoint": 1024,
       "settings": {
-        "slidesToShow": 4,
+        "slidesToShow": 3,
         "slidesToScroll": 6,
         "infinite": true,
         "dots": true
@@ -178,25 +217,25 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
     {
       "breakpoint": 600,
       "settings": {
-        "slidesToShow": 5,
+        "slidesToShow": 2,
         "slidesToScroll": 5,
-          "rows": 1,
+
         "initialSlide": 2
       }
     },
     {
       "breakpoint": 480,
       "settings": {
-        "slidesToShow": 5,
-          "rows": 1,
+        "slidesToShow": 2,
+
         "slidesToScroll": 5
       }
     },
         {
       "breakpoint": 375,
       "settings": {
-        "slidesToShow": 5,
-          "rows": 1,
+        "slidesToShow": 2,
+
         "slidesToScroll": 5
 
       }
@@ -209,7 +248,7 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
 
      computed: {
 
- ...mapGetters(["category_shell","shell_cate"]),
+ ...mapGetters(["category_shell","shell_cate","newe"]),
 
 
       ...mapState({
@@ -245,6 +284,12 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
 
          methods: {
 
+          covertdate(date){
+            console.log('date',date);
+                  return moment(String(date)).format('MMMM ,Do YYYY')
+        },
+
+
       redirectTo(name) {
                     this.$router.push(name)
                   },
@@ -252,14 +297,16 @@ import { FETCH_CATEGORY_SHELL,FETCH_PRODUCT_FIND } from "../store/actions.type.j
        async Loadcategory() {
 
 
-                   let a = await this.$store.dispatch(FETCH_CATEGORY_SHELL);
-                   this.items = a;
+                   let a = await this.$store.dispatch(GET_NEWE);
+                   this.categornew = a;
+                   console.log('item',this.items);
 
 
 
           },
          Checkimage(image){
                 let public_images = process.env.ImageURL+image;
+                console.log('public_images',public_images);
                 return public_images;
         },
         ChangeProduct(i){

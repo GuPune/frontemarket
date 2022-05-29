@@ -20,16 +20,17 @@
                 <Test  v-if="currentRouteName == 'index'" />
 
 <Related v-if="currentRouteName == 'index'"/>
+<News v-if="currentRouteName == 'index'"/>
 
     <ShopRelation v-if="currentRouteName == 'index'"/>
 
 
-   <LongFooter  v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou') "/>
+   <LongFooter  v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou')  && (currentRouteName != 'form-login')"/>
 
 
 
 
-                <Footer  v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou')"/>
+                <Footer  v-if="(currentRouteName != 'salepage-id') && (currentRouteName != 'salepage-id') && (currentRouteName != 'buy-slug') && (currentRouteName != 'buy-thankyou')  && (currentRouteName != 'form-login')"/>
 
 
 <div class="icon-bar">
@@ -90,6 +91,9 @@
 
  </script>
 
+
+
+
 <script>
 
 import NavShop from "@/components/NavbarShop"
@@ -100,6 +104,7 @@ import Related from "@/components/Related"
 import ShopRelation from "@/components/ShopRelation"
 import Test from "@/components/Test"
 import LongFooter from "@/components/LongFooter"
+import News from "@/components/News"
 import Footer from "@/components/Footer"
 import Loader from '@/components/Loader'
 import { mapState } from 'vuex'
@@ -196,6 +201,9 @@ hide:false,
 
     async mounted() {
 
+
+//this.get_cookies_array();
+
         let getcook = this.$cookie.get("ssid");
 
 
@@ -222,6 +230,12 @@ this.footer();
 
     },
     methods: {
+
+      get_cookies_array() {
+
+
+
+},
       language(e){
           let x =  localStorage.setItem("language", e);
 

@@ -10,7 +10,9 @@
    <img src="../assets/fti.png"  alt=""  class="icon-mobile nav-icon-desktop">
      <img src="../assets/fti.png"  alt=""  class="icon-mobile nav-icon-mobile">
     </b-navbar-brand>
-              <b-navbar-brand href="#" class="nav-sell"  @click="redirectTo('form-shopregis')" >{{objectslayout.textsellermyshop}}</b-navbar-brand>
+              <b-navbar-brand href="#" class="nav-sell"  @click="redirectTo('form-shopregis')" >{{objectslayout.textsellermyshop}}
+
+              </b-navbar-brand>
 
     <b-navbar-brand href="#" class="cart-mobi"  @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus" aria-hidden="true"></i><span> ({{ cartTotal }})  ตะกร้าสินค้า </span></b-nav-item></b-navbar-brand>
 
@@ -51,16 +53,20 @@
 
 
 
-       <b-col cols="1" md="1"  sm="2" xl="1" class="px-2 nav-regishop-ipad" style="max-width: 16.7777%">
-          <b-navbar-brand href="#"  @click="redirectTo('form-shopregis')" style="font-size: 14px;">
+
+           <b-col cols="2" md="1"  sm="1" class="nav-regishop-mobile px-2">
+          <b-navbar-brand href="#" @click="redirectTo('form-shopregis')">
+           <span class="descquickmenu regishover"  v-if ="this.language == 'en'">{{this.placeholder_mysell}}</span>
+            <span class="descquickmenu regishover"  v-if ="this.language == 'ch'">{{this.placeholder_mysell}}</span>
+             <span class="descquickmenu regishover"  v-if ="this.language == 'th' || this.language == null">{{this.placeholder_mysell}}</span>
 
 
-              <div v-if ="this.language == 'en'" class="regishover" > {{this.placeholder_mysell}} </div>
-             <div v-if ="this.language == 'ch'"  class="regishover" > {{this.placeholder_mysell}}</div>
-              <div v-if ="this.language == 'th' || this.language == null" class="regishover" > {{this.placeholder_mysell}} </div>
 
-            </b-navbar-brand>
+          </b-navbar-brand>
       </b-col>
+
+
+
         <b-col cols="2" md="1"  sm="1" class="nav-regishop-mobile px-2">
           <b-navbar-brand href="#"   @click="redirectTo('cart-orderlist')"><i class="fas fa fa-cart-plus fa-w-18 icon-size-nav regishover" aria-hidden="true"></i><span class="numitem "> {{ cartTotal }}  </span><span class="descquickmenu regishover">{{this.placeholder_cart}}</span>
 
@@ -68,7 +74,7 @@
       </b-col>
 
           <b-col cols="2" md="1"  sm="1" class="nav-regishop-mobile px-2">
-          <b-navbar-brand href="#">
+          <b-navbar-brand href="#" @click="redirectTo('fav-favorite')">
             <i class="fa fa-heart-o regishover" aria-hidden="true"></i><span class="descquickmenu regishover" >สินค้าโปรด</span>
 
 
@@ -138,15 +144,16 @@
            <b-col cols="2" md="2"  sm="2" xl="3" >
            <img src="../assets/fti.png"  alt=""  class="icon-mobile nav-icon-mobile">
             </b-col>
-       <b-col cols="2" md="2"  sm="2" lg="2" xl="1" class="px-2">
+
+                  <b-col cols="2" md="2"  sm="2" lg="2" xl="1">
           <b-navbar-brand href="#"  @click="redirectTo('form-shopregis')">
+                  <span class="descquickmenu regishover"  v-if ="this.language == 'en'">{{this.placeholder_mysell}}</span>
+            <span class="descquickmenu regishover"  v-if ="this.language == 'ch'">{{this.placeholder_mysell}}</span>
+             <span class="descquickmenu regishover"  v-if ="this.language == 'th' || this.language == null">{{this.placeholder_mysell}}</span>
 
 
-              <div v-if ="this.language == 'en'" class="descquickmenu regishover" > {{this.placeholder_mysell}} </div>
-             <div v-if ="this.language == 'ch'"  class="descquickmenu regishover" > {{this.placeholder_mysell}}</div>
-              <div v-if ="this.language == 'th' || this.language == null" class="descquickmenu regishover" > {{this.placeholder_mysell}} </div>
 
-            </b-navbar-brand>
+          </b-navbar-brand>
       </b-col>
 
        <b-col cols="2" md="2"  sm="2" class="px-2">
@@ -156,7 +163,7 @@
       </b-col>
 
           <b-col cols="2" md="2"  sm="2" lg="2" class="px-2">
-          <b-navbar-brand href="#">
+          <b-navbar-brand href="#" @click="redirectTo('fav-favorite')">
             <i class="fa fa-heart-o regishover" aria-hidden="true"></i><span class="descquickmenu regishover" >สินค้าโปรด</span>
 
 
@@ -234,8 +241,8 @@
             </b-col>
 
 
-        <b-col cols="3" md="2"  sm="2" class="px-2"  @click="redirectTo('form-shopregis')">
-          <b-navbar-brand href="#"><span class="descquickmenumobile regishover">{{this.placeholder_mysell}} | </span>
+        <b-col cols="3" md="2"  sm="2" class="px-2">
+          <b-navbar-brand href="#"  @click="redirectTo('form-shopregis')"><span class="descquickmenumobile regishover">{{this.placeholder_mysell}} | </span>
 
           </b-navbar-brand>
       </b-col>
@@ -331,7 +338,7 @@
       </b-col>
 
           <b-col cols="2" md="2"  sm="2" lg="2" class="px-2">
-          <b-navbar-brand href="#">
+          <b-navbar-brand href="#" @click="redirectTo('fav-favorite')">
             <i class="fa fa-heart-o regishover" aria-hidden="true"></i>
                   <span class="descquickmenumobile375" style="padding-left:15px;"> |  </span>
           </b-navbar-brand>
@@ -345,13 +352,38 @@
             </b-navbar-brand>
 
 
-                      <b-navbar-nav class="ml-auto">
+                      <!-- <b-navbar-nav class="ml-auto">
           <b-nav-item-dropdown right  v-if="isLogins">
-          <!-- Using 'button-content' slot -->
+
           <template #button-content>
             <em>  <i class="fa fa-user-circle-o" aria-hidden="true" @click="redirectTo('profile-userprofile')" ></i></em>
           </template>
 
+
+           <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')" class="xdasdasd">
+            <div>
+
+              <span @click="redirectTo('profile-userprofile')">  {{this.placeholder_profile}}</span>
+
+            </div>
+          </b-dropdown-item>
+          <b-dropdown-item href="#"  @click.prevent="logout">
+               <div v-if ="this.language == 'en'" > {{this.placeholder_logout}} </div>
+             <div v-if ="this.language == 'ch'" > {{this.placeholder_logout}}</div>
+              <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_logout}} </div>
+          </b-dropdown-item>
+
+
+        </b-nav-item-dropdown>
+      </b-navbar-nav> -->
+
+
+                <b-navbar-nav class="ml-auto">
+          <b-nav-item-dropdown right  v-if="isLogins">
+          <!-- Using 'button-content' slot -->
+          <template #button-content style="position: absolute;">
+            <em>   <i class="fa fa-user-circle-o" aria-hidden="true" @click="redirectTo('profile-userprofile')" ></i></em>
+          </template>
 
         </b-nav-item-dropdown>
       </b-navbar-nav>
@@ -459,6 +491,7 @@ import { FETCH_PRODUCT_BY_SHOP,FETCH_CATE_BY_SHOP,ADD_CART,REMOVE_CART,GET_CART,
 
         },
         async created(){
+
             this.form.url = window.location.origin
                 let getnav = await this.$store.dispatch(GET_NAVBAR,this.form);
 

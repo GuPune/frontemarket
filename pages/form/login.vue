@@ -1,7 +1,6 @@
 <template>
 <div>
-<Nav/>
-<section id="Loginform" class="form-login-desktop">
+<section id="Loginform" class="form-login-desktop" style="margin:15px;">
       <div class="container forms">
 
        <div class="alert alert-danger" role="alert" v-if="alert.message">
@@ -11,9 +10,9 @@
         </div>
 
     <div class="row">
-      <h5 style="color: #171c24;" v-if ="this.language == 'en'" >{{this.placeholder_login}}</h5>
-      <h5 style="color: #171c24;" v-if ="this.language == 'ch'">{{this.placeholder_login}}</h5>
-      <h5 style="color: #171c24;"  v-if ="this.language == 'th' || this.language == null" >{{this.placeholder_login}}</h5>
+      <h5 style="color: #171c24;font-size: 32px;" v-if ="this.language == 'en'" >{{this.placeholder_login}}</h5>
+      <h5 style="color: #171c24;font-size: 32px;" v-if ="this.language == 'ch'">{{this.placeholder_login}}</h5>
+      <h5 style="color: #171c24;font-size: 32px;"  v-if ="this.language == 'th' || this.language == null" >{{this.placeholder_login}}</h5>
       <div class="input-group input-group-icon">
         <input class="form-control"  :placeholder="[[ placeholder_name ]]" type="text" v-model="form.email"
             :error-messages="EmailErrors"
@@ -46,6 +45,9 @@
 
 
 
+
+
+
     <center>
     <button class="btn btn-primary" @click="login()"><span>{{this.placeholder_login}}</span></button>
     <p>{{this.placeholder_account}}  <nuxt-link to="userregis">
@@ -64,6 +66,13 @@
 
 
     </div>
+
+
+    <div class="form-group">
+                                    <div class="text-center textLiner theme-bg-2">
+                                        <span class="textLiner-txt theme-bg-1 theme-text-2"></span>
+                                    </div>
+                                </div>
 
 
     <div class="form-group pt-3">
