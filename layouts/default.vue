@@ -20,7 +20,7 @@
                 <Test  v-if="currentRouteName == 'index'" />
 
 <Related v-if="currentRouteName == 'index'"/>
-<News v-if="currentRouteName == 'index'"/>
+<!-- <News v-if="currentRouteName == 'index'"/> -->
 
     <ShopRelation v-if="currentRouteName == 'index'"/>
 
