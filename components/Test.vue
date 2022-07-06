@@ -6,8 +6,8 @@
                 <div class="col-12 col-md-9 col-lg-9">
                    <div class="main-heading">
         <div class="heading-title-relat">
-                            <h2><span>PRODUCT CATEGORIES</span>
-	<em class="">ประเภทสินค้า</em>
+                            <h2><span>PRODUCT CATEGORIES & Service</span>
+	<em class="">ประเภทสินค้า & บริการ </em>
 
 			</h2>
         </div>

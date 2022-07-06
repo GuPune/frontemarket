@@ -292,7 +292,7 @@ input:checked + .slider:before {
   left: 5%;
   /* height: 270px; */
   /* text-align: center; */
-  line-height: 30px;
+  line-height: 22px;
   background: linear-gradient(#ffffff, #ffffff);
   color: white;
   font-family: "Lato", sans-serif;
@@ -302,7 +302,7 @@ input:checked + .slider:before {
           animation: slideIn 0.8s;
   -webkit-animation-delay: 0.8s;
           animation-delay: 0.8s;
-  font-size: 15px;
+  font-size: 11px;
   z-index: 100;
   border: 5px solid #e2e2e2;
   border-radius: 10px;
