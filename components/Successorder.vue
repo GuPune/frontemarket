@@ -686,7 +686,8 @@ import axios from 'axios';
 
         downloadpdf () {
 
-alert('downloadpdf');
+alert(this.objectss.cartnumber);
+
 			},
 
           scrollToTop() {
