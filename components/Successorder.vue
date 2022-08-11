@@ -687,7 +687,7 @@ import axios from 'axios';
         downloadpdf () {
 
 axios({
-                    url: 'http://cmsecom.idtest.work/api/get-file/'+this.form.cartnumber,
+                    url: 'https://cmsecom.idtest.work/api/get-file/'+this.form.cartnumber,
                     method: 'GET',
                     responseType: 'blob',
                 }).then((response) => {
