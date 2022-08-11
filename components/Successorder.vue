@@ -337,7 +337,7 @@
             <!-- Start Button -->
             <div class="row py-4 border-top border-md-top-0 border-theme">
                 <div class="col-6 col-md-6 text-left">
-                    <button type="button" class="btn btn-primary btn-sm" id="buttonPrint">
+                    <button type="button" class="btn btn-primary btn-sm" id="buttonPrint" @click="downloadpdf()">
                         <i class="fa fa-print"></i>
                         พิมพ์ใบสั่งซื้อ                    </button>
 
@@ -683,6 +683,25 @@ import axios from 'axios';
     },
 
       methods: {
+
+        downloadpdf () {
+
+axios({
+                    url: 'http://cmsecom.idtest.work/api/get-file/'+this.objectss.cartnumber,
+                    method: 'GET',
+                    responseType: 'blob',
+                }).then((response) => {
+                     var fileURL = window.URL.createObjectURL(new Blob([response.data]));
+                     var fileLink = document.createElement('a');
+
+                     fileLink.href = fileURL;
+                     fileLink.setAttribute('download', 'file.pdf');
+                     document.body.appendChild(fileLink);
+
+                     fileLink.click();
+                });
+
+			},
 
           scrollToTop() {
     window.scrollTo(0,0);
