@@ -686,7 +686,20 @@ import axios from 'axios';
 
         downloadpdf () {
 
-alert(this.form.cartnumber);
+axios({
+                    url: 'http://cmsecom.idtest.work/api/get-file/'+this.form.cartnumber,
+                    method: 'GET',
+                    responseType: 'blob',
+                }).then((response) => {
+                     var fileURL = window.URL.createObjectURL(new Blob([response.data]));
+                     var fileLink = document.createElement('a');
+
+                     fileLink.href = fileURL;
+                     fileLink.setAttribute('download', 'file.pdf');
+                     document.body.appendChild(fileLink);
+
+                     fileLink.click();
+                });
 
 			},
 
