@@ -636,8 +636,8 @@ height: 25px;
   }
 
   .imgproduct-product {
-    width: 250px;
-    height: 200px;
+    width: 200px;
+    height: 150px;
   }
 
 
@@ -991,4 +991,10 @@ height:230px;
 
       }
 
+      }
+      @media screen and (min-width: 1600px) {
+        .imgproduct-product {
+          width: 200px;
+          height: 150px;
+        }
       }
