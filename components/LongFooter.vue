@@ -17,6 +17,7 @@
 <li data-v-2eecd278="">เกี่ยวกับช้อปปิ้งออนไลน์</li>
 <li data-v-2eecd278="">การสั่งซื้อสินค้า</li>
 <li data-v-2eecd278="">การชำระเงิน</li>
+<li data-v-2eecd278=""  @click="newtab()">ระบบหลังบ้าน</li>
 </ul>
 </div>
 </div>
@@ -73,6 +74,54 @@
                   </div>
 </div>
 </template>
+<script src="https://cdn.bootcss.com/html2pdf.js/0.9.1/html2pdf.bundle.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.1/html2pdf.bundle.min.js"></script>
+   <script src="https://unpkg.com/vue"></script>
+<script>
+
+
+
+
+  export default {
+        components: {
+
+  },
+
+    data() {
+
+
+    },
+
+      watch: {
+
+  },
+
+   computed: {
+
+
+
+        },
+
+     async mounted() {
+
+
+
+    },
+
+      methods: {
+
+        newtab(){
+ window.open("https://back.ftikkmart.com/");
+
+        }
+
+
+
+
+
+      }
+  }
+</script>
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
 
