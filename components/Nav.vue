@@ -377,16 +377,23 @@
         </b-nav-item-dropdown>
       </b-navbar-nav> -->
 
-
+<!--
                 <b-navbar-nav class="ml-auto">
           <b-nav-item-dropdown right  v-if="isLogins">
-          <!-- Using 'button-content' slot -->
+
           <template #button-content style="position: absolute;">
             <em>   <i class="fa fa-user-circle-o" aria-hidden="true" @click="redirectTo('profile-userprofile')" ></i></em>
           </template>
 
         </b-nav-item-dropdown>
-      </b-navbar-nav>
+      </b-navbar-nav> -->
+
+         <b-navbar-brand href="#"   v-if="isLogins">
+                 <i class="fa fa-user-circle-o" aria-hidden="true"  @click="redirectTo('profile-userprofile')"></i><span class="descquickmenumobile">
+                   <span class="regishover"></span></span>
+            </b-navbar-brand>
+
+
             </b-col>
        </b-row>
 
