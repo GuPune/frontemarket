@@ -95,19 +95,18 @@
             <!-- <div v-if ="this.language == 'en'" > {{this.placeholder_login}} </div>
              <div v-if ="this.language == 'ch'" > {{this.placeholder_login}}</div>
               <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_login}} </div> -->
-                 <i class="fa fa-user-circle-o" aria-hidden="true" @click="redirectTo('form-login')"></i><span class="descquickmenu">
+                 <i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="descquickmenu">
                    <span @click="redirectTo('form-userregis')" class="regishover">{{this.placeholder_regis}}  </span>| <span @click="redirectTo('form-login')" class="regishover">{{this.placeholder_login}}</span></span>
             </b-navbar-brand>
 
 
-                <b-navbar-nav class="ml-auto cart-desktop"  v-if="isLogins">
-          <!-- <b-nav-item-dropdown right  v-if="isLogins"> -->
+                <b-navbar-nav class="ml-auto cart-desktop">
+          <b-nav-item-dropdown right  v-if="isLogins">
           <!-- Using 'button-content' slot -->
           <template #button-content>
-     <i class="fa fa-user-circle-o" aria-hidden="true" @click="redirectTo('profile-userprofile')"></i>
-
+            <em>  <i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="descquickmenu" style="color:#ffffff">คุณ{{ objects.name}}</span></em>
           </template>
-          <!-- <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">
+          <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">
             <div>
 
               <div v-if ="this.language == 'en'" > {{this.placeholder_profile}} </div>
@@ -121,7 +120,7 @@
               <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_logout}} </div>
 
           </b-dropdown-item>
-        </b-nav-item-dropdown> -->
+        </b-nav-item-dropdown>
       </b-navbar-nav>
 
       </b-col>
