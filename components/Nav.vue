@@ -95,7 +95,7 @@
             <!-- <div v-if ="this.language == 'en'" > {{this.placeholder_login}} </div>
              <div v-if ="this.language == 'ch'" > {{this.placeholder_login}}</div>
               <div v-if ="this.language == 'th' || this.language == null" > {{this.placeholder_login}} </div> -->
-                 <i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="descquickmenu">
+                 <i class="fa fa-user-circle-o" aria-hidden="true" @click="redirectTo('form-login')"></i><span class="descquickmenu">
                    <span @click="redirectTo('form-userregis')" class="regishover">{{this.placeholder_regis}}  </span>| <span @click="redirectTo('form-login')" class="regishover">{{this.placeholder_login}}</span></span>
             </b-navbar-brand>
 
@@ -104,7 +104,8 @@
           <!-- <b-nav-item-dropdown right  v-if="isLogins"> -->
           <!-- Using 'button-content' slot -->
           <template #button-content>
-            <em>  <i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="descquickmenu" style="color:#ffffff">คุณ{{ objects.name}}</span></em>
+     <i class="fa fa-user-circle-o" aria-hidden="true" @click="redirectTo('profile-userprofile')"></i>
+
           </template>
           <!-- <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">
             <div>
