@@ -100,7 +100,7 @@
   background-size: 20px auto;
   background-repeat: no-repeat;
   background-position: 0 0;
-  background-image: url("https://www.svgroup.co.th/skin/frontend/typologancee/default/images/Vector-Smart-Object-green.png");
+  /* background-image: url("https://www.svgroup.co.th/skin/frontend/typologancee/default/images/Vector-Smart-Object-green.png"); */
 }
 .item .addtocart {
   display: inline-block;
