@@ -353,7 +353,7 @@ this.form.url = window.location.hostname;
 
 
        //  window.location.href = `https://cmsecom.idtest.work/api/auth/login/${service}`;
-              window.location.href = `https://back.ftikkmart.com/api/auth/login/${service}/con/${this.form.url}`;
+              window.location.href = `https://back.nanoik.com/api/auth/login/${service}/con/${this.form.url}`;
              //    window.location.href = `https://backoffice.thaionzon.com/api/auth/login/${service}/con/${this.form.url}`;
         },
         async loginline(){

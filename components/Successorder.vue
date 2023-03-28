@@ -687,7 +687,7 @@ import axios from 'axios';
         downloadpdf () {
 
 axios({
-                    url: 'https://back.ftikkmart.com/api/get-file/'+this.form.cartnumber,
+                    url: 'https://back.nanoik.com/api/get-file/'+this.form.cartnumber,
                     method: 'GET',
                     responseType: 'blob',
                 }).then((response) => {

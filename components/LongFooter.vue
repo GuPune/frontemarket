@@ -111,7 +111,7 @@
       methods: {
 
         newtab(){
- window.open("https://back.ftikkmart.com/");
+ window.open("https://back.nanoik.com/");
 
         }
 
