@@ -147,9 +147,9 @@ export default {
 
 axios: {
   // See https://github.com/nuxt-community/axios-module#options
-  baseURL: "https://back.ftikkmart.com/api",
-  ImageURL: "https://back.ftikkmart.com/public/product/",
-  ImageSoc: "https://back.ftikkmart.com/public/images/",
+  baseURL: "https://back.nanoik.com/api",
+  ImageURL: "https://back.nanoik.com/public/product/",
+  ImageSoc: "https://back.nanoik.com/public/images/",
 
  },
 
