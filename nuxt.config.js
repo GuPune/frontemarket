@@ -4,7 +4,7 @@ export default {
 
 
   head: {
-    titleTemplate: 'UAT | %s',
+    titleTemplate: 'Prod | %s',
     title: 'Thailand ซื้อขายสินค้าออนไลน์',
     htmlAttrs: {
       lang: 'en'
