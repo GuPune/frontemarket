@@ -154,10 +154,10 @@ axios: {
  },
 
 env: {
- baseURL: "https://back.ftikkmart.com/api",
-  ImageURL: "https://back.ftikkmart.com/public/product/",
-  ImageSoc: "https://back.ftikkmart.com/public/images/",
-  backend:"https://back.ftikkmart.com",
+ baseURL: "https://back.nanoik.com/api",
+  ImageURL: "https://back.nanoik.com/public/product/",
+  ImageSoc: "https://back.nanoik.com/public/images/",
+  backend:"https://back.nanoik.com",
 },
 
 
