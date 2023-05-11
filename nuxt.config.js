@@ -153,28 +153,28 @@ axios: {
 
  },
 
-env: {
- baseURL: "https://back.nanoik.com/api",
-  ImageURL: "https://back.nanoik.com/public/product/",
-  ImageSoc: "https://back.nanoik.com/public/images/",
-  backend:"https://back.nanoik.com",
-},
-
-
-// axios: {
-//   // See https://github.com/nuxt-community/axios-module#options
-//   baseURL: "https://backoffice.thaionzon.com/api",
-//   ImageURL: "https://backoffice.thaionzon.com/public/product/",
-//   ImageSoc: "https://backoffice.thaionzon.com/public/images/",
-
-//  },
-
 // env: {
-//  baseURL: "https://backoffice.thaionzon.com/api",
-//   ImageURL: "https://backoffice.thaionzon.com/public/product/",
-//   ImageSoc: "https://backoffice.thaionzon.com/public/images/",
-//   backend:"https://backoffice.thaionzon.com",
+//  baseURL: "https://back.nanoik.com/api",
+//   ImageURL: "https://back.nanoik.com/public/product/",
+//   ImageSoc: "https://back.nanoik.com/public/images/",
+//   backend:"https://back.nanoik.com",
 // },
+
+
+axios: {
+  // See https://github.com/nuxt-community/axios-module#options
+  baseURL: "https://backoffice.thaionzon.com/api",
+  ImageURL: "https://backoffice.thaionzon.com/public/product/",
+  ImageSoc: "https://backoffice.thaionzon.com/public/images/",
+
+ },
+
+env: {
+ baseURL: "https://backoffice.thaionzon.com/api",
+  ImageURL: "https://backoffice.thaionzon.com/public/product/",
+  ImageSoc: "https://backoffice.thaionzon.com/public/images/",
+  backend:"https://backoffice.thaionzon.com",
+},
 
 
 
