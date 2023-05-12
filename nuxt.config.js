@@ -145,13 +145,13 @@ export default {
 //     backend:"http://127.0.0.1:8000",
 // },
 
-axios: {
-  // See https://github.com/nuxt-community/axios-module#options
-  baseURL: "https://back.nanoik.com/api",
-  ImageURL: "https://back.nanoik.com/public/product/",
-  ImageSoc: "https://back.nanoik.com/public/images/",
+// axios: {
+//   // See https://github.com/nuxt-community/axios-module#options
+//   baseURL: "https://back.nanoik.com/api",
+//   ImageURL: "https://back.nanoik.com/public/product/",
+//   ImageSoc: "https://back.nanoik.com/public/images/",
 
- },
+//  },
 
 // env: {
 //  baseURL: "https://back.nanoik.com/api",
