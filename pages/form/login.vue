@@ -75,14 +75,14 @@
                                 </div>
 
 
-    <div class="form-group pt-3">
+    <!-- <div class="form-group pt-3">
     <button type="submit" class="btn btn-lg btn-block btnFacebook btn-facebook" id="btnLogin"  @click="socialLogin('facebook')">
 
       <div>
         {{this.placeholder_login_to}} Facebook
         </div>
       </button>
-     </div>
+     </div> -->
     <div class="form-group pt-3">
     <button type="submit" class="btn btn-lg btn-block btnGoogle" id="btnLogin"  @click="socialLogin('google')">{{this.placeholder_login_to}} Google </button> </div>
 
