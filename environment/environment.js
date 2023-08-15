@@ -2,4 +2,4 @@
 //export const API_URL = "http://127.0.0.1:8000/api";
 //export const API_URL = "https://cmsecom.idtest.work/api";
 
-export const API_URL = "https://back.halalthaimart.com/api";
+export const API_URL = "http://generalthaiproductb.idtest.work/api";
