@@ -147,17 +147,17 @@ export default {
 
 axios: {
   // See https://github.com/nuxt-community/axios-module#options
-  baseURL: "http://back-emarketplace.e-dct.com/api",
-  ImageURL: "http://back-emarketplace.e-dct.com/public/product/",
-  ImageSoc: "http://back-emarketplace.e-dct.com/public/images/",
+  baseURL: "https://back-emarketplace.e-dct.com/api",
+  ImageURL: "https://back-emarketplace.e-dct.com/public/product/",
+  ImageSoc: "https://back-emarketplace.e-dct.com/public/images/",
 
  },
 
 env: {
- baseURL: "http://back-emarketplace.e-dct.com/api",
-  ImageURL: "http://back-emarketplace.e-dct.com/public/product/",
-  ImageSoc: "http://back-emarketplace.e-dct.com/public/images/",
-  backend:"http://back-emarketplace.e-dct.com",
+ baseURL: "https://back-emarketplace.e-dct.com/api",
+  ImageURL: "https://back-emarketplace.e-dct.com/public/product/",
+  ImageSoc: "https://back-emarketplace.e-dct.com/public/images/",
+  backend:"https://back-emarketplace.e-dct.com",
 },
 
 

@@ -3,14 +3,14 @@
 
 
 
-          
+
 <div class="container forms" style="margin-bottom: 40px;">
 
     <div class="row">
       <h5 style="color: #171c24;">สมัครสมาชิก</h5>
       <div class="input-group input-group-icon">
-           <input type="text"   id="tel" class="form-control"  placeholder="ชื่อ" v-model="form.first_name" 
-         :error-messages="firstNameErrors" required 
+           <input type="text"   id="tel" class="form-control"  placeholder="ชื่อ" v-model="form.first_name"
+         :error-messages="firstNameErrors" required
          :class="{ 'is-invalid': $v.form.first_name.$error}"
          @input="$v.form.first_name.$touch()"
           @blur="$v.form.first_name.$touch()"/>
@@ -18,7 +18,7 @@
       </div>
 
        <div class="input-group input-group-icon">
-       <input type="text" class="form-control" placeholder="นามสกุล" v-model="form.last_name" 
+       <input type="text" class="form-control" placeholder="นามสกุล" v-model="form.last_name"
                                                                          :error-messages="lastNameErrors" required
                                                                          :class="{ 'is-invalid': $v.form.last_name.$error}"
                                                                          @input="$v.form.last_name.$touch()"
@@ -27,11 +27,11 @@
       </div>
 
     </div>
-    
+
     <div class="row" hidden>
       <div class="col-half">
         <h6 style="color: #171c24;">วันเกิด</h6>
-          
+
                  <b-form-datepicker  v-model="form.birthday"
       id="datepicker-buttons"
       today-button
@@ -42,25 +42,25 @@
                 <!--
         <div class="input-group">
 
-      
-            <b-form-datepicker id="example-datepicker" v-model="form.birthday" class="mb-2 register-cus"></b-form-datepicker>
-          
-            
 
-    
+            <b-form-datepicker id="example-datepicker" v-model="form.birthday" class="mb-2 register-cus"></b-form-datepicker>
+
+
+
+
              <div class="input-group input-group-icon">
              <datepicker  class="form-control" v-model="form.birthday" name="uniquename"></datepicker>
 
-             
+
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-birthday-cake"></i></div>
       </div>
 
-      
-       
-               
+
+
+
         </div>
         -->
-        
+
       </div>
       <div class="col-half">
         <h6 style="color: #171c24;">เพศ</h6>
@@ -77,7 +77,7 @@
     <div class="row">
 
     <div class="input-group input-group-icon">
-          <input type="text" class="form-control" placeholder="เบอร์ติดต่อ" v-model="form.tel" 
+          <input type="text" class="form-control" placeholder="เบอร์ติดต่อ" v-model="form.tel"
                                                                          :error-messages="telErrors" required
                                                                          :class="{ 'is-invalid': $v.form.tel.$error}"
                                                                          @input="$v.form.tel.$touch()"
@@ -89,7 +89,7 @@
 
 
     <div class="input-group input-group-icon">
-         <input type="text" class="form-control" placeholder="อีเมล"  v-model="form.email" 
+         <input type="text" class="form-control" placeholder="อีเมล"  v-model="form.email"
                                                                          :error-messages="EmailErrors" required
                                                                          :class="{ 'is-invalid': $v.form.email.$error}"
                                                                          @input="$v.form.email.$touch()"
@@ -97,10 +97,10 @@
         <div class="input-icon"><i style="color: #005dc0;" class="fa fa-user"></i></div>
       </div>
 
-        
-      
+
+
       <div class="input-group input-group-icon">
-          <input type="password" class="form-control" placeholder="รหัสผ่าน"  v-model="form.password" 
+          <input type="password" class="form-control" placeholder="รหัสผ่าน"  v-model="form.password"
                                                                          :error-messages="PassErrors" required
                                                                          :class="{ 'is-invalid': $v.form.password.$error}"
                                                                          @input="$v.form.password.$touch()"
@@ -110,7 +110,7 @@
       </div>
                                                                          <div class="error" v-if="!$v.form.password.minLength" style="color:red;text-align:center">รหัสผ่านต้องมีตัวอักษรอย่างน้อย {{ $v.form.password.$params.minLength.min }} ตัว</div>
 
-   
+
 
 
     </div>
@@ -123,22 +123,22 @@
       value="accepted"
       unchecked-value="not_accepted"
 
-  
+
     >
      ข้าพเจ้าเข้าใจและตกลงตาม
-     
-       
+
+
       <label for="commerce" style="color: red;"      v-on:click="Checkpolicy()"
                                   >เงื่อนไขการให้บริการ </label>
 และ
       <label for="commerce" style="color: red;"  v-on:click="CheckService()"
                                   >นโยบายความเป็นส่วนตัว </label>
-      
+
 
     </b-form-checkbox></b-col>
 
 
-    
+
 
   </b-row>
  <b-row>
@@ -154,17 +154,17 @@
   </form>
 </div>
 
-    
+
 
 
 
 </section>
-    
+
 </template>
 
 
 <script>
-  
+
 import Nav from "@/components/Nav";
 import { REGISTER,SAVE_SETLINE,SYSTEM_PDPA } from "../../store/actions.type.js";
 import { required, email, numeric, maxLength,minLength } from "vuelidate/lib/validators";
@@ -173,14 +173,14 @@ import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/vue-loading.css';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import Datepicker from "@/components/TouchDatePicker";
-    
+
 
 
     export default {
       components: {
           Nav,
           Datepicker
-           
+
               },
           validations: {
         form: {
@@ -189,8 +189,8 @@ import Datepicker from "@/components/TouchDatePicker";
             first_name: { required },
             last_name: { required },
             tel: { required },
-           
-           
+
+
         }
     },
       data: () => ({
@@ -246,13 +246,13 @@ import Datepicker from "@/components/TouchDatePicker";
         },
 
     },
-             
+
       async mounted(){
     // liff.init({
     //   liffId: '1655623618-XrxrgnDw'
     // }).then(() => {
     //   if(liff.isLoggedIn()){
-    //     liff.getProfile().then(profile => {                    
+    //     liff.getProfile().then(profile => {
     //      this.$store.dispatch(SAVE_SETLINE, profile);
     //     })
     //   }else{
@@ -263,12 +263,12 @@ import Datepicker from "@/components/TouchDatePicker";
     let pdpa = await this.$store.dispatch(SYSTEM_PDPA,this.form);
      this.policies = pdpa.policies
       this.protectdata = pdpa.protectdata
-  }, 
+  },
 
-            
+
         methods: {
 
-   
+
         Checkpolicy(){
 
  window.open(this.policies, "_blank");
@@ -290,12 +290,12 @@ import Datepicker from "@/components/TouchDatePicker";
         },
 
         async isNumber(event, message) {
-           
-                if (!/\d/.test(event.key) &&  (event.key !== "." || /\./.test(message))   )  
-                    
-                return event.preventDefault();  
 
-                
+                if (!/\d/.test(event.key) &&  (event.key !== "." || /\./.test(message))   )
+
+                return event.preventDefault();
+
+
         },
 
          loader() {
@@ -303,7 +303,7 @@ import Datepicker from "@/components/TouchDatePicker";
                 setTimeout(() => (this.isLoading = false), 1500);
             },
             send() {
-              
+
                 this.$store.dispatch(REGISTER,this.form).then((response) => response.code_return == 200 ? this.success() : this.error()).catch((error) => this.error(error.response))
             },
            async success() {
@@ -324,7 +324,7 @@ import Datepicker from "@/components/TouchDatePicker";
         });
 
    //  this.$router.push('/');
-    
+
             },
             error($text) {
                 this.$swal({
@@ -336,10 +336,10 @@ import Datepicker from "@/components/TouchDatePicker";
                 });
             },
         }
-       
-           
 
-     
-    
+
+
+
+
     };
 </script>
