@@ -84,7 +84,7 @@
       </button>
      </div> -->
     <div class="form-group pt-3">
-    <!-- <button type="submit" class="btn btn-lg btn-block btnGoogle" id="btnLogin"  @click="socialLogin('google')">{{this.placeholder_login_to}} Google </button> </div> -->
+    <button type="submit" class="btn btn-lg btn-block btnGoogle" id="btnLogin"  @click="socialLogin('google')">{{this.placeholder_login_to}} Google </button> </div>
 
 
 
@@ -353,7 +353,7 @@ this.form.url = window.location.hostname;
 
 
        //  window.location.href = `https://cmsecom.idtest.work/api/auth/login/${service}`;
-           window.location.href = `https://back-emarketplace.e-dct.com/api/auth/login/${service}/con/${this.form.url}`;
+           window.location.href = `https://back.halalthaimart.com/api/auth/login/${service}/con/${this.form.url}`;
              //    window.location.href = `https://backoffice.thaionzon.com/api/auth/login/${service}/con/${this.form.url}`;
         },
         async loginline(){
