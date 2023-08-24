@@ -1,7 +1,7 @@
 
 import { UserService }  from "../../services/user.service";
 import {
-    CORE_USER,CHECK_LOGIN,FORGOTEMAIL,CLEARALRET,REGISSHOP,REGISTER,FETCH_GET_PROFILE,SAVE_PROFILE,FETCH_ADDRESS,FETCH_ADDRESS_BY_ID,SAVE_ADDRESS_BY_ID,DEL_ADDRESS_BY_ID,UPDATE_ADDRESS_BY_ID,LOGOUT,FETCH_ID_URL,SAVE_SETLINE,CHANGEPASSWORD,GET_TYPE_SHOP
+    CORE_USER,CHECK_LOGIN,FORGOTEMAIL,CLEARALRET,REGISSHOP,REGISTER,FETCH_GET_PROFILE,FETCH_PROFILE,SAVE_PROFILE,FETCH_ADDRESS,FETCH_ADDRESS_BY_ID,SAVE_ADDRESS_BY_ID,DEL_ADDRESS_BY_ID,UPDATE_ADDRESS_BY_ID,LOGOUT,FETCH_ID_URL,SAVE_SETLINE,CHANGEPASSWORD,GET_TYPE_SHOP
 
 } from "../actions.type.js";
 import {
@@ -73,23 +73,25 @@ const actions = {
      },
 
      async [REGISTER](context,payload) {
-
         const { data } = await UserService.registerbyshop(payload);
         return data;
        },
 
        async [FETCH_GET_PROFILE](context) {
-        console.log('FETCH_GET_PROFILE ก่อน');
         const { data } = await UserService.getprofile();
-        console.log('FETCH_GET_PROFILE',data);
-
         if (typeof data === 'undefined') {
             this.$auth.logout();
             }
 
+            console.log('profile_FETCH_GET_PROFILE',data);
         context.commit(SET_PROFILE,data);
-
         return data;
+       },
+
+
+       async [FETCH_PROFILE](context,payload) {
+        console.log('profile_FETCH_GET_PROFILE',payload);
+        context.commit(SET_PROFILE,data);
        },
 
        async [SAVE_PROFILE](contex,payload) {

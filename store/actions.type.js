@@ -9,6 +9,7 @@ export const FETCH_PRODUCT_SHELL = "fetch_product_shell";
 export const FETCH_PRODUCT_FIND = "fetch_product_find";
 
 export const FETCH_GET_PROFILE = "fetch_get_profile";
+export const FETCH_PROFILE = "fetch_profile";
 export const SAVE_PROFILE = "save_profile";
 export const FETCH_ADDRESS = "fetch_address";
 export const FETCH_ADDRESS_BY_ID = "fetch_address_by_id";
