@@ -236,7 +236,7 @@ import { mapGetters } from "vuex";
 import Vue from 'vue';
 import Vuex from "vuex";
 import Nav from "@/components/Nav";
-import { FORGOTEMAIL,CLEARALRET } from "../../store/actions.type.js";
+import { FORGOTEMAIL,CLEARALRET,FETCH_PROFILE } from "../../store/actions.type.js";
 
 
 
