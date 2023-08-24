@@ -84,7 +84,9 @@
       </button>
      </div> -->
     <div class="form-group pt-3">
-    <button type="submit" class="btn btn-lg btn-block btnGoogle" id="btnLogin"  @click="socialLogin('google')">{{this.placeholder_login_to}} Google </button> </div>
+    <!-- <button type="submit" class="btn btn-lg btn-block btnGoogle" id="btnLogin"  @click="socialLogin('google')">{{this.placeholder_login_to}} Google </button> -->
+
+     </div>
 
 
 
