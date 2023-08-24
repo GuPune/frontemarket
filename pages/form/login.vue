@@ -376,8 +376,9 @@ this.form.url = window.location.hostname;
         }).then(data => {
 
       let token = this.$auth.getToken('local')   //get token
-      console.log('data',data);
+
           let a = this.$store.dispatch(FETCH_GET_PROFILE)
+             console.log('FETCH_GET_PROFILE',a);
 
 
 
