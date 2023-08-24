@@ -377,7 +377,7 @@ this.form.url = window.location.hostname;
 
       let token = this.$auth.getToken('local')   //get token
 
-      let a = this.$store.dispatch(FETCH_PROFILE,res.data.data)
+      let a = this.$store.dispatch(FETCH_PROFILE,res.data.data.user)
 
 
 
