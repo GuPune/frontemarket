@@ -3,7 +3,6 @@ import ApiService from "./api.service";
 export const AdsService = {
 
     get() {
-      console.log('ads');
       return ApiService.get("ads");
     },
     post(param) {
