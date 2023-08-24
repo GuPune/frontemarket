@@ -375,13 +375,14 @@ this.form.url = window.location.hostname;
           data: this.form
         }).then(data => {
 
-      let token = this.$auth.getToken('local')   //get token
+       setTimeout(() => {
+         let token = this.$auth.getToken('local')   //get token
 
+      }, 1000);
+
+    let a = this.$store.dispatch(FETCH_GET_PROFILE)
          // let a = this.$store.dispatch(FETCH_GET_PROFILE)
 
-    setTimeout(() => {
-        let a = this.$store.dispatch(FETCH_GET_PROFILE)
-      }, 1000);
 				})
 				.catch(err => {
         this.alert.message = 1;
@@ -396,6 +397,14 @@ this.form.url = window.location.hostname;
 
 
       }
+        },
+
+        async getprofile(){
+
+            await setTimeout(() => {
+        let a = this.$store.dispatch(FETCH_GET_PROFILE)
+      }, 1000);
+
         },
 
 
