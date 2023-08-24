@@ -79,8 +79,8 @@ const actions = {
        },
 
        async [FETCH_GET_PROFILE](context) {
+        console.log('FETCH_GET_PROFILE ก่อน');
         const { data } = await UserService.getprofile();
-
         console.log('FETCH_GET_PROFILE',data);
 
         if (typeof data === 'undefined') {
