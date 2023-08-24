@@ -103,7 +103,7 @@
                 <b-navbar-nav class="ml-auto cart-desktop">
           <b-nav-item-dropdown right  v-if="isLogins">
           <!-- Using 'button-content' slot -->
-          <template #button-content>
+          <template #button-content>{{objects}}
             <em>  <i class="fa fa-user-circle-o" aria-hidden="true"></i><span class="descquickmenu" style="color:#ffffff">คุณ{{ objects.name}}</span></em>
           </template>
           <b-dropdown-item href="#" @click="redirectTo('profile-userprofile')">

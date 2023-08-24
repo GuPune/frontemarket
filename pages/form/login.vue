@@ -236,7 +236,7 @@ import { mapGetters } from "vuex";
 import Vue from 'vue';
 import Vuex from "vuex";
 import Nav from "@/components/Nav";
-import { FORGOTEMAIL,CLEARALRET } from "../../store/actions.type.js";
+import { FORGOTEMAIL,CLEARALRET,FETCH_PROFILE } from "../../store/actions.type.js";
 
 
 
@@ -373,15 +373,15 @@ this.form.url = window.location.hostname;
           try {
         await this.$auth.loginWith('local', {
           data: this.form
-        }).then(data => {
+        }).then(res => {
 
        setTimeout(() => {
          let token = this.$auth.getToken('local')   //get token
 
       }, 1000);
 
-    let a = this.$store.dispatch(FETCH_GET_PROFILE)
-         // let a = this.$store.dispatch(FETCH_GET_PROFILE)
+    //let a = this.$store.dispatch(FETCH_GET_PROFILE)
+          let a = this.$store.dispatch(FETCH_PROFILE,res.data.data.user)
 
 				})
 				.catch(err => {
