@@ -91,7 +91,7 @@ const actions = {
 
        async [FETCH_PROFILE](context,payload) {
         console.log('profile_FETCH_GET_PROFILE',payload);
-        context.commit(SET_PROFILE,data);
+        context.commit(SET_PROFILE,payload);
        },
 
        async [SAVE_PROFILE](contex,payload) {
