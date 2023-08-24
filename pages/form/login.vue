@@ -373,11 +373,11 @@ this.form.url = window.location.hostname;
           try {
         await this.$auth.loginWith('local', {
           data: this.form
-        }).then(data => {
+        }).then(res => {
 
       let token = this.$auth.getToken('local')   //get token
 
-      let a = this.$store.dispatch(FETCH_PROFILE,data)
+      let a = this.$store.dispatch(FETCH_PROFILE,res.data.data)
 
 
 
