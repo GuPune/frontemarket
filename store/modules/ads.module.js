@@ -31,6 +31,8 @@ const getters = {
 const actions = {
     async [FETCH_ADS](context) {
         const { data } = await AdsService.get();
+        console.log('ads',data);
+
         context.commit(SET_ADS,data);
         return data;
     },
