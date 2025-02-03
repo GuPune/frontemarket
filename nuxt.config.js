@@ -147,17 +147,17 @@ export default {
 
 axios: {
   // See https://github.com/nuxt-community/axios-module#options
-  baseURL: "https://back.halalthaimart.com/api",
-  ImageURL: "https://back.halalthaimart.com/public/product/",
-  ImageSoc: "https://back.halalthaimart.com/public/images/",
+  baseURL: "https://back.arsaconnect.com/api",
+  ImageURL: "https://back.arsaconnect.com/public/product/",
+  ImageSoc: "https://back.arsaconnect.com/public/images/",
 
  },
 
 env: {
- baseURL: "https://back.halalthaimart.com/api",
-  ImageURL: "https://back.halalthaimart.com/public/product/",
-  ImageSoc: "https://back.halalthaimart.com/public/images/",
-  backend:"https://back.halalthaimart.com",
+ baseURL: "https://back.arsaconnect.com/api",
+  ImageURL: "https://back.arsaconnect.com/public/product/",
+  ImageSoc: "https://back.arsaconnect.com/public/images/",
+  backend:"https://back.arsaconnect.com",
 },
 
 
